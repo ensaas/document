@@ -18,10 +18,10 @@
 		extraParam = 						
                       {  
                           "urlPrefix":
-			  [
-			  	"api-vcm",
-			  	"portal-vcm"
-			  ]  
+				     [
+				        "api-vcm",
+				        "portal-vcm"
+				     ]  
                       }
 
 ##### 1.3 dataServicesDependency #####
