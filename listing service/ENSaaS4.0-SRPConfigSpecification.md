@@ -86,12 +86,14 @@
                         "version": "1.3.30",
                         "memory": "0.25",
                         "cpu":"1",
-                        "dataServicesDependency": {
+                        "dataServicesDependency": 
+			{
                             "influxdb": "",
                             "redis": "",
                             "mongodb": "",
                             "rabbitmq": "",
-                            "postgresql": {
+                            "postgresql": 
+			    {
                                 "postgresql_service_group": "g_scada"
                             }
                         },
@@ -102,12 +104,14 @@
                         "version": "1.3.37",
                         "memory": "0.5",
                         "cpu":"1",
-                        "dataServicesDependency": {
+                        "dataServicesDependency": 
+			{
                             "influxdb": "",
                             "redis": "",
                             "mongodb": "",
                             "rabbitmq": "",
-                            "postgresql": {
+                            "postgresql": 
+			    {
                                 "postgresql_service_group": "g_scada"
                             }
                         },
