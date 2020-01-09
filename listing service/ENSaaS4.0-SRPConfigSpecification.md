@@ -80,44 +80,44 @@
 - 示例：以SCADA为例，SCADA包括2个APP，2个APP部署时所需参数输入格式如下：   
 
 		  apps =
-                 [
-                    {
-                        "name": "scada-dataworker",
-                        "version": "1.3.30",
-                        "memory": "0.25",
-                        "cpu":"1",
-                        "dataServicesDependency": 
-			{
-                            "influxdb": "",
-                            "redis": "",
-                            "mongodb": "",
-                            "rabbitmq": "",
-                            "postgresql": 
+			 [
 			    {
-                                "postgresql_service_group": "g_scada"
-                            }
-                        },
-                        "params": {}
-                    },
-                    {
-                        "name": "portal-scada",
-                        "version": "1.3.37",
-                        "memory": "0.5",
-                        "cpu":"1",
-                        "dataServicesDependency": 
-			{
-                            "influxdb": "",
-                            "redis": "",
-                            "mongodb": "",
-                            "rabbitmq": "",
-                            "postgresql": 
+				"name": "scada-dataworker",
+				"version": "1.3.30",
+				"memory": "0.25",
+				"cpu":"1",
+				"dataServicesDependency": 
+				{
+				    "influxdb": "",
+				    "redis": "",
+				    "mongodb": "",
+				    "rabbitmq": "",
+				    "postgresql": 
+				    {
+					"postgresql_service_group": "g_scada"
+				    }
+				},
+				"params": {}
+			    },
 			    {
-                                "postgresql_service_group": "g_scada"
-                            }
-                        },
-                        "params": {}
-                    }
-                 ]  
+				"name": "portal-scada",
+				"version": "1.3.37",
+				"memory": "0.5",
+				"cpu":"1",
+				"dataServicesDependency": 
+				{
+				    "influxdb": "",
+				    "redis": "",
+				    "mongodb": "",
+				    "rabbitmq": "",
+				    "postgresql": 
+				    {
+					"postgresql_service_group": "g_scada"
+				    }
+				},
+				"params": {}
+			    }
+			 ]  
 
 ##### 1.5 appServicesDependency #####
 
