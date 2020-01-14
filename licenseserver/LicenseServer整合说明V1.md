@@ -1,3 +1,7 @@
+---
+typora-root-url: images
+---
+
 # License Server整合说明
 
 License Server提供验证授权服务，通过整合License Server可以检查用户订阅的云服务实例规格，料号数量等信息，以便管理服务实例的授权。
@@ -6,7 +10,7 @@ License Server提供验证授权服务，通过整合License Server可以检查�
 
 下面是验证激活的流程图
 
-![License Server OnlineActive flowchart V1](\License Server OnlineActive flowchart V1.png)
+![](/License Server OnlineActive flowchart V1.png)
 
 Step1:  用户订阅服务后，Catalog产生订阅信息，将PN，serviceInstanceId和pnQuantity信息加密成licenseKey，通过message同步给License Server。
 
@@ -82,7 +86,7 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 
 ## AuthCode生成规则
 
-![authcode生成规则](\authcode生成规则.png)
+![](/authcode生成规则.png)
 
 1）   将Part Number（PN）、ID（serviceInstanceId ）、Number（pnQuantity）以及LicenseKey拼接成字符串，中间用+进行连接，记为str1，然后对str1进行MD5算法加密，记为str2。
 
