@@ -161,7 +161,14 @@ func lpad(str string, totallen int, char byte) string {
 
 }
 ```
+## 整合建议
+
+1.  API调用失败，重试时建议采用退避算法
+
+   当获取license信息失败时，您的应用程序会进行重试，建议您使用退避算法来实现自动重试逻辑，以减轻对license server的冲击，有助于license server提供更稳健的服务。
+
 ## 附录
+
 ### 相关术语说明
 
 | Item                     | Description                    |
