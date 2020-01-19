@@ -6,7 +6,7 @@ License Server提供验证授权服务，通过整合License Server可以检查�
 
 下面是验证激活的流程图
 
-![](images/licenseserver_OnlineActive_flowchart_V1.png)
+![](images/licenseserver_OnlineActive_flowchart_V2.png)
 
 Step1:  用户订阅服务后，Catalog产生订阅信息，将PN，serviceInstanceId和pnQuantity信息加密成licenseKey，通过message同步给License Server。
 
@@ -88,7 +88,7 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
   	isValidTransaction: true,  //用户订阅状态，true=有效，false=无效
   	number: 120,   // 订阅的料号数量
   	authcode: "3080-e825-003c", 
-      datacenterCode："ES",
+  	datacenterCode："ES",
   	activeInfo: ""  //服务上架时自定义的激活信息
   }
   
