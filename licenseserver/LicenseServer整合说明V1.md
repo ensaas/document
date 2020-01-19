@@ -35,6 +35,18 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 | pn   | 服务上架时提供的服务料号，即PN                               |
 | id   | 服务实例id，即serviceInstanceId。若为App，生成规则为clustername+workspaceId+namespaceName（不含+）；若为其他服务，则为订阅时由Managed Service生成。 |
 
+> 服务实例id（serviceInstanceId）生成规则：
+>
+> 1. 服务实例为App
+>
+>    serviceInstanceId=clustername+workspaceId+namespaceName
+>
+>    备注：字符串连接，不含+。
+>
+> 2. 服务实例为其他服务，如DB。
+>
+>    服务实例id（serviceInstanceId）为订阅时由Managed Service生成。
+
 返回参数json格式如下：
 
 ```
@@ -44,6 +56,7 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 	"isValidTransaction": <bool>,
 	"number": <integer>,
 	"authcode": "<string>",
+	"datacenterCode": "<string>"，
 	"activeInfo": "<string>"
 }
 ```
@@ -57,7 +70,9 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 | isValidTransaction | 用户订阅状态，true=有效，false=无效，若为无效时，激活失败 |
 | number             | 订阅的料号数量，即pnQuantity                              |
 | authcode           | 激活码                                                    |
+| datacenterCode           | 数据中心编号，如ES，JE，SA，HZ，BJ                                   |
 | activeInfo         | 服务上架时自定义的激活信息                                |
+
 
 举例：
 
@@ -72,7 +87,8 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
   	subscriptionId: "ff4fbd21-5962-4427-88a0-b8ef4ac9b393", //订阅号id
   	isValidTransaction: true,  //用户订阅状态，true=有效，false=无效
   	number: 120,   // 订阅的料号数量
-  	authcode: "3080-e825-003c",  
+  	authcode: "3080-e825-003c", 
+      datacenterCode："ES",
   	activeInfo: ""  //服务上架时自定义的激活信息
   }
   
@@ -171,11 +187,12 @@ func lpad(str string, totallen int, char byte) string {
 
 ### 相关术语说明
 
-| Item                     | Description                    |
-| ------------------------ | ------------------------------ |
-| Part Number（PN）        | 服务料号                       |
-| serviceInstanceId （ID） | 服务实例id                     |
-| authcode                 | 激活码                         |
-| subscriptionId           | 订阅号id                       |
-| number                   | 即pnQuantity，服务料号订阅数量 |
+| Item                     | Description                        |
+| ------------------------ | ---------------------------------- |
+| Part Number（PN）        | 服务料号                           |
+| serviceInstanceId （ID） | 服务实例id                         |
+| authcode                 | 激活码                             |
+| subscriptionId           | 订阅号id                           |
+| number                   | 即pnQuantity，服务料号订阅数量     |
+| datacenterCode           | 数据中心编号，如ES，JE，SA，HZ，BJ |
 
