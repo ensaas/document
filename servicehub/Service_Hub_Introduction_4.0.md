@@ -45,6 +45,7 @@ ServiceRequest 用於請求訂閱時使用，其詳細傳入內容如下：
 
 #### ServiceResponse 模組
 ServiceResponse 用於查詢訂閱時的回傳內容，其詳細說明如下：  
+
 | 參數名稱 | 類別 | 詳細說明 |
 |--------|----|---|
 | serviceInstanceId | string (UUID) | Service 創建的唯一 UUID |
@@ -67,6 +68,7 @@ ServiceResponse 用於查詢訂閱時的回傳內容，其詳細說明如下：
 
 #### BindingRequest 模組
 BindingRequest 用於請求綁定時使用，其詳細傳入內容如下：  
+
 | 參數名稱 | 類別 | 可以為空 | 詳細說明 |
 |----|-----|----|----|
 | serviceInstanceId | string (uuid) | X | 訂閱服務時所產生的ID |
@@ -84,6 +86,7 @@ BindingRequest 用於請求綁定時使用，其詳細傳入內容如下：
 
 #### BindingResponse 模組
 BindingResponse 用於查詢綁定訂閱時的回傳內容，其詳細說明如下：
+
 | 參數名稱 | 類別 | 詳細說明 |
 |--------|----|---|
 | serviceBindingId | string | 此次 secret 建立出來的綁定ID | 
