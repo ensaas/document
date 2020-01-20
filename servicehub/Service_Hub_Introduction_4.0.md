@@ -32,6 +32,7 @@ Service Hub API 採用駝峰方式撰寫，可以接受 basicAuth 、 bearerAuth
 
 #### ServiceRequest 模組
 ServiceRequest 用於請求訂閱時使用，其詳細傳入內容如下：  
+
 | 參數名稱 | 類別 | 可以為空 | 詳細說明 |
 |----|-----|----|----|
 | serviceInstanceName | string | X | 由用戶命名的 service instacne 名稱，相同訂閱號下禁止重複，避免使用相同訂閱號下的使用者混淆認不清 |
