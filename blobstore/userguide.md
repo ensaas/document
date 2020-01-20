@@ -69,39 +69,39 @@ BlobStore创建服务实例的过程是异步的，用户需要隔段时间去�
 
    1） 租户自带 Azure Blob，需要输入四个参数，分别为type, provider, accessKey, secretKey。如下表所示
 
-   | **Key**   | **Value**         |
-   | --------- | ----------------- |
-   | type      | s3                |
-   | provider  | azure             |
-   | accessKey | <Azure Blob Name> |
-   | secretKey | <Azure Blob Key>  |
+   | **Key**   | **Value**           |
+   | --------- | ------------------- |
+   | type      | s3                  |
+   | provider  | azure               |
+   | accessKey | \<Azure Blob Name\> |
+   | secretKey | \<Azure Blob Key\>  |
 
    2） 租户自带 Azure China Blob，同1）需要输入四个参数，分别为type, provider, accessKey, secretKey。如下表所示
 
-   | **Key**   | **Value**         |
-   | --------- | ----------------- |
-   | type      | s3                |
-   | provider  | azurecn           |
-   | accessKey | <Azure Blob Name> |
-   | secretKey | <Azure Blob Key>  |
+   | **Key**   | **Value**           |
+   | --------- | ------------------- |
+   | type      | s3                  |
+   | provider  | azurecn             |
+   | accessKey | \<Azure Blob Name\> |
+   | secretKey | \<Azure Blob Key\>  |
 
 3. 租户自带Azure Blob服务实例, BlobStore服务负责检查Azure Blob的合法性
 
    1） 检查Azure Blob，需要输入三个参数，分别为type, accessKey, secretKey。如下表所示：
 
-   | **Key**   | **Value**         |
-   | --------- | ----------------- |
-   | type      | azure             |
-   | accessKey | <Azure Blob Name> |
-   | secretKey | <Azure Blob Key>  |
+   | **Key**   | **Value**           |
+   | --------- | ------------------- |
+   | type      | azure               |
+   | accessKey | \<Azure Blob Name\> |
+   | secretKey | \<Azure Blob Key\>  |
 
    2） 检查Azure China Blob，同1）需要输入三个参数分别为type, accessKey, secretKey。如下表所示：
 
-   | **Key**   | **Value**         |
-   | --------- | ----------------- |
-   | type      | azurecn           |
-   | accessKey | <Azure Blob Name> |
-   | secretKey | <Azure Blob Key>  |
+   | **Key**   | **Value**           |
+   | --------- | ------------------- |
+   | type      | azurecn             |
+   | accessKey | \<Azure Blob Name\> |
+   | secretKey | \<Azure Blob Key\>  |
 
 ### Step 3: 生成BlobStore Credential
 
