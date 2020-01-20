@@ -234,6 +234,7 @@ operation: [1000] ^ (下拉選單)
 依據 open service broker api spec， 訂閱/綁定時回傳 202 Accept 會進入異步處理流程，  
 此時 Service Hub 會以每30秒的時間向 Service Broker 詢問訂閱/綁定異步的結果(透過進階 Broker API 表格中有last_operation 的 API)，  
 會根據不同的回傳結果而做出不同處理，處理方式如下表：
+
 | 狀態碼 | 回傳訊息 | 處理方式 |
 |-------|-------|------|
 | 200 | "state":"in progress" | instance 狀態為 in Progress 等待30秒後再次詢問 | 
