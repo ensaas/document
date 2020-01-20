@@ -31,7 +31,7 @@ Service Hub API 採用駝峰方式撰寫，可以接受 basicAuth 、 bearerAuth
 | GET | /v2/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceId}/bindings/{serviceBindingId} | 列出特定的綁定 | 回傳 bindingResponse object |
 
 #### ServiceRequest 模組
-ServiceRequest 用於請求訂閱時使用，其詳細傳入內容如下：
+ServiceRequest 用於請求訂閱時使用，其詳細傳入內容如下：  
 | 參數名稱 | 類別 | 可以為空 | 詳細說明 |
 |----|-----|----|----|
 | serviceInstanceName | string | X | 由用戶命名的 service instacne 名稱，相同訂閱號下禁止重複，避免使用相同訂閱號下的使用者混淆認不清 |
@@ -44,7 +44,7 @@ ServiceRequest 用於請求訂閱時使用，其詳細傳入內容如下：
 | parameters | object | O | Service Broker 在上架的時候會註冊額外需要填上的參數的內容，可以去查詢註冊資料取得清單，顯示給使用者選擇後組成 json 物件帶入此參數中。 |
 
 #### ServiceResponse 模組
-ServiceResponse 用於查詢訂閱時的回傳內容，其詳細說明如下：
+ServiceResponse 用於查詢訂閱時的回傳內容，其詳細說明如下：  
 | 參數名稱 | 類別 | 詳細說明 |
 |--------|----|---|
 | serviceInstanceId | string (UUID) | Service 創建的唯一 UUID |
@@ -66,7 +66,7 @@ ServiceResponse 用於查詢訂閱時的回傳內容，其詳細說明如下：
 | parameters | object | 訂閱的時候傳入的參數 |
 
 #### BindingRequest 模組
-BindingRequest 用於請求綁定時使用，其詳細傳入內容如下：
+BindingRequest 用於請求綁定時使用，其詳細傳入內容如下：  
 | 參數名稱 | 類別 | 可以為空 | 詳細說明 |
 |----|-----|----|----|
 | serviceInstanceId | string (uuid) | X | 訂閱服務時所產生的ID |
