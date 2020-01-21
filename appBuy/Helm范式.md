@@ -4,7 +4,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 # Helm 范式
 在appBuy中上架的helm chart必须满足如下要求：
 
-* appBuy必要的参数
+* appBuy必要参数
 
 	1. **database.secretName**
 
