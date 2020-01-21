@@ -42,7 +42,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 		
 		再修改ingress.hosts[0].host为拼接自定url前缀+平台覆盖url后缀
 
-* 平台必须的参数
+* 平台必要参数
 
 	平台必须要在helm chart里定义sources，内容如下：
 	
