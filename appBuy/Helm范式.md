@@ -8,7 +8,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 
 	1. **database.secretName**
 
-		此处的secretName为 $chartname-$ns-secret  如dashboard-ns1-secret
+		此处的secretName为 $chartname-$ns-secret，如dashboard-ns1-secret
 		
 		在app上架到被订阅部署时，根据上架的信息，appbuy会自动为每个app生成一个db secret   信息（无论此app依赖多少db都只会生成一个secret）。在app的chart中需要获取这个secret的名称
 		
