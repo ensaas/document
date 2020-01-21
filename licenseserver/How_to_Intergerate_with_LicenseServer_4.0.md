@@ -6,7 +6,7 @@ License Server提供验证授权服务，通过整合License Server可以检查�
 
 下面是验证激活的流程图
 
-![](images/licenseserver_OnlineActive_flowchart_V2.png)
+![](images/licenseserver_OnlineActive_flowchart_V3.png)
 
 Step1:  用户订阅服务后，Catalog产生订阅信息，将PN，serviceInstanceId和pnQuantity信息加密成licenseKey，通过message同步给License Server。
 
@@ -22,7 +22,13 @@ Step4: 服务实例按照规则生成authcode，并与从License Server获取到
 
 当APP需要验证激活时，可调用License Server提供的Api接口获取license info信息进行验证，License Server提供的接口及返回参数说明如下：
 
-Method
+**Host**
+
+```
+api.license.master.internal
+```
+
+**Method**
 
 ```
 GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
@@ -71,13 +77,12 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 | number             | 订阅的料号数量，即pnQuantity                              |
 | authcode           | 激活码                                                    |
 | datacenterCode           | 数据中心编号，如ES，JE，SA，HZ，BJ                                   |
-| activeInfo         | 服务上架时自定义的激活信息                                |
+| activeInfo         | 服务上架时自定义的激活信息，保留项                       |
 
-
-举例：
+**Example**：
 
 * Request Example:
-  http://api-license-master.internal/v1/api/partNum/licenseQty?pn=9806WPAFS0&id=9ca0b70f-3357-11ea-beb1-76a42f50fd69
+  http://api.license.master.internal/v1/api/partNum/licenseQty?pn=9806WPAFS0&id=9ca0b70f-3357-11ea-beb1-76a42f50fd69
 
 * Response Example:
 
@@ -102,7 +107,11 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 
 1）   将Part Number（PN）、ID（serviceInstanceId ）、Number（pnQuantity）以及LicenseKey拼接成字符串，中间用+进行连接，记为str1，然后对str1进行MD5算法加密，记为str2。
 
-注意： 在线验证时，LicenseKey为空。
+> **注意**： 在线验证时，拼接字符串时LicenseKey为空 , 但必须带‘+’（这点与旧版license server的不同）
+>
+> Example:
+>
+> ENSSRMSL001+slave0120a957f4-0bf9-4faf-90cd-694919cd4b68rms+1+   
 
 2）  authcode分为前、中、后各四码，共12码组成，取后四码进行base64解码为10进制数，以上图为例，第四码为09ce，进行base36解码为10进制数可得到12110，即为Number的值。authcode前四码中的第四码指出由MD5产生的字串（str2）第几码开始，以上图为例，第四码为2，表示由MD5字串第二码开始取三码，MD5字串的位置起始为0，因为可以取得AD0,填入Authcode的前三码，因此可以得到第一部分的四码为AD02。中间四码的前两码同样由第四码决定，与前四码不同为，这里只取2码，第三码为任意值，同以上图为例，第四码为8，即为由MD5字串中第8码开始取2码填入，可以得到C9X8,其中X可以为任意值。后四码则是以10进制的数量进行base36的编码，得出的结果若不满四码，则于前面补0，以上图为例，数量为12110，进行base36编码后可得9CE，不足四码前面补0，因此可得出结果为09CE。
 
