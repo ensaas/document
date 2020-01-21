@@ -1,16 +1,11 @@
-# Subscribe keyvault of a namespace
+# Subscribe keyvault 
 
-给某个namespace订阅keyvault
+用户订阅keyvault
 
 | Method | Path                                                        |
 | ---- | ----|
-| POST   | /secret/cluster/{clusterName}/namespace/{namespaceName}       |
+| POST   | /secret      |
 
-
-### Parameters
----
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
 
 
 ### Sample Request
@@ -20,7 +15,7 @@
 $ curl \
     --header "Authorization: Bearer .... \
     --request POST \    
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1
+    http://127.0.0.1:8200/secret
 ```
 
 ### Sample Response
@@ -33,19 +28,14 @@ $ curl \
 }
 
 ```
-# Unsubscribe keyvault of a namespace
+# Unsubscribe keyvault 
 
-退订某个namespace的keyvault
+用户退订keyvault
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /secret/cluster/{clusterName}/namespace/{namespaceName}       |
+| DELETE   | /secret       |
 
-
-### Parameters
----
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
 
 
 ### Sample Request
@@ -55,7 +45,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \    
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1
+    http://127.0.0.1:8200/secret
 ```
 
 ### Sample Response
@@ -69,19 +59,14 @@ $ curl \
 
 ```
 
-# Get subPath of a namespace
+# Get subPath 
 
-获取某个namespace下的所有子路径
+获取某个用户的所有子路径
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /secret/cluster/{clusterName}/namespace/{namespaceName}       |
+| GET   | /secret      |
 
-
-### Parameters
----
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
 
 
 ### Sample Request
@@ -91,7 +76,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \    
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1
+    http://127.0.0.1:8200/secret
 ```
 
 ### Sample Response
@@ -120,13 +105,12 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| POST   | /secret/cluster/{clusterName}/namespace/{namespaceName}/path/{path}                               |
+| POST   | /secret/path/{path}                               |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
+
 * <font color=Blue>path</font> (string: required) - path的名称
 * <font color=Blue>data</font> (Map: required) - 添加secret的内容
 
@@ -150,7 +134,7 @@ $ curl \
     --header "Authorization: Bearer .... \
     --request POST \
     --data @payload.json \
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1/path/sp-1
+    http://127.0.0.1:8200/secret/path/sp-1
 ```
 
 ### Sample Response
@@ -179,13 +163,12 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /secret/cluster/{clusterName}/namespace/{namespaceName}/path/{path}                               |
+| GET   | /secret/path/{path}                               |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
+
 * <font color=Blue>path</font> (string: required) - path的名称
 
 ### Sample Request
@@ -195,7 +178,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \  
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1/path/sp-1
+    http://127.0.0.1:8200/secret/path/sp-1
 ```
 
 ### Sample Response
@@ -229,13 +212,12 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /secret/cluster/{clusterName}/namespace/{namespaceName}/path/{path}                               |
+| DELETE   | /secret/path/{path}                               |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
+
 * <font color=Blue>path</font> (string: required) - path的名称
 
 ### Sample Request
@@ -245,7 +227,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \  
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1/path/sp-1
+    http://127.0.0.1:8200/secret/path/sp-1
 ```
 # Inject sidecar to deployment
 
