@@ -1,23 +1,23 @@
-# 获取集群config文件{#concept_get_config .concept}
+# 获取集群config文件
 1，打开浏览器，在地址栏中输入Managent portal的网络地址，按“Enter”。
 
 2，输入输入“用户名”、“密码”，单击登录。
 
 3，根据用户角色，参考下面的步骤获取config文件。
 
-## 用户角色是cluster owner及以上：{#section_get_config_cluster .section}
+## 用户角色是cluster owner及以上：
 1，点击界面左上角的菜单按钮，点击Platform Management->Clusters。进入Cluster管理页面。
 
 2，在需要获取config的集群右侧点击Operation栏位，点击config按钮。config文件即下载到本地。
 
-## 用户角色是workspace owner：{#section_get_config_workspace .section}
+## 用户角色是workspace owner：
 1，点击界面左上角的菜单按钮，点击Platform Management->Workspaces。进入workspace管理页面。
 
 2，切换cluster，找到需要获取config文件的workspace。
 
 3，在需要获取config的workspace右侧点击Operation栏位，点击config按钮。config文件即下载到本地。
 
-## 用户角色是namespace developer：{#section_get_config_namespace .section}
+## 用户角色是namespace developer：
  1，点击界面左上角的菜单按钮，点击Platform Management->Namespaces。进入naemspace管理页面。
 
 2，切换cluster，和workspace，找到需要获取config文件的namespace。
