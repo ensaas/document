@@ -1,16 +1,18 @@
 # KeyVault使用说明
 
-KeyVault可以用来安全地存储机密信息，并对其访问进行严格控制。
+KeyVault可以用来安全地存储机密信息，并对其访问进行严格控制。KeyVault内部集成了Vault的机密管理方式，支持云产品对其管理的用户数据进行加密保护。通过借助KeyVault，可帮助用户只专注于本身的业务逻辑，而无需花费大量的成本来保障数据的保密性、完整性和可用性。
 
-## Step 1：
+## 使用步骤
 
-*  权限验证
+### Step 1：
+
+####  权限验证
 
 KeyVault使用SSO的权限认证机制，所以使用KeyVault的API之前，需要用一个SSO账户进行登录，然后取得登录的Token，之后便可以使用Token调用KeyVault的API。
 
-## Step 2：
+### Step 2：
 
-* 订阅KeyVault
+#### 订阅KeyVault
 
 用户要使用KeyVault之前，需要订阅一个KeyVault实例，这里所谓的实例，其实就是一个以用户ID命名的用于存储Secret的路径。
 
@@ -30,9 +32,9 @@ Method
 ```
 DELETE /secret
 ```
-## Step 3：
+### Step 3：
 
-* 添加Secrets
+#### 添加Secrets
 
 用户订阅了KeyVault之后，便可以将secret存储在当前路径下面。UserId路径下面可以再开子路径，即下图中的subPath，subPath支持的最大个数为10，subPath下面存储具体的secret，每个subPath存储secret的最大为100KB。
 
@@ -92,9 +94,9 @@ Method
 DELETE /secret/path/{path}
 ```
 
-## Step 4：
+### Step 4：
 
-* 应用程序获取Secrets
+#### 应用程序获取Secrets
 
 将Secrets添加成功后，应用程序可以通过注入Sidecar的方式获取Secrets的值。使用此方式之后，应用程序可以不用关注怎么获取Secrets的过程，最终，只需要更改很少的代码，便可以拿到需要的Secrets。
 
@@ -118,5 +120,6 @@ DELETE /secret/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deplo
 ```
 
 ## 注意事项
-* 如果删除了某个secret，但是这个secret之前已经被注入到了deployment中，deployment会因为找不到这个secret二不断重启，所以希望在删除了某个secret之后，可以同时更新注入container的secret
 
+#### 删除某个secret后，需要更新pod中注入的secret
+如果用户删除了某个secret，但是这个secret之前已经被注入到pod中，那么pod中的consul-template会发现找不到这个secret，就会重试多次，之后如果还是没有找到这个secret，就会重启pod，重启之后，还是会重复之前的动作，所以就会发现pod重启了很多次。所以这里建议用户如果删除了某个secret之后，可以同时调用注入的API更新注入的secret。

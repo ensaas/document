@@ -236,7 +236,7 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| POST   | /secret/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
+| PUT   | /secret/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
 
 
 ### Parameters
@@ -286,7 +286,7 @@ $ curl \
 ```
 # Remove injected container
 
-移除给pod中注入的container
+移除pod中注入的container
 
 
 | Method | Path                                                        |
