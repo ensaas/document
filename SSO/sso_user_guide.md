@@ -35,7 +35,8 @@ Press the "+" button on the left of header, then it will pop up "Add a team memb
 
 - **If the added user is existed, the subscription admin can invite existing users to join in the subscription. The existing user will be added into the subscription directly.** 
 
-![Not found](./sso_picture/invite_user.png)  
+![](sso_picture/invite_user.png)  
+
 Picture 1 - Invite Existing User
 
 
