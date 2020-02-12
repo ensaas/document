@@ -1,10 +1,17 @@
 # Subscribe keyvault 
 
-ÓÃ»§¶©ÔÄkeyvault
+è®¢é˜…keyvault
 
 | Method | Path                                                        |
 | ---- | ----|
-| POST   | /secret      |
+| POST   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}     |
+
+
+### Parameters
+---
+
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·id
+* <font color=Blue>serviceInstanceName</font> (string: required) - Service instanceåç§°ï¼ŒåŒä¸€ä¸ªè®¢é˜…å·ä¸‹ï¼Œä¸å…è®¸åŒåçš„service instancåç§°
 
 
 
@@ -14,8 +21,8 @@
 ```
 $ curl \
     --header "Authorization: Bearer .... \
-    --request POST \    
-    http://127.0.0.1:8200/secret
+    --request POST \
+    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1
 ```
 
 ### Sample Response
@@ -30,13 +37,15 @@ $ curl \
 ```
 # Unsubscribe keyvault 
 
-ÓÃ»§ÍË¶©keyvault
+ç”¨æˆ·é€€è®¢keyvault
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /secret       |
+| DELETE   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}       |
 
 
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·id
+* <font color=Blue>serviceInstanceName</font> (string: required) - Service instanceåç§°
 
 ### Sample Request
 ---
@@ -44,8 +53,8 @@ $ curl \
 ```
 $ curl \
     --header "Authorization: Bearer .... \
-    --request DELETE \    
-    http://127.0.0.1:8200/secret
+    --request DELETE \
+	http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1 
 ```
 
 ### Sample Response
@@ -59,15 +68,18 @@ $ curl \
 
 ```
 
-# Get subPath 
+# Get all service instances 
 
-»ñÈ¡Ä³¸öÓÃ»§µÄËùÓĞ×ÓÂ·¾¶
+è·å–æŸä¸ªè®¢é˜…å·ä¸‹çš„æ‰€æœ‰service instances
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /secret      |
+| GET   | /v1/subscriptions/{subscriptionId}/serviceInstances      |
 
+### Parameters
+---
 
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·id
 
 ### Sample Request
 ---
@@ -76,7 +88,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \    
-    http://127.0.0.1:8200/secret
+    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances
 ```
 
 ### Sample Response
@@ -89,31 +101,73 @@ $ curl \
   "renewable": false,
   "data": {
     "keys": [
-      "default",
-      "nginx-test"
+      "service-instance-1",
+      "service-instance-2"
     ]
   },
   "warnings": null
 }
 
 ```
+# Get one service instances 
 
+è·å–æŸä¸ªservice instances
+
+| Method | Path                                                        |
+| ---- | ----|
+| GET   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}     |
+
+### Parameters
+---
+
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·id
+* <font color=Blue>serviceInstanceName</font> (string: required) - Service instanceåç§°
+
+### Sample Request
+---
+
+```
+$ curl \
+    --header "Authorization: Bearer .... \
+    --request GET \    
+    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1
+```
+
+### Sample Response
+---
+```
+{
+  "request_id": "6071835e-f70c-6b8a-081e-8b54bfad7f67",
+  "lease_id": "",
+  "lease_duration": 0,
+  "renewable": false,
+  "data": {
+    "keys": [
+      "path-1",
+      "path-2"
+    ]
+  },
+  "warnings": null
+}
+
+```
 # Create Secret
 
-Ìí¼Ósecret
+æ·»åŠ secret
 
 
 | Method | Path                                                        |
 | ---- | ----|
-| POST   | /secret/path/{path}                               |
+| POST   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}/path/{path}                               |
 
 
 ### Parameters
 ---
 
-* <font color=Blue>path</font> (string: required) - pathµÄÃû³Æ
-* <font color=Blue>data</font> (Map: required) - Ìí¼ÓsecretµÄÄÚÈİ
-
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·çš„Id
+* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instanceçš„åç§°
+* <font color=Blue>path</font> (Map: required) - Service instanceä¸‹pathçš„åç§°
+* <font color=Blue>data</font> (Map: required) - éœ€è¦å­˜å…¥çš„secretçš„keyï¼Œvalueä¹‹ï¼Œkeyå€¼ä¸å¯é‡å¤
 
 ### Sample Payload
 ---
@@ -133,8 +187,8 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request POST \
-    --data @payload.json \
-    http://127.0.0.1:8200/secret/path/sp-1
+    --data @payload.json \   
+	http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1/path/path-1  
 ```
 
 ### Sample Response
@@ -158,18 +212,19 @@ $ curl \
 
 
 # Get Secret
-»ñÈ¡secret
+è·å–secret
 
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /secret/path/{path}                               |
-
+| GET   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}/path/{path}                                |
 
 ### Parameters
 ---
 
-* <font color=Blue>path</font> (string: required) - pathµÄÃû³Æ
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·çš„Id
+* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instanceçš„åç§°
+* <font color=Blue>path</font> (Map: required) - Service instanceä¸‹pathçš„åç§°
 
 ### Sample Request
 ---
@@ -178,7 +233,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \  
-    http://127.0.0.1:8200/secret/path/sp-1
+    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1/path/path-1  
 ```
 
 ### Sample Response
@@ -207,18 +262,18 @@ $ curl \
 ```
 
 # Delete Secret
-É¾³ısecret
+åˆ é™¤secret
 
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /secret/path/{path}                               |
-
-
+| DELETE   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}/path/{path}                                 |
 ### Parameters
 ---
 
-* <font color=Blue>path</font> (string: required) - pathµÄÃû³Æ
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·çš„Id
+* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instanceçš„åç§°
+* <font color=Blue>path</font> (Map: required) - Service instanceä¸‹pathçš„åç§°
 
 ### Sample Request
 ---
@@ -227,40 +282,46 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \  
-    http://127.0.0.1:8200/secret/path/sp-1
+    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1/path/path-1
 ```
 # Inject sidecar to deployment
 
-¸ødeployment¶ÔÓ¦µÄpod×¢Èësidecar
-
+ç»™deploymentå¯¹åº”çš„podæ³¨å…¥sidecar
 
 | Method | Path                                                        |
 | ---- | ----|
-| PUT   | /secret/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
+| PUT   | /v1/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                                |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - clusterµÄÃû³Æ
-* <font color=Blue>namespaceName</font> (string: required) - namespaceµÄÃû³Æ
-* <font color=Blue>deploymentName</font> (string: required) - deploymentµÄÃû³Æ
-* <font color=Blue>path</font> (string: required) - pathµÄÃû³Æ
-* <font color=Blue>keys</font> ([]string: optional) - secretÖĞkeyµÄÃû³Æ
+* <font color=Blue>clusterName</font> (string: required) - clusterçš„åç§°
+* <font color=Blue>namespaceName</font> (string: required) - namespaceçš„åç§°
+* <font color=Blue>deploymentName</font> (string: required) - deploymentçš„åç§°
+* <font color=Blue>subscriptionId</font> (string: required) - è®¢é˜…å·çš„Id
+* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instanceçš„åç§°
+* <font color=Blue>path</font> (string: required) - pathçš„åç§°
+* <font color=Blue>keys</font> ([]string: optional) - secretä¸­keyçš„åç§°
 
 
 ### Sample Payload
 ---
 ```
-[
-  {
-    "keys": ["key1", "key2"],
-    "path": "nginx-test"
-  },
-  {
-    "keys": ["key1"],
-    "path": "nginx-test-1"
-  }
-]
+{
+  "subscriptionId": "d1ef2306-33d9-4616-967d-eedee837661f",
+  "serviceInstanceName": "service-instance-1",
+  [
+	  {
+		"keys": ["key1", "key2"],
+		"path": "nginx-test"
+	  },
+	  {
+		"keys": ["key1"],
+		"path": "nginx-test-1"
+	  }
+  ]
+}
+
 ```
 
 ### Sample Request
@@ -271,7 +332,7 @@ $ curl \
     --header "Authorization: Bearer .... \
     --request PUT \
     --data @payload.json \
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1/deployment/dm-1
+    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1
 ```
 
 ### Sample Response
@@ -286,19 +347,19 @@ $ curl \
 ```
 # Remove injected container
 
-ÒÆ³ıpodÖĞ×¢ÈëµÄcontainer
+ç§»é™¤podä¸­æ³¨å…¥çš„container
 
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /secret/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
+| DELETE   | /v1/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - clusterµÄÃû³Æ
-* <font color=Blue>namespaceName</font> (string: required) - namespaceµÄÃû³Æ
-* <font color=Blue>deploymentName</font> (string: required) - deploymentµÄÃû³Æ
+* <font color=Blue>clusterName</font> (string: required) - clusterçš„åç§°
+* <font color=Blue>namespaceName</font> (string: required) - namespaceçš„åç§°
+* <font color=Blue>deploymentName</font> (string: required) - deploymentçš„åç§°
 
 
 ### Sample Request
@@ -308,7 +369,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \   
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1/deployment/dm-1
+    http://127.0.0.1:8200/v1/cluster/c-1/namespace/ns-1/deployment/dm-1
 ```
 
 ### Sample Response
@@ -324,19 +385,19 @@ $ curl \
 
 # Get deployment status
 
-»ñÈ¡deploymentÏÂpodµÄ×´Ì¬
+è·å–deploymentä¸‹podçš„çŠ¶æ€
 
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /secret/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
+| GET   | /v1/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - clusterµÄÃû³Æ
-* <font color=Blue>namespaceName</font> (string: required) - namespaceµÄÃû³Æ
-* <font color=Blue>deploymentName</font> (string: required) - deploymentµÄÃû³Æ
+* <font color=Blue>clusterName</font> (string: required) - clusterçš„åç§°
+* <font color=Blue>namespaceName</font> (string: required) - namespaceçš„åç§°
+* <font color=Blue>deploymentName</font> (string: required) - deploymentçš„åç§°
 
 
 ### Sample Request
@@ -346,7 +407,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \
-    http://127.0.0.1:8200/secret/cluster/c-1/namespace/ns-1/deployment/dm-1
+    http://127.0.0.1:8200/v1/cluster/c-1/namespace/ns-1/deployment/dm-1
 ```
 
 ### Sample Response
