@@ -167,7 +167,7 @@ $ curl \
 * <font color=Blue>subscriptionId</font> (string: required) - 订阅号的Id
 * <font color=Blue>serviceInstanceName</font> (Map: required) - Service instance的名称
 * <font color=Blue>path</font> (Map: required) - Service instance下path的名称
-* <font color=Blue>data</font> (Map: required) - 需要存入的secret的key，value之，key值不可重复
+* <font color=Blue>data</font> (Map: required) - 需要存入的secret的key，value值，key值不可重复
 
 ### Sample Payload
 ---
