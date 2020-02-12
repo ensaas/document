@@ -1,24 +1,24 @@
-# 获取集群config文件{#concept_get_config .concept}
+# 获取集群config文件
 1，打开浏览器，在地址栏中输入Managent portal的网络地址，按“Enter”。
 
 2，输入输入“用户名”、“密码”，单击登录。
 
 3，根据用户角色，参考下面的步骤获取config文件。
 
-## 用户角色是cluster owner及以上：{#section_get_config_cluster .section}
-1，点击界面左上角的菜单按钮，点击Platform Management->Clusters。进入Cluster管理页面。
+## 用户角色是cluster owner及以上：
+1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Clusters或Platform Management->Shared Cluster->Clusters。进入Cluster管理页面。
 
 2，在需要获取config的集群右侧点击Operation栏位，点击config按钮。config文件即下载到本地。
 
-## 用户角色是workspace owner：{#section_get_config_workspace .section}
-1，点击界面左上角的菜单按钮，点击Platform Management->Workspaces。进入workspace管理页面。
+## 用户角色是workspace owner：
+1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Workspaces或Platform Management->Shared Cluster->General Workspaces。进入workspace管理页面。
 
 2，切换cluster，找到需要获取config文件的workspace。
 
 3，在需要获取config的workspace右侧点击Operation栏位，点击config按钮。config文件即下载到本地。
 
-## 用户角色是namespace developer：{#section_get_config_namespace .section}
- 1，点击界面左上角的菜单按钮，点击Platform Management->Namespaces。进入naemspace管理页面。
+## 用户角色是namespace developer：
+ 1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。进入namespace管理页面。
 
 2，切换cluster，和workspace，找到需要获取config文件的namespace。
 
@@ -26,26 +26,34 @@
 
 **说明：**
 
- 同一个用户同一个集群的config文件是相同的。即对于某个用户，同一个集群，在某个namespace，workspace或cluster右侧点击config下载的config都是相同的，只要他们属于同一个集群。
+ 1，同一个用户同一个集群的config文件是相同的。即对于某个用户，同一个集群，在某个namespace，workspace或cluster右侧点击config下载的config都是相同的，只要他们属于同一个集群。
+
+2，具体选择Dedicate Cluster还是Shared Cluster取决于购买的产品。根据需要选择对应的菜单下载config。
+
+​	如果购买的产品是Dedicate Cluster则在Dedicate Cluster菜单下。
+
+​	如果购买的是General Workspace，则在Shared Cluster菜单下。
 
 # 添加工作空间
 ## 前提条件
-添加工作空间，用户需要具备cluster owner及以上角色或者是订阅号的admin角色，其他角色没有权限添加。
+1，添加工作空间，用户需要具备cluster owner及以上角色或者是订阅号的admin角色，其他角色没有权限添加。
+
+2，用户需要购买了Dedicate Cluster，才可以在Dedicate cluster下添加工作空间。
 
 ## 通过Managent Portal界面添加
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
 2，输入输入“用户名”、“密码”，单击登录。
 
-3，点击界面左上角的菜单按钮，点击Platform Management->Workspace。进入Workspace管理页面。
+3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Workspace。进入Workspace管理页面。
 
-![图片](https://uploader.shimo.im/f/uEcpYLVwKNgesFb8.png!thumbnail)
+![workspace](.\image\workspace.png)
 
 4，在cluster下拉框处选择集群（workspace将创建在该集群下），点击创建按钮+，进入创建workspace的页面。
 
 5，输入workspace的名称，选择workspace的Quota，点击OK按钮。
 
-![图片](https://uploader.shimo.im/f/hkLmIaeTwXkDhDFK.png!thumbnail)
+![create_workspace](./image/create_workspace.png)
 
 6，成功创建workspace后，可以在workspace页面下方的列表看见新创建的workspace。
 
@@ -56,9 +64,9 @@
 2，用户本地有安装kubectl。
 
 ### 操作步骤
-1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
+1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users\{用户名}\\\.kube文件夹下。
 
-![图片](https://uploader.shimo.im/f/Z2BHVtOJvBgFM7oL.png!thumbnail)
+![config](./image/config.png)
 
 2，新建一个文件，后缀以.yml结尾。
 
@@ -116,15 +124,15 @@ $ kubectl describe workspace 0875640d-a146-461c-bdbf-7bbd4de2de84
 
 2，输入输入“用户名”、“密码”，单击登录。
 
-3，点击界面左上角的菜单按钮，点击Platform Management->Namespaces。进入Namespace管理页面。
+3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。进入Namespace管理页面。
 
-4，选择期望的cluster和workspace（新建的namespace将创建在该workspace下）。点击创建按钮+，进入创建workspace的页面。
+4，选择期望的cluster和workspace（新建的namespace将创建在该workspace下）。点击创建按钮+，进入创建namespace的页面。
 
-![图片](https://uploader.shimo.im/f/31uYYprV9QI1l4eH.png!thumbnail)
+![namespace](./image/namespace.png)
 
 5，在Name输入框输入namespace的名称，选择namespace的Quota，点击OK按钮。
 
-![图片](https://uploader.shimo.im/f/aEU2BKJ6TqEiej5Y.png!thumbnail)
+![create_namespace](./image/create_namespace.png)
 
 6，成功创建namespace后，可以在namespace页面下方的列表看见新创建的namespace。
 
@@ -136,8 +144,6 @@ $ kubectl describe workspace 0875640d-a146-461c-bdbf-7bbd4de2de84
 
 ### 操作步骤
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
-
-![图片](https://uploader.shimo.im/f/EcKnbVwO9CkAUwwf.png!thumbnail)
 
 2，新建一个文件，后缀以.yml结尾。
 
@@ -211,11 +217,9 @@ $ kubectl get namespace
 
 7，成功创建workspace quota后，可以在Workspace Quotas页面的列表看见新创建的workspace quota。
 
-## 通过CLI添加**
+## 通过CLI添加
 
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
-
-![图片](https://uploader.shimo.im/f/Z2BHVtOJvBgFM7oL.png!thumbnail)
 
 2，新建一个文件，后缀以.yml结尾。
 
@@ -291,8 +295,6 @@ $ kubectl apply -f 文件路径/文件名称.yml
 ## **通过CLI添加**
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
 
-![图片](https://uploader.shimo.im/f/Z2BHVtOJvBgFM7oL.png!thumbnail)
-
 2，新建一个文件，后缀以.yml结尾。
 
 3，编辑步骤2中新建的文件，符合如下格式的配置。
@@ -350,7 +352,9 @@ $ kubectl apply -f 文件路径/文件名称.yml
 ```
 # 对工作空间进行扩减容（改变工作空间的配额）
 ## 前提条件
-对工作空间进行扩减容（改变工作空间配额），用户需要具备cluster owner及以上角色，其他角色没有权限。
+1，对工作空间进行扩减容（改变工作空间配额），用户需要具备cluster owner及以上角色或是订阅号admin，其他角色没有权限。
+
+2，只有购买了Dedicate Cluster，才可以对Cluster下的工作空间进行扩减容。
 
 ## 通过Managent Portal界面
 
@@ -358,7 +362,7 @@ $ kubectl apply -f 文件路径/文件名称.yml
 
 2，输入输入“用户名”、“密码”，单击登录。
 
-3，点击界面左上角的菜单按钮，点击Platform Management->Workspaces。进入Workspace管理页面。
+3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Workspaces。进入Workspace管理页面。
 
 4，在workspace列表中，找到需要变更配额的workspace，在右侧Operation栏位点击，选择Scale，进入变更配额页面。
 
@@ -372,8 +376,6 @@ $ kubectl apply -f 文件路径/文件名称.yml
 
 ## **通过CLI执行**
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
-
-![图片](https://uploader.shimo.im/f/Z2BHVtOJvBgFM7oL.png!thumbnail)
 
 2，执行以下命名，找到需要扩/减容的工作空间。其中，name为创建工作空间时，metadata->label中的name，UI上显示的也是这个名称。
 
@@ -391,14 +393,14 @@ $ kubectl describe wq {workspacequotaName}
 ```
 $ kubectl edit ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 ```
-5，改变spec->workspacequota字段，设置为需要给工作空间配置的配额名称（当quota名称为数字时，需要加上双引号，例如："111"）。按CTRL+S保存。![图片](https://uploader.shimo.im/f/bvN6sayH5U8j8FuV.png!thumbnail)
+5，改变spec->workspacequota字段，设置为需要给工作空间配置的配额名称（当quota名称为数字时，需要加上双引号，例如："111"）。按CTRL+S保存。![edit_quota](./image/edit_wq.png)
 
 6，执行以下命令，查看工作空间详情，配额已经改变。
 
 ```
 $ kubectl describe ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 ```
-![图片](https://uploader.shimo.im/f/0ETsXAntTpg8pedH.png!thumbnail)
+![change_wq](./image/change_wq.png)
 
 # 对命名空间进行扩减容（改变命名空间的配额）
 ## 前提条件
@@ -410,7 +412,7 @@ $ kubectl describe ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 
 2，输入输入“用户名”、“密码”，单击登录。
 
-3，点击界面左上角的菜单按钮，点击Platform Management->Namespaces。进入Namespace管理页面。
+3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。进入Namespace管理页面。
 
 4，在Namespace列表中，找到需要变更配额的Namespace，在右侧Operation栏位点击，选择Scale，进入变更配额页面。
 
@@ -424,8 +426,6 @@ $ kubectl describe ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 
 ## **通过CLI执行**
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
-
-![图片](https://uploader.shimo.im/f/Z2BHVtOJvBgFM7oL.png!thumbnail)
 
 2，执行以下命名，找到需要扩/减容的命名空间，并查看命名空间详情，可以看到当前的配额名称。
 
@@ -450,7 +450,7 @@ $ kubectl describe nq {namespacequotaName}
 ```
 $ kubectl edit ns {namespaceName}
 ```
-5，改变metadata->labels->namespacequota字段，设置为需要给命名空间配置的配额名称（当quota名称为数字时，需要加上双引号，例如："111"）。按CTRL+S保存。![图片](https://uploader.shimo.im/f/KLlngYSH0YQ9PM2h.png!thumbnail)
+5，改变metadata->labels->namespacequota字段，设置为需要给命名空间配置的配额名称（当quota名称为数字时，需要加上双引号，例如："111"）。按CTRL+S保存。![change_nq](./image/change_nq.png)
 
 6，执行以下命令，查看命名空间详情，配额已经改变。
 
@@ -536,7 +536,7 @@ $ kubectl describe ns {namespaceName}
 $ helm install . --name dashbord --namespace dashbord
 ```
 在部署完毕后，MP 4.0会自动给应用的每个Pod中加入5个环境变量，示例如下：
-![图片](https://uploader.shimo.im/f/HXYHLFlWTxciXojS.png!thumbnail)
+![app](./image/app_5.png)
 
 * datacenter：应用所在的datacenter名称
 * cluster：应用所在的集群名称
@@ -549,6 +549,31 @@ Labels:       name=rx-test1
 ```
 * namespace：应用所在的namespace Name。
 * appID：应用的appID。由MP4.0生成，作为唯一标识。
+
+# 查看工作负载
+
+## 查看工作负载
+
+1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
+
+2，输入输入“用户名”、“密码”，单击登录。
+
+3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。可以看见Namespace列表。
+
+4，选择期望查看工作负载的Namespace，点击进入Namespace页面。
+
+5，namespace页面左侧菜单选择workload，即可以看见工作负载列表。
+
+## 查看工作负载的路由
+
+进入在workload页面，workload列表中的URL_Address列即列出了workload的路由。
+
+## 查看工作负载日志
+
+1，进入在workload页面，选中需要查看日志的workload。
+
+2，在页面下方弹出的子页面上，选择需要查看日志的Pod，即可以看到Pod的日志。
+
 ## 查看部署的应用
 
 ### 通过Managent Portal界面查看
@@ -606,9 +631,16 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 ## 权限说明
 目前针对用户，MP 4.0提供的以下几种权限的用户：
 
-* cluster owner：
-* workspace owner：
-* namespace developer：
+资源权限：
+
+* cluster owner
+* workspace owner
+* namespace developer
+
+订阅号权限：
+
+* 订阅号 Admin
+* 订阅号 User
 
 针对运维，MP 4.0提供以下几种权限：
 
