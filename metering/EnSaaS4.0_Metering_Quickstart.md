@@ -3,7 +3,7 @@
 
 
 ## 1.1 MA用量發佈格式與Routing Key
-
+Exchange： ensaas
 Routing Key：  production.[pn].usages，其中[pn]為service的料號
 
 
