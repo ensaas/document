@@ -141,7 +141,7 @@ Service Broker 一方面向服務使用者提供資源調用的方法，讓用�
 ```
 | METHOD | URL | 用途 | 詳細內容說明 |
 | --- | ----------- | --- | --- |
-| PUT | /v2/service_instances/{instances_id} | 訂閱服務  | 通知資源池做個準備的動作，準備一個可以提供給用戶使用的空間，以 DB 服務為範例，這支 API 被成功觸發的時候，會去資源池建立出一個 database，準備提供給需要綁定的用戶使用 |
+| PUT | /v2/service_instances/{instances_id} | 訂閱服務  | 通知資源池做個準備的動作，準備一個可以提供給用戶使用的空間，以 DB 服務為範例，這支 API 被成功觸發的時候，會去資源池建立出一個 database，準備提供給需要綁定的用戶使用，其傳入值有service_id、plan_id、org_guid和space_guid，其中org_guid和space_guid位於k8s上時會帶入subscription_id |
 | DELETE | /v2/service_instances/{instances_id} | 刪除服務 | 通知資源池不再使用這資源，以DB服務為範例，這時可以把訂閱時創建的database刪除 |
 | PUT | /v2/service_instances/{instances_id}/service_bindings/{binding_id} | 建立綁定 | 綁定的動作通常被用來讓用戶向Service broker獲取連線資訊，以 DB 服務為範例，這時會新增一位使用者並賦予他操作訂閱時的 database 權限，回傳訊息必須包含 credentials 的物件(即使為空值) |
 | DELETE | /v2/service_instances/{instances_id}/service_bindings/{binding_id} | 刪除綁定 | 刪除綁定的動作通常被用於暫停使用的功能，需要保留再次觸發綁定功能後可以進行重新綁定，其本身訂閱的資訊未刪除，以 DB 服務為範例，這時會將用戶登入權限移除，但是 database 狀態仍舊維持一樣，沒有釋放資源 |
