@@ -5,7 +5,7 @@
 
 通过pipeline部署Service总共分为以下几步：
 
-1.参数介绍
+1. 参数介绍
 ----------
 - git_credential：git凭证
 - Serviceinfo：包括servicename、plan、secret、version。数据格式为servicename:serviceplan:servicesecretname(:chartversion)，若chartversion为空，则默认部署最新版本
@@ -246,7 +246,7 @@
 			sh 'cat postgres.json'						
 		}	
 
-5. 导入datasource、dashboard、srpframe
+- 导入datasource、dashboard、srpframe
 	
 		dir("importgrafana")
 		{
