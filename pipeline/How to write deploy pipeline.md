@@ -99,7 +99,7 @@
 			}
 		}
 
-（2）依赖的common apps阶段
+（2）依赖的common apps部署阶段
 
 - 并发部署依赖的common apps
  
