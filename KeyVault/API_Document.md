@@ -1,94 +1,130 @@
-# Subscribe keyvault 
-
-订阅keyvault
+# Get servcie information
+获取服务信息
 
 | Method | Path                                                        |
 | ---- | ----|
-| POST   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}     |
-
-
-### Parameters
----
-
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号id
-* <font color=Blue>serviceInstanceName</font> (string: required) - Service instance名称，同一个订阅号下，不允许同名的service instanc名称
-
-
+| GET   | /v2/catalog     |
 
 ### Sample Request
 ---
 
 ```
 $ curl \
-    --header "Authorization: Bearer .... \
-    --request POST \
-    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1
+    --header "X-Broker-API-Version: 2.14" \
+    --request GET \
+    http://username:password@keyvault-url/v2/catalog
 ```
 
 ### Sample Response
 ---
 ```
-{
-  "reason": "success",
-  "message": "OK",
-  "code": 200
+{  
+  "id": "keyvault-id",  //全平台唯一服務ID
+  "name": "keyvault",  //服務名稱
+  "description": "this service is keyvault", //服務描述
+  "tags": [ //標籤
+    "service-keyvault" //標籤內容
+  ],
+  "bindable": false, //有沒有綁定的功能 (必填)
+  "plans": [ //提供的計劃列表
+    {
+      "id": "keyvault-plan-id",  //全名台唯一計劃ID
+      "name": "standard",  //計劃名稱
+      "description": "this plan is standard" //計劃描述
+    }
+  ]
 }
 
 ```
-# Unsubscribe keyvault 
 
-用户退订keyvault
+
+# Subscribe keyvault service
+订阅keyvault服务
+
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}       |
+| PUT   | /v2/service_instances/{instances_id}     |
 
 
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号id
-* <font color=Blue>serviceInstanceName</font> (string: required) - Service instance名称
+
+
+### Sample Payload
+---
+```
+{
+  "service_id": "keyvault-id",
+  "plan_id": "keyvault-plan-id", 
+  "organization_guid": "subscriptionId",
+  "space_guid": "subscriptionId"  
+}
+```
 
 ### Sample Request
 ---
 
 ```
+ 
 $ curl \
-    --header "Authorization: Bearer .... \
-    --request DELETE \
-	http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1 
+    --header "X-Broker-API-Version: 2.14" \
+	--header "Content-Type: application/json" \
+	--data @payload.json \  
+    --request PUT \
+    http://username:password@keyvault-url/v2/service_instances/instance-1  
 ```
 
 ### Sample Response
 ---
 ```
 {
-  "reason": "success",
-  "message": "OK",
-  "code": 200
+  "dashboard_url": "http://keyvault-dashboard.example.com/9189kdfsk0vfnku" 
 }
 
 ```
-
-# Get all service instances 
-
-获取某个订阅号下的所有service instances
+# Unsubscribe keyvault service
+退订keyvault服务
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /v1/subscriptions/{subscriptionId}/serviceInstances      |
+| DELETE   | /v2/service_instances/{instances_id}      |
 
-### Parameters
----
 
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号id
 
 ### Sample Request
 ---
 
+```
+$ curl \  
+  --header "X-Broker-API-Version: 2.14"
+  --request DELETE \
+  http://username:password@keyvault-url/v2/service_instances/:instance_id?service_id=keyvault-id&plan_id=keyvault-plan-id
+
+```
+
+### Sample Response
+---
+```
+{
+  "operation": "task_10"
+}
+
+```
+
+# Get all servcie instances under a subscription id
+获取某个订阅号下所有的service instances
+
+| Method | Path                                                        |
+| ---- | ----|
+| GET   | /v2/subscriptions/{subscription_id}/service_instances      |
+
+
+### Sample Request
+---
 ```
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \    
-    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances
+    http://keyvault-url/v2/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/service_instances
 ```
 
 ### Sample Response
@@ -109,65 +145,21 @@ $ curl \
 }
 
 ```
-# Get one service instances 
 
-获取某个service instances
-
-| Method | Path                                                        |
-| ---- | ----|
-| GET   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}     |
-
-### Parameters
----
-
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号id
-* <font color=Blue>serviceInstanceName</font> (string: required) - Service instance名称
-
-### Sample Request
----
-
-```
-$ curl \
-    --header "Authorization: Bearer .... \
-    --request GET \    
-    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1
-```
-
-### Sample Response
----
-```
-{
-  "request_id": "6071835e-f70c-6b8a-081e-8b54bfad7f67",
-  "lease_id": "",
-  "lease_duration": 0,
-  "renewable": false,
-  "data": {
-    "keys": [
-      "path-1",
-      "path-2"
-    ]
-  },
-  "warnings": null
-}
-
-```
 # Create Secret
 
-添加secret
-
-
 | Method | Path                                                        |
 | ---- | ----|
-| POST   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}/path/{path}                               |
+| POST   | /v2/subscriptions/{subscription_id}/service_instances/{instance_id}/path/{path}                               |
 
 
 ### Parameters
 ---
 
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号的Id
-* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instance的名称
+* <font color=Blue>subscription_id</font> (string: required) - 订阅号的Id
+* <font color=Blue>instance_id</font> (Map: required) - Service instance的Id
 * <font color=Blue>path</font> (Map: required) - Service instance下path的名称
-* <font color=Blue>data</font> (Map: required) - 需要存入的secret的key，value值，key值不可重复
+* <font color=Blue>data</font> (Map: required) - 需要存入的secret的key，value之，key值不可重复
 
 ### Sample Payload
 ---
@@ -188,7 +180,7 @@ $ curl \
     --header "Authorization: Bearer .... \
     --request POST \
     --data @payload.json \   
-	http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1/path/path-1  
+	http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/instances_id/instance-1/path/path-1  
 ```
 
 ### Sample Response
@@ -217,13 +209,13 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}/path/{path}                                |
+| GET   | /v2/subscriptions/{subscription_id}/service_instances/{instance_id}/path/{path}                                |
 
 ### Parameters
 ---
 
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号的Id
-* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instance的名称
+* <font color=Blue>subscription_id</font> (string: required) - 订阅号的Id
+* <font color=Blue>instance_id</font> (Map: required) - Service instance的Id
 * <font color=Blue>path</font> (Map: required) - Service instance下path的名称
 
 ### Sample Request
@@ -233,7 +225,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \  
-    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1/path/path-1  
+    http://keyvault-url/v2/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/service_instances/instance-1/path/path-1  
 ```
 
 ### Sample Response
@@ -267,12 +259,12 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /v1/subscriptions/{subscriptionId}/serviceInstances/{serviceInstanceName}/path/{path}                                 |
+| DELETE   | /v2/subscriptions/{subscription_id}/service_instances/{instance_id}/path/{path}                                 |
 ### Parameters
 ---
 
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号的Id
-* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instance的名称
+* <font color=Blue>subscription_id</font> (string: required) - 订阅号的Id
+* <font color=Blue>instance_id</font> (Map: required) - Service instance的Id
 * <font color=Blue>path</font> (Map: required) - Service instance下path的名称
 
 ### Sample Request
@@ -282,7 +274,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \  
-    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1/path/path-1
+    http://keyvault-url/v2/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/service_instances/instance-1/path/path-1
 ```
 # Inject sidecar to deployment
 
@@ -290,16 +282,16 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| PUT   | /v1/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                                |
+| PUT   | /v2/clusters/{cluster_name}/namespaces/{namespace_name}/deployments/{deployment_name}                                |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
-* <font color=Blue>deploymentName</font> (string: required) - deployment的名称
-* <font color=Blue>subscriptionId</font> (string: required) - 订阅号的Id
-* <font color=Blue>serviceInstanceName</font> (Map: required) - Service instance的名称
+* <font color=Blue>cluster_name</font> (string: required) - cluster的名称
+* <font color=Blue>namespace_name</font> (string: required) - namespace的名称
+* <font color=Blue>deployment_name</font> (string: required) - deployment的名称
+* <font color=Blue>subscription_id</font> (string: required) - 订阅号的Id
+* <font color=Blue>instance_id</font> (Map: required) - Service instance的Id
 * <font color=Blue>path</font> (string: required) - path的名称
 * <font color=Blue>keys</font> ([]string: optional) - secret中key的名称
 
@@ -308,8 +300,8 @@ $ curl \
 ---
 ```
 {
-  "subscriptionId": "d1ef2306-33d9-4616-967d-eedee837661f",
-  "serviceInstanceName": "service-instance-1",
+  "subscription_id": "d1ef2306-33d9-4616-967d-eedee837661f",
+  "instance_id": "instance-1",
   [
 	  {
 		"keys": ["key1", "key2"],
@@ -332,7 +324,7 @@ $ curl \
     --header "Authorization: Bearer .... \
     --request PUT \
     --data @payload.json \
-    http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/serviceInstances/service-instance-1
+    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1
 ```
 
 ### Sample Response
@@ -352,14 +344,14 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| DELETE   | /v1/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
+| DELETE   | /v2/clusters/{cluster_name}/namespaces/{namespace_name}/deployments/{deployment_name}                               |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
-* <font color=Blue>deploymentName</font> (string: required) - deployment的名称
+* <font color=Blue>cluster_name</font> (string: required) - cluster的名称
+* <font color=Blue>namespace_name</font> (string: required) - namespace的名称
+* <font color=Blue>deployment_name</font> (string: required) - deployment的名称
 
 
 ### Sample Request
@@ -369,7 +361,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \   
-    http://127.0.0.1:8200/v1/cluster/c-1/namespace/ns-1/deployment/dm-1
+    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1
 ```
 
 ### Sample Response
@@ -390,14 +382,14 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /v1/cluster/{clusterName}/namespace/{namespaceName}/deployment/{deploymentName}                               |
+| GET   | /v1/clusters/{cluster_name}/namespaces/{namespace_name}/deployments/{deployment_name}                               |
 
 
 ### Parameters
 ---
-* <font color=Blue>clusterName</font> (string: required) - cluster的名称
-* <font color=Blue>namespaceName</font> (string: required) - namespace的名称
-* <font color=Blue>deploymentName</font> (string: required) - deployment的名称
+* <font color=Blue>cluster_name</font> (string: required) - cluster的名称
+* <font color=Blue>namespace_name</font> (string: required) - namespace的名称
+* <font color=Blue>deployment_name</font> (string: required) - deployment的名称
 
 
 ### Sample Request
@@ -407,7 +399,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \
-    http://127.0.0.1:8200/v1/cluster/c-1/namespace/ns-1/deployment/dm-1
+    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1
 ```
 
 ### Sample Response
