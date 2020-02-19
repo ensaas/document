@@ -67,8 +67,7 @@ $ curl \
  
 $ curl \
     --header "X-Broker-API-Version: 2.14" \
-	--header "Content-Type: application/json" \
-	--data @payload.json \  
+    --data @payload.json \  
     --request PUT \
     http://username:password@keyvault-url/v2/service_instances/instance-1  
 ```
@@ -77,7 +76,7 @@ $ curl \
 ---
 ```
 {
-  "dashboard_url": "http://keyvault-dashboard.example.com/9189kdfsk0vfnku" 
+  "dashboard_url": "http://keyvault-dashboard.example.com" 
 }
 
 ```
@@ -97,7 +96,7 @@ $ curl \
 $ curl \  
   --header "X-Broker-API-Version: 2.14"
   --request DELETE \
-  http://username:password@keyvault-url/v2/service_instances/:instance_id?service_id=keyvault-id&plan_id=keyvault-plan-id
+  http://username:password@keyvault-url/v2/service_instances/instance_1?service_id=keyvault-id&plan_id=keyvault-plan-id
 
 ```
 
@@ -105,7 +104,9 @@ $ curl \
 ---
 ```
 {
-  "operation": "task_10"
+  "reason": "success",
+  "message": "OK",
+  "code": 200
 }
 
 ```
@@ -180,7 +181,7 @@ $ curl \
     --header "Authorization: Bearer .... \
     --request POST \
     --data @payload.json \   
-	http://127.0.0.1:8200/v1/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/instances_id/instance-1/path/path-1  
+    http://keyvault-url/v/subscriptions/d1ef2306-33d9-4616-967d-eedee837661f/service_instances/instance-1/path/path-1  
 ```
 
 ### Sample Response
@@ -382,7 +383,7 @@ $ curl \
 
 | Method | Path                                                        |
 | ---- | ----|
-| GET   | /v1/clusters/{cluster_name}/namespaces/{namespace_name}/deployments/{deployment_name}                               |
+| GET   | /v2/clusters/{cluster_name}/namespaces/{namespace_name}/deployments/{deployment_name}                               |
 
 
 ### Parameters
