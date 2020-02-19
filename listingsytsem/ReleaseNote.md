@@ -1,6 +1,6 @@
-##ListingSystem4.0 ReleaseNote
+## ListingSystem4.0 ReleaseNote
 
-###version：v-1.0.0.8
+### version：v-1.0.0.8
 
 #### NewFeature
 
