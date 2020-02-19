@@ -314,6 +314,7 @@ $ curl \
 * <font color=Blue>cluster_name</font> (string: required) - cluster的名称
 * <font color=Blue>namespace_name</font> (string: required) - namespace的名称
 * <font color=Blue>deployment_name</font> (string: required) - deployment的名称
+* <font color=Blue>instance_id</font> (Map: required) - Service instance的Id
 
 
 ### Sample Request
@@ -323,7 +324,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \   
-    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1
+    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1?instance_id=instance-1
 ```
 
 ### Sample Response
