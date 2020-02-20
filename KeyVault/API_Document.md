@@ -262,19 +262,18 @@ $ curl \
 ### Sample Payload
 ---
 ```
-{ 
-  "instance_id": "instance-1",
-  [
-	  {
-		"keys": ["key1", "key2"],
-		"path": "nginx-test"
-	  },
-	  {
-		"keys": ["key1"],
-		"path": "nginx-test-1"
-	  }
-  ]
-}
+
+[
+  {
+	"keys": ["key1", "key2"],
+	"path": "nginx-test"
+  },
+  {
+	"keys": ["key1"],
+	"path": "nginx-test-1"
+  }
+]
+
 
 ```
 
@@ -286,7 +285,7 @@ $ curl \
     --header "Authorization: Bearer .... \
     --request PUT \
     --data @payload.json \
-    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1
+    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1?instances_id=instance-id-1
 ```
 
 ### Sample Response
@@ -324,7 +323,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request DELETE \   
-    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1?instance_id=instance-1
+    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1?instances_id=instance-1
 ```
 
 ### Sample Response
@@ -362,7 +361,7 @@ $ curl \
 $ curl \
     --header "Authorization: Bearer .... \
     --request GET \
-    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1
+    http://keyvault-url/v2/clusters/c-1/namespaces/ns-1/deployments/dm-1?instances_id=instance-1
 ```
 
 ### Sample Response
