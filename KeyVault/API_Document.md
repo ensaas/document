@@ -10,9 +10,9 @@
 
 ```
 $ curl \
-    --header "X-Broker-API-Version: 2.14" \
+    --header "authorization: Basic YXhtbThPbz****" \
     --request GET \
-    http://username:password@keyvault-url/v2/catalog
+    http://keyvault-url/v2/catalog
 ```
 
 ### Sample Response
@@ -66,10 +66,10 @@ $ curl \
 ```
  
 $ curl \
-    --header "X-Broker-API-Version: 2.14" \
+    --header "authorization: Basic YXhtbThPbz****" \
     --data @payload.json \  
     --request PUT \
-    http://username:password@keyvault-url/v2/service_instances/instance-1  
+    http://keyvault-url/v2/service_instances/instance-1  
 ```
 
 ### Sample Response
@@ -94,9 +94,9 @@ $ curl \
 
 ```
 $ curl \  
-  --header "X-Broker-API-Version: 2.14"
+  --header "authorization: Basic YXhtbThPbz****" \
   --request DELETE \
-  http://username:password@keyvault-url/v2/service_instances/instance_1?service_id=keyvault-id&plan_id=keyvault-plan-id
+  http://keyvault-url/v2/service_instances/instance_1?service_id=keyvault-id&plan_id=keyvault-plan-id
 
 ```
 
