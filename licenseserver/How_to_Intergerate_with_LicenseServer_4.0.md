@@ -70,7 +70,7 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 }
 ```
 
-参数说明如下：
+返回参数说明如下：
 
 | Name               | Value                                                     |
 | ------------------ | --------------------------------------------------------- |
@@ -130,6 +130,7 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
     "resources":[
         {
             "id": "<string>",
+            "pn":"<string>",
             "subscriptionId": "<string>",
             "isValidTransaction": <bool>,
             "number": <integer>,
@@ -142,12 +143,13 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
 }
 ```
 
-参数说明如下：
+返回参数说明如下：
 
 | Name               | Value                                                     |
 | ------------------ | --------------------------------------------------------- |
 | total | 查询到的license总数 |
 | id                 | 服务实例id，即serviceInstanceId                           |
+| pn | 服务上架时提供的服务料号，即PN |
 | subscriptionId     | 订阅号id                                                  |
 | isValidTransaction | 用户订阅状态，true=有效，false=无效，若为无效时，激活失败 |
 | number             | 订阅的料号数量，即pnQuantity                              |
