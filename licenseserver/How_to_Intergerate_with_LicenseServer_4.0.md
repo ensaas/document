@@ -19,14 +19,17 @@ Step4: 服务实例按照规则生成authcode，并与从License Server获取到
 
 
 ## 激活API
+**Swagger Url**
 
-当APP需要验证激活时，可调用License Server提供的Api接口获取license info信息进行验证，License Server提供的接口及返回参数说明如下：
+http://api-license-master.es.wise-paas.cn/apidoc/
 
 **Host**
 
 ```
-api.license.master.internal
+api.license.ensaas.en.internal
 ```
+
+1.当APP需要验证激活时，可调用License Server提供的Api接口获取license info信息进行验证，License Server提供的接口及返回参数说明如下：
 
 **Method**
 
@@ -76,7 +79,7 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 | isValidTransaction | 用户订阅状态，true=有效，false=无效，若为无效时，激活失败 |
 | number             | 订阅的料号数量，即pnQuantity                              |
 | authcode           | 激活码                                                    |
-| datacenterCode           | 数据中心编号，如ES，JE，SA，HZ，BJ                                   |
+| datacenterCode           | 数据中心编号，如es，je，sa，hz，bj                     |
 | activeInfo         | 服务上架时自定义的激活信息，保留项                       |
 
 **Example**：
@@ -98,7 +101,85 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
   }
   
   ```
+  
 
+
+
+2.当需要根据serviceName和serviceInstanceId获取该serviceInstanceId下所有license的信息时，License Server提供的接口及返回参数说明如下：
+
+**Method**
+
+```
+GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<string>&pageSize=<string>
+```
+
+参数说明如下：
+
+| Name               | Value                              |
+| ------------------ | ---------------------------------- |
+| serviceName        | 服务上架时提供的服务名称           |
+| serviceInstanceId  | 服务实例id                         |
+| page（可不填）     | 查询结果的第几页，默认是1          |
+| pageSize（可不填） | 查询结果每页显示的结果数，默认是10 |
+
+返回参数json格式如下：
+
+```
+{
+    "total": <integer>,
+    "resources":[
+        {
+            "id": "<string>",
+            "subscriptionId": "<string>",
+            "isValidTransaction": <bool>,
+            "number": <integer>,
+            "authcode": "<string>",
+            "datacenterCode": "<string>"，
+            "activeInfo": "<string>"
+        },
+        ...
+    ]
+}
+```
+
+参数说明如下：
+
+| Name               | Value                                                     |
+| ------------------ | --------------------------------------------------------- |
+| total | 查询到的license总数 |
+| id                 | 服务实例id，即serviceInstanceId                           |
+| subscriptionId     | 订阅号id                                                  |
+| isValidTransaction | 用户订阅状态，true=有效，false=无效，若为无效时，激活失败 |
+| number             | 订阅的料号数量，即pnQuantity                              |
+| authcode           | 激活码                                                    |
+| datacenterCode           | 数据中心编号，如es，je，sa，hz，bj                         |
+| activeInfo         | 服务上架时自定义的激活信息，保留项                       |
+
+**Example**：
+
+* Request Example:
+  http://api-license-master.es.wise-paas.cn/v1/api/serviceName/dashboard/serviceInstanceId/slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada?page=1&pageSize=100
+
+* Response Example:
+
+  ```
+  {
+  	"total":1,
+      "resources":[
+          {
+              "id":"slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada",
+              "pn":"9806WPDASH",
+              "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
+              "datacenterCode":"es",
+              "isValidTransaction":true,
+              "number":1,
+              "authcode":"a7d7-7d48-0001",
+              "activeInfo":""
+          }
+      ]
+  }
+  
+  ```
 
 
 ## AuthCode生成规则
@@ -203,5 +284,5 @@ func lpad(str string, totallen int, char byte) string {
 | authcode                 | 激活码                             |
 | subscriptionId           | 订阅号id                           |
 | number                   | 即pnQuantity，服务料号订阅数量     |
-| datacenterCode           | 数据中心编号，如ES，JE，SA，HZ，BJ |
+| datacenterCode           | 数据中心编号，如es，je，sa，hz，bj |
 
