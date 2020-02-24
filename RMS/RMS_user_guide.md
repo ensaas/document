@@ -84,7 +84,7 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 从下拉框选择想要查看的节点，在下方的曲线图中即可查看到选择节点的资源使用情况。
 
-![](images\node2.png)
+![](images/node2.png)
 
 依次显示了该节点上容器组，CPU使用率，内存使用量，以及文件系统的使用量（即硬盘存储）。
 
