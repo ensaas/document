@@ -55,7 +55,7 @@ MongoDB提供共享型及專屬型服務，服務規格如下，如有需要，�
 
 用戶可選購的規格如下：
 
-| 方案                 | 規格[^1]                          | 擴容選項            |
+| 方案                 | 規格*                          | 擴容選項            |
 | -------------------- | --------------------------------- | ------------------- |
 | Shared               | Storage: 10GB, Operation: 1,000   | X                   |
 | Single Node - Small  | 2 vCPU, 8GB RAM, 128GB SSD Disk   | 最大支持256GB Disk  |
@@ -65,7 +65,7 @@ MongoDB提供共享型及專屬型服務，服務規格如下，如有需要，�
 | 3 Nodes HA - Medium  | 4 vCPU, 16GB RAM, 512GB SSD Disk  | 最大支持1024GB Disk |
 | 3 Nodes HA - Large   | 8 vCPU, 32GB RAM, 1024GB SSD Disk | 最大支持2048GB Disk |
 
-[^1]: 規格可能依站點而有不同，實際規格依各站點公告為主
+*: 規格可能依站點而有不同，實際規格依各站點公告為主
 
 
 ### 步驟二：建立Secret並取得連線憑證 Service Credential
