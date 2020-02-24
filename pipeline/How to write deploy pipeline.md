@@ -127,13 +127,13 @@
  
 		container('jenkins-node-dashboard')
 		{
-			if ("${appdepencysevice}" == "") 
+			if ("${appDepencySevice}" == "") 
 			{
 				echo 'no dependency app service'
 			} 
 			else
 			{
-				appdepencysevice_info_list = appdepencysevice.split(',')
+				appdepencysevice_info_list = appDepencySevice.split(',')
 				if(appdepencysevice_info_list[0]!="" || appdepencysevice_info_list[0]!=null)
 				{
 					def branches = [:]
@@ -155,19 +155,17 @@
 		def Deploydependsrps(appinfo,appname)
 		{
 			build job: "${appname}-Release", parameters: [
-				[$class: 'StringParameterValue', name: 'Serviceinfo', value: "${appinfo}"],
-				[$class: 'StringParameterValue', name: 'DatacenterCode', value: "${DatacenterCode}"],
-				[$class: 'StringParameterValue', name: 'cluster', value: "${cluster}"],
-				[$class: 'StringParameterValue', name: 'Workspaceid', value: "${Workspaceid}"],
-				[$class: 'StringParameterValue', name: 'namespace', value: "${namespace}"],
-				[$class: 'StringParameterValue', name: 'internaldomain', value: "${internaldomain}"],
-				[$class: 'StringParameterValue', name: 'externaldomain', value: "${externaldomain}"],
-				[$class: 'StringParameterValue', name: 'ssourl', value: "${ssourl}"],
-				[$class: 'StringParameterValue', name: 'mpurl', value: "${mpurl}"],
-				[$class: 'StringParameterValue', name: 'routeurl', value: "${routeurl}"],
-				[$class: 'StringParameterValue', name: 'ssotoken', value: "${ssotoken}"],
-				[$class: 'StringParameterValue', name: 'ssousername', value: "${ssousername}"],
-				[$class: 'PasswordParameterValue', name: 'ssopassword', value: "${ssopassword}"]]
+			[$class: 'StringParameterValue', name: 'serviceInfo', value: "${appinfo}"],
+			[$class: 'StringParameterValue', name: 'datacenterCode', value: "${datacenterCode}"],
+			[$class: 'StringParameterValue', name: 'cluster', value: "${cluster}"],
+			[$class: 'StringParameterValue', name: 'workspaceId', value: "${workspaceId}"],
+			[$class: 'StringParameterValue', name: 'namespace', value: "${namespace}"],
+			[$class: 'StringParameterValue', name: 'internalDomain', value: "${internalDomain}"],
+			[$class: 'StringParameterValue', name: 'externalDomain', value: "${externalDomain}"],
+			[$class: 'StringParameterValue', name: 'ssoToken', value: "${ssoToken}"],
+			[$class: 'StringParameterValue', name: 'ssoUsername', value: "${ssoUsername}"],
+			[$class: 'StringParameterValue', name: 'ssoUsername', value: "${repo}"],
+			[$class: 'PasswordParameterValue', name: 'ssoPassword', value: "${ssoPassword}"]]
 		}
 
 （3）主Service部署阶段
@@ -181,7 +179,7 @@
 	
 		echo "====部署或更新helm chart"
 		sh "helm ls -n ${namespace} --kubeconfig kubeconfig.txt"
-		sh "helm upgrade --install ${Releasename} --kubeconfig kubeconfig.txt ${Chartname}/${Chartname} --version ${Chartversion}  --namespace ${namespace} -f ./values.yaml --set database.secretName=${mainservicesecretname} --set url.host=${hosts} --wait"
+		sh "helm upgrade --install ${Releasename} --kubeconfig kubeconfig.txt ${Chartname}/${Chartname} --version ${Chartversion}  --namespace ${namespace} -f ./values.yaml --set database.secretName=${mainservicesecretname},url.host=${hosts} --wait"
 	
 - smoketest（根据deployment info中填写的urlprefix进行smoketest）
 
