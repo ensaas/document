@@ -41,6 +41,11 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 		先定义一个变量获取values.yaml中的url.host参数
 		
 		再修改ingress.hosts[0].host为拼接自定url前缀+平台覆盖url后缀
+     
+     3. **ensaasApps** 
+     
+          部署时，会在此处填入api-sso、api-mg、api-dccs、api-license、api-listingsystem、api-service等服务及ensaas的externalUrl和internalUrl。values.yaml中请按如下格式填写（部署时，会根据所要部署的站点，替换各个key对应的value）：
+	  
 
 * 平台必要参数
 
