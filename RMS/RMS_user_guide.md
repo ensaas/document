@@ -16,9 +16,9 @@ RMS（全称 RealTime Monitor Service）实时监控服务是一款基于prometh
 
 在菜单->Platform management->**Monitor**，进入监控中心，即可看到监控面板。
 
-![](images\mp1.png)
+![](images/mp1.png)
 
-![](images\mp2.png)
+![](images/mp2.png)
 
 不同的权限看到的面板是不同的，下面列出不同权限可看到的面板
 
@@ -30,11 +30,11 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 如您具有clusterowner权限，您看到的面板列表是：
 
-![](images\mp3.png)
+![](images/mp3.png)
 
 如您是workspaceowner和namespacedeveloper权限，您看到的面板列表是：
 
-![](images\mp4.png)
+![](images/mp4.png)
 
 **监控面板页签说明：**
 
@@ -55,24 +55,24 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 查看面板时，可以通过面板右上角的功能键，来切换选择时间范围，刷新等动作。
 
-![](images\mp6.png)
+![](images/mp6.png)
 
 #### 查看集群资源使用情况
 菜单点选physics-resources页，可以看到集群的物理资源使用情况。
 
 首先显示的是集群的cpu，memory，rootfs，pod的使用率实时用量，以及资源的使用量和总量的实时值，帮助用户对目前集群的资源使用情况有个总体的了解。
 
-![](images\physics-resources1.png)
+![](images/physics-resources1.png)
 
 接下来显示的资源用量的曲线图，第一排显示的是集群cpu，memory，rootfs，pod的使用率的曲线图，第二排显示的是网络用量（包括发送和接收的用量），硬盘Inode用量*（包括使用量和总量），硬盘IOPS用量（包括读和写每秒操作数），硬盘吞吐量（包括读和写的数据量）。
 
-![](images\physics-resources2.png)
+![](images/physics-resources2.png)
 
 硬盘Inode用量*：每个文件都必须有一个 inode，用于储存文件的元信息，比如文件的创建者、创建日期，inode 也会消耗硬盘空间，大量的 cache 小文件也容易导致 inode 资源被使用耗尽。并且，有可能发生 inode 已经用光，但是硬盘还未存满的情况，此时就无法在硬盘上创建新文件。而 inode 的监控可以帮助用户知道集群 inode 的使用情况，防止因 inode 耗尽使得集群无法正常工作，提示用户及时清理临时文件。
 
 最后，显示的是按Namespace统计的CPU和Memory使用量排名列表（Top5），可以帮助用户了解目前集群内那些命令空间的使用量较多，以便进一步的排查。
 
-![](images\physics-resources3.png)
+![](images/physics-resources3.png)
 
 #### 查看节点资源使用情况
 
@@ -80,7 +80,7 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 首先，显示的是整体的node资源使用情况列表，依次为节点名称，容器组使用量，容器组使用率，CPU使用量，CPU使用率，memory使用量和memory使用率，硬盘使用量和硬盘使用率。列表可按任意一列进行升序，降序排列，点击列标题即可排序切换，可以帮助管理员快速发现潜在问题或定位某台节点资源不足的情况。
 
-![](images\node1.png)
+![](images/node1.png)
 
 从下拉框选择想要查看的节点，在下方的曲线图中即可查看到选择节点的资源使用情况。
 
@@ -92,15 +92,15 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 *内存分类项详见附录中指标项说明中的第2节。
 
-![](images\node3.png)
+![](images/node3.png)
 
 接下来，显示的是节点CPU平均负载（包含1分钟，5分钟，15分钟，物理CPU核数），以及节点CPU每个内核的使用率。可帮助管理员根据CPU的使用情况快速准确的确认资源是否不足。
 
-![](images\node4.png)
+![](images/node4.png)
 
 最后，依次显示的是网络使用情况（包含每秒接收与发送的数据量），硬盘Inode使用量趋势（含已使用，未使用和总量），磁盘读写吞吐量使用趋势图（读，写以及io的延迟时间），磁盘读写IOPS用量趋势（含每秒读和写的操作数）。
 
-![](images\node5.png)
+![](images/node5.png)
 
 #### 查看工作空间和命名空间的资源使用情况
 
@@ -108,7 +108,7 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 从下拉框中选择需要查看的集群（cluster），工作空间（workspace）和命名空间（namespace），在面板中就可以看到对应的监控指标值。其中，namespace可选ALL（全部）或者单选某一个。
 
-![](images\mp5.png)
+![](images/mp5.png)
 
 首先，显示的是选定工作空间workspace整体的资源使用情况，包括CPU，Memory和Network的资源用量情况。
 
@@ -116,19 +116,19 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 *Network网络用量实时值是发送（TX）和接收（RX）值的和，而趋势曲线图则分别显示了发送（TX）和接收（RX）。
 
-![](images\ws1.png)
+![](images/ws1.png)
 
 接下来，显示的选定的workspace/namespace的资源使用情况列表，依次为命名空间（namespace）名称，命名空间中运行的容器组（pod）数，CPU用量，CPU Requests值，CPU Limits值，以及Memory(RSS)使用量，Memory Requests值和Memory Limits值。列表支持针对某一列指标进行排序，可升序和降序，点击列名即可进行排序和切换升序降序。此列表可清晰直观的看出该工作空间下命名空间使用的资源用量的对比情况，方便进一步排查资源占用的情况。
 
 *CPU的单位均是Core，即核，如0.03 Core即30m，m为千分之一核。
 
-![](images\ws2.png)
+![](images/ws2.png)
 
 最后，显示的是选定namespace下所有pod的资源使用情况，以列表形势呈现，支持排序和分页。使用该列表可以方便的排查，如在上面列表中看到某一个namespace用量很大，可在这个列表中进一步排查到底是那个pod使用过多。
 
 *内存memory显示了usage和rss usage两种，关于两种内存的区别可详见附录中指标项说明中的第2节内存的分类。
 
-![](images\ws3.png)
+![](images/ws3.png)
 
 #### 查看工作负载的资源使用情况
 
@@ -136,19 +136,19 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 支持查看工作负载类型有deployment，statefulset，daemonset。从下拉框中选择需要查看的集群（cluster），工作空间（workspace）和命名空间（namespace），并选择想要查看的工作负载类型（workload_type）以及工作负载名称（workload），即可在面板中看到对应的监控指标值。
 
-![](images\workload4.png)
+![](images/workload4.png)
 
 监控项包括实例运行时间，CPU，Memory，Network，以及工作负载的运行状态值，具体的指标含义详见附录中指标项说明中的第5节。根据工作负载的运行状态值可以直观的判断出当前该实例的健康状况，如Desired Replicas（期望副本数）为1而Available Replicas（可用副本数）为0，两个值不相等，即可判断有pod已经挂掉，运行状态不正常。
 
-![](images\workload1.png)
+![](images/workload1.png)
 
 以列表形式显示工作负载的资源使用情况，依次显示时间，工作负载名称（Workload Name），工作负载类型（Workload Type）,运行中的容器组数（Running Pods），CPU使用量（CPU Usage），CPU Requests，CPU limits，内存使用量（Memory Usage），Memory Requests和Memory Limits。
 
-![](images\workload2.png)
+![](images/workload2.png)
 
 图标显示工作负载的CPU使用量，内存使用量（RSS）和网络IO用量。
 
-![](images\workload3.png)
+![](images/workload3.png)
 
 #### 查看容器组和容器的资源使用情况
 
@@ -156,7 +156,7 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 从下拉框中选择需要查看的集群（cluster），工作空间（workspace）和命名空间（namespace），并选择想要查看的容器组（Pod）和容器（container），即可在面板中看到对应容器组的监控指标值。
 
-![](images\pod3.png)
+![](images/pod3.png)
 
 监控项从容器组（pod）和容器（Container）两个层级分别显示。
 
@@ -168,7 +168,7 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 接下来，是以图表形式显示CPU使用量，内存使用量和网络IO用量，可直观看到用量的变化趋势。
 
-![](images\pod1.png)
+![](images/pod1.png)
 
 下面是以列表显示的容器（container）的资源使用情况，监控的指标项与容器组（pod）的基本相同，增加了对文件系统用量（Rootfs）的监控。下方依次以图表显示CPU使用量（CPU Usage），内存使用量（Memory Usage）和文件系统存储用量（Rootfs Usage）。
 
@@ -176,7 +176,7 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 文件系统存储用量（Rootfs Usage）可观察Container的ephemeral-storage用量。
 
-![](images\pod2.png)
+![](images/pod2.png)
 
 #### 查看外挂磁盘的资源使用情况
 
@@ -184,17 +184,17 @@ namespacedeveloper权限：workspace -> pod ->workload -> persistent-volumes
 
 从下拉框中选择需要查看的集群（cluster），工作空间（workspace）和命名空间（namespace），并选择想要查看的pvc，即可在面板中看到对应pvc的监控指标值。
 
-![](images\pvc3.png)
+![](images/pvc3.png)
 
 首先显示的是该命名空间下外挂磁盘的一个整体使用情况，包括选定命名空间下挂载的外挂磁盘数（Volume Count by Namespace）。以列表形式显示外挂磁盘的信息，包含所在的命名空间名称，pvc的名称，容器组的名称，volume名称，已使用的容量（Used），剩余可用的容量（Available）和总容量（Capacity）。
 
-![](images\pvc1.png)
+![](images/pvc1.png)
 
 下来显示的是volume的详细信息，包含已使用的容量（Used Space），剩余可用的容量（Available Space）和总容量（Capacity Space）。接下来显示的是当前容量的使用率，以及使用量和可用量的曲线趋势图；inode的使用率，以及inode的使用量和可用量的曲线趋势图。
 
 Inode用量*：每个文件都必须有一个 inode，用于储存文件的元信息，比如文件的创建者、创建日期，inode 也会消耗硬盘空间，大量的 cache 小文件也容易导致 inode 资源被使用耗尽。并且，有可能发生 inode 已经用光，但是硬盘还未存满的情况，此时就无法在硬盘上创建新文件。而 inode 的监控可以帮助用户知道集群 inode 的使用情况，防止因 inode 耗尽使得集群无法正常工作，提示用户及时清理临时文件。
 
-![](images\pvc2.png)
+![](images/pvc2.png)
 
 ## 如何接收监控告警
 
