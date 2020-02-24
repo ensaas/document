@@ -8,33 +8,30 @@
 1.	参数介绍
 ----------
 - git_credential：git凭证
-- Serviceinfo：包括servicename、plan、secret、version。数据格式为servicename:serviceplan:servicesecretname(:chartversion)，若chartversion为空，则默认部署最新版本
-- DatacenterCode：数据中心名称
+- serviceInfo：包括servicename、plan、secret、version。数据格式为servicename:serviceplan:servicesecretname(:chartversion)，若chartversion为空，则默认部署最新版本
+- datacenterCode：数据中心名称
 - cluster：集群名称
-- Workspaceid：workspace id
+- workspaceId：workspace id
 - namespace：namespace名称
-- internaldomain：内部domain
-- externaldomain：外部domain
-- appdepencysevice：依赖的common apps信息。数据格式为servicename:serviceplan:servicesecretname(:chartversion)，如果依赖的common apps有多个，则以“，”隔开
+- internalDomain：内部domain
+- externalDomain：外部domain，若输入为空，则会调用router api，根据internalDomain去获取externalDomain
+- appDepencySevice：依赖的common apps信息。数据格式为servicename:serviceplan:servicesecretname(:chartversion)，如果依赖的common apps有多个，则以“，”隔开
 - repo：chart地址
-- harborusername、harborusername：harbor账密，用来获取chart的凭证
-- imageusername、imagepassword：image账密，用来拉取image的凭证。由于目前chart和image都在harbor上，所以使用harbor凭证即可。该字段先保留
-- ssousername、ssopassword：EnSaaS4.0 sso账密
-- ssotoken：ssotoken。和ssousername、ssopassword输入其一即可
-- ssourl：该DatacenterCode对应的ssourl。若要利用sso账密获取ssotoken，则必须输入ssourl
-- mpurl：该DatacenterCode对应的mpurl，用来获取kubeconfig
-- routeurl：EnSaaS route url。若externaldomain为空，则需要输入routeurl，根据internaldomain获取extrnaldomain进行smoketest验证
+- harborUsername、harborPassword：harbor账密，用来获取chart的凭证
+- imageUsername、imagePassword：image账密，用来拉取image的凭证。由于目前chart和image都在harbor上，所以使用harbor凭证即可。该字段先保留
+- ssoUsername、ssoPassword：EnSaaS4.0 sso账密
+- ssoToken：ssotoken。和ssousername、ssopassword输入其一即可
 
 2.	部署流程
 ----------
 （1）准备阶段  
 
-- 根据Serviceinfo获取mainservicename、mainserviceplanname、mainservicesecretname（chartversion）
+- 根据serviceInfo获取mainservicename、mainserviceplanname、mainservicesecretname（chartversion）
 
 		echo "=====获取main servicename、planname、secretname"
-		if("${Serviceinfo}" != "")
+		if("${serviceInfo}" != "")
 		{
-			service_info_list = Serviceinfo.split(':')
+			service_info_list = serviceInfo.split(':')
 			mainservicename = service_info_list[0]
 			mainserviceplanname = service_info_list[1]
 			mainservicesecretname = service_info_list[2] 
@@ -54,21 +51,45 @@
 
 - 获取kubeconfig and deployment info（kubeconfig利用mp api获取，deploymeny info利用listingsystem api获取）
 
-		echo "=====获取kubeconfig and deployment info"
+		echo "=====获取kubeconfig"
 		dir('getconfig')
 		{
+			if ("${datacenterCode}" == "") 
+			{
+				error 'datacenterCode is not exist'
+			} 
+			else
+			{
+				retry(2)
+				{
+					sh "curl 'http://api-listingsystem-master.es.wise-paas.cn/v1/datacenter?datacenterCode=${datacenterCode}' -k > datacenterUrl.json"
+				}
+				if(fileExists("datacenterUrl.json"))
+				{
+					datacenterUrls = readJSON file: "datacenterUrl.json"
+					urls = datacenterUrls["data"][0]["datacenterUrl"]
+					echo "=====获取ssourl、mpurl、routeurl"
+					ssourl=urls['api-sso']['externalUrl']
+					mpurl=urls['api-mp']['externalUrl']
+					routeurl=urls['api-router']['externalUrl']
+				}
+				else
+				{
+					error "Connot get datacenterUrl config"
+				}								
+			}	
 			getdeploymenturl = "http://api-listingsystem-master.es.wise-paas.cn/v1/deployment/${mainservicename}/plan/${mainserviceplanname}?chartVersion=${mainservicechartversion}"
 			echo "${getdeploymenturl}"
-			if ("${ssotoken}" == ""){
-				sh "python3 ../cf_operation/getkubeconfig.py 0 ${ssousername} ${ssopassword} ${DatacenterCode} ${cluster} ${ssourl} ${mpurl}"	
-				sh "python3 ../cf_operation/deploymentjson.py 0 ${ssourl} ${ssousername} ${ssopassword} ${getdeploymenturl}"									
+			if ("${ssoToken}" == ""){
+				sh "python3 ../cf_operation/getkubeconfig.py 0 ${ssoUsername} ${ssoPassword} ${datacenterCode} ${cluster} ${ssourl} ${mpurl}"	
+				sh "python3 ../cf_operation/deploymentjson.py 0 ${ssourl} ${ssoUsername} ${ssoPassword} ${getdeploymenturl}"									
 			}else{
-				sh "python3 ../cf_operation/getkubeconfig.py 1 ${ssotoken} ${DatacenterCode} ${cluster} ${mpurl}"	
-				sh "python3 ../cf_operation/deploymentjson.py 1 ${ssotoken} ${getdeploymenturl}"
+				sh "python3 ../cf_operation/getkubeconfig.py 1 ${ssoToken} ${datacenterCode} ${cluster} ${mpurl}"	
+				sh "python3 ../cf_operation/deploymentjson.py 1 ${ssoToken} ${getdeploymenturl}"
 			}
 			sh "ls"
 			sh "cat kubeconfig.txt"	
-			
+
 			if(fileExists("apollo.json"))
 			{
 				APPS = readJSON file: "apollo.json"
@@ -79,23 +100,24 @@
 			}								
 		}
 
-- 拼接hosts，用于替换values.yaml中url字段对应的value；获取chartname、chartversion；若externaldomain为空，根据internaldomain获取externaldomain
+- 拼接hosts，用于替换values.yaml中url字段对应的value；获取chartname、chartversion；若externalDomain为空，根据internalDomain获取externalDomain
 	
 		//echo "=====获取hosts"
-		hosts = ".${namespace}.${internaldomain}"
+		hosts = ".${namespace}.${internalDomain}"
 		echo "${hosts}"
 		echo "=====获取Chartname、Chartversion"
 		Chartname=APPS['param']['chartname']
 		Chartversion=APPS['param']['version']
+		Values=APPS['values']
 		echo "${Chartname}"
 		//获取externaldomain
 		dir('getexternaldomain')
 		{
-			if("${externaldomain}" == "")
+			if("${externalDomain}" == "")
 			{
-				sh " python3 ../cf_operation/getexternaldomian.py ${routeurl} ${internaldomain}"
-				externaldomain=readFile("externaldomain.txt").trim()
-				echo "${externaldomain}"
+				sh " python3 ../cf_operation/getexternaldomian.py ${routeurl} ${internalDomain}"
+				externalDomain=readFile("externaldomain.txt").trim()
+				echo "${externalDomain}"
 			}
 		}
 
