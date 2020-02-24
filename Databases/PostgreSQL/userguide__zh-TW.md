@@ -41,35 +41,35 @@ PostgreSQL提供共享型及專屬型服務，服務規格如下，如有需要�
 共享型和專屬型服務規格如下：
 
 |                    | 共享型服務              | 專屬型服務                                                |
-|                    | ------------------ | ----------------------- | --------------------------------------------------------- |
-|                    | 建議用途           | 開發和測試使用          | 生產環境使用                                              |
-|                    | RAM                | 共享                    | 8GB ~ 32GB                                                |
-|                    | 存儲空間           | 10GB                    | 100GB ~ 2TB                                               |
-|                    | DB數量             | 1                       | 不限                                                      |
-|                    | 操作限制           | 每5分鐘 1,000次操作次數 | 不限                                                      |
-|                    | 連線數限制         | 100                     | 每個DB各100條連線數，<br />但不得超過各種規格的連線數上限 |
-|                    | 工單支持           | V                       | V                                                         |
-|                    | 資料備分           | V                       | V                                                         |
-|                    | 外網連線           | X                       | V                                                         |
-|                    | 高可用服務等級協議 | X                       | 99.95%                                                    |
-|
-|                    用戶可選購的規格如下：
-|
-|                    | 方案                 | 規格[^1]                          | 擴容選項            |
-|                    | -------------------- | --------------------------------- | ------------------- |
-|                    | Shared               | Storage: 10GB, Operation: 1,000   | X                   |
-|                    | Single Node - Small  | 2 vCPU, 8GB RAM, 128GB SSD Disk   | 最大支持256GB Disk  |
-|                    | Single Node - Medium | 4 vCPU, 16GB RAM, 512GB SSD Disk  | 最大支持1024GB Disk |
-|                    | Single Node - Large  | 8 vCPU, 32GB RAM, 1024GB SSD Disk | 最大支持2048GB Disk |
-|                    | 3 Nodes HA - Small   | 2 vCPU, 8GB RAM, 128GB SSD Disk   | 最大支持256GB Disk  |
-|                    | 3 Nodes HA - Medium  | 4 vCPU, 16GB RAM, 512GB SSD Disk  | 最大支持1024GB Disk |
-|                    | 3 Nodes HA - Large   | 8 vCPU, 32GB RAM, 1024GB SSD Disk | 最大支持2048GB Disk |
-|
-|                    [^1]: 規格可能依站點而有不同，實際規格依各站點公告為主
-|
-|
-|
-|### 步驟二：建立Secret並取得連線憑證 Service Credential
+| ------------------ | ----------------------- | --------------------------------------------------------- |
+| 建議用途           | 開發和測試使用          | 生產環境使用                                              |
+| RAM                | 共享                    | 8GB ~ 32GB                                                |
+| 存儲空間           | 10GB                    | 100GB ~ 2TB                                               |
+| DB數量             | 1                       | 不限                                                      |
+| 操作限制           | 每5分鐘 1,000次操作次數 | 不限                                                      |
+| 連線數限制         | 100                     | 每個DB各100條連線數，<br />但不得超過各種規格的連線數上限 |
+| 工單支持           | V                       | V                                                         |
+| 資料備分           | V                       | V                                                         |
+| 外網連線           | X                       | V                                                         |
+| 高可用服務等級協議 | X                       | 99.95%                                                    |
+
+用戶可選購的規格如下：
+
+| 方案                 | 規格*                          | 擴容選項            |
+| -------------------- | --------------------------------- | ------------------- |
+| Shared               | Storage: 10GB, Operation: 1,000   | X                   |
+| Single Node - Small  | 2 vCPU, 8GB RAM, 128GB SSD Disk   | 最大支持256GB Disk  |
+| Single Node - Medium | 4 vCPU, 16GB RAM, 512GB SSD Disk  | 最大支持1024GB Disk |
+| Single Node - Large  | 8 vCPU, 32GB RAM, 1024GB SSD Disk | 最大支持2048GB Disk |
+| 3 Nodes HA - Small   | 2 vCPU, 8GB RAM, 128GB SSD Disk   | 最大支持256GB Disk  |
+| 3 Nodes HA - Medium  | 4 vCPU, 16GB RAM, 512GB SSD Disk  | 最大支持1024GB Disk |
+| 3 Nodes HA - Large   | 8 vCPU, 32GB RAM, 1024GB SSD Disk | 最大支持2048GB Disk |
+
+*: 規格可能依站點而有不同，實際規格依各站點公告為主
+
+
+
+### 步驟二：建立Secret並取得連線憑證 Service Credential
 ---------------------------------------
 連線至PostgreSQL服務前首先確定您擁有下列資訊：
 
@@ -83,32 +83,32 @@ PostgreSQL提供共享型及專屬型服務，服務規格如下，如有需要�
 
 各站點Service Portal連結如下
 
-| 站點代碼 | 所在地點          | Service Portal連結                             |
-| | -------- | ----------------- | ---------------------------------------------- |
-| | SA       | Azure Singapore   | https://portal-service-ensaas.sa.wise-paas.com |
-| | HZ       | Alibaba  Hangzhou | https://portal-service-ensaas.hz.wise-paas.com |
-| | JE       | Japan East        | https://portal-service-ensaas.jp.wise-paas.com |
-|
-| 建立PostgreSQL的Secret步驟簡述如下，更多建立細節請參考此[Service Portal使用者操作手冊](../../ServicePortal/userguide.md):
-| 1. 登入Service Portal之後選擇您的PostgreSQL服務實例
-| 2. 點選右方操作選項，進入Secret管理頁面
-| 3. 點選 "+" 號，將postgresql的連線憑證以Secret的方式建立到所選的Namespace中
-| 4. 或是點選"檢視"，也可以查看當前建出來的連線憑證
-|
-| 連線憑證是一組包含時間序列資料庫連線位址、連線帳號、連線密碼等資訊的JSON格式文檔，用來驗證使用時間序列資料庫服務對象的身分。
-|
-| ![1582025913841](../uploads/images/PostgreSQL/postgresql_credential.png)
-|
-| * uri：字串型態，mongodb://\<host1\>:\<port1\>,\<host2\>:\<port2\>,\<host3\>:\<port3\>/\<UUID\>
-| * username：字串型態，標準[UUID格式][9]
-| * password：字串型態，由小寫英文字母與數字隨機組成，長度為25字元
-| * host：字串型態，資料庫所在位址，只提供內部網路存取位址，IP格式
-| * port：數值型態，資料庫通訊埠
-| * database：字串型態，標準[UUID格式][9]
-|
-|
-|
-|### 步驟三：將Secret的資訊注入到Kubernetes Pods中
+ 站點代碼 | 所在地點          | Service Portal連結                             |
+ | -------- | ----------------- | ---------------------------------------------- |
+ | SA       | Azure Singapore   | https://portal-service-ensaas.sa.wise-paas.com |
+ | HZ       | Alibaba  Hangzhou | https://portal-service-ensaas.hz.wise-paas.com |
+ | JE       | Japan East        | https://portal-service-ensaas.jp.wise-paas.com |
+
+ 建立PostgreSQL的Secret步驟簡述如下，更多建立細節請參考此[Service Portal使用者操作手冊](../../ServicePortal/userguide.md):
+ 1. 登入Service Portal之後選擇您的PostgreSQL服務實例
+ 2. 點選右方操作選項，進入Secret管理頁面
+ 3. 點選 "+" 號，將postgresql的連線憑證以Secret的方式建立到所選的Namespace中
+ 4. 或是點選"檢視"，也可以查看當前建出來的連線憑證
+
+ 連線憑證是一組包含時間序列資料庫連線位址、連線帳號、連線密碼等資訊的JSON格式文檔，用來驗證使用時間序列資料庫服務對象的身分。
+
+ ![1582025913841](../uploads/images/PostgreSQL/postgresql_credential.png)
+
+ * uri：字串型態，mongodb://\<host1\>:\<port1\>,\<host2\>:\<port2\>,\<host3\>:\<port3\>/\<UUID\>
+ * username：字串型態，標準[UUID格式][9]
+ * password：字串型態，由小寫英文字母與數字隨機組成，長度為25字元
+ * host：字串型態，資料庫所在位址，只提供內部網路存取位址，IP格式
+ * port：數值型態，資料庫通訊埠
+ * database：字串型態，標準[UUID格式][9]
+
+
+
+### 步驟三：將Secret的資訊注入到Kubernetes Pods中
 -------------------------------------------------------------
 
 完成上一步驟在Namespace創建Secret後，可以在namespace裡看到一個同名的Secret。查看Secret內容後，會看到一個Key值為ENSAAS_SERVICES的內容，從kubctl指令看到的是base64編碼後的內容，可將其base64解碼後，或是注入到環境變數後取得原本得Credential內容。
