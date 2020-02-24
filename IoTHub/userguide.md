@@ -2,15 +2,15 @@
 An IoT Hub is a message broker service that enables message delivery and exchange between an IoT device and a cloud application service. For example, the IoT Hub sends the data collected via an IoT device or sensor to the WISE-PaaS cloud platform, where the data can be visualized, analyzed, or processed for other value-added applications. The WISE-PaaS cloud platform can deliver administrative messages via the IoT Hub to IoT devices in the field.
 
 |                |Kafka                          |RabbitMQ                     |
-|                |----------------|-------------------------------|-----------------------------|
-|                |Architectures|Kafka combines messaging queue and publish subscribe approaches.|RabbitMQ uses a messaging queue.|
-|                |Multiple consumers|Multiple consumers can subscribe to the same topic|Multiple consumers cannot all receive the same message.|
-|                |Replication|Topics are automatically replicated, but the user can manually configure topics to not be replicated.|Messages are not automatically replicated, but the user can manually configure them to be replicated.|
-|                |Protocols|Kafka use a binary protocol over TCP|AMQP(s)(Advanced Messaging Queue Protocol)<br>MQTT(s)<br>MQTT over WebSocket<br>STOMP<br>CoAP|
-|                |Charge model|PAYG(Pay as you go)<br>Monthly charge by partition usage|Monthly charge by plan
-|                |Shared plan limitation|Max 50MB per partition<br>Max 28 days retention|3 Million Messages per month<br>Max 100 concurrent connections<br>Max 100 queues<br>Max 2000 queued messages<br>Max 2M queued bytes<br>Max 1 day message TTL (time-to-live)<br>Max idle queue time 28 days|
-|
-|## Kafka  
+|----------------|-------------------------------|-----------------------------|
+|Architectures|Kafka combines messaging queue and publish subscribe approaches.|RabbitMQ uses a messaging queue.|
+|Multiple consumers|Multiple consumers can subscribe to the same topic|Multiple consumers cannot all receive the same message.|
+|Replication|Topics are automatically replicated, but the user can manually configure topics to not be replicated.|Messages are not automatically replicated, but the user can manually configure them to be replicated.|
+|Protocols|Kafka use a binary protocol over TCP|AMQP(s)(Advanced Messaging Queue Protocol)<br>MQTT(s)<br>MQTT over WebSocket<br>STOMP<br>CoAP|
+|Charge model|PAYG(Pay as you go)<br>Monthly charge by partition usage|Monthly charge by plan
+|Shared plan limitation|Max 50MB per partition<br>Max 28 days retention|3 Million Messages per month<br>Max 100 concurrent connections<br>Max 100 queues<br>Max 2000 queued messages<br>Max 2M queued bytes<br>Max 1 day message TTL (time-to-live)<br>Max idle queue time 28 days|
+
+## Kafka  
 > ### Introduction Of Kafka
 >
 > #### Kafka has been designed and prominently marketed towards stream processing scenarios. In addition to that, Kafka has recently added Kafka Streams which positions itself as an alternative to streaming platforms such as Spark, Flink, Beam/Google Cloud Data Flow and Spring Cloud Data Flow. Kafka has use cases like Website Activity Tracking, Metrics, Log Aggregation, Stream Processing, Event Sourcing and Commit logs
