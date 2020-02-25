@@ -160,13 +160,13 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
 **Example**：
 
 * Request Example:
-  http://api-license-master.es.wise-paas.cn/v1/api/serviceName/dashboard/serviceInstanceId/slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada?page=1&pageSize=100
+  http://api-license-master.es.wise-paas.cn/v1/api/serviceName/scada/serviceInstanceId/slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada?page=1&pageSize=100
 
 * Response Example:
 
   ```
   {
-  	"total":1,
+      "total":3,
       "resources":[
           {
               "id":"slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada",
@@ -176,6 +176,26 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
               "isValidTransaction":true,
               "number":1,
               "authcode":"a7d7-7d48-0001",
+              "activeInfo":""
+          },
+          {
+              "id":"slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada",
+              "pn":"9806WPSC02",
+              "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
+              "datacenterCode":"es",
+              "isValidTransaction":true,
+              "number":1,
+              "authcode":"c3b5-e711-0001",
+              "activeInfo":""
+          },
+          {
+              "id":"slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada",
+              "pn":"9806WAC010",
+              "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
+              "datacenterCode":"es",
+              "isValidTransaction":true,
+              "number":1,
+              "authcode":"e4a3-4a04-0001",
               "activeInfo":""
           }
       ]
