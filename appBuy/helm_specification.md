@@ -45,7 +45,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
      3. **global.ensaasApps** 
      
           部署时，会在此处填入api-sso、api-mg、api-dccs、api-license、api-listingsystem、api-service等服务及ensaas的externalUrl和internalUrl。values.yaml中请按如下格式填写（部署时，会根据所要部署的站点，替换各个key对应的value）：  
-	  ![图片](images/globalensaasurlimage.png)
+	  ![图片](images/ensaasurlimage.png)
 
 * 平台必要参数
 
