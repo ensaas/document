@@ -14,7 +14,13 @@ Step2: License Server拿到订单信息后，解码licenseKey，获取PN，servi
 
 Step3:  服务实例ServiceInstance通过PN和serviceInstanceId向License Server 获取authcode进行激活。License Server查询到license信息后通过response向服务实例返回subscriptionId，authcode等信息，若未查询到license信息则会通过API向Catalog获取用户订阅信息，若获取到订阅信息会立即解码licensekey并生成authcode并通过response返回给服务实例。
 
-Step4: 服务实例按照规则生成authcode，并与从License Server获取到的authcode进行比对，若一致则激活，反之，不一致则激活失败。
+Step4: 从license server获取authcode和isValidTransaction进行对比判断，若符合激活条件则激活，反之，激活失败。
+
+服务激活需要满足两个条件：
+
+1.isValidTransaction=True；此栏位代表用户订阅状态，true=有效，false=无效，若为无效时，激活失败。
+
+2.服务实例按照规则生成authcode，并与从License Server获取到的authcode进行比对，authcode一致。
 
 
 
