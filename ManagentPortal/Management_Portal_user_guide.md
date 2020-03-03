@@ -78,14 +78,14 @@ kind: Workspace
 metadata:
   name: 0875640d-a146-461c-bdbf-7bbd4de2de84
   labels:
-    name: rx-test1
+    name: rxtest1
 spec:
   description: 'workspace'
   workspacequota: test-wq
 ```
 其中：
 * metadata中的name必须符合guid的格式。需要用户填入，可以通过[在线工具](http://www.uuid.online/)生成。
-* metadata->label中的name为UI上展示的workspace名称。label的命名规范：支持英文大小写以及数字，长度小于16。
+* metadata->label中的name为UI上展示的workspace名称。label的命名规范：支持英文大小写以及数字，长度小于8。
 * metadata->name如果与集群中已存在的workspace的metadata->name相同，则表示对已存在的workspace进行编辑。
 * spec->workspacequota表示workspace的配额。如果需要查看有哪些workspacequota以及workspacequota的详情，请参考步骤4.
 
@@ -159,7 +159,7 @@ metadata:
     namespacequota: nsquota-1000m1core
 ```
 其中：
-* metadata中的name为namespace的名称。命名规范：Only a-z, 0-9 . and - allowed。
+* metadata中的name为namespace的名称。命名规范：Only a-z, 0-9 allowe，长度小于16。
 * metadata->labels->workspace表示创建的namespace所属的workspace。如果需要查看有哪些workspace以及workspace的详情，请参考步骤4.
 * metadata->labels->namespacequota表示namepace的配额。非必填，如果不填写，表示配额不做限制。如果需要查看有哪些namespacequota以及namespacequota的详情，请参考步骤5.
 
@@ -564,15 +564,13 @@ Labels:       name=rx-test1
 
 5，namespace页面左侧菜单选择workload，即可以看见工作负载列表。
 
-## 查看工作负载的路由
-
-进入在workload页面，workload列表中的URL_Address列即列出了workload的路由。
-
 ## 查看工作负载日志
 
-1，进入在workload页面，选中需要查看日志的workload。
+1，进入在workload页面，选则需要查看日志的workload，点击右侧的Operation按钮。
 
-2，在页面下方弹出的子页面上，选择需要查看日志的Pod，即可以看到Pod的日志。
+2，弹出的对话框中，选择需要查看日志的Pod，即可以看到Pod的日志。
+
+3，当需要刷新日志时，点击刷新按钮，即可对日志进行刷新。
 
 ## 查看部署的应用
 
