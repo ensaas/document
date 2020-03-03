@@ -1,19 +1,19 @@
-### 4.0.0
+# EnSaaS-K8s-Service 4.0.0- (2020-02-19)
 
-**New Feature:**
+## Summary Update
 
-Subscription  and user permissions:
+Added:
 
-- Add subscription name on the top navigation bar, and support  display resources by the subscription name
-- Users with subscription privileges (subscription admin/user) can see and manipulate the resources purchased by the subscription
+- Subscription  and user permissions:
+  - Add subscription name on the top navigation bar, and support  display resources by the subscription name
+  - Users with subscription privileges (subscription admin/user) can see and manipulate the resources purchased by the subscription
 
-Monitor:
-
-- Integrate RMS : Provide different levels of monitoring display
-
+- Monitor:
+  - Integrate RMS : Provide different levels of monitoring display
 
 
-**Bug Fixed**
+
+Fixed:
 
 - Modify the synchronization method of rolebinding between MP and sso, and add subscription number verification before creating rolebinding.
 - Add synchronization mechanism between slave cluster and master cluster to fix the problem that info and metric cannot be updated immediately 
