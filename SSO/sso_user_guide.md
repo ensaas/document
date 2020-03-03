@@ -23,10 +23,10 @@ There are three types of the user roles, namely Platform Management role, Subscr
 **-SRP User**	The user of a cloud-based application. They can access the application, and their role is assigned by the visitor to the application who has the highest privilege. They cannot access any EnSaaS tenant space. 
 # User Management #
 ## User Creation ##
-User Creation is divided into four scenarios: marketplace created users, users with subscriptions, users without subscriptions and Appusers.
+User Creation is divided into four scenarios: marketplace created users, users with subscriptions, users without subscriptions and SRP users.
 
 ### scenario 1 - Marketplace add users and company ###
-The user created on the marketplace will automatically create a subscription which corresponding to the user's company on SSO. This user is the subscription admin and  belongs to this subscription by default, which can be viewed from the Users/My Profile of SSO.   
+The user created on the marketplace will automatically create a subscription which corresponding to the user's company on SSO. This user is the subscription admin and  belongs to this subscription by default, which can be viewed from the My Profile of SSO.   
 After a user subscribes and purchases the corresponding resource, he/she has permission to the resource. The tenant space resources of the purchased ensaas can be viewed by logging in the Mangement Portal.
 ### scenario 2 - Add a user who has all the resources purchased by the subscription - Add subscription users ###
 The subscription admin could add a new user as the subscription user, then the added user automatically owns all of the resources purchased by the subscription.   
@@ -49,16 +49,16 @@ Picture 2 - Invite Non_Existing User
 ![Not found](./sso_picture/nonexistuser_info.png) 
 Picture 3 - Edit Basic Information of New Added User
 
-### scenario 3 - Add a user who has parts of resources purchased by subscription number - Adding a user without assigning a subscription ###
+### scenario 3 - Add a user who has parts of resources purchased by subscription - Adding a user without assigning a subscription ###
 If the subscription user just only wants to assign new users parts of subscription space resources purchased by the subscription, the manager could add users under Users/Management/Add page of SSO, and assign the user's own authorized space resources to the created new user with related resource roles.   
 This situation does not require new users to be added into the subscription.  
 Press the "+" button on the header of content part, it will jump to the User Information page to create a new user account.   
-Like in Scenario 3, to create a new user, the basic information is mandatory to be filled. The resource binding information is optional. The user can choose to add or delete resources role binding on the Management/Edit page.   
+Like in Scenario 2, to create a new user, the basic information is mandatory to be filled. The resource binding information is optional. The user can choose to add or delete resources role binding on the Management/Edit page.   
 ![User Profile](./sso_picture/add_user_button.png)
 Picture 4 - Added User  
 
 #### Make User Resource Role Binding ####
-There are thress steps to assign resource permissions to users, which called rolebinding.  
+There are three steps to assign resource permissions to users, which called rolebinding.  
 1. Select the data center and cluster, then the role information.   
 If the logged-in user is a **clusterOwner**, the permissions it can assign are workspaceOwner and namespaceDeveloper.   
 - If workspaceOwner is selected, it is necessary to select a workspace while doesn't need to select the namespace, because the workspaceOwner has full permissions to all the namespaces in the workspace.   
@@ -74,11 +74,11 @@ Picture 5 - Edit Resource Role Binding
 Adding a user from the application will automatically create an SSO account, but the user is in the role of AppUser, and I.App is responsible for user management.
 
 ## User Information Edit ##
-The users have several choices to edit information on User Management, My Profile, or Subscription Management pages.  
+The users could choose User Management page to edit other users' info, and edit the info of themselves on My Profile page.  
 User profile contains the following informations:  
 - **Basic Infomation**: Lists basic user information, such as Username, Email, Phone, Country, City, Company, etc. And the user ID is unique.   
 - **Resource Permissions**: Describes the resource role of the user. It also shows the resource detail information, like which datacenter, cluster, workspace and namespace that the user belongs to.  
-- **Subscription Information**: Displays the subscription information of the logged-in user. The information contains the name, id, company and user role of the subscription.  
+- **Subscription Information**: Displays the subscription information of the user. The information contains the name, id, company and user role of the subscription.  
 The users could edit the basic information and resource privileges on the information edit page. Please note that subscription information can't be modified here.
 ![User Profile](./sso_picture/user_profile.png)
 Picture 6 - Edit User Profile  
@@ -106,15 +106,13 @@ Picture 8 - Subscription Management
 The subscription is created by the SSO interface called by the Marketplace. Each subscription corresponds to the account of each company. For non-marketplace users to create a subscription, please contact the EnSaaS administrator.
 
 ## Subscription Users Management ##
-Only the subscription admin can view and manage the users in the subscription. 
-
-![Not found](./sso_picture/subscription_user.png)
+The user of a subscription can view the users in the subscription. 
+The subscrition admin could invite or remove a user to/from the managed subscription, while subscrition user is forbidden to add or remove other users.
+![Not found](./sso_picture/subscription_select.png)
 Picture 9 - Users in the Subscription  
 
-To select the Operations/Edit option can manage the subscription user's resource roles as on the user management page. Refer to Picture 5 - Edit Resource Role Binding.
-
-![Not found](./sso_picture/subscription_edit.png)
-Picture 10 - Edit User in Subscription
+![Not found](./sso_picture/subscription_user_list.png)
+Picture 10 - List User in Subscription
 
 ## Invite Users to Subscription ##
 Subscription admin users can invite other user into their subscriptions if they know the invited user's full account.   
@@ -123,7 +121,7 @@ Here you can refer to the previous scenario 2 and 3.
 ## Remove Users from Subscription ##
 The subscription admin user could remove the user from the subscription, but he/she has no permission to remove another subscription admin.   
 After the user is removed from the subscription, the user no longer has the default permissions for the resources under the subscription. Only the resource permissions are assigned separately could be retained.
-![Not found](./sso_picture/remove_user.png)
+![Not found](./sso_picture/subscription_user_remove.png)
 Picture 11 - Remove User from Subscription
 
 # Client Management #
