@@ -109,7 +109,12 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
   ```
   
 
+返回码说明如下：
 
+| Response Code | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| 200           | successful operation，返回的json数据格式如上Response Example中所述 |
+| 204           | *no content*，未查询到lic信息                                |
 
 2.当需要根据serviceName和serviceInstanceId获取该serviceInstanceId下所有license的信息时，License Server提供的接口及返回参数说明如下：
 
@@ -209,6 +214,11 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
   
   ```
 
+返回码说明如下：
+
+| Response Code | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| 200           | *successful operation*，返回的json数据格式如上Response Example中所述。 |
 
 ## AuthCode生成规则
 
