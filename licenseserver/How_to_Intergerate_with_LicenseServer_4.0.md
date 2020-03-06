@@ -6,7 +6,7 @@ License Server提供验证授权服务，通过整合License Server可以检查�
 
 下面是验证激活的流程图
 
-![](images/licenseserver_OnlineActive_flowchart_V3.png)
+![](images/licenseserver_OnlineActive_flowchart_V2.png)
 
 Step1:  用户订阅服务后，Catalog产生订阅信息，将PN，serviceInstanceId和pnQuantity信息加密成licenseKey，通过message同步给License Server。
 
