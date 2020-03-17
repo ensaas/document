@@ -254,9 +254,8 @@ The response body is exactly the same as the contents of the credential above.
 | Code | Description                                                  |
 | ---- | ------------------------------------------------------------ |
 | 200  | Create service key OK. The service key name will be returned. |
-| 400  | Request body parameter ‘subscriptionId’ or ‘serviceInstanceId’ is forgotten. |
 | 401  | SSO token is invalid.                                        |
-| 404  | The parameter subscriptionId or serviceInstanceId of request body is wrong. |
+| 400  | The parameter serviceInstanceId of request body is wrong.    |
 | 500  | (1) Save data into Redis failed. <br/>(2) Other errors.      |
 
 ## Delete a Credential Key
