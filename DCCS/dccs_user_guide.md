@@ -1,4 +1,4 @@
-[TOC]
+
 
 # Introduction
 
@@ -9,6 +9,10 @@ Reminder: You may use El-Connect as a client of the IoT Hub. El-Connect has a bu
 ```
 
 The URL for redeeming a credential  is formatted as `https://api-dccs-ensaas.{data center name}.{cloud platform domain name}`. For example, the domain name of the WISE-PaaS Singapore cloud platform is sa.wise-pass.com. Therefore, the URL for redeeming a credential is `https://api-dccs-ensaas.sa.wise-pass.com` . DCCS provides an API `api-docs` to get  the swagger document and so that the URL of Singapore swagger document is `https://api-dccs-ensaas.sa.wise-pass.com/api-docs`. 
+
+# Authority Certification
+
+DCCS supports two kinds of sso token authentication, one is 'Authorization' and the other is 'cookie' . All DCCS APIs except get DCCS key API require sso token authentication. I.App recommends using client token to integration with DCCS. But you can still use user token to manipulate the DCCS key on the service console.
 
 # An overview of REST APIs
 
@@ -229,7 +233,6 @@ POST /v1/serviceCredentials
 ```
 {
   "serviceInstanceId": "d2a53ff7-4d3d-11ea-93e2-aa30cd53a5e0",
-  "subscriptionId": "7acb5cba-2215-487b-a1d2-5327875d089f",
   "serviceKeyDescription": "dccs test",
   "serviceParameter": {
   }
@@ -239,7 +242,6 @@ POST /v1/serviceCredentials
 | Property Name         | Type   | Description                                                  | Required |
 | --------------------- | ------ | ------------------------------------------------------------ | -------- |
 | serviceInstanceId     | string | The service instance id                                      | true     |
-| subscriptionId        | string | The subscription ID                                          | true     |
 | serviceKeyDescription | string | The description for the credential key                       | false    |
 | serviceParameter      | object | The parameter of one service, such as rabbitmq, postgresql, mongodb and so on. Take the rabbitmq for example, the parameter as followings:  ServiceParameter: {<br/>   "rmqRole": "management",   <br/>   "rmqTopicRead": "/dccs/rmq/,/dccs/rmq-2/",   <br/>   "rmqTopicWrite": "/dccs/rmq/,/dccs/rmq-3/"<br/>} | false    |
 
