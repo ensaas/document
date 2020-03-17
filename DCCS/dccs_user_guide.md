@@ -12,7 +12,7 @@ The URL for redeeming a credential  is formatted as `https://api-dccs-ensaas.{da
 
 # Authority Certification
 
-DCCS supports two kinds of sso token authentication, one is 'Authorization' and the other is 'cookie' . All DCCS APIs except get DCCS key API require sso token authentication. I.App recommends using client token to integration with DCCS. But you can still use user token to manipulate the DCCS key on the service console.
+DCCS supports two kinds of sso token authentication, one is 'Authorization' and the other is 'cookie' . All DCCS APIs except get DCCS key API require sso token authentication. I.App recommends using client token to integration with DCCS. But you can still use user token belongs to a certain subscription id to manipulate the DCCS key  on the service console.
 
 # An overview of REST APIs
 
