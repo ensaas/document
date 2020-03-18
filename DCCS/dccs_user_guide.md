@@ -317,7 +317,7 @@ PUT /v1/serviceCredentials/{serviceKeyName}/operations/disable
 
 Get service instance id from secret
 
-![](./getServiceInstanceId.png)
+![](./images/getServiceInstanceId.png)
 
 ```
 Note: If I.App want to create dccs key, I.App can make the service instance id as environment variable which is taken from secret.
@@ -331,7 +331,7 @@ Get Client Id from SSO url
 POST /clients 
 ```
 
-![](./createClientId.png)
+![](./images/createClientId.png)
 
 ## 3. Create SSO Client Token
 
@@ -341,7 +341,7 @@ Input client id and client secret to get Client token  from SSO url
 POST /oauth/token
 ```
 
-![](./createClientToken.png)
+![](./images/createClientToken.png)
 
 ## 4. Creat DCCS key
 
@@ -351,4 +351,4 @@ Use DCCS url to create DCCS key
 POST /v1/serviceCredentials
 ```
 
-![](./createDccsKey.png)
+![](./images/createDccsKey.png)
