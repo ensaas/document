@@ -1,5 +1,3 @@
-
-
 # Introduction
 
 DCCS provides credential key for services, such as p-rabbitmq, mongodb, postgresql and so on.  A credential is a JSON file that contains Service Broker URL, supported protocols, and a connection username and password. The credential is used to verify the identity of a service client. If a service client is a remote app, device, or gateway, you must retrieve your credential through an API.
@@ -12,7 +10,9 @@ The URL for redeeming a credential  is formatted as `https://api-dccs-ensaas.{da
 
 # Authority Certification
 
-DCCS supports two kinds of sso token authentication, one is 'Authorization' and the other is 'cookie' . All DCCS APIs except get DCCS key API require sso token authentication. I.App recommends using client token to integration with DCCS. But you can still use user token belongs to a certain subscription id to manipulate the DCCS key  on the service console.
+DCCS supports two kinds of header validation, one is 'Authorization: <ssoTokenString>' and the other is 'cookie: <ssoTokenString>' . All DCCS APIs except get DCCS key API require sso token authentication. I.App have to use client token to integration with DCCS because SRP user without MP resource will fail to create/disable/enable/delete DCCS key. But rest assured that you can still use user token with MP resource to create/disable/enable/remove the DCCS key in the service console.
+
+You can get client id and client secret from SSO via POST /clients and then get client token from SSO via POST /oauth/token. Please refer to SSO documents http://api-sso-ensaas.sa.wise-paas.com/public/apidoc/ and https://github.com/ensaas/document/tree/master/SSO. The way to create a client token is described in more detail in later section.
 
 # An overview of REST APIs
 
@@ -310,3 +310,45 @@ PUT /v1/serviceCredentials/{serviceKeyName}/operations/disable
 | 401  | SSO token is invalid.                                        |
 | 404  | The service credential does not exist.                       |
 | 500  | (1) Save data into Redis failed.<br/>(2) Other errors.       |
+
+# Create DCCS Key
+
+## 1. Get Service Instance Id
+
+Get service instance id from secret
+
+![](./getServiceInstanceId.png)
+
+```
+Note: If I.App want to create dccs key, I.App can make the service instance id as environment variable which is taken from secret.
+```
+
+## 2. Create SSO Client Id
+
+Get Client Id from SSO url
+
+```
+POST /clients 
+```
+
+![](./createClientId.png)
+
+## 3. Create SSO Client Token
+
+Input client id and client secret to get Client token  from SSO url
+
+```
+POST /oauth/token
+```
+
+![](./createClientToken.png)
+
+## 4. Creat DCCS key
+
+Use DCCS url to create DCCS key 
+
+```
+POST /v1/serviceCredentials
+```
+
+![](./createDccsKey.png)
