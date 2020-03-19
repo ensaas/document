@@ -6,6 +6,14 @@
 5. get broker 權限修正，其他權限修正
 6. api timeout 時間延長
 
+# 0.3.0
+1. bugfix: delete purge 此操作沒有正常執行的bug
+2. redis binding 的額外需求
+3. 新增與catalog 溝通機制 (會送價錢)
+4. 新增檢查交易ID功能
+5. 修改 helm chart 內容
+6. post 訂閱結構改變  dbservice 裡面的 serviceInstanceName 換成 serviceName 
+
 # 0.2.20
 1.	修正 UI list API 會有重複的值的問題。
 2.	修正 secret name 相同但不同 namespace 會被 merge 的問題
