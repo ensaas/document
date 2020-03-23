@@ -28,7 +28,7 @@
 1. intetnal domain 查询方式：
 - SA 站点：
 ```
-curl -X GET "https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=internal" -H "accept: application/json"
+GET "https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=internal"
 ```
 - HZ 站点：
 ```
