@@ -8,11 +8,9 @@ spec:
       - name: git-source
         type: git
     params:
-      - name: tagName
-        type: string
-      - name: chartRepo
-        type: string
       - name: harborUrl
+        type: string
+      - name: tagName
         type: string
 
   outputs:
