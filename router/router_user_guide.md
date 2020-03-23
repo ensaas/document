@@ -27,8 +27,29 @@
 
 1. intetnal domain 查询方式：
 - SA 站点：
+HTTP Request
 ```
-GET "https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=internal"
+GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=internal
+```
+HTTP Response
+```
+{
+"data": [
+{
+"id": 1,
+"domain": "en.internal",
+"serviceType": "shared",
+"networkType": "internal",
+"createdAt": "2020-02-05T02:06:29.779442Z",
+"updatedAt": "2020-02-21T03:30:52.497321Z"
+}
+],
+"error": null,
+"path": "/v1/routers/domain?serviceType=shared&networkType=internal",
+"status": 200,
+"timestamp": "2020-03-23T06:52:00Z",
+"totalCount": 1
+}
 ```
 - HZ 站点：
 ```
