@@ -1,0 +1,68 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: build-image-and-push-chart
+spec:
+  resources:
+    - name: git-source
+      type: git
+    - name: image-source
+      type: image
+  params:
+    - name: gitProjectName
+      type: string
+    - name: pathToDockerFile
+      type: string
+      default: Dockerfile
+    - name: pathToContext
+      type: string
+      description: dockerfile dir
+    - name: tagName
+      type: string
+      default: 0.0.1
+      description: Build docker image tag
+    - name: harborUrl
+      type: string
+
+  tasks:
+    - name: build-docker-image-from-git-source 
+      taskRef:
+        name: build-docker-image-from-git-source 
+      params:
+        - name: pathToDockerFile
+          value: $(params.pathToDockerFile)
+        - name: pathToContext
+          value: $(params.pathToContext)
+        - name: tagName
+          value: $(params.tagName)
+      resources:
+        inputs:
+          - name: git-source
+            resource: git-source
+        outputs:
+          - name: image-source
+            resource: image-source
+      
+    - name: push-helm-chart
+      taskRef:
+        name: push-helm-chart
+      runAfter:
+        - build-docker-image-from-git-source
+      resources:
+        inputs:
+          - name: git-source
+            resource: git-source
+        outputs:
+          - name: image-source
+            resource: image-source
+      params:
+      - name: tagName
+        value: $(params.tagName)
+      - name: chartRepo
+        value: $(params.gitProjectName)
+      - name: chartName
+        value: $(params.gitProjectName)
+      - name: repoName
+        value: harbor
+      - name: harborUrl
+        value: $(params.harborUrl)
