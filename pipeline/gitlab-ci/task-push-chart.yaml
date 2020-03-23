@@ -12,9 +12,6 @@ spec:
         type: string
       - name: chartRepo
         type: string
-      - name: repoName
-        type: string
-        default: harbor
       - name: harborUrl
         type: string
 
@@ -37,6 +34,7 @@ spec:
               name: docker
               key: password
       script: |
+        #!/usr/bin/env sh
         chartVersion=`echo $(inputs.params.tagName)|awk -F '/' '{print \$4}'`
         ciImageRepo=`echo $(outputs.resources.image-source.url) | tr 'A-Z' 'a-z'`
         chartRepo=`echo $ciImageRepo |awk -F '/' '{print \$2}'`
