@@ -31,6 +31,11 @@ HTTP Request
 ```
 GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=internal
 ```
+- HZ 站点：
+HTTP Request
+```
+GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=shared&networkType=internal
+```
 HTTP Response
 ```
 {
@@ -50,10 +55,6 @@ HTTP Response
 "timestamp": "2020-03-23T06:52:00Z",
 "totalCount": 1
 }
-```
-- HZ 站点：
-```
-curl -X GET "https://api-router-ensaas.hz.wise-paas.cn/v1/routers/domain?serviceType=shared&networkType=internal" -H "accept: application/json"
 ```
 2. external domain 查询方式：
 ```
