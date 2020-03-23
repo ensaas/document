@@ -1,0 +1,50 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: push-helm-chart
+spec:
+  inputs:
+    resources:
+      - name: git-source
+        type: git
+    params:
+      - name: tagName
+        type: string
+      - name: chartRepo
+        type: string
+      - name: chartName
+        type: string
+      - name: repoName
+        type: string
+        default: harbor
+      - name: harborUrl
+        type: string
+
+  outputs:
+    resources:
+      - name: image-source
+        type: image
+  steps:
+    - name: push-helm-chart
+      image:  core-harbor-devops-ali.wise-paas.com.cn/library/k8s-helm:v3.1.1.1
+      env:
+        - name: harborUsername
+          valueFrom:
+            secretKeyRef:
+              name: docker
+              key: username
+        - name: harborPassword
+          valueFrom:
+            secretKeyRef:
+              name: docker
+              key: password
+      script: |
+        chartVersion=`echo $(inputs.params.tagName)|awk -F '/' '{print \$4}'`
+        ciImageRepo=`echo $(outputs.resources.image-source.url) | tr 'A-Z' 'a-z'`
+        chartRepo=`echo $ciImageRepo |awk -F '/' '{print \$2}'`
+        chartName=`echo $ciImageRepo |awk -F '/' '{print \$3}'`
+        helm repo add --username $harborUsername --password $harborPassword $chartName https://$(inputs.params.harborUrl)/chartrepo/$chartRepo
+        sed -i 's/ciTagVersion/'$chartVersion'/g' /workspace/git-source/charts/$chartName/Chart.yaml
+        sed -i 's/ciTagVersion/'$chartVersion'/g' /workspace/git-source/charts/$chartName/values.yaml
+        sed -i 's#ciImageRepo#'$ciImageRepo'#g' /workspace/git-source/charts/$chartName/values.yaml
+        /opt/bin/helmpush /workspace/git-source/charts/$chartName/ $chartName
