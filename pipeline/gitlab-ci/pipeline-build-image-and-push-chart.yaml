@@ -58,5 +58,3 @@ spec:
       - name: tagName
         value: $(params.tagName)
 
-
-
