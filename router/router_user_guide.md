@@ -26,8 +26,13 @@
 
 
 1. intetnal domain 查询方式：
+- SA 站点：
 ```
-curl -X GET "https://<api-router>/v1/routers/domain?serviceType=shared&networkType=internal" -H "accept: application/json"
+curl -X GET "https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=internal" -H "accept: application/json"
+```
+- HZ 站点：
+```
+curl -X GET "https://api-router-ensaas.hz.wise-paas.cn/v1/routers/domain?serviceType=shared&networkType=internal" -H "accept: application/json"
 ```
 2. external domain 查询方式：
 ```
