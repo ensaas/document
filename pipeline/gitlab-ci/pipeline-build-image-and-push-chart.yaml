@@ -1,34 +1,71 @@
 apiVersion: tekton.dev/v1alpha1
-kind: Task
+kind: Pipeline
 metadata:
-  name: push-helm-chart
+  name: build-image-and-push-chart
 spec:
-  inputs:
-    resources:
-      - name: git-source
-        type: git
-    params:
-      - name: tagName
-        type: string
-      - name: chartRepo
-        type: string
-      - name: repoName
-        type: string
-        default: harbor
-      - name: harborUrl
-        type: string
-      - name: harborUsername
-        type: string
-      - name: harborPassword
-        type: string
+  resources:
+    - name: git-source
+      type: git
+    - name: image-source
+      type: image
+  params:
+    - name: gitProjectName
+      type: string
+    - name: pathToDockerFile
+      type: string
+      default: Dockerfile
+    - name: pathToContext
+      type: string
+      description: dockerfile dir
+    - name: tagName
+      type: string
+      default: 0.0.1
+      description: Build docker image tag
+    - name: harborUrl
+      type: string
+    - name: harborUsername
+      type: string
+    - name: harborPassword
+      type: string
 
-  steps:
+  tasks:
+    - name: build-docker-image-from-git-source 
+      taskRef:
+        name: build-docker-image-from-git-source 
+      params:
+        - name: pathToDockerFile
+          value: $(params.pathToDockerFile)
+        - name: pathToContext
+          value: $(params.pathToContext)
+        - name: tagName
+          value: $(params.tagName)
+      resources:
+        inputs:
+          - name: git-source
+            resource: git-source
+        outputs:
+          - name: image-source
+            resource: image-source
+      
     - name: push-helm-chart
-      image:  core-harbor-devops-ali.wise-paas.com.cn/library/k8s-helm:v3.1.1.1
-      script: |
-        chartRepo=`echo $(inputs.params.chartRepo) | tr 'A-Z' 'a-z'`
-        chartName=`echo $(inputs.params.chartName) | tr 'A-Z' 'a-z'`
-        imageVersion=`echo $(inputs.params.tagName)|awk -F '/' '{print \$3}'`
-        helm repo add --username $(inputs.params.harborUsername) --password $(inputs.params.harborPassword) $(inputs.params.repoName) https://$(inputs.params.harborUrl)/chartrepo/$chartRepo
-        sed -i 's/ciTagVersion/'$imageVersion'/g' /workspace/git-source/charts/$chartName/Chart.yaml
-        /opt/bin/helmpush /workspace/git-source/charts/$chartName/ $(inputs.params.repoName)
+      taskRef:
+        name: push-helm-chart
+      runAfter:
+        - build-docker-image-from-git-source
+      resources:
+        inputs:
+          - name: git-source
+            resource: git-source
+      params:
+      - name: tagName
+        value: $(params.tagName)
+      - name: chartRepo
+        value: $(params.gitProjectName)
+      - name: repoName
+        value: harbor
+      - name: harborUrl
+        value: $(params.harborUrl)
+      - name: harborUsername
+        value: $(params.harborUsername)
+      - name: harborPassword
+        value: $(params.harborPassword)
