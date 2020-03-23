@@ -12,8 +12,6 @@ spec:
         type: string
       - name: chartRepo
         type: string
-      - name: chartName
-        type: string
       - name: repoName
         type: string
         default: harbor
