@@ -25,18 +25,17 @@
 
 
 
-1. intetnal domain 查询方式：
+## intetnal domain 查询方式：
+### HTTP Request  
 - SA 站点：
-HTTP Request
 ```
 GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=internal
 ```
 - HZ 站点：
-HTTP Request
 ```
 GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=shared&networkType=internal
 ```
-HTTP Response
+### HTTP Response
 ```
 {
 "data": [
