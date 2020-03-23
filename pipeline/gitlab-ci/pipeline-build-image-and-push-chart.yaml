@@ -52,9 +52,11 @@ spec:
         inputs:
           - name: git-source
             resource: git-source
-        outputs:
           - name: image-source
             resource: image-source
       params:
       - name: tagName
         value: $(params.tagName)
+
+
+
