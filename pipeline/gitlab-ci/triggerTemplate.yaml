@@ -23,10 +23,6 @@ spec:
       default: "/"
     - name: harborUrl
       type: string
-    - name: harborUsername
-      type: string
-    - name: harborPassword
-      type: string
 
 
   resourcetemplates:
