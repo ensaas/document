@@ -25,7 +25,7 @@
 
 
 
-## intetnal domain 查询方式：
+## 查询 Intetnal Domain 方式：
 ### HTTP Request  
 - SA 站点：
 ```
@@ -55,14 +55,59 @@ GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=
 "totalCount": 1
 }
 ```
-2. external domain 查询方式：
+## 查询 External Domain 方式：
+### HTTP Request  
+- SA 站点：
 ```
-curl -X GET "https://<api-router>/v1/routers/domain?serviceType=shared&networkType=external" -H "accept: application/json"
+GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain?serviceType=shared&networkType=external
 ```
-3. 通过 internal domain 查询 extenal domain：
+- HZ 站点：
+```
+GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=shared&networkType=external
+```
+### HTTP Response
+```
+{
+"data": [
+{
+"id": 2,
+"domain": "sa.wise-paas.com",
+"serviceType": "shared",
+"networkType": "external",
+"createdAt": "2020-02-05T02:06:56.648898Z",
+"updatedAt": "2020-02-05T02:06:56.648898Z"
+}
+],
+"error": null,
+"path": "/v1/routers/domain?serviceType=shared&networkType=external",
+"status": 200,
+"timestamp": "2020-03-23T06:56:17Z",
+"totalCount": 1
+}
+```
+## 查询 Internal Domain 的 Extenal Domain：
 ```
 curl -X GET "https://ensaas-router-master.es.wise-paas.cn/v1/routers/domain/{your internal domain}/external" -H "accept: application/json"
 ```
-
+### HTTP Request  
+- SA 站点：
+```
+GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/{your internal domain}/external
+```
+- HZ 站点：
+```
+GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain/{your internal domain}/external
+```
+### HTTP Response
+```
+{
+"data": "api-router-ensaas.sa.wise-paas.com",
+"error": null,
+"path": "/v1/routers/domain/api.router.ensaas.en.internal/external",
+"status": 200,
+"timestamp": "2020-03-23T06:59:00Z",
+"totalCount": 0
+}
+```
 
 
