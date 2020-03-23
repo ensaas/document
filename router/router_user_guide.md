@@ -1,5 +1,8 @@
 # 路由服务设计和整合说明  
 
+## 整体流程图
+![图片](https://uploader.shimo.im/f/Lizhk6mucp0f96Mv.png!thumbnail)
+
 ## 1. 名称命名规范  
 | **名称**   | **长度**   | **规则**   |
 |:----:|:----:|:----:|
@@ -18,12 +21,6 @@
 ### 专属路由
 路由规则：
 建议Dedicated Cluster的用户在正式运营场景中使用专属路由服务，EnSaaS 4.0 在 Dedicated Cluster 提供了Public IP，专属路由用户自行配置Domain和凭证(可用工具自签)
-
-
-## 整体流程图
-![图片](https://uploader.shimo.im/f/Lizhk6mucp0f96Mv.png!thumbnail)
-
-
 
 ## 3. 查询 Intetnal Domain 方式：
 ### HTTP Request  
