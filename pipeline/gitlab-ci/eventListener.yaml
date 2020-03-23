@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: gitlab-listener
+spec:
+  serviceAccountName: tekton-pipeline
+  triggers:
+    - name: gitlab-push-events-trigger
+      interceptors:
+        - gitlab:
+            secretRef:
+              secretName: gitlab-ci-secret
+              secretKey: gitlabToken
+            eventTypes:
+              - Tag Push Hook # Only push events
+      bindings:
+        - name: gitlab-tag-push-binding
+      template:
+        name: gitlab-ci
