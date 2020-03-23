@@ -1,6 +1,6 @@
 # 路由服务设计和整合说明  
 
-## 名称命名规范  
+## 1.名称命名规范  
 | **名称**   | **长度**   | **规则**   |
 |:----:|:----:|:----:|
 | clustername | <= 8字符 | 字母 、数字，不允许其他字符 |
@@ -8,7 +8,7 @@
 | namespacename  | <= 16字符 | 字母 + 数字，不允许其他字符 |
 | appname | <= 24字符 | 字母、数字、"-" ，不允许其他字符 |
 
-## 整合路由
+## 2.整合路由
 ### 共享路由
 路由规则：
 - Internal Domain：`<appname>.<namespacename>.<clustername>.en.internal`
@@ -25,7 +25,7 @@
 
 
 
-## 查询 Intetnal Domain 方式：
+## 3.查询 Intetnal Domain 方式：
 ### HTTP Request  
 - SA 站点：
 ```
@@ -55,7 +55,7 @@ GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=
 "totalCount": 1
 }
 ```
-## 查询 External Domain 方式：
+## 4.查询 External Domain 方式：
 ### HTTP Request  
 - SA 站点：
 ```
@@ -85,7 +85,7 @@ GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=
 "totalCount": 1
 }
 ```
-## 查询 Internal Domain 的 Extenal Domain：
+## 5.查询 Internal Domain 的 Extenal Domain：
 ```
 curl -X GET "https://ensaas-router-master.es.wise-paas.cn/v1/routers/domain/{your internal domain}/external" -H "accept: application/json"
 ```
