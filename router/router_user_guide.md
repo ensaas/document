@@ -1,7 +1,7 @@
 # 路由服务设计和整合说明  
 
 ## 整体流程图
-![图片](https://uploader.shimo.im/f/Lizhk6mucp0f96Mv.png!thumbnail)
+![图片](images/router.png)
 
 ## 1. 名称命名规范  
 | **名称**   | **长度**   | **规则**   |
