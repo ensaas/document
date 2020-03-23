@@ -56,9 +56,7 @@ spec:
           - name: image-source
             resource: image-source
       params:
-      - name: tagName
-        value: $(params.tagName)
-      - name: chartRepo
-        value: $(params.gitProjectName)
       - name: harborUrl
         value: $(params.harborUrl)
+      - name: tagName
+        value: $(params.tagName)
