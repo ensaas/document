@@ -23,10 +23,6 @@ spec:
       description: Build docker image tag
     - name: harborUrl
       type: string
-    - name: harborUsername
-      type: string
-    - name: harborPassword
-      type: string
 
   tasks:
     - name: build-docker-image-from-git-source 
@@ -56,16 +52,13 @@ spec:
         inputs:
           - name: git-source
             resource: git-source
+        outputs:
+          - name: image-source
+            resource: image-source
       params:
       - name: tagName
         value: $(params.tagName)
       - name: chartRepo
         value: $(params.gitProjectName)
-      - name: repoName
-        value: harbor
       - name: harborUrl
         value: $(params.harborUrl)
-      - name: harborUsername
-        value: $(params.harborUsername)
-      - name: harborPassword
-        value: $(params.harborPassword)
