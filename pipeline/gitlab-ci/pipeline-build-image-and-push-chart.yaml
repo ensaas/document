@@ -56,7 +56,5 @@ spec:
           - name: image-source
             resource: image-source
       params:
-      - name: harborUrl
-        value: $(params.harborUrl)
       - name: tagName
         value: $(params.tagName)
