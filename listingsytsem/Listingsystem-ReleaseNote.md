@@ -1,45 +1,63 @@
 ## ListingSystem4.0 ReleaseNote
 
-### version：v-1.2.0.1
+### version：v-1.2.0.3
+##### Added:
+- get serviceNameByPn中不仅返回该serviceName，同时返回这个serviceName中对应的所有的pn以及pn的各种身份的价格
+##### Updated:
+- 从一个料号查找到的所有该pn对应的service下的所有pn的信息中，去掉je站点的信息
+##### Removed:
+- 去掉了添加service时对serviceName的限制
+- 去掉了添加plan时对planName的限制
 
-###### Added:
+### version：v-1.2.0.2
+##### Updated:
+- 更新swagger中的servicePackage
+- 更新metric中的添加限制，serviceName必须存在于service中，datacenterCode必须存在于datacenterCode表中
+- 更新metric中的修改限制，可以修改所有字段
+- 更新了同步serviceInfo查询service的条件，从service和servicePackage中查询
+##### Fixed:
+- 修改了serviceInfo同步时，如果serviceInfo已经存在的问题
+- 修改了通过serviceName查询metric失败的问题
+
+### version：v-1.2.0.1
+##### Added:
 - get   /servicePackage
 - put   /servicePackage
 - delete /servicePackage
 - post /servicePackage
-###### Updated:
+##### Updated:
 - 修改 GET /service/serviceWithPlan 接口的返回字段，添加 dependency中的serviceCategory,plan对应的pn
 - 在同步的时候将所有的pn记录到表中，如果下次不输入pn就直接用表中的pn来同步service Info，首先是通过service name和pn从marketplace同步信息，之后就会记录当前的service与pn的对应关系。如果之后不输入pn就用这个pn去查询，如果输入了pn就去更新这个serive与pn的对应关系
 - metric pricing添加serviceName和datacenterCode字段，同时添加这个两个字段查询
 - 对所有的get接口添加operation app的client Token的验证
 - 对于serviceInfo添加一键同步操作（前提是先要缓存service和pn之间的关系）
-###### Fixed:
+##### Fixed:
 - 修改了同步service info中图片中，当service从markketlace获取不到出错的问题
 - 改了同步service最低价由于更改pnQuantity变化而出现的问题
 - 修改env中环境变量ssoUrl.esSSo为ssoUrl.esSso 
 
 ### version：v-1.1.0.9
 
-###### Updated:
+##### Updated:
 
 - 在版本v-1.1.0.4的基础上添加了clientToken
 - 修改了最低价由于pnQuantity由[1,10]变成[1-10]的问题
 
 ### version：v-1.1.0.8
 
-###### Updated:
+##### Updated:
 
 - 修改 GET  /service/serviceWithPlan 接口的返回字段，并对plan进行排序
 
 ### version：v-1.1.0.7
 
-###### Add:
+##### Add:
 
 - 添加api    get  /service/serviceWithPlan
 
 ### version：v-1.1.0.6
 
-###### Updated:
+##### Updated:
 
 - 修改serviceCategory在swagger中的字段错误
 
@@ -48,7 +66,7 @@
 
 ### version：v-1.1.0.5
 
-###### Updated:
+##### Updated:
 
 - 对所有的增删改api添加日志记录，该记录整合了logging项目，将日志记录到容器指定的文件中
 - 同步serviceInfo中的图片，将图片下载到本地，替换serviceInfo中的imgUrl为本地的url
@@ -57,7 +75,7 @@
 
 #### version：v-1.1.0.4
 
-###### Added:
+##### Added:
 
 - 对所有的增删改api添加日志记录，该记录整合了logging项目，将日志记录到容器指定的文件中
 - 同步serviceInfo中的图片，将图片下载到本地，替换serviceInfo中的imgUrl为本地的url
