@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: gitlab-listener
+spec:
+  rules:
+    - host: demo.wise-paas.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: el-gitlab-listener
+              servicePort: 8080
+

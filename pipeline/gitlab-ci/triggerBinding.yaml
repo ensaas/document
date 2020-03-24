@@ -1,0 +1,22 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: gitlab-tag-push-binding
+spec:
+  params:
+    - name: gitProjectName
+      value: $(body.project.name)
+    - name: gitHttpUrl
+      value: $(body.project.git_http_url)
+    - name: revision
+      value: $(body.project.default_branch)
+    - name: imageName
+      value: $(body.project.description)
+    - name: tagName
+      value: $(body.ref)
+    - name: pathToDockerFile
+      value: Dockerfile
+    - name: pathToContext
+      value: ""
+    - name: harborUrl
+      value: harbor.arfa.wise-paas.com
