@@ -68,3 +68,14 @@
 * 修改 oauth client不允许创建srpUser。
 * 修改apidoc。
 
+## API 4.0.3.0-(2020-03-24)
+## New Features
+* 新增 api /subscriptions/{idOrCrmId}/accountInfo 获取订阅号对应的accountInfo。
+* 新增 api  /users/me/info 获取users信息（不含roles）。
+* 新增 api  /clients/{clientId}/users/role  获取用户对于某个特定client的权限（类似于之前的srpRole,去掉了roles相关判断）。
+* 新增 取消appId检测
+
+## Fix bugs 
+* refresh token在返回值中set cookie的问题。
+* 修改apidoc。
+
