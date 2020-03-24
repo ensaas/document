@@ -30,7 +30,7 @@
 - helm chart 中的values.yaml 中的 `image.repository` 的值设置为 `ciImageRepo`,`image.tag` 的值设置为 `ciTagVersion`
 
 ![](images/project.jpg)
-![](images/chart2.jpg)
+![](images/chart2.png)
 ![](images/values.png)
 
 ## 4. 触发 CI
