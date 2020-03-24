@@ -29,13 +29,14 @@ spec:
               key: password
       script: |
         #!/usr/bin/env sh
+        imageVersion=`echo $(inputs.params.tagName)|awk -F '/' '{print \$3}'`
         chartVersion=`echo $(inputs.params.tagName)|awk -F '/' '{print \$4}'`
         ciImageRepo=`echo $(inputs.resources.image-source.url) | tr 'A-Z' 'a-z'`
         harborUrl=`echo $ciImageRepo |awk -F '/' '{print \$1}'`
         chartRepo=`echo $ciImageRepo |awk -F '/' '{print \$2}'`
         chartName=`echo $ciImageRepo |awk -F '/' '{print \$3}'`
         helm repo add --username $harborUsername --password $harborPassword $chartName https://$harborUrl/chartrepo/$chartRepo
-        sed -i 's/ciTagVersion/'$chartVersion'/g' /workspace/git-source/charts/$chartName/Chart.yaml
-        sed -i 's/ciTagVersion/'$chartVersion'/g' /workspace/git-source/charts/$chartName/values.yaml
+        sed -i 's/ciTagVersion/'$imageVersion'/g' /workspace/git-source/charts/$chartName/Chart.yaml
+        sed -i 's/ciChartVersion/'$chartVersion'/g' /workspace/git-source/charts/$chartName/values.yaml
         sed -i 's#ciImageRepo#'$ciImageRepo'#g' /workspace/git-source/charts/$chartName/values.yaml
         /opt/bin/helmpush /workspace/git-source/charts/$chartName/ $chartName
