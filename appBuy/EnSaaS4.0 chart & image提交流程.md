@@ -10,7 +10,7 @@
 **其中：**
 
   * helmchart中README.md模板如下附件（以DataHub为例）：
-[README.md](https://uploader.shimo.im/f/3yQizSRFNoAC5oyz.md)
+[README.md](https://github.com/ensaas/document/blob/master/appBuy/README.md)
 
 
 
@@ -37,7 +37,7 @@
   * chart名称及版本：[https://harbor.arfa.wise-paas.com/harbor/projects/6/helm-charts/ensaas-routers/versions/0.1.8](https://harbor.arfa.wise-paas.com/harbor/projects/6/helm-charts/ensaas-routers/versions/0.1.8)
   * image名称及版本：harbor.arfa.wise-paas.com/lujin/ensaas-router:v-1.0.0
   * REDME.md：README.md放在helmchart中，模板如下（以DataHub为例）
-[README.md](https://uploader.shimo.im/f/JoxpQ6kBZRQEC3IC.md)
+[README.md](https://github.com/ensaas/document/blob/master/appBuy/README.md)
 
 
 
