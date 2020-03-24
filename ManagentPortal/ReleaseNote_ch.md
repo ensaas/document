@@ -1,6 +1,39 @@
-# EnSaaS-K8s-Service 4.0.2- (2020-03-10)
+### EnSaaS-K8s-Service 4.0.3- (2020-03-21)
 
-## Summary Update
+#### [Managment Portal UI]
+
+Added:
+
+- 平台管理：
+  - 订阅号下拉框的样式：增加订阅号公司，增加订阅号搜索
+  - 管理员UI上支持添加general workspace	
+
+Updated:
+
+- 统一资源列表风格，都显示为百分比和进度条样式
+- quota中memory的样式更改：memory下拉框最大支持32G；对于dedicate cluster，memory可以选择下拉框的值，也可以让用户输入
+
+Fixed:
+
+- scale namespace quota页面，更改namespace绑定的quota，页面出现一片空白
+
+- 用户同时具有ws owner和ns developer权限，console页面显示有问题（用户权限、ns个数不正确），且无法查看ws列表
+
+- console页面切换选择的ns，ns信息不更新，UI没有调用相应的api
+
+- 从console页面跳转到workspace页面，刷新后页面显示空白
+
+- 偶现ws、ns的新建按钮不显示，刷新也不显示
+
+- 在ws页面刷新后，页面空白
+
+- 多个页面在切换订阅号并刷新页面后，页面显示存在问题
+
+  ​
+
+### EnSaaS-K8s-Service 4.0.2- (2020-03-10)
+
+#### Summary Update
 
 Added:
 
@@ -22,18 +55,26 @@ Fixed:
 
 
 - 修复获取ws的resource时，返回值为空的bug。Bug 12465
+
 - 修复了Datacenteradmin的Users/me在默认订阅号下的权限问题。Bug12390,Bug12378
+
 - 修正了clusteragent中ws owner的权限问题
+
 - 修复传入错误的订阅号，仍能根据workspace id获取到workspace名称的bug。Bug 12459
+
 - 修正返回的错误信息
+
 - 在node页面切换订阅号，node list没有及时更新，依旧显示的是上次获取的node信息
+
 - 修复General workspace切换到ns列表再回上一页会出现新建按钮的问题
 
+  ​
 
 
-# EnSaaS-K8s-Service 4.0.0- (2020-02-19)
 
-## Summary Update
+### EnSaaS-K8s-Service 4.0.0- (2020-02-19)
+
+#### Summary Update
 
 Added:
 

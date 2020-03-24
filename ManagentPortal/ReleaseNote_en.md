@@ -1,6 +1,34 @@
-# EnSaaS-K8s-Service 4.0.2- (2020-03-10)
+### EnSaaS-K8s-Service 4.0.3- (2020-03-21)
 
-## Summary Update
+#### [Managment Portal UI]
+
+Added:
+
+- Platform management：
+  - Style of subscription drop-down box:add  subscription company，add search function
+  - datacenter admin user can add general workspace from UI
+
+Updated:
+
+- Uniform resource list style:both displayed as percentage and progress bar styles
+- Change memory style in quota: Memory drop-down box supports 32G at most; for a dedicated cluster, memory can select the value of the drop-down box or allow the user to enter
+
+Fixed:
+
+- The scale namespace quota page will be blank when the quota bound by the namespace is changed
+- when user have WS owner and NS developer permissions. The console page have some problems
+- Switch the namepsace in Console page,namepspace information not update,UI did not call the corresponding API
+
+- Jump from console page to workspace page, the workspace page will be blank after refreshing
+- Occasionally, the add buttons of WS and NS do not display
+- Refresh workspace page , the page is blank
+- This problem exists in multiple pages: After switching the subscription number and refreshing the page, there is some display problem in the page
+
+### 
+
+### EnSaaS-K8s-Service 4.0.2- (2020-03-10)
+
+#### Summary Update
 
 Added:
 
@@ -33,9 +61,9 @@ Fixed:
 
 
 
-# EnSaaS-K8s-Service 4.0.0- (2020-02-19)
+### EnSaaS-K8s-Service 4.0.0- (2020-02-19)
 
-## Summary Update
+#### Summary Update
 
 Added:
 

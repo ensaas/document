@@ -85,7 +85,7 @@ spec:
 ```
 其中：
 * metadata中的name必须符合guid的格式。需要用户填入，可以通过[在线工具](http://www.uuid.online/)生成。
-* metadata->label中的name为UI上展示的workspace名称。label的命名规范：支持英文大小写以及数字，长度小于8。
+* metadata->label中的name为UI上展示的workspace名称。label的命名规范：支持英文大小写以及数字，长度小于16。
 * metadata->name如果与集群中已存在的workspace的metadata->name相同，则表示对已存在的workspace进行编辑。
 * spec->workspacequota表示workspace的配额。如果需要查看有哪些workspacequota以及workspacequota的详情，请参考步骤4.
 
@@ -698,7 +698,7 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 | **Cluster**                         | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | X                      | X                       |
+|                                     | List       | O(Self-Cluster)                        | O(Self-cluster-name)   | O(Self-cluster-name)    |
 | **Workspace**                       | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
 |                                     | Update     | O                                      | X                      | X                       |
