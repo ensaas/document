@@ -21,7 +21,7 @@
   * 若serviceplan、price、metric信息没有变化，则只需提供deployment信息（按（1）中deployment table提供即可）
   * 若serviceplan、price、metric信息发生变化，则需要提供service、serviceplan、price、metric、deployment等完整信息（按第（1）步中表格提供即可）
 
-**综上：**App Service上架时，提交的tickets request中内容包括：
+**综上：** App Service上架时，提交的tickets request中内容包括：
 
   * serviceName
   * chart版本及地址
