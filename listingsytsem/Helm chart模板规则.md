@@ -53,6 +53,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 	 		ingress.yaml按照如下方式改写：  
 	   	 ![图片](images/ingress.png)  
 	 		另外注意：image拉取策略须写为IfNotPresent  
+			![图片](images/imagepullpolicy.png)
 	 
 * 平台必要参数
 
