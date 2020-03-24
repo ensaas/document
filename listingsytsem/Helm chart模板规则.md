@@ -48,9 +48,11 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 	  ![图片](images/ensaasappsurl.png)
      4. **兼容k8s 1.14, 1.16的API**  
      	 deployment.yaml按照如下方式改写：  
-	 ![图片](images/deployment.png)  
+	 
+	  ![图片](images/deployment.png)  
 	 ingress.yaml按照如下方式改写：  
-	 ![图片](images/ingress.png)  
+	 
+	  ![图片](images/ingress.png)  
 	 另外注意：image拉去测略须写为IfNotPresent  
 	 
 * 平台必要参数
