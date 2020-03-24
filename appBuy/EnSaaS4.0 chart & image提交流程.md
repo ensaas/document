@@ -3,7 +3,7 @@
 
 1、App Service首次上架，请提供完整上架信息（主要包括service、serviceplan、price、metric、deployment等信息），详情请参见如下表格：
 
-[EnSaaS 4.0 Listing Service Introduction and Template -v20200310.xlsx](https://uploader.shimo.im/f/nGfhBqUH56UuY3ey.xlsx)
+[EnSaaS 4.0 Listing Service Introduction and Template -v20200310.xlsx](https://github.com/ensaas/document/blob/master/appBuy/EnSaaS%204.0%20Listing%20Service%20Introduction%20and%20Template%20-v20200310.xlsx)
 
 
 
