@@ -37,6 +37,7 @@ spec:
         chartName=`echo $ciImageRepo |awk -F '/' '{print \$3}'`
         helm repo add --username $harborUsername --password $harborPassword $chartName https://$harborUrl/chartrepo/$chartRepo
         sed -i 's/ciTagVersion/'$imageVersion'/g' /workspace/git-source/charts/$chartName/Chart.yaml
-        sed -i 's/ciChartVersion/'$chartVersion'/g' /workspace/git-source/charts/$chartName/values.yaml
+        sed -i 's/ciChartVersion/'$chartVersion'/g' /workspace/git-source/charts/$chartName/Chart.yaml
+        sed -i 's/ciTagVersion/'$imageVersion'/g' /workspace/git-source/charts/$chartName/values.yaml
         sed -i 's#ciImageRepo#'$ciImageRepo'#g' /workspace/git-source/charts/$chartName/values.yaml
         /opt/bin/helmpush /workspace/git-source/charts/$chartName/ $chartName
