@@ -623,14 +623,14 @@ Labels:       name=rx-test1
 ### 可以对工作空间做的操作
 
 - 订阅工作空间：成功订阅一个工作空间后，工作空间状态为Active
-- 退订工作空间：工作空间退订后，工作空间状态会变为Unactive
+- 退订工作空间：工作空间退订后，工作空间状态会变为Inactive
   - 在工作空间退订后，如果7天没有续订，则工作空间会自动释放。资源和数据不可恢复
   - 在工作空间退订后，7天内数据和资源保留，续订后可正常使用。
 - 续订工作空间：在工作空间退订后，还没有释放前，可对退订的工作空间进行续订，续订后，工作空间的状态为Active
 - 释放工作空间：一个工作空间释放后，工作空间所有的资源会被释放，工作空间数据将全部清空。
 - 升级工作空间：可对已订阅的工作空间进行升级，例如对工作空间进行扩容等。升级后工作空间的状态为Active
 - 停止工作空间：对工作空间停止后，工作空间的数据保留，工作空间的状态为Stop，停用后工作空间将不可操作，工作空间内的应用会全部停用。
-- 恢复工作空间：对停止的工作工具恢复后，工作空间的状态为Active。工作空间的权限和数据将恢复正常。
+- 恢复工作空间：对停止的工作空间恢复后，工作空间的状态为Active。工作空间的权限和数据将恢复正常。
 
 备注：仅对购买了Dedicate Cluster，在Dedicate Cluster中创建的workspace支持停用和恢复。
 
@@ -665,7 +665,7 @@ $ kubectl describe namespacequota {namespacequotaName}
 ```
 5，通过helm chart部署应用
 ```
-$ helm install . --name dashbord --namespace dashbord --tiller-namespace kube-public
+$ helm install . --name dashbord --namespace dashbord
 ```
 6，获取及查看命名空间下的secret
 ```
