@@ -1,5 +1,20 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.2.0.7
+##### Updated:
+- 兼容k8s 1.14, 1.16
+##### Fixed:
+- 修改swagger
+
+### version：v-1.2.0.6
+##### Added:
+- 添加charts目录，进行CI操作
+- 在serviceWithPlan中，在依赖的plan中返回pn对应的所有价格
+##### Updated:
+- 修改serviceByPn，返回的pn全部从pricing中获取到
+##### Fixed:
+- 修改一键同步serviceInfo的问题
+
 ### version：v-1.2.0.3
 ##### Added:
 - get serviceNameByPn中不仅返回该serviceName，同时返回这个serviceName中对应的所有的pn以及pn的各种身份的价格
