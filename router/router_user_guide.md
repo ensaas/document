@@ -83,9 +83,6 @@ GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=
 }
 ```
 ## 5. 查询 Internal Domain 的 Extenal Domain：
-```
-curl -X GET "https://ensaas-router-master.es.wise-paas.cn/v1/routers/domain/{your internal domain}/external" -H "accept: application/json"
-```
 ### HTTP Request  
 - SA 站点：
 ```
