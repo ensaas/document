@@ -1,3 +1,11 @@
+# 0.3.4
+ * 修正swagger 路徑，改為放在/public/openapi 底下
+ * 修正查詢用戶membertype API
+ * 修正manual unbind 遭遇到交易ID不存在的錯誤和錯誤訊息
+ * 修正當無法正常建立secret時，Binding 卻成功建立
+ * 新增自訂義API，可以自訂instance id (搬遷用)
+ * 新增傳入 pnQuantity
+
 # 0.3.3
  * 移除dataService結構中的 serviceName
  * 新增dedicater manual API，可以呼叫小SB做dedicate的各種操作
