@@ -1,3 +1,53 @@
+### EnSaaS-K8s-Service 4.0.4- (2020-04-01)
+
+#### [Managment Portal UI]
+
+Added:
+
+- Platform management：
+  - Add config view, copy and refresh functions
+  - add display API version and cluster agent version in UI
+  - add import cluster
+
+Fixed:
+
+- Application page appears blank occasionally
+- Enter the monitor page from cluster, workspace and namespace list. The cluster drop-down box on the UI cannot be displayed or refreshed normally
+- After entering the monitor page, it will be blank, and kubernetes on the left is not selected
+- Switch the subscription number on the workload page and refresh the page. No content show in the UI
+- Switch the subscription number on the Application page and refresh the page. the page does not update
+
+#### [Managment Portal API]
+
+Added:
+
+- Add API to get version of MP API
+- Add API to support upgrading all cluster agents through API
+
+Fixed:
+
+- Private key and public not match problems after rolebinding
+- Fixed an asynchronous problem when creating or deleting rollbinding
+- Fix the problem that users with clusterowner and above permissions cannot modify workspace
+- Fix user with subscription permission can't get user number
+
+#### [Cluster Agent]
+
+Added:
+
+- Add cluster agent version in clusterinfo
+
+Fixed:
+
+- Fixed the permission problem of workspaceowner
+- Fix the problem that the update of authority is not timely
+- Restrict users from operating ensaas workspace
+
+
+- Fixed the problem that if there is no PV in a cluster, the clusterinfo has no totaldisk and useddisk
+
+
+
 ### EnSaaS-K8s-Service 4.0.3- (2020-03-21)
 
 #### [Managment Portal UI]

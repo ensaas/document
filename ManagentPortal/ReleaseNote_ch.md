@@ -1,3 +1,61 @@
+### EnSaaS-K8s-Service 4.0.4- (2020-04-01)
+
+#### [Managment Portal UI]
+
+Added:
+
+- 平台管理：
+  - 提供用户config查看，拷贝和刷新的功能
+  - 新增显示API版本号及cluster agent版本号
+  - 新增导入cluster功能
+
+Fixed:
+
+- application页面偶发显示一片空白
+- 从cluster、workspace、namespace进入monitor页面，UI上cluster下拉框无法正常显示或刷新的问题
+- 进入Monitor页面后显示为空白，左侧的Kubernetes不是选中状态
+- 在workload页面切换订阅号并刷新页面，UI没有内容显示empty
+- application页面切换订阅号后，UI没有调用api
+
+
+
+#### [Managment Portal API]
+
+Added:
+
+- 添加API可以获得MP api的版本信息
+- 添加API，支持通过API升级所有的Cluster Agent
+
+Fixed:
+
+- rolebinding之后出现private key和public not match的问题
+- 修正了创建或者删除rolebinding出现的异步问题
+- 修复clusterowner及以上权限用户无法修改workspace的问题
+- 修正订阅号用户无法获得集群user个数信息
+
+
+
+#### [Cluster Agent]
+
+Added:
+
+- 将agent的版本加到了clusterInfo中
+
+Updated:
+
+- master集群和slave集群之间增加websocket通信
+
+Fixed:
+
+- 修正了workspaceowner的权限问题
+- 修正了agent中权限的更新不及时的问题
+- 限制用户不能操作ensaas workspace
+
+
+- 修正了如果一个cluster中没有任何PV时，获取的clusterinfo没有totalDisk和usedDisk的问题
+
+
+
 ### EnSaaS-K8s-Service 4.0.3- (2020-03-21)
 
 #### [Managment Portal UI]
@@ -6,7 +64,7 @@ Added:
 
 - 平台管理：
   - 订阅号下拉框的样式：增加订阅号公司，增加订阅号搜索
-  - 管理员UI上支持添加general workspace	
+    - 管理员UI上支持添加general workspace
 
 Updated:
 
