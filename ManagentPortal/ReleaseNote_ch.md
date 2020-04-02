@@ -1,6 +1,6 @@
 ### EnSaaS-K8s-Service 4.0.4- (2020-04-01)
 
-#### [Managment Portal UI]
+#### [Managment Portal UI]- 4.0.4
 
 Added:
 
@@ -18,8 +18,13 @@ Fixed:
 - application页面切换订阅号后，UI没有调用api
 
 
+#### [Managment Portal API]- 4.0.5
 
-#### [Managment Portal API]
+Fixed:
+
+- 修正了注入环境变量错误的问题
+
+#### [Managment Portal API]- 4.0.4
 
 Added:
 
@@ -34,8 +39,7 @@ Fixed:
 - 修正订阅号用户无法获得集群user个数信息
 
 
-
-#### [Cluster Agent]
+#### [Cluster Agent]- 4.0.4
 
 Added:
 

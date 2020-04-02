@@ -159,7 +159,7 @@ metadata:
     namespacequota: nsquota-1000m1core
 ```
 其中：
-* metadata中的name为namespace的名称。命名规范：Only a-z, 0-9 allowe，长度小于16。
+* metadata中的name为namespace的名称。命名规范：Only a-z, 0-9 allow，长度小于16。
 * metadata->labels->workspace表示创建的namespace所属的workspace。如果需要查看有哪些workspace以及workspace的详情，请参考步骤4.
 * metadata->labels->namespacequota表示namepace的配额。非必填，如果不填写，表示配额不做限制。如果需要查看有哪些namespacequota以及namespacequota的详情，请参考步骤5.
 

@@ -17,7 +17,13 @@ Fixed:
 - Switch the subscription number on the workload page and refresh the page. No content show in the UI
 - Switch the subscription number on the Application page and refresh the page. the page does not update
 
-#### [Managment Portal API]
+#### [Managment Portal API]- 4.0.5
+
+Fixed:
+
+- Fixed the problem of injecting environment variable error
+
+#### [Managment Portal API]- 4.0.4
 
 Added:
 
