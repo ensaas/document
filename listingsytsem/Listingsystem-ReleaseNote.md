@@ -1,5 +1,33 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.3.0.2
+##### Added:
+- 在servicePackage上添加planNum
+- 在servicePackage中的pnInfo中添加chargeType
+- datacenterCode添加local的校验
+
+### version：v-1.3.0.1
+##### Added:
+- post /v1/servicePackage
+- get /v1/servicePackage
+- get /v1/servicePackage/packageList
+- put /v1/servicePackage/{id}
+- delete /v1/servicePackage/{id}
+- 在servicePlan上添加deliveryType 
+##### Removed:
+- 从deployment上删除deliveryType
+
+### version：v-1.2.0.9
+##### Update:
+- 修改检验ssoToken的参数validateDc为datacenterCode
+
+### version：v-1.2.0.8
+##### Fixed:
+- 修改swagger，添加https协议头
+- 修改swagger上面显示的版本号
+- 修改serviceNamByPn的定义类型
+- 修改查询servicePackage查询参数问题
+
 ### version：v-1.2.0.7
 ##### Updated:
 - 兼容k8s 1.14, 1.16
