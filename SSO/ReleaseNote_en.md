@@ -1,3 +1,8 @@
+## Portal 4.0.2.1-(2020-4-7)
+### New Features
+* Added trial subscription number menu, providing function of adding, deleting, and modifying trial subscription number, supporting to view billing information of using subscription number, and supporting trial subscription number user management
+* Subscription number and trial subscription number support query by company and ID
+
 ## API 4.0.3.0-(2020-03-24)
 ### New Features
 * Added api /subscriptions/{idOrCrmId}/accountInfo to get the accountInfo corresponding to the subscription
