@@ -1,3 +1,11 @@
+# 0.3.6
+ * 修正redis服務綁定時會做參數檢查的功能
+ * 新增dccs recreate API
+ * 訂閱時允許 catalog client token
+
+# 0.3.5
+ * 更正reids 呼叫 redis service manager
+
 # 0.3.4
  * 修正swagger 路徑，改為放在/public/openapi 底下
  * 修正查詢用戶membertype API
