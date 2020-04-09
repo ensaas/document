@@ -1,3 +1,7 @@
+## Portal 4.0.2.2-(2020-4-9)
+### New Features
+* CRM ID is required when creating subscription.
+
 ## Portal 4.0.2.1-(2020-4-7)
 ### New Features
 * Added trial subscription number menu, providing function of adding, deleting, and modifying trial subscription number, supporting to view billing information of using subscription number, and supporting trial subscription number user management
