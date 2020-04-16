@@ -1,20 +1,20 @@
 ## Service-Console-UI 1.0.0.10 (2020-04-16)
 
  新增和修改:
- 
- - Service Instance list 表格新增顯示service instance id
+ - Service Instance list 表格新增显示service instance id
  - 将 service name：p-rabbitmq 替换为RabbitMQ
- - DB Dedicated Plan開放建立secret
- - secret management secret name 位置固定
+ - DB Dedicated Plan开放建立secret
+ - 开放所有Plan的新建secret功能
+ - secret management页面 secret name 位置固定
  - secret list 不显示问题
- - 創建secret、service key時可以選擇db name或自行輸入新db name
- - rabbitmq service建secret時新增vhost name選項
+ - 创建secret、service key时可以选择db name或自行输入新db name
+ - rabbitmq service建secret时新增vhost name选项
  - dccs key name 添复制功能
  - DCCS Key Name点击打开新页面显示credentials
  - 更改DCCS Key为Service Key
  - 去掉view json 中的root
  - 模态框查看详情时添加parameters 项
- - 模态框表单select搜索
+ - 模态框表单select添加搜索
  - 头部document跳转语言错误问题
  - antd 组件全局化配置
  - table 分页添加每页显示条数下拉框选单
