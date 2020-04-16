@@ -1,3 +1,39 @@
+## Service-Console-UI 1.0.0.10 (2020-04-16)
+
+ 新增和修改:
+ -Service Instance list 表格新增顯示service instance id
+ -将 service name：p-rabbitmq 替换为RabbitMQ
+ -DB Dedicated Plan開放建立secret
+ -secret management secret name 位置固定
+ -secret list 不显示问题
+ -創建secret、service key時可以選擇db name或自行輸入新db name
+ -rabbitmq service建secret時新增vhost name選項
+ -dccs key name 添复制功能
+ -DCCS Key Name点击打开新页面显示credentials
+ -更改DCCS Key为Service Key
+ -去掉view json 中的root
+ -模态框查看详情时添加parameters 项
+ -模态框表单select搜索
+ -头部document跳转语言错误问题
+ -antd 组件全局化配置
+ -table 分页添加每页显示条数下拉框选单
+ -dropdown & select 下拉框定位问题
+ 
+ 修改Bug：
+ 1.  12690 若參數的值為空，也應該送出值為空的請求；若不允許值為空，則需於前端阻擋
+ 2.  13093 建立shared instance的secret時，不需要提供Database Name欄位
+ 3.  13095 應開放所有Plan都能建立secret
+ 4.  13198 建立RabbitMQ的key時，Role / Topic Read Path / Topic Write Path改為選填
+ 5.  13199 每次建立dedicated secret/service key時，應重新獲取Database Name清單
+ 6.  13203 若選擇了一個database name，無法改回空白的database name
+ 7.  13205 建立secret / service key時輸入的Database Name須限制只能A-Z、a-z、0-9以及橫線(-)，橫線不得在開頭，上限63字元
+ 8.  13210 InfluxDB的dedicated plan也要提供選擇Database Name的功能
+
+## Service-Console-UI 1.0.0.51 (2020-03-31)
+
+ 新增和修改：
+ -导航栏中订阅号下拉框添加公司名称
+
 ## Service-Console-UI 1.0.0.5 (2020-03-27)
 
  新增和修改：
