@@ -1,23 +1,24 @@
 ## Service-Console-UI 1.0.0.10 (2020-04-16)
 
  新增和修改:
- -Service Instance list 表格新增顯示service instance id
- -将 service name：p-rabbitmq 替换为RabbitMQ
- -DB Dedicated Plan開放建立secret
- -secret management secret name 位置固定
- -secret list 不显示问题
- -創建secret、service key時可以選擇db name或自行輸入新db name
- -rabbitmq service建secret時新增vhost name選項
- -dccs key name 添复制功能
- -DCCS Key Name点击打开新页面显示credentials
- -更改DCCS Key为Service Key
- -去掉view json 中的root
- -模态框查看详情时添加parameters 项
- -模态框表单select搜索
- -头部document跳转语言错误问题
- -antd 组件全局化配置
- -table 分页添加每页显示条数下拉框选单
- -dropdown & select 下拉框定位问题
+ 
+ - Service Instance list 表格新增顯示service instance id
+ - 将 service name：p-rabbitmq 替换为RabbitMQ
+ - DB Dedicated Plan開放建立secret
+ - secret management secret name 位置固定
+ - secret list 不显示问题
+ - 創建secret、service key時可以選擇db name或自行輸入新db name
+ - rabbitmq service建secret時新增vhost name選項
+ - dccs key name 添复制功能
+ - DCCS Key Name点击打开新页面显示credentials
+ - 更改DCCS Key为Service Key
+ - 去掉view json 中的root
+ - 模态框查看详情时添加parameters 项
+ - 模态框表单select搜索
+ - 头部document跳转语言错误问题
+ - antd 组件全局化配置
+ - table 分页添加每页显示条数下拉框选单
+ - dropdown & select 下拉框定位问题
  
  修改Bug：
  1.  12690 若參數的值為空，也應該送出值為空的請求；若不允許值為空，則需於前端阻擋
@@ -32,17 +33,17 @@
 ## Service-Console-UI 1.0.0.51 (2020-03-31)
 
  新增和修改：
- -导航栏中订阅号下拉框添加公司名称
+ - 导航栏中订阅号下拉框添加公司名称
 
 ## Service-Console-UI 1.0.0.5 (2020-03-27)
 
  新增和修改：
- -响应式表格（屏幕变小，table组件会替换为description组件）
- -header 添加Support（弹出框显示邮箱）
- -header 添加tickets Icon
- -header Supprot替换为Tickets
- -instance list 无法加载问题
- -tabel 每页显示10条数据
+ - 响应式表格（屏幕变小，table组件会替换为description组件）
+ - header 添加Support（弹出框显示邮箱）
+ - header 添加tickets Icon
+ - header Supprot替换为Tickets
+ - instance list 无法加载问题
+ - tabel 每页显示10条数据
  
  修改Bug：
  12825 有取得datacenterCode，但右上圖示沒有顯示站點
