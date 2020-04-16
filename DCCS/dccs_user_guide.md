@@ -6,7 +6,7 @@ DCCS provides credential key for services, such as p-rabbitmq, mongodb, postgres
 Reminder: You may use El-Connect as a client of the IoT Hub. El-Connect has a built-in API-redeemed credential mechanism that allows you to efficiently send data collected from devices to the WISE-PaaS cloud platform via the IoT Hub.
 ```
 
-The URL for redeeming a credential  is formatted as `https://api-dccs-ensaas.{data center name}.{cloud platform domain name}`. For example, the domain name of the WISE-PaaS Singapore cloud platform is sa.wise-pass.com. Therefore, the URL for redeeming a credential is `https://api-dccs-ensaas.sa.wise-pass.com` . DCCS provides an API `api-docs` to get  the swagger document and so that the URL of Singapore swagger document is `https://api-dccs-ensaas.sa.wise-pass.com/api-docs`. 
+The URL for redeeming a credential  is formatted as `https://api-dccs-ensaas.{data center name}.{cloud platform domain name}`. For example, the domain name of the WISE-PaaS Singapore cloud platform is sa.wise-pass.com. Therefore, the URL for redeeming a credential is `https://api-dccs-ensaas.sa.wise-paas.com` . DCCS provides an API `api-docs` to get  the swagger document and so that the URL of Singapore swagger document is `https://api-dccs-ensaas.sa.wise-paas.com/api-docs`.
 
 # Authority Certification
 
