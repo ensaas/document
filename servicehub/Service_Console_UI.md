@@ -1,3 +1,17 @@
+## Service-Console-UI 1.0.0.5 (2020-03-27)
+
+ 新增和修改：
+ -响应式表格（屏幕变小，table组件会替换为description组件）
+ -header 添加Support（弹出框显示邮箱）
+ -header 添加tickets Icon
+ -header Supprot替换为Tickets
+ -instance list 无法加载问题
+ -tabel 每页显示10条数据
+ 
+ 修改Bug：
+ 12825 有取得datacenterCode，但右上圖示沒有顯示站點
+ 
+ 
 ## Service-Console-UI 1.0.0.41 (2020-03-23)
 
  新增和修改：
