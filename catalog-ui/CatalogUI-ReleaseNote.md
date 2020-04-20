@@ -1,5 +1,12 @@
 ## Catalog-ui ReleaseNote
 
+### version：v-1.0.2.4
+####  Added：
+- 删除购物车成功后的提示
+####  Updated：
+- 取消灯泡的压缩
+- 取消accountIno接口的提示
+
 ### version：v-1.0.2.2
 ##### Added:
 - 整合my advantech账号登录
