@@ -1,0 +1,13 @@
+## Catalog-ui ReleaseNote
+
+### version：v-1.0.2.2
+##### Added:
+- 整合my advantech账号登录
+- 整合登录页面添加响应式
+- 支持无订阅号用户登录及查看
+- 非hz站点没有备案号
+#### Updated:
+- 更换信息提示样式
+#### Fixed:
+- 站点显示
+- 服务列表搜索支持多空格
