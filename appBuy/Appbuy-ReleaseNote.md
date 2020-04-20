@@ -25,5 +25,5 @@
 具体为：
        db        ${chartname}-$ns-secret
        Release   ${chartname}-$ns
-- 增加部署时，从listingsystem读取values.yaml进行部署。
-- 修改sso account info接口。
+- 增加部署时，从listingsystem读取values.yaml进行部署
+- 修改sso account info接口
