@@ -1,4 +1,4 @@
-## Service-Console-UI 1.0.0.10 (2020-04-16)
+## Service-Console-UI 1.0.0.11 (2020-04-20)
 
  新增和修改:
  - database api返回值变动引起UI显示问题的修改
