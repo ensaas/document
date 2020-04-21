@@ -1,3 +1,39 @@
+# DCCS v-1.1.4 (2020-04-21)
+
+## Summary Update
+
+Added:
+
+- 支持用内部域名http://api.dccs.ensaas.en.internal/v1调用dccs key返回的service host为内部IP
+
+# DCCS v-1.1.3.3 (2020-04-21)
+
+## Summary Update
+
+Fixed:
+
+- 修复get不带service host的dccs key返回500的错误
+
+# DCCS v-1.1.3.2 (2020-04-20)
+
+## Summary Update
+
+Fixed：
+
+- 修复调用ensaas 3.0 sso url返回302的错误
+- 修复ensaas 3.0 dccs key返回错误的service host
+- 修复创建同名的dccs key返回400的错误
+- 修复service instance id删掉之后创建dccs key的提示信息
+- 修复service hub地址填错创建dccs key的提示信息
+
+# DCCS v-1.1.3.1 (2020-04-15)
+
+## Summary Update
+
+Added:
+
+- 支持不同的域名连不同的sso地址
+
 # DCCS v-1.1.3 (2020-04-10)
 
 ## Summary Update

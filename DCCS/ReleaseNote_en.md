@@ -1,3 +1,39 @@
+# DCCS v-1.1.4 (2020-04-21)
+
+## Summary Update
+
+Added:
+
+- Support that use http://api.dccs.ensaas.en.internal/v1 to get dccs key returns the service host with internal IP
+
+# DCCS v-1.1.3.3 (2020-04-21)
+
+## Summary Update
+
+Fixed:
+
+- Fix the bug that getting dccs key without serviceHost return 500 status code
+
+# DCCS v-1.1.3.2 (2020-04-20)
+
+## Summary Update
+
+Fixed：
+
+- Fix the bug that call the ensaas 3.0 sso url returned 302
+- Fix ensaas 3.0 dccs key with wrong service host
+- Fix the bug that return 400 status code when creating a dccs key with the same name
+- Fix the log information when create dccs key after service instance id is deleted
+- Fixed the log information when create DCCS key with wrong service hub url
+
+# DCCS v-1.1.3.1 (2020-04-15)
+
+## Summary Update
+
+Added:
+
+- Support different domain names with different sso url
+
 # DCCS v-1.1.3 (2020-04-10)
 
 ## Summary Update
