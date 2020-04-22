@@ -1,5 +1,10 @@
 ## Buy-ui ReleaseNote
 
+### version：v-1.0.1.7
+#### Added:
+- 无订阅号和普通用户在最后一步的提示，分别为你没有订阅号，你是普通用户，现在不能订阅
+- 第一步的站点提示修改为现在你不能更换站点
+
 ### version：v-1.0.1.5
 #### Fixed:
 - 选择space plan后再次选择该plan Ws无值问题
