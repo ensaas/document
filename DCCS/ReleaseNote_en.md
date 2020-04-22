@@ -6,6 +6,11 @@ Added:
 
 - Support that use http://api.dccs.ensaas.en.internal/v1 to get dccs key returns the service host with internal IP
 
+Fixed:
+
+- Fix the log information when create custom DCCS key with wrong service hub url
+- Fix the log information when disable/enable/get/delete DCCS key with wrong service hub url
+
 # DCCS v-1.1.3.3 (2020-04-21)
 
 ## Summary Update

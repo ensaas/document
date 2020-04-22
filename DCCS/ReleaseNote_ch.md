@@ -6,6 +6,11 @@ Added:
 
 - 支持用内部域名http://api.dccs.ensaas.en.internal/v1调用dccs key返回的service host为内部IP
 
+Fixed:
+
+- 修复service hub地址填错创建 custom dccs key的提示信息
+- 修复service hub地址填错disable/enable/get/delete dccs key的提示信息
+
 # DCCS v-1.1.3.3 (2020-04-21)
 
 ## Summary Update
