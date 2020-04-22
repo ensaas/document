@@ -1,5 +1,11 @@
 ## Catalog-ui ReleaseNote
 
+### version：v-1.0.2.5
+####  Added：
+- 普通用户也可以点击跳转
+- 购物车删除全部换为了cartId,支持删除，右上角的总个数更新
+- 订阅号的搜索支持公司名
+
 ### version：v-1.0.2.4
 ####  Added：
 - 删除购物车成功后的提示
