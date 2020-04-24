@@ -1,3 +1,15 @@
+### EnSaaS-K8s-Service 4.0.5- (2020-04-24)
+
+#### [Cluster Agent]- 4.0.5
+
+Fixed:
+
+- open the authority to change quota of workspace "ensaas" and namespace "logging", "rms", "ensaas-service"
+- if the namespace "logging" and "rms" are not exist, agent will startup failed
+- datacenterAdmin user can not create namespace
+
+
+
 ### EnSaaS-K8s-Service 4.0.4- (2020-04-01)
 
 #### [Managment Portal UI]
