@@ -1,5 +1,11 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.3.0.6
+##### Fixed:
+- 修改定时同步serviceInfo的bug
+##### Updated:
+- 同步时间添加到环境变量，默认是每日00：00
+
 ### version：v-1.3.0.2
 ##### Added:
 - 在servicePackage上添加planNum
