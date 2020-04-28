@@ -86,11 +86,11 @@ GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain?serviceType=
 ### HTTP Request  
 - SA 站点：
 ```
-GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/{your internal domain}/external
+GET https://api-router-ensaas.sa.wise-paas.com/v1/routers/domain/<your internal domain>/external
 ```
 - HZ 站点：
 ```
-GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain/{your internal domain}/external
+GET https://api-router-ensaas.hz.wise-paas.com.cn/v1/routers/domain/<your internal domain>/external
 ```
 ### HTTP Response
 ```
