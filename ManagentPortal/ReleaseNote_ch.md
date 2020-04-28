@@ -1,3 +1,15 @@
+### EnSaaS-K8s-Service 4.0.5- (2020-04-24)
+
+#### [Cluster Agent]- 4.0.5
+
+Fixed:
+
+- 放开切换ensaas ws和logging，rms，ensaas-service这些ns的quota的权限
+- 修复集群中没有logging或者rms 这两个namespace的时候，agent不能启动的问题
+- 修正datacenterAdmin不能创建ns的问题
+
+
+
 ### EnSaaS-K8s-Service 4.0.4- (2020-04-01)
 
 #### [Managment Portal UI]- 4.0.4
