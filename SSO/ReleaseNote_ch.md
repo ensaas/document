@@ -2,7 +2,7 @@
 ### New Features
 * SSO和ManagementPortal进行权限拆分，去掉SSO中的资源权限管理的节点，之后资源权限相关的分配和管理在ManagementPortal中操作, SSO负责用户管理和企业账号订阅号管理。
 * SSO新增管理员权限为globalAdmin，去掉dataCenterAdmin是最高管理员的权限，目前支持的角色有globalAdmin，subscriptionAdmin,subscriptionUser,srpUser,unassigned.
-* 重新开启appId的校验.
+* Client 注册的时候会开启appId的校验，效验它是一个在平台空间的位置部署的存在的App
 * 新增 api /clients/:clientId/users 获取某个client下的所有user.
 * 新增 oauth整合myadvantech登录时，只要是研华的邮箱，如果在marktplace检查没有crmid也会放行登录.
 * 为保证兼容，SSO /users/me，/srprole api 会实时去mp查询用户的资源权限信息。
