@@ -3,7 +3,7 @@
 * 新增 和mp权限拆分，sso以后不再有资源权限的概念。
 * 新增 sso 角色修改为globalAdmin,subscriptionAdmin,subscriptionUser,srpUser,unassigned。
 * 新增 user列表增加列 sso_role字段，用来记录用户在sso的权限。
-* During the first update, the data of SSO role will be filled in. The value of SSO role field is the highest of the user's permissions in SSO. The default value of datacenteradmin account is globaladmin. The other accounts take the highest level of each permission as the initial value.
+* 新增 在第一次更新时，会做一次sso_role的数据填充，sso_role字段的值为用户在sso各个权限的最高者，datacenterAdmin账号默认为globalAdmin,其余账号取各个权限的最高级作为初始值。
 * 新增 为暂时保证兼容，sso /users/me，/srprole api 会实时去mp查询。
 * 新增 创建用户时指定订阅号，可以同时把用户加入订阅号中。
 * 新增 api  DELETE /clients/unsubscribe,根据client位置以及serviceName删除client。
@@ -19,8 +19,8 @@
 ## Portal 4.0.3.0-(2020-4-28)
 ### New Features
 * 菜单修改，现在有：订阅号、用户、客户端、个人资料、角色介绍。
-* 订阅号：列表中呈现订阅号和试用订阅号基本信息，支持按照订阅号名字、公司、订阅号ID筛选，支持按照订阅号、试用订阅号进行筛选，操作列加入订阅号详情功能。权限：globalAdmin和订阅号用户。
-* 用户：展示用户列表，支持按照所有订阅号、所有试用订阅号、订阅号筛选用户。
+* 订阅号：列表中呈现订阅号和试用订阅号基本信息，支持按照订阅号名字、公司、订阅号ID筛选，支持按照订阅号、试用订阅号进行筛选，操作列加入订阅号详情功能。权限：globalAdmin和订阅号user、订阅号admin。
+* 用户：展示用户列表，支持按照所有订阅号、所有试用订阅号、订阅号筛选用户。权限：globalAdmin和订阅号user、订阅号admin。
 * 用户编辑：去掉资源权限信息，可分配订阅号权限，只有用户自己能修改自己的基本信息。
 
 ## Portal 4.0.2.2-(2020-4-9)
