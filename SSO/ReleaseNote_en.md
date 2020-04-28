@@ -15,6 +15,12 @@
 * Add api / admin / users to provide globalAdmin to get user list, support various query modes such as subscription number and client.
 * Send email to use notification service on k8s
 
+### Fix bugs 
+* The permission judgment of client filtering is changed to query resource permissions in real time from mp.
+* modify the bugs related to the trail subscription number.
+* Corrected the problem of incorrect password in the registration letter issued by integrating myadvantech login
+* Modify apidoc
+
 ## Portal 4.0.3.0-(2020-4-28)
 ### New Features
 * SSO and Management Portal split the permissions to remove the resource permission management node in SSO. Afterwards, resource permission related allocation and management are operated in Management Portal. SSO is responsible for user management and enterprise account subscription number management.
