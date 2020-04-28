@@ -1,5 +1,9 @@
 ### EnSaaS-K8s-Service 4.0.6- (2020-04-28)
 
+#### [Managment Portal UI]- 4.0.5
+
+#### [Managment Portal API]- 4.0.6
+
 Added:
 
 - user management, include:
