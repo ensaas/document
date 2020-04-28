@@ -20,8 +20,8 @@
 ## Portal 4.0.3.0-(2020-4-28)
 ### New Features
 * Menu modification, now there are: Subscription, Users, client, Profile, Role Introduction. 
-* Subscription: The basic information of the subscription and trial subscription is presented in the list. It supports filtering by subscription name, company, and subscription ID. It supports filtering by subscription and trial subscription. The operation column adds subscription details. Permissions: globalAdmin and subscription user.
-* Users: display a list of users and support filtering users based on all subscription, all trial subscription, and subscription.
+* Subscription: The basic information of the subscription and trial subscription is presented in the list. It supports filtering by subscription name, company, and subscription ID. It supports filtering by subscription and trial subscription. The operation column adds subscription details. Permissions: globalAdmin and subscription user, subscription admin.
+* Users: display a list of users and support filtering users based on all subscription, all trial subscription, and subscription.Permissions: globalAdmin and subscription user, subscription admin.
 * User editing: remove resource permission information, and assign subscription permission, only users can modify their own basic information.
 
 ## Portal 4.0.2.2-(2020-4-9)
