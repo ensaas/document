@@ -1,3 +1,29 @@
+## API 4.0.4.0-(2020-04-28)
+### New Features
+* New and MP permission split, SSO no longer has the concept of resource permission.
+* The new SSO role is changed to global admin, subscriptionadmin, subscriptionuser, srpuser, unassigned.
+* Add the SSO role field in the user list to record the user's permissions in SSO.
+* During the first update, the data of SSO role will be filled in. The value of SSO role field is the highest of the user's permissions in SSO. The default value of datacenteradmin account is globaladmin. The other accounts take the highest level of each permission as the initial value.
+* To ensure compatibility temporarily, SSO /users/me and /srprole API will query MP in real time.
+* When creating a new user, you can specify the subscription number and add the user to the subscription number at the same time.
+* Add API delete /clients/unsubscribe, and delete the client according to the client location and servicename.
+* Add API delete /clients/resources to batch delete clients according to resource information.
+* When creating a new user, you can specify the subscription number and add the user to the subscription number at the same time.
+* New API /users/username/:userid gets username according to userid. This interface does not have permission requirements.
+* New API /users/subscriptions obtains all subscription number information of current user, returns subscription number status, whether to try, etc. For the UI to determine the menu to display.
+* New API /admin/users provides global admin to obtain user list, supports subscription number, client and other query modes.
+* Add and reopen the verification of appid
+* When you add OAuth and integrate myadvantech to log in, as long as the e-mail of Advantech is available, you will not go to marktplace to check whether there is a crmid
+* Add API /clients/:ClientID/users get all users under a client
+
+
+## Portal 4.0.3.0-(2020-4-28)
+### New Features
+* Menu modification, now there are: Subscription, Users, client, Profile, Role Introduction. 
+* Subscription: The basic information of the subscription and trial subscription is presented in the list. It supports filtering by subscription name, company, and subscription ID. It supports filtering by subscription and trial subscription. The operation column adds subscription details. Permissions: globalAdmin and subscription user.
+* Users: display a list of users and support filtering users based on all subscription, all trial subscription, and subscription.
+* User editing: remove resource permission information, and assign subscription permission, only users can modify their own basic information.
+
 ## Portal 4.0.2.2-(2020-4-9)
 ### New Features
 * CRM ID is required when creating subscription.
