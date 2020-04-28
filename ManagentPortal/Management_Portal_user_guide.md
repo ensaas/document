@@ -47,7 +47,7 @@
 
 3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Workspace。进入Workspace管理页面。
 
-![workspace](.\image\workspace.png)
+![workspace](./image/workspace.png)
 
 4，在cluster下拉框处选择集群（workspace将创建在该集群下），点击创建按钮+，进入创建workspace的页面。
 
