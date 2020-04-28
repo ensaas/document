@@ -1,3 +1,28 @@
+### EnSaaS-K8s-Service 4.0.6- (2020-04-28)
+
+Added:
+
+- user management, include:
+  - create a new user
+  - disable a user
+  - enable a user
+- resource management, include:
+  - bind permission to a user
+  - unbind permission to a user
+  - the bind & unbind rules are: 
+    - current user can catch the same level and lower level permission
+    - for resource permission, current user can bind a lower level permission to other user
+    - for subscription permission, current user  can bind the same level and a lower level permission to other user
+    - current user can not bind & unbind subscription permission of a user
+- add support for SSO globalAdmin, the previous datacenterAdmin is upper to globalAdmin
+
+Fixed:
+
+- for the cluster imported by token, you may get incomplete admin-config content
+- fix bug that subscription permission can be modified 
+
+
+
 ### EnSaaS-K8s-Service 4.0.5- (2020-04-24)
 
 #### [Cluster Agent]- 4.0.5

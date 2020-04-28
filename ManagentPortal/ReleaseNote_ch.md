@@ -1,3 +1,32 @@
+### EnSaaS-K8s-Service 4.0.6- (2020-04-28)
+
+#### [Managment Portal UI]- 4.0.5
+
+#### [Managment Portal API]- 4.0.6
+
+Added:
+
+- 用户管理，包括：
+  - 新建用户
+  - 禁用用户
+  - 重新启用用户
+- 权限管理，包括：
+  - 给某个用户绑定平台权限
+  - 给某个用户解绑平台权限
+  - 具体的绑定规则如下：
+    - 可以看到同级及其下级权限
+    - 对资源权限，可以绑定下一级权限
+    - 对订阅号权限，可以绑定同级权限
+    - 不能绑定和解绑订阅号转换来的资源权限
+- 支持SSO的globalAdmin，以前的datacenterAdmin权限提升为globalAdmir
+
+Fixed:
+
+- 通过token导入的集群，获取admin config的时候config不完整
+- 修正订阅号权限可以被修改的bug
+
+
+
 ### EnSaaS-K8s-Service 4.0.5- (2020-04-24)
 
 #### [Cluster Agent]- 4.0.5
