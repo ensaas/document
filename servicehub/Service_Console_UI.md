@@ -2,7 +2,7 @@
 
  新增和修改:
  - react-json-view 组建样式调整
- - table  list length 小于等于10时。隐藏分页组建
+ - table list length 小于等于5时。隐藏分页组建
  - vhost name 输入问题
  - api: /datacenter未能正常返回数据时，取消dccs key name的点击功能
  - 读取cookie取得默认订阅号
