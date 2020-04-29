@@ -19,10 +19,9 @@ Mirgrating user management and editing user functionality from SSO, which will n
 - Supporting globalAdmin role from SSO, all previous datacenterAdmin accounts will be promoted to globalAdmin
 
 Note: Operational limitations for resource permission assignments:
-    - For resource permissions, only roles lower than that of current account can be assigned
-      (e.g. clusterOwner can only be assigned to user workspaceOwner permissions)
-    - For subscription number permissions, same and lower roles can be assigned
-    - Existing resource permissions for subscriptions cannot be modified
+- For resource permissions, only roles lower than that of current account can be assigned(e.g. clusterOwner can only be assigned to user workspaceOwner permissions)
+- For subscription number permissions, same and lower roles can be assigned
+- Existing resource permissions for subscriptions cannot be modified
 
 Fixed:
 - Through token imported clusters, get admin config when config incomplete
