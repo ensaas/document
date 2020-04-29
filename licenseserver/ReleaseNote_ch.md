@@ -3,7 +3,7 @@
 * 新增 获取license接口返回值中增加isTrial字段，返回该订阅号是否试用的信息。
 
 ## License Server 1.0.0.2-(2020-03-20)
-### Fix bugs
+### Bug Fixes
 * 修复 退订后再部署时，出现license失效的问题，增加判断catalog消息中的licensestatus(目前有两种状态：uncompleted和completed),只处理licensestatus为uncompleted
 
 ## License Server 0.0.2.1-(2020-02-24)
