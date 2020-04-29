@@ -1,10 +1,39 @@
-## Service-Console-UI 1.0.0.11 (2020-04-20)
+## Service-Portal-UI 1.0.1 (2020-04-29)
+
+ 新增和修改:
+ - react-json-view 组建样式调整
+ - table  list length 小于等于10时。隐藏分页组建
+ - vhost name 输入问题
+ - api: /datacenter未能正常返回数据时，取消dccs key name的点击功能
+ - 读取cookie取得默认订阅号
+ - 密钥管理页面：当列表为空的时候，新建时，输入名称时报错
+
+ 修改Bug：
+ 1.  13149 部分文字沒有被加入語言檔，需要補加入
+ 2.  13137 將畫面縮至67%後，Subscription Name的下拉式選單會移至第二排
+ 3.  13136 將畫面縮小後，用戶中心的icon會移位
+ 4.  13133 應記下用戶選擇的分頁選項
+ 5.  13223 於Secret Management畫面切換頁籤時，應記下用戶選擇的選項
+ 6.  13134 對文字部分的建議 part2
+ 7.  13227 移除畫面上方會顯示的tooltip
+ 8.  13219 Credentials中的複製按鈕按下後，複製到的字串建議不包含雙引號
+ 9.  13226 針對RabbitMQ的建立secret和建立service key的畫面進行修改
+ 10.  13147 建立密鑰時，若cluster底下無任何workspace，或workspace底下無任何namespace，希望提示給使用者
+ 11.  13258 建立secret或service key時，希望能加大參數按鈕與底下參數的間隔
+ 12.  13225 建立secret時，阻擋在同cluster / workspace / namespace下建立重複的secret名稱 
+ 13.  13200 建立secret時，阻擋用戶輸入重複的parameters
+ 14.  13338 建立service key時，description欄位應為非必填項目 
+ 15.  113307 匯入Dedicated DB功能詳細需求
+ 16.  13570 請將頁面標題改為Service Portal
+ 17.  13568 若將Portal的網址後面部分亂打，則將頁面導回Portal的主頁
+
+## Service-Portal-UI 1.0.0.11 (2020-04-20)
 
  修改Bug:
  - 13302 當獲得database / vhost清單時若回覆為空，UI會不停嘗試讀取database / vhost清單
 
 
-## Service-Console-UI 1.0.0.10 (2020-04-16)
+## Service-Portal-UI 1.0.0.10 (2020-04-16)
 
  新增和修改:
  - Service Instance list 表格新增显示service instance id
@@ -36,12 +65,12 @@
  7.  13205 建立secret / service key時輸入的Database Name須限制只能A-Z、a-z、0-9以及橫線(-)，橫線不得在開頭，上限63字元
  8.  13210 InfluxDB的dedicated plan也要提供選擇Database Name的功能
 
-## Service-Console-UI 1.0.0.51 (2020-03-31)
+## Service-Portal-UI 1.0.0.51 (2020-03-31)
 
  新增和修改：
  - 导航栏中订阅号下拉框添加公司名称
 
-## Service-Console-UI 1.0.0.5 (2020-03-27)
+## Service-Portal-UI 1.0.0.5 (2020-03-27)
 
  新增和修改：
  - 响应式表格（屏幕变小，table组件会替换为description组件）
@@ -55,7 +84,7 @@
  12825 有取得datacenterCode，但右上圖示沒有顯示站點
  
  
-## Service-Console-UI 1.0.0.41 (2020-03-23)
+## Service-Portal-UI 1.0.0.41 (2020-03-23)
 
  新增和修改：
  - 添加表格的表头排序功能
@@ -63,7 +92,7 @@
  - 更换订阅号API(SSO/subscriptions)
 
 
-## Service-Console-UI 1.0.0.4 (2020-03-20)
+## Service-Portal-UI 1.0.0.4 (2020-03-20)
 
  新增和修改：
  - 页面内部侧边菜单栏
@@ -80,7 +109,7 @@
  5.  12558 若因dccs異常而導致無法建secret，沒有任何錯誤訊息
 
 
-## Service-Console-UI 1.0.0.3 (2020-03-18)
+## Service-Portal-UI 1.0.0.3 (2020-03-18)
 
  新增和修改：
  - 替换所有Icon
@@ -91,7 +120,7 @@
  3. 12610 英文語系文字錯誤
 
 
-## Service-Console-UI 1.0.0.2 (2020-03-17)
+## Service-Portal-UI 1.0.0.2 (2020-03-17)
 
  新增和修改： 
  - 密钥管理页面：
@@ -159,7 +188,7 @@
  30. 12635 對文字部分的建議
  
  
-## Service-Console-UI 1.0.0.1 (2020-02-19)
+## Service-Portal-UI 1.0.0.1 (2020-02-19)
 
  新增和修改：
  - 服务实例列表页面：
