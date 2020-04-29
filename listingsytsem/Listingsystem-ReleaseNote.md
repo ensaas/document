@@ -1,5 +1,9 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.3.0.7
+##### Updated:
+- 添加Listingsystem的默认的admin
+
 ### version：v-1.3.0.6
 ##### Fixed:
 - 修改定时同步serviceInfo的bug
