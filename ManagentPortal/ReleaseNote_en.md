@@ -6,24 +6,27 @@
 
 Added:
 
-- user management, include:
-  - create a new user
-  - disable a user
-  - enable a user
-- resource management, include:
-  - bind permission to a user
-  - unbind permission to a user
-  - the bind & unbind rules are: 
-    - current user can catch the same level and lower level permission
-    - for resource permission, current user can bind a lower level permission to other user
-    - for subscription permission, current user  can bind the same level and a lower level permission to other user
-    - current user can not bind & unbind subscription permission of a user
-- add support for SSO globalAdmin, the previous datacenterAdmin is upper to globalAdmin
+Mirgrating user management and editing user functionality from SSO, which will no longer provide this feature in the future.
+- User management:
+    - View user lists
+    - Filter users with cluster/workspace/namespace
+    - Query users by search bar
+    - Add new users
+    - Invite users: Assign your own resource permissions to existing users
+- Edit users:
+    - Edit selected user's basic information (Current user only)
+    - Modifying/assigning user resource permissions
+- Supporting globalAdmin role from SSO, all previous datacenterAdmin accounts will be promoted to globalAdmin
+
+Note: Operational limitations for resource permission assignments:
+    - For resource permissions, only roles lower than that of current account can be assigned
+      (e.g. clusterOwner can only be assigned to user workspaceOwner permissions)
+    - For subscription number permissions, same and lower roles can be assigned
+    - Existing resource permissions for subscriptions cannot be modified
 
 Fixed:
-
-- for the cluster imported by token, you may get incomplete admin-config content
-- fix bug that subscription permission can be modified 
+- Through token imported clusters, get admin config when config incomplete
+- Fix bugs where subscription number permissions can be modified
 
 
 
