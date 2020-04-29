@@ -19,10 +19,9 @@ Added:
 - 支持 SSO 的 globalAdmin 角色，以前的 datacenterAdmin 帐号全部提升为 globalAdmin
 
 注：资源权限分配的操作限制：
-    - 对资源权限，只能分配比自己低一階及以下权限
-      （如：clusterOwner只能分配给用户workspaceOwner权限）
-    - 对订阅号权限，可以分配同一级及以下权限
-    - 无法修改订阅号既有的资源权限
+- 对资源权限，只能分配比自己低一階及以下权限（如：clusterOwner只能分配给用户workspaceOwner权限）
+- 对订阅号权限，可以分配同一级及以下权限
+- 无法修改订阅号既有的资源权限
 
 Fixed:
 
