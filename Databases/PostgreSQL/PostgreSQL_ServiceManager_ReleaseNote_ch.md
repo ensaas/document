@@ -1,4 +1,9 @@
-# Service Postgresql ReleaseNote
+# Service Postgresql Release Note
+
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.1
+
+### Fixed:
+- Bug #13607: Deprovision時會發生刪除role失敗的錯誤
 
 ## WISE-PaaS Service Manager - PosrgreSQL 0.1.16
 
