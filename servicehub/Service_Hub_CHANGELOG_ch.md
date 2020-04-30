@@ -1,5 +1,13 @@
+# 0.3.9 (2020-04-30)
+ * feat: 更新 changelog
+ * feat: 新增查詢剩餘數量API
+ * feat: 新增broker建立、刪除、更新等API
+ * feat: RabbitMQ 註冊時攜帶參數
+ * bugfix: 修正回傳數值統一
+ * bugfix: datacenterAdmin 改為查詢 MP role 
+
 # 0.3.8 (2020-04-28)
- * feat:更新 sso 權限檢查
+ * feat: 更新 sso 權限檢查
 
 # 0.3.7 (2020-04-19)
  * feature: 移除mongodb時帶上replicasetName
