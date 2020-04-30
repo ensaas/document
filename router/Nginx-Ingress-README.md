@@ -46,8 +46,6 @@ defaultBackend:
   useComponentLabel: true
 
 ```
-  - controller.useComponentLabel
-  - defaultBackend.useComponentLabel
 2. 修改 values.yaml internal loaBalancer
 ```bash
     annotations:  # [ensaas] 根据不同的平台填写不同的Annotations
