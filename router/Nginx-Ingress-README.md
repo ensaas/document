@@ -73,7 +73,7 @@ helm install nginx-ingress -f values.yaml .
 helm upgrade nginx-ingress -f values.yaml .
 ```
 ## 导入 Dashboard 面板
->  需要在每个 datacenter 的 ensaas 集群 Dashboard 中导入面板
+>  需要在每个 datacenter 的 ensaas 集群中导入 Dashboard 面板
 
 [Dashboard](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/grafana/dashboards)  
 [nginx.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/nginx.json)  
