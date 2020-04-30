@@ -2,7 +2,7 @@
 
 ### version：1.36.1
 ##### Updated:
-- nginx ingress version 0.30.0
+- nginx ingress version to 0.30.0
 #### Add:
 - serviceMonitor
 - alert:
