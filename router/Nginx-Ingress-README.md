@@ -2,7 +2,7 @@
 [ingress-nginx](https://github.com/kubernetes/ingress-nginx)  
 
 #### helm chart:
-[chart](https://harbor.wise-paas.com/harbor/projects/4/helm-charts/nginx-ingress/versions/1.36.1)
+https://harbor.wise-paas.com/harbor/projects/4/helm-charts/nginx-ingress/versions/1.36.1
 
 ## 新部署
 1. 修改 values.yaml useComponentLabel 为 true 
