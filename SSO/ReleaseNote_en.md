@@ -1,3 +1,7 @@
+## Portal 4.0.4.0-(2020-4-30)
+### Fix bugs 
+* When the user logs in for the first time, click Skip and no response. When you click to change the password, you cannot get the user's basic information.
+
 ## API 4.0.4.0-(2020-04-28)
 ### New Features
 * SSO and Management Portal split the permissions to remove the resource permission management node in SSO. Afterwards, resource permission related allocation and management are operated in Management Portal. SSO is responsible for user management and enterprise account subscription number management.
