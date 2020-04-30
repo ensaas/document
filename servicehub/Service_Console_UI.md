@@ -1,3 +1,9 @@
+## Service-Portal-UI 1.0.1.1 (2020-04-30)
+
+ 修改Bug:
+ - 13610 Global admin登入後，看不到匯入Dedicated DB的按鈕
+
+
 ## Service-Portal-UI 1.0.1 (2020-04-29)
 
  新增和修改:
