@@ -3,8 +3,8 @@
 
 ## 新部署
 1. 修改 values.yaml useComponentLabel 为 true 
-  1. controller.useComponentLabel
-  2. defaultBackend.useComponentLabel
+  - controller.useComponentLabel
+  - defaultBackend.useComponentLabel
 2. 修改 values.yaml internal loaBalancer
 ```bash
     annotations:  # [ensaas] 根据不同的平台填写不同的Annotations
