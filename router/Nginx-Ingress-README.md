@@ -3,6 +3,49 @@
 
 ## 新部署
 1. 修改 values.yaml useComponentLabel 为 true 
+```bash
+## nginx configuration
+## Ref: https://github.com/kubernetes/ingress/blob/master/controllers/nginx/configuration.md
+##
+controller:
+  name: controller
+  image:
+    repository: harbor.wise-paas.com/ensaas-shared/kubernetes-ingress-controller/nginx-ingress-controller #quay.io/kubernetes-ingress-controller/nginx-ingress-controller
+    tag: "0.30.0"
+    pullPolicy: IfNotPresent
+    # www-data -> uid 101
+    runAsUser: 101
+    allowPrivilegeEscalation: true
+
+  # This will fix the issue of HPA not being able to read the metrics.
+  # Note that if you enable it for existing deployments, it won't work as the labels are immutable.
+  # We recommend setting this to true for new deployments.
+  useComponentLabel: true
+
+```
+```bash
+## Default 404 backend
+##
+defaultBackend:
+
+  ## If false, controller.defaultBackendService must be provided
+  ##
+  enabled: true
+
+  name: default-backend
+  image:
+    repository: harbor.wise-paas.com/ensaas-shared/defaultbackend-amd64  #k8s.gcr.io/defaultbackend-amd64
+    tag: "1.5"
+    pullPolicy: IfNotPresent
+    # nobody user -> uid 65534
+    runAsUser: 65534
+    
+  # This will fix the issue of HPA not being able to read the metrics.
+  # Note that if you enable it for existing deployments, it won't work as the labels are immutable.
+  # We recommend setting this to true for new deployments.
+  useComponentLabel: true
+
+```
   - controller.useComponentLabel
   - defaultBackend.useComponentLabel
 2. 修改 values.yaml internal loaBalancer
