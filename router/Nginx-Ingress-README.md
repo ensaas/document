@@ -1,5 +1,5 @@
 # Nginx-Ingress
-[ingress-nginx](https://github.com/kubernetes/ingress-nginx)  
+[NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx)  
 
 #### helm chart:
 https://harbor.wise-paas.com/harbor/projects/4/helm-charts/nginx-ingress/versions/1.36.1
