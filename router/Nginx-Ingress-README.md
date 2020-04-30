@@ -3,8 +3,8 @@
 
 ## 新部署
 1. 修改 values.yaml useComponentLabel 为 true 
-  - controller.useComponentLabel
-  - defaultBackend.useComponentLabel
+  1. controller.useComponentLabel
+  2. defaultBackend.useComponentLabel
 2. 修改 values.yaml internal loaBalancer
 ```bash
     annotations:  # [ensaas] 根据不同的平台填写不同的Annotations
@@ -29,6 +29,6 @@ helm install nginx-ingress -f values.yaml .
 helm upgrade nginx-ingress -f values.yaml .
 ```
 ## 导入 Dashboard 面板
-[Dashboard](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/grafana/dashboards)
-[nginx.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/nginx.json)
+[Dashboard](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/grafana/dashboards)  
+[nginx.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/nginx.json)  
 [request-handling-performance.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/request-handling-performance.json)
