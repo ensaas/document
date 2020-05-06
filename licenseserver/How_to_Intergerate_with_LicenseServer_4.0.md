@@ -16,7 +16,7 @@ Step3:  服务实例ServiceInstance通过PN和serviceInstanceId向License Server
 
 Step4: 从license server获取authcode和isValidTransaction进行对比判断，若符合激活条件则激活，反之，激活失败。
 
-服务激活需要满足两个条件：
+## 服务激活需要满足两个条件：
 
 1.isValidTransaction=True；此栏位代表用户订阅状态，true=有效，false=无效，若为无效时，激活失败。
 
