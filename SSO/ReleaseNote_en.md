@@ -1,3 +1,8 @@
+## API 4.0.5.0-(2020-05-07)
+### Fix bugs 
+* The problem of incorrect synchronization results in some cases when modifying subscription number synchronization
+* Modify the format of registration letter
+
 ## Portal 4.0.4.0-(2020-4-30)
 ### Fix bugs 
 * When the user logs in for the first time, click Skip and no response. When you click to change the password, you cannot get the user's basic information.
