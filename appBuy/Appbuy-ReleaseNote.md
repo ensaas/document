@@ -1,5 +1,9 @@
 ## Appbuy-api ReleaseNote
 
+### version：v-1.3.1.16
+####  Updated：
+- 修改权限校验 由于目前mp不支持dcAdmin，现买东西只能用订阅号admin。仓库相关接口权限为globalAdmin
+
 ### version：v-1.3.1.14
 ####  Updated：
 - 支持service-hub dedicated DB创建binding的操作, 增加字段dbName
