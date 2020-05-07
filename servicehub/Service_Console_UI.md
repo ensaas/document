@@ -1,3 +1,19 @@
+## Service-Portal-UI 1.0.1.1 (2020-05-07)
+ 修改Bug：
+ 1.  13629 編輯service key的畫面中，description欄位消失了
+ 2.  13628 當服務為RabbitMQ時，應移除畫面上的容量
+ 3.  13654 在View的頁面裡json字串太靠邊界，需要增加與邊界的間距
+ 4.  13149 部分文字沒有被加入語言檔，需要補加入
+ 5.  12690 若參數的值為空，也應該送出值為空的請求；若不允許值為空，則需於前端阻擋
+ 6.  13632 匯入Dedicated DB功能的調整意見(初步)
+ 7.  13658 建立secret時，若輸入非法字元，顯示的錯誤訊息有誤
+ 8.  13226 針對RabbitMQ的建立secret和建立service key的畫面進行修改
+ 9.  13227 移除畫面上方會顯示的tooltip
+ 10.  13655 匯入Dedicated DB頁面的提示句
+ 11.  13219 Credentials中的複製按鈕按下後，複製到的字串建議不包含雙引號
+ 12.  13663 匯入Dedicated DB時，Service Instance Name不需要阻擋符號在開頭或結尾
+ 13.  13665 需要記憶instance排列方式
+
 ## Service-Portal-UI 1.0.1.1 (2020-04-30)
 
  修改Bug:
