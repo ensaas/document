@@ -1,4 +1,4 @@
-## Service-Portal-UI 1.0.1.1 (2020-05-07)
+## Service-Portal-UI 1.0.1.2 (2020-05-07)
  修改Bug：
  1.  13629 編輯service key的畫面中，description欄位消失了
  2.  13628 當服務為RabbitMQ時，應移除畫面上的容量
