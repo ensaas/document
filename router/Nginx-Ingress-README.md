@@ -79,8 +79,8 @@ helm upgrade nginx-ingress -f values.yaml .
 [nginx.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/nginx.json)  
 [request-handling-performance.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/request-handling-performance.json)
 
-* 注意:
-请确保values.yaml 中job 名为nginx-ingress metrics 的 svc name (`nginx-ingress-controller-metrics`)
+## 注意
+- 请确保values.yaml 中job 名为nginx-ingress metrics 的 svc name (`nginx-ingress-controller-metrics`)
 ```bash
         - alert: NginxIngressDown
           expr: absent(up{job="nginx-ingress-controller-metrics"} == 1)
