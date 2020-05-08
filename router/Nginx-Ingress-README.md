@@ -75,11 +75,11 @@ helm upgrade nginx-ingress -f values.yaml .
 ## 导入 Dashboard 面板
 >  需要在每个 datacenter 的 ensaas 集群中导入 Dashboard 面板
 
-[Dashboard](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/grafana/dashboards)  
-[nginx.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/nginx.json)  
-[request-handling-performance.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/request-handling-performance.json)
+:point_right: [Dashboard](https://github.com/kubernetes/ingress-nginx/tree/master/deploy/grafana/dashboards)  
+:point_right: [nginx.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/nginx.json)  
+:point_right: [request-handling-performance.json](https://github.com/kubernetes/ingress-nginx/blob/master/deploy/grafana/dashboards/request-handling-performance.json)
 
-## 注意
+## :heavy_exclamation_mark: 注意
 > 请确保values.yaml 中job 名为nginx-ingress metrics 的 svc name (`nginx-ingress-controller-metrics`)
 ```bash
         - alert: NginxIngressDown
