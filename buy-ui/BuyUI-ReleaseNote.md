@@ -1,5 +1,17 @@
 ## Buy-ui ReleaseNote
 
+### version：v-1.0.1.9
+#### Updated:
+- sso获取价格的接口改成detail
+
+### version：v-1.0.1.8
+#### Added:
+- 第三页的unit Price 拆分成了三种
+- 修改userEmail的值从sso中拿
+- 任何角色都可以来到第三页，没有值的可以看过程
+- 增加了order按钮无订阅号的则不会有该按钮
+- hz的k8s delicate会自动选上addtional
+
 ### version：v-1.0.1.7
 #### Added:
 - 无订阅号和普通用户在最后一步的提示，分别为你没有订阅号，你是普通用户，现在不能订阅
