@@ -571,6 +571,7 @@ ck it
 ck it
 
 3. Now you can see the resource permissions for this user. You can delete some permission here.
+
 **Note**:
 - for resource permission, lower-level permissions can be deleted
 - for subscription permission, same-level and lower-level permissions can be deleted
