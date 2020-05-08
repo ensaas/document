@@ -1,4 +1,4 @@
-# Nginx-Ingress :muscle:  
+# Nginx-Ingress :muscle:  :muscle:  :muscle:  
 
 :point_right: [NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx)  
 
