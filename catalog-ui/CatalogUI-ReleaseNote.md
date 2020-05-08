@@ -1,5 +1,17 @@
 ## Catalog-ui ReleaseNote
 
+### version：v-1.0.2.7
+#### Updated：
+- sso获取价格的接口改成detail
+- 购物车的分页功能
+#### Fixed：
+- 购物车时间的显示
+
+### version：v-1.0.2.6
+#### Added：
+- advantech账号登录后如果url有redirect，登录后会来到redirect地址
+- header增加订单按钮 无订阅则没有该按钮
+
 ### version：v-1.0.2.5
 ####  Added：
 - 普通用户也可以点击跳转
