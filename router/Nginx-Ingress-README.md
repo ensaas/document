@@ -1,4 +1,4 @@
-# Nginx-Ingress  :simple_smile:
+# Nginx-Ingress  :simple_smile:  
 :point_right: [NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx)  
 
 #### helm chart:
