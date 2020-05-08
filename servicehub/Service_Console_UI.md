@@ -1,3 +1,12 @@
+## Service-Portal-UI 1.0.1.3 (2020-05-08)
+
+ 新增和修改:
+ - 重命名instance 名称
+ 
+ 修改Bug:
+ 1.  13667 匯入Dedicated DB問題統整
+ 2.  13647 對文字部分的建議 part3
+
 ## Service-Portal-UI 1.0.1.2 (2020-05-07)
  修改Bug：
  1.  13629 編輯service key的畫面中，description欄位消失了

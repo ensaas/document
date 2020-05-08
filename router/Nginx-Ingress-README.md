@@ -1,11 +1,12 @@
-# Nginx-Ingress
+# Nginx-Ingress :muscle:  :muscle:  :muscle:  
+
 :point_right: [NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx)  
 
 #### helm chart:
 :point_right: https://harbor.wise-paas.com/harbor/projects/4/helm-charts/nginx-ingress/versions/1.36.1
 
 ## 新部署
-1. 修改 values.yaml useComponentLabel 为 true 
+1. 修改 values.yaml useComponentLabel 为 true  
 ```bash
 ## nginx configuration
 ## Ref: https://github.com/kubernetes/ingress/blob/master/controllers/nginx/configuration.md
