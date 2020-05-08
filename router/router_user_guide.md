@@ -16,13 +16,13 @@
 | appname | <= 24字符 | 字母、数字、"-" ，不允许其他字符 |
 
 ## 2. 整合路由
-### - [x] 共享路由
+- [x] 共享路由
 路由规则：
 - Internal Domain：`<appname>.<namespacename>.<clustername>.en.internal`
 - Extenal Domain: `https://<appname>-<namespacename>-<clustername>.<externaldomain>`
   > 注意：<appname>字符串可包含 "-",<namespacename>字符串不能含有 "-"
   
-### - [ ] 专属路由
+- [ ] 专属路由
 路由规则：
 建议Dedicated Cluster的用户在正式运营场景中使用专属路由服务，EnSaaS 4.0 在 Dedicated Cluster 提供了Public IP，专属路由用户自行配置Domain和凭证(可用工具自签)
 
