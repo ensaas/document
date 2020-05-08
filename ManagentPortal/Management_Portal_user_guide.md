@@ -529,7 +529,7 @@ $ kubectl describe ns {namespaceName}
 
 # 用户管理
 
-## 特别说明
+## 前提条件
 
 从EnSaaS-K8s-Service 4.0.6以后开始，用户和资源权限管理功能从SSO 移到了MP 4.0。
 
@@ -560,6 +560,7 @@ $ kubectl describe ns {namespaceName}
 1，每个用户的资源权限都有两个来源：
 - 在资源权限管理界面为其绑定的资源权限，我们称之为rolebinding权限；
 - 通过订阅号继承而来的资源权限，我们称之为subscription权限；
+
 2，资源权限管理操作默认有一个前提，那就是当前登录用户的资源权限和被操作用户的资源权限的比较。
 
 ## 查看用户的资源权限

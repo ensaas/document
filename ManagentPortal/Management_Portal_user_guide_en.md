@@ -467,7 +467,7 @@ You must be a cluster owner or above.
 3. Now you can see two tables: Workspace(All), which lists all workspaces, and Workspace(Bind), which lists all the workpaces bound with the quota queried.
 4. Click the Export button on the far right-hand side of the Workspace(Bind) table to export an Excel spreadsheet of all workspaces bound with the quota.
 
-![export_quota_workspace](.\image\export_quota_workspace.png)
+![export_quota_workspace](./image/export_quota_workspace.png)
 
 
 
@@ -496,7 +496,85 @@ You must be a workspace owner or above.
 3. Now you can see two tables: Namespace(All), which lists all namespaces, and Namespace(Bind), which lists all the namepaces bound with the quota queried.
 4. Click the Export button on the far right-hand side of the Namespace(Bind) table to export an Excel spreadsheet of all namespaces bound with the quota.
 
-![export_quota_workspace](.\image\export_quota_namespace.png)
+![export_quota_workspace](./image/export_quota_namespace.png)
+
+# User management
+
+## Prerequisites
+
+From EnSaaS-K8s-Service 4.0.6, user and resource management are mirgrated from SSO to MP4.0
+
+## Create user
+
+1. Click the menu button on the top left-hand corner of the portal. Go to User->Resource Permissions. Click the "+" icon on the right:
+
+![create_user](./image/create_user.png)
+
+2. You can create new user while binding resource permission for him: 
+
+![create_user_binding](./image/create_user_binding.png) 
+
+**Note** If you don't bind resource permission for the new created user, you can refer "Bind resource permission for the new user" chapter
+
+## Bind resource permission for the new user
+
+1. Click the menu button on the top left-hand corner of the portal. Go to User->Resource Permissions. Click the "+" icon on the right. At the new page, enter username in "Username" field, then move to "First name" field, then a dialog will popup: 
+
+![pop_binding](./image/pop_binding.png)
+
+2. Choose "Confirm", then you can bind resource permission for this user. You can refer "Bind resource permission for some user" chapter 
+
+# Resource permission management
+
+## Prerequisites
+
+people's resource permission originate from two source:
+- bind on the resource management page by other people, known as rolebinding permission
+- inherited from the subscription, known as subscription permision
+
+## List user's resource permission
+
+1. Click the menu button on the top left-hand corner of the portal. Go to User->Resource Permissions
+
+2. On this page, we can search user by resource, such as cluster, workspace, namespace or by username
+
+3. After you find the right user, move to  the three-point icon at the right and click. Now, the "Edit" icon is popup, click it, then you can see the resouce permission list at the bottom.
+
+**Note**: The login user can only see the some-level and lower-level permission of the operated user.
+
+## Bind resource permission for some user 
+
+1. Click the menu button on the top left-hand corner of the portal. Go to User->Resource Permissions
+
+2. After you find the right user, move to  the three-point icon at the right and click. Now, the "Edit" icon is popup, cli
+ck it
+
+3. Now you can operate to bind resource permission for some user
+
+![create_rolebindings](./image/create_rolebindings.png)
+
+4. Click "+", then click "Add" button at the bottom. Now the permission is added.
+
+5. Go back to Resource Permissions page, select "ews002" on cluster filed and select "test" on workspace filed, then you can see the permission
+
+![create_rolebindings_list](./image/create_rolebindings_list.png)
+
+**Note**
+- for rolebinding permission, lower-level permissions are permit
+- for subscription permission, some-level and lower-level permissions are permit
+
+## Unbind resource permission for some user
+
+1. Click the menu button on the top left-hand corner of the portal. Go to User->Resource Permissions
+
+2. After you find the right user, move to  the three-point icon at the right and click. Now, the "Edit" icon is popup, cli
+ck it
+
+3. Now you can see the resource permissions for this user. You can delete some permission here.
+**Note**:
+- for resource permission, lower-level permissions can be deleted
+- for subscription permission, same-level and lower-level permissions can be deleted
+- for permisson  inherited from subscription, can not be delete
 
 # Deploy applications
 
