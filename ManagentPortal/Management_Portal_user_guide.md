@@ -490,7 +490,7 @@ $ kubectl describe ns {namespaceName}
 
 4，在Workspace(Bind)表格头右侧点击导出按钮。即可导出使用该quota的workspace，导出的文件格式为excel。
 
-![export_quota_workspace](.\image\export_quota_workspace.png)
+![export_quota_workspace](./image/export_quota_workspace.png)
 
 
 
@@ -525,7 +525,85 @@ $ kubectl describe ns {namespaceName}
 
 4，在Namespace(Bind)表格头右侧点击导出按钮。即可导出使用该quota的Namespace，导出的文件格式为excel。
 
-![export_quota_workspace](.\image\export_quota_namespace.png)
+![export_quota_workspace](./image/export_quota_namespace.png)
+
+# 用户管理
+
+## 特别说明
+
+从EnSaaS-K8s-Service 4.0.6以后开始，用户和资源权限管理功能从SSO 移到了MP 4.0。
+
+## 创建用户
+
+1，点击界面左上角的菜单按钮，点击User->Resource Permissions 进入Resource Permissions界面。点右边的“+”号，进入创建用户的界面： 
+
+![create_user](./image/create_user.png)
+
+2，创建用户的同时可以为其绑定资源权限：
+
+![create_user_binding](./image/create_user_binding.png) 
+
+**注意** 如果在创建用户的时候没有为其绑定资源权限，可以参考如下“为新用户绑定资源权限”一节
+
+## 为新用户绑定资源权限
+
+1, 点击界面左上角的菜单按钮，点击User->Resource Permissions 进入Resource Permissions界面。点右边的“+”号，进入创建用户的界>面，然后在Username栏位填入用户名称，然后将鼠标焦点移到First name栏位，这个时候会弹出以下弹框：
+
+![pop_binding](./image/pop_binding.png)
+
+2，选择“Confirm”，接下来就可以为这个用户绑定资源权限了。具体的绑定过程可参考下方“为用户绑定资源权限”一节
+
+# 资源权限管理
+
+## 前提条件
+
+1，每个用户的资源权限都有两个来源：
+- 在资源权限管理界面为其绑定的资源权限，我们称之为rolebinding权限；
+- 通过订阅号继承而来的资源权限，我们称之为subscription权限；
+2，资源权限管理操作默认有一个前提，那就是当前登录用户的资源权限和被操作用户的资源权限的比较。
+
+## 查看用户的资源权限
+
+1，点击界面左上角的菜单按钮，点击User->Resource Permissions。进入Resource Permissions界面。
+
+2，在这个界面里我们可以从资源角度搜索到有某个资源的权限的所有用户，也可以合并搜索单个用户。
+
+3，找到用户之后，寻到右边的三点符号，然后单击，弹出Edit图标，点击Edit。就可以在下方看到用户的资源权限列表了。
+
+**注意**: 当前登录用户只能看到被操作用户的同级以及下级的资源权限。
+
+## 为用户绑定资源权限
+
+1，点击界面左上角的菜单按钮，点击User->Resource Permissions。进入Resource Permissions界面。
+
+2，找到用户之后，寻到右边的三点符号，然后单击，弹出Edit图标，点击Edit。
+
+3，接下来就可以在此处为用户绑定资源权限了。
+
+![create_rolebindings](./image/create_rolebindings.png)
+
+4，点“+”号，然后点击下方的“Add”按钮就可以了。
+
+5，这个时候回到Resource Permissions页面，选择cluster为ews002, workspace为test, 就可以看到对应的权限了:
+
+![create_rolebindings_list](./image/create_rolebindings_list.png)
+
+**注意**: 
+- 对资源权限，只能分配比自己低一级以及以下的权限
+- 对订阅号权限，可以分配同级以及以下的权限
+
+## 删除某个用户的资源权限
+
+1，点击界面左上角的菜单按钮，点击User->Resource Permissions。进入Resource Permissions界面。
+
+2，找到用户之后，寻到右边的三点符号，然后单击，弹出Edit图标，点击Edit。
+
+3，接下来就可以在页面下方看到该用户的资源权限列表了，点击右边的垃圾桶样式的图标就可以删除此资源权限了。
+
+**注意**:
+- 对资源权限，只能删除比自己低一级以及以下权限
+- 对订阅号权限，可以删除同级以及以下的权限
+- 不能删除用户的订阅号权限转换来的资源权限（在页面上可看到垃圾桶样式的图标为灰色）
 
 # 部署应用
 
