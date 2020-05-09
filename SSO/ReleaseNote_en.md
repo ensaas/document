@@ -1,3 +1,13 @@
+## API 4.0.6.0-(2020-05-09)
+### New Features
+* Create user by MKP add set token to cookie
+* The admin account can delete any subscription number and user
+
+### Fix bugs 
+* Querying role information from MP when getting long token
+* Modify the trigger rule for subscription number synchronization
+
+
 ## API 4.0.5.0-(2020-05-07)
 ### Fix bugs 
 * The problem of incorrect synchronization results in some cases when modifying subscription number synchronization
