@@ -1,3 +1,11 @@
+## API 4.0.6.0-(2020-05-09)
+### New Features
+* create user by mkp 增加set token到cookie
+* admin账号可以删除任意订阅号和订阅号user
+### Fix bugs 
+* 获取长token时从mp查询role信息
+* 修改订阅号同步的触发规则
+
 ## API 4.0.5.0-(2020-05-07)
 ### Fix bugs 
 * 修改订阅号同步时某些情况下同步结果不对的问题
