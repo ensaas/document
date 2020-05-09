@@ -1,3 +1,7 @@
+## API 4.0.7.0-(2020-05-09)
+### Fix bugs 
+*auth api 生成的token增加roles信息
+
 ## API 4.0.6.0-(2020-05-09)
 ### New Features
 * create user by mkp 增加set token到cookie
