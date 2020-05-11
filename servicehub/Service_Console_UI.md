@@ -1,5 +1,22 @@
 ## Service-Portal-UI 1.0.1.3 (2020-05-08)
 
+ 修改Bug:
+ 1.  13729 在Secret Management頁面若instance名稱太長，名稱會和其他項目重疊到                                      
+ 2.  13723 編輯description的欄位必須是必填                                                              
+ 3.  13737 搜尋instance完點進Secret Management，會顯示不出secret，且退出Secret Management後，顯示的instance列表不正確  
+ 4.  13738 修改instance名稱時，請加上不得超過150字元的阻擋，且只允許[a-zA-Z0-9_-.]                                   
+ 5.  13149 部分文字沒有被加入語言檔，需要補加入                                                                 
+ 6.  13744 建立secret時應阻擋輸入大寫                                                                   
+ 7.  13632 匯入Dedicated DB功能的調整意見(初步)                                                          
+ 8.  13746 需移除參數部分對特殊符號的限制，另需添加鍵不得為空的限制                                                       
+ 9.  13747 若service key列表中有任何key的描述為空，該欄位會無法排序                                                
+ 10.  13751 增加建立 / 編輯服務密鑰時對描述欄位的限制                                                             
+ 11.  13674 對文字部分的建議 part3 
+
+
+
+## Service-Portal-UI 1.0.1.3 (2020-05-08)
+
  新增和修改:
  - 重命名instance 名称
  
