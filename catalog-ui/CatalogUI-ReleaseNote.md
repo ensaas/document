@@ -1,5 +1,14 @@
 ## Catalog-ui ReleaseNote
 
+### version：v-1.0.2.9
+#### Fixed：
+- 隐藏order按钮 
+
+### version：v-1.0.2.8
+#### Fixed：
+- 购物车页码高亮
+- 购物车创建时间显示
+
 ### version：v-1.0.2.7
 #### Updated：
 - sso获取价格的接口改成detail
