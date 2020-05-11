@@ -1,3 +1,26 @@
+### EnSaaS-K8s-Service 4.0.7- (2020-05-11)
+
+#### [Managment Portal API]- 4.0.7
+
+Added:
+- Add route management
+
+Fixed:
+- Through token imported clusters, get admin config when config incomplete
+
+#### [Managment Portal UI]- 4.0.6
+
+Added:
+- Add route management page
+- add node-number show on cluster page
+- add type filed under resource management page, to distinguish permission type
+- support search functionality for select component
+
+Fixed:
+- disable for user information modification
+
+
+
 ### EnSaaS-K8s-Service 4.0.6- (2020-04-28)
 
 #### [Managment Portal UI]- 4.0.5

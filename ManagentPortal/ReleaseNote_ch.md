@@ -1,3 +1,26 @@
+### EnSaaS-K8s-Service 4.0.7- (2020-05-11)
+
+#### [Managment Portal API]- 4.0.7
+
+Added:
+- 支持路由管理API
+
+Fixed:
+- 通过token导入的集群，获取admin config的时候config不完整 
+
+#### [Managment Portal UI]- 4.0.6
+
+Added:
+- 添加路由管理界面，用户可查看ingress
+- cluster页面添加node个数的显示
+- rolebinding页面添加type字段，表明是rolebinding权限还是subscription权限
+- 下拉菜单支持搜索功能
+
+Fixed:
+- 禁止用户编辑用户信息 
+
+
+
 ### EnSaaS-K8s-Service 4.0.6- (2020-04-28)
 
 #### [Managment Portal UI]- 4.0.5
