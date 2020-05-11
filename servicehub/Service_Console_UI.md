@@ -1,4 +1,4 @@
-## Service-Portal-UI 1.0.1.3 (2020-05-08)
+## Service-Portal-UI 1.0.1.4 (2020-05-11)
 
  修改Bug:
  1.  13729 在Secret Management頁面若instance名稱太長，名稱會和其他項目重疊到                                      
