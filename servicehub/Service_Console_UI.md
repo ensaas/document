@@ -4,7 +4,7 @@
  1.  13729 在Secret Management頁面若instance名稱太長，名稱會和其他項目重疊到                                      
  2.  13723 編輯description的欄位必須是必填                                                              
  3.  13737 搜尋instance完點進Secret Management，會顯示不出secret，且退出Secret Management後，顯示的instance列表不正確  
- 4.  13738 修改instance名稱時，請加上不得超過150字元的阻擋，且只允許[a-zA-Z0-9_-.]                                   
+ 4.  13728 修改instance名稱時，請加上不得超過150字元的阻擋，且只允許[a-zA-Z0-9_-.]                                   
  5.  13149 部分文字沒有被加入語言檔，需要補加入                                                                 
  6.  13744 建立secret時應阻擋輸入大寫                                                                   
  7.  13632 匯入Dedicated DB功能的調整意見(初步)                                                          
