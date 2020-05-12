@@ -8,7 +8,7 @@ Added:
 Fixed:
 - Through token imported clusters, get admin config when config incomplete
 
-#### [Managment Portal UI]- 4.0.6
+#### [Managment Portal UI]- 4.0.7
 
 Added:
 - Add route management page

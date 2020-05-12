@@ -8,7 +8,7 @@ Added:
 Fixed:
 - 通过token导入的集群，获取admin config的时候config不完整 
 
-#### [Managment Portal UI]- 4.0.6
+#### [Managment Portal UI]- 4.0.7
 
 Added:
 - 添加路由管理界面，用户可查看ingress
