@@ -1,3 +1,7 @@
+## License Server 1.0.0.5-(2020-05-12)
+### New Features
+* 新增 获取license接口返回值中增加subscriptionType和company字段，返回该订阅号类型信息（包含试用和付费）及公司信息，去除isTrial字段。
+
 ## License Server 1.0.0.4-(2020-04-28)
 ### New Features
 * 新增 获取license接口返回值中增加isTrial字段，返回该订阅号是否试用的信息。
