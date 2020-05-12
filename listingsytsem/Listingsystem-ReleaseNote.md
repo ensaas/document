@@ -1,5 +1,10 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.3.0.9
+##### Updated:
+- 允许在不同的平台有相同的pn，但是不一样的价格
+- 所有listingsystem 的Get API必须添加datacenterCode，作为查询参数和校验sso token的参数
+
 ### version：v-1.3.0.7
 ##### Updated:
 - 添加Listingsystem的默认的admin
