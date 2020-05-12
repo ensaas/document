@@ -1,4 +1,19 @@
+# Redis v-10.5.3 (2020-05-12)
+
+## [Redis] v-5.0.7
+
+Added:
+
+- 支持容器化、非持久化的redis
+
+## [Redis Service Manager] v-0.0.0.2
+
+Updated:
+
+- 从listing system拿redis helm chart的时候指定datacenter code
+
 # Redis v-10.5.3 (2020-04-01)
+
 ## [Redis] v-5.0.7
 
 Added:
