@@ -1,3 +1,18 @@
+# 0.3.11 (2020-05-11)
+ * feat: 新增client token (半完成)
+ * bugfix: #13694 需要將broker-deployment.yaml的appVersion改成apps/v1
+ * bugfix: #13727 [POST]/v2/serviceInstances/manual 該API不應阻擋密碼含特殊字元
+ * bugfix: #13748 [POST]/v2/serviceInstances/manual 請將這隻API的pnInfo參數改為必填，至少需要填一組
+ * bugfix: #13740 [PUT] /v2/serviceCredentials/{dccsKey} 請將該API的description欄位改為非必填，且允許任意字元
+
+# 0.3.10 (2020-05-06)
+ * feat: 新增 serviceInstanceName rename API
+ * feat: Dedicated manual API 新增 ssl,parameter 參數，authenticationDatabase 必填移除
+ * feat: 新增 Shared manual API，必填external host 移除
+ * feat: dccs key enable 的時候，需要帶上舊有的參數值
+ * feat: 支持rmq 升級API
+ * bugfix: 修正 serviceInstanceName 未定義的時候，帶上完整InstacneId
+ 
 # 0.3.9 (2020-04-30)
  * feat: 更新 changelog
  * feat: 新增查詢剩餘數量API
