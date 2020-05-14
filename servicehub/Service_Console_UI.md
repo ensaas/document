@@ -1,3 +1,9 @@
+## Service-Portal-UI 1.0.1.6 (2020-05-14)
+
+ 修改Bug:
+ 1.  生產環境上，Service Key Name的連結在部分電腦上打不開
+ 
+
 ## Service-Portal-UI 1.0.1.5 (2020-05-12)
 
  修改Bug:
