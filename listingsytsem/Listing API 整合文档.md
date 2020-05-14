@@ -6,7 +6,7 @@
 
 ```bash
 ___________________________________________________________________________________________________
-|      Service        |      ServicePlan        |       PN         |    Datacenter  |    Price    |
+|      Service        |      ServicePlan        |       PN         |    Datacenter  |     Price   |
 |                     |                         |                  |                |             | 
 |                     |                         |                  |                |             |
 |                     |                         |               /~~~~~>    SA    ~~~~~>   Price   |
