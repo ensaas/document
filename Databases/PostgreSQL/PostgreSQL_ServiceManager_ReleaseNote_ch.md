@@ -1,5 +1,10 @@
 # Service Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.2
+
+### Fixed:
+- Bug: Aliyun上ALTER SCHEMA "public" OWNER TO "g_rw_public"的錯誤
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.1
 
 ### Fixed:
