@@ -46,8 +46,8 @@
 | POST   | [/v1/service](#service)                                   | 上架服务               |
 | GET    | [/v1/servicePackage](#getservicePackage)                  | 获取上架的服务包信息   |
 | POST   | [/v1/servicePackage](#servicePackage)                     | 上架服务包             |
-| GET    | [/v1/pricing](#pricing)                                   | 获取上架的pn信息       |
-| POST   | [/v1/pricing](#getpricing)                                | 上架pn                 |
+| GET    | [/v1/pricing](#pricing)                                   | 获取上架的 pn 信息     |
+| POST   | [/v1/pricing](#getpricing)                                | 上架 pn                |
 
 ### <span id="service">1.1.1 Listing service</span>  
   
