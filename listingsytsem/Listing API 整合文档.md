@@ -253,3 +253,117 @@ HTTP Response:
   "timestamp": "2020-05-14T13:38:09+0000"
 }
 ```
+
+### Listing servicePlan
+```bash
+POST /servicePlan
+```
+HTTP Request:
+
+```json
+{
+  "planName": "string",
+  "planNumber": 0,
+  "uiId": 0,
+  "deliveryType": "string",
+  "pn": "string",
+  "datacenterCode": "string",
+  "planDescription": "string",
+  "serviceName": "string",
+  "pnProperty": "string",
+  "pnQuantity": "string",
+  "pnUnit": {},
+  "dependency": {
+    "appDependency": {},
+    "spaceDependency": {},
+    "dbDependency": {}
+  }
+}
+```
+
+HTTP Response:
+
+```json
+{
+  "data": {
+    "id": "419fd20f-d31c-4dd2-8e05-e1aa3e69eee5",
+    "planName": "planName",
+    "planNumber": 1,
+    "datacenterCode": "bm",
+    "planDescription": "string",
+    "uiId": 1,
+    "deliveryType": "app",
+    "pn": "9806WPDASH",
+    "serviceName": "APM",
+    "pnProperty": "Basic",
+    "dependency": {
+      "appDependency": {},
+      "spaceDependency": {},
+      "dbDependency": {}
+    },
+    "pnQuantity": "1-9",
+    "onlineTime": ""
+  },
+  "error": null,
+  "path": "/v1/servicePlan",
+  "status": 201,
+  "timestamp": "2020-05-14T13:38:09+0000"
+}
+```
+### 3.Listing pn
+```bash
+POST /pricing
+```
+
+Request:
+
+```json
+{
+  "pn": "string",
+  "pdl": "string",
+  "datacenterCode": ["sa"],
+  "pnUnit": "string",
+  "ProductionDescription": "string",
+  "chargeType": "string",
+  "pnListingPrice": 0,
+  "pnRegularPrice": 0,
+  "pnVipPrice": 0,
+  "pnPVipPrice": 0,
+  "pnInternalPrice": 0,
+  "pnInternalInsourcingPrice": 0,
+  "pnExternalInsourcingPrice": 0
+}
+```
+
+HTTP Response:
+
+```json
+{
+  "data": {
+    "id": 6,
+    "pn": "9806WPDASG",
+    "pdl": "CSSI",
+    "productionDescription": "string",
+    "datacenterCode": [
+      "sa"
+    ],
+    "pnUnit": {
+      "Instance": "1"
+    },
+    "chargeType": "Monthly",
+    "pnListingPrice": 1,
+    "pnRegularPrice": 2,
+    "pnVipPrice": 1,
+    "pnPVipPrice": 2,
+    "pnInternalPrice": 2,
+    "pnInternalInsourcingPrice": 4,
+    "pnExternalInsourcingPrice": 3,
+    "createdAt": "2020-05-14T13:42:31.7151709+08:00",
+    "updatedAt": "2020-05-14T13:42:31.7151709+08:00"
+  },
+  "error": null,
+  "path": "/v1/pricing",
+  "status": 201,
+  "timestamp": "2020-05-14T13:42:31+0000"
+}
+```
