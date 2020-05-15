@@ -635,7 +635,7 @@ Labels:       name=rx-test1
 
 此页会列出某个namespace下的所有的应用路由：
 ![ingress_list](./image/ingress_list.png)
-点击"External Domain"列的链接，就可以跳转到服务的index页面
+点击"External Domain"列的链接，就可以跳转到相应服务的index页面
 
 ## 查看路由详情
 
