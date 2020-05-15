@@ -464,7 +464,7 @@ HTTP Response:
 }
 ```
 
-### <span id="getservicePlan">2.2 获取上架的service plan</span> 
+### <span id="getservicePlan">2.2 Get servicePlan</span> 
  
 ```bash
 GET  /v1/servicePlan
