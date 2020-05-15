@@ -43,11 +43,18 @@ Listing 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上架的
 ## Listing API 
 :point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
 
-| Method | URL | 标题3
-| ------ | --------------------------------------------------------- | ---
-| GET    | [/v1/service](#getservice) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 居中的文字 
-|a | b | c
-|1 | 2 | 3
+| Method | URL                                                       | Description            |
+| ------ | --------------------------------------------------------- | ---------------------- |
+| GET    | [/v1/service](#getservice) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 获取上架的服务| 
+| POST   | [/v1/service](#service)                                   | 上架服务               |
+| GET    | [/v1/servicePackage](#getservicePackage)                  | 获取上架的服务包       |
+| POST   | [/v1/servicePackage](#servicePackage)                     | 上架服务包             |
+| GET    | [/v1/servicePlan](#getservicePlan)                        | 获取上架的服务方案     |
+| POST   | [/v1/servicePlan](#servicePlan)                           | 上架服务方案           |
+| GET    | [/v1/pricing](#getpn)                                     | 获取上架的 pn          |
+| POST   | [/v1/pricing](#pn)                                        | 上架 pn                |
+
+
 
 | Method | URL                                                       | Description            |
 | ------ | --------------------------------------------------------- | ---------------------- |
