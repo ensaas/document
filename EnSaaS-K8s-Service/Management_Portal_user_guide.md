@@ -629,6 +629,22 @@ Labels:       name=rx-test1
 * namespace：应用所在的namespace Name。
 * appID：应用的appID。由MP4.0生成，作为唯一标识。
 
+# 查看应用路由
+
+## 查看应用路由
+
+此页会列出某个namespace下的所有的应用路由：
+![ingress_list](./image/ingress_list.png)
+点击"External Domain"列的链接，就可以跳转到服务的index页面
+
+## 查看路由详情
+
+![ingress_detail](./image/ingress_detail.png)
+
+## 查看路由yaml
+
+![ingress_yaml](./image/ingress_yaml.png)
+
 # 查看工作负载
 
 ## 查看工作负载
