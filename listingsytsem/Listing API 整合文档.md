@@ -40,6 +40,14 @@
 ## Listing API 
 :point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
 
+| Method | URL                                                       | Description            |
+| ------ | --------------------------------------------------------- | ---------------------- |
+| GET    | /v1/service                                               | 获取上架的service 信息  |
+| POST   | /v1/serviceCredentials                                    | CREATE Credential Key  |
+| DELETE | /v1/serviceCredentials/{serviceKeyName}                   | DELETE Credential Key  |
+| PUT    | /v1/serviceCredentials/{serviceKeyName}/operations/enable | ENABLE Credential Key  |
+| PUT    | /v1/serviceCredentials/{serviceKeyName}/operations/enable | DISABLE Credential Key |
+
 ### <span id="service">1.1.1 Listing service</span>  
   
 ```bash
@@ -88,7 +96,9 @@ HTTP Response:
   "timestamp": "2020-05-14T13:32:16+0000"
 }
 ```
-### 1.1.2 Get service
+
+### <span id="getservice">1.1.2 Get service</span>  
+
 ```bash
 GET  /service
 ```
@@ -309,7 +319,8 @@ HTTP Response:
 }
 ```
 
-### 1.2.2 Get servicePackage
+### <span id="getservicePackage">1.2.2 Get servicePackage</span>  
+
 ```bash
 GET  /servicePackage
 ```
@@ -451,7 +462,9 @@ HTTP Response:
   "timestamp": "2020-05-14T13:38:09+0000"
 }
 ```
-### 2.2 获取上架的service plan
+
+### <span id="getservicePlan">2.2 获取上架的service plan</span> 
+ 
 ```bash
 GET  /servicePlan
 ```
@@ -487,7 +500,7 @@ GET  /servicePlan
 }
 ```
 
-### <span id="pn">3. Listing pn</span>  
+### <span id="pn">3.1 Listing pn</span>  
 
 ```bash
 POST /pricing
@@ -546,7 +559,7 @@ HTTP Response:
 }
 ```
 
-### 3.2 Get pn
+### <span id="getpn">3.2 Get pn</span> 
 ```bash
 GET  /pricing
 ```
