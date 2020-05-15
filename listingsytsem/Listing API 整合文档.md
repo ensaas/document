@@ -29,7 +29,7 @@
   |                     |                         |                  |                |             | 
   ---------------------------------------------------------------------------------------------------
 ```
-## Listing service  
+### 1.1 Listing service  
 
 ```bash
 POST  /service
@@ -77,4 +77,179 @@ HTTP Response:
   "timestamp": "2020-05-14T13:32:16+0000"
 }
 ```
-## Listing servicePackage
+### 1.2 Listing servicePackage
+
+```bash
+POST  /servicePackage
+```  
+HTTP Request:
+
+```json
+{
+  "servicePackage": "string",
+  "serviceCategory": "string",
+  "serviceProvider": "string",
+  "uiId": 0,
+  "deliveryType": "string",
+  "datacenterCode": "string",
+  "planName": "string",
+  "planDescription": "string",
+  "planNum": 0,
+  "pnInfo": [
+    {
+      "pn": "string",
+      "pnProperty": "string",
+      "pnUnit": {},
+      "chargeType": "string",
+      "pnQuantity": 0
+    }
+  ],
+  "apps": [
+    {
+      "serviceName": "string",
+      "serviceDescription": "string",
+      "serviceCategory": "string",
+      "planName": "string",
+      "planDescription": "string",
+      "deliveryType": "string",
+      "pnInfo": [
+        {
+          "pn": "string",
+          "pnProperty": "string",
+          "pnUnit": {},
+          "chargeType": "string",
+          "pnQuantity": 0
+        }
+      ]
+    }
+  ],
+  "databases": [
+    {
+      "serviceName": "string",
+      "serviceDescription": "string",
+      "serviceCategory": "string",
+      "planName": "string",
+      "planDescription": "string",
+      "deliveryType": "string",
+      "pnInfo": [
+        {
+          "pn": "string",
+          "pnProperty": "string",
+          "pnUnit": {},
+          "chargeType": "string",
+          "pnQuantity": 0
+        }
+      ]
+    }
+  ],
+  "spaces": [
+    {
+      "serviceName": "string",
+      "serviceDescription": "string",
+      "serviceCategory": "string",
+      "planName": "string",
+      "planDescription": "string",
+      "deliveryType": "string",
+      "pnInfo": [
+        {
+          "pn": "string",
+          "pnProperty": "string",
+          "pnUnit": {},
+          "chargeType": "string",
+          "pnQuantity": 0
+        }
+      ]
+    }
+  ]
+}
+```
+
+HTTP Response:
+
+```json
+{
+  "data": {
+      "id":1,
+      "servicePackage": "string",
+      "serviceCategory": "string",
+      "serviceProvider": "string",
+      "uiId": 0,
+      "deliveryType": "string",
+      "datacenterCode": "string",
+      "planName": "string",
+      "planDescription": "string",
+      "planNum": 0,
+      "pnInfo": [
+        {
+          "pn": "string",
+          "pnProperty": "string",
+          "pnUnit": {},
+          "chargeType": "string",
+          "pnQuantity": 0
+        }
+      ],
+      "apps": [
+        {
+          "serviceName": "string",
+          "serviceDescription": "string",
+          "serviceCategory": "string",
+          "planName": "string",
+          "planDescription": "string",
+          "deliveryType": "string",
+          "pnInfo": [
+            {
+              "pn": "string",
+              "pnProperty": "string",
+              "pnUnit": {},
+              "chargeType": "string",
+              "pnQuantity": 0
+            }
+          ]
+        }
+      ],
+      "databases": [
+        {
+          "serviceName": "string",
+          "serviceDescription": "string",
+          "serviceCategory": "string",
+          "planName": "string",
+          "planDescription": "string",
+          "deliveryType": "string",
+          "pnInfo": [
+            {
+              "pn": "string",
+              "pnProperty": "string",
+              "pnUnit": {},
+              "chargeType": "string",
+              "pnQuantity": 0
+            }
+          ]
+        }
+      ],
+      "spaces": [
+        {
+          "serviceName": "string",
+          "serviceDescription": "string",
+          "serviceCategory": "string",
+          "planName": "string",
+          "planDescription": "string",
+          "deliveryType": "string",
+          "pnInfo": [
+            {
+              "pn": "string",
+              "pnProperty": "string",
+              "pnUnit": {},
+              "chargeType": "string",
+              "pnQuantity": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "error": null,
+  "path": "/v1/servicePlan",
+  "status": 201,
+  "timestamp": "2020-05-14T13:38:09+0000"
+}
+```
