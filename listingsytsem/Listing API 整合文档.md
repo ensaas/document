@@ -29,7 +29,11 @@
   |                     |                         |                  |                |             | 
   ---------------------------------------------------------------------------------------------------
 ```
-## Listing service  `POST  /service`
+## Listing service  
+
+```bash
+POST  /service
+```  
 
 HTTP Request:  
 
