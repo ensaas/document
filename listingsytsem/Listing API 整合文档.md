@@ -394,7 +394,7 @@ GET  /servicePackage
   ]
 }
 ```
-### <span id="servicePlan">2. Listing servicePlan</span>  
+### <span id="servicePlan">2.1 Listing servicePlan</span>  
 
 ```bash
 POST /servicePlan
@@ -449,6 +449,41 @@ HTTP Response:
   "path": "/v1/servicePlan",
   "status": 201,
   "timestamp": "2020-05-14T13:38:09+0000"
+}
+```
+### 2.2 获取上架的service plan
+```bash
+GET  /servicePlan
+```
+
+```json
+{
+  "timestamp": "string",
+  "status": 0,
+  "data": [
+    {
+      "id": "string",
+      "planName": "string",
+      "planNumber": 0,
+      "uiId": 0,
+      "deliveryType": "string",
+      "pn": "string",
+      "datacenterCode": "string",
+      "planDescription": "string",
+      "serviceName": "string",
+      "pnProperty": "string",
+      "pnQuantity": "string",
+      "pnUnit": {},
+      "dependency": {
+        "appDependency": {},
+        "spaceDependency": {},
+        "dbDependency": {}
+      }
+    }
+  ],
+  "error": "string",
+  "path": "string",
+  "totalCount": 0
 }
 ```
 
@@ -508,5 +543,38 @@ HTTP Response:
   "path": "/v1/pricing",
   "status": 201,
   "timestamp": "2020-05-14T13:42:31+0000"
+}
+```
+
+### 3.2 Get pn
+```bash
+GET  /pricing
+```
+
+```json
+{
+  "timestamp": "string",
+  "status": 0,
+  "data": [
+    {
+      "id": 0,
+      "pn": "string",
+      "pdl": "string",
+      "datacenterCode": "string",
+      "pnUnit": "string",
+      "ProductionDescription": "string",
+      "chargeType": "string",
+      "pnListingPrice": 0,
+      "pnRegularPrice": 0,
+      "pnVipPrice": 0,
+      "pnPVipPrice": 0,
+      "pnInternalPrice": 0,
+      "pnInternalInsourcingPrice": 0,
+      "pnExternalInsourcingPrice": 0
+    }
+  ],
+  "error": "string",
+  "path": "string",
+  "totalCount": 0
 }
 ```
