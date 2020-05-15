@@ -32,8 +32,9 @@
 
 ## Listing sequence
 - service
+[POST /service](#listing service)
 
-[POST /service ](#listing service) ---> POST /servicePlan ---> POST /pricing
+[POST /service](#listing service) ---> POST /servicePlan ---> POST /pricing
 
 - servicePackage
 ```bash
