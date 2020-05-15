@@ -45,7 +45,7 @@ Listing 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上架的
 
 | Method | URL                                                       | Description            |
 | ------ | --------------------------------------------------------- | ---------------------- |
-| GET    | [/v1/service](#getservice) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 获取上架的服务| 
+| GET    | [/v1/service](#getservice) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 获取上架的服务 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;        | 
 | POST   | [/v1/service](#service)                                   | 上架服务               |
 | GET    | [/v1/servicePackage](#getservicePackage)                  | 获取上架的服务包       |
 | POST   | [/v1/servicePackage](#servicePackage)                     | 上架服务包             |
@@ -54,18 +54,6 @@ Listing 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上架的
 | GET    | [/v1/pricing](#getpn)                                     | 获取上架的 pn          |
 | POST   | [/v1/pricing](#pn)                                        | 上架 pn                |
 
-
-
-| Method | URL                                                       | Description            |
-| ------ | --------------------------------------------------------- | ---------------------- |
-| GET    |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [/v1/service](#getservice)  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取上架的服务         |
-| POST   | [/v1/service](#service)                                   | 上架服务               |
-| GET    | [/v1/servicePackage](#getservicePackage)                  | 获取上架的服务包       |
-| POST   | [/v1/servicePackage](#servicePackage)                     | 上架服务包             |
-| GET    | [/v1/servicePlan](#getservicePlan)                        | 获取上架的服务方案     |
-| POST   | [/v1/servicePlan](#servicePlan)                           | 上架服务方案           |
-| GET    | [/v1/pricing](#getpn)                                     | 获取上架的 pn          |
-| POST   | [/v1/pricing](#pn)                                        | 上架 pn                |
 
 ### <span id="service">1.1.1 Listing service</span>  
   
