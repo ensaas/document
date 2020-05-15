@@ -32,21 +32,14 @@
 
 ## Listing sequence
 - service  
+[listing service](#service) ---> [listing servicePlan](#servicePlan) ---> [listing pn](#pn)
 
-[MarkDown页面内跳转测试](#jump1)
+- servicePackage  
+[listing servicePackage](#servicePackage) ---> [listing pn](#pn)  
 
-[service](#service)
-
-[POST /service](#service) ---> POST /servicePlan ---> POST /pricing
-
-- servicePackage
-```bash
-POST /servicePackage ---> POST /pricing
-```
 ## Listing API 
 :point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
 
-### <span id="jump1">1. 目录1</span>
 ### <span id="service">1.1 listing service</span>  
   
 ```bash
@@ -95,7 +88,8 @@ HTTP Response:
   "timestamp": "2020-05-14T13:32:16+0000"
 }
 ```
-### 1.2 Listing servicePackage
+
+### <span id="servicePackage">1.2 Listing servicePackage</span>  
 
 ```bash
 POST  /servicePackage
@@ -272,7 +266,8 @@ HTTP Response:
 }
 ```
 
-### Listing servicePlan
+### <span id="servicePlan">2. Listing servicePlan</span>  
+
 ```bash
 POST /servicePlan
 ```
@@ -328,7 +323,9 @@ HTTP Response:
   "timestamp": "2020-05-14T13:38:09+0000"
 }
 ```
-### 3.Listing pn
+
+### <span id="pn">3. Listing pn</span>  
+
 ```bash
 POST /pricing
 ```
