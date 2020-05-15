@@ -315,7 +315,7 @@ HTTP Response:
 POST /pricing
 ```
 
-Request:
+HTTP Request:
 
 ```json
 {
