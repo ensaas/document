@@ -42,16 +42,17 @@
 
 | Method | URL                                                       | Description            |
 | ------ | --------------------------------------------------------- | ---------------------- |
-| GET    | /v1/service                                               | 获取上架的service 信息  |
-| POST   | /v1/serviceCredentials                                    | CREATE Credential Key  |
-| DELETE | /v1/serviceCredentials/{serviceKeyName}                   | DELETE Credential Key  |
-| PUT    | /v1/serviceCredentials/{serviceKeyName}/operations/enable | ENABLE Credential Key  |
-| PUT    | /v1/serviceCredentials/{serviceKeyName}/operations/enable | DISABLE Credential Key |
+| GET    | /v1/service                                               | 获取上架的服务信息     |
+| POST   | /v1/service                                               | 上架服务               |
+| GET    | /v1/servicePackage                                        | 获取上架的服务包信息   |
+| POST   | /v1/servicePackage                                        | 上架服务包             |
+| GET    | /v1/pricing                                               | 获取上架的pn信息       |
+| POST   | /v1/pricing                                               | 上架pn                 |
 
 ### <span id="service">1.1.1 Listing service</span>  
   
 ```bash
-POST  /service
+POST /v1/service
 ```  
 
 HTTP Request:  
@@ -100,7 +101,7 @@ HTTP Response:
 ### <span id="getservice">1.1.2 Get service</span>  
 
 ```bash
-GET  /service
+GET  /v1/service
 ```
 
 ```json
@@ -145,7 +146,7 @@ GET  /service
 ### <span id="servicePackage">1.2.1 Listing servicePackage</span>  
 
 ```bash
-POST  /servicePackage
+POST  /v1/servicePackage
 ```  
 HTTP Request:
 
@@ -322,7 +323,7 @@ HTTP Response:
 ### <span id="getservicePackage">1.2.2 Get servicePackage</span>  
 
 ```bash
-GET  /servicePackage
+GET  /v1/servicePackage
 ```
 
 ```json
@@ -408,7 +409,7 @@ GET  /servicePackage
 ### <span id="servicePlan">2.1 Listing servicePlan</span>  
 
 ```bash
-POST /servicePlan
+POST /v1/servicePlan
 ```
 HTTP Request:
 
@@ -466,7 +467,7 @@ HTTP Response:
 ### <span id="getservicePlan">2.2 获取上架的service plan</span> 
  
 ```bash
-GET  /servicePlan
+GET  /v1/servicePlan
 ```
 
 ```json
@@ -503,7 +504,7 @@ GET  /servicePlan
 ### <span id="pn">3.1 Listing pn</span>  
 
 ```bash
-POST /pricing
+POST /v1/pricing
 ```
 
 HTTP Request:
@@ -561,7 +562,7 @@ HTTP Response:
 
 ### <span id="getpn">3.2 Get pn</span> 
 ```bash
-GET  /pricing
+GET  /v1/pricing
 ```
 
 ```json
