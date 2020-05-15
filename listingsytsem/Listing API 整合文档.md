@@ -29,6 +29,17 @@
   |                     |                         |                  |                |             | 
   ---------------------------------------------------------------------------------------------------
 ```
+
+## Listing sequence
+- service
+```bash
+service ---> servicePlan ---> pn ---> price
+```
+- servicePackage
+```bash
+servicePackage ---> pn ---> price
+```
+
 ### 1.1 Listing service  
 
 ```bash
