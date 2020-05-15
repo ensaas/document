@@ -33,11 +33,11 @@
 ## Listing sequence
 - service
 ```bash
-service ---> servicePlan ---> pn ---> price
+service ---> servicePlan ---> pn
 ```
 - servicePackage
 ```bash
-servicePackage ---> pn ---> price
+servicePackage ---> pn
 ```
 
 ### 1.1 Listing service  
