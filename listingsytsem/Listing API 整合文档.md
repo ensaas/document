@@ -40,7 +40,7 @@ service ---> servicePlan ---> pn
 servicePackage ---> pn
 ```
 ## Listing API 
-:point_right: [APIDOC](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
+:point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
 
 ### 1.1 Listing service  
 
