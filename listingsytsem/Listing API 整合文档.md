@@ -40,7 +40,7 @@
 ## Listing API 
 :point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
 
-### <span id="service">1.1 Listing service</span>  
+### <span id="service">1.1.1 Listing service</span>  
   
 ```bash
 POST  /service
@@ -88,8 +88,51 @@ HTTP Response:
   "timestamp": "2020-05-14T13:32:16+0000"
 }
 ```
+### 1.1.2 Get service
+```bash
+GET  /service
+```
 
-### <span id="servicePackage">1.2 Listing servicePackage</span>  
+```json
+{
+  "timestamp": "string",
+  "status": 0,
+  "data": [
+    {
+      "serviceName": "string",
+      "serviceCategory": "string",
+      "buyType": "string",
+      "uiId": 0,
+      "serviceProvider": "string",
+      "datacenter": {},
+      "releaseNote": "string",
+      "iconUrl": "string",
+      "servicePlan": [
+        "string"
+      ],
+      "serviceInfo": [
+        {
+          "id": 0,
+          "serviceName": "string",
+          "description": "string",
+          "imgUrlLogo": "string",
+          "imgUrlArchitecture": "string",
+          "architectureInfo": "string",
+          "serviceDetail": {},
+          "serviceProvider": "string"
+        }
+      ],
+      "description": "string",
+      "manager": "string",
+      "onlineTime": "string"
+    }
+  ],
+  "error": "string",
+  "path": "string",
+  "totalCount": 0
+}
+```
+### <span id="servicePackage">1.2.1 Listing servicePackage</span>  
 
 ```bash
 POST  /servicePackage
@@ -266,6 +309,91 @@ HTTP Response:
 }
 ```
 
+### 1.2.2 Get servicePackage
+```bash
+GET  /servicePackage
+```
+
+```json
+{
+  "id": 0,
+  "servicePackage": "string",
+  "serviceCategory": "string",
+  "serviceProvider": "string",
+  "uiId": 0,
+  "deliveryType": "string",
+  "datacenterCode": "string",
+  "planName": "string",
+  "planDescription": "string",
+  "planNum": 0,
+  "pnInfo": [
+    {
+      "pn": "string",
+      "pnProperty": "string",
+      "pnUnit": {},
+      "chargeType": "string",
+      "pnQuantity": 0
+    }
+  ],
+  "apps": [
+    {
+      "serviceName": "string",
+      "serviceDescription": "string",
+      "serviceCategory": "string",
+      "planName": "string",
+      "planDescription": "string",
+      "deliveryType": "string",
+      "pnInfo": [
+        {
+          "pn": "string",
+          "pnProperty": "string",
+          "pnUnit": {},
+          "chargeType": "string",
+          "pnQuantity": 0
+        }
+      ]
+    }
+  ],
+  "databases": [
+    {
+      "serviceName": "string",
+      "serviceDescription": "string",
+      "serviceCategory": "string",
+      "planName": "string",
+      "planDescription": "string",
+      "deliveryType": "string",
+      "pnInfo": [
+        {
+          "pn": "string",
+          "pnProperty": "string",
+          "pnUnit": {},
+          "chargeType": "string",
+          "pnQuantity": 0
+        }
+      ]
+    }
+  ],
+  "spaces": [
+    {
+      "serviceName": "string",
+      "serviceDescription": "string",
+      "serviceCategory": "string",
+      "planName": "string",
+      "planDescription": "string",
+      "deliveryType": "string",
+      "pnInfo": [
+        {
+          "pn": "string",
+          "pnProperty": "string",
+          "pnUnit": {},
+          "chargeType": "string",
+          "pnQuantity": 0
+        }
+      ]
+    }
+  ]
+}
+```
 ### <span id="servicePlan">2. Listing servicePlan</span>  
 
 ```bash
