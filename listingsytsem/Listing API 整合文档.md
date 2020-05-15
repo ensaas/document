@@ -29,9 +29,9 @@
   |                     |                         |                  |                |             | 
   ---------------------------------------------------------------------------------------------------
 ```
-## Listing service 
-`POST  /service`
-HTTP Request:
+## Listing service  `POST  /service`
+
+HTTP Request:  
 
 ```json
 {
@@ -48,7 +48,7 @@ HTTP Request:
 }
 ```
 
-HTTP Request:
+HTTP Response:
 
 ```json
 {
