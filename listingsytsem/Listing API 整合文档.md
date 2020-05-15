@@ -49,8 +49,8 @@ Listing 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上架的
 | POST   | [/v1/service](#service)                                   | 上架服务               |
 | GET    | [/v1/servicePackage](#getservicePackage)                  | 获取上架的服务包信息   |
 | POST   | [/v1/servicePackage](#servicePackage)                     | 上架服务包             |
-| GET    | [/v1/pricing](#pn)                                   | 获取上架的 pn 信息     |
-| POST   | [/v1/pricing](#getpn)                                | 上架 pn                |
+| GET    | [/v1/pricing](#pn)                                        | 获取上架的 pn 信息     |
+| POST   | [/v1/pricing](#getpn)                                     | 上架 pn                |
 
 ### <span id="service">1.1.1 Listing service</span>  
   
