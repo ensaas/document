@@ -1,7 +1,7 @@
 # Listing API DOC
 
 ## Introduction
-Listing API 是为服务上架到 EnSaaS 4.0 Catalog 和 advantech marketplace 而提供上架方案和 api.
+Listing 是为服务上架到 EnSaaS 4.0 Catalog 和 advantech marketplace 提供上架的方案和 api.
 
 ## Listing 流程图  
 
