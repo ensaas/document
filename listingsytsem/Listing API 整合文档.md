@@ -32,15 +32,15 @@
 
 ## Listing sequence
 - service  
-[listing service](#service) ---> [listing servicePlan](#servicePlan) ---> [listing pn](#pn)
+[Listing service](#service) ---> [Listing servicePlan](#servicePlan) ---> [Listing pn](#pn)
 
 - servicePackage  
-[listing servicePackage](#servicePackage) ---> [listing pn](#pn)  
+[Listing servicePackage](#servicePackage) ---> [Listing pn](#pn)  
 
 ## Listing API 
 :point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
 
-### <span id="service">1.1 listing service</span>  
+### <span id="service">1.1 Listing service</span>  
   
 ```bash
 POST  /service
