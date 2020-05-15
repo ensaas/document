@@ -35,9 +35,9 @@
 
 [MarkDown页面内跳转测试](#jump1)
 
-[service](#listing service)
+[service](#service)
 
-[POST /service](#listing service) ---> POST /servicePlan ---> POST /pricing
+[POST /service](#service) ---> POST /servicePlan ---> POST /pricing
 
 - servicePackage
 ```bash
@@ -47,8 +47,7 @@ POST /servicePackage ---> POST /pricing
 :point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
 
 ### <span id="jump1">1. 目录1</span>
-### <span id="listing service"> 1.1 Listing service  
-### <span id="listing service">1.1 listing service</span>  
+### <span id="service">1.1 listing service</span>  
   
 ```bash
 POST  /service
