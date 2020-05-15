@@ -33,11 +33,11 @@
 ## Listing sequence
 - service
 ```bash
-service ---> servicePlan ---> pn
+POST /service ---> POST /servicePlan ---> POST /pricing
 ```
 - servicePackage
 ```bash
-servicePackage ---> pn
+POST /servicePackage ---> POST /pricing
 ```
 ## Listing API 
 :point_right: [apidoc swagger](https://api-listingsystem-ensaas.bm.wise-paas.com.cn/apidoc/)  
