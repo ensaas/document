@@ -10,7 +10,7 @@ EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务
 
 Service Hub与其他组件的关系如下图所示，服务提供商需要提供Service Broker：  
 
-![](images/servicehub02.PNG)
+![servicehub02](images/servicehub02.PNG)
 
 ## 整合流程
 1. [开发Service Broker](#service-broker接口)
@@ -303,4 +303,4 @@ Service Broker的规格是全球共通的，详细的Service Broker设计请参�
 
 服务订阅后，可以登录Service Portal进行Service Secret的管理，即建立绑定，生成服务的连接信息，提供给APP使用，详细请参考Service Portal使用手册。
 
-![](images/ServicePortal01.PNG)
+![serviceportal01](images/ServicePortal01.PNG)
