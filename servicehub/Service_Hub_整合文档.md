@@ -3,11 +3,10 @@
 ## Service Hub介绍  
 
 EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务提供者可以上架托管服务，供其他用户或是应用程序集成。托管服务与Service Hub整合之后，即可让用户通过EnSaaS平台的MaketPlace或者Catalog完成服务的订阅，升级，降级，重新订阅及退订。
-![](images/ServiceHub02.PNG)
 
 ## 整合流程
-4. [调用ServiceHub API完成服务的订阅、升级、降级、重新订阅、退订](###Service Hub接口)
-5. [在Service Portal进行Service Secret的管理](##Service Portal)
+1. [调用ServiceHub API完成服务的订阅、升级、降级、重新订阅、退订](###servicehub接口)
+2. [在Service Portal进行Service Secret的管理](##serviceportal)
 
 ## API概览
 
@@ -262,4 +261,4 @@ EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务
 
 服务订阅后，可以登录Service Portal进行Service Secret的管理，即建立绑定，生成服务的连接信息，提供给APP使用，详细请参考Service Portal使用手册。
 
-![](images/ServicePortal01.PNG)
+![serviceportal01](images/ServicePortal01.PNG)
