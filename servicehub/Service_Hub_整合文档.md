@@ -5,8 +5,8 @@
 EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务提供者可以上架托管服务，供其他用户或是应用程序集成。托管服务与Service Hub整合之后，即可让用户通过EnSaaS平台的MaketPlace或者Catalog完成服务的订阅，升级，降级，重新订阅及退订。
 
 ## 整合流程
-1. [调用ServiceHub API完成服务的订阅、升级、降级、重新订阅、退订](###servicehub接口)
-2. [在Service Portal进行Service Secret的管理](##serviceportal)
+1. [调用ServiceHub API完成服务的订阅、升级、降级、重新订阅、退订](#service-hub接口-1)
+2. [在Service Portal进行Service Secret的管理](#service-portal)
 
 ## API概览
 
@@ -14,14 +14,12 @@ EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务
 
 ### Service Hub接口
 
-| Method | API                                      | 描述           |
-| ------ | ---------------------------------------- | -------------- |
-| POST   | /v2/serviceInstances                     | 订阅服务       |
-| PUT    | /v2/serviceInstances                     | 升级或降级服务 |
-| POST   | /v2/serviceInstances/redeploy            | 重新订阅服务   |
-| DELETE | /v2/serviceInstances/{serviceInstanceId} | 退订服务       |
-
----
+| Method | API                                                          | 描述           |
+| ------ | ------------------------------------------------------------ | -------------- |
+| POST   | [/v2/serviceInstances](#post---v2serviceinstances)           | 订阅服务       |
+| PUT    | [/v2/serviceInstances](#put---v2serviceinstances)            | 升级或降级服务 |
+| POST   | [/v2/serviceInstances/redeploy](#post---v2serviceinstancesredeploy) | 重新订阅服务   |
+| DELETE | [/v2/serviceInstances/{serviceInstanceId}](#delete---v2serviceinstancesserviceinstanceid) | 退订服务       |
 ## Service Hub接口
 
 ### POST   /v2/serviceInstances
@@ -247,11 +245,11 @@ EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务
 
 #### 请求参数
 
-| 名称              | 类型    | 是否必选 | 示例值 | 描述                     |
-| ----------------- | ------- | -------- | ------ | ------------------------ |
-| serviceInstanceId | string  | 是       |        | 服务实例Id               |
-| cascade           | boolean | 否       | trues  | 是否删除service_bindings |
-| deleteData        | boolean | 否       | false  | 是否删除数据             |
+| 名称              | 类型    | 是否必选 | 示例值                               | 描述                     |
+| ----------------- | ------- | -------- | ------------------------------------ | ------------------------ |
+| serviceInstanceId | string  | 是       | 7737d81e-6ab5-4798-a0a1-07e328d10122 | 服务实例Id               |
+| cascade           | boolean | 否       | trues                                | 是否删除service_bindings |
+| deleteData        | boolean | 否       | false                                | 是否删除数据             |
 
 #### 返回数据
 
