@@ -13,11 +13,11 @@ Service Hub与其他组件的关系如下图所示，服务提供商需要提供
 ![](images/servicehub02.PNG)
 
 ## 整合流程
-1. [开发Service Broker](#service-hub接口-1)
-2. [部署Service Broker](#service-portal)
-3. [在Service Hub注册Service Broker](##将Service Broker注册到Service hub中)
-4. [调用ServiceHub API完成服务的订阅、升级、降级、重新订阅、退订](###Service Hub接口)
-5. [在Service Portal进行Service Secret的管理](##Service Portal)
+1. [开发Service Broker](#service-broker接口)
+2. [部署Service Broker](#部署service-broker)
+3. [在Service Hub注册Service Broker](#将service-broker注册到service-hub中)
+4. [调用ServiceHub API完成服务的订阅、升级、降级、重新订阅、退订](#service-hub接口-1)
+5. [在Service Portal进行Service Secret的管理](#service-portal)
 
 ## API概览
 
