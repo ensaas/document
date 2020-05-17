@@ -257,7 +257,8 @@ WISE-PaaS平台上的用户角色有：
                    </tr>
             </table>
 	    
-##### srpToken生成方式如下：   
+##### srpToken生成方式如下：  
+
         ● base64Url_encode(AES_encode(timestamp-srpName)) (tmestamp为当前10位时间戳)  
         
         ● AES_encode        
