@@ -13,7 +13,7 @@ Service Hub与其他组件的关系如下图所示：
 
 ## API概览
 
-欢迎使用研华EnSaaS平台Service Hub服务，用户将欲上架至WISE-PaaS物联云市场的服务与ServiceHub整合后，云服务市场将调用本文档介绍的 API完成上架服务的订阅、升级、降级、重新订阅、退订等操作。
+欢迎使用WISE-PaaS云平台Service Hub服务，用户将欲上架至WISE-PaaS云市场的服务与ServiceHub整合后，云服务市场将调用本文档介绍的 API完成上架服务的订阅、升级、降级、重新订阅、退订等操作。
 
 ### Service Hub接口
 
