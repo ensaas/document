@@ -2,15 +2,18 @@
 
 ## Service Hub介绍  
 
-EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务提供者可以上架托管服务，供其他用户或是应用程序集成。托管服务与Service Hub整合之后，即可让用户通过EnSaaS平台的MaketPlace或者Catalog完成服务的订阅，升级，降级，重新订阅及退订。
+WISE-PaaS云平台提供一套服务订阅及管理机制（Service Hub），让服务提供者可以上架托管服务，供其他用户或是应用程序集成。托管服务与Service Hub整合之后，即可让用户通过WISE-PaaS物联云市场完成服务的订阅，升级，降级，重新订阅及退订。
 
-## 整合流程
-1. [调用ServiceHub API完成服务的订阅、升级、降级、重新订阅、退订](#service-hub接口-1)
-2. [在Service Portal进行Service Secret的管理](#service-portal)
+服务提供商需要提供托管服务以及与Service Hub整合的Operator接口，以完成服务创建等管理功能。用户订阅服务时，由Service Hub协助串接商务流程，包含订单系统及计费系统。
+
+用户可以在Service Portal页面中管理已经创建的服务实例，并且取得服务连线信息。
+
+Service Hub与其他组件的关系如下图所示：  
+![](images/servicehub03.PNG)
 
 ## API概览
 
-欢迎使用研华EnSaaS平台Service Hub服务，用户将欲上架EnSaaS平台的服务与ServiceHub整合后，即可以使用本文档介绍的 API 对上架的托管服务进行订阅、升级、降级、重新订阅、退订的操作。
+欢迎使用研华EnSaaS平台Service Hub服务，用户将欲上架至WISE-PaaS物联云市场的服务与ServiceHub整合后，云服务市场将调用本文档介绍的 API完成上架服务的订阅、升级、降级、重新订阅、退订等操作。
 
 ### Service Hub接口
 
@@ -24,224 +27,275 @@ EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务
 
 ### POST   /v2/serviceInstances
 
-订阅服务。
+用户通过云服务市场购买云服务后，云服务市场将调用本接口，通知服务商开始创建服务实例。
 
 #### 请求参数
 
-```
-{
-  "uuid": "string",
-  "cartId": "string",
-  "transactionId": "string",
-  "subscriptionId": "string",
-  "userId": "string",
-  "datacenterCode": "string",
-  "servicePackageName": null,
-  "servicePackagePlanName": null,
-  "servicePackagePnInfo": null,
-  "servicePackageId": null,
-  "servicePackageOrderId": null,
-  "clusterName": null,
-  "workspaceId": null,
-  "workspaceName": null,
-  "namespaceName": null,
-  "deliverType": "string",
-  "memberType": "string",
-  "totalPriceByListing": 0,
-  "totalPriceByMemberType": 0,
-  "proratedPriceByMemberType": 0,
-  "isFinished": true,
-  "serviceInfo": [
-    {
-      "pnInfo": [
-        {
-          "pn": "string",
-          "pnQuantity": 1,
-          "pnProperty": "string",
-          "pnPriceByListing": 0,
-          "pnPriceByMemberType": 0,
-          "pnProratedPriceByMemberType": 0,
-          "isTrialAccount": true,
-          "availableDays": 18,
-          "chargeType": "string",
-          "memberType": "string",
-          "createdTime": "2020-04-13T11:46:57.846771037+08:00",
-          "effectiveTime": "2020-04-30T23:59:59.999999999+08:00"
-        }
-      ],
-      "deliverType": "string",
-      "orderId": "string",
-      "serviceIntanceId": "string",
-      "serviceInstanceName": "string",
-      "serviceInstanceQuota": {},
-      "serviceName": "string",
-      "serviceCategory": "string",
-      "servicePlanName": "string",
-      "serviceProperty": "string",
-      "serviceParameters": {}
-    }
-  ]
-}
-```
+| 名称                        | 类型    | 是否必选 | 示例值                               | 描述                             |
+| --------------------------- | ------- | -------- | ------------------------------------ | -------------------------------- |
+| uuid                        | String  | 是       | 8f6f3337-7ac1-486f-b22b-d3f66fdd8fc1 | 唯一值                           |
+| cartId                      | String  | 是       | 71d493fc-7441-41a6-81c5-2bed867eb447 | 购物车编号                       |
+| transactionId               | String  | 是       | e62bc861-f137-4039-bc6b-beaf85907f2f | 交易编号                         |
+| subscriptionId              | String  | 是       | b6e4d37f-8c81-4308-9f9e-565fe225cd80 | 订阅号                           |
+| userId                      | String  | 是       | b8a821c6-dc63-4fa3-b491-e4fa2c2b59ab | 使用者ID                         |
+| datacenterCode              | String  | 是       | sa                                   | 站点名称                         |
+| servicePackageName          | String  | 否       | WISE.M+                              | 整合包类型                       |
+| servicePackagePlanName      | String  | 否       | Lite                                 | 整合包料号信息                   |
+| servicePackagePnInfo        | Object  | 否       | 如下补充                             | 整合包料号信息                   |
+| servicePackageId            | String  | 否       | 936fe63b-67a6-4fe4-9a2a-f091cb88fb0e | 整合包ID                         |
+| servicePackageOrderId       | String  | 否       | 89bf4cd3-2427-415c-be81-88105a410be0 | 整合包订单ID                     |
+| clusterName                 | String  | 否       | eks001                               | 云平台集群名称                   |
+| workspaceId                 | String  | 否       | e6edad1d-905d-48ef-b466-877bfe6d9eed | 工作空间ID                       |
+| workspaceName               | String  | 否       | workspaceName                        | 工作空间名称                     |
+| namespaceName               | String  | 否       | namespaceName                        | 部署服务空间名称                 |
+| deliverType                 | string  | 否       | pipeline                             | 部署类型                         |
+| memberType                  | string  | 否       | VIP                                  | 用户类型                         |
+| totalPriceByListing         | Integer | 否       | 2                                    | 按照挂牌价格计算的价格           |
+| totalPriceByMemberType      | Integer | 否       | 1.66                                 | 按照用户类型计算的价格           |
+| proratedPriceByMemberType   | Integer | 否       | 0.66                                 | 按照用户类型及可用日期计算的价格 |
+| isFinished                  | Boolean | 否       | False                                | 是否购买完成                     |
+| serviceInfo                 | Object  | 否       | 如下补充                             | 服务信息                         |
+
+serviceInfo：
+
+| 名称                 | 类型   | 是否必选 | 示例值                               | 描述                         |
+| -------------------- | ------ | -------- | ------------------------------------ | ---------------------------- |
+| deliverType          | String | 否       | servicebuy                           | 部署类型                     |
+| orderId              | String | 否       | 5db0226d-0f13-43ba-ad42-441ab99a17c3 | 订单编号                     |
+| serviceIntanceId     | String | 是       | 5c23b8db-d20f-4ecc-9729-9c63e8d3d949 | 服务实例ID                   |
+| serviceInstanceName  | String | 否       | PostgreSQL                           | 服务实例名称                 |
+| serviceInstanceQuota | Object | 否       | 如下补充                             | 计量服务所使用的信息         |
+| serviceName          | String | 是       | PostgreSQL                           | 服务名称                     |
+| serviceCategory      | String | 否       | EnSaaS                               | 服务种类                     |
+| servicePlanName      | String | 否       | Shared                               | 购买的服务类别               |
+| serviceProperty      | String | 否       | Basic                                | 服务属性                     |
+| serviceParameters    | Object | 否       | 額外參數，不限定                     | 额外需要带给服务提供商的参数 |
+| pnInfo               | Object | 否       | 如下补充                             | 服务料号信息                 |
+
+serviceInstanceQuota：
+
+| 名称         | 类型    | 是否必选 | 示例值 | 描述             |
+| ------------ | ------- | -------- | ------ | ---------------- |
+| Disk(GB)     | Integer | 否       | 10     | 计量时使用的信息 |
+| Operation/5m | Integer | 否       | 1000   | 计量时使用的信息 |
+
+servicePackagePnInfo /pnInfo：
+
+| 名称                        | 类型    | 是否必选 | 示例值              | 描述                             |
+| --------------------------- | ------- | -------- | ------------------- | -------------------------------- |
+| pn                          | String  | 是       | 9880GEDPA000        | 料号名称                         |
+| pnQuantity                  | Integer | 是       | 1                   | 料号数量                         |
+| pnProperty                  | String  | 否       | Basic               | 料号属性                         |
+| pnPriceByListing            | Integer | 否       | 2                   | 料号挂牌价格                     |
+| pnPriceByMemberType         | Integer | 否       | 1.8                 | 按照 用户类型计算的价格          |
+| pnProratedPriceByMemberType | Integer | 否       | 0.66                | 按照用户类型和可用日期计算的价格 |
+| isTrialAccount              | Boolean | 否       | true                | 是否是使用用户                   |
+| availableDays               | Integer | 否       | 11                  | 剩余可用天数                     |
+| chargeType                  | String  | 否       | Monthly             | 收费类型（月付）                 |
+| memberType                  | String  | 否       | VIP                 | 客户类型                         |
+| createdTime                 | String  | 否       | 2020-04-20T09:23:19 | 建立时间                         |
+| effectiveTime               | String  | 否       | 2020-04-30T23:59:59 | 有效时间                         |
+
 #### 返回数据
-```
-[
-  {
-    "dashboardUrl": "string",
-    "serviceInstanceId": "string",
-    "serviceName": "string"
-  }
-]
-```
+
+| 名称              | 类型   | 示例值                                                       | 描述        |
+| ----------------- | ------ | ------------------------------------------------------------ | ----------- |
+| dashboardUrl      | string | https://portal-afs-ews001.hz.wise-paas.com.cn/v2/ad244f6c-cf5b-41a5-a63b-d5e70f805c26 | 订阅实例Url |
+| serviceInstanceId | string | 5c23b8db-d20f-4ecc-9729-9c63e8d3d949                         | 服务实例ID  |
+| serviceName       | string | PostgreSQL                                                   | 服务名称    |
+
+#### 示例
+
+参见各个站点的swagger：
+
+https://api-service-ensaas.sa.wise-paas.com/public/apidoc
+
+https://api-service-ensaas.hz.wise-paas.com/public/apidoc
+
+https://api-service-ensaas.jp.wise-paas.com/public/apidoc
 
 ### PUT   /v2/serviceInstances
 
-升级或降级服务。
+用户升级或降级云服务后，云服务市场将调用该接口，升级或降级后业务到期时间不变，服务商需要记录用户升级或降级之后新的规格。
 
 #### 请求参数
 
-```
-{
-  "uuid": "string",
-  "cartId": "string",
-  "transactionId": "string",
-  "subscriptionId": "string",
-  "userId": "string",
-  "datacenterCode": "string",
-  "servicePackageName": null,
-  "servicePackagePlanName": null,
-  "servicePackagePnInfo": null,
-  "servicePackageId": null,
-  "servicePackageOrderId": null,
-  "clusterName": null,
-  "workspaceId": null,
-  "workspaceName": null,
-  "namespaceName": null,
-  "deliverType": "string",
-  "memberType": "string",
-  "totalPriceByListing": 0,
-  "totalPriceByMemberType": 0,
-  "proratedPriceByMemberType": 0,
-  "isFinished": true,
-  "serviceInfo": [
-    {
-      "pnInfo": [
-        {
-          "pn": "string",
-          "pnQuantity": 1,
-          "pnProperty": "string",
-          "pnPriceByListing": 0,
-          "pnPriceByMemberType": 0,
-          "pnProratedPriceByMemberType": 0,
-          "isTrialAccount": true,
-          "availableDays": 18,
-          "chargeType": "string",
-          "memberType": "string",
-          "createdTime": "2020-04-13T11:46:57.846771037+08:00",
-          "effectiveTime": "2020-04-30T23:59:59.999999999+08:00"
-        }
-      ],
-      "deliverType": "string",
-      "orderId": "string",
-      "serviceIntanceId": "string",
-      "serviceInstanceName": "string",
-      "serviceInstanceQuota": {},
-      "serviceName": "string",
-      "serviceCategory": "string",
-      "servicePlanName": "string",
-      "serviceProperty": "string",
-      "serviceParameters": {}
-    }
-  ]
-}
-```
+| 名称                      | 类型    | 是否必选 | 示例值                               | 描述                             |
+| ------------------------- | ------- | -------- | ------------------------------------ | -------------------------------- |
+| uuid                      | String  | 是       | 8f6f3337-7ac1-486f-b22b-d3f66fdd8fc1 | 唯一值                           |
+| cartId                    | String  | 是       | 71d493fc-7441-41a6-81c5-2bed867eb447 | 购物车编号                       |
+| transactionId             | String  | 是       | e62bc861-f137-4039-bc6b-beaf85907f2f | 交易编号                         |
+| subscriptionId            | String  | 是       | b6e4d37f-8c81-4308-9f9e-565fe225cd80 | 订阅号                           |
+| userId                    | String  | 是       | b8a821c6-dc63-4fa3-b491-e4fa2c2b59ab | 使用者ID                         |
+| datacenterCode            | String  | 是       | sa                                   | 站点名称                         |
+| servicePackageName        | String  | 否       | WISE.M+                              | 整合包类型                       |
+| servicePackagePlanName    | String  | 否       | Lite                                 | 整合包料号信息                   |
+| servicePackagePnInfo      | Object  | 否       | 如下补充                             | 整合包料号信息                   |
+| servicePackageId          | String  | 否       | 936fe63b-67a6-4fe4-9a2a-f091cb88fb0e | 整合包ID                         |
+| servicePackageOrderId     | String  | 否       | 89bf4cd3-2427-415c-be81-88105a410be0 | 整合包订单ID                     |
+| clusterName               | String  | 否       | eks001                               | 云平台集群名称                   |
+| workspaceId               | String  | 否       | e6edad1d-905d-48ef-b466-877bfe6d9eed | 工作空间ID                       |
+| workspaceName             | String  | 否       | workspaceName                        | 工作空间名称                     |
+| namespaceName             | String  | 否       | namespaceName                        | 部署服务空间名称                 |
+| deliverType               | string  | 否       | pipeline                             | 部署类型                         |
+| memberType                | string  | 否       | VIP                                  | 用户类型                         |
+| totalPriceByListing       | Integer | 否       | 2                                    | 按照挂牌价格计算的价格           |
+| totalPriceByMemberType    | Integer | 否       | 1.66                                 | 按照用户类型计算的价格           |
+| proratedPriceByMemberType | Integer | 否       | 0.66                                 | 按照用户类型及可用日期计算的价格 |
+| isFinished                | Boolean | 否       | False                                | 是否购买完成                     |
+| serviceInfo               | Object  | 否       | 如下补充                             | 服务信息                         |
+
+serviceInfo：
+
+| 名称                 | 类型   | 是否必选 | 示例值                               | 描述                         |
+| -------------------- | ------ | -------- | ------------------------------------ | ---------------------------- |
+| deliverType          | String | 否       | servicebuy                           | 部署类型                     |
+| orderId              | String | 否       | 5db0226d-0f13-43ba-ad42-441ab99a17c3 | 订单编号                     |
+| serviceIntanceId     | String | 是       | 5c23b8db-d20f-4ecc-9729-9c63e8d3d949 | 服务实例ID                   |
+| serviceInstanceName  | String | 否       | PostgreSQL                           | 服务实例名称                 |
+| serviceInstanceQuota | Object | 否       | 如下补充                             | 计量服务所使用的信息         |
+| serviceName          | String | 是       | PostgreSQL                           | 服务名称                     |
+| serviceCategory      | String | 否       | EnSaaS                               | 服务种类                     |
+| servicePlanName      | String | 否       | Shared                               | 购买的服务类别               |
+| serviceProperty      | String | 否       | Basic                                | 服务属性                     |
+| serviceParameters    | Object | 否       | 額外參數，不限定                     | 额外需要带给服务提供商的参数 |
+| pnInfo               | Object | 否       | 如下补充                             | 服务料号信息                 |
+
+serviceInstanceQuota：
+
+| 名称         | 类型    | 是否必选 | 示例值 | 描述             |
+| ------------ | ------- | -------- | ------ | ---------------- |
+| Disk(GB)     | Integer | 否       | 10     | 计量时使用的信息 |
+| Operation/5m | Integer | 否       | 1000   | 计量时使用的信息 |
+
+servicePackagePnInfo /pnInfo：
+
+| 名称                        | 类型    | 是否必选 | 示例值              | 描述                             |
+| --------------------------- | ------- | -------- | ------------------- | -------------------------------- |
+| pn                          | String  | 是       | 9880GEDPA000        | 料号名称                         |
+| pnQuantity                  | Integer | 是       | 1                   | 料号数量                         |
+| pnProperty                  | String  | 否       | Basic               | 料号属性                         |
+| pnPriceByListing            | Integer | 否       | 2                   | 料号挂牌价格                     |
+| pnPriceByMemberType         | Integer | 否       | 1.8                 | 按照 用户类型计算的价格          |
+| pnProratedPriceByMemberType | Integer | 否       | 0.66                | 按照用户类型和可用日期计算的价格 |
+| isTrialAccount              | Boolean | 否       | true                | 是否是使用用户                   |
+| availableDays               | Integer | 否       | 11                  | 剩余可用天数                     |
+| chargeType                  | String  | 否       | Monthly             | 收费类型（月付）                 |
+| memberType                  | String  | 否       | VIP                 | 客户类型                         |
+| createdTime                 | String  | 否       | 2020-04-20T09:23:19 | 建立时间                         |
+| effectiveTime               | String  | 否       | 2020-04-30T23:59:59 | 有效时间                         |
 
 #### 返回数据
 
-```
-[
-  {
-    "dashboardUrl": "string",
-    "serviceInstanceId": "string",
-    "serviceName": "string"
-  }
-]
-```
+| 名称              | 类型   | 示例值                                                       | 描述        |
+| ----------------- | ------ | ------------------------------------------------------------ | ----------- |
+| dashboardUrl      | string | https://portal-afs-ews001.hz.wise-paas.com.cn/v2/ad244f6c-cf5b-41a5-a63b-d5e70f805c26 | 订阅实例Url |
+| serviceInstanceId | string | 5c23b8db-d20f-4ecc-9729-9c63e8d3d949                         | 服务实例ID  |
+| serviceName       | string | PostgreSQL                                                   | 服务名称    |
+
+#### 示例
+
+参见各个站点的swagger：
+
+https://api-service-ensaas.sa.wise-paas.com/public/apidoc
+
+https://api-service-ensaas.hz.wise-paas.com/public/apidoc
+
+https://api-service-ensaas.jp.wise-paas.com/public/apidoc
+
 
 ### POST   /v2/serviceInstances/redeploy
 
-重新订阅服务。
+用户退订云服务后，重新订阅相同的云服务，云服务市场将调用该接口，将退订的服务恢复。
 
 #### 请求参数
 
-```
-{
-  "uuid": "string",
-  "cartId": "string",
-  "transactionId": "string",
-  "subscriptionId": "string",
-  "userId": "string",
-  "datacenterCode": "string",
-  "servicePackageName": null,
-  "servicePackagePlanName": null,
-  "servicePackagePnInfo": null,
-  "servicePackageId": null,
-  "servicePackageOrderId": null,
-  "clusterName": null,
-  "workspaceId": null,
-  "workspaceName": null,
-  "namespaceName": null,
-  "deliverType": "string",
-  "memberType": "string",
-  "totalPriceByListing": 0,
-  "totalPriceByMemberType": 0,
-  "proratedPriceByMemberType": 0,
-  "isFinished": true,
-  "serviceInfo": [
-    {
-      "pnInfo": [
-        {
-          "pn": "string",
-          "pnQuantity": 1,
-          "pnProperty": "string",
-          "pnPriceByListing": 0,
-          "pnPriceByMemberType": 0,
-          "pnProratedPriceByMemberType": 0,
-          "isTrialAccount": true,
-          "availableDays": 18,
-          "chargeType": "string",
-          "memberType": "string",
-          "createdTime": "2020-04-13T11:46:57.846771037+08:00",
-          "effectiveTime": "2020-04-30T23:59:59.999999999+08:00"
-        }
-      ],
-      "deliverType": "string",
-      "orderId": "string",
-      "serviceIntanceId": "string",
-      "serviceInstanceName": "string",
-      "serviceInstanceQuota": {},
-      "serviceName": "string",
-      "serviceCategory": "string",
-      "servicePlanName": "string",
-      "serviceProperty": "string",
-      "serviceParameters": {}
-    }
-  ]
-}
-```
+| 名称                      | 类型    | 是否必选 | 示例值                               | 描述                             |
+| ------------------------- | ------- | -------- | ------------------------------------ | -------------------------------- |
+| uuid                      | String  | 是       | 8f6f3337-7ac1-486f-b22b-d3f66fdd8fc1 | 唯一值                           |
+| cartId                    | String  | 是       | 71d493fc-7441-41a6-81c5-2bed867eb447 | 购物车编号                       |
+| transactionId             | String  | 是       | e62bc861-f137-4039-bc6b-beaf85907f2f | 交易编号                         |
+| subscriptionId            | String  | 是       | b6e4d37f-8c81-4308-9f9e-565fe225cd80 | 订阅号                           |
+| userId                    | String  | 是       | b8a821c6-dc63-4fa3-b491-e4fa2c2b59ab | 使用者ID                         |
+| datacenterCode            | String  | 是       | sa                                   | 站点名称                         |
+| servicePackageName        | String  | 否       | WISE.M+                              | 整合包类型                       |
+| servicePackagePlanName    | String  | 否       | Lite                                 | 整合包料号信息                   |
+| servicePackagePnInfo      | Object  | 否       | 如下补充                             | 整合包料号信息                   |
+| servicePackageId          | String  | 否       | 936fe63b-67a6-4fe4-9a2a-f091cb88fb0e | 整合包ID                         |
+| servicePackageOrderId     | String  | 否       | 89bf4cd3-2427-415c-be81-88105a410be0 | 整合包订单ID                     |
+| clusterName               | String  | 否       | eks001                               | 云平台集群名称                   |
+| workspaceId               | String  | 否       | e6edad1d-905d-48ef-b466-877bfe6d9eed | 工作空间ID                       |
+| workspaceName             | String  | 否       | workspaceName                        | 工作空间名称                     |
+| namespaceName             | String  | 否       | namespaceName                        | 部署服务空间名称                 |
+| deliverType               | string  | 否       | pipeline                             | 部署类型                         |
+| memberType                | string  | 否       | VIP                                  | 用户类型                         |
+| totalPriceByListing       | Integer | 否       | 2                                    | 按照挂牌价格计算的价格           |
+| totalPriceByMemberType    | Integer | 否       | 1.66                                 | 按照用户类型计算的价格           |
+| proratedPriceByMemberType | Integer | 否       | 0.66                                 | 按照用户类型及可用日期计算的价格 |
+| isFinished                | Boolean | 否       | False                                | 是否购买完成                     |
+| serviceInfo               | Object  | 否       | 如下补充                             | 服务信息                         |
+
+serviceInfo：
+
+| 名称                 | 类型   | 是否必选 | 示例值                               | 描述                         |
+| -------------------- | ------ | -------- | ------------------------------------ | ---------------------------- |
+| deliverType          | String | 否       | servicebuy                           | 部署类型                     |
+| orderId              | String | 否       | 5db0226d-0f13-43ba-ad42-441ab99a17c3 | 订单编号                     |
+| serviceIntanceId     | String | 是       | 5c23b8db-d20f-4ecc-9729-9c63e8d3d949 | 服务实例ID                   |
+| serviceInstanceName  | String | 否       | PostgreSQL                           | 服务实例名称                 |
+| serviceInstanceQuota | Object | 否       | 如下补充                             | 计量服务所使用的信息         |
+| serviceName          | String | 是       | PostgreSQL                           | 服务名称                     |
+| serviceCategory      | String | 否       | EnSaaS                               | 服务种类                     |
+| servicePlanName      | String | 否       | Shared                               | 购买的服务类别               |
+| serviceProperty      | String | 否       | Basic                                | 服务属性                     |
+| serviceParameters    | Object | 否       | 額外參數，不限定                     | 额外需要带给服务提供商的参数 |
+| pnInfo               | Object | 否       | 如下补充                             | 服务料号信息                 |
+
+serviceInstanceQuota：
+
+| 名称         | 类型    | 是否必选 | 示例值 | 描述             |
+| ------------ | ------- | -------- | ------ | ---------------- |
+| Disk(GB)     | Integer | 否       | 10     | 计量时使用的信息 |
+| Operation/5m | Integer | 否       | 1000   | 计量时使用的信息 |
+
+servicePackagePnInfo /pnInfo：
+
+| 名称                        | 类型    | 是否必选 | 示例值              | 描述                             |
+| --------------------------- | ------- | -------- | ------------------- | -------------------------------- |
+| pn                          | String  | 是       | 9880GEDPA000        | 料号名称                         |
+| pnQuantity                  | Integer | 是       | 1                   | 料号数量                         |
+| pnProperty                  | String  | 否       | Basic               | 料号属性                         |
+| pnPriceByListing            | Integer | 否       | 2                   | 料号挂牌价格                     |
+| pnPriceByMemberType         | Integer | 否       | 1.8                 | 按照 用户类型计算的价格          |
+| pnProratedPriceByMemberType | Integer | 否       | 0.66                | 按照用户类型和可用日期计算的价格 |
+| isTrialAccount              | Boolean | 否       | true                | 是否是使用用户                   |
+| availableDays               | Integer | 否       | 11                  | 剩余可用天数                     |
+| chargeType                  | String  | 否       | Monthly             | 收费类型（月付）                 |
+| memberType                  | String  | 否       | VIP                 | 客户类型                         |
+| createdTime                 | String  | 否       | 2020-04-20T09:23:19 | 建立时间                         |
+| effectiveTime               | String  | 否       | 2020-04-30T23:59:59 | 有效时间                         |
 
 #### 返回数据
 
-```
-{
-  "dashboardUrl": "string",
-  "serviceInstanceId": "string"
-}
-```
+| 名称              | 类型   | 示例值                                                       | 描述        |
+| ----------------- | ------ | ------------------------------------------------------------ | ----------- |
+| dashboardUrl      | string | https://portal-afs-ews001.hz.wise-paas.com.cn/v2/ad244f6c-cf5b-41a5-a63b-d5e70f805c26 | 订阅实例Url |
+| serviceInstanceId | string | 5c23b8db-d20f-4ecc-9729-9c63e8d3d949                         | 服务实例ID  |
+
+#### 示例
+
+参见各个站点的swagger：
+
+https://api-service-ensaas.sa.wise-paas.com/public/apidoc
+
+https://api-service-ensaas.hz.wise-paas.com/public/apidoc
+
+https://api-service-ensaas.jp.wise-paas.com/public/apidoc
+
 
 ### DELETE   /v2/serviceInstances/{serviceInstanceId}
 
-退订服务。
+用户通过云服务市场退订云服务后，云服务市场将调用本接口，通知服务商删除服务实例。
 
 #### 请求参数
 
@@ -254,9 +308,3 @@ EnSaaS平台提供一套服务订阅及管理机制（Service Hub），让服务
 #### 返回数据
 
 `204  No Content`
-
-## Service Portal
-
-服务订阅后，可以登录Service Portal进行Service Secret的管理，即建立绑定，生成服务的连接信息，提供给APP使用，详细请参考Service Portal使用手册。
-
-![serviceportal01](images/ServicePortal01.PNG)
