@@ -60,9 +60,9 @@ WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集�
 
 WISE-PaaS平台上的用户角色有：
 
-- 订阅号角色：SubscriptionAdmin 和SubscriptionUser； 
-- 资源角色有：ClusterOwner， WorkspaceOwner， NamespaceDeveloper； 
-- App角色有：srpUser。 
+- 订阅号角色：SubscriptionAdmin 和SubscriptionUser
+- 资源角色有：ClusterOwner， WorkspaceOwner， NamespaceDeveloper
+- App角色有：srpUser
 
 不同服务整合的角色如下：  
 **1. 对于托管服务，并不部署在平台空间上，建议整合订阅号的角色。SubscriptionAdmin 和SubscriptionUser有所订阅服务的最高访问权限。**   
