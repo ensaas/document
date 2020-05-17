@@ -9,7 +9,7 @@ WISE-PaaS云平台提供一套服务订阅及管理机制（Service Hub），让
 用户可以在Service Portal页面中管理已经创建的服务实例，并且取得服务连线信息。
 
 Service Hub与其他组件的关系如下图所示：  
-![](images/servicehub03.PNG)
+![servicehub03](images/servicehub03.PNG)
 
 ## API概览
 
