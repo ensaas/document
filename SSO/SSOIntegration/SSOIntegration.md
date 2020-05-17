@@ -1,11 +1,11 @@
-# SSO 介绍
+#SSO 介绍#
 WISE-PaaS平台提供了单点登录（SSO）服务，作为平台的认证授权中心，具有统一的帐号管理、身份认证、用户授权等基础能力，并且跨系统的单点登录功能，用户使用单个用户名和密码就可以登录访问平台上有权限的多个系统，为平台上的多个整合系统的快速登入提供便利。同时SSO在4.0 新增企业账户管理的功能，企业账号下可以管理数个订阅号，各个订阅号彼此隔离，便于企业为下属不同组织或客户订阅服务和云资源空间，并透过订阅号统一管理费用。便于DFSI扮演二房东角色，管理自己的客户顺势拓展代销或销售业务。
 
-# 单点登录
+#单点登录
 
-应用程序可支持从某一个服务中登录SSO账号后，其他整合SSO的服务通过读取Cookie中的token可实现自动登录。cookie中的key位EIToken，值为user的token，然后用EIToken获取用户的权限进行验证登录接口
+应用程序可支持从某一个服务中登录SSO账号后，其他整合SSO的服务通过读取Cookie中的token可实现自动登录。cookie中的key为EIToken，值为user的token，然后用EIToken获取用户的权限进行验证登录。
 
-# 整合方式介绍
+#整合方式介绍#
 WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集中管理用户，分配用户管理权限与可访问的云资源权限。对于上架WISE-PaaS的服务我们推荐整合平台的SSO服务，下面我们介绍下几种整合方式以及适合的场景和优缺点
 <table>
                    <tr>
@@ -55,14 +55,12 @@ WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集�
                        <th>N</th>
                    </tr>
 </table>
-
-# 整合角色说明  
-
+#整合角色说明#
 WISE-PaaS平台上的用户角色有：
 
-- 订阅号角色：SubscriptionAdmin 和SubscriptionUser
-- 资源角色有：ClusterOwner， WorkspaceOwner， NamespaceDeveloper
-- App角色有：srpUser
+- 订阅号角色：SubscriptionAdmin 和SubscriptionUser； 
+- 资源角色有：ClusterOwner， WorkspaceOwner， NamespaceDeveloper； 
+- App角色有：srpUser。 
 
 不同服务整合的角色如下：  
 **1. 对于托管服务，并不部署在平台空间上，建议整合订阅号的角色。SubscriptionAdmin 和SubscriptionUser有所订阅服务的最高访问权限。**   
@@ -72,36 +70,31 @@ WISE-PaaS平台上的用户角色有：
 -  ClusterOwner， WorkspaceOwner有自己空间下部署的服务的最高访问权限。
 -  NamespaceDeveloper对有权限的namespace下部署的应用有访问权限，一般推荐是viewer的权限。
 -  App 角色srpUser由应用服务管理自己的终端客户，并由应用服务管理客户的各种角色。
-
-# 整合流程  
-
-## 服务注册  
+# 整合流程
+##服务注册
 不管用那种整合方式，首先服务需要在SSO上进行注册。 注册之后会被作为一个可信任的客户端，颁发一个ClientId 和Client Secret。在SSO上管理的srpUser角色的用户就是记录的clientId以及角色。
 
-### 流程  
+###流程
  1. 可通过API接口进行注册，记录返回的ClientId和ClientSecret，程序在初次启动的时候需要注册，注册成功之后需要记录client id 和client Secret，下次启动可使用 GET /clients/{clientIdOrName}查询，如果存在不用重复注册。
  2. 如果是OAuth整合，可在SSO 界面的Client节点下的创建页面注册一个Client，获取ClientId和ClientSecret
 
-### API概览
+###API概览
 <table>
     <tr>
        <th>API</th>
        <th>描述</th>
     </tr>
     <tr>
-       <th>/clients</th>
+       <th>/v4.0/clients</th>
        <th>注册SSO客户端</th>
     </tr>
 </table>
-
-### API详情  
-
+###API详情  
 #### POST  /v4.0/clients
 - 应用程序部署在ensaas上，mp会自动为应用启动的pod中注入env,包括appID,datacenter，cluster,workspace,namespace.
 - srp调用sso api  认证方式使用sso v2.0时的srpToken
 - srp注册成功之后应该保存clientId以及clientSecret，以便之后调用sso api需要。
-
-##### 请求参数  
+#####请求参数  
 <table>
                    <tr>
                        <th>名称</th>
@@ -175,7 +168,7 @@ WISE-PaaS平台上的用户角色有：
                      </tr>                                                                                 
                </table>
                
-##### 响应参数            
+#####响应参数            
    <table>
                    <tr>
                        <th>名称</th>
@@ -256,9 +249,9 @@ WISE-PaaS平台上的用户角色有：
                        <th>redirectUrl</th>
                    </tr>
             </table>
-	    
-##### srpToken生成方式如下：  
-
+#####srpToken生成方式如下：  
+        
+        
         ● base64Url_encode(AES_encode(timestamp-srpName)) (tmestamp为当前10位时间戳)  
         
         ● AES_encode        
@@ -274,22 +267,20 @@ WISE-PaaS平台上的用户角色有：
                ■ https://drive.google.com/open?id=0B0k7G85XKxSrVGRiNFNGa1c5b1k 
             ○ Java Cryptography Extension issue: 
                ■ http://www.oracle.com/technetwork/java/javase/downloads/
-	       
-## 后端Native整合
+##后端Native整合
 由服务后台API接口整合SSO的接口实现用户认证和鉴权
+###流程 
 
-### 流程 
-
-![Not found](./picture/SSOzhenghe.png) 
+![Not found](./picture/native-backend.png) 
  
-### API概览
+###API概览
 <table>
     <tr>
        <th>API</th>
        <th>描述</th>
     </tr>
     <tr>
-       <th>/auth/native</th>
+       <th>/v4.0/auth/native</th>
        <th>使用用户名和密码获取SSO token</th>
     </tr>
     <tr>
@@ -297,7 +288,7 @@ WISE-PaaS平台上的用户角色有：
        <th>获取部署在某个平台空间下的服务的License信息</th>
     </tr>
     <tr>
-       <th>/clients/{clientId}/users/role</th>
+       <th>/v4.0/clients/{clientId}/users/role</th>
        <th>获取User对Client的ClientRole以及User在传入的订阅号下的权限</th>
     </tr>
     <tr>
@@ -305,13 +296,11 @@ WISE-PaaS平台上的用户角色有：
        <th>获取客户在某个指定集群，workspace和NameSpace下的最高权限</th>
     </tr>
 </table>
-
-### API详情
+###API详情
 
 #### POST /v4.0/auth/native
 在用户输入账号密码之后，应用后端拿到用户账号密码，然后调用此接口即可拿到用户的EIToken
-
-##### 请求参数  
+#####请求参数  
  <table>
                            <tr>
                                <th>名称</th>
@@ -335,8 +324,7 @@ WISE-PaaS平台上的用户角色有：
                                <th>password</th>
                            </tr>		   
   </table>
-  
-##### 响应参数  
+#####响应参数  
   <table>
                     <tr>
                         <th>名称</th>
@@ -372,8 +360,7 @@ WISE-PaaS平台上的用户角色有：
 
 #### GET /v1/api/partNum/licenseQty
 给定应用的料号和应用部署的空间，查询此应用的License信息。在license的返回值中，可以拿到当前App是被哪个订阅号所订阅，即subscriptionId，订阅号id建议应用保存下来（这个一但订阅不会随便变化）
-
-##### 请求参数   
+#####请求参数   
 <table>
                            <tr>
                                <th>名称</th>
@@ -397,8 +384,7 @@ WISE-PaaS平台上的用户角色有：
                                <th>应用部署的空间唯一标识，由clustername+workspaceId+namespaceName 直接拼接组成</th>
                            </tr>		   
   </table>
-  
-##### 响应参数  
+#####响应参数  
   <table>
                     <tr>
                         <th>名称</th>
@@ -446,8 +432,7 @@ WISE-PaaS平台上的用户角色有：
 
 #### GET /v4.0/clients/{clientId}/users/role
 获取用户的clientRole以及subscriptionRole，同时会验证token的有效性，App调用成功获取用户对于client以及App所属订阅号的权限。如果用户的订阅号权限不为空，或者用户的clientRole已经为srp的最高权限了，则App按照最高权限赋予用户
-
-##### 请求参数   
+#####请求参数   
 <table>
                            <tr>
                                <th>名称</th>
@@ -471,8 +456,7 @@ WISE-PaaS平台上的用户角色有：
                                <th>从上一步License获取到的订阅App的订阅号Id</th>
                            </tr>		   
   </table>
-  
-##### 响应参数
+#####响应参数
     
    <table>
                    <tr>
@@ -494,11 +478,10 @@ WISE-PaaS平台上的用户角色有：
                        <th>用户对于所选client的scope</th>
                    </tr>
             </table>
-	    
 #### GET /v1/datacenter/{datacentercode}/users/resourceRole
 获取用户在给定资源条件下的最高资源权限，整合服务按照最高权限给用户分配权限即可。调用接口需要的datacentercode， clustername， workspaceId， namespaceName都可以通过服务自己的环境变量获取，部署的时候由平台注入，对应的环境变量的key分别是datacenter，cluster，workspace，namespace
 
-##### 请求参数
+#####请求参数
   <table>
                    <tr>
                        <th>名称</th>
@@ -530,7 +513,7 @@ WISE-PaaS平台上的用户角色有：
                    </tr>   				   
             </table>
  
-##### 响应参数
+#####响应参数
  <table>
                        <tr>
                            <th>名称</th>
@@ -546,11 +529,10 @@ WISE-PaaS平台上的用户角色有：
                        </tr>
  </table>
 
-## 使用SSO界面登录重定向
+##使用SSO界面登录重定向
 如果用户的App没有登录界面和用户管理，不想自己开发登录界面，但要整合SSO，可跳转到SSO登录页面，登录之后重定向回自己的页面，检查token赋予权限
-
 ### 流程
-
+![Not found](./picture/SSO-redirect.png) 
 ### API概述
 从App跳转到sso 的登录页，添加redirectUri的参数，表示登录成功之后要重定向回的url，登录成功跳转回去之后，由App的后台从cookie中获取EIToken，cookie中的key为EIToken，获取之后进行接口调用验证权
 **https://portal-sso-ensaas.{domain}/home/sign-in?redirectUri=xxx**
@@ -564,7 +546,7 @@ WISE-PaaS平台上的用户角色有：
        <th>获取部署在某个平台空间下的服务的License信息</th>
     </tr>
     <tr>
-       <th>/clients/{clientId}/users/role</th>
+       <th>/v4.0/clients/{clientId}/users/role</th>
        <th>获取User对Client的ClientRole以及User在传入的订阅号下的权限</th>
     </tr>
     <tr>
@@ -572,15 +554,13 @@ WISE-PaaS平台上的用户角色有：
        <th>获取客户在某个指定集群，workspace和NameSpace下的最高权限</th>
     </tr>
 </table>
-
 ### API详情
-参考后端Native整合部分的以上三个API详情。
+/v1/api/partNum/licenseQty, /clients/{clientId}/users/role, /v1/datacenter/{datacentercode}/users/resourceRole参考后端Native整合部分的以上三个API详情。
 
-## 前后端整合SSO
+##前后端整合SSO
 服务要自己开发登录界面，前台整合SSO登录接口，后端整合权限验证部分，登录成功SSO会把用户Token写入浏览器cookie, 前端请求后台时会带入Cookie，由后端进行权限校验。
-
 ### 流程
-
+![Not found](./picture/frontend-backend.png)
 ### API概述
 <table>
     <tr>
@@ -596,7 +576,7 @@ WISE-PaaS平台上的用户角色有：
        <th>获取部署在某个平台空间下的服务的License信息</th>
     </tr>
     <tr>
-       <th>/clients/{clientId}/users/role</th>
+       <th>/v4.0/clients/{clientId}/users/role</th>
        <th>获取User对Client的ClientRole以及User在传入的订阅号下的权限</th>
     </tr>
     <tr>
@@ -604,12 +584,9 @@ WISE-PaaS平台上的用户角色有：
        <th>获取客户在某个指定集群，workspace和NameSpace下的最高权限</th>
     </tr>
 </table>
-
 ### API详情
-
 ##### POST /v4.0/auth
-
-##### 请求参数
+* 请求参数
   <table>
                    <tr>
                        <th>名称</th>
@@ -633,12 +610,12 @@ WISE-PaaS平台上的用户角色有：
                        <th>password</th>
                    </tr>
   </table>
-  
 ##### /v1/api/partNum/licenseQty, /clients/{clientId}/users/role, /v1/datacenter/{datacentercode}/users/resourceRole参考后端Native整合部分的以上三个API详情。
 
-## OAuth整合
+##OAuth整合
 
 ### 流程
+![Not found](./picture/OAuth.png)
 
 ### API概述
 <table>
@@ -655,12 +632,10 @@ WISE-PaaS平台上的用户角色有：
        <th>获取用户token</th>
     </tr>
 </table>
-
 ### API详情
+####GET /v4.0/oauth/authorize 获得授权码
 
-#### GET /v4.0/oauth/authorize 获得授权码
-
-##### 请求参数
+#####请求参数
  <table>
                        <tr>
                            <th>名称</th>
@@ -696,10 +671,10 @@ WISE-PaaS平台上的用户角色有：
                        </tr>	
      </table>
 
-#### POST /v4.0/oauth/token
+####POST /v4.0/oauth/token
 应用程序后端获取到授权码后，再调用POST /v4.0/oauth/token 既可获取到用户token进行授权 
  
-##### 请求参数
+#####请求参数
  <table>
                     <tr>
                         <th>名称</th>
@@ -743,7 +718,7 @@ WISE-PaaS平台上的用户角色有：
                     </tr>	   
  </table>
  
-##### 响应参数
+#####响应参数
  <table>
                           <tr>
                               <th>名称</th>
@@ -778,10 +753,10 @@ WISE-PaaS平台上的用户角色有：
         </table> 
 
 
-## Client Token整合
+##Client Token整合
 
 ### 流程
-
+![Not found](./picture/ClientToken.png)
 ### API概述
 <table>
     <tr>
@@ -793,13 +768,11 @@ WISE-PaaS平台上的用户角色有：
        <th>获取clientToken</th>
     </tr>
 </table>
-
 ### API详情
-
-#### POST /v4.0/oauth/token
+####POST /v4.0/oauth/token
 应用注册成功即可调用POST /v4.0/oauth/token 获取clientToken，对于已经支持ClientToken的服务可携带此ClientToken进行调用，对方即可解析Token进行验证，通过则赋予权限
 
-##### 请求参数
+#####请求参数
   <table>
                    <tr>
                        <th>名称</th>
@@ -844,7 +817,7 @@ WISE-PaaS平台上的用户角色有：
             </table>
 
             
-##### 响应参数
+#####响应参数
  <table>
                          <tr>
                              <th>名称</th>
@@ -877,9 +850,9 @@ WISE-PaaS平台上的用户角色有：
                              <th>刷新token的令牌</th>
                          </tr>
        </table>           
+* clientToken作为srp自身的标识，代表srp自己的身份，也可以使用clientToken调用sso api或者其他支持clientToken的srp的api。（类似于user EIToken，就是一个身份标识）
 
 ## App管理srpUser用户
-
 ### 流程
 - App注册成功取得clientId和clientSecert。
 - 可通过PATCH /users/{username}/scopes接口创建用户并分配App权限，或修改，移除用户对App的权限
@@ -895,12 +868,9 @@ WISE-PaaS平台上的用户角色有：
        <th>创建用户并分配App权限，或修改，移除用户对App的权限</th>
     </tr>
 </table>
-
 ### API详情
-
-#### PATCH /users/{username}/scopes
-
-##### 请求参数
+####PATCH /users/{username}/scopes
+#####请求参数
   <table>
                        <tr>
                            <th>名称</th>
