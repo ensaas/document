@@ -4,6 +4,8 @@
  1.  顯示用量時，連結到的dashboard應該要使用當前平台的dashboard
  2.  Consumption改回Service Usage
  3.  Service Name下拉式選單只需要保留MongoDB、PostgreSQL、RabbitMQ、AFS
+ 4.  實例名稱的下拉式選單只列出plan為Shared或standard的instance
+ 5.  頁面上方提示本頁面支持顯示哪些服務的用量
  
 
 ## Service-Portal-UI 1.0.1.7 (2020-05-18)
