@@ -1,6 +1,6 @@
 ## 服务激活流程
 
-![](images/license active flowchart.png)
+![](images/license_active_flowchart.png)
 
 Step1:  用户订购或更新服务后，Catalog生成订阅信息，通知各个buy生成服务实例，同时将订阅信息同步给License Server。
 
