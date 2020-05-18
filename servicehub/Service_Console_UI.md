@@ -1,3 +1,9 @@
+## Service-Portal-UI 1.0.1.8 (2020-05-18)
+
+ 修改Bug:
+ 1.  13915 顯示用量時，連結到的dashboard應該要使用當前平台的dashboard
+ 
+
 ## Service-Portal-UI 1.0.1.7 (2020-05-18)
 
  新增:
