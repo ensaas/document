@@ -1,4 +1,4 @@
-## Service-Portal-UI 1.0.1.6 (2020-05-14)
+## Service-Portal-UI 1.0.1.7 (2020-05-18)
 
  新增:
  1.  【ServicePortal】添加监控服务用量的看板
