@@ -1,3 +1,9 @@
+## Service-Portal-UI 1.0.1.9 (2020-05-18)
+
+ 修改Bug:
+ 1.  13922 若從Service Instances頁面選擇Redis服務，再切換去Service Usage頁面，會顯示Redis的instance資料
+ 
+
 ## Service-Portal-UI 1.0.1.8 (2020-05-18)
 
  修改Bug:
