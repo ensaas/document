@@ -845,6 +845,7 @@ http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH
      </table>
 
 ##### 返回码
+
 <table style="font-size:13px;">
                            <tr>
                                <th>Http Code</th>
@@ -855,6 +856,7 @@ http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH
                                <th>Redirect to redirectUri</th>
                            </tr>		   
   </table>
+  
 #### POST /v4.0/oauth/token
 
 应用程序后端获取到授权码后，再调用POST /v4.0/oauth/token 既可获取到用户token进行授权 
