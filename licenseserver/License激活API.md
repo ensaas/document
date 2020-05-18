@@ -17,7 +17,7 @@ Step4:  服务实例获取到license后，拿自身信息根据规则与license�
 | API                                                          | 描述                   |
 | ------------------------------------------------------------ | ---------------------- |
 | /v1/api/partNum/licenseQty                                   | 通过服务料号获取授权码 |
-| /v1/api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId> | 通过服务名称获取授权码 |
+| /v1/api/serviceName/ <serviceName> /serviceInstanceId/ <serviceInstanceId>  | 通过服务名称获取授权码 |
 
 
 
