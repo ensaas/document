@@ -81,7 +81,7 @@ http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH
 
 #### 通过服务名称获取授权码
 
-调用/v1/api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>可以通过服务名称（serviceName）和服务实例id（serviceInstanceId）获取激活码
+调用/v1/api/serviceName/[serviceName]/serviceInstanceId/[serviceInstanceId]可以通过服务名称（serviceName）和服务实例id（serviceInstanceId）获取激活码
 
 #### 请求参数
 
