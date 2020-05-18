@@ -1,7 +1,9 @@
 ## Service-Portal-UI 1.0.1.8 (2020-05-18)
 
  修改Bug:
- 1.  13915 顯示用量時，連結到的dashboard應該要使用當前平台的dashboard
+ 1.  顯示用量時，連結到的dashboard應該要使用當前平台的dashboard
+ 2.  Consumption改回Service Usage
+ 3.  Service Name下拉式選單只需要保留MongoDB、PostgreSQL、RabbitMQ、AFS
  
 
 ## Service-Portal-UI 1.0.1.7 (2020-05-18)
