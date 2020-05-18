@@ -7,132 +7,196 @@ WISE-PaaS SSO provides tokens in the format of JSON Web Token (JWT), an open sta
 WISE-PaaS SSO also provides standard OAuth 2.0 integration, and is a trusted user authentication and authorization center.
 
 # User Roles #
-There are three types of the user roles, namely Platform Management role, Subscription Management role and App Management role.
-## Tenant Space Role ##
+There are two types of the user roles, namely Subscription Management role and App Management role.
 
-**-Global Admin** An admin who oversees EnSaaS data centers worldwide with the highest privilege level that permits them to designate admins for data centers, admins for clusters, and roles for tenant spaces. The admin is allowed to manage EnSaaS subscriptions by creating such subscriptions and binding a user to any of the subscriptions.  
-**-DataCenter Admin** An admin who oversees a data center with the highest privilege level that permits them to manage resources within all clusters for the data center, designate admins for clusters and roles for tenant spaces. The admin is allowed to manage EnSaaS subscription by creating such subscriptions and binding a user to any of the subscriptions.  
-**-Cluster Admin** An admin who oversees a Kubernetes cluster with the highest privilege level that permits them to manage all workspaces and namespaces, all applications deployed in the cluster, and all Kubernetes resources within the cluster. The admin can designate roles for tenant spaces but cannot manage EnSaaS subscriptions.   
-**-Cluster Owner** The owner of a dedicated cluster who manages the tenant spaces within the cluster. They can access the cluster, managing all the workspaces and namespaces of the cluster, the applications deployed by tenants within the cluster, certain Kubernetes resources within the cluster, and designate roles for the workspaces and namespaces. They cannot subscribe to, upgrade, downgrade, or unsubscribe from the cluster.   
-**-Workspace Owner** The owner of a general workspace or a workspace built within a dedicated cluster. They are in charge of the tenant spaces within a workspace and can access the workspace and manage all namespaces within the workspace, all tenant-deployed applications within the workspace, and certain Kubernetes resources (and have access to these resources). They can designate roles for namespaces but cannot subscribe to, upgrade, downgrade, or unsubscribe from the workspace.   
-**-Namespace Developer** The developer of a namespace. They can access the namespace and all applications deployed within the namespace and manage certain Kubernetes within the namespace.
 ## Subscription Role ##
+**-Global Admin** The manager of EnSaaS global data center is responsible for the management of all data centers in the world; all subscription management rights are available in SSO, which can manage subscription and assign subscription users, and can set user status.   
 **-Subscription Admin**	The admin of an EnSaaS subscription. An EnSaaS subscription is bound to a MyAdvantech account. The admin can subscribe to, upgrade or downgrade, and unsubscribe from a product, service, or resource (all of which are referred to cloud services) on the EnSaaS platform. The admin can manage or access a cloud service on the EnSaaS platform they have subscribed to. The admin can also manage orders and bills for cloud services.  
 **-Subscription User**	A user of a subscription. The user can manage and access the cloud services covered in the subscription but cannot subscribe to any cloud service, unsubscribe from the service, or manage an order or bill for the service. 
 ## App Role ##
 **-SRP User**	The user of a cloud-based application. They can access the application, and their role is assigned by the visitor to the application who has the highest privilege. They cannot access any EnSaaS tenant space. 
 # User Management #
+## User Login##
+ - **login**  
+Replace dataCenterCode and domain with the information of the corresponding site. After entering the login page, enter the user name and password and click the "Login" button to log in. User name input is not case sensitive, and SSO stores the user name in lower case. You can switch between different languages in the upper right corner.
+
+![Not found](./sso_picture/login-en.png)  
+Picture1 - login page
+
+ - **Resend registration letter**  
+If the newly added user does not receive the registration letter, you can resend it on the login page, and then check it in the mailbox. The format of the mailbox is as follows: *@wise-paas.com.cn, if it is not received, please check whether you have received a spam mailbox, and it can be set as a trusted mailbox.
+
+**Step1**: Click the prompt on the login page “Didn't receive the registration Email?”
+
+![Not found](./sso_picture/email-1-en.png) 
+Picture2 - login page
+
+**Step2**: Enter your email in the registration letter resend page, click submit and it will be resent
+
+![Not found](./sso_picture/email-2-en.png) 
+Picture3 - Resend mail page
+
+ - **New user login to change password**  
+New SSO users will receive a registration letter containing the initial SSO password. It is recommended that users log in to SSO to change their passwords.
+
+**Step1**: Log in to the SSO portal and log in using the password in the email. If you log in for the first time, you will be prompted to change the password
+
+![Not found](./sso_picture/registeremail.png)  
+Picture4 - Registration letter
+
+**Step2**: The user will be prompted to change the password if logging in for the first time
+
+![Not found](./sso_picture/modifyPassword-1-en.png) 
+Picture5 - Change password prompt
+
+**Step3**: Change the password on this page, pay attention to the suggested password rules
+
+![Not found](./sso_picture/modifyPassword-2-en.png) 
+Picture6 - Change password page
+
 ## User Creation ##
-User Creation is divided into four scenarios: marketplace created users, users with subscriptions, users without subscriptions and SRP users.
+User Creation is divided into four scenarios: marketplace creates subscription and user, add Subscription Member, create user and assign subscription permission and SRP users.
 
-### scenario 1 - Marketplace add users and company ###
+### scenario 1 - Marketplace creates subscription and user ###
 The user created on the marketplace will automatically create a subscription which corresponding to the user's company on SSO. This user is the subscription admin and  belongs to this subscription by default, which can be viewed from the My Profile of SSO.   
-After a user subscribes and purchases the corresponding resource, he/she has permission to the resource. The tenant space resources of the purchased ensaas can be viewed by logging in the Mangement Portal.
-### scenario 2 - Add a user who has all the resources purchased by the subscription - Add subscription users ###
+Subscription admin can subscribe to the resource or service in the Catalog, and the relevant authority of the resource is obtained after the purchase is successful. Users can log in to the Management Portal to view the purchased ensaas tenant space resources.
+### scenario 2 - Add Subscription Member-add users who have all resources purchased by subscription ###
 The subscription admin could add a new user as the subscription user, then the added user automatically owns all of the resources purchased by the subscription.   
-Press the "+" button on the left of header, then it will pop up "Add a team member" dialog box. Enter the invited user account, and the user will be added into the subscription by pressing "Add to subscription" button.   
-
 
 - **If the added user is existed, the subscription admin can invite existing users to join in the subscription. The existing user will be added into the subscription directly.** 
 
-![Not found](./sso_picture/invite_user.png)  
-Picture 1 - Invite Existing User
+**Step1**: Click on the subscription node on the left, a list of authorized subscription appears. Click on the line of a subscription to enter the membership management interface of the subscription， as shown in Figure 1：
+
+![Not found](./sso_picture/invite_exist_user-en.png)  
+Picture7 - Subscription list
+
+**Step2**: Press the "+" button on the right of header, then it will pop up "Add a team member" dialog box. Enter the invited user account, and the user will be added into the subscription by pressing "Add to subscription" button，The default is a user with subscription admin who can add subscription user rights。 
+
+![Not found](./sso_picture/1_invite_exist_user-en.png)  
+Picture8 - Invite existing users to the subscription 
 
 
 - **If the invited user doesn't exist, the subscription admin user can create a new user account and add the new user to the subscription.**
 
-The "Add to subscription" button will jump to the user creation page if the entered username doesn't exists. After setting the basic information and press "Add to subscription", the new user will be created.  
-Because the subscription user has all of the permissions to the resources of this subscription, the part of "Resource management" is not required to fill.  
-![Not found](./sso_picture/not_exist_user.png) 
-Picture 2 - Invite Non_Existing User
+**Step1**:It is the same as step 1 of scene 1
 
-![Not found](./sso_picture/nonexistuser_info.png) 
-Picture 3 - Edit Basic Information of New Added User
+**Step2**:It is the same as Step 2 in Scenario 1, except that the user entered in the second step is a new user who does not exist in SSO. After entering the mailbox, click the "Add to Subscription" button to jump to the user creation page.
 
-### scenario 3 - Add a user who has parts of resources purchased by subscription - Adding a user without assigning a subscription ###
-If the subscription user just only wants to assign new users parts of subscription space resources purchased by the subscription, the manager could add users under Users/Management/Add page of SSO, and assign the user's own authorized space resources to the created new user with related resource roles.   
-This situation does not require new users to be added into the subscription.  
-Press the "+" button on the header of content part, it will jump to the User Information page to create a new user account.   
-Like in Scenario 2, to create a new user, the basic information is mandatory to be filled. The resource binding information is optional. The user can choose to add or delete resources role binding on the Management/Edit page.   
-![User Profile](./sso_picture/add_user_button.png)
-Picture 4 - Added User  
+**Step3**:Fill in the basic user information. The following subscription permission displays the information of the subscription clicked in by default. Click the "Add to subscription" button.
+ 
+![Not found](./sso_picture/invite_nonexist_user-en.png) 
+Picture9 - Edit basic information for new users
 
-#### Make User Resource Role Binding ####
-There are three steps to assign resource permissions to users, which called rolebinding.  
-1. Select the data center and cluster, then the role information.   
-If the logged-in user is a **clusterOwner**, the permissions it can assign are workspaceOwner and namespaceDeveloper.   
-- If workspaceOwner is selected, it is necessary to select a workspace while doesn't need to select the namespace, because the workspaceOwner has full permissions to all the namespaces in the workspace.   
-- And if namespaceDevelper is selected, which is the least privilege, it needs to assign the specific cluster, workspace and namespace information.  
-If the logged-in user is a **workspaceOwner**, the permissions it can assign is only namespaceDeveloper.  
-If the logged-in user is a **namespaceDeveloper**, it is forbidden to assign resource bindings.    
-2. Press the "+" button to make the resource role binding effective. If it needs to delete certain roles, please click the trash can icon behind the corresponding roles.  
-3. Press the "Save" button(which is "Add" on the create user page) to save the changes.
-![User Profile](./sso_picture/edit_resource_role.png)
-Picture 5 - Edit Resource Role Binding
+### scenario 3 - Create user and assign subscription permission ###
+You can add users in the menu of user management and assign the permission of one or more subscription owned by the currently logged in user.  
+**Step1**: Click the user node on the left, a list of user management appears, click the "+" button on the right of the menu, to add user interface.
+
+![Not found](./sso_picture/user_menu_add-en.png)
+Picture10 - user list
+
+**Step2**: In the new user interface, fill in the user's mailbox and basic information, with * is required. Under the subscription information, select the subscription you want to assign and select the permissions. Click the "+" button to add a line of subscription information in the following list. You can add multiple items repeatedly. To delete, click the trash can icon behind the list. The list shows all the user's subscription permissions.
+
+![Not found](./sso_picture/user_menu_add_info-en.png)
+Picture11 - Edit basic information for new users
+
+**Step3**: Click the "Add" button to add a user with permissions. It is also supported to add only users without assigning subscription permissions. The permissions of such users will be unassigned.
 
 ### scenario 4 - Add App Users ###
 Adding a user from the application will automatically create an SSO account, but the user is in the role of AppUser, and I.App is responsible for user management.
 
-## User Information Edit ##
-The users could choose User Management page to edit other users' info, and edit the info of themselves on My Profile page.  
-User profile contains the following informations:  
-- **Basic Infomation**: Lists basic user information, such as Username, Email, Phone, Country, City, Company, etc. And the user ID is unique.   
-- **Resource Permissions**: Describes the resource role of the user. It also shows the resource detail information, like which datacenter, cluster, workspace and namespace that the user belongs to.  
-- **Subscription Information**: Displays the subscription information of the user. The information contains the name, id, company and user role of the subscription.  
-The users could edit the basic information and resource privileges on the information edit page. Please note that subscription information can't be modified here.
-![User Profile](./sso_picture/user_profile.png)
-Picture 6 - Edit User Profile  
+## User Privilege Editing ##
+There are two entrances for user information editing:  
+1. In the "User Management" page, select a user and click the edit menu in the operation to edit the user's subscription permissions
 
-The Edit option of the managed user leads to the User Infomation page, which also contains basic information, subscription role and resource privileges.  
-Only the resource permission option is allowed to edit by logged-in user. Please refer to Picture 5 - Edit Resource Role Binding.
+![User Profile](./sso_picture/user_edit-en.png)
+Picture12 - Edit user information  
+2. Click the edit button in the upper right corner of "My Profile" to edit your information, you can modify the basic information and subscription permissions.
+
+![User Profile](./sso_picture/user_profile-en.png)
+Picture13 - Personal information 
+
+User profile contains the following informations:  
+
+- **Basic Infomation**: Display basic user information, user basic information can only be modified by yourself, such as user name, email, phone, country / region, city, company, etc. The user ID is unique.   
+- **Subscription Information**: Display the user's subscription information, you can edit and modify the user's subscription permissions. The information includes the name, company, ID and role of the subscription.
+
+User information editing page：
+
+![User Profile](./sso_picture/user_detail-en.png)
+Picture14 - Edit user information   
 
 ## User Enable/Disable/Delete ##
-By Expanding operation button, the user could be edited, deleted and disabled/activated.
-**Edit:** Add or Delete the resource role which belongs to the logged-in user， which has been introduced in the previous chapters.  
-**Delete:** Only Datacenter Admin could delete users.
+In the user list menu, you can expand the operation button, select delete, disable / activate operation. Only the Global Data Admin can delete, disable / activate.
+  
+**Delete:** Delete an SSO user.  
 **Disable/Active:** The normal user status is Active, and it can be disabled for which the user will be forbidden to login unless it is activated again.
 
-![User Profile](./sso_picture/user_operation.png)
-Picture 7 - User Operations
+![Not found](./sso_picture/user_delete-en.png)
+Picture 15 - User Operations
+
+## User Filtering ##
+Click the "User" menu to list the users under the subscription to which the logged-in user belongs. It supports filtering by subscription type, subscription name, and user filtering.
+
+1> Subscription admin users can see the subscription admin, subscription user under the subscription to which he belong, unsigned users added by the current logged-in user.
+
+2> Subscription user can only see other subscription users under the subscription to which he belong and unsigned users added by the current logged-in user.
+
+![Not found](./sso_picture/user-select-en.png)
+Picture16 - User list filtering
 
 # Subscription Management #
-Subscription page lists all the subscriptions that the logged-in user belongs to. Usually a user just attaches to only one subscription.  
-Note: Only subscription admins have permission to see this option.
+Click the "Subscription" menu to display a list of all subscription to which the logged-in user belongs. From the list, you can view the basic information of the subscription including: name, company, member, subscription type, customer type, creation time.
 
-![Not found](./sso_picture/subscription.png)
-Picture 8 - Subscription Management
+![Not found](./sso_picture/subscription_list-en.png)
+Picture17 - subscription list
+
+## Subscription Details
+In the subscription list menu, you can click the operation button to expand a subscription, select details to view the details of the subscription, more points than the basic information in the list, available points, account owner, ID information.
+
+![Not found](./sso_picture/subscription_detailButton-en.png)
+Picture18 - Subscription list details menu
+
+![Not found](./sso_picture/subscription_detail-en.png)
+Picture19 - Subscription details
 
 ## Subscription Creation ##
 The subscription is created by the SSO interface called by the Marketplace. Each subscription corresponds to the account of each company. For non-marketplace users to create a subscription, please contact the EnSaaS administrator.
 
 ## Subscription Users Management ##
-The user of a subscription can view the users in the subscription. 
-The subscrition admin could invite or remove a user to/from the managed subscription, while subscrition user is forbidden to add or remove other users.
-![Not found](./sso_picture/subscription_select.png)
-Picture 9 - Users in the Subscription  
+You can click the subscription in the subscription list to enter the subscription member page for management, or select the user in the user menu list to manage the rights of the subscription.
 
-![Not found](./sso_picture/subscription_user_list.png)
-Picture 10 - List User in Subscription
+Subscription related user management behaviors include：  
+
+ - Subscription administrators can choose to add or remove ordinary users from the subscription.
+ - Subscription user only have viewing rights, and no right to add or remove users.
+ - Users can be filtered by subscription in the user list.
 
 ## Invite Users to Subscription ##
-Subscription admin users can invite other user into their subscriptions if they know the invited user's full account.   
 Here you can refer to the previous scenario 2 and 3.  
 
 ## Remove Users from Subscription ##
-The subscription admin user could remove the user from the subscription, but he/she has no permission to remove another subscription admin.   
-After the user is removed from the subscription, the user no longer has the default permissions for the resources under the subscription. Only the resource permissions are assigned separately could be retained.
-![Not found](./sso_picture/subscription_user_remove.png)
-Picture 11 - Remove User from Subscription
+Subscription Admin or Global Admin users can remove subscription user of subscription numbers from the subscription number, but this user has not been deleted, but it does not belong to this subscription number. After the user is removed from the subscription number, the user will no longer have permission to subscribe to resources.
+
+**Step1**: Click on the subscription node on the left, a list of authorized subscription appears, and click on the line of the name of a subscription to enter the member management interface of the subscription.  
+**Step2**: Select a user in the user list, expand the operation menu on the far right, and click remove, as shown below
+
+![Not found](./sso_picture/subscription_remove-en.png)
+Picture20 - Remove user from subscription
 
 # Client Management #
 ## Client Management ##
-Client management can only be seen by the above roles of workspaceOwner. Users can view the registration information of applications deployed in the resource space, whether it is registered through API integration or registered on the SSO portal.  
-The Management page default shows the clients of the first datacenter, the first cluster and the first namespace within the user's permission.   
-Users can find the certain client by the search field on the page header.
-The client information could be edited by pressing the "Edit" button.
+The user can view the registration information of all clients under the resource space that he has permission. Including clients registered via API or SSO interface
 
-![Not found](./sso_picture/edit_client.png) 
+The Management page default shows the clients of the first datacenter, the first cluster and the first namespace within the user's permission. 
+  
+  - Users can find specific clients through the search field on the page title. 
+  - User can press "Edit" button to edit client information.
+
+![Not found](./sso_picture/client_list-en.png) 
+Picture21 - Client management
 
 ## Client registration ##
+If users use the standard OAuth integration method, they need to register with SSO on the SSO interface to obtain a valid ClientId. This ID can be used after OAuth integration. Users can manually register through the "Client / Create" option on the SSO interface
 
-If the user uses the standard OAuth integration method, the ClientId will be required. Then the user can manually register by the Client/Creation option on the SSO portal, so as to obtain a valid ID registered in the SSO registration center for subsequent use according to OAuth integration.
+![Not found](./sso_picture/client_creation-en.png) 
+Picture22 - Client registration
