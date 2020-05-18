@@ -9,7 +9,7 @@ WISE-PaaS平台提供了单点登录（SSO）服务，作为平台的认证授�
 # 整合方式介绍
 
 WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集中管理用户，分配用户管理权限与可访问的云资源权限。对于上架WISE-PaaS的服务我们推荐整合平台的SSO服务，下面我们介绍下几种整合方式以及适合的场景和优缺点
-<table>
+<table style="font-size:13px;">
                    <tr>
                        <th>方式</th>
                        <th>适用场景</th>
@@ -22,7 +22,9 @@ WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集�
                           <div align="left">1. 只有API Server的服务</div>
                           <div align="left">2. App已有自己的前端，调用自己的后台</div>
                        </th>
-                       <th>由后端API整合并封装对SSO的调用</th>
+                       <th>
+                         <div align="left">由后端API整合并封装对SSO的调用</div>
+                       </th>
                        <th>Y</th>
                    </tr>
                    <tr>
@@ -30,7 +32,9 @@ WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集�
                        <th>
                           <div align="left">没有登录界面和用户管理的App</div>
                        </th>
-                       <th>不用自己开发登录界面，到SSO登录后，重定向回自己的页面，检查token赋予权限</th>
+                       <th>
+                          <div align="left">不用自己开发登录界面，到SSO登录后，重定向回自己的页面，检查token赋予权限</div>
+                       </th>
                        <th>Y</th>
                    </tr>
                    <tr>
@@ -38,7 +42,9 @@ WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集�
                        <th>
                           <div align="left">服务要自己开发登录界面</div>
                        </th>
-                       <th>前台整合SSO登录接口，后端整合权限验证部分</th>
+                       <th>
+                          <div align="left">前台整合SSO登录接口，后端整合权限验证部分</div>
+                       </th>
                        <th>Y</th>
                    </tr>
                    <tr>
@@ -46,7 +52,9 @@ WISE-PaaS平台的可订阅服务均已整合SSO，方便平台租户可以集�
                        <th>
                           <div align="left">不部署在平台空间上的服务，SSO作为第三方认证中心</div>
                        </th>
-                       <th>标准的OAuth接口整合，整合完不支持单点登录</th>
+                       <th>
+                           <div align="left">标准的OAuth接口整合，整合完不支持单点登录</div>
+                       </th>
                        <th>N</th>
                    </tr>
                    <th>Client Token整合</th>
@@ -87,7 +95,7 @@ WISE-PaaS平台上的用户角色有：
 
 ### API概览
 
-<table>
+<table style="font-size:13px;">
     <tr>
        <th>API</th>
        <th>描述</th>
@@ -103,12 +111,14 @@ WISE-PaaS平台上的用户角色有：
 #### POST  /v4.0/clients
 
 - 应用程序部署在ensaas上，mp会自动为应用启动的pod中注入env,包括appID,datacenter，cluster,workspace,namespace.
-- srp调用sso api  认证方式使用sso v2.0时的srpToken
-- srp注册成功之后应该保存clientId以及clientSecret，以便之后调用sso api需要。
+- 如果不是用标准OAuth整合的方式，redirectUrl的参数不用给，如果是OAuth整合会检查注册时传入redirectUrl 和/oauth/authorize接口调用时传入的 redirect_uri 参数做对比，要求一致
+- App调用sso api认证方式使用srpToken，见下面的说明
+- App注册成功之后应该保存clientId以及clientSecret，以便之后调用sso api需要。
+
 
 ##### 请求参数  
 
-<table>
+<table style="font-size:13px;">
                    <tr>
                        <th>名称</th>
                        <th>类型</th>
@@ -170,7 +180,7 @@ WISE-PaaS平台上的用户角色有：
                          <th>string</th>
                          <th>否</th>
                          <th></th>
-                         <th>做oauth的校验用</th>
+                         <th>标准OAuth整合，需要指定</th>
                     </tr>
                     <tr>
                          <th>scopes</th>
@@ -183,7 +193,7 @@ WISE-PaaS平台上的用户角色有：
                
 ##### 响应参数     
 
-   <table>
+   <table style="font-size:13px;">
                    <tr>
                        <th>名称</th>
                        <th>类型</th>
@@ -293,7 +303,7 @@ WISE-PaaS平台上的用户角色有：
  
 ### API概览
 
-<table>
+<table style="font-size:13px;">
     <tr>
        <th>API</th>
        <th>描述</th>
@@ -318,13 +328,13 @@ WISE-PaaS平台上的用户角色有：
 
 ### API详情
 
-#### POST /v4.0/auth/native
+#### POST /v4.0/auth/native   
 
 在用户输入账号密码之后，应用后端拿到用户账号密码，然后调用此接口即可拿到用户的EIToken
 
 ##### 请求参数  
 
- <table>
+ <table style="font-size:13px;">
                            <tr>
                                <th>名称</th>
                                <th>类型</th>
@@ -350,7 +360,7 @@ WISE-PaaS平台上的用户角色有：
   
 ##### 响应参数  
 
-  <table>
+  <table style="font-size:13px;">
                     <tr>
                         <th>名称</th>
                         <th>类型</th>
@@ -383,13 +393,45 @@ WISE-PaaS平台上的用户角色有：
                     </tr>
   </table>
 
-#### GET /v1/api/partNum/licenseQty
+##### 正常返回示例
 
-给定应用的料号和应用部署的空间，查询此应用的License信息。在license的返回值中，可以拿到当前App是被哪个订阅号所订阅，即subscriptionId，订阅号id建议应用保存下来（这个一但订阅不会随便变化）
+***用户的EIToken***
+```
+eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJjb3VudHJ5IjoiQ04iLCJjcmVhdGlvblRpbWUiOjE1ODMzNzYwODYsImV4cCI6MTU4OTc4MjQ0MCwiZmlyc3ROYW1lIjoidGluZ3RpbmciLCJpYXQiOjE1ODk3Nzg4NDAsImlkIjoiY2Y0NzIxNWItNWU4YS0xMWVhLWIxMTUtMjY1MjE2NjJkMDM0IiwiaXNzIjoid2lzZS1wYWFzIiwibGFzdE1vZGlmaWVkVGltZSI6MTU4OTc2OTE4OSwibGFzdE5hbWUiOiJuaW5nIiwicmVmcmVzaFRva2VuIjoiNjI0MWY5MTUtOThjNi0xMWVhLTkwNjUtOGU5OTAzNTRmNDRjIiwic3RhdHVzIjoiQWN0aXZlIiwidXNlcm5hbWUiOiJ0aW5ndGluZy5uaW5nQGFkdmFudGVjaC5jb20uY24ifQ.Q-faTlkaAmIfbhMH4knxAoIhNNlciECydCq_PiJzQIkcUarJDiRTmq7-sWGRjc_yO773M-msU-zXMOfTeZAY0w
+```
+***EIToken 解析***  
+```
+{
+
+ alg: "HS512",  
+ typ: "JWT"
+
+}
+
+{
+
+ country: "CN",  
+ creationTime: 1583376086,  
+ exp: 1589772789,  
+ firstName: "tingting",  
+ iat: 1589769189,  
+ id: "cf47215b-5e8a-11ea-b115-26521662d034",  
+ iss: "wise-paas",  
+ lastModifiedTime: 1589765047,  
+ lastName: "ning",  
+ refreshToken: "e9e4f37b-98af-11ea-9065-8e990354f44c",  
+ status: "Active",  
+ username: "tingting.ning@advantech.com.cn"  
+
+}
+```
+
+#### GET /v1/api/partNum/licenseQty
+通过服务料号（pn）和服务实例id（id）获取激活码，查询此应用的License信息。在license的返回值中，可以拿到当前App是被哪个订阅号所订阅，即subscriptionId，订阅号id建议应用保存下来（这个一但订阅不会随便变化）
 
 ##### 请求参数   
 
-<table>
+<table style="font-size:13px;">
                            <tr>
                                <th>名称</th>
                                <th>类型</th>
@@ -402,20 +444,20 @@ WISE-PaaS平台上的用户角色有：
                                <th>string</th>
                                <th>是</th>
                                <th>9806xxxxx</th>
-                               <th>产品的料号</th>
+                               <th>服务上架时提供的服务料号，即PN</th>
                            </tr>
         				    <tr>
                                <th>id</th>
                                <th>string</th>
                                <th>是</th>
                                <th>slave0420a957f4-0bf9-4faf-90cd-694919cd4b68dashboard</th>
-                               <th>应用部署的空间唯一标识，由clustername+workspaceId+namespaceName 直接拼接组成</th>
+                               <th>服务实例id，即serviceInstanceId，表示应用部署的空间唯一标识，由clustername+workspaceId+namespaceName 直接拼接组成</th>
                            </tr>		   
   </table>
-  
+
 ##### 响应参数  
 
-  <table>
+  <table style="font-size:13px;">
                     <tr>
                         <th>名称</th>
                         <th>类型</th>
@@ -426,7 +468,7 @@ WISE-PaaS平台上的用户角色有：
                         <th>id</th>
                         <th>string</th>
                         <th>slave0420a957f4-0bf9-4faf-90cd-694919cd4b68dashboard</th>
-                        <th>应用部署的空间唯一标识</th>
+                        <th>服务实例id，即serviceInstanceId </th>
                     </tr>
  				    <tr>
                         <th>subscriptionId</th>
@@ -438,35 +480,91 @@ WISE-PaaS平台上的用户角色有：
                         <th>isValidTransaction</th>
                         <th>bool</th>
                         <th>true</th>
-                        <th></th>
+                        <th>用户订阅状态，true=有效，false=无效，若为无效时，激活</th>
                     </tr>
  				    <tr>
                         <th>number</th>
                         <th>integer</th>
                         <th>1</th>
-                        <th>订阅的个数</th>
+                        <th>订阅的料号数量，即pnQuantity</th>
                     </tr>
  				    <tr>
                         <th>authcode</th>
                         <th>string</th>
                         <th>5785-xxxx-xxx</th>
-                        <th>由料号和空间标识以及number加密生成，可进行验证并获取number</th>
+                        <th>激活码，由料号和空间标识以及number加密生成，可进行验证并获取number</th>
+                    </tr>
+ 				    <tr>
+                        <th>datacenterCode</th>
+                        <th>string</th>
+                        <th>sa</th>
+                        <th>数据中心编号，如sa，hz，je </th>
                     </tr>
  				    <tr>
                         <th>activeInfo</th>
                         <th>string</th>
-                        <th>“”</th>
-                        <th></th>
+                        <th>""</th>
+                        <th>服务上架时自定义的激活信息，保留项 </th>
+                    </tr>
+ 				    <tr>
+                        <th>company</th>
+                        <th>string</th>
+                        <th>Advantech</th>
+                        <th>订阅号所属公司信息</th>
+                    </tr>
+ 				    <tr>
+                        <th>subscriptionType</th>
+                        <th>string</th>
+                        <th>paid</th>
+                        <th>订阅类型（付费/试用），值为：paid/on trial </th>
                     </tr>
   </table>  
 
+##### 请求示例
+
+```
+http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH&id=eks00120a957f4-0bf9-4faf-90cd-694919cd4b68Dashboard
+```
+
+##### 正常返回示例
+
+
+{
+
+	id: "eks00120a957f4-0bf9-4faf-90cd-694919cd4b68Dashboard", //服务实例id
+	subscriptionId: "ff4fbd21-5962-4427-88a0-b8ef4ac9b393", //订阅号id  
+	isValidTransaction: true,  //用户订阅状态，true=有效，false=无效    
+	number: 120,   // 订阅的料号数量
+	authcode: "3080-e825-003c", //激活码
+	datacenterCode："sa", //站点信息
+	activeInfo: ""  //服务上架时自定义的激活信息
+}
+
+
+#### 返回码
+
+<table style="font-size:13px;">
+                           <tr>
+                               <th>Http Code</th>
+                               <th>描述</th>
+                           </tr>
+        				    <tr>
+                               <th>200</th>
+                               <th>successful operation，返回的json数据格式如上Response Example中所述</th>
+                           </tr>
+        				    <tr>
+                               <th>204</th>
+                               <th>*no content*，未查询到lic信息</th>
+                           </tr>		   
+  </table>
+                               
 #### GET /v4.0/clients/{clientId}/users/role
 
 获取用户的clientRole以及subscriptionRole，同时会验证token的有效性，App调用成功获取用户对于client以及App所属订阅号的权限。如果用户的订阅号权限不为空，或者用户的clientRole已经为srp的最高权限了，则App按照最高权限赋予用户
 
 ##### 请求参数   
 
-<table>
+<table style="font-size:13px;">
                            <tr>
                                <th>名称</th>
                                <th>类型</th>
@@ -492,7 +590,7 @@ WISE-PaaS平台上的用户角色有：
   
 ##### 响应参数
     
-   <table>
+   <table style="font-size:13px;">
                    <tr>
                        <th>名称</th>
                        <th>类型</th>
@@ -519,7 +617,7 @@ WISE-PaaS平台上的用户角色有：
 
 ##### 请求参数
 
-  <table>
+  <table style="font-size:13px;">
                    <tr>
                        <th>名称</th>
                        <th>类型</th>
@@ -552,7 +650,7 @@ WISE-PaaS平台上的用户角色有：
  
 ##### 响应参数
 
- <table>
+ <table style="font-size:13px;">
                        <tr>
                            <th>名称</th>
                            <th>类型</th>
@@ -578,7 +676,7 @@ WISE-PaaS平台上的用户角色有：
 ### API概述
 从App跳转到sso 的登录页，添加redirectUri的参数，表示登录成功之后要重定向回的url，登录成功跳转回去之后，由App的后台从cookie中获取EIToken，cookie中的key为EIToken，获取之后进行接口调用验证权
 **https://portal-sso-ensaas.{domain}/home/sign-in?redirectUri=xxx**
-<table>
+<table style="font-size:13px;">
     <tr>
        <th>API</th>
        <th>描述</th>
@@ -611,7 +709,7 @@ WISE-PaaS平台上的用户角色有：
 
 ### API概述
 
-<table>
+<table style="font-size:13px;">
     <tr>
        <th>API</th>
        <th>描述</th>
@@ -640,7 +738,7 @@ WISE-PaaS平台上的用户角色有：
 
 ##### 请求参数
 
-  <table>
+  <table style="font-size:13px;">
                    <tr>
                        <th>名称</th>
                        <th>类型</th>
@@ -663,6 +761,22 @@ WISE-PaaS平台上的用户角色有：
                        <th>password</th>
                    </tr>
   </table>
+
+##### 返回码
+<table style="font-size:13px;">
+                           <tr>
+                               <th>Http Code</th>
+                               <th>描述</th>
+                           </tr>
+        				    <tr>
+                               <th>200</th>
+                               <th>successful operation，返回的json数据格式如上Response Example中所述</th>
+                           </tr>
+        				    <tr>
+                               <th>204</th>
+                               <th>*no content*，未查询到lic信息</th>
+                           </tr>		   
+  </table>
   
 ##### /v1/api/partNum/licenseQty, /clients/{clientId}/users/role, /v1/datacenter/{datacentercode}/users/resourceRole参考后端Native整合部分的以上三个API详情。
 
@@ -674,7 +788,7 @@ WISE-PaaS平台上的用户角色有：
 
 ### API概述
 
-<table>
+<table style="font-size:13px;">
     <tr>
        <th>API</th>
        <th>描述</th>
@@ -695,7 +809,7 @@ WISE-PaaS平台上的用户角色有：
 
 ##### 请求参数
 
- <table>
+ <table style="font-size:13px;">
                        <tr>
                            <th>名称</th>
     					   <th>参数携带位置</th>
@@ -730,13 +844,24 @@ WISE-PaaS平台上的用户角色有：
                        </tr>	
      </table>
 
+##### 返回码
+<table style="font-size:13px;">
+                           <tr>
+                               <th>Http Code</th>
+                               <th>描述</th>
+                           </tr>
+        				    <tr>
+                               <th>302</th>
+                               <th>Redirect to redirectUri</th>
+                           </tr>		   
+  </table>
 #### POST /v4.0/oauth/token
 
 应用程序后端获取到授权码后，再调用POST /v4.0/oauth/token 既可获取到用户token进行授权 
  
 ##### 请求参数
 
- <table>
+ <table style="font-size:13px;">
                     <tr>
                         <th>名称</th>
  					   <th>参数携带位置</th>
@@ -781,7 +906,7 @@ WISE-PaaS平台上的用户角色有：
  
 ##### 响应参数
 
- <table>
+ <table style="font-size:13px;">
                           <tr>
                               <th>名称</th>
                               <th>类型</th>
@@ -823,7 +948,7 @@ WISE-PaaS平台上的用户角色有：
 
 ### API概述
 
-<table>
+<table style="font-size:13px;">
     <tr>
        <th>API</th>
        <th>描述</th>
@@ -838,11 +963,11 @@ WISE-PaaS平台上的用户角色有：
 
 #### POST /v4.0/oauth/token
 
-应用注册成功即可调用POST /v4.0/oauth/token 获取clientToken，对于已经支持ClientToken的服务可携带此ClientToken进行调用，对方即可解析Token进行验证，通过则赋予权限
+调用POST /v4.0/oauth/token 获取clientToken，对于已经支持ClientToken的服务可携带此ClientToken进行调用，对方即可解析Token进行验证，通过则赋予权限. 默认是颁发1个小时过期的token
 
 ##### 请求参数
 
-  <table>
+  <table style="font-size:13px;">
                    <tr>
                        <th>名称</th>
 					   <th>参数携带位置</th>
@@ -865,7 +990,7 @@ WISE-PaaS平台上的用户角色有：
                        <th>string</th>
                        <th>是</th>
                        <th>23dodsadspdjweujkdnsdn</th>
-                       <th>client id</th>
+                       <th>client id，Client注册之后获得</th>
                    </tr>
 					<tr>
                        <th>client_secret</th>
@@ -873,7 +998,7 @@ WISE-PaaS平台上的用户角色有：
                        <th>string</th>
                        <th>是</th>
                        <th>djsadjsadasjkdpwqjdspdjsdpiwjdksdjspajdaisdjwdsajk</th>
-                       <th>client secret</th>
+                       <th>client secret，Client注册之后获得</th>
                    </tr>	
 					<tr>
                        <th>duration</th>
@@ -888,7 +1013,7 @@ WISE-PaaS平台上的用户角色有：
             
 ##### 响应参数
 
- <table>
+ <table style="font-size:13px;">
                          <tr>
                              <th>名称</th>
                              <th>类型</th>
@@ -919,7 +1044,10 @@ WISE-PaaS平台上的用户角色有：
                              <th>{refreshToken}</th>
                              <th>刷新token的令牌</th>
                          </tr>
-       </table>           
+       </table>  
+         
+##### Token示例
+![Not found](./picture/clientTokenDecode.png)
 
 ## App管理srpUser用户
 
@@ -927,10 +1055,14 @@ WISE-PaaS平台上的用户角色有：
 
 - App注册成功取得clientId和clientSecert。
 - 可通过PATCH /users/{username}/scopes接口创建用户并分配App权限，或修改，移除用户对App的权限
+- App注册时如果没有填写scopes字段，在创建user时，user的scope 可以为任意的字符串。例如为Json格式，可表达复杂权限。
+
+例如：V4.0:  dashboard-123456789.{"orgRoles":[{"orgId":"1","orgRole":"admin"},{"orgId":"2","orgRole":"admin"}]}
+
 
 ### API概述
 
-<table>
+<table style="font-size:13px;">
     <tr>
        <th>API</th>
        <th>描述</th>
@@ -947,7 +1079,7 @@ WISE-PaaS平台上的用户角色有：
 
 ##### 请求参数
 
-  <table>
+  <table style="font-size:13px;">
                        <tr>
                            <th>名称</th>
     					   <th>参数携带位置</th>
@@ -997,3 +1129,73 @@ WISE-PaaS平台上的用户角色有：
                            <th>本次需要操作的权限，比如action=append,scopes=["admin"]，则意味着，这次需要给user添加一条当前srp的admin的权限</th>
                        </tr>
 </table>
+
+## Token刷新
+### 流程
+![Not found](./picture/tokenRefresh.png)
+
+### API 概述
+**EIToken :**   
+      时效一小时  
+      属性 (attributes): HttpOnly (提供给后端 backend),   
+      secure (https)  
+      内容：加密的账户信息，包括状态、过期时间、  
+      RefreshToken等等  
+      获取方法：帐号密码获取、RefreshToken获取  
+
+**EIName :**  
+      时效一小时  
+      属性 (attributes): secure、前端程序如 java script 可以取得，并显示在页面上，并作为登入成功的识别  
+ 
+<table style="font-size:13px;">
+    <tr>
+       <th>API</th>
+       <th>描述</th>
+    </tr>
+    <tr>
+       <th>/v4.0/token</th>
+       <th>用refreshToken刷新EIToken</th>
+    </tr>
+</table>
+
+### API详情
+
+#### GET /v4.0/token 
+
+##### 请求参数
+
+ <table style="font-size:13px;">
+                       <tr>
+                           <th>名称</th>
+    					   <th>参数携带位置</th>
+                           <th>类型</th>
+                           <th>是否必选</th>
+                           <th>示例</th>
+                           <th>描述</th>
+                       </tr>
+    				    <tr>
+                           <th>token</th>
+    					   <th>query</th>
+                           <th>string</th>
+                           <th>是</th>
+                           <th>e9e4f37b-98af-11ea-9065-8e990354f44c</th>
+                           <th>刷新Token</th>
+                       </tr>
+     </table>
+
+##### 返回码
+<table style="font-size:13px;">
+                           <tr>
+                               <th>Http Code</th>
+                               <th>描述</th>
+                           </tr>
+        				    <tr>
+                               <th>200</th>
+                               <th>刷新成功</th>
+                           </tr>		   
+  </table>
+
+## 其它整合建议
+### MP和SSO服务建议内网地址调用
+SSO，MP, License整合建议大家用内网地址，速度会比较快。这个地址可从环境变量中取得，要读取的变量是global.ensaasApps，部部署时会将这些链接注入到环境变量中，如下图：
+![Not found](./picture/variable.png)
