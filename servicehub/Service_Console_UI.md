@@ -1,5 +1,11 @@
 ## Service-Portal-UI 1.0.1.6 (2020-05-14)
 
+ 新增:
+ 1.  【ServicePortal】添加监控服务用量的看板
+ 
+
+## Service-Portal-UI 1.0.1.6 (2020-05-14)
+
  修改Bug:
  1.  生產環境上，Service Key Name的連結在部分電腦上打不開
  
