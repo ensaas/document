@@ -1,3 +1,8 @@
+# Version: 2.0.3.6
+Bug Fixed
+- Fix binding timeout (remove send amqp event)
+- Fix provision mu-user can not login dashboard
+
 # Version: 2.0.3.4
 Bug Fixes
 - Provision mu user role parameter wrong
