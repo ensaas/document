@@ -1,3 +1,10 @@
+## Portal 4.0.5.0-(2020-5-19)
+### Fix bugs
+* Added CRM ID column in the subscription list
+* Remove the resource permission of Profile
+* Modify the select box style of editing page
+* When adding a subscription permission on the edit page, globalAdmin does not assign a subscription number permission by default, and the subscription role that subAdmin can add by default is user and cannot be modified.
+
 ## API 4.0.8.0-(2020-05-12)
 ### New Features
 * MKP create user API add return authcode
