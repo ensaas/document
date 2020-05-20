@@ -109,7 +109,7 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
   	"datacenterCode"："sa", //站点信息
   	"activeInfo": ""  //服务上架时自定义的激活信息
   	"company": "Advantech",  //公司信息
-      "subscriptionType": "paid" //订阅类型
+        "subscriptionType": "paid" //订阅类型
   }
   
   ```
@@ -155,7 +155,7 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
             "datacenterCode": "<string>"，
             "activeInfo": "<string>",
             "company": "<string>"，
-	        "subscriptionType": "<string>"
+	    "subscriptionType": "<string>"
         },
         ...
     ]
@@ -180,7 +180,7 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
 
 **Example**：
 
-* Request Example:
+* Request Example:         
   http(s)://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstanceId/eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm?page=1&pageSize=100
 
 * Response Example:
