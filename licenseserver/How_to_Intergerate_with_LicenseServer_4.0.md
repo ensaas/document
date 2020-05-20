@@ -94,7 +94,7 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 
 **Example**：
 
-* Request Example:
+* Request Example:   
   http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH&id=eks00120a957f4-0bf9-4faf-90cd-694919cd4b68Dashboard
 
 * Response Example:
@@ -180,7 +180,7 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
 
 **Example**：
 
-* Request Example:         
+* Request Example:    
   http(s)://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstanceId/eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm?page=1&pageSize=100
 
 * Response Example:
