@@ -27,7 +27,7 @@ Step4: 从license server获取authcode和isValidTransaction进行对比判断，
 ## 激活API
 **Swagger Url**
 
-http://api-license-master.es.wise-paas.cn/apidoc/
+http://api-license-ensaas.sa.wise-paas.com/public/apidoc/
 
 **Host**
 
@@ -72,7 +72,9 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 	"number": <integer>,
 	"authcode": "<string>",
 	"datacenterCode": "<string>"，
-	"activeInfo": "<string>"
+	"activeInfo": "<string>"，
+	"company": "<string>"，
+	"subscriptionType": "<string>"
 }
 ```
 
@@ -87,23 +89,27 @@ GET /v1/api/partNum/licenseQty?pn=<string>&id=<string>
 | authcode           | 激活码                                                    |
 | datacenterCode           | 数据中心编号，如es，je，sa，hz，bj                     |
 | activeInfo         | 服务上架时自定义的激活信息，保留项                       |
+| company            | 订阅号所属公司信息                                        |
+| subscriptionType   | 订阅类型（付费/试用），值为：paid/on trial                |
 
 **Example**：
 
 * Request Example:
-  http://api.license.master.internal/v1/api/partNum/licenseQty?pn=9806WPAFS0&id=9ca0b70f-3357-11ea-beb1-76a42f50fd69
+  http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH&id=eks00120a957f4-0bf9-4faf-90cd-694919cd4b68Dashboard
 
 * Response Example:
 
   ```
   {
-  	id: "9ca0b70f-3357-11ea-beb1-76a42f50fd69", //服务实例id
-  	subscriptionId: "ff4fbd21-5962-4427-88a0-b8ef4ac9b393", //订阅号id
-  	isValidTransaction: true,  //用户订阅状态，true=有效，false=无效
-  	number: 120,   // 订阅的料号数量
-  	authcode: "3080-e825-003c", 
-  	datacenterCode："ES",
-  	activeInfo: ""  //服务上架时自定义的激活信息
+  	"id": "eks00120a957f4-0bf9-4faf-90cd-694919cd4b68Dashboard", //服务实例id
+  	"subscriptionId": "ff4fbd21-5962-4427-88a0-b8ef4ac9b393", //订阅号id
+  	"isValidTransaction": true,  //用户订阅状态，true=有效，false=无效
+  	"number": 120,   // 订阅的料号数量
+  	"authcode": "3080-e825-003c", //激活码
+  	"datacenterCode"："sa", //站点信息
+  	"activeInfo": ""  //服务上架时自定义的激活信息
+  	"company": "Advantech",  //公司信息
+      "subscriptionType": "paid" //订阅类型
   }
   
   ```
@@ -147,7 +153,9 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
             "number": <integer>,
             "authcode": "<string>",
             "datacenterCode": "<string>"，
-            "activeInfo": "<string>"
+            "activeInfo": "<string>",
+            "company": "<string>"，
+	        "subscriptionType": "<string>"
         },
         ...
     ]
@@ -167,47 +175,43 @@ GET /api/serviceName/<serviceName>/serviceInstanceId/<serviceInstanceId>?page=<s
 | authcode           | 激活码                                                    |
 | datacenterCode           | 数据中心编号，如es，je，sa，hz，bj                         |
 | activeInfo         | 服务上架时自定义的激活信息，保留项                       |
+| company            | 订阅号所属公司信息                                        |
+| subscriptionType   | 订阅类型（付费/试用），值为：paid/on trial                |
 
 **Example**：
 
 * Request Example:
-  http://api-license-master.es.wise-paas.cn/v1/api/serviceName/scada/serviceInstanceId/slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada?page=1&pageSize=100
+  http(s)://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstanceId/eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm?page=1&pageSize=100
 
 * Response Example:
 
   ```
   {
-      "total":3,
+      "total":2,
       "resources":[
           {
-              "id":"slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada",
-              "pn":"9806WPDASH",
+              "id":"eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm",
+              "pn":"9806WPAPM1",
               "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
-              "datacenterCode":"es",
+              "datacenterCode":"sa",
               "isValidTransaction":true,
               "number":1,
               "authcode":"a7d7-7d48-0001",
-              "activeInfo":""
+              "activeInfo":"",
+              "company": "Advantech",
+  	        "subscriptionType": "paid"
           },
           {
-              "id":"slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada",
-              "pn":"9806WPSC02",
+              "id":"eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm",
+              "pn":"9806WPAPM4",
               "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
-              "datacenterCode":"es",
+              "datacenterCode":"sa",
               "isValidTransaction":true,
               "number":1,
               "authcode":"c3b5-e711-0001",
               "activeInfo":""
-          },
-          {
-              "id":"slave0420a957f4-0bf9-4faf-90cd-694919cd4b68scada",
-              "pn":"9806WAC010",
-              "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
-              "datacenterCode":"es",
-              "isValidTransaction":true,
-              "number":1,
-              "authcode":"e4a3-4a04-0001",
-              "activeInfo":""
+              "company": "Advantech",
+  	        "subscriptionType": "paid"
           }
       ]
   }
@@ -315,12 +319,12 @@ func lpad(str string, totallen int, char byte) string {
 
 ### 相关术语说明
 
-| Item                     | Description                        |
-| ------------------------ | ---------------------------------- |
-| Part Number（PN）        | 服务料号                           |
-| serviceInstanceId （ID） | 服务实例id                         |
-| authcode                 | 激活码                             |
-| subscriptionId           | 订阅号id                           |
-| number                   | 即pnQuantity，服务料号订阅数量     |
-| datacenterCode           | 数据中心编号，如es，je，sa，hz，bj |
+| Item                     | Description                    |
+| ------------------------ | ------------------------------ |
+| Part Number（PN）        | 服务料号                       |
+| serviceInstanceId （ID） | 服务实例id                     |
+| authcode                 | 激活码                         |
+| subscriptionId           | 订阅号id                       |
+| number                   | 即pnQuantity，服务料号订阅数量 |
+| datacenterCode           | 数据中心编号，如je，sa，hz     |
 
