@@ -53,7 +53,7 @@ Step4:  服务实例获取到license后，拿自身信息根据规则与license�
 **请求示例**
 
 ```
-http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH&id=eks00120a957f4-0bf9-4faf-90cd-694919cd4b68Dashboard
+http://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH&id=eks00120a957f4-0bf9-4faf-90cd-694919cd4b68Dashboard
 ```
 
 **正常返回示例**
@@ -116,7 +116,7 @@ http(s)://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDASH
 **请求示例**
 
 ```
-http(s)://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstanceId/eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm?page=1&pageSize=100
+http://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstanceId/eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm?page=1&pageSize=100
 ```
 
 **正常返回示例**
