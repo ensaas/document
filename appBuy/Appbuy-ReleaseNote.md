@@ -3,7 +3,7 @@
 ### version：v-1.3.1.18
 ####  Updated：
 - 修改SSO /users/me 到 /users/me/info
-- 修改SSO /users/me 到 /users/me/info
+- 修改SSO /subscriptions/:id/accountInfo 到 /subscriptions/:id/detail
 
 ### version：v-1.3.1.17
 ####  Updated：
