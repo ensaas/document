@@ -26,6 +26,27 @@
 1. Only one config file is used in a cluster, as well as all of the cluster’s namespaces and workspaces.
 2. The config file is downloadable from the Dedicate Cluster menu if you have bought a Dedicate Cluster or from the Shared Cluster menu if you have bought a General Workspace.
 
+# Web Kubectl
+we provide the web-based kubectl, you can run kubectl command on the page, without downloading config file in advance.
+
+## For cluster owners or above:
+
+1. Click the menu button on the top left-hand corner of the portal. Go to Platform Management > Dedicate Cluster > Clusters or Platform Management > Shared Cluster > Clusters to open the management page for clusters.
+2. Click the Operation field on the right side of the cluster for which you are going to operate. Then click the "Web Kubectl"  button and popup the web kubectl terminal:
+![kubectl](./image/kubectl.png)
+
+## For workspace owners
+
+1. Click the menu button on the top left-hand corner of the portal. Go to Platform Management > Dedicate Cluster > Workspaces or Platform Management > Shared Cluster > General Workspaces to open the management page for workspaces.
+2. Switch to the cluster and find the workspace for which you are going to operate.
+3. Click the Operation field on the right side of the workspace. Then click the "Web Kubectl"  button and popup the web kubectl terminal and you can run kubectl command here.
+
+## For namespace developers
+
+1. Click the menu button on the top left-hand corner of the portal. Go to Platform Management > Dedicate Cluster > Namespaces or Platform Management > Shared Cluster >Namespaces to open the management page for namespaces.
+2. Switch to the cluster and workspace. Then find the namespace for which you are going to operate.
+3. Click the Operation field on the right side of the namespace.  Then click the "Web Kubectl"  button and popup the web kubectl terminal and you can run kubectl command here.
+
 # Add a workspace
 
 ## Prerequisites

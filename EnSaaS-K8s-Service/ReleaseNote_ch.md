@@ -1,3 +1,23 @@
+### EnSaaS-K8s-Service 4.0.8- (2020-05-21)
+
+#### [Managment Portal API]- 4.0.8
+
+Added:
+- 支持Web Kubectl, 无需下载config文件即可直接在UI上执行kubectl操作
+
+#### [Managment Portal UI]- 4.0.8
+
+Added:
+- 支持Web kubectl terminal
+
+Fixed:
+- User permission页面为用户分配权限后，type一栏为空
+- 根据关键词搜索workspace后，随着搜索次数的增多匹配结果越来越多
+- 偶现，用户登陆成功后进到namespace页面无法看到ns列表
+- monitor页面，切换worksapce后，namespace选择框消失 
+
+
+
 ### EnSaaS-K8s-Service 4.0.7- (2020-05-11)
 
 #### [Managment Portal API]- 4.0.7

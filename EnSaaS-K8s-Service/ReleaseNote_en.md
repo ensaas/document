@@ -1,3 +1,23 @@
+### EnSaaS-K8s-Service 4.0.8- (2020-05-21)
+
+#### [Managment Portal API]- 4.0.8
+
+Added:
+- Support Web Kubectl
+
+#### [Managment Portal UI]- 4.0.8
+
+Added:
+- Support Web Kubectl
+
+Fixed:
+- On 'User permission' page, after assign role to user, the 'type' filed is blank
+- Workspace search issue
+- Sometimes, user cann't see namespace list on namespace page after login
+- On monitor page，after worksapce switch，namespace select box disappear
+
+
+
 ### EnSaaS-K8s-Service 4.0.7- (2020-05-11)
 
 #### [Managment Portal API]- 4.0.7

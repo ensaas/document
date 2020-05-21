@@ -34,6 +34,29 @@
 
 ​	如果购买的是General Workspace，则在Shared Cluster菜单下。
 
+# Web Kubectl
+我们提供Web UI 版本的kubectl工具, 用户不需要下载config文件，也不需要安装kubectl工具即可操作您的租户空间，具体操作如下：
+
+## 用户角色是cluster owner及以上：
+1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Clusters或Platform Management->Shared Cluster->Clusters。进入Cluster管理页面。
+
+2，在需要操作的集群的右侧点击Operation栏位，点击"Web Kubectl"按钮，即可弹出Web UI样式的kubectl工具，您可在上面执行任何kubectl命令：
+![kubectl](./image/kubectl.png)
+
+## 用户角色是workspace owner：
+1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Workspaces或Platform Management->Shared Cluster->General Workspaces。进入workspace管理页面。
+
+2，切换cluster，找到您需要操作的workspace。
+
+3，在需要操作的的workspace右侧点击Operation栏位，点击"Web Kubectl"按钮，即可弹出Web UI样式的kubectl工具，您可在上面执行任何kubectl命令。
+
+## 用户角色是namespace developer：
+ 1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。进入namespace管理页面。
+
+2，切换cluster，和workspace，找到需要操作的namespace。
+
+3，在需要操作的namespace的右侧点击Operation栏位，点击"Web Kubectl"按钮，即可弹出Web UI样式的kubectl工具，您可在上面执行任>何kubectl命令。
+
 # 添加工作空间
 ## 前提条件
 1，添加工作空间，用户需要具备cluster owner及以上角色或者是订阅号的admin角色，其他角色没有权限添加。
