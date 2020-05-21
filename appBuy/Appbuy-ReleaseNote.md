@@ -1,5 +1,19 @@
 ## Appbuy-api ReleaseNote
 
+### version：v-1.3.1.18
+####  Updated：
+- 修改SSO /users/me 到 /users/me/info
+- 修改SSO /users/me 到 /users/me/info
+
+### version：v-1.3.1.17
+####  Updated：
+- 兼容既能从helm chart传入其他服务地址也能从listingsystem获取app地址
+- 修改 GET /serviceInstances 接口 支持 globalAdmin。[Bug  #13691]
+- 移除 对serviceCategory的校验，非空即可
+####  Add：
+-  增加 GET /helmReleases接口
+-  增加 GET /helmReleases/:releaseName/status接口
+
 ### version：v-1.3.1.16
 ####  Updated：
 - 修改权限校验 由于目前mp不支持dcAdmin，现买东西只能用订阅号admin。仓库相关接口权限为globalAdmin
