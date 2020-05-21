@@ -22,7 +22,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 
 	2. **global.url.host**
 
-		此处的url.host为ingress的host后缀。例如：**.$ns.$cluster.internal**
+		此处的url.host为ingress的host后缀。例如：**.$ns.$cluster.en.internal**
 		
 		values.yaml
 		
