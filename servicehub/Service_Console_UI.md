@@ -1,31 +1,18 @@
-## Service-Portal-UI 1.0.1.9 (2020-05-19)
+## Service-Portal-UI 1.0.2.0 (2020-05-21)
 
- 修改Bug:
- 1.  13922 若從Service Instances頁面選擇Redis服務，再切換去Service Usage頁面，會顯示Redis的instance資料
- 2.  13923 需隱藏Dashboard上方以及左方的功能列
- 3.  13921 頁面上方提示本頁面支持顯示哪些服務的用量
- 
+新特性：
+1. 添加监控服务用量的看板
 
-## Service-Portal-UI 1.0.1.8 (2020-05-18)
-
- 修改Bug:
- 1.  顯示用量時，連結到的dashboard應該要使用當前平台的dashboard
- 2.  Consumption改回Service Usage
- 3.  Service Name下拉式選單只需要保留MongoDB、PostgreSQL、RabbitMQ、AFS
- 4.  實例名稱的下拉式選單只列出plan為Shared或standard的instance
- 5.  頁面上方提示本頁面支持顯示哪些服務的用量
- 
-
-## Service-Portal-UI 1.0.1.7 (2020-05-18)
-
- 新增:
- 1.  【ServicePortal】添加监控服务用量的看板
- 
-
-## Service-Portal-UI 1.0.1.6 (2020-05-14)
-
- 修改Bug:
- 1.  生產環境上，Service Key Name的連結在部分電腦上打不開
+修改Bug:
+1.  13915 显示用量时，连接到的dashboard应该要使用当前平台的dashboard
+2.  13918 Consumption改回Service Usage
+3.  13916 Service Name下拉式选单只需要保留MongoDB、PostgreSQL、RabbitMQ、AFS
+4.  实例名称的下拉式选单只列出plan为Shared或standard的instance
+5.  页面上方提示本页面支持显示哪些服务的用量
+6.  13922 若从Service Instances页面选择Redis服务，再切换去Service Usage页面，会显示Redis的instance资料
+7.  13923 需隐藏Dashboard上方以及左方的功能列
+8.  13921 页面上方提示本页面支持显示哪些服务的用量
+10. 13855 生产环境上，Service Key Name的连接在部分电脑上打不开
  
 
 ## Service-Portal-UI 1.0.1.5 (2020-05-12)
