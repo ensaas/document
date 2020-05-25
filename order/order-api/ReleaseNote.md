@@ -1,5 +1,14 @@
 ## Order-API ReleaseNote
 
+### version：v-1.0.0.17
+#### Fixed:
+- 修改updatedAt时间格式
+- 修改subscriptionId查询出错问题
+- 修改activitateTime查询出错的问题
+- 修改subscription user返回状态
+- 修改utc时间格式
+- catalog调用Order返回500
+
 ### version：v-1.0.0.12
 #### Fixed:
 - 修改字段ActivtedAt为ActivatedAt
