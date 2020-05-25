@@ -1,5 +1,10 @@
 ## Order-API ReleaseNote
 
+### version：v-1.0.0.12
+#### Fixed:
+- 修改字段ActivtedAt为ActivatedAt
+- 修复为返回activatedTimestamp未返回的问题
+
 ### version：v-1.0.0.9
 #### Added:
 - order实例中添加crmid（该字段从sso获取）
