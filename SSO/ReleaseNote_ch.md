@@ -1,3 +1,9 @@
+## API 4.0.9.0-(2020-05-25)
+### New Features
+* 新增api /admin/subscriptions admin可以指定订阅号id创建订阅号
+### Fix bugs 
+* 修改删除订阅号之后ssoRole没有变化的问题
+
 ## Portal 4.0.5.0-(2020-5-19)
 ### Fix bugs
 * 订阅号列表中新增CRM ID列；
