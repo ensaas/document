@@ -1,3 +1,9 @@
+## API 4.0.9.0-(2020-05-25)
+### New Features
+* New API /admin/subscriptions admin can specify subscription ID to create subscription number
+### Fix bugs 
+* SSO role does not change after modifying and deleting the subscription number
+
 ## Portal 4.0.5.0-(2020-5-19)
 ### Fix bugs
 * Added CRM ID column in the subscription list
