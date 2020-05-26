@@ -1,3 +1,16 @@
+## Service-Portal-UI 1.0.2.2 (2020-05-26)
+
+**修改Bug:**
+
+- 14055 Service Usage页面的提示句中的standard的s应为小写
+- 13919 左方清单样式尽量与MP的样式相近
+- 14009 【ServicePortal】Service Usage过滤条件加上Service Plan
+- 13919 左方清单样式尽量与MP的样式相近
+- 13983 可能需要过滤AFS的两个料号9806WPAFS0和9806WPAFS1
+- 14022 若用浏览器的上一页按钮退回前页，会有左上方的选单选项无法点选的问题
+- 14031 Service Usage页面的Instance Name显示不正常
+
+
 ## Service-Portal-UI 1.0.2.0 (2020-05-21)
 
 **新特性：**
