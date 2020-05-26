@@ -1,6 +1,6 @@
 # CHANGELOG
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.6
+# WISE-PaaS Service Manager - InfluxDB 0.1.6 (1.0.0)
 
 ### Added:
 - Requirement #13640: 將[POST] /v2/service_instances/manual的ssl參數改為非必填，若沒填則預設為false
