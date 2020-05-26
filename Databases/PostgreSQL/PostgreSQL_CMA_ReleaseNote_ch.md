@@ -1,5 +1,12 @@
 # CMA Postgresql ReleaseNote
 
+## 0.2.0
+
+### Add:
+- Requirement #12252: 要能夠支援對多個DB作限制
+- Requirement #12536: 鎖定用的API需要區分是要鎖Disk還是鎖Call
+- 定時重新掃描表格中記錄為執行失敗的instance重新執行限制或解鎖
+
 ## 0.1.3
 
 - fix redmine bug #12528: 被限制的instance需要補上TRUNCATE權限
