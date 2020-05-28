@@ -1,3 +1,11 @@
+# DCCS v-1.1.4.1 (2020-05-28)
+
+## Summary Update
+
+Removed:
+
+- Remove the support that use http://api.dccs.ensaas.en.internal/v1 to get dccs key returns the service host with internal IP
+
 # DCCS v-1.1.4 (2020-04-21)
 
 ## Summary Update

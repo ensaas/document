@@ -1,3 +1,11 @@
+# DCCS v-1.1.4.1 (2020-05-28)
+
+## Summary Update
+
+Removed:
+
+- 去掉支持内部域名http://api.dccs.ensaas.en.internal/v1调用dccs key返回service host为内部IP
+
 # DCCS v-1.1.4 (2020-04-21)
 
 ## Summary Update
