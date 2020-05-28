@@ -1,16 +1,36 @@
 # Service Postgresql Release Note
 
-## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.2
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.17 (2020-05-28)
+
+- Bug #13402: 若恢復shared instance時space_guid填錯，錯誤訊息有誤
+- Bug #13404: 恢復shared instance時，若instance的狀態為running、deleted或其他，response code應為409
+- Bug #13410: 添加dedicated instance時，若instance_id已被使用，錯誤訊息有誤
+- Bug #13415: 呼叫POST /v2/service_instances/manual時，應阻擋PersistentDiskType大於長度16的情況
+- Bug #13422: 呼叫[PATCH] /v2/service_instances/{instance_id}時，若instance status不為detached，錯誤訊息有誤
+- Bug #13424: 呼叫[POST] /v2/service_instances/manual時，若連不到ops postgres，會回覆500錯誤
+- Bug #13425: 進行dedicated bind/unbind時，若無法連到apps database，會得到500錯誤
+- Bug #13427: 進行dedicated get resources時，若無法連到apps database，回覆訊息要修改
+- Bug #13501: 清理database時，若database已不存在，則忽略此錯誤，視作已成功把database刪除
+- Requirement #12445: 在instance被limit或revoke後，應阻擋使用者進行bind
+- Requirement #13387: Unbind時，若username或database已不存在，也要讓unbind成功
+- Requirement #13641: 提供給Shared Cluster Overview用的API
+- Requirement #13642: 提供給Dedicated Cluster Overview用的API
+- Requirement #13651: [POST] /v2/clusters/shared該API的externalHosts改為非必填
+- Requirement #13652: 改為不驗證externalHosts的格式
+- deprovision時自動unbind
+
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.2 (2020-05-12)
 
 ### Fixed:
 - Bug: Aliyun上ALTER SCHEMA "public" OWNER TO "g_rw_public"的錯誤
 
-## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.1
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.1 (2020-04-29)
 
 ### Fixed:
 - Bug #13607: Deprovision時會發生刪除role失敗的錯誤
 
-## WISE-PaaS Service Manager - PosrgreSQL 0.1.16
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.16 (2020-04-29)
+
 
 ### Added:
 - Requirement #13449: 新開發一支API，顯示當前剩餘多少shared instance額度
