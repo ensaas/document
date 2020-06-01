@@ -60,10 +60,15 @@ MongoDB 數據庫的備份還原SOP
 
 取得金鑰操作步驟
 1. 輸入您的使用者帳號密碼登入
+![](../uploads/images/MongoDB/1-1.jpg)
 2. 點選您的訂閱號(必須是該訂閱號的admin或是user才可以看得到)，選擇服務
+![](../uploads/images/MongoDB/1-2.jpg)
 3. 找到您購買的mongodb服務，點選 Secret Management
+![](../uploads/images/MongoDB/1-3.jpg)
 4. 找到您欲查詢的金鑰，點選 view
+![](../uploads/images/MongoDB/1-4.jpg)
 5. 即可看到金鑰詳細訊息
+![](../uploads/images/MongoDB/1-5.jpg)
 
 注意：在共享型資料庫(Shared DB)服務中，相同實例名稱的密鑰會使用相同的資料庫，但在專屬型資料庫(Dedicated DB)服務中，是可以自己分配不同的資料庫。 
 
@@ -73,28 +78,49 @@ MongoDB 數據庫的備份還原SOP
 
 於windows中會使用到的工具為開源軟體 [mongo Studio 3T](https://studio3t.com/)
 1. 請先至此[網頁](https://studio3t.com/download-thank-you/?OS=win64)進行下載
+![](../uploads/images/MongoDB/2-1.jpg)
 2. 點選存檔
+![](../uploads/images/MongoDB/2-2.jpg)
 3. 下載完成後，對壓縮檔點選右鍵，選擇解壓縮至此
+![](../uploads/images/MongoDB/2-3.jpg)
 4. 點選 studio-3t-x64.exe 安裝，允許APP變更您的裝置(選擇"是")
+![](../uploads/images/MongoDB/2-4.jpg)
 5. 點選 next --> next --> next --> finish
+![](../uploads/images/MongoDB/2-5.jpg)
 6. 點選 "crate a new connextion"，即可以輸入您的相關金鑰內容，Server地址和Port
+![](../uploads/images/MongoDB/2-6.jpg)
 7. 選擇Authentication分頁，Authentication Mode選擇 Basic (SCRAM-SHA-256)，輸入您的相關金鑰內容User name、Passwrod 和 Authentication DB位置，點選save
+![](../uploads/images/MongoDB/2-7.jpg)
 8. 點選Connect
+![](../uploads/images/MongoDB/2-8.jpg)
 9. 選擇想要進行備份動作的 Database，右鍵 Export Collections...
+![](../uploads/images/MongoDB/2-9.jpg)
 10. 推薦選擇 JSON，點選Finish
+![](../uploads/images/MongoDB/2-10.jpg)
 11. 點選執行，可以於左邊選單欄位Export Overview查看檔案存放位置和詳細細節
+![](../uploads/images/MongoDB/2-11.jpg)
 12. 備份完成
+![](../uploads/images/MongoDB/2-12.jpg)
 
 ***Windows作業系統之還原SOP***
 1. 於桌面選單執行 Studio 3T
+![](../uploads/images/MongoDB/3-1.jpg)
 2. 點選 "crate a new connextion"，即可以輸入您的相關金鑰內容，Server地址和Port
+![](../uploads/images/MongoDB/3-2.jpg)
 3. 選擇Authentication分頁，Authentication Mode選擇 Basic (SCRAM-SHA-256)，輸入您的相關金鑰內容User name、Passwrod 和 Authentication DB位置，點選save
+![](../uploads/images/MongoDB/3-3.jpg)
 4. 點選您的新服務名稱，點選Connect
+![](../uploads/images/MongoDB/3-4.jpg)
 5. 選擇想要進行還原動作的 Database，右鍵 Import Collections...
+![](../uploads/images/MongoDB/3-5.jpg)
 6. 選擇您欲還原的檔案，本範例使用的是JSON - mongo shell / Studio 3T / mongoexport
+![](../uploads/images/MongoDB/3-6.jpg)
 7. 選擇備份步驟11顯示的檔案存放資料夾，點選選擇資料夾內的 [collection].json
+![](../uploads/images/MongoDB/3-7.jpg)
 8. 點選上方 Execute，可以查看左下方執行結果，並且檢查新的collection內容是否有誤
+![](../uploads/images/MongoDB/3-8.jpg)
 9. 還原完成
+![](../uploads/images/MongoDB/3-9.jpg)
 
 使用Linux作業系統備份與還原SOP
 -------------------------------------------------------------------------------
