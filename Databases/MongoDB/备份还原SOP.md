@@ -60,7 +60,7 @@ MongoDB 數據庫的備份還原SOP
 
 取得金鑰操作步驟
 1. 輸入您的使用者帳號密碼登入
-![](../uploads/images/MongoDB/1-1.jpg)
+![1-1.jpg](../uploads/images/MongoDB/1-1.jpg)
 2. 點選您的訂閱號(必須是該訂閱號的admin或是user才可以看得到)，選擇服務
 ![](../uploads/images/MongoDB/1-2.jpg)
 3. 找到您購買的mongodb服務，點選 Secret Management
