@@ -135,15 +135,20 @@ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/
 sudo apt update
 sudo apt install mongodb-clients
 ```
+![](../uploads/images/MongoDB/4-1.png)
 2. 確認安裝完成
 ```
 mongodump --version
 ```
+![](../uploads/images/MongoDB/4-2.png)
 3. 備份資料庫，使用以下指令，請將需要備份的資料庫金鑰內容替換。
 ```
 mongodump --forceTableScan --host $old_ip --port $old_port --username $old_root --password $old_root_password --db $old_database --authenticationDatabase $old_authdb --out ./backup
 ```
+![](../uploads/images/MongoDB/4-3.png)
+![](../uploads/images/MongoDB/4-3-2.png)
 4. 備份完成
+![](../uploads/images/MongoDB/4-4.png)
 
 ***Linux作業系統之還原SOP***
 
@@ -151,10 +156,14 @@ mongodump --forceTableScan --host $old_ip --port $old_port --username $old_root 
 ```
 mongorestore --host $new_ip --port $new_port --username $new_root --password $new_root_password --db $new_database --authenticationDatabase $new_authdb ./backup/$old_database
 ```
+![](../uploads/images/MongoDB/5-1-1.png)
+![](../uploads/images/MongoDB/5-1-2.png)
 2. 使用指令連進去mongodb裡
 ```
 mongo --host $new_ip --port $new_port --username $new_root --password $new_root_password --authenticationDatabase $new_authdb
 use $new_authdb
 show collections
 ```
+![](../uploads/images/MongoDB/5-2.png)
 3. 還原成功
+![](../uploads/images/MongoDB/5-3.png)
