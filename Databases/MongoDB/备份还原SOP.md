@@ -166,4 +166,5 @@ show collections
 ```
 ![](../uploads/images/MongoDB/5-2.png)
 3. 還原成功
+
 ![](../uploads/images/MongoDB/5-3.png)
