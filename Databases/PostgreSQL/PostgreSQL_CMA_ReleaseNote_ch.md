@@ -1,5 +1,16 @@
 # CMA Postgresql ReleaseNote
 
+## 0.2.1
+
+### Fix:
+Bug #14093: 進行限制時，若service_instance_list的陣列內容為null時，不應該限制成功
+Bug #14109: 建立具有g_rw_public權限的binding後，將instance鎖定Call，使用者登入後不應該可以進行select操作
+Bug #14132: 連打兩次request，會觸發pq: tuple concurrently updated的錯誤
+
+### Update:
+Suggestion #14092: 建議以JSON格式呈現API的回應內容
+Suggestion #14094: 驗證request是否合法時，建議先驗證Authorization，再驗證Content-type
+
 ## 0.2.0
 
 ### Add:
