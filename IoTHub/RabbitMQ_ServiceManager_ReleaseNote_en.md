@@ -2,6 +2,18 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.7
+
+### Fixes
+
+-Bug: binding api 的參數改為駝峰式 rmq_role->rmqRole, rmq_topic_read->rmqTopicRead, rmq_topic_write->rmqTopicWrite 
+
+## 1.0.6
+
+### Fixes
+
+-Bug: dedicated manual 返回的dashboard url 從string改為json格式
+
 ## 1.0.5
 
 ### Fixes
