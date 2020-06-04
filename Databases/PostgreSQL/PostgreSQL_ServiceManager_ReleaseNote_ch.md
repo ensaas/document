@@ -1,5 +1,18 @@
 # Service Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.18 (2020-06-04)
+
+- Bug #14111: 屬於g_rw_public權限的user在public schema底下建立table後，在binding被刪掉之後，該table能被其他只能讀取的user刪除
+- Bug #14156: 呼叫GET /v2/clusters/list，當instance上限無限制時，顯示內容有誤
+- Bug #14157: GET /v2/clusters/list 此API的datacenterCode應為必填
+- Bug #14160: 呼叫GET /v2/clusters/list時，若datacenterCode亂填，得到的結果有誤
+- Bug #14165: 呼叫PATCH /v2/clusters/shared/{pseudo_id}，若對象是dedicated cluster，不應該能呼叫成功
+- Bug #14166: 呼叫PATCH /v2/clusters/shared/{pseudo_id}，若body為空，會得到502的回覆
+- Bug #14182: Deprovision時沒有自動unbind
+- Bug #14187: 恢復dedicated instance時，不應該以pseudoId作為判斷參數
+- Bug #14189: 刪除dedicated instance時會得到postgresql回覆的錯誤訊息
+- Requirement #14175: 0.1.17版新增的API需要遵照重新決定的參數格式
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.1.17 (2020-05-28)
 
 - Bug #13402: 若恢復shared instance時space_guid填錯，錯誤訊息有誤
