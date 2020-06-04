@@ -1,5 +1,18 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.4.0.8
+##### Updated:
+- service上添加subscriptionName，subscriptionId，crmid，company字段
+
+### version：v-1.4.0.6
+##### Updated:
+- 修改 Get /serviceNameByPn的返回结果，将一个pn的所有dataceter放入同一个item中，与之前的格式相同plan 添加PAYG的property
+
+### version：v-1.4.0.6
+##### Added:
+- service和servicePackage添加serviceKey
+- serviceKey是通过serviceName-serviceCateogty加密生成
+
 ### version：v-1.3.0.9
 ##### Updated:
 - 允许在不同的平台有相同的pn，但是不一样的价格
