@@ -1,3 +1,7 @@
+## Portal 4.0.6.0-(2020-6-5)
+### Fix bugs
+* Only 100 subscription lists can be obtained on the subscription user page
+
 ## API 4.0.9.0-(2020-05-25)
 ### New Features
 * New API /admin/subscriptions admin can specify subscription ID to create subscription number
