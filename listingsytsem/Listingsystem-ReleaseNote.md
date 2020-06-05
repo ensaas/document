@@ -4,7 +4,7 @@
 ##### Updated:
 - service上添加subscriptionName，subscriptionId，crmid，company字段
 
-### version：v-1.4.0.6
+### version：v-1.4.0.7
 ##### Updated:
 - 修改 Get /serviceNameByPn的返回结果，将一个pn的所有dataceter放入同一个item中，与之前的格式相同plan 添加PAYG的property
 
