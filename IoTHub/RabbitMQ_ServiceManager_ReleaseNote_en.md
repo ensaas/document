@@ -2,6 +2,13 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.8
+
+### Fixes
+
+-Bug: 改為只透過INTERNAL_HOSTS檢查是否與rmq server有連上
+-Bug: 修正http_api_uri port重複
+
 ## 1.0.7
 
 ### Fixes
