@@ -1,5 +1,13 @@
 # CMA Postgresql ReleaseNote
 
+## 0.2.2
+
+### Fix:
+- Bug #14257: 同時解鎖Call + Disk時，CMA只解鎖Call，Disk沒有被解鎖到
+
+### Update:
+- Suggestion #14258: 希望CMA進行動作時，log能把動作印得更明白點
+
 ## 0.2.1
 
 ### Fix:
