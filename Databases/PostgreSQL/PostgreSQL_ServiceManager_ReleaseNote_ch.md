@@ -1,5 +1,18 @@
 # Service Postgresql Release Note
 
+##  WISE-PaaS Service Manager - PosrgreSQL 0.1.19 (2020-06-12)
+
+- Bug #13396: 新增一筆shared database後，deployment資料表的parameters會多一筆SkipTest
+- Bug #14184: 若對shared instance進行恢復，應於updated_at欄位記上恢復的時間
+- Bug #14189: 刪除dedicated instance時會得到postgresql回覆的錯誤訊息
+- Bug #14323: Deprovision時若設deleteData=true，database沒有實際被刪掉，instance的狀態也是detached
+- Bug #14342: 呼叫[POST] /v2/service_instances/manual時，沒有正確檢查連線資訊是否合法
+- Requirement #14284: 呼叫[GET] /v2/datacenter/{datacenterCode}/overview時，若找不到datacenterCode時，要回覆全部值為0的結果
+- Requirement #14285: 呼叫[GET] /v2/clusters/list，若找不到datacenterCode，需回覆空陣列
+- Suggestion #13406: 若在database不存在的情況嘗試進行bind/unbind/deprovision，建議修改response code
+- Suggestion #14167: 建議[PATCH] /v2/clusters/shared/{pseudo_id}多驗證Content-type
+
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.1.18 (2020-06-04)
 
 - Bug #14111: 屬於g_rw_public權限的user在public schema底下建立table後，在binding被刪掉之後，該table能被其他只能讀取的user刪除
