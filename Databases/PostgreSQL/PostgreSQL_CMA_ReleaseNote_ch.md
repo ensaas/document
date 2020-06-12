@@ -1,5 +1,10 @@
 # CMA Postgresql ReleaseNote
 
+## 0.2.3
+
+### Fix:
+- Bug #14361: 同時鎖定instance的Disk + Call，實際上只有鎖到Disk
+
 ## 0.2.2
 
 ### Fix:
