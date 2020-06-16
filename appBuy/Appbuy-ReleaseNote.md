@@ -13,6 +13,18 @@
 - 修改resume service instance rmq回传catalog参数。
 - 修改delete service instance rmq回传catalog 参数。
 
+### version：v-1.4.0.1
+####  Added：
+- 新增发货接口  POST /serviceInstances
+- 新增退货接口  POST /serviceInstancaes/:id/cancel
+- 新增恢复接口  PUT /serviceInstances/:id/resume
+- 新增删除定时器，service instance 退订7天后自动删除，并发消息给新catalog
+####  Updated：
+- 整合SSO client Token，并用clientToken调用其他服务
+- 修改helm chart 能自动或者手动配置app 依赖地址env
+####  Deleted：
+- 移除serviceInstanceConfigs接口
+
 ### version：v-1.3.1.18
 ####  Updated：
 - 修改SSO /users/me 到 /users/me/info
