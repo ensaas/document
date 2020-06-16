@@ -1,3 +1,13 @@
+## Service-Portal-UI 1.0.2.6 (2020-06-16)
+
+**新特性：**
+
+- Instance狀態新增Inactive和Inprogress
+- 建立dedicated instance畫面的料號阻擋空格
+- 新增專用實例畫面將Service Category改為必填，並且於Service Property新增默認值Basic
+- 建立dedicated instance時用的API從[POST] /v2/serviceInstances/manual 改 [PUT] /v2/serviceInstances/manual
+
+
 ## Service-Portal-UI 1.0.2.4 (2020-06-04)
 
 **新特性：**
@@ -23,7 +33,6 @@
 **新特性：**
 
 - 添加监控服务用量的看板
-
 
 
 **修改Bug:**
