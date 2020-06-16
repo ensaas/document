@@ -1,5 +1,11 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.5.0.3
+##### Updated:
+- 取消显示serviceKey
+##### Added:
+- 添加api Get /service/serviceKey获取serviceKey
+
 ### version：v-1.4.0.8
 ##### Updated:
 - service上添加subscriptionName，subscriptionId，crmid，company字段
