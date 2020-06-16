@@ -1,5 +1,26 @@
 ## Buy-ui ReleaseNote
 
+### version：v-1.0.3.1
+#### Added:
+- 401跳转或点击header的portal时会清空instance name
+#### Deleted:
+- url去掉了交易id
+- i.app for trial app去掉了Device on
+
+### version：v-1.0.3.0
+#### Updated:
+- instance name输入框的值将被记录，不会清空
+- 最后一步的所有价格都会保留两位小数
+- i.app的页面将根据url是否携带planType为trial显示如果不携带则可以选择，携带的话将不能选择并且在最后订阅时的参数为固定参数
+
+### version：v-1.0.2.9
+#### Added:
+- 添加get instances api
+- 第二步选择了ws后如果该服务已经订阅过则部署的namespace会禁用
+- 刚进到buy页面，如果订阅号在mkp没有，sso detail api会提示，并禁用next
+- i.app全选时的性能优化,app里去掉了vpn
+- k8s服务的instancename,如果在instances里存在，则next禁用输入框提示已存在请重试
+
 ### version：v-1.0.1.9
 #### Updated:
 - sso获取价格的接口改成detail
