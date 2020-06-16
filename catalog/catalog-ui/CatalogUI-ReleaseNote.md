@@ -1,5 +1,30 @@
 ## ReleaseNote
 
+### version：v-1.0.3.5
+#### Deleted：
+- 跳转到buy的url去掉了交易id
+
+### version：v-1.0.3.4
+#### Updated：
+- 服务详情页面url去掉了订阅号
+#### Added：
+- 点击i.app的for trial plan，url上将拼接？planType=trial,其它所有plan则没有
+
+### version：v-1.0.3.3
+#### Added：
+- 服务详情页面服务描述，默认设置为5行，超过5行才会显示…
+- 服务i.app不管是什么身份都会有两个Plan，一个是for trial，都可以点击,价格也会不同
+- 换顶部的订阅号，如果该订阅号在mkp上没有，则redeem按钮会禁用掉
+- 到服务详情页面会有loading的效果包括最低价，和价格详情页，并会清空，之前的服务的详情
+
+### version：v-1.0.3.2
+#### Added：
+- 加order按钮
+#### Updated：
+- 整了购物车订阅号的宽度
+- 择订阅号后打开order,Order会默认成catalog选择的订阅号
+- 取订阅号增加了maxResults参数来获取所有订阅号
+
 ### version：v-1.0.3.1
 #### Fixed：
 - 购物车的创建时间显示
