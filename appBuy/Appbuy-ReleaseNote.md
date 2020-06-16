@@ -1,5 +1,18 @@
 ## Appbuy-api ReleaseNote
 
+### version：v-1.4.0.4
+####  Updated：
+- 修改删除service instance时，消息回传参数问题
+- 修改删除service instance时，忽略service binding删除失败的信息。（只会打印）
+
+### version：v-1.4.0.2
+####  Added：
+- 添加rmq断线重连机制
+- 添加字段activedAt字段在表serviceInstance中。
+####  Updated：
+- 修改resume service instance rmq回传catalog参数。
+- 修改delete service instance rmq回传catalog 参数。
+
 ### version：v-1.3.1.18
 ####  Updated：
 - 修改SSO /users/me 到 /users/me/info
