@@ -1,3 +1,47 @@
+### EnSaaS-K8s-Service 4.0.9- (2020-06-16)
+
+#### [Managment Portal API]- 4.0.9
+
+Added:
+- 认证方式采用更轻量的token方式，性能好、效率高且备份还原之后无需修改config文件
+- 支持了datacenterAdmin role
+- 对SSO请求做了缓存处理，API性能获得更大提升
+- 优化了私有云代理和master的通信部分，通信链路更加可靠
+- 去除了数据库保存订阅号权限，并把订阅号权限和资源权限做了合并，权限管理更加统一、高效和灵活
+- 用户管理功能添加了全局搜索用户的功能
+- 优化了和权限相关的API，性能更佳
+
+Fixed:
+- 解决了资源权限偶尔无法更新的问题，比如添加权限、删除权限
+- 优化了资源权限更新慢的问题，性能提升100倍
+
+#### [Cluster Agent]- 4.0.7
+
+Added:
+- 添加代理功能，并负责token认证
+- kubectl 查看workspace和workspacequota提供更详细信息
+- 每个集群支持多个clusteragent的部署
+
+#### [Managment Portal UI]- 4.0.9
+
+Added:
+- 支持datacenterAdmin
+- dedicated cluster 和 general worksapce信息页添加active time
+
+Fixed:
+- workspace页面的部分选项无法正确排序
+- ns-overview页面点击secret后页面不断跳动，无法正常显示，且最终导致网页崩溃
+- Workspace/Namespaces Overview页面，最下方quota表格UI显示不完整
+- 点击workspaces overview下方的namespace进入namespace列表，显示的cluster和workspace非用户当前选择的
+- namespace overview页面，当namespace没有限制pod个数，pod总量显示NaN,使用率显示NaN%
+- application页面多调用了获取config的api，当该api出错的时候后续api无法继续调用，导致无法获取app列表
+- 修改用户权限后返回资源权限页面，上方选择的cluster/workspace与user列表不匹配
+- 进入namespace-overview页面，再次选择worksapce后，namespace选择框消失，上方面包屑显示empty
+- 当用户只有资源权限时，UI上无法显示订阅号公司名称
+- namespace-developer权限的namesapce usage一栏pod数量不是整数
+
+
+
 ### EnSaaS-K8s-Service 4.0.8- (2020-05-21)
 
 #### [Managment Portal API]- 4.0.8
