@@ -1,3 +1,46 @@
+### EnSaaS-K8s-Service 4.0.9- (2020-06-16)
+
+#### [Managment Portal API]- 4.0.9
+
+Added:
+- Use token for authentication
+- Support datacenterAdmin role
+- Cache the SSO requests, the API performance get more improvement
+- Optimize the connection between proxy and kubeensaas
+- The subscription permission and rolebinding permission are combined
+- Support user search functionality under the user management interface
+- Optimize the APIs about permission 
+
+Fixed:
+- Fix bug about subscription workspaceOwner and rolebinding workspaceOwnere's combination issue
+- Fix bug for permission addition & deletion issue
+- Optimize resource permission update issue, get 100 times better performance 
+
+#### [Cluster Agent]- 4.0.7
+
+Added:
+- Add proxy functionality
+- Kubectl get more rich information about workspace, namespacequota and workspacequota
+- Support more clusteragent deployment under one cluser scope  
+
+#### [Managment Portal UI]- 4.0.9
+
+Added:
+- Support datacenterAdmin
+- Add active time on dedicated cluster and general worksapce page
+
+Fixed:
+- Some options on the workspace page could not be sorted correctly
+- After clicking secret, the ns-overview page keeps bouncing, unable to display properly, and finally causes the page crash
+- On workspace/namespaces overview page, the quota table UI at the bottom shows incomplete
+- Click namespace under the WorkSpaces Overview to enter the namespace list, which displays cluster and workspace that are not currently selected by the user
+- On Namespace Overview page. When namespace does not limit the number of pods, the total POD amount shows NaN, and the utilization rate shows NaN%
+- After modifying user permissions, the resource permissions page is returned. The cluster/workspace selected at the top does not match the user list
+- The subscription company name cannot be displayed on the UI when the user has only resource permissions
+- The pod number in the namesapce Usage column of namesapce permission is not an integer
+
+
+
 ### EnSaaS-K8s-Service 4.0.8- (2020-05-21)
 
 #### [Managment Portal API]- 4.0.8

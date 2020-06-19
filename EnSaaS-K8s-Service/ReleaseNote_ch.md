@@ -12,6 +12,7 @@ Added:
 - 优化了和权限相关的API，性能更佳
 
 Fixed:
+- 解决了subscription类型的workspaceOwner和rolebinding类型的workspaceOwner的权限合并问题 
 - 解决了资源权限偶尔无法更新的问题，比如添加权限、删除权限
 - 优化了资源权限更新慢的问题，性能提升100倍
 
