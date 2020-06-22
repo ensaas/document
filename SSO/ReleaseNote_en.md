@@ -1,3 +1,18 @@
+## API 4.0.11.0-(2020-06-22)
+### New Features
+* New API /clients/trust supports hosting service registration
+### Fix bugs 
+* Modify /clients/{ClientID}/users to support client token
+* Username crmid subname to blank
+* Some permissions of client are judged by the roles returned by MP users / me
+* Internal users and Advantech mailbox are not assigned to the subscription number admin
+* Remove the existing users under duplicate subscription numbers, and add unique constraints to the subscription number user  role table to restrict only one permission of a user under the same subscription number
+* New support for login from SSO portal using myadvantech
+
+## API 4.0.10.0-(2020-06-02)
+### New Features
+* Add the client corresponding to the order and add the datacenter information in the clienttoken
+
 ## Portal 4.0.6.0-(2020-6-5)
 ### Fix bugs
 * Only 100 subscription lists can be obtained on the subscription user page
