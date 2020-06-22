@@ -1,3 +1,17 @@
+## API 4.0.11.0-(2020-06-22)
+### New Features
+* 新增api  /clients/trust 支持托管服务注册client
+### Fix bugs 
+* 修改/clients/{clientId}/users 支持clientToken
+* username crmid subName 去空格
+* client部分权限由mp users/me的返回的roles作为判断依据
+* internal用户以及研华邮箱不给分配到订阅号admin
+* 去除现在已有的重复的订阅号下的用户，并且为订阅号-user-role表增加唯一约束，限制相同订阅号下只能某用户的一条权限
+* 新增支持从sso portal使用myadvantech登录
+
+## API 4.0.10.0-(2020-06-02)
+### New Features
+* 新增order对应的clien并增加datacenter信息在clienttoken中
 
 ## Portal 4.0.6.0-(2020-6-5)
 ### Fix bugs
