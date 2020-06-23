@@ -1,5 +1,10 @@
 # Service Postgresql Release Note
 
+##  WISE-PaaS Service Manager - PosrgreSQL 0.1.20 (2020-06-23)
+
+- Bug #14517: 建立dedicated instance的binding後，資料庫連線沒有關閉
+
+
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.1.19 (2020-06-12)
 
 - Bug #13396: 新增一筆shared database後，deployment資料表的parameters會多一筆SkipTest
