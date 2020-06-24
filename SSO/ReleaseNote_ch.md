@@ -1,3 +1,7 @@
+## API 4.0.12.0-(2020-06-24)
+### Fix bugs 
+* 修改/subscriptions/{subscriptionId}/users 分页不对的问题
+
 ## Portal 4.0.8.0-(2020-6-24)
 ### New Features
 * 订阅号用户页面新增detail按钮，指向用户基本信息页面，从这里进入只有查看信息的权限
