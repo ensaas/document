@@ -1,3 +1,13 @@
+## Portal 4.0.8.0-(2020-6-24)
+### New Features
+* 订阅号用户页面新增detail按钮，指向用户基本信息页面，从这里进入只有查看信息的权限
+* 用户首次登陆时密码错误弹框提示
+* 客户端管理列表中点击进入客户端用户页面，只展示用户
+* 点击client页面中的某一个client，进入此client的用户列表，展示username clientRole status三列
+* 增加myAdvantech账号登录功能
+### Fix bugs
+* 修改订阅号名称中含有特殊字符时的搜索BUG
+
 ## API 4.0.11.0-(2020-06-22)
 ### New Features
 * 新增api  /clients/trust 支持托管服务注册client
