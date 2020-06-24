@@ -1,3 +1,17 @@
+## Service-Portal-UI 1.0.2.8 (2020-06-24)
+
+**新特性：**
+
+- 支持顯示全部訂閱號的instance
+- 封鎖狀態為Inprogress/Inactive的instance的Action按鈕
+- 更新建立dedicated instance的填寫畫面
+- 增加RabbitMQ dedicated instance的Role的下拉式選單選項，追加Policymaker、Monitoring、Administrator、Impersonator
+- 微調部分文字
+
+**修改Bug:**
+- #14481 新增參數的部分，key需要擋空格
+
+
 ## Service-Portal-UI 1.0.2.6 (2020-06-16)
 
 **新特性：**
