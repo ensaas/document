@@ -1,3 +1,17 @@
+## API 4.0.12.0-(2020-06-24)
+### Fix bugs 
+* Modify the wrong page of /subscriptions/{subscriptionid}/users
+
+## Portal 4.0.8.0-(2020-6-24)
+### New Features
+* A detail button is added to the user page of the subscription number, pointing to the user's basic information page. From here, only the right to view information is entered
+* When the user logs in for the first time, the password is incorrect
+* Click on the client management list to enter the client user page, only showing users
+* Click on a client in the client page to enter the user list of this client, displaying three columns of username clientRole status
+* Add myAdvantech account login function
+### Fix bugs
+* Modify the search bug when the subscription name contains special characters
+
 ## API 4.0.11.0-(2020-06-22)
 ### New Features
 * New API /clients/trust supports hosting service registration
