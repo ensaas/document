@@ -1,5 +1,15 @@
 ## Buy-ui ReleaseNote
 
+### version：v-1.0.3.3
+#### Added:
+- 第二步的db选择下拉框值会默认成非禁用的第一个，如果全部禁用了则显示请选择，点击行时会有加载效果
+- 支持globalAdmin的订阅
+
+### version：v-1.0.3.2
+#### Added:
+- payg的会默认勾选
+- 去掉了instance name
+
 ### version：v-1.0.3.1
 #### Added:
 - 401跳转或点击header的portal时会清空instance name
