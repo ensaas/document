@@ -6,13 +6,29 @@ DCCS provides credential key for services, such as p-rabbitmq, mongodb, postgres
 Reminder: You may use El-Connect as a client of the IoT Hub. El-Connect has a built-in API-redeemed credential mechanism that allows you to efficiently send data collected from devices to the WISE-PaaS cloud platform via the IoT Hub.
 ```
 
-The URL for redeeming a credential  is formatted as `https://api-dccs-ensaas.{data center name}.{cloud platform domain name}`. For example, the domain name of the WISE-PaaS Singapore cloud platform is sa.wise-pass.com. Therefore, the URL for redeeming a credential is `https://api-dccs-ensaas.sa.wise-paas.com` . DCCS provides an API `api-docs` to get  the swagger document and so that the URL of Singapore swagger document is `https://api-dccs-ensaas.sa.wise-paas.com/api-docs`.
+The URL for redeeming a credential  is formatted as `https://api-dccs-ensaas.{data center name}.{cloud platform domain name}`. For example, the domain name of the WISE-PaaS Singapore cloud platform is sa.wise-pass.com. Therefore, the URL for redeeming a credential is `https://api-dccs-ensaas.sa.wise-pass.com` . DCCS provides an API `/public/apidoc` to get the swagger document and so that the URL of Singapore swagger document is `https://api-dccs-ensaas.sa.wise-pass.com/public/apidoc. 
 
 # Authority Certification
 
 DCCS supports two kinds of header validation, one is 'Authorization: <ssoTokenString>' and the other is 'cookie: <ssoTokenString>' . All DCCS APIs except get DCCS key API require sso token authentication. I.App have to use client token to integration with DCCS because SRP user without MP resource will fail to create/disable/enable/delete DCCS key. But rest assured that you can still use user token with MP resource to create/disable/enable/remove the DCCS key in the service console.
 
 You can get client id and client secret from SSO via POST /clients and then get client token from SSO via POST /oauth/token. Please refer to SSO documents http://api-sso-ensaas.sa.wise-paas.com/public/apidoc/ and https://github.com/ensaas/document/tree/master/SSO. The way to create a client token is described in more detail in later section.
+
+# How to Create Rabbitmq DCCS Key
+
+## Standard Rabbitmq
+
+If you subscribe one service instance of standard rabbitmq, you will have one vhost on your own and have to share the same rabbitmq server with other service instances. And the DCCS keys created by the service instance are in the same vhost and you do not  need to specify the paramter 'vhostName'  of request body of the Create a Credential Key API.
+
+![](D:\work\wise-paas\dccs\document\images\standard.png)
+
+
+
+## Dedicated Rabbitmq
+
+If you subscribe one service instance of dedicated rabbitmq, you will have  a separate rabbitmq server. You can choose to create DCCS keys in the same vhost or different vhosts. If you choose to create DCCS keys with the same vhost, you have to specify the parameter 'vhostName' in serviceParameter of request body of the Create a Credential Key API. And If you want to create DCCS keys with different vhosts, you do not  need to specify the paramter 'vhostName'  of request body of the Create a Credential Key API.
+
+![](D:\work\wise-paas\dccs\document\images\dedicated.png)
 
 # An overview of REST APIs
 
@@ -187,9 +203,10 @@ GET /v1/serviceCredentials/{serviceKeyName}
     "vhost": "d2a53ff7-4d3d-11ea-93e2-aa30cd53a5e0"
   },
   "serviceParameter": {
+    "vhostName": "d2a53ff7-4d3d-11ea-93e2-aa30cd53a5e0"
     "rmqRole": "management",
-    "rmqTopicRead": "/dccs/rmq/,/dccs/rmq-2/",
-    "rmqTopicWrite": "/dccs/rmq/,/dccs/rmq-3/"
+    "rmqTopicRead": ".dccs.rmq.*,.dccs.rmq-2.*",
+    "rmqTopicWrite": ".dccs.rmq.*,.dccs.rmq-3.*"
   }
 }
 ```
@@ -243,7 +260,7 @@ POST /v1/serviceCredentials
 | --------------------- | ------ | ------------------------------------------------------------ | -------- |
 | serviceInstanceId     | string | The service instance id                                      | true     |
 | serviceKeyDescription | string | The description for the credential key                       | false    |
-| serviceParameter      | object | The parameter of one service, such as rabbitmq, postgresql, mongodb and so on. Take the rabbitmq for example, the parameter as followings:  ServiceParameter: {<br/>   "rmqRole": "management",   <br/>   "rmqTopicRead": "/dccs/rmq/,/dccs/rmq-2/",   <br/>   "rmqTopicWrite": "/dccs/rmq/,/dccs/rmq-3/"<br/>} | false    |
+| serviceParameter      | object | The parameter of one service, such as rabbitmq, postgresql, mongodb and so on. Take the rabbitmq for example, the parameter as followings:  ServiceParameter: {<br/>   "vhostName": "d2a53ff7-4d3d-11ea-93e2-aa30cd53a5e0", <br/>   "rmqRole": "management",   <br/>    rmqTopicRead": ".dccs.rmq.\*,.dccs.rmq-2.\*",   <br/>   "rmqTopicWrite": ".dccs.rmq.\*,.dccs.rmq-3.\*"<br/>} | false    |
 
 ### Response Body
 
