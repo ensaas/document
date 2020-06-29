@@ -20,7 +20,7 @@ You can get client id and client secret from SSO via POST /clients and then get 
 
 If you subscribe one service instance of standard rabbitmq, you will have one vhost on your own and have to share the same rabbitmq server with other service instances. And the DCCS keys created by the service instance are in the same vhost and you do not  need to specify the paramter 'vhostName'  of request body of the Create a Credential Key API.
 
-![](D:\work\wise-paas\dccs\document\images\standard.png)
+![](./images/standard.png)
 
 
 
@@ -28,7 +28,7 @@ If you subscribe one service instance of standard rabbitmq, you will have one vh
 
 If you subscribe one service instance of dedicated rabbitmq, you will have  a separate rabbitmq server. You can choose to create DCCS keys in the same vhost or different vhosts. If you choose to create DCCS keys with the same vhost, you have to specify the parameter 'vhostName' in serviceParameter of request body of the Create a Credential Key API. And If you want to create DCCS keys with different vhosts, you do not  need to specify the paramter 'vhostName'  of request body of the Create a Credential Key API.
 
-![](D:\work\wise-paas\dccs\document\images\dedicated.png)
+![](./images/dedicated.png)
 
 # An overview of REST APIs
 
