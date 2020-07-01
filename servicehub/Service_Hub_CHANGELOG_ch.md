@@ -1,4 +1,4 @@
-# 0.3.15.14 (2020-07-01)
+# 0.3.15.14 (2020-07-01) (0.3.16)
  * bugfix: #13740 [PUT] /v2/serviceCredentials/{dccsKey} 請將該API的description欄位改為非必填，且允許任意字元
  * bugfix: #14658 設定CALCULATOR_ENABLE_FLAG為false，但呼叫[PUT] /v2/serviceInstances/manual時卻得到serviceInstanceId not found from catalog之錯誤
  * bugfix: #14666 Instance刪除後，再建立同樣instance id的instance，但一點進instance時得到instance已被刪除之訊息
