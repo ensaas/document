@@ -1,3 +1,128 @@
+# 0.3.15.14 (2020-07-01)
+ * bugfix: #13740 [PUT] /v2/serviceCredentials/{dccsKey} 請將該API的description欄位改為非必填，且允許任意字元
+ * bugfix: #14658 設定CALCULATOR_ENABLE_FLAG為false，但呼叫[PUT] /v2/serviceInstances/manual時卻得到serviceInstanceId not found from catalog之錯誤
+ * bugfix: #14666 Instance刪除後，再建立同樣instance id的instance，但一點進instance時得到instance已被刪除之訊息
+ * bugfix: put broker 少更新 serviceName
+ * bugfix: expired 部分有問題
+
+# 0.3.15.13 (2020-06-30)
+ * feat: 允許pipeline 通過
+ * bugfix: #14658 設定CALCULATOR_ENABLE_FLAG為false，但呼叫[PUT] /v2/serviceInstances/manual時卻得到serviceInstanceId not found from catalog之錯誤
+
+# 0.3.15.12 (2020-06-28)
+ * bugfix: Bug #14439 Inprogress狀態在資料庫中大小寫與其他狀態不一致
+ * bugfix: Bug #14576 呼叫[PUT] /v2/serviceInstances/manual時，若發生serviceInstanceId not found from catalog的錯誤，instance不應該能成功建立
+ * bugfix: Bug #14579 刪除inprogress的instance時，回覆的訊息有誤
+ * bugfix: Bug #14540 [GET] /v2/serviceInstances/all 該API將被刪除的instance一併列出來了 
+ 
+
+# 0.3.15.11 (2020-06-18)
+ * 默認service instance name 轉小寫
+ * bugfix: Bug #14441 Deprovision時，若得到SM的回覆為404，service hub無法正常反應
+ * bugfix: Bug #14439 Inprogress狀態在資料庫中大小寫與其他狀態不一致
+ * bugfix: Bug #14457 [POST] /v2/serviceInstances沒有擋重複的instance id
+ * bugfix: Bug #14428 調用[PUT] /v2/serviceInstances/manual後，instance name沒有維持用戶當初取的名稱
+ * bugfix: 修正client 呼叫MP create secret
+ * bugfix: Bug #14436 不管對dedicated instance做任何事，actived_at的時間點都不會更新
+ * bugfix: Bug #14500 呼叫[PUT] /v2/serviceInstances/manual時，若輸入的subscriptionId與資料庫內記錄的不一致，錯誤訊息不明確
+ * bugfix: Bug #14501 呼叫[PUT] /v2/serviceInstances/manual時，若輸入的serviceInstanceId不存在，沒有錯誤訊息
+ * bugfix: Bug #14496 若呼叫[DELETE] /v2/serviceInstances/{serviceInstanceId}嘗試刪除一個Inactive instance，全部訂閱號的Inactive instance都會被刪除
+ * bugfix: Bug #14484 [GET] /v2/serviceInstances/all 這支API沒有返回Inactive和Inprogress的instance
+ * bugfix: Bug #14433 精簡[PUT] /v2/serviceInstances/manual 的必填參數
+
+# 0.3.15.10 (2020-06-16)
+ * bugfix: 修正 Dedicated 同步 catalog 參數值未通知
+ * bugfix: 修正 Dedicated service instance name 沒有與原本的訂閱時相同
+
+# 0.3.15.9 (2020-06-16)
+ * feat: 修正v2版本訂閱流程，dedicated部分
+ * bugfix: deleteData 參數修正
+
+# 0.3.15.8 (2020-06-16)
+ * bugfix: 新增influxdb 服務 v2 流程
+
+# 0.3.15.7 (2020-06-15)
+ * feat: 新增 dedicated manual 的API，只會將Inprogress的服務更新，會檢查
+ * feat: 新版 catalog/v2/ 訂閱API，會判斷是否是 dedicated 服務，如果是dedicated服務，會設定狀態為Inprogress
+ * feat: cancel 那一隻API 一律帶上 cascade 參數
+ * feat: 調整檢查訂閱是否完成的時間間隔
+ * feat: list API 404 回傳先過濾
+ * bugfix: lifecycle status 修正
+ * bugfix: call SSO 查詢訂閱號列表太久，需調整
+ * bugfix: 修正bug #14185 建立instance時，若使用的service instance name已被使用，錯誤訊息有誤
+
+
+# 0.3.15.6 (2020-06-12)
+ * feat: 新增all 的API
+
+# 0.3.15.5 (2020-06-12)
+ * feat: 多加上參數 activedAtTimestamp
+ * bugfix: serviceInstanceId 參數錯誤
+
+# 0.3.15.4 (2020-06-11)
+ * feat: 完成 resume API
+ * bugfix: category 參數值沒有存入的問題
+
+
+# 0.3.15.3 (2020-06-10)
+ * feat: 新增計時器
+ * feat: 新增 status 狀態detached，當7(可變動)天後會出現 delete
+ * feat: 新增 lifecycle 狀態None，當7(可變動)天後會由 Inactive 變成 None
+ * feat: 新增 resume API
+ * bugfix: rmq update API 出現問題修正
+
+# 0.3.15.1 (2020-06-09)
+ * bugfix: 修正 list API 回傳內容
+ * bugfix: update API 出現問題修正
+
+# 0.3.15 (2020-06-06)
+ * feat: 支援管理接口 list API 新增回傳內容
+ * feat: 新增執行 catalog API (背景執行)，不算錢
+ * bugfix: 修正新版catalog訂閱得時候少了時間
+ * bugfix: update API 沒有帶到料號數量
+
+# 0.3.14.4 (2020-06-05)
+ * bugfix: 修正 list api 讀取格式
+
+# 0.3.14.3 (2020-06-03)
+ * bugfix: 支援管理接口修正
+ * bugfix: redis 無法訂閱問題
+ * bugfix: 異步訂閱失敗問題
+
+# 0.3.14 (2020-06-01)
+ * feat: 支持資源管理接口
+ * bugfix: 讓用戶輸入plan 於 post /v2/manual/cluster/shared 接口
+ * bugfix: 補上catalog 的 cancel 接口，移除deleteData參數
+
+# 0.3.13.4 (2020-05-29)
+ * bug: 修正serviceInstacneName為空時，沒有自動帶入值
+
+# 0.3.13.3 (2020-05-28)
+ * feat: 修正傳給catalog參數，舊版要帶舊版參數，新版要帶新版參數，兩者不能並存。
+ * feat: 如此這般 dedicated 購買API 在v2 catalog 會失去效用
+
+# 0.3.13.2 (2020-05-22)
+ * feat: 修正新帶給 catalog API 的參數
+
+# 0.3.13.1 (2020-05-22)
+ * bugfix: serviceParameters 為null
+ * bugfix: 檢查料號限制解除 
+
+# 0.3.13 (2020-05-21)
+ * feat: 查詢 membertype API 更新
+ * feat: 料號檢查
+ * bugfix: 修正回傳 actived_at 修正為 activedAt
+ * 效能優化: 改善instance 數量很多的時候的建立 binding 和 刪除 binding 時間
+
+# 0.3.12 (2020-05-20)
+ * feat: 更新SSO users/me 位置
+ * feat: API 加上 datacenterCode (broker,quota)，API 檢查權限位置更動
+ * feat: ListingSystem API 修正，加上datacenterCode
+ * feat: 新增時間欄位 ActivedAt (於instances表格中)
+ * feat: 調整時間格式，都使用utc
+ * feat: 更新 catalog 回傳內容
+ * bugfix: 更新時間精準度 timestamp ==> timestamp(6)
+ 
 # 0.3.11 (2020-05-11)
  * feat: 新增client token (半完成)
  * bugfix: #13694 需要將broker-deployment.yaml的appVersion改成apps/v1
