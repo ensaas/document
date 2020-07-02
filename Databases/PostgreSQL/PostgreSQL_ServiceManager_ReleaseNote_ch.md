@@ -1,4 +1,16 @@
-# Service Postgresql Release Note
+# WISE-PaaS Service Manager Postgresql Release Note
+
+##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0 (2020-07-02)
+
+- 需搭配helm chart版本0.2.0
+- ops db自動更新至0.2.0版
+- 可調整log印出模式
+- Requirement #13319: 客戶訂閱Dedicated DB時整合ADM自動部署
+- Requirement #14499: 新增一支API，立刻將shared instance從detached變deleted，並刪除database
+- Requirement #14580: [GET] /v2/clusters/list在回傳dedicated資訊時，額外增加回傳instanceId
+- Requirement #14583: 資源管理的API規格改動
+- Requirement #14667: 阿里雲DB的時間格式和時區問題
+
 
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.1.20 (2020-06-23)
 
