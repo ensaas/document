@@ -1,3 +1,10 @@
+## Service-Portal-UI 1.0.2.8-patch (2020-07-08)
+
+**新特性：**
+
+- 配合AFS修改服務名稱為AIFS，調整Service Usage頁面
+
+
 ## Service-Portal-UI 1.0.2.8 (2020-06-24)
 
 **新特性：**
