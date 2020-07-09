@@ -2,6 +2,18 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.10
+
+### Fixes
+
+-Bug: 修正 bind 的時候 http_api_uri 會返回兩個 port 的問題
+
+## 1.0.9
+
+### Fixes
+
+-Bug: dashboard url 轉為回傳 external host
+
 ## 1.0.8
 
 ### Fixes
