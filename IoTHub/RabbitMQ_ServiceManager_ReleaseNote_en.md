@@ -12,7 +12,7 @@
 
 ### Fixes
 
--Bug: dashboard url 轉為回傳 external host
+-Bug: 在做 shared provision 以及 dedicate addition 的時候 dashboard url 轉為回傳 external host
 
 ## 1.0.8
 
