@@ -1,3 +1,32 @@
+### EnSaaS-K8s-Service 4.0.10- (2020-07-10)
+
+#### [Managment Portal API]- 4.0.10
+
+Added:
+- Delete evicted pod periodically
+- WorkspaceOwner and above roles can modify label name of the workspace
+- Support Rest APIs to create/delete helm package
+- Support the dedicated route ingress
+- Upgrade clusteragent of one or all slave cluster 
+Fixed:
+- Subscription user can not download the config file 
+
+#### [Cluster Agent]- 4.0.8
+
+Added:
+- Support HelmRelease crd
+
+#### [Managment Portal UI]- 4.0.10
+
+Added:
+- Provide toolbox and users can use web Kubectl tool at any time
+- Provide new feature guide
+- Support the page theme selection, currently there are three theme colors for users to choose
+Fixed:
+- on user edit page, deleting permission continuously will cause blank-page issue 
+
+
+
 ### EnSaaS-K8s-Service 4.0.9- (2020-06-16)
 
 #### [Managment Portal API]- 4.0.9

@@ -1,3 +1,32 @@
+### EnSaaS-K8s-Service 4.0.10- (2020-07-10)
+
+#### [Managment Portal API]- 4.0.10
+
+Added:
+- 支持定期删除被驱逐pod的功能
+- workspaceOwner及以上权限可以修改当前workspace的label name
+- 提供了安装和删除helm包的Rest API
+- 提供了对dedicated route 的支持
+- 支持对某个或所有的slave集群的clusteragent进行升级、降级
+Fixed:
+- 订阅号用户无法下载config文件 
+
+#### [Cluster Agent]- 4.0.8
+
+Added:
+- 提供了HelmRelease crd,支持crd的方式安装helm包
+
+#### [Managment Portal UI]- 4.0.10
+
+Added:
+- 提供toolbox悬窗，用户可随时使用web kubectl的功能
+- 提供新功能引导
+- 支持页面主题颜色选择，目前有三种主题颜色供使用者选择
+Fixed:
+- 修改user edit页面连续删除绑定的权限时页面空白问题
+ 
+
+
 ### EnSaaS-K8s-Service 4.0.9- (2020-06-16)
 
 #### [Managment Portal API]- 4.0.9
