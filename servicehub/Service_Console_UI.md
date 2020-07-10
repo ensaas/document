@@ -1,3 +1,19 @@
+## Service-Portal-UI 1.1.0 (2020-07-10)
+
+**新特性：**
+
+- 新增讀取Service Portal頁面時的動畫
+- #13962 【管理运维】提供給Shared Cluster Overview用的页面
+- #13938 【管理运维】提供給Dedicated Cluster Overview用的页面
+- #14596 新增服務管理頁面
+- #14659 若instance狀態為inprogress或Inprogress，將其呈現為In Progress
+
+**修改Bug:**
+
+- #13750 使用到冒號的地方，英文應使用半形字，中文使用全型字
+- #14721 切換到Service Usage時，明明有instance存在，卻顯示No Instance
+
+
 ## Service-Portal-UI 1.0.2.8-patch (2020-07-08)
 
 **新特性：**
@@ -16,6 +32,7 @@
 - 微調部分文字
 
 **修改Bug:**
+
 - #14481 新增參數的部分，key需要擋空格
 
 
