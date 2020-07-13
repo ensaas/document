@@ -20,7 +20,6 @@ Added:
 
 Added:
 - Provide toolbox and users can use web Kubectl tool at any time
-- Provide new feature guide
 - Support the page theme selection, currently there are three theme colors for users to choose
 Fixed:
 - on user edit page, deleting permission continuously will cause blank-page issue 

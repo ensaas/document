@@ -20,7 +20,6 @@ Added:
 
 Added:
 - 提供toolbox悬窗，用户可随时使用web kubectl的功能
-- 提供新功能引导
 - 支持页面主题颜色选择，目前有三种主题颜色供使用者选择
 Fixed:
 - 修改user edit页面连续删除绑定的权限时页面空白问题
