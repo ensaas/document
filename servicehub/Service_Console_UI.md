@@ -1,15 +1,19 @@
-## Service-Portal-UI 1.1.0 (2020-07-10)
+## Service-Portal-UI 1.1.0.0 (2020-07-13)
 
 **新特性：**
 
-- 新增讀取Service Portal頁面時的動畫
-- #13962 【管理运维】提供給Shared Cluster Overview用的页面
-- #13938 【管理运维】提供給Dedicated Cluster Overview用的页面
+- #13962 【管理运维】提供給Shared Cluster Overview用的页面 (僅支持PostgreSQL)
+- #13938 【管理运维】提供給Dedicated Cluster Overview用的页面 (僅支持PostgreSQL)
 - #14596 新增服務管理頁面
 - #14659 若instance狀態為inprogress或Inprogress，將其呈現為In Progress
+- 搜尋框改為按enter鍵觸發搜尋功能
+- 可編輯、複製的按鈕改為將游標移入表格時才會顯示icon
+- 重新命名實例的按鈕添加tooltip
+- 畫面缩小时，添加修改實例名稱的功能
 
 **修改Bug:**
 
+- 修復select下拉式選單定位錯誤
 - #13750 使用到冒號的地方，英文應使用半形字，中文使用全型字
 - #14721 切換到Service Usage時，明明有instance存在，卻顯示No Instance
 
