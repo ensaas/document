@@ -1,5 +1,23 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.1 (2020-07-13)
+
+- Bug #14871: 當自動建立的dedicated instance建立完成時，deployment資料表的updated_at沒有更新
+- Bug #15005: 建立HA的instance後，發現instance的externalHosts有兩個
+- Bug #15057: 建立instance時，若parameters為nullparameters內參數為null，API無法正常回應
+- Requirement #14667: 阿里雲DB的時間格式和時區問題
+- Requirement #14804: [GET] /v2/clusters/list在回傳dedicated資訊時，額外增加回傳deploymentName
+- Requirement #14816: 啟用[GET] /v2/service_instances/{instance_id}/last_operation，讓Service Hub可以透過該API查詢部署狀態
+- Requirement #14818: SM啟動時，自動於dedicated_resources添加resource type資料
+- Requirement #14859: 修改service instances 相關API路徑
+- Requirement #14891: [GET] /v2/clusters/dedicated/{pseudoId} 改為 [GET] /v2/serviceInstances/{instanceId}/info
+- Requirement #14902: 若客戶額外添購硬碟，provision時需支持輸入添購的數量，且透過ADM開硬碟時，開出的大小須為(Base Size) + (Additional Size) * (Quantity)
+- Suggestion #14890: 透過ADM建立dedicated instance後，deployment資料表中的parameters沒有內容
+- 新增使用ADM自動退訂功能
+- 新增dedcated instance 狀態detached 7天後自動變更狀態為deleted功能
+- 修正dedicated連續provision, deprovision相同ID問題
+
+
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0 (2020-07-02)
 
 - 需搭配helm chart版本0.2.0
