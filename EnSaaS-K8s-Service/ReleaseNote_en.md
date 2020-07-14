@@ -8,6 +8,7 @@ Added:
 - Support Rest APIs to create/delete helm package
 - Support the dedicated route ingress
 - Upgrade clusteragent of one or all slave cluster 
+
 Fixed:
 - Subscription user can not download the config file 
 
@@ -21,6 +22,7 @@ Added:
 Added:
 - Provide toolbox and users can use web Kubectl tool at any time
 - Support the page theme selection, currently there are three theme colors for users to choose
+
 Fixed:
 - on user edit page, deleting permission continuously will cause blank-page issue 
 
