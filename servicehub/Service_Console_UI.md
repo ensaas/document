@@ -11,7 +11,7 @@
 - 重新命名實例的按鈕添加tooltip
 - 畫面缩小时，添加修改實例名稱的功能
 
-**修改Bug:**
+**修改Bug：**
 
 - 修復select下拉式選單定位錯誤
 - #13750 使用到冒號的地方，英文應使用半形字，中文使用全型字
@@ -35,7 +35,7 @@
 - 增加RabbitMQ dedicated instance的Role的下拉式選單選項，追加Policymaker、Monitoring、Administrator、Impersonator
 - 微調部分文字
 
-**修改Bug:**
+**修改Bug：**
 
 - #14481 新增參數的部分，key需要擋空格
 
@@ -59,7 +59,7 @@
 
 ## Service-Portal-UI 1.0.2.2 (2020-05-26)
 
-**修改Bug:**
+**修改Bug：**
 
 - 14055 Service Usage页面的提示句中的standard的s应为小写
 - 13919 左方清单样式尽量与MP的样式相近
@@ -77,7 +77,7 @@
 - 添加监控服务用量的看板
 
 
-**修改Bug:**
+**修改Bug：**
 
 - 13915 显示用量时，连接到的dashboard应该要使用当前平台的dashboard
 - 13918 Consumption改回Service Usage
@@ -92,7 +92,7 @@
 
 ## Service-Portal-UI 1.0.1.5 (2020-05-12)
 
- **修改Bug:**
+ **修改Bug：**
  - 13773 對文字部分的建議 part4
  - 13728 修改instance名稱時，請加上不得超過150字元的阻擋，且只允許[a-zA-Z0-9_-.]
  - 13751 增加建立 / 編輯服務密鑰時對描述欄位的限制
@@ -100,7 +100,7 @@
 
 ## Service-Portal-UI 1.0.1.4 (2020-05-11)
 
- **修改Bug:**
+ **修改Bug：**
  - 13729 在Secret Management頁面若instance名稱太長，名稱會和其他項目重疊到                                      
  - 13723 編輯description的欄位必須是必填                                                              
  - 13737 搜尋instance完點進Secret Management，會顯示不出secret，且退出Secret Management後，顯示的instance列表不正確  
@@ -142,7 +142,7 @@
 
 ## Service-Portal-UI 1.0.1.1 (2020-04-30)
 
- **修改Bug:**
+ **修改Bug：**
  - 13610 Global admin登入後，看不到匯入Dedicated DB的按鈕
 
 
