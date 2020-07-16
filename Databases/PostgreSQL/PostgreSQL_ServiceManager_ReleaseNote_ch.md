@@ -1,5 +1,13 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.2 (2020-07-16)
+
+- Bug #15114: 呼叫[DELETE] /v2/service_instances/{instance_id}?deleteData=true，沒辦法將detached instance變為deleted
+- Requirement #14891: [GET] /v2/clusters/dedicated/{pseudoId} 改為 [GET] /v2/serviceInstances/{instanceId}/info (Reopen)
+- Requirement #15150: 降規時支持不同的實例付費方式
+- Suggestion #15132: 建立或刪除instance時，若連不上ADM，不要立刻判定error
+
+
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.1 (2020-07-13)
 
 - Bug #14871: 當自動建立的dedicated instance建立完成時，deployment資料表的updated_at沒有更新
