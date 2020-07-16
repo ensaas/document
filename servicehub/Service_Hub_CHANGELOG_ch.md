@@ -1,3 +1,40 @@
+# 0.3.16.12 (0.3.17)
+ * bugfux: #15127: Overview API顯示出的dedicated instance數量有誤
+ * bugfux: #15125: 嘗試建立dedicated instance時，API會得到502的回覆
+ * bugfux: #15019: 透過[GET] /v2/datacenterCode/{datacenterCode}/overview查詢MongoDB的數量，卻得到PortgreSQL的數量
+ * bugfux: #15153: 配合SM的manual和resources兩支API的修改，Service Hub在調用SM API時，需要調用新版API，且須兼容新舊版 (未測)
+ 
+# 0.3.16.10 
+ * feat: 新增寄信包含 datacenterCode
+
+# 0.3.16.9
+ * feat: 新增寄信功能
+ * bugfux: 修正 deprovision 異步時，可以區分deleteData，並修正狀態。
+
+# 0.3.16.8
+ * bugfix: 修正 broker 檢查錯誤
+ * bugfix: 修正 manual overview API 只有查詢到 Postgresql 的錯誤
+ * bugfix: #14968: 將料號轉換成service manager 看得懂得 resource type
+ * bugfix: #14947: 提供健康檢查用的API
+
+# 0.3.16.6
+ * bugfix: 更新 rmq 參數
+ * bugfix: 更新 staus 回傳為 lifecycle status
+ * bugfix: 快速修正all訂閱API的bug
+
+# 0.3.16.1 
+ * feat: 修正了檢查訂閱號的API
+ * bugfix: #14435: instances資料表沒有區分instance被退訂時間點、以及7天後真正被刪除的時間點
+ * bugfix: #14459: 呼叫[DELETE] /v2/cluster/dedicated/{pseudoId}後，沒有將dedicated instance的狀態從Inactive變None
+ * bugfix: #14486: 若查不到instance的company和subscription name，需回覆N/A
+ * bugfix: #14723: [PUT] /v2/servicebrokers這支API沒有更新到serviceName
+ * bugfix: #14696: 依照SM資源管理API的新設計，修改對應的API
+ * bugfix: #14777: 新增一支API查詢當前環境是公有雲 / 私有雲
+ * bugfix: #14786: 新增 plan name list 的API，讓UI 能夠知道現在的 service 和 plan 有哪些，json 格式回傳
+ * bugfix: #14894: 修改Dedicated Overview頁面的設計，因此Service Hub也要修改對應的API
+ * bugfix: #14242: 接收catalog訊息用的queue讓部署人員自行設定queue名稱
+ * bugfix: #14498: 資源管理的API，將得到的status轉為lifecycle_status的用詞
+
 # 0.3.15.14 (2020-07-01) (0.3.16)
  * bugfix: #13740 [PUT] /v2/serviceCredentials/{dccsKey} 請將該API的description欄位改為非必填，且允許任意字元
  * bugfix: #14658 設定CALCULATOR_ENABLE_FLAG為false，但呼叫[PUT] /v2/serviceInstances/manual時卻得到serviceInstanceId not found from catalog之錯誤
