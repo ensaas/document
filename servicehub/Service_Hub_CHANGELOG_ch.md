@@ -1,3 +1,7 @@
+# 0.3.17.3 (2020-07-20)
+ * bugfux: #15221: 呼叫[POST] /v2/clusters/shared時，沒有將deploymentProperties送去給Service Manager
+ * bugfux: #15214:	Dedicated Overview未計算到除了Dedicated-Single-Small以外的dedicated instance
+ 
 # 0.3.16.12 (0.3.17) (2020-07-16)
  * bugfux: #15127: Overview API顯示出的dedicated instance數量有誤
  * bugfux: #15125: 嘗試建立dedicated instance時，API會得到502的回覆
