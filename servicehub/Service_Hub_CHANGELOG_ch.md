@@ -1,27 +1,31 @@
+# 0.3.17.4 (2020-07-21)
+ * feat: 重新評估寄信問題
+ * bugfix: #15251: 寄信內容缺少訂閱號名稱和公司資訊
+
 # 0.3.17.3 (2020-07-20)
- * bugfux: #15221: 呼叫[POST] /v2/clusters/shared時，沒有將deploymentProperties送去給Service Manager
- * bugfux: #15214:	Dedicated Overview未計算到除了Dedicated-Single-Small以外的dedicated instance
- 
+ * bugfix: #15221: 呼叫[POST] /v2/clusters/shared時，沒有將deploymentProperties送去給Service Manager
+ * bugfix: #15214: Dedicated Overview未計算到除了Dedicated-Single-Small以外的dedicated instance
+
 # 0.3.16.12 (0.3.17) (2020-07-16)
- * bugfux: #15127: Overview API顯示出的dedicated instance數量有誤
- * bugfux: #15125: 嘗試建立dedicated instance時，API會得到502的回覆
- * bugfux: #15019: 透過[GET] ​/v2​/datacenterCode​/{datacenterCode}​/overview查詢MongoDB的數量，卻得到PortgreSQL的數量
- * bugfux: #15153: 配合SM的manual和resources兩支API的修改，Service Hub在調用SM API時，需要調用新版API，且須兼容新舊版 (未測)
+ * bugfix: #15127: Overview API顯示出的dedicated instance數量有誤
+ * bugfix: #15125: 嘗試建立dedicated instance時，API會得到502的回覆
+ * bugfix: #15019: 透過[GET] ​/v2​/datacenterCode​/{datacenterCode}​/overview查詢MongoDB的數量，卻得到PortgreSQL的數量
+ * bugfix: #15153: 配合SM的manual和resources兩支API的修改，Service Hub在調用SM API時，需要調用新版API，且須兼容新舊版 (未測)
  
-# 0.3.16.10 
+# 0.3.16.10 (2020-07-13)
  * feat: 新增寄信包含 datacenterCode
 
 # 0.3.16.9 (2020-07-13)
  * feat: 新增寄信功能
- * bugfux: 修正 deprovision 異步時，可以區分deleteData，並修正狀態。
+ * bugfix: 修正 deprovision 異步時，可以區分deleteData，並修正狀態。
 
-# 0.3.16.8
+# 0.3.16.8 (2020-07-8)
  * bugfix: 修正 broker 檢查錯誤
  * bugfix: 修正 manual overview API 只有查詢到 Postgresql 的錯誤
  * bugfix: #14968: 將料號轉換成service manager 看得懂得 resource type
  * bugfix: #14947: 提供健康檢查用的API
 
-# 0.3.16.6
+# 0.3.16.6 (2020-07-8)
  * bugfix: 更新 rmq 參數
  * bugfix: 更新 staus 回傳為 lifecycle status
  * bugfix: 快速修正all訂閱API的bug
@@ -38,6 +42,12 @@
  * bugfix: #14894: 修改Dedicated Overview頁面的設計，因此Service Hub也要修改對應的API
  * bugfix: #14242: 接收catalog訊息用的queue讓部署人員自行設定queue名稱
  * bugfix: #14498: 資源管理的API，將得到的status轉為lifecycle_status的用詞
+
+# 0.3.15.14 (0.3.16) (2020-07-01)
+ * bugfix: #13740 [PUT] /v2/serviceCredentials/{dccsKey} 請將該API的description欄位改為非必填，且允許任意字元
+ * bugfix: #14658 設定CALCULATOR_ENABLE_FLAG為false，但呼叫[PUT] /v2/serviceInstances/manual時卻得到serviceInstanceId not found from catalog之錯誤
+ * bugfix: #14666 Instance刪除後，再建立同樣instance id的instance，但一點進instance時得到instance已被刪除之訊息
+ * bugfix: put broker 少更新 serviceName
 
 # 0.3.15.13 (2020-06-30)
  * feat: 允許pipeline 通過
@@ -156,7 +166,7 @@
  * feat: 調整時間格式，都使用utc
  * feat: 更新 catalog 回傳內容
  * bugfix: 更新時間精準度 timestamp ==> timestamp(6)
- 
+
 # 0.3.11 (2020-05-11)
  * feat: 新增client token (半完成)
  * bugfix: #13694 需要將broker-deployment.yaml的appVersion改成apps/v1
@@ -171,7 +181,7 @@
  * feat: dccs key enable 的時候，需要帶上舊有的參數值
  * feat: 支持rmq 升級API
  * bugfix: 修正 serviceInstanceName 未定義的時候，帶上完整InstacneId
- 
+
 # 0.3.9 (2020-04-30)
  * feat: 更新 changelog
  * feat: 新增查詢剩餘數量API
