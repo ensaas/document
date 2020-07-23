@@ -1,5 +1,10 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.3 (2020-07-23)
+
+- Bug #15266: 無法成功建立HA instance
+
+
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.2 (2020-07-16)
 
 - Bug #15114: 呼叫[DELETE] /v2/service_instances/{instance_id}?deleteData=true，沒辦法將detached instance變為deleted
