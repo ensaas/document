@@ -1,3 +1,14 @@
+## Service-Portal-UI 1.1.0.2 (2020-07-23)
+
+**新特性：**
+
+- #15268 【資源管理頁面修改需求
+
+**修改Bug：**
+
+- #15305 需移除Create Dedicated Instance畫面針對Username和Password的限制
+
+
 ## Service-Portal-UI 1.1.0.0 (2020-07-15)
 
 **新特性：**
