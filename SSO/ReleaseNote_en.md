@@ -1,3 +1,20 @@
+## API 4.0.13.0-(2020-07-24)
+### New Features
+* Enterprise account related functions
+* List export of enterprise account and subscription number
+* The role of enterprise account admin can operate the subscription number under the enterprise account by default
+* Synchronize all enterprise accounts and their subscription numbers regularly, delete expired operation records regularly, and synchronize subscription number consumption points from billing regularly
+* The subscription number quota records and synchronizes from billing regularly. The function is disabled by default
+* The operation log function only records the enterprise account number and the record of data changes caused by the execution of scheduled tasks
+* Quota must be specified when creating a subscription number
+* Change the detail interface of the subscription number, add the return of membertype, ispaid, isinternal, and the return of the remaining quota of the subscription number
+
+## Portal 4.0.9.0-(2020-7-24)
+### New Features
+* Add enterprise menu and enterpriseAdmin role, each enterprise account can add multiple enterpriseAdmin (created by globalAdmin), and can create multiple subscriptions, enterpriseAdmin has the authority to manage the subscriptions under its enterprise account.
+* The subscription page adds the function of filtering by corporate account. The default option is all corporate accounts. When adding a subscription number, you must specify the corporate account, and the selected memberType cannot be higher than the corporate account memberType (PremierVIP > VIP > Regular > WISELead).
+* Added global account export function of exporting subscription number and enterprise account excel for globalAdmin, the export result is consistent with the page filtering result. Increase the system setting menu, you can view the details of some key addition, deletion and modification operations.
+
 ## API 4.0.12.0-(2020-06-24)
 ### Fix bugs 
 * Modify the wrong page of /subscriptions/{subscriptionid}/users
