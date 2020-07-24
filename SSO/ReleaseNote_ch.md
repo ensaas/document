@@ -1,3 +1,20 @@
+## API 4.0.13.0-(2020-07-24)
+### New Features
+* 企业账号相关功能
+* 企业账号以及订阅号的列表导出
+* 企业账号admin角色，默认可以操作企业账号之下的订阅号
+* 定时同步所有企业账号以及其下的订阅号，定时删除过期的操作记录，定时从billing同步订阅号消费点数功能
+* 订阅号quota记录，并定时从billing同步，功能默认禁用
+* 操作日志功能，目前仅记录了企业账号以及定时任务执行导致数据变更时的记录
+* 创建订阅号时必须指定quota
+* 改变订阅号detail接口，增加区分memberType,isPaid,isInternal返回，以及订阅号剩余quota的返回
+
+## Portal 4.0.9.0-(2020-7-24)
+### New Features
+* 增加企业账号菜单和enterpriseAdmin角色，每个企业账号可以加多个enterpriseAdmin（由globalAdmin创建），并可以新建多个订阅号，enterpriseAdmin有权限管理其企业账号下的订阅号。
+* 订阅号页面增加按照企业账号筛选功能，默认选项是所有企业账号，新增订阅号时必须指定企业账号，并且所选的memberType不能高于企业账号的memberType（PremierVIP > VIP > Regular > WISELead ）
+* 针对globalAdmin增加订阅号导出和企业账号excel导出功能，导出的结果与页面筛选结果一致。增加系统设置菜单，可以查看一些关键的增删改操作的详细信息。
+
 ## API 4.0.12.0-(2020-06-24)
 ### Fix bugs 
 * 修改/subscriptions/{subscriptionId}/users 分页不对的问题
