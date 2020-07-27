@@ -1,5 +1,9 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.4(0.2.1) (2020-07-24)
+
+- 修正啟動時添加的dedicated_resource vm type規格
+
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.3 (2020-07-23)
 
 - Bug #15266: 無法成功建立HA instance
