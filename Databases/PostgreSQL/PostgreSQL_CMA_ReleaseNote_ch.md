@@ -1,5 +1,15 @@
 # CMA Postgresql ReleaseNote
 
+## 0.2.5
+
+### Update:
+- Suggestion #14950: 提供健康檢查用的API
+
+## 0.2.4
+
+### Fix:
+- Bug #15422: 有連線未關閉之問題
+
 ## 0.2.3
 
 ### Fix:
