@@ -1,8 +1,28 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.1 (2020-07-29)
+
+- Bug #13403: 若欲恢復的shared instance其狀態不為detached，錯誤訊息用字有誤
+- Bug #13423: 若dedicated instance的deployment_method不為manual，不應該能透過dedicated deprovision用的api刪除
+- Bug #14502: 永久刪除dedicated cluster時，若該cluster已被刪除，回覆的訊息用字不一致
+- Bug #14504: 永久刪除shared cluster時，若該cluster已被刪除，回覆的訊息用字不一致
+- Bug #15056: 建立dedicated instance時，若沒帶vSwitchId，錯誤訊息有誤
+- Bug #15190: 建立dedicated instance時，若沒帶resourceType，錯誤訊息有誤
+- Bug #15191: 建立dedicated instance時，若沒帶zoneId，錯誤訊息有誤
+- Bug #15205: Instance刪除後(退訂時)，當下應該就要在阿里雲上更改標籤為lifecycle:inactive，並標上detached_time
+- Bug #15222: Instance退訂後，在阿里雲上記錄的detached_time要等同於ServiceManager記錄的detached_at時間
+- Bug #15351: 若一個dedicated instance的inernalHosts有2個以上的IP，建立binding後，產生的uri只有包含一個host
+- Bug #15379: 恢復instance時，若當前剩餘shared instance額度為0，會發生錯誤，無法恢復
+- Bug #15391: 用ADM開出來的instance不應該能透過[POST] /v2/service_instances/manual這支API進行恢復
+- Requirement #15228: 建立或刪除instance時，若連不上ADM需要再失敗三次才判定error
+- Requirement #15402: 需提供API能對resource type進行新增、查詢、修改、刪除
+- Suggestion #15235: 若刪除dedicated instance時設deleteData=true，更改阿里雲上的標籤
+
+
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.4(0.2.1) (2020-07-24)
 
 - 修正啟動時添加的dedicated_resource vm type規格
+
 
 ##  WISE-PaaS Service Manager - PosrgreSQL 0.2.0.3 (2020-07-23)
 
