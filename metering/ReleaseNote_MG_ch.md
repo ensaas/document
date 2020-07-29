@@ -1,3 +1,37 @@
+# 1.1.1 (2020-07-29)
+
+# New Features
+
+* 加入health chcek api (suggestion 14948)
+* 加入redis error log (suggestion 14773)
+
+# Upgrade Steps
+
+* 加入以下redis連線資訊，此連線資訊與reporting相同
+
+| 名稱 | 說明 |
+|----|----|
+| REDIS_URI | redis的uri |
+| REDIS_PORT | redis的port |
+| REDIS_PASSWORD | redis的密碼 |
+| REDIS_INDEX | redis的index |
+
+# Breaking Changes
+
+無
+
+# Bug Fixes
+
+* 修正redis寫入時間錯誤 (bug 14744)
+
+# Improvements
+
+無
+
+# Other Changes
+
+無
+
 # 1.1.0 (2020-05-12)
 
 ## New Features
