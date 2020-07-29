@@ -1,3 +1,7 @@
+## Portal 4.0.10.0-(2020-7-29)
+### Fix bugs
+* Modify the bug that the subscription number of the company account cannot be found when the crmid has special characters
+
 ## API 4.0.13.0-(2020-07-24)
 ### New Features
 * Enterprise account related functions
