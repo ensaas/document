@@ -2,8 +2,8 @@
 
 # New Features
 
-* 加入health chcek api (suggestion 14948)
-* 加入redis error log (suggestion 14773)
+* health chcek api
+* Real Time Data存入Redis
 
 # Upgrade Steps
 
