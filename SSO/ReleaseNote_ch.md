@@ -1,3 +1,7 @@
+## Portal 4.0.11.0-(2020-8-4)
+### New Features
+* 去掉header中的tickets
+
 ## Portal 4.0.10.0-(2020-7-29)
 ### Fix bugs
 * 修改企业账号crmid有特殊字符时查不出来所属订阅号的bug
