@@ -1,5 +1,11 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.2 (2020-08-04)
+
+- Requirement #15465: 若instance被鎖住，不允許進行unbind
+- Suggestion #14987: 需要有一支API讓運維人員將error的instance改為running
+
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.1 (2020-07-29)
 
 - Bug #13403: 若欲恢復的shared instance其狀態不為detached，錯誤訊息用字有誤
