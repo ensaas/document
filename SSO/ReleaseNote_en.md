@@ -1,3 +1,7 @@
+## Portal 4.0.11.0-(2020-8-4)
+### New Features
+* Remove the tickets in the header
+
 ## Portal 4.0.10.0-(2020-7-29)
 ### Fix bugs
 * Modify the bug that the subscription number of the company account cannot be found when the crmid has special characters
