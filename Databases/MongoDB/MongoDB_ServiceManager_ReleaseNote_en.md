@@ -1,10 +1,14 @@
 # Release Notes 1.1.1
 
+![Version](http://img.shields.io/badge/latest-1.1.1.2-green) ![Chart](https://img.shields.io/badge/chart-0.4.0-blue)
+
 ### Release notes for mongodb service manager (mongodb-sm)
 
 _Note: Release notes will include releases from **1.0.28** since there are major update on specification._
 
-![Version](http://img.shields.io/badge/latest-1.1.1.2-green) ![Chart](https://img.shields.io/badge/chart-0.4.0-blue)
+## Prerequisites
+
+- Requires mongodb-sm chart version 0.4.0
 
 ## New Features
 
@@ -25,8 +29,6 @@ _Note: Release notes will include releases from **1.0.28** since there are major
 
 - [+] deployment.engine_version is added.
   replacement for database_version.
-
-* [+] Update Helm chart 0.4.0
 
 * [+] Provision dedicated is available. (db-cloud-driver enabled)
   Create instance for dedicated plan in Aliyun.
@@ -334,3 +336,17 @@ _Note: Release notes will include releases from **1.0.28** since there are major
 - [+] Provision, Deprovision, Bind, Unbind look up 'status' on credentials
 
 - [+] API Addition: orgId will no longer be used when recover
+
+## Other Changes
+
+### Helm Chart 0.4.0
+
+#### templates
+
+- change adm to dbCloudDriver on broker-deployment.yaml
+
+#### values.yaml
+
+- change adm to dbCloudDriver
+- add dbCloudDriver.worker
+- update images tag to 1.1.1.2
