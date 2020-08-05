@@ -1,3 +1,16 @@
+# 0.3.17.8 (0.3.18) (2020-08-04)
+ * bugfix: #15562: 不應該有將料號寫死的情況
+ * bugfix: #15545: [Chart] Chart預設資源過小
+
+# 0.3.17.7 (2020-08-03)
+ * bugfix: #15451: [GET] /v2/cluster/list此API需支持顯示deploymentName
+ * bugfix: #15271: [GET] /v2/servicebrokers需要將帳密隱藏
+ * bugfix: #15466: [GET] 解決常常因為token失效而被登出Portal的問題
+ * bugfix: #15209: 信件中的檢查完成次數不會更新
+ * bugfix: #15210: 無法成功寄送通知信
+ * bugfix: #15234: 刪除instance時(deleteData=true)，Service Hub沒有真正呼叫SM去將instance完整刪除
+ * bugfix: #15248: 若建立dedicated instance失敗，資料庫紀錄的狀態不正確
+ 
 # 0.3.17.6 (2020-07-23)
  * feat: 取消駝峰與底線兼容的API
  * bugfix: broker 帳密隱藏，當缺少: 和 @ 時不噴錯
