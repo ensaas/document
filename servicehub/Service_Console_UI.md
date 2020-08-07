@@ -1,3 +1,9 @@
+## Service-Portal-UI 1.1.0.4 (2020-08-07)
+
+**新特性：**
+
+- Overview頁面支持顯示MongoDB服務
+
 ## Service-Portal-UI 1.1.0.3 (2020-08-04)
 
 **新特性：**
