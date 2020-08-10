@@ -40,7 +40,7 @@ App没有成功部署，主要有两种情况，一是App订阅失败，二是Ap
 
     - 解决方法
 
-        请联系WISE-PaaS.SRE（WISE-PaaS.SRE@advantech.com）充加点数，再进行订阅App。
+        请在[MarketPlace](https://wise-paas.advantech.com/en-us/marketplace)充加点数，再进行订阅App。
 
 - 空间资源不足，导致订阅App失败  
 
