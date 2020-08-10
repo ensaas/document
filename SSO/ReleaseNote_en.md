@@ -1,3 +1,8 @@
+## API 4.0.14.0- (2020-08-10)
+### New Features
+* /users/enterprises/subscriptions   Query enterprise account and cascade subscription number
+
+
 ## Portal 4.0.11.0-(2020-8-4)
 ### New Features
 * Remove the tickets in the header
