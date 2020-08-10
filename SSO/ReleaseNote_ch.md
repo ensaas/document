@@ -1,3 +1,8 @@
+## API 4.0.14.0- (2020-08-10)
+### New Features
+* /users/enterprises/subscriptions 查询企业账号以及级联的订阅号
+
+
 ## Portal 4.0.11.0-(2020-8-4)
 ### New Features
 * 去掉header中的tickets
