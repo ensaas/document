@@ -15,13 +15,15 @@ WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https
 
 使用者可使用第三方軟體 S3 Browser 來管理雲端物件儲存體的內容。
 
+
 ### Step 1: 下載 S3 Browser 6.2.3 版本
 
 *目前只支援 S3 Browser 6.2.3 版本，其他版本不支援
 
-連線至 https://s3-browser.en.uptodown.com/windows/download，下載並安裝 S3 Browser。
+連線至 https://s3-browser.en.uptodown.com/windows/download ，下載並安裝 S3 Browser。
 
 ![shareFile](./images/S3-v6.2.3.png)
+
 
 ### Step 2: 透過 S3 Browser 連線至 Blob
 
@@ -31,11 +33,15 @@ WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https
 
 連線資訊皆填入後，點擊下方「Advanced S3-compatible storage settings」，其中 Signature version 必須選擇「Signature V2」，接著點擊「Close」後，再點擊「Save changes」保存即可。
 
+![shareFile](./images/StorageSetting.png)
+
+
 ### Step 3: 透過 S3 Browser 連線至 Blob
 
 連線成功後即可看到 Blob 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New Bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new Bucket」即可。
 
 ![shareFile](./images/CreateBucket.png)
+
 
 ### Step 4: 透過 S3 Browser 上傳或下載檔案
 
