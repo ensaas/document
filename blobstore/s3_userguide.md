@@ -25,9 +25,9 @@ WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https
 ![shareFile](./images/S3-v6.2.3.png)
 
 
-### Step 2: 透過 S3 Browser 連線至 Blob
+### Step 2: 透過 S3 Browser 連線至 Blobstore
 
-安裝好後打開 S3 Browser，設定 Blob 連線資訊，其中Account Type 必須選擇「S3 Compatible Storage」，再依照提供的連線資訊，設定 REST Endpoint（61.219.26.12:8080）、Access Key ID 及 Secret Access Key 即可，而 Use secure transfer(SSL/TLS)選項請勿勾選。
+安裝好後打開 S3 Browser，設定 Blobstore 連線資訊，其中Account Type 必須選擇「S3 Compatible Storage」，再依照提供的連線資訊，設定 REST Endpoint（61.219.26.12:8080）、Access Key ID 及 Secret Access Key 即可，而 Use secure transfer(SSL/TLS)選項請勿勾選。
 
 ![shareFile](./images/AccessInfo.png)
 
@@ -36,9 +36,9 @@ WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https
 ![shareFile](./images/StorageSetting.png)
 
 
-### Step 3: 透過 S3 Browser 連線至 Blob
+### Step 3: 透過 S3 Browser 連線至 Blobstore
 
-連線成功後即可看到 Blob 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New Bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new Bucket」即可。
+連線成功後即可看到 Blobstore 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New Bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new Bucket」即可。
 
 ![shareFile](./images/CreateBucket.png)
 
