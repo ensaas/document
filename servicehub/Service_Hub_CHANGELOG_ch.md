@@ -1,3 +1,21 @@
+# 0.3.18.3 (2020-08-14)
+ * bugfix: 7天後到期不應該去呼叫 service Manager
+ * 每日檢查會印出下一次檢查時間和日期
+
+# 0.3.18.2 (2020-08-13)
+ * bugfix: #15763: 建議把通知信裡的更新時間和最後更新時間移除
+ * bugfix: #15752: 建立instance成功，但收到的通知信內，狀態碼卻是204，而不是201
+ * bugfix: #15764: 退訂信裡交易ID是空的
+ * bugfix: #15774:「收到回覆的狀態碼」用意不明確
+ * bugfix: #15775: 退訂時沒有更新actived_at
+
+# 0.3.18.1 (2020-08-10) 
+ * bugfix: #15708: 即使已關閉寄信功能，service hub也會不停寄信
+ * bugfix: #15234: 刪除instance時(deleteData=true)，Service Hub沒有真正呼叫SM去將instance完整刪除
+ * bugfix: #15594: 透過cascade=true的方式刪除instance，通知信標題所寫的天數錯誤
+ * bugfix: #15544: [Chart] 移除chart裡用不到的檔案
+ * bugfix: 修改寄信內容和判斷式
+ 
 # 0.3.17.8 (0.3.18) (2020-08-04)
  * bugfix: #15562: 不應該有將料號寫死的情況
  * bugfix: #15545: [Chart] Chart預設資源過小
