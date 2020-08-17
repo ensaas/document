@@ -1,3 +1,15 @@
+# 1.2.0 (2020-08-17)
+
+# New Features
+
+- 料號用量統計新支持mean（平均）與integral（定積分）
+- aggregatedLevel新增custom型態，當aggregatedLevel型態為custom時，可以透過新增加的hourly、daily與monthly三個欄位，自訂義統計方式
+
+# Bug Fixes
+
+- Bug #15779 若新建的service只需要計算daily或monthly的用量，則MG無法計算出用量
+
+
 # 1.1.1 (2020-07-29)
 
 # New Features
