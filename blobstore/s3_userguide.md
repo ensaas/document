@@ -9,7 +9,7 @@
 
 # WISE-PaaS BlobStore 服務簡介
 
-WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html ）標準接口，可以透過它來儲存資料，包含圖片，影片，音樂和文件等等。WISE-PaaS Private Cloud (WISE-Stack) 在OpenStack上提供了S3的接口（https://docs.openstack.org/mitaka/config-reference/object-storage/configure-s3.html ），可提供使用者儲存資料。BlobStore服務的使用場景，例如儲存OTA的更新包、儲存AI 模型，再透過OTA部署至本地端，或者也可將DB資料遷移至Blob中，以降低成本費用。
+WISE-PaaS/BlobStore提供統一的Amazon Simple Storage Service（簡稱S3 https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html ）標準接口，可以透過它來儲存資料，包含圖片，影片，音樂和文件等等。WISE-PaaS Private Cloud （WISE-Stack） 在OpenStack上提供了S3的接口（https://docs.openstack.org/mitaka/config-reference/object-storage/configure-s3.html ），可提供使用者儲存資料。BlobStore服務的使用場景，例如儲存OTA的更新包、儲存AI 模型，再透過OTA部署至本地端，或者也可將DB資料遷移至BlobStore中，以降低成本費用。
 
 ## BlobStore 連線方式：
 
@@ -29,7 +29,7 @@ WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https
 
 透過 SSO Portal登入帳號，再連線至 Service Portal 建立一組 BlobStore 試用帳號。操作步驟如下：
 
-首先選擇 blobstore 的 Instance ，點擊「Action」後，再點擊「Secret Management」。
+首先選擇 BlobStore 的 Instance ，點擊「Action」後，再點擊「Secret Management」。
 
 ![shareFile](./images/CreateBlobSecret-1.png)
 
@@ -46,9 +46,9 @@ Secret Name 建立成功後，點擊「Action」後，再點擊「View」查看�
 ![shareFile](./images/CreateBlobSecret-4.png)
 
 
-### Step 3: 透過 S3 Browser 連線至 Blobstore
+### Step 3: 透過 S3 Browser 連線至 BlobStore
 
-安裝好後打開 S3 Browser，設定 Blobstore 連線資訊，其中Account Type 必須選擇「S3 Compatible Storage」，再依照 WISE-PaaS/EnSaaS Service Portal 建立的連線資訊，設定 REST Endpoint（61.219.26.12:8080）、Access Key ID 及 Secret Access Key 即可，而 Use secure transfer(SSL/TLS)選項請勿勾選。
+安裝好後打開 S3 Browser，設定 BlobStore 連線資訊，其中Account Type 必須選擇「S3 Compatible Storage」，再依照 WISE-PaaS/EnSaaS Service Portal 建立的連線資訊，設定 REST Endpoint（61.219.26.12:8080）、Access Key ID 及 Secret Access Key 即可，而 Use secure transfer（SSL/TLS）選項請勿勾選。
 
 ![shareFile](./images/AccessInfo.png)
 
@@ -57,9 +57,9 @@ Secret Name 建立成功後，點擊「Action」後，再點擊「View」查看�
 ![shareFile](./images/StorageSetting.png)
 
 
-### Step 4: 透過 S3 Browser 連線至 Blobstore
+### Step 4: 透過 S3 Browser 連線至 BlobStore
 
-連線成功後即可看到 Blobstore 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New Bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new Bucket」即可。
+連線成功後即可看到 BlobStore 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new bucket」即可。
 
 ![shareFile](./images/CreateBucket.png)
 
