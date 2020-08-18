@@ -25,9 +25,30 @@ WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https
 ![shareFile](./images/S3-v6.2.3.png)
 
 
-### Step 2: 透過 S3 Browser 連線至 Blobstore
+### Step 2: 連線至 WISE-PaaS/EnSaaS Service Portal 建立 BlobStore 試用帳號
 
-安裝好後打開 S3 Browser，設定 Blobstore 連線資訊，其中Account Type 必須選擇「S3 Compatible Storage」，再依照提供的連線資訊，設定 REST Endpoint（61.219.26.12:8080）、Access Key ID 及 Secret Access Key 即可，而 Use secure transfer(SSL/TLS)選項請勿勾選。
+透過 SSO Portal登入帳號，再連線至 Service Portal 建立一組 BlobStore 試用帳號。操作步驟如下：
+
+首先選擇 blobstore 的 Instance ，點擊「Action」後，再點擊「Secret Management」。
+
+![shareFile](./images/CreateBlobSecret-1.png)
+
+接著填入 Secret Name 以及選擇要建立 Secret 的 Namespace，再點擊「OK」。
+
+![shareFile](./images/CreateBlobSecret-2.png)
+
+Secret Name 建立成功後，點擊「Action」後，再點擊「View」查看連線資訊。
+
+![shareFile](./images/CreateBlobSecret-3.png)
+
+紀錄連線資訊 accessKey、endpoint 與 secretKey。
+
+![shareFile](./images/CreateBlobSecret-4.png)
+
+
+### Step 3: 透過 S3 Browser 連線至 Blobstore
+
+安裝好後打開 S3 Browser，設定 Blobstore 連線資訊，其中Account Type 必須選擇「S3 Compatible Storage」，再依照 WISE-PaaS/EnSaaS Service Portal 建立的連線資訊，設定 REST Endpoint（61.219.26.12:8080）、Access Key ID 及 Secret Access Key 即可，而 Use secure transfer(SSL/TLS)選項請勿勾選。
 
 ![shareFile](./images/AccessInfo.png)
 
@@ -36,14 +57,14 @@ WISE-PaaS/Blobstore提供統一的Amazon Simple Storage Service（簡稱S3 https
 ![shareFile](./images/StorageSetting.png)
 
 
-### Step 3: 透過 S3 Browser 連線至 Blobstore
+### Step 4: 透過 S3 Browser 連線至 Blobstore
 
 連線成功後即可看到 Blobstore 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New Bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new Bucket」即可。
 
 ![shareFile](./images/CreateBucket.png)
 
 
-### Step 4: 透過 S3 Browser 上傳或下載檔案
+### Step 5: 透過 S3 Browser 上傳或下載檔案
 
 點選左側之儲存體（Bucket），即可上傳或下載檔案。
 
