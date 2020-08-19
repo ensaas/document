@@ -1,0 +1,16 @@
+# 0.0.3.0 (2020-08-19)
+# **New Features**
+
+- 扣點API
+- 可以透過API新增、修改和刪除資料中心
+- 提供未扣款記錄查詢
+- 提供未扣款整併重送給MKP進行扣點
+- 加入Pseudo Marketplace API，用在沒有MKP下測試使用
+
+# **Bug Fixes**
+
+- 無
+
+# **Breaking Changes**
+
+- 無
