@@ -122,7 +122,7 @@
 - 13921 页面上方提示本页面支持显示哪些服务的用量
 
 
-## Service-Portal-UI 1.1.0.8 (2020-08-19) for private cloud
+## Service-Portal-UI 1.0.1.8 (2020-08-19) for private cloud
 
 **新特性：**
 
