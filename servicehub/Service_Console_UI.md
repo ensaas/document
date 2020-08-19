@@ -1,8 +1,17 @@
+## Service-Portal-UI 1.1.1 (2020-08-19)
+
+**新特性：**
+
+- #15897 Parameters新增支持Array型別
+- #15044 Service Usage頁面改為動態獲取Plan清單
+
+
 ## Service-Portal-UI 1.1.0.4 (2020-08-07)
 
 **新特性：**
 
 - Overview頁面支持顯示MongoDB服務
+
 
 ## Service-Portal-UI 1.1.0.3 (2020-08-04)
 
