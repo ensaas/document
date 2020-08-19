@@ -126,7 +126,7 @@
 
 **新特性：**
 
-- #15897 Parameters新增支持Array型別
+- 參數部分新增下拉式選單，可選擇參數的型別(String/Integer/Boolean/Array)
 
 
 ## Service-Portal-UI 1.0.1.6 (2020-05-15)
