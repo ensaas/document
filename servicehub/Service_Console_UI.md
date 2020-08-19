@@ -120,7 +120,19 @@
 - 13922 若从Service Instances页面选择Redis服务，再切换去Service Usage页面，会显示Redis的instance资料
 - 13923 需隐藏Dashboard上方以及左方的功能列
 - 13921 页面上方提示本页面支持显示哪些服务的用量
-- 13855 生产环境上，Service Key Name的连接在部分电脑上打不开
+
+
+## Service-Portal-UI 1.1.0.8 (2020-08-19) for private cloud
+
+**新特性：**
+
+- #15897 Parameters新增支持Array型別
+
+
+## Service-Portal-UI 1.0.1.6 (2020-05-15)
+
+ **修改Bug：**
+ - 13855 生产环境上，Service Key Name的连接在部分电脑上打不开
 
 
 ## Service-Portal-UI 1.0.1.5 (2020-05-12)
@@ -145,7 +157,6 @@
  - 13747 若service key列表中有任何key的描述為空，該欄位會無法排序                                                
  - 13751 增加建立 / 編輯服務密鑰時對描述欄位的限制                                                             
  - 13674 對文字部分的建議 part3 
-
 
 
 ## Service-Portal-UI 1.0.1.3 (2020-05-08)
