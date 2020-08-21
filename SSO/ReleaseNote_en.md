@@ -1,3 +1,21 @@
+## API 4.0.15.0- (2020-08-21)
+### New Features
+* New mobile phone number binding, through the mobile phone number reset password and other functions, respectively corresponding to 2, 3, 4 API
+* Add API / users / mobile phone / {mobilephone} / binding code, and send verification code for binding mobile phone number
+* Add API / users / mobile phone / {mobilephone} / binding, bind or replace the bound mobile phone
+* Add API / users / {mobilephone} / pwdresetsms, and send the verification code of forgotten password to the corresponding mobile phone number
+* New configuration item 1 Sms.Enabled (whether SMS sending function is enabled), ② Sms.LimitCount (the number of times that the same account can send the binding verification code in a certain period of time) Sms.LimitTime (time period in 2, in bits and seconds)
+* Add API delete / auth / native to log off token, modify API delete / auth, and log off token after logging out
+* Modify /params add return Sms.Enabled
+* The enterprise account admin can modify the subscription number membertype
+* The default subscription number does not allow editing information
+* The membertype of the default subscription number (that is, the subscription number whose name is equal to the enterprise account ID) will always be consistent with the enterprise account, regardless of modifying the membertype of the enterprise account or calling detail to refresh
+
+## Portal 4.0.12.0-(2020-8-21)
+### New Features
+* The mobile phone number can be bound in the personal homepage
+* If you forget your password at the login location, you can choose to use your mobile phone number or email to receive the verification code
+
 ## Portal 4.0.11.0-(2020-8-4)
 ### New Features
 * Remove the tickets in the header
