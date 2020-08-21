@@ -1,3 +1,21 @@
+## API 4.0.15.0- (2020-08-21)
+### New Features
+* 新增手机号绑定，通过手机号重置密码等功能，分别对应2，3，4中api
+* 新增api /users/mobile-phone/{mobilePhone}/binding-code, 发送绑定手机号的验证码
+* 新增api /users/mobile-phone/{mobilePhone}/binding，绑定或者更换绑定手机
+* 新增api /users/{mobilePhone}/pwdresetsms ，发送忘记密码的验证码到对应手机号
+* 新增配置项 ① Sms.Enabled (是否启用sms发信功能), ② Sms.LimitCount(同一个账号在一定时间段内可以发送绑定验证码的次数),③ Sms.LimitTime(②中的时间段，单位位秒)
+* 新增api delete /auth/native 注销token,修改 api  delete /auth,登出后同时注销token
+* 修改 /params 增加返回Sms.Enabled
+* 企业账号admin可以修改订阅号memberType
+* 默认订阅号不允许编辑信息
+* 默认订阅号（指订阅号名称等于企业账号id的那个订阅号）的memberType会一直跟企业账号保持一致，不论是修改了企业账号的memberType还是调用detail刷新 
+
+## Portal 4.0.12.0-(2020-8-21)
+### New Features
+* 个人主页中可以绑定手机号
+* 登陆处忘记密码可以选择使用手机号或者邮箱接收验证码
+
 ## Portal 4.0.11.0-(2020-8-4)
 ### New Features
 * 去掉header中的tickets
