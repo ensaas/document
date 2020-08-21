@@ -143,8 +143,6 @@ String accessKey = ensaasServices.getJSONArray("blobstore-develop").getJSONObjec
 String secretKey = ensaasServices.getJSONArray("blobstore-develop").getJSONObject(0).getJSONObject("credentials").getString("secretKey");
 ```
 
----------------------------------------
-
 #### Python
 
 下面是APP Python解析BlobStore服务实例credential中endpoint, a accessKey and a secretKey的示例代码：
@@ -161,8 +159,6 @@ access_key = ensaas_services['blobstore-develop'][0]['credentials']['accessKey']
 secret_key = ensaas_services['blobstore-develop'][0]['credentials']['secretKey']
 ```
 
----------------------------------------
-
 #### NodeJs
 
 下面是APP NodeJs解析BlobStore服务实例credential中endpoint, a accessKey and a secretKey的示例代码：
@@ -174,3 +170,39 @@ access_key = ensaas_services['blobstore-develop'][0].credentials.accessKey
 secret_key = ensaas_services['blobstore-develop'][0].credentials.secretKey
 ```
 
+### Step 5: 使用S3 Browser连接Blobstore
+
+用户可使用第三方软件 S3 Browser 来管理云端Blobstore存储的內容。
+1. 下载 S3 Browser 6.2.3 版本
+
+*目前只支援 S3 Browser 6.2.3 版本，其他版本不支援
+
+连线至 https://s3-browser.en.uptodown.com/windows/download ，下载并安装 S3 Browser。
+
+![shareFile](./images/S3-v6.2.3.png)
+
+2. 获取Blobstore实例的连线信息，请参考Step 3和Step 4。
+
+3. 透过S3 Browser 连线至 BlobStore
+
+安裝好后打开 S3 Browser，设定 BlobStore 连线信息，其中Account Type 必须选择「S3 Compatible Storage」，再依照 WISE-PaaS/EnSaaS Service Portal 建立的连线信息，设定 REST Endpoint（61.219.26.12:8080）、Access Key ID 及 Secret Access Key 即可，而 Use secure transfer（SSL/TLS）选项请勿勾选。
+
+![shareFile](./images/AccessInfo.png)
+
+連線資訊皆填入後，點擊下方「Advanced S3-compatible storage settings」，其中 Signature version 必須選擇「Signature V2」，接著點擊「Close」後，再點擊「Save changes」保存即可。
+
+![shareFile](./images/StorageSetting.png)
+
+
+4. 透過 S3 Browser 連線至 BlobStore
+
+連線成功後即可看到 BlobStore 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new bucket」即可。
+
+![shareFile](./images/CreateBucket.png)
+
+
+5. 透過 S3 Browser 上傳或下載檔案
+
+點選左側之儲存體（Bucket），即可上傳或下載檔案。
+
+![shareFile](./images/UploadFiles.png)
