@@ -34,7 +34,7 @@ WISE-PaaS/Blobstore提供一种适用于云的对象存储解决方案。Blob存
 1. 创建Blobstore实例
 2. 创建Secret
 3. 查看Secret
-4. App使用Secret连接Blobstore
+4. 在App中使用Secret连接Blobstore
 5. 使用S3 Browser连接Blobstore
 
 ### Step 1: 创建Blobstore实例
@@ -44,17 +44,17 @@ WISE-PaaS/Blobstore提供一种适用于云的对象存储解决方案。Blob存
 1. 登录EnSaaS Catalog，各个站点的Catalog地址如下，按照提示订阅Blobstore服务：
 
    | 站点代码 | 站点地点          | 站点链接                                          |
-| -------- | ----------------- | ------------------------------------------------- |
+   | -------- | ----------------- | ------------------------------------------------- |
    | SA       | Azure Singapore   | https://portal-catalog-ensaas.sa.wise-paas.com    |
-| HZ       | Alibaba  Hangzhou | https://portal-catalog-ensaas.hz.wise-paas.com.cn |
+   | HZ       | Alibaba  Hangzhou | https://portal-catalog-ensaas.hz.wise-paas.com.cn |
    | JE       | Japan East        | https://portal-catalog-ensaas.jp.wise-paas.com    |
 
 2. 订阅成功后，可以登录Service控制台（目前仅有订阅号Admin和订阅号User可以查看），查看购买的实例，Service控制台地址如下：
 
    | 站点代码 | 服务              | 站点地点          | 站点链接                                          |
-| -------- | ----------------- | ----------------- | ------------------------------------------------- |
+   | -------- | ----------------- | ----------------- | ------------------------------------------------- |
    | SA       | Management Portal | Azure Singapore   | https://portal-mp-ensaas.sa.wise-paas.com         |
-| SA       | Service Portal    | Azure Singapore   | https://portal-service-ensaas.sa.wise-paas.com    |
+   | SA       | Service Portal    | Azure Singapore   | https://portal-service-ensaas.sa.wise-paas.com    |
    | HZ       | Management Portal | Alibaba  Hangzhou | https://portal-mp-ensaas.hz.wise-paas.com.cn      |
    | HZ       | Service Portal    | Alibaba  Hangzhou | https://portal-service-ensaas.hz.wise-paas.com.cn |
    | JE       | Management Portal | Japan East        | https://portal-mp-ensaas.jp.wise-paas.com         |
@@ -62,56 +62,61 @@ WISE-PaaS/Blobstore提供一种适用于云的对象存储解决方案。Blob存
 
 ### Step 2: 创建Secret
 
-透過 SSO Portal登入帳號，再連線至 Service Portal 建立一組 BlobStore 試用帳號。操作步驟如下：
+成功订购Blobstore后，您可以通过Service 控制台（Service Portal）创建Secret，取得服务的连线信息。
 
-首先選擇 BlobStore 的 Instance ，點擊「Action」後，再點擊「Secret Management」。
+说明：目前仅有订阅号Admin和订阅号User可以查看订阅的服务，并创建Secret。
+
+1. 登入Service Portal之后，找到Blobstore服务实例，选择右方操作选项，进入Secret管理页面
 
 ![shareFile](./images/CreateBlobSecret-1.png)
 
-接著填入 Secret Name 以及選擇要建立 Secret 的 Namespace，再點擊「OK」。
+2. 点击 "+" 按钮，弹出创建Secret的页面
 
 ![shareFile](./images/CreateBlobSecret-2.png)
 
-Secret Name 建立成功後，點擊「Action」後，再點擊「View」查看連線資訊。
+3. 填写以下参数
+
+    | 参数名称   | 说明                                                         |
+    | ---------- | ------------------------------------------------------------ |
+    | Name       | Secret的名称，WISE-PaaS平台的APP使用的Secret名称有一定规范，格式为：ServiceName-NamespaceName-secret |
+    | Cluster    | 使用Secret的APP所在的集群，Secret创建后会注入到该集群下      |
+    | Workspace  | 使用Secret的APP所在的Workspace，Secret创建后会注入到该Wokespace下 |
+    | Namespace  | 使用Secret的APP所在的Namespace，Secret创建后会注入到该Namespace下 |
+    | Parameters | 创建Secret时传入的参数|
+
+4. 点击OK，创建成功。
+
+### Step 3: 查看Secret
+Secret创建好后，您可以选择View操作来查看Secret的信息。
 
 ![shareFile](./images/CreateBlobSecret-3.png)
 
-紀錄連線資訊 accessKey、endpoint 與 secretKey。
+记录连线信息 accessKey、endpoint和secretKey。
 
 ![shareFile](./images/CreateBlobSecret-4.png)
 
-
-### Step 3: 查看Secret
-
-
+Secret是一组包含accessKey、endpoint和secretKey等信息的JSON格式文档，用来验证使用Blob对象的身份：
 * endpoint: 一组字符串组成的https地址，如 **https://<binding_id>.blob.wise-paas.com**
 * accessKey: Azure Blob Name，由小写字母和数字组成的介于 3 到 24 个字符之间的字符串
 * secretKey:  Azure Blob Key，有随机数和字母组成的一组字符串
 * type: s3-compatible, azure或者是azurecn
 
-### Step 4: 将服务实例绑定在用户APP中
+### Step 4: 在App中使用Secret连接Blobstore
 
--------------------------------------------------------------
-
-租户可以将credential绑定在用户的APP中，假如生成的secret name为blobstore-instance_credenitals，将 APP deployment.yaml文件的spec->template->spec->envFrom->secretRef->name中填入secret的名字。示例方法如下：
+用户可以将credential绑定在用户的APP中，假如生成的secret name为blobstore-instance_credenitals，将 APP deployment.yaml文件的spec->template->spec->envFrom->secretRef->name中填入secret的名字。示例方法如下：
 
 ![bindServiceInstance](./images/bindServiceInstance.png)
 
-## 使用Credential
 
--------------------------------------------------------------
+#### 各种编程语言解析Credential
 
 将服务实例绑定在APP中之后，从WISE-PaaS中的ENSAAS_SERVICES环境变量中检索凭据。以下是可用于获取ENSAAS_SERVICES的典型编程语言:
-
-## 各种编程语言解析Credential
-
----------------------------------------
 
 * <a class="false-class" href="#!./userguide.md#Java">Java</a>
 * <a class="false-class" href="#!./userguide.md#Python">Python</a>
 * <a class="false-class" href="#!./userguide.md#NodeJs">NodeJs</a>
 
-## Java
+#### Java
 
 用户可以使用Java json库解析credential。下面是java中用Maven导入json库的例子：
 
@@ -140,7 +145,7 @@ String secretKey = ensaasServices.getJSONArray("blobstore-develop").getJSONObjec
 
 ---------------------------------------
 
-## Python
+#### Python
 
 下面是APP Python解析BlobStore服务实例credential中endpoint, a accessKey and a secretKey的示例代码：
 
@@ -158,7 +163,7 @@ secret_key = ensaas_services['blobstore-develop'][0]['credentials']['secretKey']
 
 ---------------------------------------
 
-## NodeJs
+#### NodeJs
 
 下面是APP NodeJs解析BlobStore服务实例credential中endpoint, a accessKey and a secretKey的示例代码：
 
@@ -169,20 +174,3 @@ access_key = ensaas_services['blobstore-develop'][0].credentials.accessKey
 secret_key = ensaas_services['blobstore-develop'][0].credentials.secretKey
 ```
 
-## BlobStore Portal
-
-### Step1: 登录BlobStore Portal
-
-![portalLogin](./images/portalLogin.png)
-
-### Step2: 创建bucket，上传文件
-
-![uploadFile](./images/uploadFile.png)
-
-###  Step3: 下载文件
-
-![downloadFile](./images/downloadFile.png)
-
-### Step4: 分享文件
-
-![shareFile](./images/shareFile.png)
