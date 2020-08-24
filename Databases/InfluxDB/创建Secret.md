@@ -1,16 +1,12 @@
 ## 如何创建Secret
 ---------------------------------------
 
-### 步驟二：創建Secret並取得連線憑證 (Service Credential)
-
----------------------------------------
-登入至InfluxDB服務前請確定您擁有以下資訊：
+開始使用InfluxDB服務前請確定您擁有以下資訊：
 
 * 已成功購買InfluxDB實例
 
 * 您的帳號擁有登入<span style="color:red;">Service Portal</span>的權限，並能看到所購買的實例
 
- 
 各站點Service Portal連結如下
 
  站點代碼 | 所在地點          | Service Portal連結                             |
@@ -19,7 +15,29 @@
  | HZ       | Alibaba Hangzhou | https://portal-service-ensaas.hz.wise-paas.com.cn |
  | JE       | Japan East        | https://portal-service-ensaas.jp.wise-paas.com |
 
- 建立InfluxDB的Secret步驟簡述如下，更多建立細節請參考此[Service Portal使用者操作手冊](../../ServicePortal/userguide.md):
+### 步驟一
+
+登入Service Portal，並點選您的InfluxDB實例的操作按鈕。
+
+![Secret](./images/secret1.PNG)
+
+### 步驟二
+
+![Secret](./images/secret2.PNG)
+
+### 步驟三
+
+![Secret](./images/secret3.PNG)
+
+### 步驟四
+
+![Secret](./images/secret4.PNG)
+
+### 步驟五
+
+
+
+ 建立InfluxDB的Secret步驟簡述如下:
  1. 登入Service Portal之後選擇您的時間序列資料庫服務實例
  2. 點選右方操作選項，進入Secret管理頁面
  3. 點選 "+" 號，將influxdb的連線憑證以Secret的方式建立到所選的Namespace中
