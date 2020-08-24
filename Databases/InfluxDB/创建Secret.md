@@ -1,11 +1,5 @@
-## 如何使用時間序列資料庫服務
+## 如何创建Secret
 ---------------------------------------
-### 使用者可透過下列步驟使用時間序列資料庫服務
-
-1. 購買專屬型InfluxDB服務 
-3. 建立Secret並取得連線憑證 Service Credential
-3. 將Secret的資訊注入到Kubernetes Pods中
-4. 程式在環境變數中獲取連線憑證，並與InfluxDB進行連線
 
 ### 步驟一：購買專屬型InfluxDB服務 
 ---------------------------------------
@@ -17,20 +11,20 @@ InfluxDB僅提供單節點專屬型服務，服務規格如下，如有需要，
 | Single Node - Medium | 4 vCPU, 16GB RAM, 512GB SSD Disk  |
 | Single Node - Large  | 8 vCPU, 32GB RAM, 1024GB SSD Disk |
 
-*: 規格可能依站點而有不同，實際規格依各站點公告為主
+※ 規格可能依站點而有不同，實際規格依各站點公告為主
 
 
 
-### 步驟二：創建Secret並取得連線憑證 Service Credential
+### 步驟二：創建Secret並取得連線憑證 (Service Credential)
 
 ---------------------------------------
-連線至influxDB服務前首先確定您擁有下列資訊：
+連線至InfluxDB服務前請確定您擁有以下資訊：
 
 * 已成功購買InfluxDB
 
-* <span style="color:red;">Service Portal</span>的登入網址及登入權限
+* <span style="color:red;">Service Portal</span>的登入網址
 
-* 您的帳號擁有登入<span style="color:red;">Service Portal</span>的權限
+* 您的帳號擁有登入<span style="color:red;">Service Portal</span>的權限，並能看到所購買的實例
 
   
 
