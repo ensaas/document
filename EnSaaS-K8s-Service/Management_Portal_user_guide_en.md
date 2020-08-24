@@ -785,7 +785,7 @@ Operations
 
 The following table gives a breakdown of all user roles and their corresponding permissions:
 
-| **Resource**                        | **Method** | **cluster owner**                      | **workspace-owner **   | **namespace-developer** |
+| **Resource**                        | **Method** | **cluster owner**                      | **workspace-owner**   | **namespace-developer** |
 | :---------------------------------- | :--------- | :------------------------------------- | :--------------------- | :---------------------- |
 | **Cluster**                         | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
@@ -806,13 +806,13 @@ The following table gives a breakdown of all user roles and their corresponding 
 | **NamespaceQuota**                  | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | X                       |
-|                                     | List       | O                                      | O                      | O                       |
+|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Helm chart(App)**                 | Create     | O                                      | O                      | O                       |
 |                                     | Delete     | O                                      | O                      | O                       |
 |                                     | Update     | O                                      | O                      | O                       |
-|                                     | List       | O                                      | O                      | O                       |
-|                                     | Log        | O                                      | O                      | O                       |
-|                                     | Route      | O                                      | O                      | O                       |
+|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | Log        | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | Route      | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Monitor**                         | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Logging**                         | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Node**                            | Create     | X                                      | X                      | X                       |
@@ -827,10 +827,6 @@ The following table gives a breakdown of all user roles and their corresponding 
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
-| **ensaas-rolebinding**              | Create     | O(workspace-owner，namespace-developer) | O(namespace-developer) | X                       |
-|                                     | Delete     | O(workspace-owner，namespace-developer) | O(namespace-developer) | X                       |
-|                                     | Update     | O(workspace-owner，namespace-developer) | O(namespace-developer) | X                       |
-|                                     | List       | O(workspace-owner，namespace-developer) | O(namespace-developer) | X                       |
 | **PV**                              | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |

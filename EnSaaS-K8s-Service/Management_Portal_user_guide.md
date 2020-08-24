@@ -832,13 +832,13 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 | **NamespaceQuota**                  | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | X                       |
-|                                     | List       | O                                      | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Helm chart(App)**                 | Create     | O                                      | O                      | O                       |
 |                                     | Delete     | O                                      | O                      | O                       |
 |                                     | Update     | O                                      | O                      | O                       |
-|                                     | List       | O                                      | O(Self-workspace)      | O(Self-namespace)       |
-|                                     | Log        | O                                      | O(Self-workspace)      | O(Self-namespace)       |
-|                                     | Route      | O                                      | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | Log        | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | Route      | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Monitor**                         | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Logging**                         | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
 | **Node**                            | Create     | X                                      | X                      | X                       |
