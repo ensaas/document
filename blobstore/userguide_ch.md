@@ -191,20 +191,20 @@ secret_key = ensaas_services['blobstore-develop'][0].credentials.secretKey
 
 ![shareFile](./images/AccessInfo.png)
 
-連線資訊皆填入後，點擊下方「Advanced S3-compatible storage settings」，其中 Signature version 必須選擇「Signature V2」，接著點擊「Close」後，再點擊「Save changes」保存即可。
+连线信息都填入后，点击下方「Advanced S3-compatible storage settings」，其中 Signature version 必须选择「Signature V2」，接着点击「Close」后，再点击「Save changes」保存即可。
 
 ![shareFile](./images/StorageSetting.png)
 
 
-4. 透過 S3 Browser 連線至 BlobStore
+4. 透过 S3 Browser 连线至 BlobStore
 
-連線成功後即可看到 BlobStore 儲存系統上的儲存體內容，只要透過 S3 Browser 就可以操作。在 S3 Browser 點擊「New bucket」，接著在 Create New Bucket 視窗輸入 欲建立的儲存體名稱，再按下「Create new bucket」即可。
+连线成功后即可看到 BlobStore 存储系统上的存储体内容，只要透过 S3 Browser 就可以操作。在 S3 Browser 点击「New bucket」，接着在 Create New Bucket 视窗输入欲建立的存储体名称，再按下「Create new bucket」即可。
 
 ![shareFile](./images/CreateBucket.png)
 
 
-5. 透過 S3 Browser 上傳或下載檔案
+5. 透过 S3 Browser 上传或下载档案
 
-點選左側之儲存體（Bucket），即可上傳或下載檔案。
+点选左侧之储存体（Bucket），即可上传或下载档案。
 
 ![shareFile](./images/UploadFiles.png)
