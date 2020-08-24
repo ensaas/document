@@ -1,39 +1,22 @@
 ## 如何创建Secret
 ---------------------------------------
 
-### 步驟一：購買專屬型InfluxDB服務 
----------------------------------------
-InfluxDB僅提供單節點專屬型服務，服務規格如下，如有需要，請至[研華商城](https://wise-paas.advantech.com/zh-tw/marketplace)訂閱購買
-
-|方案                 | 規格*                          |
-| -------------------- | --------------------------------- |
-| Single Node - Small  | 2 vCPU, 8GB RAM, 128GB SSD Disk   |
-| Single Node - Medium | 4 vCPU, 16GB RAM, 512GB SSD Disk  |
-| Single Node - Large  | 8 vCPU, 32GB RAM, 1024GB SSD Disk |
-
-※ 規格可能依站點而有不同，實際規格依各站點公告為主
-
-
-
 ### 步驟二：創建Secret並取得連線憑證 (Service Credential)
 
 ---------------------------------------
-連線至InfluxDB服務前請確定您擁有以下資訊：
+登入至InfluxDB服務前請確定您擁有以下資訊：
 
-* 已成功購買InfluxDB
-
-* <span style="color:red;">Service Portal</span>的登入網址
+* 已成功購買InfluxDB實例
 
 * 您的帳號擁有登入<span style="color:red;">Service Portal</span>的權限，並能看到所購買的實例
 
-  
-
+ 
 各站點Service Portal連結如下
 
  站點代碼 | 所在地點          | Service Portal連結                             |
  | -------- | ----------------- | ---------------------------------------------- |
  | SA       | Azure Singapore   | https://portal-service-ensaas.sa.wise-paas.com |
- | HZ       | Alibaba  Hangzhou | https://portal-service-ensaas.hz.wise-paas.com |
+ | HZ       | Alibaba Hangzhou | https://portal-service-ensaas.hz.wise-paas.com.cn |
  | JE       | Japan East        | https://portal-service-ensaas.jp.wise-paas.com |
 
  建立InfluxDB的Secret步驟簡述如下，更多建立細節請參考此[Service Portal使用者操作手冊](../../ServicePortal/userguide.md):
