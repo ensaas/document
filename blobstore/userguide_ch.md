@@ -59,6 +59,8 @@ WISE-PaaS/Blobstore提供一种适用于云的对象存储解决方案。Blob存
    | HZ       | Service Portal    | Alibaba  Hangzhou | https://portal-service-ensaas.hz.wise-paas.com.cn |
    | JE       | Management Portal | Japan East        | https://portal-mp-ensaas.jp.wise-paas.com         |
    | JE       | Service Portal    | Japan East        | https://portal-service-ensaas.jp.wise-paas.com    |
+   
+   ![shareFile](./images/CreateInstance.png)
 
 ### Step 2: 创建Secret
 
