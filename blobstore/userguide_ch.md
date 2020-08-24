@@ -105,7 +105,7 @@ Secret是一组包含accessKey、endpoint和secretKey等信息的JSON格式文�
 
 ### Step 4: 在App中使用Secret连接Blobstore
 
-用户可以将credential绑定在用户的APP中，假如生成的secret name为blobstore-instance_credenitals，将 APP deployment.yaml文件的spec->template->spec->envFrom->secretRef->name中填入secret的名字。示例方法如下：
+用户可以将credential绑定在用户的APP中，假如生成的secret name为blobstore-ensaas-secret，将 APP deployment.yaml文件的spec->template->spec->envFrom->secretRef->name中填入secret的名字。示例方法如下：
 
 ![bindServiceInstance](./images/bindServiceInstance.png)
 
@@ -140,9 +140,9 @@ import org.json.JSONObject;
 
 JSONObject ensaasServices = new JSONObject(System.getenv("ENSAAS_SERVICES"));
 
-String endpoint = ensaasServices.getJSONArray("blobstore-develop").getJSONObject(0).getJSONObject("credentials").getString("endpoint");
-String accessKey = ensaasServices.getJSONArray("blobstore-develop").getJSONObject(0).getJSONObject("credentials").getString("accessKey");
-String secretKey = ensaasServices.getJSONArray("blobstore-develop").getJSONObject(0).getJSONObject("credentials").getString("secretKey");
+String endpoint = ensaasServices.getJSONArray("blobstore").getJSONObject(0).getJSONObject("credentials").getString("endpoint");
+String accessKey = ensaasServices.getJSONArray("blobstore").getJSONObject(0).getJSONObject("credentials").getString("accessKey");
+String secretKey = ensaasServices.getJSONArray("blobstore").getJSONObject(0).getJSONObject("credentials").getString("secretKey");
 ```
 
 #### Python
@@ -156,9 +156,9 @@ import json
 #Load 'ENSAAS_SERVICES' from enviroment variable and parse the credentials of Blobstore service
 ensaas_services = os.getenv('ENSAAS_SERVICES')
 ensaas_services = json.loads(ensaas_services)
-endpoint = ensaas_services['blobstore-develop'][0]['credentials']['endpoint']
-access_key = ensaas_services['blobstore-develop'][0]['credentials']['accessKey']
-secret_key = ensaas_services['blobstore-develop'][0]['credentials']['secretKey']
+endpoint = ensaas_services['blobstore'][0]['credentials']['endpoint']
+access_key = ensaas_services['blobstore'][0]['credentials']['accessKey']
+secret_key = ensaas_services['blobstore'][0]['credentials']['secretKey']
 ```
 
 #### NodeJs
@@ -167,9 +167,9 @@ secret_key = ensaas_services['blobstore-develop'][0]['credentials']['secretKey']
 
 ```
 ensaas_services = process.env.ENSAAS_SERVICES
-endpoint = ensaas_services['blobstore-develop'][0].credentials.endpoint
-access_key = ensaas_services['blobstore-develop'][0].credentials.accessKey
-secret_key = ensaas_services['blobstore-develop'][0].credentials.secretKey
+endpoint = ensaas_services['blobstore'][0].credentials.endpoint
+access_key = ensaas_services['blobstore'][0].credentials.accessKey
+secret_key = ensaas_services['blobstore'][0].credentials.secretKey
 ```
 
 ### Step 5: 使用S3 Browser连接Blobstore
