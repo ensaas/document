@@ -49,15 +49,12 @@ WISE-PaaS/Blobstore是一种适用于云的对象存储解决方案。Blobstore�
    | HZ       | Alibaba  Hangzhou | https://portal-catalog-ensaas.hz.wise-paas.com.cn |
    | JE       | Japan East        | https://portal-catalog-ensaas.jp.wise-paas.com    |
 
-2. 订阅成功后，可以登录Service控制台（目前仅有订阅号Admin和订阅号User可以查看），查看购买的实例，Service控制台地址如下：
+2. 订阅成功后，可以登录Service控制台查看购买的实例（目前仅有订阅号Admin和订阅号User可以查看），Service控制台地址如下：
 
    | 站点代码 | 服务              | 站点地点          | 站点链接                                          |
    | -------- | ----------------- | ----------------- | ------------------------------------------------- |
-   | SA       | Management Portal | Azure Singapore   | https://portal-mp-ensaas.sa.wise-paas.com         |
    | SA       | Service Portal    | Azure Singapore   | https://portal-service-ensaas.sa.wise-paas.com    |
-   | HZ       | Management Portal | Alibaba  Hangzhou | https://portal-mp-ensaas.hz.wise-paas.com.cn      |
    | HZ       | Service Portal    | Alibaba  Hangzhou | https://portal-service-ensaas.hz.wise-paas.com.cn |
-   | JE       | Management Portal | Japan East        | https://portal-mp-ensaas.jp.wise-paas.com         |
    | JE       | Service Portal    | Japan East        | https://portal-service-ensaas.jp.wise-paas.com    |
    
    ![shareFile](./images/CreateInstance.png)
