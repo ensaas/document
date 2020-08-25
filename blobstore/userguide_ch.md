@@ -193,14 +193,14 @@ secret_key = ensaas_services['blobstore'][0].credentials.secretKey
 ![shareFile](./images/StorageSetting.png)
 
 
-4. 透过 S3 Browser 连线至 BlobStore
+4. 创建bucket
 
 连线成功后即可看到 BlobStore 存储系统上的存储体内容，只要透过 S3 Browser 就可以操作。在 S3 Browser 点击「New bucket」，接着在 Create New Bucket 视窗输入欲建立的存储体名称，再按下「Create new bucket」即可。
 
 ![shareFile](./images/CreateBucket.png)
 
 
-5. 透过 S3 Browser 上传或下载档案
+5. 上传或下载档案
 
 点选左侧之储存体（Bucket），即可上传或下载档案。
 
