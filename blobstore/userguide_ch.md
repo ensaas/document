@@ -95,10 +95,10 @@ Secret创建好后，您可以选择View操作来查看Secret的信息。
 ![shareFile](./images/CreateBlobSecret-4.png)
 
 Secret是一组包含accessKey、endpoint和secretKey等信息的JSON格式文档，用来验证使用Blob对象的身份：
-* endpoint: 一组字符串组成的https地址，如 **https://<binding_id>.blob.wise-paas.com**
+* endpoint: 连接blob的终端地址
 * accessKey: Azure Blob Name，由小写字母和数字组成的介于 3 到 24 个字符之间的字符串
-* secretKey:  Azure Blob Key，有随机数和字母组成的一组字符串
-* type: s3-compatible, azure或者是azurecn
+* secretKey:  Azure Blob Key，由随机数和字母组成的一组字符串
+* type: s3-compatible
 
 ### Step 4: 在App中使用Secret连接Blobstore
 
