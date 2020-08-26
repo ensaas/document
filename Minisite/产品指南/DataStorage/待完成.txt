@@ -1,0 +1,9 @@
+一、产品简介
+二、产品规格
+三、快速开始
+1）创建实例
+2）创建Secret
+3）查看Secret
+4）使用Secret连接实例
+
+每个数据库管理服务均提供上述三部分-PostgreSQL、MongoDB、Influxdb、Redis、BlobService
