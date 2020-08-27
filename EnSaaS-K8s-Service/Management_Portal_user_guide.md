@@ -923,7 +923,6 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
-
 | **Mutatingwebhookconfigurations**   | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
