@@ -809,7 +809,7 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 * datacenter admin
 * cluster admin
 
-不同资源权限的用户对Kubernetes原生资源的管理权限如下：
+1，不同资源权限的用户对Kubernetes原生资源的管理权限如下：
 
 | **Resource**                        | **Method** | **cluster owner**                      | **workspace-owner**   | **namespace-developer** |
 | :---------------------------------- | :--------- | :------------------------------------- | :--------------------- | :---------------------- |
@@ -878,15 +878,15 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
 
-不同资源权限的用户对EnSaaS-K8s-Service所提供服务和功能的权限如下：
+2，不同资源权限的用户对EnSaaS-K8s-Service所提供服务和功能的权限如下：
 
 | **Service/Function**                | **Method** | **cluster owner**                      | **workspace-owner**   | **namespace-developer** |
 | :---------------------------------- | :--------- | :------------------------------------- | :--------------------- | :---------------------- |
-| **Cluster Service**                 | Create     | X                                      | X                      | X                       |
+| **Cluster Management**              | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
-| **Workspace Service**               | Create     | O                                      | X                      | X                       |
+| **Workspace Management**            | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
 |                                     | Update     | O                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
@@ -898,35 +898,35 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
-| **Application Service**             | Create     | O                                      | O                      | O                       |
+| **Application Management**          | Create     | O                                      | O                      | O                       |
 |                                     | Delete     | O                                      | O                      | O                       |
 |                                     | Update     | O                                      | O                      | O                       |
 |                                     | List       | O                                      | O                      | O                       |
 |                                     | Log        | O                                      | O                      | O                       |
 |                                     | Route      | O                                      | O                      | O                       |
-| **Monitor Serice**                  | List       | O                                      | O                      | O                       |
-| **Logging Service**                 | List       | O                                      | O                      | O                       |
-| **Node Service**                    | Create     | X                                      | X                      | X                       |
+| **Monitor Management**              | List       | O                                      | O                      | O                       |
+| **Logging Management**              | List       | O                                      | O                      | O                       |
+| **Node Management**                 | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | X                      | X                       |
-| **User Service**                    | Create     | O                                      | O                      | X                       |
+| **User Management**                 | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | O                       |
 |                                     | List       | O                                      | O                      | O                       |
-| **Role Manager**                    | Create     | X                                      | X                      | X                       |
+| **Role Management**                 | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
-| **Storage Service**                 | Create     | X                                      | X                      | X                       |
+| **Storage Management**              | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
-| **Mutatingwebhookconfigurations**   | Create     | X                                      | X                      | X                       |
+| **Mutatingwebhook Configuration**   | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
-| **Validatingwebhookconfigurations** | Create     | X                                      | X                      | X                       |
+| **Validatingwebhook Configuration** | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
