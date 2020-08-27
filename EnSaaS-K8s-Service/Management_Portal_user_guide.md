@@ -791,7 +791,7 @@ $ kubectl get secret  -n {namespaceName}
 $ kubectl get secret {secretName} -o yaml -n {secretName}
 ```
 ## 权限说明
-目前针对用户，MP 4.0提供的以下几种权限的用户：
+目前针对用户，MP 4.0提供了以下几种权限的用户：
 
 资源权限：
 
@@ -809,55 +809,55 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 * datacenter admin
 * cluster admin
 
-具体用户的权限请参考下表：
+不同资源权限的用户对Kubernetes原生资源的管理权限如下：
 
 | **Resource**                        | **Method** | **cluster owner**                      | **workspace-owner**   | **namespace-developer** |
 | :---------------------------------- | :--------- | :------------------------------------- | :--------------------- | :---------------------- |
-| **Cluster**                         | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O                                      | O                      | O                       |
-| **Workspace**                       | Create     | O                                      | X                      | X                       |
-|                                     | Delete     | O                                      | X                      | X                       |
-|                                     | Update     | O                                      | X                      | X                       |
-|                                     | List       | O                                      | O                      | O                       |
-| **WorkspaceQuota**                  | Create     | O                                      | X                      | X                       |
-|                                     | Delete     | O                                      | X                      | X                       |
-|                                     | Update     | O                                      | X                      | X                       |
-|                                     | List       | O                                      | O                      | X                       |
-| **Namespace**                       | Create     | O                                      | O                      | X                       |
-|                                     | Delete     | O                                      | O                      | X                       |
-|                                     | Update     | O                                      | O                      | X                       |
-|                                     | List       | O                                      | O                      | O                       |
-| **NamespaceQuota**                  | Create     | O                                      | O                      | X                       |
-|                                     | Delete     | O                                      | O                      | X                       |
-|                                     | Update     | O                                      | O                      | X                       |
-|                                     | List       | O                                      | O                      | O                       |
-| **Helm chart(App)**                 | Create     | O                                      | O                      | O                       |
+| **Service**                         | Create     | O                                      | O                      | O                       |
 |                                     | Delete     | O                                      | O                      | O                       |
 |                                     | Update     | O                                      | O                      | O                       |
 |                                     | List       | O                                      | O                      | O                       |
-|                                     | Log        | O                                      | O                      | O                       |
-|                                     | Route      | O                                      | O                      | O                       |
-| **Monitor**                         | List       | O                                      | O                      | O                       |
-| **Logging**                         | List       | O                                      | O                      | O                       |
-| **Node**                            | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O                                      | X                      | X                       |
-| **ensaas-User**                     | Create     | O                                      | O                      | X                       |
-|                                     | Delete     | O                                      | O                      | X                       |
+| **Pod**                             | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
 |                                     | Update     | O                                      | O                      | O                       |
 |                                     | List       | O                                      | O                      | O                       |
-| **ensaas-role**                     | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
+| **Deployment**                      | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Daemonset**                       | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Job**                             | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **CronJob**                         | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **StatefulSet**                     | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Ingress**                         | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **ConfigMap**                       | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Secret**                          | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
 |                                     | List       | O                                      | O                      | O                       |
 | **PV**                              | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
-| **Storage class**                   | Create     | X                                      | X                      | X                       |
+| **PVC**                             | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
@@ -869,22 +869,70 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | X                      | X                       |
-| **PVC**                             | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | X                                      | X                      | X                       |
-| **mutatingwebhookconfigurations**   | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | X                                      | X                      | X                       |
-| **validatingwebhookconfigurations** | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | X                                      | X                      | X                       |
+| **Namespace**                       | Create     | O                                      | O                      | X                       |
+|                                     | Delete     | O                                      | O                      | X                       |
+|                                     | Update     | O                                      | O                      | X                       |
+|                                     | List       | O                                      | O                      | O                       |
 | **CRD**                             | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
+
+不同资源权限的用户对EnSaaS-K8s-Service所提供服务和功能的权限如下：
+
+| **Service/Function**                | **Method** | **cluster owner**                      | **workspace-owner**   | **namespace-developer** |
+| :---------------------------------- | :--------- | :------------------------------------- | :--------------------- | :---------------------- |
+| **Cluster Service**                 | Create     | X                                      | X                      | X                       |
+|                                     | Delete     | X                                      | X                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Workspace Service**               | Create     | O                                      | X                      | X                       |
+|                                     | Delete     | O                                      | X                      | X                       |
+|                                     | Update     | O                                      | X                      | X                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **WorkspaceQuota Configuration**    | Create     | O                                      | X                      | X                       |
+|                                     | Delete     | O                                      | X                      | X                       |
+|                                     | Update     | O                                      | X                      | X                       |
+|                                     | List       | O                                      | O                      | X                       |
+
+| **NamespaceQuota Configuration**    | Create     | O                                      | O                      | X                       |
+|                                     | Delete     | O                                      | O                      | X                       |
+|                                     | Update     | O                                      | O                      | X                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Application Service**             | Create     | O                                      | O                      | O                       |
+|                                     | Delete     | O                                      | O                      | O                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+|                                     | Log        | O                                      | O                      | O                       |
+|                                     | Route      | O                                      | O                      | O                       |
+| **Monitor Serice**                  | List       | O                                      | O                      | O                       |
+| **Logging Service**                 | List       | O                                      | O                      | O                       |
+| **Node Service**                    | Create     | X                                      | X                      | X                       |
+|                                     | Delete     | X                                      | X                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
+|                                     | List       | O                                      | X                      | X                       |
+| **User Service**                    | Create     | O                                      | O                      | X                       |
+|                                     | Delete     | O                                      | O                      | X                       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Role Manager**                    | Create     | X                                      | X                      | X                       |
+|                                     | Delete     | X                                      | X                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Storage Service**                 | Create     | X                                      | X                      | X                       |
+|                                     | Delete     | X                                      | X                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
+|                                     | List       | X                                      | X                      | X                       |
+
+| **Mutatingwebhookconfigurations**   | Create     | X                                      | X                      | X                       |
+|                                     | Delete     | X                                      | X                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
+|                                     | List       | X                                      | X                      | X                       |
+| **Validatingwebhookconfigurations** | Create     | X                                      | X                      | X                       |
+|                                     | Delete     | X                                      | X                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
+|                                     | List       | X                                      | X                      | X                       |
+
 
 
 
