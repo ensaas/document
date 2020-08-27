@@ -790,39 +790,39 @@ The following table gives a breakdown of all user roles and their corresponding 
 | **Cluster**                         | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | O(Self-cluster-name)   | O(Self-cluster-name)    |
+|                                     | List       | O                                      | O                      | O                       |
 | **Workspace**                       | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
 |                                     | Update     | O                                      | X                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-workspace-name)  |
+|                                     | List       | O                                      | O                      | O                       |
 | **WorkspaceQuota**                  | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
 |                                     | Update     | O                                      | X                      | X                       |
-|                                     | List       | O                                      | O(Self-workspace)      | X                       |
+|                                     | List       | O                                      | O                      | X                       |
 | **Namespace**                       | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | List       | O                                      | O                      | O                       |
 | **NamespaceQuota**                  | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | List       | O                                      | O                      | O                       |
 | **Helm chart(App)**                 | Create     | O                                      | O                      | O                       |
 |                                     | Delete     | O                                      | O                      | O                       |
 |                                     | Update     | O                                      | O                      | O                       |
-|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
-|                                     | Log        | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
-|                                     | Route      | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
-| **Monitor**                         | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
-| **Logging**                         | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | List       | O                                      | O                      | O                       |
+|                                     | Log        | O                                      | O                      | O                       |
+|                                     | Route      | O                                      | O                      | O                       |
+| **Monitor**                         | List       | O                                      | O                      | O                       |
+| **Logging**                         | List       | O                                      | O                      | O                       |
 | **Node**                            | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | X                      | X                       |
+|                                     | List       | O                                      | X                      | X                       |
 | **ensaas-User**                     | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
-|                                     | Update     | O                                      | O(Self-workspace)      | O(self)                 |
-|                                     | List       | O(Self-Cluster)                        | O(Self-workspace)      | O(Self-namespace)       |
+|                                     | Update     | O                                      | O                      | O                       |
+|                                     | List       | O                                      | O                      | O                       |
 | **ensaas-role**                     | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
@@ -838,11 +838,11 @@ The following table gives a breakdown of all user roles and their corresponding 
 | **ClusterRole**                     | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | X                      | X                       |
+|                                     | List       | O                                      | X                      | X                       |
 | **ClusterRoleBinding**              | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O(Self-Cluster)                        | X                      | X                       |
+|                                     | List       | O                                      | X                      | X                       |
 | **PVC**                             | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
