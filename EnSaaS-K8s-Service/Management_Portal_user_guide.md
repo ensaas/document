@@ -894,7 +894,6 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | Delete     | O                                      | X                      | X                       |
 |                                     | Update     | O                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | X                       |
-
 | **NamespaceQuota Configuration**    | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | X                       |
@@ -931,7 +930,3 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
-
-
-
-
