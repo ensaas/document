@@ -843,10 +843,6 @@ Operations
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | X                      | X                       |
-| **Namespace**                       | Create     | O                                      | O                      | X                       |
-|                                     | Delete     | O                                      | O                      | X                       |
-|                                     | Update     | O                                      | O                      | X                       |
-|                                     | List       | O                                      | O                      | O                       |
 | **CRD**                             | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
@@ -863,6 +859,10 @@ Operations
 | **Workspace Management**            | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
 |                                     | Update     | O                                      | X                      | X                       |
+|                                     | List       | O                                      | O                      | O                       |
+| **Namespace Management**            | Create     | O                                      | O                      | X                       |
+|                                     | Delete     | O                                      | O                      | X                       |
+|                                     | Update     | O                                      | O                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
 | **WorkspaceQuota Configuration**    | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
