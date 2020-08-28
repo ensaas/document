@@ -1,3 +1,9 @@
+## Portal 4.0.13.0-(2020-8-28)
+### New Features
+* The head navigation bar uses public components
+### Fix bugs
+* For other items, when you click forgot password to access the forgot password page of sso, you will be redirected to the login page of sso
+
 ## API 4.0.15.0- (2020-08-21)
 ### New Features
 * New mobile phone number binding, through the mobile phone number reset password and other functions, respectively corresponding to 2, 3, 4 API
