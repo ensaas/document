@@ -482,7 +482,10 @@ $ kubectl describe wq {workspacequotaName}
 ```
 $ kubectl edit ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 ```
-5. Edit the string in the workspacequota field under spec according to your needs. (If the edited string contains numerals, add a pair of quotation marks to them; for example, “111.”) Press CTRL + S to save.![edit_quota](./image/edit_wq.png)
+5. Edit the string in the workspacequota field under spec according to your needs. (If the edited string contains numerals, add a pair of quotation marks to them; for example, “111.”) Press CTRL + S to save.
+
+![edit_quota](./image/edit_wq.png)
+
 6. Run the following command to check whether the workspace’s quota has been successfully changed.
 
 ```

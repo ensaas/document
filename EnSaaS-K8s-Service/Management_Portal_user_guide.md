@@ -499,7 +499,9 @@ $ kubectl describe wq {workspacequotaName}
 ```
 $ kubectl edit ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 ```
-5，改变spec->workspacequota字段，设置为需要给工作空间配置的配额名称（当quota名称为数字时，需要加上双引号，例如："111"）。按CTRL+S保存。![edit_quota](./image/edit_wq.png)
+5，改变spec->workspacequota字段，设置为需要给工作空间配置的配额名称（当quota名称为数字时，需要加上双引号，例如："111"）。按CTRL+S保存。
+
+![edit_quota](./image/edit_wq.png)
 
 6，执行以下命令，查看工作空间详情，配额已经改变。
 
