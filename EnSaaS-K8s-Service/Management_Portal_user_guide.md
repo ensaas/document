@@ -881,7 +881,7 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 | **Cluster Management**              | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | O                                      | O                      | O                       |
+|                                     | List       | X                                      | X                      | X                       |
 | **Workspace Management**            | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
 |                                     | Update     | O                                      | X                      | X                       |
@@ -911,22 +911,12 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | X                      | X                       |
 | **User Management**                 | Create     | O                                      | O                      | X                       |
-|                                     | Delete     | O                                      | O                      | X                       |
 |                                     | Update     | O                                      | O                      | O                       |
 |                                     | List       | O                                      | O                      | O                       |
-| **Role Management**                 | Create     | X                                      | X                      | X                       |
+| **Permission Management**           | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
 | **Storage Management**              | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | X                                      | X                      | X                       |
-| **Mutatingwebhook Configuration**   | Create     | X                                      | X                      | X                       |
-|                                     | Delete     | X                                      | X                      | X                       |
-|                                     | Update     | X                                      | X                      | X                       |
-|                                     | List       | X                                      | X                      | X                       |
-| **Validatingwebhook Configuration** | Create     | X                                      | X                      | X                       |
 |                                     | Delete     | X                                      | X                      | X                       |
 |                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | X                                      | X                      | X                       |
