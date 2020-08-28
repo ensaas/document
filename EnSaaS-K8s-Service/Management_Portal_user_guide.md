@@ -892,11 +892,11 @@ $ kubectl get secret {secretName} -o yaml -n {secretName}
 |                                     | List       | O                                      | O                      | O                       |
 | **WorkspaceQuota Configuration**    | Create     | O                                      | X                      | X                       |
 |                                     | Delete     | O                                      | X                      | X                       |
-|                                     | Update     | O                                      | X                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | X                       |
 | **NamespaceQuota Configuration**    | Create     | O                                      | O                      | X                       |
 |                                     | Delete     | O                                      | O                      | X                       |
-|                                     | Update     | O                                      | O                      | X                       |
+|                                     | Update     | X                                      | X                      | X                       |
 |                                     | List       | O                                      | O                      | O                       |
 | **Application Management**          | Create     | O                                      | O                      | O                       |
 |                                     | Delete     | O                                      | O                      | O                       |
