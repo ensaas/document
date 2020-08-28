@@ -5,7 +5,7 @@
 ## 前提条件
 1. 从管理员获取PostgreSQL的Admin账号。
 
-## 获取外部IP和Port（Container InfluxDB）
+## 获取外部IP和Port（Container PostgreSQL）
 
 如果是Container PostgreSQL，需要先获取服务的外部IP，才可以将数据备份到K8S集群外部。
 ```
