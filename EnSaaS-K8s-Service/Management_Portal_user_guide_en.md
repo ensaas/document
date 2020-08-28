@@ -1,4 +1,4 @@
-EnSaaS-K8s-Service based on Kubernetes, but not only Kubernetes. It provides users with out-of-the-box microservice framework, enterprise-level container management platform, multi-level tenant workspace and consistent infrastructure encapsulation, providing full life cycle management for applications.
+EnSaaS-K8s-Service based on Kubernetes, but not only Kubernetes. It provides users with out-of-the-box microservice framework, enterprise-level container management platform, multi-level tenant workspace and consistent infrastructure encapsulation, providing full life cycle management for applications. This manual will guide you to use EnSaaS-K8s-Service from the following aspects: Application Management, Resource Management, User Management and Permission Management.
 
 # 1. Application Management
 
