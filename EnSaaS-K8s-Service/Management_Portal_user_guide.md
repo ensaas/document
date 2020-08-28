@@ -1,23 +1,106 @@
-# 获取集群config文件
+EnSaaS K8s Service 基于 Kubernetes 为用户提供了开箱即用的微服务框架、企业级的容器管理平台、多层级的租户工作空间以及一致性的基础设施封装，为应用提供了全生命周期管理。
+
+# 1. 应用管理
+
+## 1.1 部署应用
+
+### 通过helm chart部署应用
+目前集群中使用的是helm3，所以使用helm chart 部署应用时，参考helm3的文档即可。示例如下：
+
+```
+$ helm install . --name dashbord --namespace dashbord
+```
+在部署完毕后，MP 4.0会自动给应用的每个Pod中加入5个环境变量，示例如下：
+![app](./image/app_5.png)
+
+* datacenter：应用所在的datacenter名称
+* cluster：应用所在的集群名称
+* workspace：应用所在的workspace Name，填写的是workspace详情中的Name。为下面示例中的Name:
+```
+$ kubectl describe workspace 0875640d-a146-461c-bdbf-7bbd4de2de84
+Name:         0875640d-a146-461c-bdbf-7bbd4de2de84
+Namespace:
+Labels:       name=rx-test1
+```
+* namespace：应用所在的namespace Name。
+* appID：应用的appID。由MP4.0生成，作为唯一标识。
+
+## 1.2 查看应用路由
+
+### 查看应用路由
+
+此页会列出某个namespace下的所有的应用路由：
+![ingress_list](./image/ingress_list.png)
+点击"External Domain"列的链接，就可以跳转到相应服务的index页面
+
+### 查看路由详情
+
+![ingress_detail](./image/ingress_detail.png)
+
+### 查看路由yaml
+
+![ingress_yaml](./image/ingress_yaml.png)
+
+## 1.3 查看工作负载
+
+### 查看工作负载
+
+1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
+
+2，输入输入“用户名”、“密码”，单击登录。
+
+3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。可以看见Namespace列表。
+
+4，选择期望查看工作负载的Namespace，点击进入Namespace页面。
+
+5，namespace页面左侧菜单选择workload，即可以看见工作负载列表。
+
+### 查看工作负载日志
+
+1，进入在workload页面，选则需要查看日志的workload，点击右侧的Operation按钮。
+
+2，弹出的对话框中，选择需要查看日志的Pod，即可以看到Pod的日志。
+
+3，当需要刷新日志时，点击刷新按钮，即可对日志进行刷新。
+
+### 查看部署的应用
+
+#### 通过Managent Portal界面查看
+
+通过helm chart部署的应用可以在Managent Portal的Applications页面查看到，查看步骤如下：
+
+1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
+
+2，输入输入“用户名”、“密码”，单击登录。
+
+3，点击界面左上角的菜单按钮，点击Platform Management->Applications。进入Applications管理页面。
+
+4，选择部署应用的Cluster，Workspace，Namespace，Type选择HelmList，即可查看到部署的应用。
+
+注：Managent Portal只显示通过helm chart部署的应用，Type对应为HelmList。
+
+# 2. 资源管理
+
+## 2.1 获取集群config文件
 1，打开浏览器，在地址栏中输入Managent portal的网络地址，按“Enter”。
 
 2，输入输入“用户名”、“密码”，单击登录。
 
 3，根据用户角色，参考下面的步骤获取config文件。
 
-## 用户角色是cluster owner及以上：
+### 用户角色是cluster owner及以上：
 1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Clusters或Platform Management->Shared Cluster->Clusters。进入Cluster管理页面。
 
 2，在需要获取config的集群右侧点击Operation栏位，点击config按钮。config文件即下载到本地。
 
-## 用户角色是workspace owner：
+### 用户角色是workspace owner：
 1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Workspaces或Platform Management->Shared Cluster->General Workspaces。进入workspace管理页面。
 
 2，切换cluster，找到需要获取config文件的workspace。
 
 3，在需要获取config的workspace右侧点击Operation栏位，点击config按钮。config文件即下载到本地。
 
-## 用户角色是namespace developer：
+### 用户角色是namespace developer：
  1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。进入namespace管理页面。
 
 2，切换cluster，和workspace，找到需要获取config文件的namespace。
@@ -34,36 +117,36 @@
 
 ​	如果购买的是General Workspace，则在Shared Cluster菜单下。
 
-# Web Kubectl
+## 2.2 Web Kubectl
 我们提供Web UI 版本的kubectl工具, 用户不需要下载config文件，也不需要安装kubectl工具即可操作您的租户空间，具体操作如下：
 
-## 用户角色是cluster owner及以上：
+### 用户角色是cluster owner及以上：
 1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Clusters或Platform Management->Shared Cluster->Clusters。进入Cluster管理页面。
 
 2，在需要操作的集群的右侧点击Operation栏位，点击"Web Kubectl"按钮，即可弹出Web UI样式的kubectl工具，您可在上面执行任何kubectl命令：
 ![kubectl](./image/kubectl.png)
 
-## 用户角色是workspace owner：
+### 用户角色是workspace owner：
 1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Workspaces或Platform Management->Shared Cluster->General Workspaces。进入workspace管理页面。
 
 2，切换cluster，找到您需要操作的workspace。
 
 3，在需要操作的的workspace右侧点击Operation栏位，点击"Web Kubectl"按钮，即可弹出Web UI样式的kubectl工具，您可在上面执行任何kubectl命令。
 
-## 用户角色是namespace developer：
+### 用户角色是namespace developer：
  1，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。进入namespace管理页面。
 
 2，切换cluster，和workspace，找到需要操作的namespace。
 
 3，在需要操作的namespace的右侧点击Operation栏位，点击"Web Kubectl"按钮，即可弹出Web UI样式的kubectl工具，您可在上面执行任>何kubectl命令。
 
-# 添加工作空间
-## 前提条件
+## 2.3 添加工作空间
+### 前提条件
 1，添加工作空间，用户需要具备cluster owner及以上角色或者是订阅号的admin角色，其他角色没有权限添加。
 
 2，用户需要购买了Dedicate Cluster，才可以在Dedicate cluster下添加工作空间。
 
-## 通过Managent Portal界面添加
+### 通过Managent Portal界面添加
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
 2，输入输入“用户名”、“密码”，单击登录。
@@ -80,13 +163,13 @@
 
 6，成功创建workspace后，可以在workspace页面下方的列表看见新创建的workspace。
 
-## 通过CLI添加
-### 前提条件
+### 通过CLI添加
+#### 前提条件
 1，用户已获取集群的config文件。如未获取，请参考一，获取集群config文件小节进行获取。
 
 2，用户本地有安装kubectl。
 
-### 操作步骤
+#### 操作步骤
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users\\{用户名}\\\.kube文件夹下。
 
 ![config](./image/config.png)
@@ -138,11 +221,11 @@ NAME                                   AGE
 336c7021-94ed-47bf-a624-f353ce2606d7   26h
 $ kubectl describe workspace 0875640d-a146-461c-bdbf-7bbd4de2de84
 ```
-# 添加命名空间
-## 前提条件
+## 2.4 添加命名空间
+### 前提条件
 添加命名空间，用户需要具备workspace owner及以上角色或者是订阅号的admin角色，其他角色没有权限添加。
 
-## 通过Managent Portal界面添加
+### 通过Managent Portal界面添加
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
 2，输入输入“用户名”、“密码”，单击登录。
@@ -159,13 +242,13 @@ $ kubectl describe workspace 0875640d-a146-461c-bdbf-7bbd4de2de84
 
 6，成功创建namespace后，可以在namespace页面下方的列表看见新创建的namespace。
 
-## 通过CLI添加
-### 前提条件
+### 通过CLI添加
+#### 前提条件
 1，用户已获取集群的config文件。如未获取，请参考[一，获取集群config文件小节]进行获取。
 
 2，用户本地有安装kubectl。
 
-### 操作步骤
+#### 操作步骤
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users\\{用户名}\.kube文件夹下。
 
 2，新建一个文件，后缀以.yml结尾。
@@ -220,11 +303,11 @@ $ kubectl apply -f 文件路径/文件名称.yml
 ```
 $ kubectl get namespace
 ```
-# 添加工作空间配额
-## 前提条件
+## 2.5 添加工作空间配额
+### 前提条件
 添加工作空间配额，用户需要具备cluster owner及以上角色，其他角色没有权限添加。
 
-## 通过Managent Portal界面添加
+### 通过Managent Portal界面添加
 
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
@@ -240,7 +323,7 @@ $ kubectl get namespace
 
 7，成功创建workspace quota后，可以在Workspace Quotas页面的列表看见新创建的workspace quota。
 
-## 通过CLI添加
+### 通过CLI添加
 
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
 
@@ -295,11 +378,11 @@ $ kubectl apply -f 文件路径/文件名称.yml
 ```
   $ kubectl describe  workspacequota default-wq
 ```
-# 添加命名空间配额
-## 前提条件
+## 2.6 添加命名空间配额
+### 前提条件
 添加命名空间配额，用户需要具备workspace owner及以上角色，其他角色没有权限添加。
 
-## 通过Managent Portal界面添加
+### 通过Managent Portal界面添加
 
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
@@ -315,7 +398,7 @@ $ kubectl apply -f 文件路径/文件名称.yml
 
 7，成功创建namespace quota后，可以在Namespace Quotas页面下方的列表看见新创建的namespace quota。
 
-## **通过CLI添加**
+### **通过CLI添加**
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
 
 2，新建一个文件，后缀以.yml结尾。
@@ -373,13 +456,13 @@ $ kubectl apply -f 文件路径/文件名称.yml
 ```
   $ kubectl describe  namespacequota default-nq
 ```
-# 对工作空间进行扩减容（改变工作空间的配额）
-## 前提条件
+## 2.7 对工作空间进行扩减容（改变工作空间的配额）
+### 前提条件
 1，对工作空间进行扩减容（改变工作空间配额），用户需要具备cluster owner及以上角色或是订阅号admin，其他角色没有权限。
 
 2，只有购买了Dedicate Cluster，才可以对Cluster下的工作空间进行扩减容。
 
-## 通过Managent Portal界面
+### 通过Managent Portal界面
 
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
@@ -397,7 +480,7 @@ $ kubectl apply -f 文件路径/文件名称.yml
 
 8，点击页面上方的Current Workspace处的workspace名称，返回workspace列表。查看workspace列表显示的配额已变成期望的配额。
 
-## **通过CLI执行**
+### **通过CLI执行**
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
 
 2，执行以下命名，找到需要扩/减容的工作空间。其中，name为创建工作空间时，metadata->label中的name，UI上显示的也是这个名称。
@@ -425,11 +508,11 @@ $ kubectl describe ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 ```
 ![change_wq](./image/change_wq.png)
 
-# 对命名空间进行扩减容（改变命名空间的配额）
-## 前提条件
+## 2.8 对命名空间进行扩减容（改变命名空间的配额）
+### 前提条件
 对命名空间进行扩减容（改变命名空间配额），用户需要具备workspace owner及以上角色，其他角色没有权限。
 
-## 通过Managent Portal界面
+### 通过Managent Portal界面
 
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
@@ -447,7 +530,7 @@ $ kubectl describe ws 0875640d-a146-461c-bdbf-7bbd4de2de84
 
 8，点击页面上方的Current Namespace处的Namespace名称，返回Namespace列表。查看Namespace列表显示的配额已变成期望的配额。
 
-## **通过CLI执行**
+### **通过CLI执行**
 1，将config文件（如果文件名称不为config，需要更名为config，不带文件后缀）放入C:\Users{用户名}\.kube文件夹下。
 
 2，执行以下命名，找到需要扩/减容的命名空间，并查看命名空间详情，可以看到当前的配额名称。
@@ -482,13 +565,13 @@ $ kubectl describe ns {namespaceName}
 ```
 
 
-# 查看工作空间配额
+## 2.9 查看工作空间配额
 
-## 前提条件
+### 前提条件
 
 查看工作空间配额，用户需要具备cluster owner及以上角色，其他角色没有权限查看。
 
-## 通过Managent Portal界面查看
+### 通过Managent Portal界面查看
 
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
@@ -503,7 +586,7 @@ $ kubectl describe ns {namespaceName}
 - 搜索框旁边的+按钮可用于增加workspace quota。
 - 每个workspace quota名称左侧的>按钮点击可以展开quota详情。
 
-### 查看及导出workspace quota的使用情况
+#### 查看及导出workspace quota的使用情况
 
 1，找到期望导出使用情况的workspace quota，在名称左侧点击展开按钮>，即可看到quota详细信息。
 
@@ -515,15 +598,13 @@ $ kubectl describe ns {namespaceName}
 
 ![export_quota_workspace](./image/export_quota_workspace.png)
 
+## 2.10 查看命名空间配额
 
-
-# 查看命名空间配额
-
-## 前提条件
+### 前提条件
 
 查看工作空间配额，用户需要具备workspace owner及以上角色，其他角色没有权限查看。
 
-## 通过Managent Portal界面查看
+### 通过Managent Portal界面查看
 
 1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
 
@@ -538,7 +619,7 @@ $ kubectl describe ns {namespaceName}
 - 搜索框旁边的+按钮可用于增加namespace quota。
 - 每个namespace quota名称左侧的>按钮点击可以展开quota详情。
 
-### 查看及导出namespace quota的使用情况
+#### 查看及导出namespace quota的使用情况
 
 1，找到期望导出使用情况的namespace quota，在名称左侧点击展开按钮>，即可看到quota的详细信息。
 
@@ -550,13 +631,13 @@ $ kubectl describe ns {namespaceName}
 
 ![export_quota_workspace](./image/export_quota_namespace.png)
 
-# 用户管理
+# 3. 用户管理
 
 ## 前提条件
 
 从EnSaaS-K8s-Service 4.0.6以后开始，用户和资源权限管理功能从SSO 移到了MP 4.0。
 
-## 创建用户
+## 3.1 创建用户
 
 1，点击界面左上角的菜单按钮，点击User->Resource Permissions 进入Resource Permissions界面。点右边的“+”号，进入创建用户的界面： 
 
@@ -568,7 +649,7 @@ $ kubectl describe ns {namespaceName}
 
 **注意** 如果在创建用户的时候没有为其绑定资源权限，可以参考如下“为新用户绑定资源权限”一节
 
-## 为新用户绑定资源权限
+## 3.2 为新用户绑定资源权限
 
 1, 点击界面左上角的菜单按钮，点击User->Resource Permissions 进入Resource Permissions界面。点右边的“+”号，进入创建用户的界>面，然后在Username栏位填入用户名称，然后将鼠标焦点移到First name栏位，这个时候会弹出以下弹框：
 
@@ -576,7 +657,7 @@ $ kubectl describe ns {namespaceName}
 
 2，选择“Confirm”，接下来就可以为这个用户绑定资源权限了。具体的绑定过程可参考下方“为用户绑定资源权限”一节
 
-# 资源权限管理
+# 4. 资源权限管理
 
 ## 前提条件
 
@@ -586,7 +667,7 @@ $ kubectl describe ns {namespaceName}
 
 2，资源权限管理操作默认有一个前提，那就是当前登录用户的资源权限和被操作用户的资源权限的比较。
 
-## 查看用户的资源权限
+## 4.1 查看用户的资源权限
 
 1，点击界面左上角的菜单按钮，点击User->Resource Permissions。进入Resource Permissions界面。
 
@@ -596,7 +677,7 @@ $ kubectl describe ns {namespaceName}
 
 **注意**: 当前登录用户只能看到被操作用户的同级以及下级的资源权限。
 
-## 为用户绑定资源权限
+## 4.2 为用户绑定资源权限
 
 1，点击界面左上角的菜单按钮，点击User->Resource Permissions。进入Resource Permissions界面。
 
@@ -616,7 +697,7 @@ $ kubectl describe ns {namespaceName}
 - 对资源权限，只能分配比自己低一级以及以下的权限
 - 对订阅号权限，可以分配同级以及以下的权限
 
-## 删除某个用户的资源权限
+## 4.3 删除某个用户的资源权限
 
 1，点击界面左上角的菜单按钮，点击User->Resource Permissions。进入Resource Permissions界面。
 
@@ -629,86 +710,9 @@ $ kubectl describe ns {namespaceName}
 - 对订阅号权限，可以删除同级以及以下的权限
 - 不能删除用户的订阅号权限转换来的资源权限（在页面上可看到垃圾桶样式的图标为灰色）
 
-# 部署应用
+# 5. 集群和工作空间的生命周期
 
-## 通过helm chart部署应用
-目前集群中使用的是helm3，所以使用helm chart 部署应用时，参考helm3的文档即可。示例如下：
-
-```
-$ helm install . --name dashbord --namespace dashbord
-```
-在部署完毕后，MP 4.0会自动给应用的每个Pod中加入5个环境变量，示例如下：
-![app](./image/app_5.png)
-
-* datacenter：应用所在的datacenter名称
-* cluster：应用所在的集群名称
-* workspace：应用所在的workspace Name，填写的是workspace详情中的Name。为下面示例中的Name:
-```
-$ kubectl describe workspace 0875640d-a146-461c-bdbf-7bbd4de2de84
-Name:         0875640d-a146-461c-bdbf-7bbd4de2de84
-Namespace:
-Labels:       name=rx-test1
-```
-* namespace：应用所在的namespace Name。
-* appID：应用的appID。由MP4.0生成，作为唯一标识。
-
-# 查看应用路由
-
-## 查看应用路由
-
-此页会列出某个namespace下的所有的应用路由：
-![ingress_list](./image/ingress_list.png)
-点击"External Domain"列的链接，就可以跳转到相应服务的index页面
-
-## 查看路由详情
-
-![ingress_detail](./image/ingress_detail.png)
-
-## 查看路由yaml
-
-![ingress_yaml](./image/ingress_yaml.png)
-
-# 查看工作负载
-
-## 查看工作负载
-
-1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
-
-2，输入输入“用户名”、“密码”，单击登录。
-
-3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。可以看见Namespace列表。
-
-4，选择期望查看工作负载的Namespace，点击进入Namespace页面。
-
-5，namespace页面左侧菜单选择workload，即可以看见工作负载列表。
-
-## 查看工作负载日志
-
-1，进入在workload页面，选则需要查看日志的workload，点击右侧的Operation按钮。
-
-2，弹出的对话框中，选择需要查看日志的Pod，即可以看到Pod的日志。
-
-3，当需要刷新日志时，点击刷新按钮，即可对日志进行刷新。
-
-## 查看部署的应用
-
-### 通过Managent Portal界面查看
-
-通过helm chart部署的应用可以在Managent Portal的Applications页面查看到，查看步骤如下：
-
-1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
-
-2，输入输入“用户名”、“密码”，单击登录。
-
-3，点击界面左上角的菜单按钮，点击Platform Management->Applications。进入Applications管理页面。
-
-4，选择部署应用的Cluster，Workspace，Namespace，Type选择HelmList，即可查看到部署的应用。
-
-注：Managent Portal只显示通过helm chart部署的应用，Type对应为HelmList。
-
-# 集群和工作空间的生命周期
-
-## 集群的生命周期
+## 5.1 集群的生命周期
 
 ### 集群的状态
 
@@ -728,7 +732,7 @@ Labels:       name=rx-test1
 - 释放集群：一个集群释放后，集群所有的资源会被释放，集群数据将全部清空。
 - 升级集群：可对已订阅的集群进行升级，例如增加集群的节点等。升级后集群的状态为Active
 
-## 工作空间的生命周期管理
+## 5.2 工作空间的生命周期管理
 
 ### 工作空间的状态
 
