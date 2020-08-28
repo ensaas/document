@@ -1,4 +1,4 @@
-## Service-Portal-UI 1.1.2 (2020-08-28)
+## Service-Portal-UI 1.1.3 (2020-08-28)
 
 **新特性：**
 
@@ -127,7 +127,7 @@
 - 13923 需隐藏Dashboard上方以及左方的功能列
 - 13921 页面上方提示本页面支持显示哪些服务的用量
 
-## Service-Portal-UI 1.0.1.11 (2020-08-28) for private cloud
+## Service-Portal-UI 1.0.1.12 (2020-08-28) for private cloud
 
 **新特性：**
 
