@@ -127,6 +127,12 @@
 - 13923 需隐藏Dashboard上方以及左方的功能列
 - 13921 页面上方提示本页面支持显示哪些服务的用量
 
+## Service-Portal-UI 1.0.1.11 (2020-08-28) for private cloud
+
+**新特性：**
+
+- #14090 畫面上方的導覽列要套用統一規格的導覽列
+
 
 ## Service-Portal-UI 1.0.1.8 (2020-08-19) for private cloud
 
