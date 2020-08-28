@@ -3,6 +3,7 @@
 **新特性：**
 
 - #14090 畫面上方的導覽列要套用統一規格的導覽列
+- 新增Service Portal標題
 
 ## Service-Portal-UI 1.1.1 (2020-08-19)
 
@@ -132,6 +133,7 @@
 **新特性：**
 
 - #14090 畫面上方的導覽列要套用統一規格的導覽列
+- 新增Service Portal標題
 
 
 ## Service-Portal-UI 1.0.1.8 (2020-08-19) for private cloud
