@@ -1,43 +1,13 @@
 # 备份还原
 
-本文将为您介绍如何使用指令备份还原PostgresQL数据。
+本文将为您介绍如何备份还原PostgresQL数据。
 
-## Dedicated DB
-下面介绍如何使用远程备份对Dedicated PostgreSQL进行备份还原，可以为订购Dedicated PostgreSQL的用户提供Admin账号。
+## 前提条件
+1. 从管理员获取PostgreSQL的Admin账号。
 
-### BackUp
+## 获取外部IP和Port（Container InfluxDB）
 
-#### 1. 在K8s集群查看PostgreSQL备份用地址
-
-透过secret查看PostgreSQL地址，使用者帳戶，密碼
-```
-kubectl -n ensaas-service get secrets <your_secret> -o yaml
-```
-输出类似于：
-```
-apiVersion: v1
-data:
-  ENSAAS_SERVICES: eyJwb3N0Z3Jlc3FsIjpbeyJhc3luYyI6ZmFsc2UsImJpbmRpbmdfbmFtZSI6InRlc3QiLCJjcmVkZW50aWFscyI6eyJkYXRhYmFzZSI6ImJkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsImV4dGVybmFsSG9zdHMiOiI2MS4yMTkuMjYuMzM6NTQzMiIsImhvc3QiOiIxMC4xMDAuMTYuMTMwIiwiaW50ZXJuYWxIb3N0cyI6IjEwLjEwMC4xNi4xMzA6NTQzMiIsInBhc3N3b3JkIjoiN0N0YTB0dVhmelpzUzRmOVFMcmU4NzRBMiIsInBvcnQiOjU0MzIsInVyaSI6InBvc3RncmVzOi8vNTMwZWFlMWYtOWMzYy00YjZjLTkwMzUtNDVmNTMzMTc1ZmU0OjdDdGEwdHVYZnpac1M0ZjlRTHJlODc0QTJAMTAuMTAwLjE2LjEzMDo1NDMyL2JkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsInVzZXJuYW1lIjoiNTMwZWFlMWYtOWMzYy00YjZjLTkwMzUtNDVmNTMzMTc1ZmU0In0sImluc3RhbmNlX25hbWUiOiJwb3N0Z3Jlc3FsLWJkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsImxhYmVsIjoiUG9zdGdyZVNRTCIsInBsYW4iOiJTaGFyZWQiLCJzZXJ2aWNlSW5zdGFuY2VJZCI6ImJkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsInN1YnNjcmlwdGlvbklkIjoiMmQwNzc1Zjc0MTM1NzE2NTY4ZTc4YTYyYWE5NTE2MDkifV19
-kind: Secret
-metadata:
-  creationTimestamp: "2020-08-28T02:30:40Z"
-  name: test
-  namespace: ensaas-service
-  resourceVersion: "10029760"
-  selfLink: /api/v1/namespaces/ensaas-service/secrets/test
-  uid: 9079c696-ae92-4d27-b457-f9d40f1ee52c
-type: Opaque
-```
-解码 ENSAAS_SERVICES 字段：
-```
-echo 'eyJwb3N0Z3Jlc3FsIjpbeyJhc3luYyI6ZmFsc2UsImJpbmRpbmdfbmFtZSI6InRlc3QiLCJjcmVkZW50aWFscyI6eyJkYXRhYmFzZSI6ImJkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsImV4dGVybmFsSG9zdHMiOiI2MS4yMTkuMjYuMzM6NTQzMiIsImhvc3QiOiIxMC4xMDAuMTYuMTMwIiwiaW50ZXJuYWxIb3N0cyI6IjEwLjEwMC4xNi4xMzA6NTQzMiIsInBhc3N3b3JkIjoiN0N0YTB0dVhmelpzUzRmOVFMcmU4NzRBMiIsInBvcnQiOjU0MzIsInVyaSI6InBvc3RncmVzOi8vNTMwZWFlMWYtOWMzYy00YjZjLTkwMzUtNDVmNTMzMTc1ZmU0OjdDdGEwdHVYZnpac1M0ZjlRTHJlODc0QTJAMTAuMTAwLjE2LjEzMDo1NDMyL2JkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsInVzZXJuYW1lIjoiNTMwZWFlMWYtOWMzYy00YjZjLTkwMzUtNDVmNTMzMTc1ZmU0In0sImluc3RhbmNlX25hbWUiOiJwb3N0Z3Jlc3FsLWJkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsImxhYmVsIjoiUG9zdGdyZVNRTCIsInBsYW4iOiJTaGFyZWQiLCJzZXJ2aWNlSW5zdGFuY2VJZCI6ImJkOTE0MTcyLTY4ZjAtNDlhMC1hOTlhLWY2MzUzMTJlMzE3ZCIsInN1YnNjcmlwdGlvbklkIjoiMmQwNzc1Zjc0MTM1NzE2NTY4ZTc4YTYyYWE5NTE2MDkifV19' | base64 --decode
-```
-输出类似于：
-```
-{"postgresql":[{"async":false,"binding_name":"test","credentials":{"database":"bd914172-68f0-49a0-a99a-f635312e317d","externalHosts":"61.219.26.33:5432","host":"10.100.16.130","internalHosts":"10.100.16.130:5432","password":"7Cta0tuXfzZsS4f9QLre874A2","port":5432,"uri":"postgres://530eae1f-9c3c-4b6c-9035-45f533175fe4:7Cta0tuXfzZsS4f9QLre874A2@10.100.16.130:5432/bd914172-68f0-49a0-a99a-f635312e317d","username":"530eae1f-9c3c-4b6c-9035-45f533175fe4"},"instance_name":"postgresql-bd914172-68f0-49a0-a99a-f635312e317d","label":"PostgreSQL","plan":"Shared","serviceInstanceId":"bd914172-68f0-49a0-a99a-f635312e317d","subscriptionId":"2d0775f74135716568e78a62aa951609"}]}
-```
-
-> 另一种方式，透过svc查看PostgreSQL地址
+如果是Container PostgreSQL，需要先获取服务的外部IP，才可以将数据备份到K8S集群外部。
 ```
 kubectl -n <your_namespace_name> get svc
 ```
@@ -47,9 +17,9 @@ NAME                                    TYPE           CLUSTER-IP      EXTERNAL-
 apps-postgres-stolon-keeper-headless    ClusterIP      None            <none>        5432/TCP
 apps-postgres-stolon-proxy              LoadBalancer   10.233.47.118   10.1.16.131   5432:30526/TCP
 ```
-如上输出讯息可以知道container的PG内网地址为10.233.29.72，外网地址对应到10.1.16.131，port号5432，P.S. 此台机器与上面secret为不同台机器
+如上输出讯息可以知道container的PG内网地址为10.233.29.72，外网地址对应到10.1.16.131，port号5432。
 
-#### 2. 安装 postgresql client (ubuntu 16.04 为例)
+## 安装 postgresql client (ubuntu 16.04 为例)
 ```
 sudo apt-get install wget ca-certificates
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -65,7 +35,7 @@ psql: could not connect to server: No such file or directory
         connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
 ```
 
-#### 3. 使用备份指令备份数据至本地(PostgreSQL为例)
+## 备份
 
 - 备份全部:
 ```
@@ -94,7 +64,7 @@ ls
 bd914172-68f0-49a0-a99a-f635312e317d.sql
 ```
 
-### Restore
+## 还原
 
 - 还原全部数据库
 
