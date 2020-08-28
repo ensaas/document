@@ -1,3 +1,50 @@
+### EnSaaS-K8s-Service 4.0.11- (2020-08-28)
+
+#### [Managment Portal API]- 4.0.11
+
+Added:
+- Add workload related APIs, including Deployment, Daemonset, Statefulset, Job, CronJob, etc
+- Add workspace-permission related APIs for MPbuy
+- Add APIs that can operate the all K8S resources
+
+Fixed:
+- When users have permissions of the same namespace in different clusters, the users/me API will only return one of them
+- A call to the Workload API returns a 504 error code when the workloads under some namespace is massive
+- Fixed the bug that cluster controller is running all the time
+- Fixed the bug that kubeensaas service restart irregularly
+- Fixed the bug that the state of cluster would not be updated when cluster was added for the first time 
+
+#### [Cluster Agent]- 4.0.9
+
+Added:
+- Optimize websocket processing logic
+- Support automatic injection of sidecar
+
+Fixed:
+- The pods with status "Completed" is not calculated to the Pod quota number
+- Fixed the bug that clusterAgent occasionally restarting
+- Fixed the bug that the CrobJob resource can't be created when clustaragent is running
+
+#### [Managment Portal UI]- 4.0.11
+
+Added:
+- Workload management, including Deployment, Daemonset, Statefulset, Job and CronJob
+- Support yaml view and online editing, and support workload scale up & scale down
+- Pod management, list the container details of the pod
+- Supports show log information of a container
+- Add a sort function to the creation time under workload page 
+
+Fixed:
+- Workload is not sorted by name
+- Memory(Request/Quota) remains unchanged after switching the units
+- On Node, Workspace, Namespace page, change "Usage" to "Usage/Quota"
+- Add CPU Request/Limit and Memory Request/Limit columns to workspace, namespace page
+- Default values of CPU request/limit and memory Request /limit do not display correctly
+- On Workspace page,  Cpu_usage/Memory_Usage totalValue shows Unlimited
+- Application page switch namespace appears empty
+
+
+
 ### EnSaaS-K8s-Service 4.0.10- (2020-07-10)
 
 #### [Managment Portal API]- 4.0.10

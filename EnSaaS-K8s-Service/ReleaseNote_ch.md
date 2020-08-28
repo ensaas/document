@@ -1,3 +1,49 @@
+### EnSaaS-K8s-Service 4.0.11- (2020-08-28)
+
+#### [Managment Portal API]- 4.0.11
+
+Added:
+- 添加workload管理相关的API，包括deployment, daemonset, statefulset, job, cronjob等
+- 为mpbuy增加了workspace权限相关的API接口
+- 添加了可以对所有k8s资源操作的API，不用切换集群即可执行kubectl命令
+
+Fixed:
+- 用户拥有不同cluster下相同名字namespace的权限的时候，users/me API 只会返回其中某一个
+- 当namespace下workload较多时，调用workload API返回504错误
+- 修正cluster的controller一直处于运行状态的问题
+- 修正kubeensaas服务不定期重启的问题
+- 修正第一次添加cluster时，cluster的状态不会更新的问题 
+
+#### [Cluster Agent]- 4.0.9
+
+Added:
+- 优化websocket的处理逻辑
+- 支持自动注入sidecar
+
+Fixed:
+- 计算quota的时候不计算已经complete的pod的个数
+- 修正clusteragent偶尔会重启的问题
+- 修正当clusteragent运行时无法创建cronjob的问题
+
+#### [Managment Portal UI]- 4.0.11
+
+Added:
+- workload管理，包括deployment, daemonset, statefulset, job, cronjob，支持yaml查看和在线编辑功能，支持workload的扩、缩容
+- pod管理，列出pod下面的所有container以及container详细信息，支持yaml查看和在线编辑功能
+- 支持查看某个container下的日志内容
+- 给workload页面的创建时间添加排序功能
+
+Fixed:
+- workload没有按照name排序
+- 切换单位后，Memory(Request/Quota)没有变
+- console页面下方node, workspace, namespace将”Usage”改为”Usage/Quota”
+- console页面下方workspace, namespace 添加CPU Request/Limit和Memory Request/Limit两列数据
+- cpu request/limit和memory request/limit默认值显示不正确
+- workspce页面cpu_usage/memory_usage totalValue 显示Unlimited
+- application页面切换namespace出现empty
+
+
+
 ### EnSaaS-K8s-Service 4.0.10- (2020-07-10)
 
 #### [Managment Portal API]- 4.0.10
