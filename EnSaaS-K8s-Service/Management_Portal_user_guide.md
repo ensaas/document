@@ -25,7 +25,87 @@ Labels:       name=rx-test1
 * namespace：应用所在的namespace Name。
 * appID：应用的appID。由MP4.0生成，作为唯一标识。
 
-## 1.2 查看应用路由
+## 1.2 查看部署的应用
+
+### 通过Managent Portal界面查看
+
+通过helm chart部署的应用可以在Managent Portal的Applications页面查看到，查看步骤如下：
+
+1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
+
+2，输入输入“用户名”、“密码”，单击登录。
+
+3，点击界面左上角的菜单按钮，点击Platform Management->Applications。进入Applications管理页面。
+
+4，选择部署应用的Cluster，Workspace，Namespace，Type选择HelmList，即可查看到部署的应用。
+
+注：Managent Portal只显示通过helm chart部署的应用，Type对应为HelmList。
+
+## 1.3 查看工作负载
+
+### 查看工作负载
+
+1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
+
+2，输入“用户名”、“密码”，单击登录。
+
+3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。可以看见Namespace列表。
+
+4，选择期望查看工作负载的Namespace，点击进入Namespace页面。
+
+5，namespace页面左侧菜单选择workload，即可以看见工作负载列表。
+
+![list_workloads](./image/list_workloads.png)
+
+### 查看工作负载的yaml文件
+
+进入在workload页面，选择需要操作的workload，点击右侧的Operation栏位，选择“View Yaml”:
+
+![view_workload_yaml](./image/view_workload_yaml.png)
+
+### 编辑工作负载的yaml文件
+
+1, 进入在workload页面，选择需要操作的workload，点击右侧的Operation栏位，选择“Edit Yaml”:
+
+![edit_workload_yaml](./image/edit_workload_yaml.png)
+
+2, 针对此workload进行必要的修改，然后点击右下方的“完成”按钮即可生效。
+
+### 查看工作负载日志
+
+1，进入在workload页面，选择需要查看日志的workload，点击右侧的Operation栏位，选择“Log”。
+
+2，弹出的对话框中，首先选择需要查看日志的Pod，然后选择需要查看日志的container,即可以看到container的日志。
+
+![view_workload_log](./image/view_workload_log.png)
+
+3，当需要刷新日志时，点击刷新按钮，即可对日志进行刷新。
+
+## 1.4 查看Pod
+
+### 查看Pod的信息
+
+进入到workload页面，点击某个workload前面的三角符号，即可展开并看到属于该workload的所有Pod的详情：
+
+![list_pods](./image/list_pods.png)
+
+### 查看Pod的yaml
+
+选择相应的Pod，点击右侧的Operation栏位，点击“View Yaml”，即可查看该Pod的yaml文件：
+
+![view_pod_yaml](./image/view_pod_yaml.png)
+
+### 删除某个Pod
+
+选择相应的Pod，点击右侧的Operation栏位，点击“Delete”，即可删除该Pod。
+
+## 1.5 查看container
+
+进入到pod页面，点击某个pod前面的三角符号，即可展开并看到属于该pod的所有container的详情：
+
+![view_container](./image/view_container.png)
+
+## 1.6 查看应用路由
 
 ### 查看应用路由
 
@@ -40,44 +120,6 @@ Labels:       name=rx-test1
 ### 查看路由yaml
 
 ![ingress_yaml](./image/ingress_yaml.png)
-
-## 1.3 查看工作负载
-
-### 查看工作负载
-
-1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
-
-2，输入输入“用户名”、“密码”，单击登录。
-
-3，点击界面左上角的菜单按钮，点击Platform Management->Dedicate Cluster->Namespaces或Platform Management->Shared Cluster->Namespaces。可以看见Namespace列表。
-
-4，选择期望查看工作负载的Namespace，点击进入Namespace页面。
-
-5，namespace页面左侧菜单选择workload，即可以看见工作负载列表。
-
-### 查看工作负载日志
-
-1，进入在workload页面，选则需要查看日志的workload，点击右侧的Operation按钮。
-
-2，弹出的对话框中，选择需要查看日志的Pod，即可以看到Pod的日志。
-
-3，当需要刷新日志时，点击刷新按钮，即可对日志进行刷新。
-
-### 查看部署的应用
-
-#### 通过Managent Portal界面查看
-
-通过helm chart部署的应用可以在Managent Portal的Applications页面查看到，查看步骤如下：
-
-1，打开浏览器，在地址栏中输入Managent Portal的网络地址，按“Enter”。
-
-2，输入输入“用户名”、“密码”，单击登录。
-
-3，点击界面左上角的菜单按钮，点击Platform Management->Applications。进入Applications管理页面。
-
-4，选择部署应用的Cluster，Workspace，Namespace，Type选择HelmList，即可查看到部署的应用。
-
-注：Managent Portal只显示通过helm chart部署的应用，Type对应为HelmList。
 
 # 2. 资源管理
 
