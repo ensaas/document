@@ -59,13 +59,13 @@ Labels:       name=rx-test1
 
 ### 查看工作负载的yaml文件
 
-进入在workload页面，选择需要操作的workload，点击右侧的Operation栏位，选择“View Yaml”:
+进入到workload页面，选择需要操作的workload，点击右侧的Operation栏位，选择“View Yaml”:
 
 ![view_workload_yaml](./image/view_workload_yaml.png)
 
 ### 编辑工作负载的yaml文件
 
-1, 进入在workload页面，选择需要操作的workload，点击右侧的Operation栏位，选择“Edit Yaml”:
+1, 进入到workload页面，选择需要操作的workload，点击右侧的Operation栏位，选择“Edit Yaml”:
 
 ![edit_workload_yaml](./image/edit_workload_yaml.png)
 
@@ -73,7 +73,7 @@ Labels:       name=rx-test1
 
 ### 查看工作负载日志
 
-1，进入在workload页面，选择需要查看日志的workload，点击右侧的Operation栏位，选择“Log”。
+1，进入到workload页面，选择需要查看日志的workload，点击右侧的Operation栏位，选择“Log”。
 
 2，弹出的对话框中，首先选择需要查看日志的Pod，然后选择需要查看日志的container,即可以看到container的日志。
 
