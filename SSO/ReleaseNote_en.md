@@ -1,3 +1,7 @@
+## Portal 4.0.14.0-(2020-8-31)
+### Fix bugs
+* Modify the description of each service in the top navigation bar
+
 ## Portal 4.0.13.0-(2020-8-28)
 ### New Features
 * The head navigation bar uses public components
