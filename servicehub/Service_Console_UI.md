@@ -1,3 +1,9 @@
+## Service-Portal-UI 1.1.3.1 (2020-08-31)
+
+**修改Bug：**
+
+- 修正文字錯誤
+
 ## Service-Portal-UI 1.1.3 (2020-08-28)
 
 **新特性：**
@@ -127,6 +133,12 @@
 - 13922 若从Service Instances页面选择Redis服务，再切换去Service Usage页面，会显示Redis的instance资料
 - 13923 需隐藏Dashboard上方以及左方的功能列
 - 13921 页面上方提示本页面支持显示哪些服务的用量
+
+## Service-Portal-UI 1.0.1.13 (2020-08-31) for private cloud
+
+**修改Bug：**
+
+- 修正文字錯誤
 
 ## Service-Portal-UI 1.0.1.12 (2020-08-28) for private cloud
 
