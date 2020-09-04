@@ -1,3 +1,9 @@
+## Service-Portal-UI 1.1.3.3 (2020-09-04)
+
+**修改Bug：**
+
+- #16126 若將Service Portal畫面放大或字體放大，希望Subscription Name隨著下拉式選單一起改到第二行
+
 ## Service-Portal-UI 1.1.3.1 (2020-08-31)
 
 **修改Bug：**
