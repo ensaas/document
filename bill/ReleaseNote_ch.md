@@ -1,19 +1,37 @@
-# 1.0.0 (2020-09-3)
+# 1.0.1 (2020-09-8)
+
 # **New Features**
 
-- 支援訂閱、續訂以及PAYG扣款功能
+- Portal API
 
+  - 允許CrmIds為空
+  - 暫時取消pageSize上限50筆的限制
+- 扣款功能
+  - 支援MKP對帳功能
+
+# **Bug Fixes**
+
+  - 修正折扣計算方案
+  - 修正分頁顯示筆數與排序問題
+
+# 1.0.0 (2020-09-3)
+
+# **New Features**
+
+- 扣款功能
+  - 支援訂閱、續訂以及PAYG
+  - 未扣款記錄查詢
+  - 未扣款記錄整併扣點
+- 扣款相關
+  - 支援API新增、修改和刪除資料中心
 - 提供Portal查詢API
-
-- Portal API支援由Cookie認證
-
-
-  - 支援Global Admin與CRM Admin二種角色 
+  - 支援由Cookie認證
+  - 支援Global Admin與CRM Admin二種角色
     - Global Admin可以查詢所有Data Center所有CRM的帳
     - CRM Admin可以查詢該CRM下所有Subscription的帳
 
-
 # 0.0.3.0 (2020-08-19)
+
 # **New Features**
 
 - 扣點API
