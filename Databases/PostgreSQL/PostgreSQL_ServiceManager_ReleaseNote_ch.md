@@ -1,5 +1,15 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.3 (2020-09-08)
+
+- Bug #15604: init ops db時，binding表格裡的binding_time資料類型錯誤
+- Bug #16135: shared provision失敗時需要可以rollback
+- Requirement #13558: 客戶自帶DB納入sm管理
+- Requirement #15681: 支持設置shared instance的預設連線數
+- Requirement #16118: 新增API [PATCH] /v2/serviceInstances/{serviceInstanceId}/info
+- Requirement #16119: [POST] /v2/serviceInstances/manual 增加檢查輸入的帳號是否具有足夠權限
+
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.2 (2020-08-04)
 
 - Requirement #15465: 若instance被鎖住，不允許進行unbind
