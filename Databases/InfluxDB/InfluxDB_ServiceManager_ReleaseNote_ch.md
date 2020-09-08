@@ -1,6 +1,12 @@
 # CHANGELOG
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.6 (1.0.0)
+# WISE-PaaS Service Manager - InfluxDB 1.0.0.1 (2020-09-09)
+
+### Fixed:
+- Bug #15492: 刪除binding時，若該binding不存在，這時候與資料庫的連線沒有關閉
+- Requirement #16158: 新增API [GET][PATCH] /v2/serviceInstances/{serviceInstanceId}/info
+
+# WISE-PaaS Service Manager - InfluxDB 0.1.6 (1.0.0) (2020-05-15)
 
 ### Added:
 - Requirement #13640: 將[POST] /v2/service_instances/manual的ssl參數改為非必填，若沒填則預設為false
