@@ -3,7 +3,6 @@
 # **New Features**
 
 - Portal API
-
   - 允許CrmIds為空
   - 暫時取消pageSize上限50筆的限制
 - 扣款功能
