@@ -1,5 +1,69 @@
 ## Buy-ui ReleaseNote
 
+### version：v-1.0.4.1
+#### Added:
+- 此版本依据接口返回数据结构及字段变化，对前端进行整合，涉及
+界面的基础数据展示及功能，保证基本功能正常
+  - 查询应用及其数据显示
+  - 入门包的选择以及应用下plan选择正常
+  - 价格以及用量计算
+  - 所依赖服务数据显示以及选择
+  - 可正常订阅
+  
+### version：v-1.0.4.0
+#### Updated:
+- 替换项目头部组件，和其他项目保持一致，功能无变化
+
+### version：v-1.0.3.9
+#### Fixed:
+- Bug #15686：Data Service & EnSaaS K8s Service页面，当workspace下没有namespace，提示：Now you don't have namespaces Please go to MP to  create a new
+- Bug#15687：Data Service & EnSaaS K8s Service页面，当选择EnSaaS-K8s-Service plan后，若没有Dedicated Cluster或General Workspace时，给出提示：Now you don't have Dedicated cluster or General workspace Please go to MP buy Purchase
+- Bug #15688：订阅App Service时，点击左上角从新进入Data Service & EnSaaS K8s Service，修改为默认选中dedicated cluster，且选择workspace时，下拉列表不为空
+- Bug #15682：修改为当所需资源大于剩余资源，选择ws后，若资源不足，ns为不可选择状态，按钮置灰，不可点击到下一页
+- Bug #15719：Global Admin登录，订阅号ispaid=true，点数不足，增加判断，点数不足按钮置灰，ispaid=false，可不看点数
+
+### version：v-1.0.3.8
+#### Added:
+- 已使用过的namespace校验
+- 选择space之后，剩余用量和所需用量之间的判断，不足则给出提示
+- 未选择cluster/workspace/namespace时，点击next非空校验，select框显示红色
+####Fixed:
+- 购买页底部按钮宽度适配不同屏幕大小
+- 工单url修改为动态获取
+- 无namespace时提示信息
+- 从选择了cluster/workspace/namespace的应用跳到catalog，在进入需要选择space的应用，之前选择数据会携带过去初始化显示
+
+### version：v-1.0.3.7
+#### Added:
+- 订阅页面添加预扣款提示
+- Pricing plan卡片Monthly按钮更换名称为 Prepaid Monthly Subscription
+- 添加Pay-As-You-Go按钮，鼠标移入显示提示信息，功能暂时不可使用
+- 每个应用Deployment Configuration表格添加price(单价)列，若Property为PAYG则价格显示Postpaid usage
+- 头部右侧显示商品价格小结，若有Postpaid usage则显示为数字 + Postpaid usage
+- 底部去掉剩余天数的提示，添加上了现有点数的信息
+- Prorated Price更名为Prorated Fee，添加提示为剩余天数,Total Price更名为Monthly Fee,添加提示为1号扣费，且更换位置
+- next按钮添加权限限制，若为globaladmin可不看点数，非globaladmin时，若是付费用户需要查看点数是否足够支付，内部用户无需看点
+- 付费用户点数不够时，鼠标移入next按钮提示没有足够的点数，并给出mp的跳转链接
+#### Fixed:
+- 界面颜色风格修改，和catalog保持一致
+- 修复了summary界面表格的行之间没有对齐的问题
+- 去掉M+的slider滑动条，保留input框
+- 修改界面退出时打开新页面的问题
+- 修改订阅权限，globaladmin无法订阅的问题
+- 是否能购买规则修改：
+  - globaladmin用户可直接购买
+  - 非globaladmin用户时，为付费用户且点数够时可购买
+  - 内部用户（ispaid为false，memberType时Internal）可购买无需看点
+  - 其余用户不可购买，给出相应提示
+
+### version：v-1.0.3.4
+#### Added：
+- 添加Additional quantity的input输入框：input框改变quantity的值，失去焦点时触发silder的变化和更新price，silder拖动或变化时，鼠标弹起触发input值变化
+- I.App鼠标移入后完整提示，默认三行
+- 从catalog点击某个plan，buyUI会自动定位到这个plan
+#### Fixed：
+- 修改I.App for trial的判断逻辑：根据url中serviceName去判断，如果serviceName包含For-Trial，则对应的应用为4个必选应用：'Dashboard','DataHub', 'Notification', 'SaaS Composer'
+
 ### version：v-1.0.3.3
 #### Added:
 - 第二步的db选择下拉框值会默认成非禁用的第一个，如果全部禁用了则显示请选择，点击行时会有加载效果
