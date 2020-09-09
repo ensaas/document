@@ -46,25 +46,25 @@ WISE-PaaS/Blobstore是一种适用于云的对象存储解决方案。Blobstore�
 
 请根据您正式订阅 WISE-PaaS 云服务时的数据中心进行选择，推荐 Global 使用者选择 Azure Singapore 数据中心，中国区域使用者选择阿里云杭州数据中心，日本区域使用者选择 Japan East 数据中心。
 
-![EnSaaS-Portal-Login_1](../../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_1.png)
+![EnSaaS-Portal-Login_1](./images/EnSaaS-Portal-Login_1.png)
 
 
 2. 点击 「 MyAdvantech 」，以 MyAdvantech 账号登入 EnSaaS Portal。
 
-![EnSaaS-Portal-Login_2](../../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_2.png)
+![EnSaaS-Portal-Login_2](./images/EnSaaS-Portal-Login_2.png)
 
 
 3. 填入 MyAdvantech 帐密，以 MyAdvantech 账号登入。
 
 首次以MyAdvantech账号登入 EnSaaS Portal，会弹出提示窗提示您同意将 MyAdvantech 账号与 EnSaaS/SSO账号绑定。若您尚未开通 EnSaaS/SSO 账号，在此过程中会自动为您创建 EnSaaS/SSO 账号，并将包含预设 SSO 帐密的注册信发送到您的信箱。在后续的登入中您可以根据需要选择直接使用 EnSaaS/SSO 帐密登入，或以 MyAdvantech 帐密登入。
 
-![EnSaaS-Portal-Login_3](../../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_3.png)
+![EnSaaS-Portal-Login_3](./images/EnSaaS-Portal-Login_3.png)
 
 4. 登入 EnSaaS Catalog，选择和确认订阅号。
 
 如果您有多个 EnSaaS 4.0 订阅号，登入后提醒您先选择和确认要订阅云服务的订阅号。
 
-![EnSaaS-Portal-Login_4](../../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_4.png)
+![EnSaaS-Portal-Login_4](./images/EnSaaS-Portal-Login_4.png)
 
 ### Step 2: 创建Blobstore实例
 
@@ -72,7 +72,7 @@ WISE-PaaS/Blobstore是一种适用于云的对象存储解决方案。Blobstore�
 
 2. 购买成功后，可以登录Service Portal查看购买的实例（目前仅有订阅号Admin和订阅号User可以查看），Service Portal可以从Catalog进入。
 
-   ![ServicePortal-entry.png](../../Database/uploads/images/PostgreSQL/ServicePortal-entry.png)
+   ![ServicePortal-entry.png](./images/ServicePortal-entry.png)
    
    ![shareFile](./images/CreateInstance.png)
 
