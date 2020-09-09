@@ -7,24 +7,26 @@
 -->
 
 
-# WISE-PaaS Blobstore服务
+# WISE-PaaS/Blobstore服务
 
 ## 产品简介
 WISE-PaaS/Blobstore是一种适用于云的对象存储解决方案。Blobstore最适合存储海量、低成本、高可靠的非结构化数据，如图片，视频，音乐和文档等。WISE-PaaS/Blobstore提供统一的Amazon Simple Storage Service（简称[S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html)）标准接口，保证WISE-PaaS公有云和私有云对SRP可以提供一致性接口。
 
 ## 主要特点
 
-1. 提供标准Amazon S3接口，所有针对S3操作的API和工具都可用
+1.	支持多种云平台的存储服务
 
-2. 提供数据持久化存储
+2. 提供统一的标准Amazon S3接口，所有针对S3操作的API和工具都可用
 
-3. 支持SSL确保数据可靠传输
+3.	提供数据持久化存储
 
-4. 数据有效隔离，各租户之间数据是相互隔离的，安全可靠
+4.	加密存储，访问权限管控，安全可靠
 
-6. 支持移动设备上传下载图片，音频，视频文件等
+5.	支持EB级海量数据存储
 
-7. 可查看实时用量，日用量，月用量等
+6.	成本费用低
+
+7.	支持移动设备上传下载图片，音频，视频文件等
 
 
 ## 快速入门
