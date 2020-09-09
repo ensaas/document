@@ -1,5 +1,44 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.7.0.3
+#### Added:
+- 添加接口：Get /service/grossProfitMargin 获取当前servicePackage的毛利率
+- 添加缓存：缓存serviceWithPlan的结果，编辑相关操作会清掉缓存
+
+### version：v-1.7.0.2
+#### Added:
+- 添加接口：Get /releaseNotes/{serviceName} 
+- 接口说明：如果service对应的releaseNote在本地不存在就会去gitlab获取
+- 查询参数：
+	- lang：获取对应语言的releaseNote,允许参数：EN,CH,TW
+	- source：releaseNote的来源，默认从DB中获取，允许参数：git，如果为git,就会获取gitlab的releaseNote，并且同步更新DB中的releaseNote
+- 添加定时器：每天晚上定时同步所有的releaseNote
+
+### version：v-1.6.0.9
+#### Added:
+- 添加接口：/deployment/{name}/plan/{plan}/versions
+- 返回deployment中的版本列表
+
+### version：v-1.6.0.8
+#### Updated:
+- serviceWithPlan接口：
+	- 在依赖的service中添加displayName
+	- 在依赖的plan上添加deliveryType
+- ServiceLowprice接口：只返回service和plan都显示的最低价
+
+### version：v-1.6.0.3
+#### Updated:
+- 修改了plan的结构：
+	- 将pn,pnProperty,pnQuantity,PnUnit放入pninfo
+	- 修改dependency,package,integration，具体请参考swagger
+- 接口的修改：
+	- plan相关的接口添加和返回发生变化，具体参考swagger
+ 	- Get /service/serviceWithPlan接口发生改变，具体请参考swagger
+	- Get /serviceLowestPrice 接口发生改变，具体请参考swagger
+- 表结构的改动：
+	- plan表需要重新添加
+	- serviceLowestPrice只需要调用post /serviceLowestPrice重新生成即可
+
 ### version：v-1.5.0.3
 ##### Updated:
 - 取消显示serviceKey
