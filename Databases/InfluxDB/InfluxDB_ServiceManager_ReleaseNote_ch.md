@@ -2,9 +2,13 @@
 
 # WISE-PaaS Service Manager - InfluxDB 1.0.0.1 (2020-09-09)
 
+### Added:
+- Requirement #13643: 提供給Dedicated Cluster Overview用的API
+- Requirement #14994: 補上資源管理需要的API
+- Requirement #16158: 新增API [GET][PATCH] /v2/serviceInstances/{serviceInstanceId}/info
+
 ### Fixed:
 - Bug #15492: 刪除binding時，若該binding不存在，這時候與資料庫的連線沒有關閉
-- Requirement #16158: 新增API [GET][PATCH] /v2/serviceInstances/{serviceInstanceId}/info
 
 # WISE-PaaS Service Manager - InfluxDB 0.1.6 (1.0.0) (2020-05-15)
 
