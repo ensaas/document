@@ -33,35 +33,50 @@ WISE-PaaS/Blobstore是一种适用于云的对象存储解决方案。Blobstore�
 
 通常，从新购实例到可以开始使用实例，您需要完成如下操作。
 
-1. 创建Blobstore实例
-2. 创建Secret
-3. 查看Secret
-4. 在App中使用Secret连接Blobstore
-5. 使用S3 Browser连接Blobstore
+1. [登录EnSaaS Catalog](#step1登录ensaas-catalog)
+2. [创建Blobstore实例](#step2创建blobstore实例)
+3. [创建Secret](#step3创建secret)
+4. [查看Secret](#step4查看secret)
+5. [在App中使用Secret连接Blobstore](#step5在app中使用secret连接blobstore)
+6. [使用S3 Browser连接Blobstore](#step6使用s3-browser连接blobstore)
 
-### Step 1: 创建Blobstore实例
+### Step1：登录EnSaaS Catalog
 
-您可以通过WISE-PaaS云服务市场或者直接登录EnSaaS Catalog订阅Blobstore服务，订阅成功后就会创建Blobstore实例。
+1. 登入 [EnSaaS Portal](https://portal-catalog-ensaas.sa.wise-paas.com/)，选择 EnSaaS 数据中心。
 
-1. 登录EnSaaS Catalog，各个站点的Catalog地址如下，按照提示订阅Blobstore服务：
+请根据您正式订阅 WISE-PaaS 云服务时的数据中心进行选择，推荐 Global 使用者选择 Azure Singapore 数据中心，中国区域使用者选择阿里云杭州数据中心，日本区域使用者选择 Japan East 数据中心。
 
-   | 站点代码 | 站点地点          | 站点链接                                          |
-   | -------- | ----------------- | ------------------------------------------------- |
-   | SA       | Azure Singapore   | https://portal-catalog-ensaas.sa.wise-paas.com    |
-   | HZ       | Alibaba  Hangzhou | https://portal-catalog-ensaas.hz.wise-paas.com.cn |
-   | JE       | Japan East        | https://portal-catalog-ensaas.jp.wise-paas.com    |
+![EnSaaS-Portal-Login_1](../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_1.png)
 
-2. 订阅成功后，可以登录Service控制台查看购买的实例（目前仅有订阅号Admin和订阅号User可以查看），Service控制台地址如下：
 
-   | 站点代码 | 服务              | 站点地点          | 站点链接                                          |
-   | -------- | ----------------- | ----------------- | ------------------------------------------------- |
-   | SA       | Service Portal    | Azure Singapore   | https://portal-service-ensaas.sa.wise-paas.com    |
-   | HZ       | Service Portal    | Alibaba  Hangzhou | https://portal-service-ensaas.hz.wise-paas.com.cn |
-   | JE       | Service Portal    | Japan East        | https://portal-service-ensaas.jp.wise-paas.com    |
+2. 点击 「 MyAdvantech 」，以 MyAdvantech 账号登入 EnSaaS Portal。
+
+![EnSaaS-Portal-Login_2](../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_2.png)
+
+
+3. 填入 MyAdvantech 帐密，以 MyAdvantech 账号登入。
+
+首次以MyAdvantech账号登入 EnSaaS Portal，会弹出提示窗提示您同意将 MyAdvantech 账号与 EnSaaS/SSO账号绑定。若您尚未开通 EnSaaS/SSO 账号，在此过程中会自动为您创建 EnSaaS/SSO 账号，并将包含预设 SSO 帐密的注册信发送到您的信箱。在后续的登入中您可以根据需要选择直接使用 EnSaaS/SSO 帐密登入，或以 MyAdvantech 帐密登入。
+
+![EnSaaS-Portal-Login_3](../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_3.png)
+
+4. 登入 EnSaaS Catalog，选择和确认订阅号。
+
+如果您有多个 EnSaaS 4.0 订阅号，登入后提醒您先选择和确认要订阅云服务的订阅号。
+
+![EnSaaS-Portal-Login_4](../Database/uploads/images/PostgreSQL/EnSaaS-Portal-Login_4.png)
+
+### Step 2: 创建Blobstore实例
+
+1. 选择要购买的Blobstore服务，按照提示订阅Blobstore服务。
+
+2. 购买成功后，可以登录Service Portal查看购买的实例（目前仅有订阅号Admin和订阅号User可以查看），Service Portal可以从Catalog进入。
+
+   ![ServicePortal-entry.png](../Database/uploads/images/PostgreSQL/ServicePortal-entry.png)
    
    ![shareFile](./images/CreateInstance.png)
 
-### Step 2: 创建Secret
+### Step 3: 创建Secret
 
 成功订购Blobstore后，您可以通过Service 控制台（Service Portal）创建Secret，取得服务的连线信息。
 
@@ -87,7 +102,7 @@ WISE-PaaS/Blobstore是一种适用于云的对象存储解决方案。Blobstore�
 
 4. 点击OK，创建成功。
 
-### Step 3: 查看Secret
+### Step 4: 查看Secret
 Secret创建好后，您可以选择View操作来查看Secret的信息。
 
 ![shareFile](./images/CreateBlobSecret-3.png)
@@ -102,7 +117,7 @@ Secret是一组包含accessKey、endpoint和secretKey等信息的JSON格式文�
 * secretKey:  Azure Blob Key，由随机数和字母组成的一组字符串
 * type: s3-compatible
 
-### Step 4: 在App中使用Secret连接Blobstore
+### Step 5: 在App中使用Secret连接Blobstore
 
 用户可以将credential绑定在用户的APP中，假如生成的secret name为blobstore-ensaas-secret，将 APP deployment.yaml文件的spec->template->spec->envFrom->secretRef->name中填入secret的名字。示例方法如下：
 
@@ -171,7 +186,7 @@ access_key = ensaas_services['blobstore'][0].credentials.accessKey
 secret_key = ensaas_services['blobstore'][0].credentials.secretKey
 ```
 
-### Step 5: 使用S3 Browser连接Blobstore
+### Step 6: 使用S3 Browser连接Blobstore
 
 用户可使用第三方软件 S3 Browser 来管理云端Blobstore存储的內容。
 1. 下载 S3 Browser 6.2.3 版本
