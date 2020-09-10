@@ -1,6 +1,7 @@
 # 1.0.2 (2020-09-10)
 # **New Features**
-- /v1/portal/bills Response中加入company
+- /v1/portal/bills 
+  - Response中加入company
 
 # **Bug Fixes**
 
