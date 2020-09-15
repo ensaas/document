@@ -1,3 +1,7 @@
+## Portal 4.0.15.0-(2020-9-15)
+### New Features
+* The memberType of the enterprise is used by default when creating a subscription
+
 ## Portal 4.0.14.0-(2020-8-31)
 ### Fix bugs
 * Modify the description of each service in the top navigation bar
