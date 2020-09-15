@@ -1,3 +1,41 @@
+# 1.2.0.1 (2020-09-15)
+
+# New Features
+
+- CM設定API
+- 支援數字開頭Metric
+- 對於新部署的mg，加入部份已知pn的metric
+
+# Bug Fixes
+
+- Bug #11736 MG的API應加上身分驗證，避免外部人士任意呼叫
+
+- Bug #11745 呼叫PUT /services，若statistic未帶或為空，提示訊息不明確
+
+- Bug #11750 PUT /services 該API應阻擋pn及metric name使用英數字以外的符號
+
+- Bug #11761 呼叫PUT /services時，若put data為空，不應該能呼叫成功
+
+- Bug #12331 呼叫PUT /v2/connectors時，若put body全空，不應該能呼叫成功
+
+- Bug #12357 新增connectors時，若沒成功寫進資料庫，API不應該回201
+
+- Bug #12359 新增connectors時，若port輸入非int型態的資料，API不應該回覆200
+
+- Bug #12362 刪除connector時，若刪除成功，回覆不正確
+
+- Bug #12365 若刪除connector時沒有刪除到任何東西，建議修改回覆的response code或message
+
+- Bug #13378 呼叫GET /v2/usages/{pn} 時，若缺少必要參數，錯誤訊息用字有誤
+
+- Suggestion #11706 若連線不到iothub，應顯示error級別的log以提示無法連接iothub
+
+- Suggestion #12361 PUT /v2/connectors這支API在建立或更新成功時，建議回覆訊息顯示建立出的connector資料
+
+- Suggestion #15846 部署新的一套MG時，在parts資料表新增更多服務
+
+  
+
 # 1.2.0 (2020-08-17)
 
 # New Features
