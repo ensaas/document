@@ -12,7 +12,7 @@
 
 - Bug #11745 呼叫PUT /services，若statistic未帶或為空，提示訊息不明確
 
-- Bug #11750 PUT /services 該API應阻擋pn及metric name使用英數字以外的符號
+- Bug #11750 PUT /services 該API應阻擋pn及metric name使用英數字以外的符號 (正則： /[a-zA-Z]|\\d|\\.|-|_+/)
 
 - Bug #11761 呼叫PUT /services時，若put data為空，不應該能呼叫成功
 
