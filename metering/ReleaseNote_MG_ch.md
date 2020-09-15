@@ -3,7 +3,7 @@
 # New Features
 
 - CM設定API
-- 支援數字開頭Metric
+- 支援數字開頭Metric （正則： /[a-zA-Z]|\\d|\\.|-|_+/）
 - 對於新部署的mg，加入部份已知pn的metric
 
 # Bug Fixes
