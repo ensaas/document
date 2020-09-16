@@ -1,5 +1,13 @@
 ## ListingSystem4.0 ReleaseNote
 
+### version：v-1.7.0.8
+#### Changed:
+- 删除了get /service,get /releaseNote,get /serviceLowestPrice的权限
+#### Fixed:
+- 最低价同步问题：plan如果不存在就不会同步最低价
+- 添加缓存：缓存serviceWithPlan的结果，编辑相关操作会清掉缓存
+- 计算毛利率的除数为0的问题 添加api清除缓存
+
 ### version：v-1.7.0.3
 #### Added:
 - 添加接口：Get /service/grossProfitMargin 获取当前servicePackage的毛利率
