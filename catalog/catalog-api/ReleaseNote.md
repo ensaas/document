@@ -1,5 +1,19 @@
 ## ReleaseNote
 
+### version：2.0.1.8
+#### Added：
+- 整合ListingSystem。主要修改packaged service 与 intergration service。
+- 整合SSO GET /subscriptions/:id/detail接口，获取crmMemberType, isInternal, isPaid字段；原有的priceType字段逻辑不变。
+- 整合 Order ,创建订单时传入isInternal字段。
+- 整合 宋严正在开发的pluginbuy项目。
+#### Updated：
+- 修改Catalog发信格式，增加crm信息。
+- 修改 Delete /serviceInstance/:id接口逻辑，为了不破坏既有流程，现只支持从Inprogress和Active到None。
+- 修改退订逻辑，增加Inprogress时的逻辑。如果实例为Inprogress会将该实例的订单取消；如果是服务包并且有任何一条Inprogress的实例，则会将这个服务包下的订单全部取消。并调用各个buy删除实例。
+- 修改独立购买的服务实例退订时，创建订单proratedPrice不为0的bug。
+- 更新chart，增加pluginbuy的参数配置。
+- RMQ消息方面，在DELETE /serviceInstances/:id 希望传入的operation为 delete_start与delete_end。
+
 ### version：2.0.0.13
 #### Updated：
 - 订阅时 去除 service instance name的限制 （填和不填都行，无校验）
