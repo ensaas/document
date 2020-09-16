@@ -1,5 +1,33 @@
 ## Appbuy-api ReleaseNote
 
+### version：v-1.4.0.11
+####  Updated：
+- 整合新版listingsystem
+- 增加时区
+- 新增GET /serviceInstances/:id/canUpdates接口，传入多个服务实例id，返回app当前版本，可升级版本等信息。
+- 修改 GET /serviceInstances接口，增加参数onlyActived字段，该字段表示是否只获取Active状态的app，默认获取Active、Inactive
+- 修改 自动删除退订实例定时器逻辑，判断为满7个自然日的当天晚上23:59:59秒进行删除。
+- 修改chart
+
+### version：v-1.4.0.10
+####  Updated：
+- 增加 重新部署接口 PUT /serviceInstances/:id/redeploy 只会不重新部署当前版本。
+- 修改 GET/helmReleases/:name/status接口中增加，workload的 cpu ,memory, storge的数据，并增加daemonSet的数据。
+- 修改 在appbuy中加入Inprogress状态，当部署成功并成功发送catalog后，状态将改为Active。
+
+### version：v-1.4.0.9
+####  Updated：
+- 修改PUT /serviceInstances/:id方法，从listing取chart版本与values.yaml
+- 增加 GET /subscriptions/:sid ，根据id查询订阅的release信息。
+
+### version：v-1.4.0.8
+####  Updated：
+- Fix bug #14554重新发货失败，appbuy提示failed to install chart: Error: UPGRADE FAILED: \"apm-sundi1\" has no deployed releases
+- Fix bug 删除实例失败，数据库不存在的问题。
+- 重构接口GET /helmReleases/{name}/status，swagger中接口返回值已固定。返回值中将deployment、statefulSet与Ingress进行关联。
+- 在service Instance表中增加字段icon与description。每次发货都会从listing取这2个字段，并在查询时返回。
+- 修改GET /subscriptions、GET /subscriptions/{id}、GET /serviceInstances/{id}/instances接口，返回内外部URL。
+
 ### version：v-1.4.0.4
 ####  Updated：
 - 修改删除service instance时，消息回传参数问题
