@@ -1,5 +1,9 @@
 ## Order-API ReleaseNote
 
+### version：v-1.4.0.2
+#### Updated:
+- 整合了listing-1.7.0.8的servicePlan接口
+
 ### version：v-1.3.0.9
 #### Updated:
 - 创建的renew订单都会存放到renew_order表中，其他orderType的跟以前一样
