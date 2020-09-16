@@ -1,5 +1,13 @@
 ## ReleaseNote
 
+### version：v-1.0.4.4
+#### Added：
+- Header增加了consoles,并有各portal的描述，点击可跳转，如果没有链接，则会提示无此链接，非首页才会显示
+- sidebar和卡片里的列表，如果该服务isVisible为false，该服务将不显示
+- 卡片如果有displayName,则排序规则会按照displayName走，否则按照serviceName
+- 卡片名首字母取消了大写
+- 取消了工单上线的公告
+
 ### version：v-1.0.3.5
 #### Deleted：
 - 跳转到buy的url去掉了交易id
