@@ -1,3 +1,8 @@
+## Reporting 0.0.0.17(2020-09-18)
+## Bug Fixes
+ *  去掉datacenterAdmin认证部分(即去掉从mp获取role部分代码);
+ *  与前端查询时的有效token进行存储与redis中，减少访问sso次数；
+
 ## Reporting 0.0.0.12(2020-06-04)
 ### New Features
 
