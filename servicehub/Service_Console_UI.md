@@ -1,3 +1,13 @@
+## Service-Portal-UI 1.1.4 (2020-09-18)
+
+**新特性：**
+
+- #16253 在Service Usage頁面的Service Name下拉式選單新增Blobstore服務
+
+**修改Bug：**
+
+- #16229 若是在資源管理頁面被登出，重新登入後無法正常顯示頁面
+
 ## Service-Portal-UI 1.1.3.3 (2020-09-04)
 
 **修改Bug：**
