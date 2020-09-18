@@ -1,6 +1,14 @@
 # CHANGELOG
 
-# WISE-PaaS Service Manager - InfluxDB 1.0.0.1 (2020-09-09)
+## WISE-PaaS Service Manager - InfluxDB 1.0.0.2 (2020-09-18)
+
+### Added:
+- Requirement #15559: 新增retention policy及continuous query API
+
+### Fixed:
+- Bug #16232: 呼叫[GET] /v2/serviceInstances/{instanceId}/info拿的結果裡，ssl參數沒有正確顯示結果
+
+## WISE-PaaS Service Manager - InfluxDB 1.0.0.1 (2020-09-09)
 
 ### Added:
 - Requirement #13643: 提供給Dedicated Cluster Overview用的API
@@ -10,7 +18,7 @@
 ### Fixed:
 - Bug #15492: 刪除binding時，若該binding不存在，這時候與資料庫的連線沒有關閉
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.6 (1.0.0) (2020-05-15)
+## WISE-PaaS Service Manager - InfluxDB 0.1.6 (1.0.0) (2020-05-15)
 
 ### Added:
 - Requirement #13640: 將[POST] /v2/service_instances/manual的ssl參數改為非必填，若沒填則預設為false
@@ -23,7 +31,7 @@
 - Bug #13637: 資料庫中，credentials資料表中的deployment_method欄位長度錯誤
 
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.5
+## WISE-PaaS Service Manager - InfluxDB 0.1.5
 
 ### Added:
 - Requirement #13217: 需支持https的Dedicated InfluxDB
@@ -46,7 +54,7 @@
 - Bug #13352: 即使unbind過程發生錯誤，API還是回覆unbind成功
 
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.4
+## WISE-PaaS Service Manager - InfluxDB 0.1.4
 
 ### Fixed:
 
@@ -84,7 +92,7 @@
 
 - check header for resource list api
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.3 (2020-03-24)
+## WISE-PaaS Service Manager - InfluxDB 0.1.3 (2020-03-24)
 
 ### Updated:
 
@@ -99,7 +107,7 @@
 - fix redmine bug #12773: [GET] /v2/service_instance_id/{service_instance_id}/resources該API應列出指定的instanceId下有哪些database
 - fix redmine bug #12774: 進行bind後，回覆的訊息裡externalHosts不應該為空
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.2 (2020-03-23)
+## WISE-PaaS Service Manager - InfluxDB 0.1.2 (2020-03-23)
 
 ### Added:
 - add api [DLELTE] /v2/service_instances/{instance_id} (deprovision, only manual)
@@ -110,7 +118,7 @@
 - credential 的status改為runnning/detached/deleted
 - auth type必須為basic
 
-# WISE-PaaS Service Manager - InfluxDB 0.1.1 (2020-03-20)
+## WISE-PaaS Service Manager - InfluxDB 0.1.1 (2020-03-20)
 
 ### Added:
 - add api [PATCH] /v2/service_instances/{instance_id} for update deleted instance
@@ -118,7 +126,7 @@
 ### Updated:
 - fix format by 3/20 new spec
 
-# WISE-PaaS Service Manager - InfluxDB  version: 0.1.0 (2020-03-19)
+## WISE-PaaS Service Manager - InfluxDB  version: 0.1.0 (2020-03-19)
 
 ### Added:
 - 5 api
