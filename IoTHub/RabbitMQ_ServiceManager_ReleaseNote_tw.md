@@ -2,41 +2,73 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.16
+### Fix
+   - Bug #16245: Dedicated bind (未輸入vhost參數)，返回504 Gateway Time-out
+   - Bug #16114: 延伸議題: 處理 recovery api 在新舊版本 sm 的相容問題
+
+## 1.0.15
+### Update  
+   - Requirement #16239: 移除 Update pnQuantity API 返回 dashboard_url 資訊
+​
+## 1.0.14
+### Fix
+   - Bug #16114: 使用舊版本(v1.0.10) 建立的instance/ binding_id，無法在新版本(v1.0.13) bind、unbind、update pnQuantity 或  deprovision成功
+   - Bug #14155: standard bind 時創建非 management 權限的使用者帳號成功 (如：administrator)
+   - Bug #16094: 當 topic 權限只設定一個時(rmqTopicRead或rmqTopicWrite)，RabbitMQ management portal 顯示使用者未設定權限，但API返回資訊顯示權限設定成功
+   - Bug #14935: bind 時將使用者權限設定為管理者tag，返回資訊中 dashboard_url, http_api_uri, http_api_uris 為 internal_host資訊
+### Update  
+   - Requirement #13721: 部署 app 不新增預設的 credential
+
+## 1.0.13
+### Add
+   - 新增 api: /v2/convert/{instance_id}, 返回轉換為 shortId 後的 instanceId 以方便查詢
+### Fix
+   - Bug #14935: bind 時將使用者權限設定為管理者tag，返回資訊中 dashboard_url 為 internal_host 資訊
+   - Bug #14292: Update API未返回dashboard_url，更新 pnQuantity 用量後，service portall 無法點擊 instance 開啟 rabbitmq management
+   - Bug #15768: ops-postgres數據庫中紀錄轉換後的instance_id和 bindind_id，使用此id無法成功 deprovision 和 unbind
+### Update
+   - Requirement #15004: [PATCH] /v2/service_instances/{instance_id} 會判斷料號確認是否更新 pnQuantity
+   - Requirement #15769: ops-postgres 數據庫中需紀錄 instance_id和binding_id 轉換後的使用者資訊
+​
+## 1.0.12
+### Fix
+- Bug #15768: ops-postgres 數據庫中紀錄轉換後的 instance_id 和 bindind_id，使用此 id 無法成功 deprovision 和 unbind
+### Update
+- Requirement #15769: ops-postgres 數據庫中需紀錄 instance_id 和 binding_id 轉換後的使用者資訊
+​
+## 1.0.11
+### Fix
+- Bug #14718: 返回資訊的參數名稱與 API 參數名稱格式不同 (addition)
+- Bug #14935: bind 時將使用者權限設定為管理者 tag，返回資訊中 dashboard_url 為 internal_host 資訊
+### Update
+- 因應 MQTT username/passoword 對於某些設備有長度過長問題, 對 instance id 以及 bindind id 轉換成短 id 
+- 在做 binding 時, 讓 rmqTopicRead/rmqTopicWrite 可以支援綁定多組 topic (逗號隔開)
+
 ## 1.0.10
-
-### Fixes
-
+### Fix
 -Bug: 修正 bind 的時候 http_api_uri 會返回兩個 port 的問題
 
 ## 1.0.9
 
-### Fixes
-
+### Fix
 -Bug: 在做 shared provision 以及 dedicate addition 的時候 dashboard url 轉為回傳 external host
 
 ## 1.0.8
-
-### Fixes
-
+### Fix
 -Bug: 改為只透過INTERNAL_HOSTS檢查是否與rmq server有連上
 -Bug: 修正http_api_uri port重複
 
 ## 1.0.7
-
-### Fixes
-
+### Fix
 -Bug: binding api 的參數改為駝峰式 rmq_role->rmqRole, rmq_topic_read->rmqTopicRead, rmq_topic_write->rmqTopicWrite 
 
 ## 1.0.6
-
-### Fixes
-
+### Fix
 -Bug: dedicated manual 返回的dashboard url 從string改為json格式
 
 ## 1.0.5
-
-### Fixes
-
+### Fix
 <!-- - Bug #13696: 呼叫Manual addition API(parameters中的任一參數填寫空值" ")成功，將造成provision或binding失敗，應強制填寫必須參數 -->
 - Bug #13725: 輸入錯誤pnQuantity參數值類型(如：abc)或未填寫pnQuantity參數，呼叫shared provision 返回503
 <!-- - Bug #14028: 新增Manual addition時(username或password參數填寫空值、未填寫或參數未填寫)，返回503 -->
@@ -52,9 +84,7 @@
 <!-- - Requirement #13885: 不檢查binding_id是否存在，deprovision 可執行成功 (改由service hub直接管控) -->
 
 ## 1.0.4
-
-### Fixes
-
+### Fix
 - Bug #13700: 建立的vhostName名稱僅支援0-9,a-z,A-Z以及 - (非字首)
 - Bug #13722: 建立Manual addition時設定internalHosts為錯誤參數值，呼叫shared provision API或dedicated bind API 返回No response
 - Bug #13793: Provision(recover) 1000個instances，其中3次失敗後，再次呼叫API仍無法recover，返回503 ErrorMessage: Vhost already exist
@@ -74,9 +104,7 @@
 - Requirement #13662: [Chart] 部署Go 版本app名稱顯示rabbitmq-sm，以區分3.0版本rabbitmq-service-broker
 
 ## 1.0.3
-
 ### Add
-
 - 支援dedicated
 - 新增update api
 - 新增shared addition api
