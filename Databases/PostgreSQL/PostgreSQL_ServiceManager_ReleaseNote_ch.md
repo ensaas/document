@@ -1,5 +1,19 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.4 (2020-09-2)
+
+- 整合ECM
+- Bug #15351: 若一個dedicated instance的inernalHosts有2個以上的IP，建立binding後，產生的uri只有包含一個host
+- Bug #16168: 呼叫[PATCH] /v2/serviceInstances/{instanceId}/info時，authenticationDatabase的字數限制錯誤
+- Bug #16185: Swagger文件沒有更新
+- Bug #16200: [POST] /v2/resourceInfo 此API須追加限制部分參數應為必填參數
+- Bug #16203: [PATCH] /v2/resourceInfo/datacenterCode/<略>此API須追加限制部分參數不得為空
+- Bug #16207: 無法恢復shared instance
+- Requirement #15459: 建立shared instance時，將規則改為優先開在instance數量較多的shared cluster上
+- Requirement #15792: 不管是手動建立還是自動建立的instance，都要能透過[PUT] /v2/service_instances/{instance_id}這支API進行恢復
+- Suggestion #16202: 建議[POST] /v2/resourceInfo追加檢查header中的content-type
+
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.3 (2020-09-08)
 
 - Bug #15604: init ops db時，binding表格裡的binding_time資料類型錯誤
