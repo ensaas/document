@@ -1,3 +1,21 @@
+# 0.3.19 (2020-09-23) 
+ * feat: influxdb 新需求
+ * feat: 允許不同訂閱號下，相同名稱的 secret name 互相合併
+
+# 0.3.18.7.1 (2020-09-21) 
+ * feat: 優化 postgresql 連線處理
+ * feat: 與 ESM/ECM 整合
+
+# 0.3.18.5 (2020-09-16) 
+ * feat: 新增 user provider 選項
+
+# 0.3.18.4 (2020-09-14)
+ * feat: 新增 plan API (需要維運人員先建立 User-Provided plan 好) 
+ * feat: 新增 user provider API https://shimo.im/docs/loqeWmBM9LuLBdAn
+ * feat: 新增自行購買API
+ * feat: catalog 開關關閉時 不連線 rabbitmq 
+ * bugfix: 修正寄信內容會有資訊缺少的問題，改使用servicehub client token 詢問
+ 
 # 0.3.18.3 (2020-08-14)
  * bugfix: 7天後到期不應該去呼叫 service Manager
  * 每日檢查會印出下一次檢查時間和日期
