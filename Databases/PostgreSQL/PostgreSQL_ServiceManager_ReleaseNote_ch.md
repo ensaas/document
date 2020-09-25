@@ -1,6 +1,6 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
-## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.4 (2020-09-2)
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.4 (2020-09-25)
 
 - 整合ECM
 - Bug #15351: 若一個dedicated instance的inernalHosts有2個以上的IP，建立binding後，產生的uri只有包含一個host
