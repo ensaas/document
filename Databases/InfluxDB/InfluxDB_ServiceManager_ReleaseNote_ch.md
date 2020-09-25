@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## WISE-PaaS Service Manager - InfluxDB 1.0.0.2 (2020-09-18)
+## WISE-PaaS Service Manager - InfluxDB 1.0.0.2(1.0.1) (2020-09-18)
 
 ### Added:
 - Requirement #15559: 新增retention policy及continuous query API
