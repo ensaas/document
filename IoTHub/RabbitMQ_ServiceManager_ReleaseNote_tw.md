@@ -2,6 +2,14 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.18
+### Fix
+   - Bug #16419: Recover instance，會修改數據庫中其他instance的parameters欄位instance_id資訊
+​
+## 1.0.17
+### Add
+   - 新增 db migration 檢查腳本讓 sm 舊版本 db 欄位資料符合新版需求
+
 ## 1.0.16
 ### Fix
    - Bug #16245: Dedicated bind (未輸入vhost參數)，返回504 Gateway Time-out
