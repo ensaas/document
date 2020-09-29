@@ -1,3 +1,22 @@
+## API 4.0.16.0- (2020-09-29)
+### New Features
+* Add subscription number configuration item, share membership, visit expense center, consumption cooperation, whether it is hosted by enterprise number, and exchange rate of expense bill
+* Whether the enterprise number admin has the permission of subscription number admin by default depends on whether the subscription number is enabled and managed by the enterprise number (currently, it is mainly reflected in the API of user token /users/me)
+* Whether the attribute is managed by enterprise number can be changed only when subscription number admin and enterprise number admin pass at the same time
+* Creating an enterprise account will create a subscription number with the same name and crmid by default
+* Integrating ECM
+* Record the change of subscription number, quota limit, used and whether it is managed by the enterprise number, and provide API /subscriptions/records to query
+
+### Fix bugs 
+* The modification is to parse the apibody returned by notification, not only to judge the returned status code
+
+## Portal 4.0.15.6-(2020-9-29)
+### New Features
+* The enterprise account no longer has the subscription admin permission by default when creating a subscription
+* The enterprise admin can apply for a managed subscription to gain access to applications under the subscription
+* The subscription admin can apply to be hosted, so that the enterprise admin has access to applications under the subscription
+* After the user logs in, if a escrow request is received, a pop-up prompt will guide him to the subscription page for processing. The red operation column of the subscription list indicates that the subscription currently has a hosting request pending
+
 ## Portal 4.0.15.0-(2020-9-15)
 ### New Features
 * The memberType of the enterprise is used by default when creating a subscription
