@@ -1,3 +1,7 @@
+# 0.3.19.1 (2020-10-8) 
+ * bug: 修正 swager 版號和API回傳 statusCode 
+ * bug: 修正HZ站點參數錯誤
+
 # 0.3.19 (2020-09-23) 
  * feat: influxdb 新需求
  * feat: 允許不同訂閱號下，相同名稱的 secret name 互相合併
