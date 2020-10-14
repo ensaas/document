@@ -1,0 +1,4 @@
+name: example-golang
+description: a chart for the cma-postgresql-go
+version: 0.0.1
+appVersion: 0.0.1

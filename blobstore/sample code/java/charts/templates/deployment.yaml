@@ -1,0 +1,70 @@
+{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: apps/v1
+{{- else -}}
+apiVersion: extensions/v1beta1
+{{- end }}
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: {{ template "fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{ end }}
+      #serviceAccount: {{ .Release.Name }}-service
+      containers:
+      - name: example-blob-golang
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        #command:
+        #- ./example
+        #args:
+        #- --port
+        #- "{{ .Values.service.port }}"
+        #{{- if .Values.authenticate}}
+        #- --authenticate-k8s-token
+        #{{- end}}
+        #{{- if .Values.colorlog}}
+        #- --color-log
+        #{{- end}}
+        #{{- if .Values.debug}}
+        #- --debug
+        #{{- end}}
+        #- -alsologtostderr
+
+        env:
+          - name: ENSAAS_SERVICES
+            valueFrom:
+              secretKeyRef:
+                name: {{.Values.appSecretName }}
+                key: ENSAAS_SERVICES
+
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        readinessProbe:
+          tcpSocket:
+            port: {{ .Values.service.port }}
+          failureThreshold: 1
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 2

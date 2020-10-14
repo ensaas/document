@@ -1,0 +1,22 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ template "fullname" . }}
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: {{ .Values.service.port }}
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: {{ .Values.service.port }}
