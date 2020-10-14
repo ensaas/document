@@ -1,5 +1,9 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.5 (2020-10-14)
+
+- Bug #16645: 無法建立shared instance
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.4 (2020-09-25)
 
 - 整合ECM
