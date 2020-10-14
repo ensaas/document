@@ -1,3 +1,14 @@
+# 1.0.2.2 (2020-10-14)
+
+# **New Features**
+- 支援ECM
+
+# **Bug Fixes**
+
+# **Breaking Changes**
+
+# **Chart Version**
+1.1.0
 # 1.0.2 (2020-09-10)
 # **New Features**
 - /v1/portal/bills 
