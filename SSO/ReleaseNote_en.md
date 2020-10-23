@@ -1,3 +1,11 @@
+
+## Portal 4.0.15.17-(2020-10-23)
+### New Features
+* The enterprise account no longer has the subscription admin permission by default when creating a subscription
+* The enterprise admin can apply for a managed subscription to gain access to applications under the subscription
+* The subscription admin can apply to be hosted, so that the enterprise admin has access to applications under the subscription
+* After the user logs in, if a escrow request is received, a pop-up prompt will guide him to the subscription page for processing. The red operation column of the subscription list indicates that the subscription currently has a hosting request pending
+
 ## API 4.0.16.0- (2020-09-29)
 ### New Features
 * Add subscription number configuration item, share membership, visit expense center, consumption cooperation, whether it is hosted by enterprise number, and exchange rate of expense bill
