@@ -1,3 +1,11 @@
+## API 4.0.18.0- (2020-10-23)
+### New Features
+* Integrate license
+* Add API /subscriptions/:notifyid/hosting-request/never-notify, and set the current message to no longer remind.
+* Add API /subscriptions/:subscriptionid/hosting-request. Get the subscription number notify according to the subscription ID
+* Adjust the mechanism of subscription number notification to realize the new two landlord mechanism.
+* Adjust the API /subscriptions/hosting-requests to return only the total number of reminders to return the details of each reminder.
+* Adjust the parameter fields returned by API /subscriptions/:subscriptionid/detail
 
 ## Portal 4.0.15.17-(2020-10-23)
 ### New Features
@@ -5,6 +13,10 @@
 * The enterprise admin can apply for a managed subscription to gain access to applications under the subscription
 * The subscription admin can apply to be hosted, so that the enterprise admin has access to applications under the subscription
 * After the user logs in, if a escrow request is received, a pop-up prompt will guide him to the subscription page for processing. The red operation column of the subscription list indicates that the subscription currently has a hosting request pending
+
+## API 4.0.17.0- (2020-09-30)
+### New Features
+* 添加 billRateUnit KRW
 
 ## API 4.0.16.0- (2020-09-29)
 ### New Features
