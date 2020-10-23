@@ -1,3 +1,11 @@
+## API 4.0.18.0- (2020-10-23)
+### New Features
+* 整合license
+* 新增api /subscriptions/:notifyId/hosting-request/never-notify,设置当前消息不再提醒。
+* 新增api /subscriptions/:subscriptionId/hosting-request,根据订阅号id获取订阅号notify.
+* 调整订阅号通知提醒的机制，实现新的二房东机制。
+* 调整api /subscriptions/hosting-requests 将只返回需要提醒的总个数，改为返回每条提醒得详细信息。
+* 调整api /subscriptions/:subscriptionId/detail返回的参数字段
 
 ## Portal 4.0.15.17-(2020-10-23)
 ### New Features
@@ -5,6 +13,10 @@
 * 企业账号admin可以申请托管订阅号以获取订阅号下应用的访问权限
 * 订阅号admin可以申请被托管，使得企业账号admin拥有订阅号下应用的访问权限
 * 用户登录后如果有收到托管请求，则弹窗提示，引导其前往订阅号页面进行处理，订阅号列表操作列红色表示该订阅号目前有托管请求待处理
+
+## API 4.0.17.0- (2020-09-30)
+### New Features
+* 添加 billRateUnit KRW
 
 ## API 4.0.16.0- (2020-09-29)
 ### New Features
