@@ -1,3 +1,10 @@
+# 1.2.0.3 (2020-10-26)
+
+# New Features
+- log加入處理時間
+- 修改cm log訊息以免混淆 
+# Bug Fixes
+-  修正/v2/services的正則表示式
 # 1.2.0.2 (2020-10-14)
 
 # New Features
