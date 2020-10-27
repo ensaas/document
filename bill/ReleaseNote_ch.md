@@ -1,3 +1,15 @@
+# 1.0.2.3 (2020-10-27)
+
+# **New Features**
+
+- API Version更新至1.1版
+	- 支持二房東功能
+	- deduction “isPaidAccount” 停用
+	- 扣款時新增deductionType欄位
+	- 支持SSO AllowAccessCostCenter設定
+- 加入訂閱號匯率記錄
+# **Breaking Changes**
+- 停用deduction中的“isPaidAccount” 欄位，改由deduction type來決定扣款身份
 # 1.0.2.2 (2020-10-14)
 
 # **New Features**
