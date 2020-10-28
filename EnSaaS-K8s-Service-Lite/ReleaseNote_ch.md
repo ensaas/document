@@ -1,10 +1,5 @@
 ### EnSaaS-K8s-Service Lite 4.1.0- (2020-10-28)
 
-#### 包含的服务
-- kubeensaas-lite：v-4.1.0
-- clusteragent-lite：v-4.1.0
-- mp-ui-lite：v-4.1.0
-
 #### Added:
 - 合并Service instance相关功能，角色支持：globalAdmin、subscriptionAdmin和subscriptionUser
 - API支持job相关的功能，方便派发job。
@@ -34,6 +29,11 @@
 - 新建cluster失败问题；
 - 统计summary的样式问题；
 
+#### 包含的服务
+- kubeensaas-lite：v-4.1.0
+- clusteragent-lite：v-4.1.0
+- mp-ui-lite：v-4.1.0
 
 #### Note:
 - 从EnSaaS-K8s-Service 4.0.11后，拆分出EnSaaS-K8s-Service Lite，用于IoTSuite Edge的场景
+- EnSaaS-K8s-Service Lite的新建了一个chart，chart包中包含了所需的服务
