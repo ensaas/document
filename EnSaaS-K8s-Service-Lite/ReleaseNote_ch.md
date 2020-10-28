@@ -7,7 +7,7 @@
 - API支持用户创建LoadBalancer和nodeport service
 - API支持用户创建PV和PVC
 
-#### Enhancement：
+#### Updated：
 - 将CRD的版本从v1beta1升级到v1（K8S 1.19版本之后v1beta1将会废弃）
 - 修改CRD资源的group信息，v1版本的CRD不支持以k8s.io结尾的group，修改为edgecloud.ensaas.io
 - 重构了metric获取的逻辑，添加查看ns,ws,node资源的API
@@ -29,7 +29,7 @@
 - 新建cluster失败问题；
 - 统计summary的样式问题；
 
-#### 包含的服务
+#### Component
 - kubeensaas-lite：v-4.1.0
 - clusteragent-lite：v-4.1.0
 - mp-ui-lite：v-4.1.0
