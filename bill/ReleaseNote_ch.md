@@ -1,3 +1,14 @@
+# 1.0.2.4 (2020-11-02)
+- /v1.1/portal/bills
+
+  - 移除currency的預設值改為必帶
+  - deductionType若為空，則表示查詢所有帳款
+-  /v1.1/deduction 
+  - 移除subscriptionType欄位
+- 加入SSO扣款功能
+
+
+# **New Features**
 # 1.0.2.3 (2020-10-27)
 
 # **New Features**
