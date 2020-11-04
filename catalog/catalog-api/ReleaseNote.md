@@ -1,5 +1,18 @@
 ## ReleaseNote
 
+### version：2.0.2.2
+#### Added：
+- 增加审计日志功能
+#### Updated：
+- 修改退订Inprogress状态下的实例时也同时发退订邮件给SRE.
+- Chart有变动。
+- 整合sso新接口 GET /subscriptions/:id/details
+- 整合order接口，去除isPaid字段。
+
+### version：2.0.1.9
+#### Updated：
+- 整合SSO剩余点数校验以及信用额度，修改提示信息。
+
 ### version：2.0.1.8
 #### Added：
 - 整合ListingSystem。主要修改packaged service 与 intergration service。
