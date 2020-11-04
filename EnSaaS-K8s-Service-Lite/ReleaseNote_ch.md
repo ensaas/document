@@ -1,4 +1,4 @@
-### EnSaaS-K8s-Service Lite 4.1.0- (2020-10-28)
+### EnSaaS-K8s-Service Lite 4.1.0- (2020-11-04)
 
 #### Added:
 - 合并Service instance相关功能，角色支持：globalAdmin、subscriptionAdmin和subscriptionUser
@@ -36,4 +36,4 @@
 
 #### Note:
 - 从EnSaaS-K8s-Service 4.0.11后，拆分出EnSaaS-K8s-Service Lite，用于IoTSuite Edge的场景
-- EnSaaS-K8s-Service Lite的新建了一个chart，chart包中包含了所需的服务
+- EnSaaS-K8s-Service Lite新建了一个chart，chart包中包含了所需的服务
