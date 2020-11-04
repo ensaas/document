@@ -4,11 +4,13 @@
 #### Added:
 - 增加字段servicePackageId，servicePackageName 在app_service_instance表中。
 ####  Updated：
-- 修改接口GET /serviceInstances/:id/canUpdate 为 Get /serviceInstances/:id/status;新接口内包括能否升级的信息以及actualStatus（helm chart真实状态）字段;该字段目前只有4种。 Running（运行中） , Error（错误） , Stopped（停止） 和 Limited（受限）。
-       - 只要有任意一个pod是Error，即返回Error; 
-       - 全部pod都是running并且与replicas设置一致时返回Running。
-       - 没有pod或replicas设置为0时返回Stopped。
-       - 当pod为pending，complete或者个数与replicas设置不一致时返回 limited。Limited时不能保证app正常运行。
+- 修改接口GET /serviceInstances/:id/canUpdate 为 Get /serviceInstances/:id/status;
+  新接口内包括能否升级的信息以及actualStatus（helm chart真实状态）字段; 该字段目前只有4种。 Running（运行中） , Error（错误） , Stopped（停止） 和 Limited（受限  
+  
+  - 只要有任意一个pod是Error，即返回Error  
+  - 全部pod都是running并且与replicas设置一致时返回Running
+  - 没有pod或replicas设置为0时返回Stopped
+  - 当pod为pending，complete或者个数与replicas设置不一致时返回 limited。Limited时不能保证app正常运行
 - 修改 Get /helmRelease/:releaseName/status增加actualStatus字段。
 - 修改 Get /subscriptions/:id/status 增加actualStatus字段。
 - 修改 PATCH /subscriptions/:id/limit 和 PATCH /subscriptions/:id/resume 按照helm的真实状态进行操作。
