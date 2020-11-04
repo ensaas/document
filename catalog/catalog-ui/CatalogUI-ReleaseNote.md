@@ -1,5 +1,15 @@
 ## ReleaseNote
 
+
+### version：v-1.0.4.9
+#### Added：
+- 增加当前地区推荐合适的portal功能。（hz:中国， sa：其它地区， je：日本）（如在中国区打开sa，则会提示去hz站点的portal，如果打开的是hz的则不会提示）。
+- 文字鼠标放上去会有中文翻译。
+- GO NOW鼠标放上去会有即将前往的portal地址。
+- 关闭按钮鼠标放上去会提示下次不再显示，关闭后后面打开将不会再显示。
+- 除以上站点，其余站点打开都不会有该提示。
+- 申请单页下面添加了交付时间提示： The application will be answered and delivered within 3 working days.
+
 ### version：v-1.0.4.4
 #### Added：
 - Header增加了consoles,并有各portal的描述，点击可跳转，如果没有链接，则会提示无此链接，非首页才会显示
