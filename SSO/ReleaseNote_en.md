@@ -1,3 +1,11 @@
+## Portal 4.0.16-(2020-11-4)
+### New Features
+* The enterprise account no longer has the subscription admin permission by default when creating a subscription
+* The enterprise admin can apply for a managed subscription to gain access to applications under the subscription
+* The subscription admin can apply to be hosted, so that the enterprise admin has access to applications under the subscription
+* After the user logs in, if a escrow request is received, a pop-up prompt will guide him to the subscription page for processing
+* The lite version removes functions related to enterprise
+
 ## API 4.0.18.0- (2020-10-23)
 ### New Features
 * Integrate license
@@ -6,13 +14,6 @@
 * Adjust the mechanism of subscription number notification to realize the new two landlord mechanism.
 * Adjust the API /subscriptions/hosting-requests to return only the total number of reminders to return the details of each reminder.
 * Adjust the parameter fields returned by API /subscriptions/:subscriptionid/detail
-
-## Portal 4.0.15.17-(2020-10-23)
-### New Features
-* The enterprise account no longer has the subscription admin permission by default when creating a subscription
-* The enterprise admin can apply for a managed subscription to gain access to applications under the subscription
-* The subscription admin can apply to be hosted, so that the enterprise admin has access to applications under the subscription
-* After the user logs in, if a escrow request is received, a pop-up prompt will guide him to the subscription page for processing. The red operation column of the subscription list indicates that the subscription currently has a hosting request pending
 
 ## API 4.0.17.0- (2020-09-30)
 ### New Features
@@ -29,13 +30,6 @@
 
 ### Fix bugs 
 * The modification is to parse the apibody returned by notification, not only to judge the returned status code
-
-## Portal 4.0.15.6-(2020-9-29)
-### New Features
-* The enterprise account no longer has the subscription admin permission by default when creating a subscription
-* The enterprise admin can apply for a managed subscription to gain access to applications under the subscription
-* The subscription admin can apply to be hosted, so that the enterprise admin has access to applications under the subscription
-* After the user logs in, if a escrow request is received, a pop-up prompt will guide him to the subscription page for processing. The red operation column of the subscription list indicates that the subscription currently has a hosting request pending
 
 ## Portal 4.0.15.0-(2020-9-15)
 ### New Features
