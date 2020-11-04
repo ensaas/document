@@ -27,6 +27,9 @@
 - Requirement #16118: 新增API [PATCH] /v2/serviceInstances/{serviceInstanceId}/info
 - Requirement #16119: [POST] /v2/serviceInstances/manual 增加檢查輸入的帳號是否具有足夠權限
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.1.16.3 (2020-08-12)
+
+- Requirement #15681: 支持設置shared instance的預設連線數
 
 ## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.2 (2020-08-04)
 
