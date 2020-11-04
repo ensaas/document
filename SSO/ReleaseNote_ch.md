@@ -6,7 +6,7 @@
 * 用户登录后如果有收到托管请求，则弹窗提示，引导其前往订阅号页面进行处理
 * sso适配lite版本，去掉和企业账号相关的功能
 
-## API 4.0.18.0- (2020-10-23)
+## API 4.0.18- (2020-11-04)
 ### New Features
 * 整合license
 * 新增api /subscriptions/:notifyId/hosting-request/never-notify,设置当前消息不再提醒。
