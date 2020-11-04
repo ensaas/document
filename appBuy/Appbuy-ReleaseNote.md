@@ -15,6 +15,11 @@
 - 修改 PATCH /subscriptions/:id/limit 和 PATCH /subscriptions/:id/resume 按照helm的真实状态进行操作
 - 修改helm chart
 
+### version：v-1.4.1.1
+####  Updated：
+- 整合ECM。支持纯Helm Env部署与ECM部署。(deploy 为 k8s时读取env；为ecm时读取ecm)。
+- 仓库创建时加入订阅号id字段。创建私有仓库支持订阅号admin，查询支持订阅号user和admin。 Public和Marketplace类型的仓库只能由 globalAdmin操作。
+- 为部分GET接口增加分页。
 
 ### version：v-1.4.0.11
 ####  Updated：
