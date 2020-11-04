@@ -1,16 +1,14 @@
 ### EnSaaS-K8s-Service Lite 4.1.0- (2020-11-04)
 
 #### Added:
-- add Service instance portal to mplite，Supported roles：globalAdmin、subscriptionAdmin和subscriptionUser
+- Merged Service Portal to eks-lite，Supported roles：globalAdmin、subscriptionAdmin和subscriptionUser
 - API adds support for job, easy to use for dispatch job
-- API adds support for backup and restore of cluster,workspace and namespace.The storage now supports S3,use though yaml files
-- API adds support for LoadBalancer and node port service
 - API adds support for PV and PVC
 
 #### Updated：
 - Upgrade CRD version from v1beta1 to V1 (v1beta1 will be obsolete after k8s 1.19)
 - Modify the group information of CRD resources. The V1 version of CRD does not support groups ending with k8s.io. Modify to edgecloud.ensaas.io
-- The logic of metric acquisition is reconstructed, and the API for viewing ns, WS and node resources is added
+- The logic of metric acquisition is reconstructed, and the API for viewing ns, ws and node resources is added
 - Add Applications page
 - Cancel the toolbox of application and service pages
 - top_navbar add Home button
@@ -25,9 +23,9 @@
 - Fix the display problems of scale quota page
 - When the permission is workspaceowner, user do not have permission to delete quota in the quota page, set operation button to disable
 - In global page,when used is 0,circle text have display problems
-- In create user page, not give prompt information to existing users
+- In create user page, when user already exis UI does not give prompt information
 - Fix add cluster failed
-- The style of statistical summary
+- modify the style of summary
 
 #### Component
 - kubeensaas-lite：v-4.1.0
