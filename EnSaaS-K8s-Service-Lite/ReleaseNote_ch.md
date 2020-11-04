@@ -3,8 +3,6 @@
 #### Added:
 - 合并Service instance相关功能，角色支持：globalAdmin、subscriptionAdmin和subscriptionUser
 - API支持job相关的功能，方便派发job。
-- API支持支持cluster，workspace和namespace的备份还原。当前备份还原的存储支持S3，方式为yaml文件创建备份还原
-- API支持用户创建LoadBalancer和nodeport service
 - API支持用户创建PV和PVC
 
 #### Updated：
