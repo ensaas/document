@@ -1,5 +1,14 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.7 (2020-11-05)
+
+- Bug #16699: 恢復cloud driver開出的instance時，恢復成功時API應回覆202
+- Bug #16986: 建立dedicated instance，產生出的database不應該開放所有user都能連
+
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.6 (2020-10-14)
+
+- 修復設置shared plan db上限為-1時無法建立instance的錯誤
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.5 (2020-10-14)
 
 - Bug #16645: 無法建立shared instance
