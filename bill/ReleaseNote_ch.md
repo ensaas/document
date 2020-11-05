@@ -1,7 +1,6 @@
 # 1.1.0 (2020-11-04)
 
 # **New Features**
-
 - API Version更新至1.1版
 
   - 支持二房東功能
@@ -19,6 +18,8 @@
 
 - 支持ECM功能
 
+- 本版有改動db，部署後需進行db migration
+
 # **Bug Fixes**
 
 # **Breaking Changes**
@@ -26,8 +27,9 @@
 - 停用deduction中的“isPaidAccount” 欄位，改由deduction type來決定扣款身份
 
 # **Chart Version**
-
 1.1.0
+
+
 
 
 
