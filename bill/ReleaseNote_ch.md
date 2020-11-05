@@ -1,3 +1,36 @@
+# 1.1.0 (2020-11-04)
+
+# **New Features**
+
+- API Version更新至1.1版
+
+  - 支持二房東功能
+    - SSO AllowAccessBillingPortal設定
+    - SSO扣款
+    - 加入匯率功能
+  - /v1.1/deduction 
+    - 移除“isPaidAccount” 欄位
+    - 移除subscriptionType欄位
+    - 扣款時新增deductionType欄位
+
+  - /v1.1/portal/bills
+    - 新增currency欄位
+    - deductionType若為空，則表示查詢所有帳款
+
+- 支持ECM功能
+
+# **Bug Fixes**
+
+# **Breaking Changes**
+
+- 停用deduction中的“isPaidAccount” 欄位，改由deduction type來決定扣款身份
+
+# **Chart Version**
+
+1.1.0
+
+
+
 # 1.0.2.4 (2020-11-02)
 - /v1.1/portal/bills
 
