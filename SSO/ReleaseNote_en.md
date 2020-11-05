@@ -1,3 +1,7 @@
+## Portal 4.0.17-(2020-11-5)
+### New Features
+* The subscription available credit change record form shows the details and balance
+
 ## Portal 4.0.16-(2020-11-4)
 ### New Features
 * The enterprise account no longer has the subscription admin permission by default when creating a subscription
