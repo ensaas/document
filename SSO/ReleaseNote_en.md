@@ -1,3 +1,23 @@
+## API 4.0.19.0- (2020-11-11)
+### New Features
+* In the initial update, all default subscription numbers will be changed to - 1 and non default subscription numbers will be changed to 0
+* At the initial startup, the membertype of all enterprise numbers whose membertype is internal will be changed to wisread, isinternal to true, and mpdefault will be changed to premiervip
+* When starting for the first time, all enterprise numbers will be scanned. If there is no default subscription number under it, it will be created. The ID is the name by default and encrypted with MD5. If it is repeated, it will be changed to UUID
+
+### Fix bugs 
+* Modify the problem of error judgment of notification return status when sending a message
+* The problem of inaccuracy of decimal places when modifying and querying the remaining quota (involving all APIs that return the remaining points)
+* Modify registration letter and reset password letter to add data center information
+* Modify non default subscription number, limit cannot be set to - 1 (new and modify)
+* Modifying the sorting problem of surplus quota
+* Modify the fifth point. For the initial start-up, the default subscription number is - 1, and the non default subscription number is guaranteed to be 0
+* The detail API of the subscription number is added to verify whether the result returned by the marketplace is valid, not only judging the success from the status code.
+
+## Portal 4.0.18-(2020-11-11)
+### New Features
+* The unlimited available credit of the sub-subscription is adjusted to 0. If you need to adjust, please go to [Subscription Number] [Edit] [Current Available Scale] to adjust
+* The subscription hosting notification received by the enterprise administrator is presented in the form of a table in the pop-up window after login
+
 ## Portal 4.0.17-(2020-11-5)
 ### New Features
 * The subscription available credit change record form shows the details and balance
