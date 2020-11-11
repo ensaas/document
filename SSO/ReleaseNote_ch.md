@@ -1,6 +1,6 @@
-## API 4.0.19.0- (2020-11-11)
+## API 4.0.19- (2020-11-11)
 ### New Features
-* 添加在初次更新时，会将所有的默认订阅号limit改成-1，非默认订阅号改成0.
+* 添加在初次更新时，会将所有的默认订阅号可用额度改成-1，非默认订阅号改成0.
 * 初次启动时，会将所有企业号中memberType为Internal的 memberType改为WISELead,isInternal改为true,(mpdefault 会改为PremierVIP)
 * 初次启动时，会扫描所有企业号，如果其下没有默认订阅号，则会创建出来，id默认为名称进行md5加密，如果重复则改为uuid.
 
