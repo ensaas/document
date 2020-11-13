@@ -1,3 +1,36 @@
+### EnSaaS-K8s-Service 4.0.12- (2020-11-13)
+
+#### [Managment Portal API]- 4.0.11-req2-hotfix1
+
+Added: 
+- 支持normal workspace的autoscale功能
+- 支持license API
+- 完善了cluster status功能
+
+Fixed:
+- 同时添加/删除权限导致的新增权限不生效的问题
+- mp api /v1/datacenter/{dcName}/users/me返回值添加SsoSubscriptions字段保留sso原始订阅号以支持enterpriseAdmin
+- clusterOwner不应该有权限、但事实上有权限创建loadballance的问题;
+- workload的running pod统计不准确；
+- workspace totalDisk和request.storages在ui上内容不统一的问题；
+- 修改权限后，第一次执行kubectl会出错，第二次才ok的问题
+- 修正clusteragent不定期重启的问题
+
+#### [Managment Portal UI]- 4.0.11-req2-hotfix1
+
+Added: 
+- 添加App console功能
+- 完善了cluster status功能
+
+Fixed:
+- 修正App console页面的状态刷新的问题
+- 同时添加/删除权限导致的新增权限不生效的问题
+- App console页面添加web kubectl图标且进去后直接切换到相应的namespace，更符合大家的使用习惯。
+- 支持license的过期提示功能
+- 修整和完善页面功能说明
+
+
+
 ### EnSaaS-K8s-Service 4.0.11- (2020-08-28)
 
 #### [Managment Portal API]- 4.0.11
