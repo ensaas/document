@@ -19,5 +19,5 @@
 
 #### Component
 
-- tunnelserver：v-1.0.1
-- tunnel-server-ui：v-1.0.1
+- securitytunnel：v-1.0.1
+- securitytunnel-ui：v-1.0.1
