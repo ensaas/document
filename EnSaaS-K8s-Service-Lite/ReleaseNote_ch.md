@@ -1,3 +1,23 @@
+### EnSaaS-K8s-Service Lite 4.1.1- (2020-11-18)
+
+#### Added:
+- 添加对GPU的支持。支持Pod使用GPU资源，同时会对GPU的使用情况进行监控。
+- 支持默认的工作空间配额可配置。可根据平台资源占比进行动态配置
+- 支持配置不受webhook约束的命名空间，便于对集群升级
+
+#### Updated：
+- application页面添加Web kubectl功能
+- 修改application页面获status和instance的逻辑
+- 优化serviceInstance页面。
+
+#### Fixed:
+- Application页面instance个数和现实个数不符
+
+#### Component
+- kubeensaas-lite：v-4.1.1
+- clusteragent-lite：v-4.1.1
+- mp-ui-lite：v-4.1.1
+
 ### EnSaaS-K8s-Service Lite 4.1.0- (2020-11-04)
 
 #### Added:
