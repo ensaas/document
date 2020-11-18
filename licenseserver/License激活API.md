@@ -193,7 +193,7 @@ GET http://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstance
 **请求示例**
 
 ```
-GET http://api.license.ensaas.en.internal/v1/api/serviceName/Dashboard/username/test@advantech.com.cn?page=1&pageSize=100
+GET http://api.license.ensaas.en.internal/v1/api/licenses/serviceName/Dashboard/username/test@advantech.com.cn?page=1&pageSize=100
 ```
 
 **正常返回示例**
