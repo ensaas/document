@@ -1,7 +1,26 @@
+### EnSaaS-K8s-Service Lite 4.1.1- (2020-11-18)
+#### Added:
+- Add support for GPU. Support pod to use GPU resources, At the same time, the usage of GPU will be monitored
+- The default workspace quota can be configured. It can be dynamically configured according to the proportion of platform resources
+- Support configuration of the namespace that is not constrained by webhook to facilitate cluster upgrade
+
+#### Updated：
+- Add Web kubectl to application page
+- Modify the logic of getting status and instance on the application page
+- Optimize Serviceinstance page
+
+#### Fixed:
+- The number of instances on the application page is incorrect
+
+#### Component
+- kubeensaas-lite：v-4.1.1
+- clusteragent-lite：v-4.1.1
+- mp-ui-lite：v-4.1.1
+
 ### EnSaaS-K8s-Service Lite 4.1.0- (2020-11-04)
 
 #### Added:
-- Merged Service Portal to eks-lite，Supported roles：globalAdmin、subscriptionAdmin和subscriptionUser
+- Merged Service Portal to eks-lite, Supported roles：globalAdmin、subscriptionAdmin和subscriptionUser
 - API adds support for job, easy to use for dispatch job
 - API adds support for PV and PVC
 
