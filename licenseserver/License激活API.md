@@ -156,3 +156,79 @@ http://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstanceId/e
 | Http Code | 描述                                                  |
 | ------------- | ------------------------------------------------------------ |
 | 200           | *successful operation*，返回的json数据格式如上Response Example中所述。 |
+
+
+#### 通过用户名和服务名称获取授权码
+
+调用/v1/api/serviceName/[serviceName]/username/[username]可以通过服务名称（serviceName）和用户名（username）获取激活码
+
+##### 请求参数
+
+| 名称              | 类型   | 是否必选 | 示例值                                            | 描述                               |
+| ----------------- | ------ | -------- | ------------------------------------------------- | ---------------------------------- |
+| serviceName       | String | 是       | Dashboard                                         | 服务上架时提供的服务名称           |
+| username          | String | 是       | test@advantech.com.cn                             | 用户 E-mail                      |
+| page              | Int    | 否       | 1                                                 | 查询结果的第几页，默认是1          |
+| pageSize          | Int    | 否       | 10                                                | 查询结果每页显示的结果数，默认是10  |
+
+##### 返回数据
+
+| 名称               | 类型    | 示例值                                        | 描述                                                      |
+| ------------------ | ------- | --------------------------------------------- | --------------------------------------------------------- |
+| total              | Int     | 3                                             | 查询到的激活码总数                                        |
+| id                 | String  | eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm | 服务实例id，即serviceInstanceId                           |
+| pn                 | String  | 9806WPDASH                                    | 服务上架时提供的服务料号，即PN                            |
+| subscriptionId     | String  | 2e687325-2f50-43c8-b221-771ea517c40b          | 订阅号id                                                  |
+| isValidTransaction | Boolean | true                                          | 用户订阅状态，true=有效，false=无效，若为无效时，激活失败 |
+| number             | Int     | 1                                             | 订阅的料号数量，即pnQuantity                              |
+| authcode           | String  | a7d7-7d48-0001                                | 激活码                                                    |
+| datacenterCode     | String  | sa                                            | 数据中心编号，如sa，hz，je                                |
+| activeInfo         | String  | “ ”                                           | 服务上架时自定义的激活信息，保留项                        |
+| company            | String  | Advantech                                           | 订阅号所属公司信息                                        |
+| subscriptionType   | String  | paid                                                | 订阅类型（付费/试用），值为：paid/on trial                |
+
+##### 示例
+
+**请求示例**
+
+```
+http://api.license.ensaas.en.internal/v1/api/serviceName/Dashboard/username/test@advantech.com.cn?page=1&pageSize=100
+```
+
+**正常返回示例**
+
+```
+{
+    "total":2,
+    "resources":[
+        {
+            "id":"eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm",
+            "pn":"9806WPAPM1",
+            "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
+            "datacenterCode":"sa",
+            "isValidTransaction":true,
+            "number":1,
+            "authcode":"a7d7-7d48-0001",
+            "activeInfo":"",
+            "company": "Advantech",
+	        "subscriptionType": "paid"
+        },
+        {
+            "id":"eks00145b957f4-0bf9-4faf-90cd-694200cd4b74apm",
+            "pn":"9806WPAPM4",
+            "subscriptionId":"2e687325-2f50-43c8-b221-771ea517c40b",
+            "datacenterCode":"sa",
+            "isValidTransaction":true,
+            "number":1,
+            "authcode":"c3b5-e711-0001",
+            "activeInfo":""
+            "company": "Advantech",
+	        "subscriptionType": "paid"
+        }
+    ]
+}
+```
+##### 返回码
+| Http Code | 描述                                                  |
+| ------------- | ------------------------------------------------------------ |
+| 200           | *successful operation*，返回的json数据格式如上Response Example中所述。 |
