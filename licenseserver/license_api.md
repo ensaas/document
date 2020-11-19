@@ -2,6 +2,7 @@
 
 ![](images/license_active_flowchart.png)
 
+
 Step1: After the user orders or updates the service, the Catalog generates subscription information, notifies each buy to generate service instances, and synchronizes the subscription information to the License Server.
 
 Step2: After the License Server obtains the subscription information, it generates the license information.
