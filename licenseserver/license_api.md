@@ -15,7 +15,8 @@ Step4: After the service instance obtains the license, compare its own informati
 ### Authorization code acquisition interface
 
 | API | Description |
-| ------------------------------------------------- ----------- | ---------------------- |
+| API                                                          | 描述                   |
+| ------------------------------------------------------------ | ---------------------- |
 | /v1/api/partNum/licenseQty | Obtain authorization code by service part number |
 | /v1/api/serviceName/ [serviceName]/serviceInstanceId/ [serviceInstanceId] | Obtain authorization code by service name |
 | /v1/api/licenses/serviceName/[serviceName]/username/[username] |Get the authorization code by user name and service name |
