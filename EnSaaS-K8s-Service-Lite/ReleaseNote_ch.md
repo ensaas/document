@@ -19,18 +19,16 @@
 - mp-ui-lite：v-4.1.1
 
 #### Dependent Service:
-
-| Service                    | Version |
-| -------------------------- | ------- |
-| Serivce Hub                | 0.3.27  |
-| Serivce Portal             | 0.1.2   |
-| DCCS                       | 1.0.4   |
-| MongoDB Service Manager    | 0.5.1   |
-| PostgreSQL Service Manager | 0.2.7   |
-| InfluxDB Service Manager   | 0.1.4   |
-| RabbitMQ Service Manager   | 1.0.5   |
-| Redis Service Manager      | 0.0.1   |
-| Blobstore Service Manager  | 1.0.2   |
+| Serivce                    | Chart version | image version                            |
+| -------------------------- | ------------- | ---------------------------------------- |
+| Serivce Hub                | 0.3.27	       | wise-paas-service-broker:0.3.21          |
+| DCCS                       | 1.0.4         | dccs:1.1.4.1                             |
+| MongoDB Service Manager    | 0.5.1         | mongodb-sm:1.1.3                         |
+| PostgreSQL Service Manager | 0.2.7         | wise-paas-service-manager-postgresql:0.2.2 |
+| InfluxDB Service Manager   | 0.1.4         | wise-paas-service-manager-influxdb:1.0.1 |
+| RabbitMQ Service Manager   | 1.0.5         | rabbitmq-sm:1.0.18                       |
+| Redis Service Manager      | 0.0.1         | redis-service-manager:0.0.0.3            |
+| Blobstore Service Manager  | 1.0.2         | metering/servicebroker:1.0.0             |
 
 
 
