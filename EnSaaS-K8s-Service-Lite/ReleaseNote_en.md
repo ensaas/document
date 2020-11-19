@@ -12,10 +12,24 @@
 #### Fixed:
 - The number of instances on the application page is incorrect
 
-#### Component
+#### Component:
 - kubeensaas-lite：v-4.1.1
 - clusteragent-lite：v-4.1.1
 - mp-ui-lite：v-4.1.1
+
+#### Dependent Service:
+| Service                    | Version |
+| -------------------------- | ------- |
+| Serivce Hub                | 0.3.27  |
+| Serivce Portal             | 0.1.2   |
+| DCCS                       | 1.0.4   |
+| MongoDB Service Manager    | 0.5.1   |
+| PostgreSQL Service Manager | 0.2.7   |
+| InfluxDB Service Manager   | 0.1.4   |
+| RabbitMQ Service Manager   | 1.0.5   |
+| Redis Service Manager      | 0.0.1   |
+| Blobstore Service Manager  | 1.0.2   |
+
 
 ### EnSaaS-K8s-Service Lite 4.1.0- (2020-11-04)
 
