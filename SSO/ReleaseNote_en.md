@@ -1,3 +1,21 @@
+## API 4.0.20 (2020-11-27)
+### New Features
+* Add subscription number user change operation record
+* Add subscription number bill discount to change operation record
+* Add the subscription number effective bill discount to change the operation record
+* The API is provided to the subscriber to query the above operation records
+
+### Fix bugs 
+* The user list of subscription number distinguishes the permissions obtained by returning the enterprise number hosting and the permissions that are actually bound
+* When the subscription number is modified, if the limitpoint needs to be changed, the limitpoint cannot be negative
+* Modify the bug of the new subscription number admin (when the user does not exist)
+* When modifying /users/{username} to return cross permissions, add the judgment of the relevant subscription number of the enterprise number.
+
+## Portal 4.0.19-(2020-11-27)
+### New Features
+* Increase subscription user change record and subscription discount change record
+* The subscription user list is divided into a member list and a hosting member list
+
 ## API 4.0.19- (2020-11-11)
 ### New Features
 * In the initial update, all available credit of default subscription  will be changed to - 1 and non default subscription numbers will be changed to 0
