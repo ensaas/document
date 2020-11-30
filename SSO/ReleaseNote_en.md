@@ -1,3 +1,10 @@
+## Portal 4.0.20 (2020-11-30)
+### New Features
+* Modify the static file caching mechanism
+
+### Fix bugs 
+* Fix the bug that the enterprise admin cannot delete other subscription admin when it hosted the subscription
+
 ## API 4.0.20 (2020-11-27)
 ### New Features
 * Add subscription number user change operation record
