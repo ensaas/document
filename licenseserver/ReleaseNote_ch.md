@@ -1,3 +1,6 @@
+## License Server v-1.1.0.31-(2020-12-17)
+### Fixed
+- 更改swagger 不显示问题
 
 ## License Server v-1.1.0.29-(2020-12-08)
 ### Added
