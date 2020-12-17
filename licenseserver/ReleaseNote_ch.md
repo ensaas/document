@@ -1,3 +1,17 @@
+
+## License Server v-1.1.0.29-(2020-12-08)
+### Added
+- 添加环境变量Swagger，显示不同的apidoc
+
+## License Server v-1.1.0.28-(2020-12-07)
+### Added
+- 所有post api添加sso权限，可用用户为ssoRole为globalAdmin和deploy的client token的用户
+### Fixed
+- 修复调用 Get  api/ensaasService/{serviceName}/licenseId/{licenseId}会为非ensaas生成两条license的问题
+- 修复从catalog订阅后出现serviceCategory为空的情况
+### Updated
+- Get /api/partNum/licenseQty 和 api/serviceName/{serviceName}/serviceInstanceId/{licenseInstanceId}不再返回ensaas service的license
+
 ## License Server 1.0.0.5-(2020-05-12)
 ### New Features
 * 新增 获取license接口返回值中增加subscriptionType和company字段，返回该订阅号类型信息（包含试用和付费）及公司信息，去除isTrial字段。
