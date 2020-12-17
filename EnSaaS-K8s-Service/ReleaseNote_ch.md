@@ -1,3 +1,25 @@
+### EnSaaS-K8s-Service 4.0.13- (2020-12-17)
+
+#### [Managment Portal API]- 4.0.12
+
+Added: 
+- 支持操作日志，globalAdmin和datacenterAdmin可以查看和搜索操作日志
+
+#### [Cluster Agent]- 4.0.10
+
+Added:
+- 全面支持workspace的autoscale功能，订阅号Admin用户可开启
+
+#### [Managment Portal UI]- 4.0.12
+
+Added: 
+- Service Portal合并到了Management Portal
+- 订阅号选框从全局的页面上方移到了每个页面，控制更加灵活
+- 添加了workspace 用量监控页面，随时掌握您的workspace用量
+- 改善了UI整体样式，页面更加简洁  
+
+
+
 ### EnSaaS-K8s-Service 4.0.12- (2020-11-13)
 
 #### [Managment Portal API]- 4.0.11-req2-hotfix1
