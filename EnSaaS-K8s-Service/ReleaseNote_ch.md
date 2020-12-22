@@ -1,3 +1,22 @@
+### EnSaaS-K8s-Service 4.0.14- (2020-12-22)
+
+#### [Managment Portal API]- 4.0.13
+
+Fixed: 
+- 更新workspace会丢失type信息 
+
+#### [Cluster Agent]- 4.0.11
+
+Added:
+- 对于开启autoscale的workspace,agent启动时上报workspace usage
+
+#### [Managment Portal UI]- 4.0.13
+
+Fixed:
+- 解决web kubectl偶尔白屏的问题
+
+
+
 ### EnSaaS-K8s-Service 4.0.13- (2020-12-17)
 
 #### [Managment Portal API]- 4.0.12
