@@ -1,3 +1,22 @@
+# 1.1.1 (2020-12-15)
+
+# **New Features**
+
+- 新增/v1.1/users/subscriptions
+
+  - 可以取得指定區間內所有的企業號、訂閱號與現在sso所擁有的企業號與訂閱號
+  - 可用於訂閱號Migration
+
+- 整合License功能
+
+  - 支持License Service驗證模式
+  - 支持AuthCode
+  
+  
+
+# **Chart Version**
+1.1.1  
+
 # 1.1.0 (2020-11-04)
 
 # **New Features**
