@@ -1,3 +1,21 @@
+### SecureTunnel 1.0.3- (2020-12-28)
+
+#### Added:
+
+ - 内网映射添加诊断功能
+
+#### Updated：
+
+ - 更改集群类型映射，可使用工具自动获取内网地址和token填入
+ - 内网映射的内部地址，支持HTTPS和HTTP下拉框切换
+
+
+#### Component
+
+- securetunnel：v-1.0.3
+- securetunnel-ui：v-1.0.3
+
+
 
 ### SecureTunnel 1.0.2- (2020-12-02)
 
