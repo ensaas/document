@@ -1,3 +1,23 @@
+### SecureTunnel 1.0.3- (2020-12-28)
+
+#### Added:
+
+ - Add diagnostic function for tunnels
+
+#### Updated：
+
+ - when change the cluster type tunnel, you can use the tool to automatically obtain the intranet address and token
+ - The internal address of tunnels, which supports the selection of HTTP and HTTPS through the drop-down box
+
+
+#### Component
+
+- securetunnel：v-1.0.3
+- securetunnel-ui：v-1.0.3
+
+
+
+
 ### SecureTunnel 1.0.2- (2020-12-02)
 
 #### Added:
