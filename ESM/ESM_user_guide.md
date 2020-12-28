@@ -38,18 +38,14 @@ ESM中的基本概念介绍如下：
 ### 2.1 被注册的服务已经被部署的场景 ###
 1. 注册服务之前，首先确认登录用户拥有ESM的访问权限。可联系管理员或者自身所属的appGroup的groupOwner为登录用户分配ESM上的appGroup权限；   
 ![ERROR](./images/appgroup_view.png)  
-
 2. 在Config Management页面，选择Private config选项，编辑自身服务所需要的配置信息；  
 ![ERROR](./images/config_private.png)
-
 3. 进入Service Management页面，选择+添加按钮，会跳转到workload页面，选择需要注册的workload名字，进入创建sidecar页面（此操作需要登录用户同时拥有mp对应的资源权限）；
 ![ERROR](./images/service_workload.png)  
-
 4. 完成创建sidecar动作之后，返回Service页面，点击刷新按钮，数秒之后会在Service页面看到注册的服务名称；    
-![ERROR](./images/service_service.png)
-
+  ![ERROR](./images/service_service.png)
 5. 点击服务名称右侧的Operation->view service，可以查看服务相关的config信息。    
-![ERROR](./images/service_viewservice.png) 
+  ![ERROR](./images/service_viewservice.png) 
 
 ### 2.2 被注册的服务还未被部署的场景 ###
 1. 仍然要确认登录用户拥有ESM权限；
@@ -74,8 +70,6 @@ ESM配置更新过程：
 1. Service Backend采用SDK，隔段时间主动拉取和监听配置更新；
 2. 用户在配置中心对配置进行修改并发布；
 3. 配置中心更新EnSaaS控制面缓存和存储中的配置，通过SDK更新本地文件中缓存配置并通知到Backend。
-
-**（待修改）贴流程图或图片**
 
 ### 3.2 Config说明
 
@@ -113,9 +107,7 @@ toml格式参照：
 [owner]
 name = "Tom"
 ```
-（待修改）等修复format拼写错误再改正图片
 ![ERROR](./images/config_publicedit.png) 
-
 
 #### 3.2.3 查看公共Service地址
 
@@ -125,17 +117,15 @@ name = "Tom"
 
 管理员（Global admin或者datacenter admin,以及ESM的admin）可以使用API手动暴露某一个service地址到public services中，前提是service必须已经注册到ESM中。
 
-```
-POST /v1/appGroups/{appGroupId}/services/{serviceName}/serviceAddress
-```
+![ERROR](./images/service_addaddress.png) 
 
-（待修改）serviceName：ESM注册的服务名称，服务名称的格式为datecenter.cluster.namepsace.svcname
+在弹出页面选择group name和service name:  
+![ERROR](./images/service_expose.png) 
 
 同样Admin可以使用API从public services中手动删除某一个service地址。
 
-```
-DELETE /v1/appGroups/{appGroupId}/services/{serviceName}/serviceAddress
-```
+![ERROR](./images/service_deleteaddress.png) 
+
 ### 3.3 PrivateConfig（私有配置）
 
 创建application group之后，可以为这个application group中的每个application创建一个私有配置，也可以为application group中的多个application创建一个公有的配置（仍然属于application group的私有配置）
@@ -145,35 +135,40 @@ DELETE /v1/appGroups/{appGroupId}/services/{serviceName}/serviceAddress
 在配置页面，选择好需要创建配置的appGroup名字，再点击添加按钮，可以执行添加配置的操作。
 ![ERROR](./images/config_private.png)
 
-如果配置原本不存在，则在创建配置页面，会同时做创建和发布配置的动作。  
-页面中创建/编辑配置的区域可以指定配置名字，描述，以及是否要和公共配置绑定。  
-发布配置的区域中需要选择配置的格式是json, yaml还是toml，然后在内容区域填入用户服务需要的配置内容，tag Name可以填写本次发布的版本信息（版本号用户可以自定义)，最后选择发布按钮。
+如果配置原本不存在，则在创建配置页面，会同时做创建和发布配置的动作。    
+页面中创建/编辑配置的区域可以指定配置名字，描述，以及是否要和公共配置绑定。    
+发布配置的区域中需要选择配置的格式是json, yaml还是toml，然后在内容区域填入用户服务需要的配置内容，tag Name可以填写本次发布的版本信息（版本号用户可以自定义)，最后选择发布按钮。  
 ![ERROR](./images/config_editconfig.png)
 ![ERROR](./images/config_releaseconfig.png)  
 
 ## 4. AppGroup介绍
 
-AppGroup为ESM的集中管理单元，每个被ESM监控的服务和私有配置都必定属于某个AppGroup，拥有唯一的AppGroupID。
+AppGroup为ESM的集中管理单元，每个被ESM监控的服务和私有配置都必定属于某个AppGroup，拥有唯一的AppGroupID。  
 用户权限将以AppGroup作为划分，作为某个或某几个AppGroup的owner用户只能查看和编辑属于自身群组下的配置和服务信息。
 
 ## 5. User权限管理
 
 ESM中拥有两种用户权限：admin和groupOwner。  
 
-**admin:** 管理员权限，可以看到ESM的所有信息，并且能够编辑包括public config在内的所有config，及service信息（操作service时需要用户同时具有该service所在的MP资源的相关权限）；  
-**groupOwner：** AppGroup所有者权限，一个用户可以拥有一个或者多个AppGroup权限，对于属于自己权限内的appgroup的private config和service信息拥有查看和编辑权限。
+**admin:** 管理员权限，可以看到ESM的所有信息，并且能够编辑包括public config在内的所有config，及service信息（操作service时需要用户同时具有该service所在的MP资源的相关权限）；    
+**groupOwner：** AppGroup所有者权限，一个用户可以拥有一个或者多个AppGroup权限，对于属于自己权限内的appgroup的private config和service信息拥有查看和编辑权限。    
 
-在用户管理页面可以看到登录用户权限内可查看到的用户列表。管理员权限的用户可以看到所有加入ESM权限的用户，groupOwner用户只可以看到与自身处于同一个AppGroup内的其他groupOwner用户。
+在用户管理页面可以看到登录用户权限内可查看到的用户列表。管理员权限的用户可以看到所有加入ESM权限的用户，groupOwner用户只可以看到与自身处于同一个AppGroup内的其他groupOwner用户。  
 ![ERROR](./images/user_list.png) 
 
-用户权限页面的添加按钮，可以创建用户并将其加入某个（登录者所在的）AppGroup，也可以邀请已经存在的用户加入自身群组。
+用户权限页面的添加按钮，可以创建用户并将其加入某个（登录者所在的）AppGroup，也可以邀请已经存在的用户加入自身群组。  
 ![ERROR](./images/user_add.png) 
 
-编辑按钮可以修改列表中用户的权限，管理员可以添加或删除任意groupOwner权限，groupOwner用户只可以添加或删除同组的groupOwner权限。
+编辑按钮可以修改列表中用户的权限，管理员可以添加或删除任意groupOwner权限，groupOwner用户只可以添加或删除同组的groupOwner权限。  
 ![ERROR](./images/user_edit.png) 
 
-用户信息页面可做添加和删除权限操作：
-![ERROR](./images/user_edit.png) 
+用户信息页面可做添加和删除权限操作：  
+![ERROR](./images/user_info.png) 
+
+
+
+
+
 
 
 
