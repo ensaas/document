@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## WISE-PaaS Service Manager - InfluxDB 1.0.1.1 (2020-12-25)
+
+### Added:
+- Requirement #17692: 整合ecm
+- 修改健康檢查，OPS POSTGRES連線失敗會返回503
+
+### Fixed:
+- 配合ecm listening variabel功能修改:
+1. security basic auth產生方式 
+2. ops postgres init方式
+3. 其他init順序與結構微調
+- 刪除無用code
+
+
 ## WISE-PaaS Service Manager - InfluxDB 1.0.0.2(1.0.1) (2020-09-18)
 
 ### Added:
