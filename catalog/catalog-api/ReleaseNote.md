@@ -1,5 +1,15 @@
 ## ReleaseNote
 
+### version：2.0.2.4
+#### Added：
+- 增加发信，当用户部署完成后，发信给该订阅号的所有admin用户，通知其服务地址信息
+- 增加发信，当用户退订后，发信给该订阅号的所有admin用户，通知其已经退订
+- 整合新版pipeline接口
+- 为SSO调用GET /serviceInstances接口授权
+- 整合CI
+#### Updated：
+- 修改退订流程，当延迟退订时，先建立订单再等到下月1号凌晨更新订单
+
 ### version：2.0.2.2
 #### Added：
 - 增加审计日志功能
