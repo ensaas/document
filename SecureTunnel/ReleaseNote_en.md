@@ -1,3 +1,14 @@
+### SecureTunnel v-1.0.4- (2020-12-30)
+
+#### Added
+
+ - Support Service batch mapping in cluster
+
+#### Component
+
+- securetunnel：v-1.0.4
+- securetunnel-ui：v-1.0.4
+
 ### SecureTunnel v-1.0.3- (2020-12-28)
 
 #### Added
