@@ -1,3 +1,19 @@
+## API 4.0.21 (2020-12-30)
+### New Features
+* New subscription number disable enable function
+* New enterprise number disable enable function
+* Add /v4.0/health to view the current status of app, PG and redis
+* Add /v4.0/license/info to view the current license information
+* Add /v4.0/license/check and recheck the license
+* New user registration API
+* Add API user batch subscription number
+
+
+### Fix bugs 
+* Modify active info
+
+
+
 ## Portal 4.0.21 (2020-12-30)
 ### New Features
 * Add the disable functionality to enterprise and subscription
