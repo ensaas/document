@@ -1,3 +1,8 @@
+## Portal 4.0.21 (2020-12-30)
+### New Features
+* Add the disable functionality to enterprise and subscription
+* Add the self-reistration feature for login page
+
 ## Portal 4.0.20 (2020-11-30)
 ### New Features
 * Modify the static file caching mechanism
