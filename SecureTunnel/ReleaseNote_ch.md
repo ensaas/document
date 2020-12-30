@@ -1,16 +1,16 @@
 ### SecureTunnel v-1.0.3- (2020-12-28)
 
-#### Added:
+#### 新增功能
 
  - 内网映射添加诊断功能
 
-#### Updated：
+#### 更新功能
 
  - 更改集群类型映射，可使用工具自动获取内网地址和token填入
  - 内网映射的内部地址，支持HTTPS和HTTP下拉框切换
 
 
-#### Component
+#### 服务组件
 
 - securetunnel：v-1.0.3
 - securetunnel-ui：v-1.0.3
@@ -19,7 +19,7 @@
 
 ### SecureTunnel v-1.0.2- (2020-12-02)
 
-#### Added:
+#### 新增功能
 
  - 创建集群类型映射时，添加获取token的工具以及指引
  - 支持从页面获取集群config，增加web kubectl
@@ -27,12 +27,12 @@
  - 映射页面增加筛选功能，可根据客户端和映射类型进行筛选
 
 
-#### Updated：
+#### 更新功能
 
  - TCP类型的映射，支持通过UI获取证书
 
 
-#### Component
+#### 服务组件
 
 - securetunnel：v-1.0.2
 - securetunnel-ui：v-1.0.2
@@ -41,7 +41,7 @@
 
 ### SecureTunnel v-1.0.1- (2020-11-12)
 
-#### First Version:
+#### 首版本发布
 
 - 客户端管理：
 
@@ -58,7 +58,7 @@
 
   - 支持添加、删除、编辑映射
 
-#### Component
+#### 服务组件
 
 - securetunnel：v-1.0.1
 - securetunnel-ui：v-1.0.1
