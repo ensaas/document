@@ -8,6 +8,11 @@
 - Add selected version when upgrading app
 - Update the logic to get the used request quota
 
+#### Fixed
+ - The issue of license
+ - Fix some problems with the monitor page, and modify the problem that dashbord address must be with / API in env
+ - Modify the problem that limit quota must be configured
+
 #### Component
 - kubeensaas-lite：v-4.1.2
 - clusteragent-lite：v-4.1.2
