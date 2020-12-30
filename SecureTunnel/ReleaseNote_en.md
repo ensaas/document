@@ -1,10 +1,10 @@
 ### SecureTunnel v-1.0.3- (2020-12-28)
 
-#### Added:
+#### Added
 
  - Add diagnostic function for tunnels
 
-#### Updated：
+#### Updated
 
  - when change the cluster type tunnel, you can use the tool to automatically obtain the intranet address and token
  - The internal address of tunnels, which supports the selection of HTTP and HTTPS through the drop-down box
@@ -20,14 +20,14 @@
 
 ### SecureTunnel v-1.0.2- (2020-12-02)
 
-#### Added:
+#### Added
 
  - When creating cluster type tunnel, add tools and guidelines for getting token
  - Support to get cluster config from UI, add Web kubectl
  - Add the number of tunnels in the client information
  - The Tunnels page adds filtering function, tunnels can be filtered according to the client and tunnel type
 
-#### Updated：
+#### Updated
 
  - TCP type tunnel, which supports downloading Certificate and CA through UI
  
@@ -40,7 +40,7 @@
 
 ### SecureTunnel v-1.0.1- (2020-11-12)
 
-#### First Version:
+#### First Version
 
 - Clients：
 
