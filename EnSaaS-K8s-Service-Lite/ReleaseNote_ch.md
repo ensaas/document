@@ -4,7 +4,7 @@
 - 添加对Storage Class、PV以及PVC的支持，支持查看Storage Class、PV，支持新建PVC。
 
 #### Updated
-- application页面支持点击Cluster、worksspace、namespace跳转到对应的资源overview页面
+- application页面支持点击Cluster、workspace、namespace跳转到对应的资源overview页面
 - 升级app时添加选择版本功能
 - 更新获取已使用的request quota的逻辑。
 
