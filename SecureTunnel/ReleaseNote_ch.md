@@ -1,3 +1,14 @@
+### SecureTunnel v-1.0.4- (2020-12-30)
+
+#### 新增功能
+
+ - 新增集群内服务批量映射功能
+
+#### 服务组件
+
+- securetunnel：v-1.0.4
+- securetunnel-ui：v-1.0.4
+
 ### SecureTunnel v-1.0.3- (2020-12-28)
 
 #### 新增功能
