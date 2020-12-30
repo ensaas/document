@@ -1,3 +1,17 @@
+## API 4.0.21 (2020-12-30)
+### New Features
+* 新增订阅号禁用启用功能
+* 新增企业号禁用启用功能
+* 新增/v4.0/health 查看当前app,pg,redis的状态
+* 增加/v4.0/license/info，查看当前license 信息。
+* 增加/v4.0/license/check,重新检查license
+* 新增用户自己注册api
+* 新增批量添加订阅号user api
+
+### Fix bugs 
+* 修改active info
+
+
 ## Portal 4.0.21-(2020-12-30)
 ### New Features
 * 企业号和订阅号增加禁用功能
