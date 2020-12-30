@@ -1,24 +1,52 @@
+### EnSaaS-K8s-Service Lite 4.1.2- (2020-12-30)
+
+#### Added
+- 添加对Storage Class、PV以及PVC的支持，支持查看Storage Class、PV，支持新建PVC。
+
+#### Updated
+- application页面支持点击Cluster、worksspace、namespace跳转到对应的资源overview页面
+- 升级app时添加选择版本功能
+- 更新获取已使用的request quota的逻辑。
+
+#### Component
+- kubeensaas-lite：v-4.1.2
+- clusteragent-lite：v-4.1.2
+- mp-ui-lite：v-4.1.2
+
+#### Dependent Service
+| Serivce                    | Chart version | image version                            |
+| -------------------------- | ------------- | ---------------------------------------- |
+| Serivce Hub                | 0.3.27	       | wise-paas-service-broker:0.3.21          |
+| DCCS                       | 1.0.4         | dccs:1.1.4.1                             |
+| MongoDB Service Manager    | 0.5.1         | mongodb-sm:1.1.3                         |
+| PostgreSQL Service Manager | 0.2.7         | wise-paas-service-manager-postgresql:0.2.2 |
+| InfluxDB Service Manager   | 0.1.4         | wise-paas-service-manager-influxdb:1.0.1 |
+| RabbitMQ Service Manager   | 1.0.5         | rabbitmq-sm:1.0.18                       |
+| Redis Service Manager      | 0.0.1         | redis-service-manager:0.0.0.3            |
+| Blobstore Service Manager  | 1.0.2         | metering/servicebroker:1.0.0             |
+
+
 ### EnSaaS-K8s-Service Lite 4.1.1- (2020-11-18)
 
-#### Added:
+#### Added
 - 添加对GPU的支持。支持Pod使用GPU资源，同时会对GPU的使用情况进行监控。
 - 支持默认的工作空间配额可配置。可根据平台资源占比进行动态配置
 - 支持配置不受webhook约束的命名空间，便于对集群升级
 
-#### Updated：
+#### Updated
 - application页面添加Web kubectl功能
 - 修改application页面获status和instance的逻辑
 - 优化serviceInstance页面。
 
-#### Fixed:
+#### Fixed
 - Application页面instance个数和现实个数不符
 
-#### Component：
+#### Component
 - kubeensaas-lite：v-4.1.1
 - clusteragent-lite：v-4.1.1
 - mp-ui-lite：v-4.1.1
 
-#### Dependent Service:
+#### Dependent Service
 | Serivce                    | Chart version | image version                            |
 | -------------------------- | ------------- | ---------------------------------------- |
 | Serivce Hub                | 0.3.27	       | wise-paas-service-broker:0.3.21          |
@@ -35,12 +63,12 @@
 
 ### EnSaaS-K8s-Service Lite 4.1.0- (2020-11-04)
 
-#### Added:
+#### Added
 - 合并Service instance相关功能，角色支持：globalAdmin、subscriptionAdmin和subscriptionUser
 - API支持job相关的功能，方便派发job。
 - API支持用户创建PV和PVC
 
-#### Updated：
+#### Updated
 - 将CRD的版本从v1beta1升级到v1（K8S 1.19版本之后v1beta1将会废弃）
 - 修改CRD资源的group信息，v1版本的CRD不支持以k8s.io结尾的group，修改为edgecloud.ensaas.io
 - 重构了metric获取的逻辑，添加查看ns,ws,node资源的API
@@ -48,7 +76,7 @@
 - 取消application和service页面的工具箱；
 - top_navbar添加Home 按钮
 
-#### Fixed:
+#### Fixed
 - clusteragent和kubeensaas长时间运行会重启的问题
 - 查看有两个container的pod会出错的问题
 - 优化application/node绑定quotas的文字描述和翻译；
@@ -67,6 +95,6 @@
 - clusteragent-lite：v-4.1.0
 - mp-ui-lite：v-4.1.0
 
-#### Note:
+#### Note
 - 从EnSaaS-K8s-Service 4.0.11后，拆分出EnSaaS-K8s-Service Lite，用于IoTSuite Edge的场景
 - EnSaaS-K8s-Service Lite新建了一个chart，chart包中包含了所需的服务
