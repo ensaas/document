@@ -1,4 +1,4 @@
-### EnSaaS-K8s-Service Lite 4.1.2- (2020-12-30)
+### EnSaaS-K8s-Service Lite v-4.1.2- (2020-12-30)
 
 #### Added
 - 添加对Storage Class、PV以及PVC的支持，支持查看Storage Class、PV，支持新建PVC。
@@ -26,7 +26,7 @@
 | Blobstore Service Manager  | 1.0.2         | metering/servicebroker:1.0.0             |
 
 
-### EnSaaS-K8s-Service Lite 4.1.1- (2020-11-18)
+### EnSaaS-K8s-Service Lite v-4.1.1- (2020-11-18)
 
 #### Added
 - 添加对GPU的支持。支持Pod使用GPU资源，同时会对GPU的使用情况进行监控。
@@ -61,7 +61,7 @@
 
 
 
-### EnSaaS-K8s-Service Lite 4.1.0- (2020-11-04)
+### EnSaaS-K8s-Service Lite v-4.1.0- (2020-11-04)
 
 #### Added
 - 合并Service instance相关功能，角色支持：globalAdmin、subscriptionAdmin和subscriptionUser
