@@ -8,6 +8,11 @@
 - 升级app时添加选择版本功能
 - 更新获取已使用的request quota的逻辑。
 
+#### Fixed
+ - license的问题
+ - 和Monitor页面配合的问题，修改配置中dashbord地址必须带/api的问题
+ - 修改quota中limit必须配置的问题
+ 
 #### Component
 - kubeensaas-lite：v-4.1.2
 - clusteragent-lite：v-4.1.2
