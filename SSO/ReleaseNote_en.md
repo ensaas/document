@@ -1,3 +1,7 @@
+## Portal 4.0.22 (2020-12-31)
+### Fix bugs 
+* Fix the bug when you log on with the old path
+
 ## API 4.0.21 (2020-12-30)
 ### New Features
 * New subscription number disable enable function
