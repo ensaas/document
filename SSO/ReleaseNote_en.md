@@ -1,3 +1,7 @@
+## Portal 4.0.23 (2020-12-31)
+### Fix bugs 
+* Modify bugs when other portals log on using sso
+
 ## Portal 4.0.22 (2020-12-31)
 ### Fix bugs 
 * Fix the bug when you log on with the old path

@@ -1,3 +1,7 @@
+## Portal 4.0.23-(2020-12-31)
+### Fix bugs 
+* 修改其它portal使用sso登陆时的bug
+
 ## Portal 4.0.22-(2020-12-31)
 ### Fix bugs 
 * 修复用旧路径登录时的bug
