@@ -1,19 +1,31 @@
-### EnSaaS-K8s-Service 4.0.14- (2020-12-22)
+### EnSaaS-K8s-Service 4.0.14- (2020-12-31)
 
-#### [Managment Portal API]- 4.0.13
+#### [Managment Portal API]- 4.0.14
 
+Added:
+- 对多租户支持操作日志功能
 Fixed: 
-- 更新workspace会丢失type信息 
+- 更新workspace会丢失type信息
+- 完善企业号用户的users/me的返回内容
+- rolebinding时看到的权限不正确
 
-#### [Cluster Agent]- 4.0.11
+#### [Cluster Agent]- 4.0.12
 
 Added:
 - 对于开启autoscale的workspace,agent启动时上报workspace usage
 
-#### [Managment Portal UI]- 4.0.13
+#### [Managment Portal UI]- 4.0.14
 
+Added:
+- 支持和整合操作日志多租户功能
+- 添加新功能引导界面
 Fixed:
-- 解决web kubectl偶尔白屏的问题
+- 优化web kubectl偶尔白屏的问题
+- token过期之后，左侧的菜单还能显示
+- 修改rolebinding的bug
+- 左侧的菜单在有些操作下会消失
+- 每次展开或收起左侧的菜单，Resource Permission页面都会重新调用所有api 
+- 当前用户没有资源权限的时候，不显示Service Usage菜单
 
 
 
