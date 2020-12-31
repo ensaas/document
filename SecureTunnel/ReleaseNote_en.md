@@ -1,4 +1,4 @@
-### SecureTunnel v-1.0.4- (2020-12-30)
+### SecureTunnel v-1.0.5- (2020-12-30)
 
 #### Added
 
@@ -6,8 +6,8 @@
 
 #### Component
 
-- securetunnel：v-1.0.4
-- securetunnel-ui：v-1.0.4
+- securetunnel：v-1.0.5
+- securetunnel-ui：v-1.0.5
 
 ### SecureTunnel v-1.0.3- (2020-12-28)
 
