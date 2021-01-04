@@ -1,3 +1,90 @@
+### EnSaaS-K8s-Service 4.0.14- (2020-12-31)
+
+#### [Managment Portal API]- 4.0.14
+
+Added:
+- Support operation log for multi-tenant 
+Fixed: 
+- After update workspace, value of the 'type' field will lost
+- Improve users/me api for the enterpriseAdmin user
+- Then role-select is not incorrect when doing rolebinding 
+
+#### [Cluster Agent]- 4.0.12
+
+Added:
+- When agent start, it will report workspace usage for workspace that enable autoscale 
+#### [Managment Portal UI]- 4.0.14
+
+Added:
+- Support operation log for multi-tenant
+- Add new feature guide interface
+Fixed:
+- Optimize web Kubectl white-page problem
+- The menu on the left can still be displayed after EI-token expires
+- Fixe bug about roleBinding
+- The menu on the left will disappear when doing some operation
+- Each time the menu on the left is expanded or removed, the Resource Permission page calls all apis again
+- The Service Usage menu is not displayed when the current user does not have resource permissions
+
+
+
+### EnSaaS-K8s-Service 4.0.13- (2020-12-17)
+
+#### [Managment Portal API]- 4.0.12
+
+Added: 
+- Operation logs are supported, and globalAdmin and datacenterAdmin can view and search operation logs
+
+#### [Cluster Agent]- 4.0.10
+
+Added:
+- Support workspace autoscale functionality
+
+#### [Managment Portal UI]- 4.0.12
+
+Added: 
+- Service Portal is  merged into Management Portal
+- The subscription box is moved from the top of the global page to each page for more flexible
+- Added the workspace usage monitoring page to keep track of your workspace(enable autoscale) usage
+- Improved the overall UI style and made the page more concise
+
+
+
+### EnSaaS-K8s-Service 4.0.12- (2020-11-13)
+
+#### [Managment Portal API]- 4.0.11-req2-hotfix1
+
+Added: 
+- Support autoscale functionality for normal workspace
+- Support license API
+- Improved cluster Status function
+
+Fixed:
+- Add/remove permissions at the same time cause new permissions not to take effect
+- MP API /v1/datacenter/{dcName}/users/me responses the SsoSubscriptions field to retain the original SSO subscription to support enterpriseAdmin user
+- The clusterOwner should not have permission, but does have permission to create loadBallance;
+- Workload running-pod statistics are inaccurate;
+- Workspace totalDisk and request.storages are inconsistent on UI;
+- After permision modification, kubectl tools occures error, but run it again is ok
+- Fixed the issue that clusteragent restarting irregularly 
+
+
+
+#### [Managment Portal UI]- 4.0.11-req2-hotfix1
+
+Added: 
+- App console is moved to mp portal
+- Improved cluster Status function
+
+Fixed:
+- app console page refresh error
+- Add/remove permissions at the same time cause new permissions not to take effect
+- Add the Web Kubectl icon  to the corresponding namespace, which is more consistent with our usage habits.
+- Support the license expiration prompt function
+- Improve the page function description
+
+
+
 ### EnSaaS-K8s-Service 4.0.11- (2020-08-28)
 
 #### [Managment Portal API]- 4.0.11

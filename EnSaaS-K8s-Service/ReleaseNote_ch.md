@@ -3,7 +3,7 @@
 #### [Managment Portal API]- 4.0.14
 
 Added:
-- 对多租户支持操作日志功能
+- 操作日志功能支持多租户
 Fixed: 
 - 更新workspace会丢失type信息
 - 完善企业号用户的users/me的返回内容
@@ -34,7 +34,7 @@ Fixed:
 #### [Managment Portal API]- 4.0.12
 
 Added: 
-- 支持操作日志，globalAdmin和datacenterAdmin可以查看和搜索操作日志
+- 支持操作日志，globalAdmin和datacenterAdmin可以查看和搜索所有的操作日志
 
 #### [Cluster Agent]- 4.0.10
 
