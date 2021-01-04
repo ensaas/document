@@ -2,6 +2,10 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.19
+### Add
+   - 新增查詢 vhosts 及 instanceId 對應關係之 API
+
 ## 1.0.18
 ### Fix
    - Bug #16419: Recover instance，會修改數據庫中其他instance的parameters欄位instance_id資訊
