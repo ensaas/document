@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## WISE-PaaS Service Manager - InfluxDB 1.0.1.1 (2020-12-25)
+## WISE-PaaS Service Manager - InfluxDB 1.0.1.1() (2020-12-25)
 
 ### Added:
 - Requirement #17692: 整合ecm
