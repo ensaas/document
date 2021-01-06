@@ -1,10 +1,6 @@
 
 ### WISE-PaaS/IoTSuite Minisite v4.0.1 (2020-01-06)
 
-#### Summary Update
-
-- 支持钉钉-群机器人通知 (DingTalkBot)
-- 旧有微信通知和钉钉通知于 2021/01/01 停止服务, 请使用者尽快调整成企业微信-群机器人和钉钉-群机器人通知
 
 #### [Minisite Portal v4.0.0.6]
 
