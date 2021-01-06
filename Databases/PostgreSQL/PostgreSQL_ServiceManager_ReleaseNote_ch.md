@@ -1,6 +1,6 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
-## WISE-PaaS Service Manager - PosrgreSQL 0.2.2.1 (2020-12-30)
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.2.1(1.0.0) (2020-12-30)
 
 - Requirement #17749 整合ecm
 - 增加健康檢查
