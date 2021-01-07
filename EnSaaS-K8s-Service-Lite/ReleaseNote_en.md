@@ -21,7 +21,7 @@
 #### Dependent Service
 | Serivce                    | Chart version | image version                            |
 | -------------------------- | ------------- | ---------------------------------------- |
-| Appbuy api                 | 1.4.8         | appbuy-api:1.4.1.4                       |
+| Appbuy api                 | 1.4.9         | appbuy-api:1.4.1.5                       |
 | Listingsystem              | 1.8.19        | listingsystem:1.8.0.19                  |
 | Serivce Hub                | 0.3.27	       | wise-paas-service-broker:0.3.21          |
 | DCCS                       | 1.0.4         | dccs:1.1.4.1                             |
