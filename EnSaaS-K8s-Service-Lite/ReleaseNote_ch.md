@@ -7,7 +7,7 @@
 - application页面支持点击Cluster、workspace、namespace跳转到对应的资源overview页面
 - 升级app时添加选择版本功能
 - 更新获取已使用的request quota的逻辑
-- 配置信息改为从WISE-PaaS/ESM获取
+- 整合WISE-PaaS/ESM，支持从WISE-PaaS/ESM获取配置信息
 
 #### Fixed
  - license的问题
