@@ -7,6 +7,7 @@
 - Application page supports jump to the corresponding resource overview page when click cluster, workspace, and namespace 
 - Add selected version when upgrading app
 - Update the logic to get the used request quota
+- Integrate WISE-PaaS/ESM,support obtain config from WISE-PaaS/ESM
 
 #### Fixed
  - The issue of license
