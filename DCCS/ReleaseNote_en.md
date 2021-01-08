@@ -1,3 +1,20 @@
+# DCCS v-1.1.6.1 (2021-01-08)
+
+## Summary Update
+
+Added:
+
+- Support that get service addresses from ECM
+- Support API /healthz for health check
+
+# DCCS v-1.1.5 (2020-09-25)
+
+## Summary Update
+
+Added:
+
+- Support that get configuration from ECM
+
 # DCCS v-1.1.4.1 (2020-05-28)
 
 ## Summary Update
