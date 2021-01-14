@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'simple_code'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+dependencies {
+//    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.8'
+    compile 'com.alibaba:fastjson:1.2.47'
+    compile 'com.aliyun.oss:aliyun-sdk-oss:2.2.1'
+    compile 'com.amazonaws:aws-java-sdk-s3:1.11.870'
+    compile 'io.minio:minio:7.1.0'
+    compile 'com.azure:azure-storage-blob:12.6.0'
+    compile 'org.slf4j:slf4j-nop:1.7.2'
+//    compile 'org.slf4j:slf4j-log4j12:1.7.30'
+}
