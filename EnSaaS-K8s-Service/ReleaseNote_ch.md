@@ -1,3 +1,29 @@
+### EnSaaS-K8s-Service 4.0.15- (2021-01-14)
+
+#### [Managment Portal API]- 4.0.15
+
+Added:
+- 支持统一的License接口
+- 支持统一的配置中心服务
+
+#### [Cluster Agent]- 4.0.13
+
+Added:
+- namespace支持白名单机制，在白名单中的namespace不受Quota的限制，通过环境变量exclude_namespace即可配置。
+
+#### [Managment Portal UI]- 4.0.15
+
+Added:
+- 支持新的License接口
+- 支持统一的配置中心服务
+- 对于globalAdmin，app console页面显示所有订阅号 
+- 修改model弹窗的背景颜色为蓝色
+Fixed:
+- 首次跳到workspace页面后，左侧workspace菜单会闪一下
+- token过期后，在user页面操作，UI没有跳转至登录页面
+
+
+
 ### EnSaaS-K8s-Service 4.0.14- (2020-12-31)
 
 #### [Managment Portal API]- 4.0.14
