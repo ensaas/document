@@ -2,7 +2,7 @@
 ### WISE-PaaS/IoTSuite Minisite v4.0.2 (2020-01-18)
 
 
-#### [Minisite Portal v4.0.0.6]
+#### [Minisite Portal v4.0.0.9]
 
 **Added:**
 
