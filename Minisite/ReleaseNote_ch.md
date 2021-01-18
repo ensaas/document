@@ -1,4 +1,20 @@
 
+### WISE-PaaS/IoTSuite Minisite v4.0.2 (2020-01-18)
+
+
+#### [Minisite Portal v4.0.0.6]
+
+**Added:**
+
+- 添加资源中心模块
+- 页面自适应调整
+
+#### [Minisite API v4.0.1.5]
+
+**Added:**
+
+- 整合ECM、License
+
 ### WISE-PaaS/IoTSuite Minisite v4.0.1 (2020-01-06)
 
 
