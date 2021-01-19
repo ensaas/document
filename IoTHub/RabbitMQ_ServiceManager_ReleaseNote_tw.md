@@ -2,6 +2,25 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.21
+### Add
+   - Requirement #18016: addition API 增加檢查輸入的帳號是否具有足夠權限
+   - Requirement #17871: 根據一體機文件，新增 api 修改 cluster IP 設定, 並且需檢查是否為 administrator 權限
+   - Suggestion #17997: 建議將 configMap 參數值和 ops 數據庫帳密移到 deployment 中
+### Fix
+   - Bug #13696: 呼叫 Manual addition API parameters 中的任一參數填寫空值" ")成功，將造成 provision 或 binding 失敗，應強制填寫必須參數
+   - Bug #17974: 刪除default values且注入config後，Pod create container config失敗，日誌顯示無法從ConfigＭap取得參數
+   - Bug #17956: 注入的esm config參數名稱和default value不一致
+   - Bug #17954: 注入 esm config 後，馬上呼叫 API 失敗，返回502，未顯示sm init log, 需等待下才會正常啟動
+   - Bug #18050: PATCH /v2/serviceInstances/{instance}/info 返回格式錯誤，無法透過 service hub api 更改連線資訊
+   - Bug #17964: 在無法連接 ops postgres 數據庫時，Get healthz api 返回 404, 建議返回 503
+​
+## 1.0.20
+### Add
+   - 整合 ECM 更新環境變數
+   - 新增健康檢查功能: k8s 透過 livenessprobe 定期呼叫 healthz api 確認 ops db 是否正常
+   - 整合 CICD 自動 build image 並上 harbor
+
 ## 1.0.19
 ### Add
    - 新增查詢 vhosts 及 instanceId 對應關係之 API
