@@ -1,24 +1,12 @@
+### Minisite Portal v4.0.0.10 (2020-01-19)
 
-### WISE-PaaS/IoTSuite Minisite v4.0.2 (2020-01-18)
+**Fixed：**
+- Package run.sh 中 ESM 路径获取方式修正
 
+**Helm Update:**
+- 更新至 0.1.5 版本，修正 ESM 路径获取方式
 
-#### [Minisite Portal v4.0.0.9]
-
-**Added:**
-
-- 添加资源中心模块
-- 页面自适应调整
-
-#### [Minisite API v4.0.1.5]
-
-**Added:**
-
-- 整合ECM、License
-
-### WISE-PaaS/IoTSuite Minisite v4.0.1 (2020-01-06)
-
-
-#### [Minisite Portal v4.0.0.6]
+### Minisite Portal v4.0.0.6 (2020-01-06)
 
 **Added:**
 
@@ -34,7 +22,7 @@
 - 头部资源下拉选单中 TroubleShooting 可浏览相关故障排查资料
 - 联系我们模块用于用户反馈 IoTSuite 使用过程中遇到的问题
 
-#### [Minisite API v4.0.1.3]
+### Minisite API v4.0.1.3 (2020-01-06)
 
 **Added:**
 
