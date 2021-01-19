@@ -1,6 +1,6 @@
-# Release Notes 1.1.4
+# Release Notes 1.1.5
 
-![Version](http://img.shields.io/badge/latest-1.1.4-green) ![Chart](https://img.shields.io/badge/chart-0.6.0-blue)
+![Version](http://img.shields.io/badge/latest-1.1.5-green) ![Chart](https://img.shields.io/badge/chart-0.6.0-blue)
 
 
 ## Prerequisites
@@ -11,6 +11,10 @@
 Version <1.1.1.2 requires SQL file to update ops database schema.
 
 ## New Features
+
+# 1.1.5
+
+- Checking OPS connection should ignore error and drop connection 
 
 # 1.1.4
 
