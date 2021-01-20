@@ -34,6 +34,12 @@
 
     - 調用post /v1/db/migrations
     - 新增service_charge_type與spu_number
+# **Breaking Changes**
+
+  - v1.1不再提供與維護（v1.2的api完全相容v1.1）
+# **Chart Version**
+
+1.2.0
 # 1.1.2 (2020-12-15)
 
 # **New Features**
