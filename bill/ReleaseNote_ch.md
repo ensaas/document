@@ -9,7 +9,7 @@
   - 改調用/api/billing/ensaas來進行扣款
   - pseudo marketplace也加入此功能
 - Health Check功能
-  - /Healthz健康檢查失敗時，除了error code外，還會同時返回錯誤原因
+  - /healthz健康檢查失敗時，除了error code外，還會同時返回錯誤原因
   - 支持k8s的livenessProbe （搭配1.2.0的chart）
 
 
