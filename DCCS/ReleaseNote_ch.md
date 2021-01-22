@@ -1,3 +1,20 @@
+# DCCS v-1.1.6.2 (2021-01-13)
+
+## Summary Update
+
+Added:
+
+- 支持从ECM拿sso和service hub的地址
+- 添加健康检查 API /healthz
+
+# DCCS v-1.1.5 (2020-09-25)
+
+## Summary Update
+
+Added:
+
+- 支持从ECM拿配置信息
+
 # DCCS v-1.1.4.1 (2020-05-28)
 
 ## Summary Update

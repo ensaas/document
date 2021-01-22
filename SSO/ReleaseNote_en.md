@@ -1,3 +1,32 @@
+## Portal 4.0.23 (2020-12-31)
+### Fix bugs 
+* Modify bugs when other portals log on using sso
+
+## Portal 4.0.22 (2020-12-31)
+### Fix bugs 
+* Fix the bug when you log on with the old path
+
+## API 4.0.21 (2020-12-30)
+### New Features
+* New subscription number disable enable function
+* New enterprise number disable enable function
+* Add /v4.0/health to view the current status of app, PG and redis
+* Add /v4.0/license/info to view the current license information
+* Add /v4.0/license/check and recheck the license
+* New user registration API
+* Add API user batch subscription number
+
+
+### Fix bugs 
+* Modify active info
+
+
+
+## Portal 4.0.21 (2020-12-30)
+### New Features
+* Add the disable functionality to enterprise and subscription
+* Add the self-reistration feature for login page
+
 ## Portal 4.0.20 (2020-11-30)
 ### New Features
 * Modify the static file caching mechanism

@@ -1,3 +1,30 @@
+## Portal 4.0.23-(2020-12-31)
+### Fix bugs 
+* 修改其它portal使用sso登陆时的bug
+
+## Portal 4.0.22-(2020-12-31)
+### Fix bugs 
+* 修复用旧路径登录时的bug
+
+## API 4.0.21 (2020-12-30)
+### New Features
+* 新增订阅号禁用启用功能
+* 新增企业号禁用启用功能
+* 新增/v4.0/health 查看当前app,pg,redis的状态
+* 增加/v4.0/license/info，查看当前license 信息。
+* 增加/v4.0/license/check,重新检查license
+* 新增用户自己注册api
+* 新增批量添加订阅号user api
+
+### Fix bugs 
+* 修改active info
+
+
+## Portal 4.0.21-(2020-12-30)
+### New Features
+* 企业号和订阅号增加禁用功能
+* 登录页面加入用户自注册功能
+
 ## Portal 4.0.20-(2020-11-30)
 ### New Features
 * 修改静态文件缓存机制

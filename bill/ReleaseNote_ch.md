@@ -1,3 +1,45 @@
+
+# 1.1.2.1 （Pre-release 1.2.0）(2020-01-20)
+# **New Features**
+- api版本更新至v1.2
+- License更新
+  - 支持雲端與標準二個pn
+  - license過期除了無法查詢外，也不能進行扣款
+- Mkp即時扣款功能
+  - 改調用/api/billing/ensaas來進行扣款
+  - pseudo marketplace也加入此功能
+- Health Check功能
+  - /healthz健康檢查失敗時，除了error code外，還會同時返回錯誤原因
+  - 支持k8s的livenessProbe （搭配1.2.0的chart）
+
+
+- Dashboard功能
+
+
+  - 每當有新表建立時，會自動創建deuction的view表
+
+- 扣款支持包年包月，一次性付費
+
+
+  - POST /deduction
+
+    - 新增serviceChargeType與spuNumber
+    - 此二欄位非必帶，未帶時service_charge_type預設為monthly，spuNumber預設為1，以確保向下相容
+
+- 支持ESM/ECM功能
+
+    - 不支持熱更新
+
+- 本版有改動db，部署後需進行db migration
+
+    - 調用post /v1/db/migrations
+    - 新增service_charge_type與spu_number
+# **Breaking Changes**
+
+  - v1.1不再提供與維護（v1.2的api完全相容v1.1）
+# **Chart Version**
+
+1.2.0
 # 1.1.2 (2020-12-15)
 
 # **New Features**

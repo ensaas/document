@@ -44,9 +44,38 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
      
      3. **global.ensaasApps** 
      
-          部署时，会在此处填入api-sso、api-mg、api-dccs、api-license、api-listingsystem、api-service等服务及ensaas的externalUrl和internalUrl。values.yaml中请按如下格式填写（部署时，会根据所要部署的站点，替换各个key对应的value）：  
-	  ![图片](images/ensaasappsurl.png)
-
+          部署时，会在此处填入api-sso、api-mp、api-mg、api-dccs、api-license、api-listingsystem、api-service等服务及ensaas的externalUrl和internalUrl。values.yaml中请按如下格式填写（部署时，会根据所要部署的站点，替换各个key对应的value）：  
+	  
+```
+ global:
+   ensaasApps:
+     apiSso:
+       internalUrl: http://api.sso.ensaas.en.internal/v4.0
+       externalUrl: http://api-sso-ensaas.sa.wise-paas.com/v4.0
+     apiMp:
+       internalUrl: http://api.mp.ensaas.en.internal/v1
+       externalUrl: http://api-mp-ensaas.sa.wise-paas.com/v1
+     apiMg:
+       internalUrl: http://api.mg.ensaas.en.internal/v2
+       externalUrl: http://api-mg-ensaas.sa.wise-paas.com/v2
+     apiDccs:
+       internalUrl: http://api.dccs.ensaas.en.internal/v1
+       externalUrl: http://api-dccs-ensaas.sa.wise-paas.com/v1  
+     apiLicense:
+       internalUrl: http://api.license.ensaas.en.internal/v1
+       externalUrl: http://api-license-ensaas.sa.wise-paas.com/v1
+     apiListingsystem:
+       internalUrl: http://api.listingsystem.ensaas.en.internal/v1
+       externalUrl: http://api-listingsystem-ensaas.sa.wise-paas.com/v1	  
+     apiService:
+       internalUrl: http://api.service.ensaas.en.internal/v2
+       externalUrl: http://api-service-ensaas.sa.wise-paas.com/v2	  
+   ensaas:
+     datacenterCode: sa
+     internalUrl: en.internal
+     externalUrl: sa.wise-paas.com
+```	    
+	    
 * 平台必要参数
 
 	平台必须要在helm chart里定义sources，内容如下：

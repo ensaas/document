@@ -1,95 +1,131 @@
-# Release Notes 1.1.1
+# Release Notes 1.1.5
 
-![Version](http://img.shields.io/badge/latest-1.1.1.2-green) ![Chart](https://img.shields.io/badge/chart-0.4.0-blue)
+![Version](http://img.shields.io/badge/latest-1.1.5-green) ![Chart](https://img.shields.io/badge/chart-0.6.0-blue)
 
-### Release notes for mongodb service manager (mongodb-sm)
-
-_Note: Release notes will include releases from **1.0.28** since there are major update on specification._
 
 ## Prerequisites
 
-- Requires mongodb-sm chart version 0.4.0
+- Requires mongodb-sm chart version 0.6.0
+
+## Note
+Version <1.1.1.2 requires SQL file to update ops database schema.
 
 ## New Features
 
-- [+] deployment.persistent_disk_type is deprecated.
-  Aliyun doesn't have persistent, so need to modify this term. Will be remove in the next release.
+# 1.1.5
 
-- [+] deployment.persistent_disk_size is deprecated.
-  Aliyun doesn't have persistent, so need to modify this term. Will be remove in the next release.
+- Checking OPS connection should ignore error and drop connection 
 
-- [+] deployment.database_version is deprecated.
-  In the future, not only database can deploy but also other kind of instance, so need to modify this term. Will be remove in the next release.
+# 1.1.4
 
-- [+] deployment.storage_type is added.
-  replacement for persistent_disk_type.
+- Fix ESM change on "MAX_INSTANCE_PER_DB"
+  http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/17904
 
-- [+] deployment.persistent_disk_size is added.
-  replacement for database_version.
+- Fix unmarshal error on AvailableResource due to changes on aliyun response
+  http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/17837
 
-- [+] deployment.engine_version is added.
-  replacement for database_version.
+- Integrate CI/CD gitlab - tekton 
 
-* [+] Provision dedicated is available. (db-cloud-driver enabled)
-  Create instance for dedicated plan in Aliyun.
+- Integrate new ESM
 
-* [+] Deprovision dedicated is available. (db-cloud-driver enabled)
-  Delete instance for dedicated plan in Aliyun.
+- Modify health check "/healthz"
 
-* [+] Update: [GET] API ClusterQuota
 
-- [+] New: [GET] API Last Operation
+# 1.1.2.5 -> 1.1.3 (Bump)
 
-  - Endpoint: /v2/service_instances/{instance_id}/last_operation
+# 1.1.2.5
 
-* [+] New: [GET] API Resources List
+- wrong parameter on cronjob interval
 
-  - Endpoint: /v2/serviceInstances/{instance_id}/resources
+# 1.1.2.4
 
-- [+] New: [GET] API ClusterList
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/17113
+  Enable ECM服務並注入sidecar，worker相關參數仍使用default值
+  
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/17117
+  App在注入config後，日誌中仍顯示app使用預設參數值
 
-  - Endpoint: /v2/clusters/list
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/17104
+  使用非"dataService"的ecm config名稱注入config，POSTGRES_HOST和POSTGRES_PORT仍使用app default參數
 
-* [+] New: [GET] API Cluster Shared Details
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16521 
+  Dedicated instances日誌顯示執行自動刪除，但ops instance_status 仍為detached
 
-  - Endpoint: /v2/clusters/shared/{pseudoId}
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/17096
+  執行自動刪除200個 shared instances時，日誌顯示只刪除3個instances後停止，這3個database已被刪除，但ops instance_status 仍為detached
 
-* [+] New: [GET] API Cluster Dedicated Details
+# 1.1.2.3
 
-  - Endpoint: /v2/serviceInstances/{instanceId}/info
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16759
+  使用非"mongodb-sm"的ecm config名稱注入sidecar後，app仍使用default參數
 
-* [+] New: [GET] API Datacenter Overview
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16756
+  Enable ECM服務並注入sidecar，未根據config中的POSTGRES_DBNAME在ops數據庫建立table
 
-  - Endpoint: /v2/datacenter/{datacenterCode}/overview
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16723
+  Disable dbCloudDriver後創建adm instance，返回400 invalid resourceType/zoneId on given datacenterCode
 
-- [+] New: [GET] API Resource Info
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16714
+  呼叫Manual addition和Update dedicated cluster API (authenticationDatabase參數未填寫或輸入"")，返回503 invalid value on authenticationDatabase
 
-  - Endpoint: /v2/resourceInfo
+- http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16521
+  Dedicated instances日誌顯示執行自動刪除，但ops instance_status 仍為detached
+  
+# 1.1.2.2
 
-* [+] New: [POST] API Dedicated Addition
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16506
+  建議日誌顯示所有API 返回碼和錯誤訊息，方便從日誌中查詢問題發生原因
 
-  - Endpoint: /v2/serviceInstances/{instanceId}/resources
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16491
+  shared/dedicated addition API 在無法連接mongodb時，返回400 non-root account+ invalid url
 
-* [+] New: [POST] API Resource Info
+- [+] ecm integration
 
-  - Endpoint: /v2/resourceInfo
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/15444
+  [GET] /datacenter/{datacenterCode}/overview返回資訊不應該計算狀態為deleted, detached的Cluster Quota
 
-* [+] New: [PATCH] API Reprovision Shared Cluster
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16514
+  Update dedicated cluster(輸入不存在的instance_id)，返回503 description:sql: no rows in resul set
 
-  - Endpoint: /v2/clusters/shared/{pseudoId}
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16517
+  Update dedicated cluster(username、password或authenticationDatabase參數未輸入或輸入""、" ")，返回503 authentication failed或non-root account
 
-* [+] New: [PATCH] API Update Dedicated Resource
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16521
+  Dedicated instances日誌顯示執行自動刪除，但ops instance_status 仍為detached
 
-  - Endpoint: /v2/resourceInfo/datacenterCode/{datacenterCode}/deploymentMethod/{deploymentMethod}/resourceType/{resourceType}
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16516
+  Update dedicated cluster(未輸入internal_hosts參數或輸入""、" ")，返回503 error parsing uri: must have at least 1 host或504 Gateway Time-out
 
-* [+] New: [DELETE] API Deprovision Shared Cluster
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16515
+  Update dedicated cluster(輸入超過字元上限的參數值)，返回503 authentication failed 或 400 non-root account
 
-  - Endpoint: /v2/clusters/shared/{pseudoId}
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/15792
 
-* [+] New: [DELETE] API Delete Dedicated Resource
-  - Endpoint: /v2/resourceInfo/datacenterCode/{datacenterCode}/deploymentMethod/{deploymentMethod}/resourceType/{resourceType}
+# 1.1.2.1
 
-## Bug Fixes
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16119
+  [POST] /v2/serviceInstances/manual  增加檢查輸入的帳號是否具有足夠權限
+
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/16118
+  [PATCH] /v2/serviceInstances/{serviceInstanceId}/info 新增API 
+
+# 1.1.2.0
+
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/15444
+  [GET] /datacenter/{datacenterCode}/overview 和[GET] /v2/clusters/list 返回資訊不應該計算狀態為 deleted, detached 的 Cluster Quota
+
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/15439
+  [GET] /clusters/quota 返回資訊，不應該計算狀態為 deleted 的 Cluster
+
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/15436
+  [GET] /serviceInstances/{instanceId}/info API 返回資訊缺少 zoneId
+
+- [+] http://aclredmine.advantech.com.tw/redmines/EI-PaaS/issues/15447
+  建議增加 update dedicated resource API
+
+- [+] ​​New: [PATCH] API Update Status Dedicated Instance
+  Endpoint: /v2/service_instances/{instance_id}
+
 
 ## 1.1.1.2
 

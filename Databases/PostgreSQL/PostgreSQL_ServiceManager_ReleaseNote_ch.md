@@ -1,5 +1,10 @@
 # WISE-PaaS Service Manager Postgresql Release Note
 
+## WISE-PaaS Service Manager - PosrgreSQL 0.2.2.1(1.0.0) (2020-12-30)
+
+- Requirement #17749 整合ecm
+- 增加健康檢查
+
 ## WISE-PaaS Service Manager - PosrgreSQL 0.2.1.7(0.2.2) (2020-11-05)
 
 - Bug #16699: 恢復cloud driver開出的instance時，恢復成功時API應回覆202

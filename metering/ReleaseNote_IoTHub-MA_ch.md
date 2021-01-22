@@ -1,3 +1,10 @@
+## IoTHub-MA 1.0.4(2020-01-04)
+
+### Bug Fixes
+ *  修正通过vhsotName查询rabbitmq servicemanager 中对应的instanceId；并以instanceId作为consumerId；
+ *  修正ma量测多组rabbitmq连接信息；
+
+
 ## IoTHub-MA 1.0.2(2020-05-27)
 
 ### New Features

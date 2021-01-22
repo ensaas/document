@@ -1,3 +1,21 @@
+## Reporting 0.0.0.27(2020-12-31)
+## Bug Fixes
+ * 修复amqp订阅mg的interval type用量时断线重连问题
+
+
+## Reporting 0.0.0.26(2020-12-30)
+### New Features
+ * 新增查询用户信息的接口，包括/search,/serviceNames
+ * 新增支持从服务提供api的方式获取mapping关系；
+ * 新增支持mp dedicated cluster mappings关系获取；
+ * 调整mapping表结构
+ * 新增支持ECM
+## Bug Fixes
+ * 修复程序若干功能bug
+ * 修复程序重启问题
+ * 优化性能
+ 
+
 ## Reporting 0.0.0.20(2020-09-23)
 ### New Features
  * 新增实时用量查询

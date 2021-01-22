@@ -1,19 +1,57 @@
-### EnSaaS-K8s-Service 4.0.14- (2020-12-22)
+### EnSaaS-K8s-Service 4.0.15- (2021-01-19)
 
-#### [Managment Portal API]- 4.0.13
+#### [Managment Portal API]- 4.0.15
 
+Added:
+- 支持统一的License接口
+- 支持统一的配置中心服务
+
+#### [Cluster Agent]- 4.0.13
+
+Added:
+- namespace支持白名单机制，在白名单中的namespace不受Quota的限制，通过环境变量exclude_namespace即可配置。
+
+#### [Managment Portal UI]- 4.0.15
+
+Added:
+- 支持新的License接口
+- 支持统一的配置中心服务
+- 对于globalAdmin，app console页面显示所有订阅号 
+- 修改model弹窗的背景颜色为蓝色
+Fixed:
+- 首次跳到workspace页面后，左侧workspace菜单会闪一下
+- token过期后，在user页面操作，UI没有跳转至登录页面
+
+
+
+### EnSaaS-K8s-Service 4.0.14- (2020-12-31)
+
+#### [Managment Portal API]- 4.0.14
+
+Added:
+- 操作日志功能支持多租户
 Fixed: 
-- 更新workspace会丢失type信息 
+- 更新workspace会丢失type信息
+- 完善企业号用户的users/me的返回内容
+- rolebinding时看到的权限不正确
 
-#### [Cluster Agent]- 4.0.11
+#### [Cluster Agent]- 4.0.12
 
 Added:
 - 对于开启autoscale的workspace,agent启动时上报workspace usage
 
-#### [Managment Portal UI]- 4.0.13
+#### [Managment Portal UI]- 4.0.14
 
+Added:
+- 支持和整合操作日志多租户功能
+- 添加新功能引导界面
 Fixed:
-- 解决web kubectl偶尔白屏的问题
+- 优化web kubectl偶尔白屏的问题
+- token过期之后，左侧的菜单还能显示
+- 修改rolebinding的bug
+- 左侧的菜单在有些操作下会消失
+- 每次展开或收起左侧的菜单，Resource Permission页面都会重新调用所有api 
+- 当前用户没有资源权限的时候，不显示Service Usage菜单
 
 
 
@@ -22,7 +60,7 @@ Fixed:
 #### [Managment Portal API]- 4.0.12
 
 Added: 
-- 支持操作日志，globalAdmin和datacenterAdmin可以查看和搜索操作日志
+- 支持操作日志，globalAdmin和datacenterAdmin可以查看和搜索所有的操作日志
 
 #### [Cluster Agent]- 4.0.10
 
