@@ -1,6 +1,6 @@
-# Release Notes 1.1.5
+# Release Notes 1.1.6
 
-![Version](http://img.shields.io/badge/latest-1.1.5-green) ![Chart](https://img.shields.io/badge/chart-0.6.0-blue)
+![Version](http://img.shields.io/badge/latest-1.1.6-green) ![Chart](https://img.shields.io/badge/chart-0.6.0-blue)
 
 
 ## Prerequisites
@@ -11,6 +11,11 @@
 Version <1.1.1.2 requires SQL file to update ops database schema.
 
 ## New Features
+
+# 1.1.6
+
+- Revert /healthz response from 204 to 200 with body OK
+
 
 # 1.1.5
 
