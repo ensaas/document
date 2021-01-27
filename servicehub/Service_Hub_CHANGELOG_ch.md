@@ -1,3 +1,78 @@
+# 0.3.21.18 (2021-01-25) (0.3.22)
+ * bug: #18166 在ESM上配置了OPS_RMQ_URL，但Service Hub沒有套用ESM上的設定
+ * bug: #18103 健檢時，即使RabbitMQ連線錯誤，API也返回200
+ * bug: #18099 [GET] /license/info和[POST] /license/info的inactiveDays計算方式錯誤
+
+# 0.3.21.15 (2021-01-21)
+ * bug: #18109 [GET] /v2/publisher/{subscriptionId}/services 若token沒有該訂閱號的權限，API應該要阻擋
+ * bug: #18106 部分NOTIFICATION參數實時更新有誤
+ * bug: #18105 建立instance時，若發送rabbitmq message失敗，不應該判定建立instance成功
+ * bug: #18103 健檢時，即使RabbitMQ連線錯誤，API也返回200
+ * bug: #18102 建議將健檢API檢查失敗時的status code改為503
+ * bug: #18101 在env配置一組過期9天的license，獲取license info時，其expireTime卻為空
+ * bug: #18099 [GET] /license/info和[POST] /license/info的inactiveDays計算方式錯誤
+ * bug: #18096 在ESM Portal上將AUTH_CODE的配置從無效改為有效後，呼叫[POST] /license/check 卻判定license驗證失敗
+ * bug: #18095 若CALCULATOR_ENABLE_FLAG為true，pod啟動後，第一次健康檢查一定會失敗
+ * bug: #18093 如果OPS_POSTGRES參數要支持實時更新，則更換完OPS_POSTGRES後務必要做一次初始化資料表
+ * bug: #18089 Env license無效的情況下，若license server的license也無效，應該要判定license驗證失敗
+ 
+# 0.3.21.14 (2021-01-14)
+ * bug: #12597 客戶沒有購買的服務不要列出來，且提供All選項
+
+# 0.3.21.13 (2021-01-12)
+ * bug: #17890 呼叫[DELETE] /v2/serviceInstances/{serviceInstanceId}時，發現service hub呼叫了2次SM的deprovision api
+ * bug: #17901 啟用ESM時，如果指定一個全新的database作為ops postgres database，則service hub不會自動建立所需的資料表
+ * bug: #17905 在ESM Portal將CALCULATOR_ENABLE_FLAG設為true後，service hub因為rabbitmq連不到而一直crash
+ * bug: #17909 在ESM修改SECURITY_USER_NAME和SECURITY_USER_PASSWORD，沒有作用
+ * bug: #17910 建立instance時，若無法成功publish message至rabbitmq，Service Hub就會crash
+ * bug: #17915 若license驗證通過，api回覆的inactiveDays應該要是0
+ * bug: #17916 加密或解密license相關資訊時，應加入activeInfo作為加解密的要素之一
+ * bug: #17919 [GET] /license/info的回覆不符合規範
+ * bug: #17920 [POST] /license/info的回覆不符合規範
+ * bug: #17923 當AUTH_CODE有誤時，GET和POST license的回覆中的expireTime返回格式不一致
+ * bug: #17933 某個情況下，當license server上的license檢查失敗時，Service Hub依然判定license驗證成功
+ * bug: #17978 PUT ​/v2​/userProvided​/{serviceInstanceId} 執行後 secret 為空
+
+# 0.3.21.10 (2021-01-08)
+ * feat: 新增penguin參數
+
+# 0.3.21.9 (2021-01-05)
+ * bug: charts 底下新增 imagePullSecrets
+ * bug: RP,CQ 修改成 201
+ * bug: RP,CQ 更改 swagger 描述
+
+# 0.3.21.6 (2020-12-28)
+ * feat: code 整理
+ * feat: 修正只有 "dedicated" 開頭的才有兩步驟佈署
+ * feat: 重新綁定API (不包含重啟pod)
+
+# 0.3.21.5 (2020-12-28)
+ * feat: 加上ESM 功能
+ * bug: 修正 CI/CD for AXA 環境
+ * feat: 加上 livenessProbe 需檢查 PG 和 RMQ
+
+# 0.3.21.2 (2020-12-08)
+ * feat: 加上 livenessProbe 於 chart 中
+ * feat: 加上 CI/CD for AXA 環境，更改helm chart 位置
+ * feat: 新增統一的 License API 
+ * bug: #17308 無法更新service broker
+
+# 0.3.20.5 (2020-11-18) (0.3.21)
+ * bug: 修正plan 不小心擋到 + 號 
+
+# 0.3.20.3 (2020-11-17) 
+ * bug: #17157 [PUT] /v2/userProvided/{serviceInstanceId} 這支API呼叫成功時，應該要回201
+ * bug: #17137 刪除plan時，若尚有instance存在，錯誤訊息需要改善
+ * bug: #17075 綁定 Redis 時，parameter 為空會發生程式錯誤。
+
+# 0.3.20.2 (2020-11-12)
+ * bug: change creater to creator
+
+# 0.3.20.1 (2020-11-11)
+ * feat: 多一個欄位判斷 user 自訂義的 broker 
+ * bug: redis 綁定時的錯誤修正
+ * bug: 修正綁定 parameter 為空時，dccs 出現的錯誤
+ 
 # 0.3.19.10 (2020-11-03) (0.3.20)
  * bug: auth code 檢查
 
