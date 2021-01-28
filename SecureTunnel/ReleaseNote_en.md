@@ -14,6 +14,8 @@
 - securetunnel：v-1.0.6
 - securetunnel-ui：v-1.0.6
 
+#### Dependent Service
+- Secure tunnel V-1.0.5 and above
 
 ### SecureTunnel v-1.0.5- (2020-12-30)
 
@@ -25,6 +27,9 @@
 
 - securetunnel：v-1.0.5
 - securetunnel-ui：v-1.0.5
+
+#### Dependent Service
+- Secure tunnel V-1.0.5 
 
 ### SecureTunnel v-1.0.3- (2020-12-28)
 
