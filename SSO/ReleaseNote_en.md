@@ -1,3 +1,9 @@
+## Portal 4.0.24-(2021-1-28)
+### New Features
+* Add subscription users in bulk
+### Fix bugs 
+* Fix the bug that the selected subscription changes when the subscription page is refreshed
+
 ## Portal 4.0.23 (2020-12-31)
 ### Fix bugs 
 * Modify bugs when other portals log on using sso
