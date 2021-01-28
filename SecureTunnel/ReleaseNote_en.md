@@ -1,3 +1,20 @@
+### SecureTunnel v-1.0.6- (2020-01-29)
+
+#### Added
+
+ - Support white-list function
+ 
+#### Updated
+
+ - Change UI header style
+ - Batch mapping optimization
+
+#### Component
+
+- securetunnel：v-1.0.6
+- securetunnel-ui：v-1.0.6
+
+
 ### SecureTunnel v-1.0.5- (2020-12-30)
 
 #### Added
