@@ -1,3 +1,32 @@
+## API 4.0.22 (2021-1-28)
+* 新增系统配置项具体如下：
+	SystemLoginErrorCountConfig ---- 设置系统的登录错误总数，初次更新默认值500
+	SystemLoginErrorIntervalConfig ---- 设置系统登陆错误统计的间隔，初次更新默认值60（s）
+	（在一个间隔内，如果登录错误数超过错误总数的设置，则会触发发送邮件的逻辑）
+	SystemLoginErrorReceiverConfig ---- 频繁错误 邮件的接收者（数组）,初次更新默认值为空
+	SystemPasswordChangeRemindIntervalConfig ---- 提示用户修改密码周期，初次更新默认值为60*60*24*90(s),即90天
+	SystemAccountLockErrorCountConfig  ----  某个用户密码错误锁定账号设置的错误次数，初次更新默认值为3
+	SystemAccountLockIntervalConfig ---- 用户账号锁定时长，初次更新默认值为300(s)
+* 新增记录用户最近的三次密码功能。（更新后没有数据，只在每次修改密码时，对密码进行记录）
+* 新增api GET /admin/config 获取1中配置的值
+* 新增api PUT /admin/config body {"id":"1中的配置名","params":"配置的结果"} 修改某条配置
+* 新增用户修改密码时检查最近三次密码是否重复。
+* 新增用户登录密码输入错误时，会统计累计次数，达到1中设置的阈值则会发送邮件。
+* 新增用户登陆时，如果长时间未改密码（长时间的标准以1中设置为准），则会返回提示。
+* 新增用户超过6个月没有登录则会自动禁用。
+* 新增订阅号创建时间超过6个月，并且订阅号下最近6个月没有用户登录，且没有资源，订阅号会自动禁用。
+* 新增企业号创建时间超过6个月，并且最近6个月没有用户登录，并且其下的订阅号都在禁用状态，企业号会自动禁用
+* 修改企业号自动跟marketplace同步时，日志记录不写入操作记录表，只是打印log。
+* 企业号导出excel列表增加status字段返回。
+* 修改用户修改密码的验证码可以在10分钟内重复使用的问题。
+* 修改注册客户端scopes中带有空格则会导致生成clientToken报错的问题。
+* 新增订阅号时如果limitPoint>0 则会默认生成一条quota变更记录。
+* /v4.0/users/enterprises/subscriptions 默认只返回active的订阅号
+* /v4.0/subscriptions/selector 默认只返回active的订阅号
+* 添加创建用户，自己注册用户，mkp自动登录创建用户的操作记录
+* 修改helm chart
+
+
 ## Portal 4.0.24-(2021-1-28)
 ### New Features
 * 新增批量添加订阅号用户功能
