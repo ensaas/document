@@ -1,3 +1,10 @@
+## Portal 4.0.24-(2021-1-28)
+### New Features
+* 新增批量添加订阅号用户功能
+### Fix bugs 
+* 修复订阅号页面刷新时所选订阅号改变的bug
+
+
 ## Portal 4.0.23-(2020-12-31)
 ### Fix bugs 
 * 修改其它portal使用sso登陆时的bug
