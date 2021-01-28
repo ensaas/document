@@ -29,7 +29,12 @@
 ### New Features
 * Add subscription users in bulk
 ### Fix bugs 
-* Fix the bug that the selected subscription changes when the subscription page is refreshed
+* Fix bugs that change the subscription number when the subscription number page is refreshed
+* Fix bugs that alert you when switching pages when you fix the license inactive
+* Fix bugs that modify your phone without sending a verification code that is incorrectly formatted
+* Root users can delete their subscription number permissions on the page where they edit their information
+* Fix the bug that appears in the document button in the navigation bar at the top of the registration page
+* Fix the bug that changed the page when the subscription number was filtered
 
 ## Portal 4.0.23 (2020-12-31)
 ### Fix bugs 
