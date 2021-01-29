@@ -1,5 +1,17 @@
 ## ListingSystem4.0 ReleaseNote
 
+### v-1.8.0.24
+#### Added：
+- 整合ECM，若从ECM获取config失败，会使用环境变量的值
+#### Changed:
+- Post /v1/serviceSaleStrategy
+- Put /v1/serviceSaleStrategy/{id}
+- Get /v1/serviceSaleStrategy/services/{serviceName}/plans/{planName}
+- Delete /v1/serviceSaleStrategy/{id}
+- 修改最低价和利润率的生成方式与v-1.8.0.19相同
+#### Deleted:
+- 删除servicePlan中的payInfo字段
+
 ### version：v-1.7.0.8
 #### Changed:
 - 删除了get /service,get /releaseNote,get /serviceLowestPrice的权限
