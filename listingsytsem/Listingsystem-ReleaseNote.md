@@ -1,6 +1,6 @@
 ## ListingSystem4.0 ReleaseNote
 
-### v-1.8.0.24
+### version: v-1.8.0.24
 #### Added：
 - 整合ECM，若从ECM获取config失败，会使用环境变量的值
 #### Changed:
