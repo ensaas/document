@@ -8,7 +8,7 @@
 - 修改listingPrice乘以折扣的问题
 - 修改ECM解析失败的问题
 #### Added:   
--添加api PUT /orders/serviceChargeType 补全之前的数据
+- 添加api PUT /orders/serviceChargeType 补全之前的数据
 
 ### version：v-1.4.0.2
 #### Updated:
