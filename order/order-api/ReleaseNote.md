@@ -1,5 +1,15 @@
 ## Order-API ReleaseNote
 
+### version：v-1.4.0.18
+#### Updated:
+- 修复serviceChargeType校验的问题
+- 修复/reissue-orders/deduction api的查询中orderType没有默认值的问题
+- 修改swagger中的版本号
+- 修改listingPrice乘以折扣的问题
+- 修改ECM解析失败的问题
+#### Added:   
+-添加api PUT /orders/serviceChargeType 补全之前的数据
+
 ### version：v-1.4.0.2
 #### Updated:
 - 整合了listing-1.7.0.8的servicePlan接口
