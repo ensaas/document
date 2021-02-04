@@ -1,3 +1,29 @@
+### EnSaaS-K8s-Service Lite v-4.1.4- (2020-02-04)
+
+#### Fixed
+ - Service页面显示的问题
+ - 移除部署文件中的serviceaccount.yaml以及修改DCCS的地址
+ 
+#### Component
+- kubeensaas-lite：v-4.1.3
+- clusteragent-lite：v-4.1.3
+- mp-ui-lite：v-4.1.4
+
+#### Dependent Service
+| Serivce                    | Chart version | image version                            |
+| -------------------------- | ------------- | ---------------------------------------- |
+| Appbuy api                 | 1.4.9         | appbuy-api:1.4.1.5                       |
+| Listingsystem              | 1.8.19        | listingsystem:1.8.0.19                  |
+| Serivce Hub                | 0.3.27	       | wise-paas-service-broker:0.3.21          |
+| DCCS                       | 1.0.4         | dccs:1.1.4.1                             |
+| MongoDB Service Manager    | 0.5.1         | mongodb-sm:1.1.3                         |
+| PostgreSQL Service Manager | 0.2.7         | wise-paas-service-manager-postgresql:0.2.2 |
+| InfluxDB Service Manager   | 0.1.4         | wise-paas-service-manager-influxdb:1.0.1 |
+| RabbitMQ Service Manager   | 1.0.5         | rabbitmq-sm:1.0.18                       |
+| Redis Service Manager      | 0.0.1         | redis-service-manager:0.0.0.3            |
+| Blobstore Service Manager  | 1.0.2         | metering/servicebroker:1.0.0             |
+
+
 ### EnSaaS-K8s-Service Lite v-4.1.3- (2020-01-25)
 
 #### Fixed
