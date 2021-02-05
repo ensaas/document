@@ -18,15 +18,16 @@
 
 #### Fixed:
 
-  - Fixed the bug that the EnSaaS control plane does not update the service backend instance addresses
-  - Fixed  display errors of Chinese pages
-  - Fixed the bug that default account calls workload APIs and returns 401
+  - Fix the bug that the EnSaaS control plane does not update the service backend instance addresses
+  - Fix display errors of Chinese pages
+  - Fix the bug that default account calls workload APIs and returns 401
+  - Fix offline backend showing online status
 
 #### Component
 
-- API v-1.1.0.3
+- API v-1.1.0.4
 - Portal v-1.1.0.3
-- ECM agent v-1.1.0.3
+- ECM agent v-1.1.0.4
 - iptable v-1.1.0.1
 - ensaasdp v-1.1.0.1
 

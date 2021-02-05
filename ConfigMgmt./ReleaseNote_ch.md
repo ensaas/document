@@ -20,12 +20,13 @@
   - 修复控制面未更新服务后端实例地址的问题
   - 修复中文页面显示的错误
   - 修复默认账密操作workload相关API提示401的问题
+  - 修复离线后端实例显示的是在线状态
 
 #### Component
 
-- API v-1.1.0.3
+- API v-1.1.0.4
 - Portal v-1.1.0.3
-- ECM agent v-1.1.0.3
+- ECM agent v-1.1.0.4
 - iptable v-1.1.0.1
 - ensaasdp v-1.1.0.1
 
