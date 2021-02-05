@@ -1,5 +1,12 @@
 ## ReleaseNote
 
+### version：1.0.5.3
+#### Updated:
+- 头部替换为黑色样式
+- 修改ESM配置，默认先从ECM获得数据，ENABLE_ESM为false就从listingsystem获取；
+- 工单入口放在header中显示
+- Catalog跳转其他portal保留选择语言
+
 ### version：v-1.0.5.2
 #### Fixed：
 - 添加修改了企业帐号申请单的多语言部分

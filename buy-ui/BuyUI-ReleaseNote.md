@@ -1,5 +1,23 @@
 ## Buy-ui ReleaseNote
 
+### version：v-1.0.4.8
+#### Added:
+- 包年买断业务
+- 初始化进入buy页面，Pricing Plan在最下方显示，且默认选中接口查出chargeType类型的第一个
+- 每个chargeType右上角有折扣标签，discount为1的不显示
+- 只有chargeType为Monthly的时候保留 Listing Prorated Fee，其他type隐藏
+- Discount计算：Monthly保持不变，其余使用 Monthly Fee -  Prorated Fee取反得出
+- MonthlyFee以及每个应用table上的小结价格无论什么身份，都*spuNumber即可
+- Pay.png中的价格算法用于Prorated Fee，内部package用户prorated Fee使用package价格计算
+- 含有依赖的服务价格使用使用serviceWithPlan查出的价格
+- 整合ECM，默认先从ECM获得数据，ENABLE_ESM为false就从listingsystem获取
+#### Fixed
+- Requirement #18059 订阅号user应根据memberType显示价格
+- Requirement #17926 根据浏览器显示语言
+- Bug #17868 planDescription显示，超过一定长度应折叠起来，鼠标放在上面在显示
+- Bug #17867 底部discount显示为负数
+
+
 ### version：v-1.0.4.1
 #### Added:
 - 此版本依据接口返回数据结构及字段变化，对前端进行整合，涉及

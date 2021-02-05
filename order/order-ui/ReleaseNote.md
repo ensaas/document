@@ -1,5 +1,10 @@
 ## Order-UI ReleaseNote
 
+### version：1.0.3.4
+#### Updated:
+- 修复了部署某些情况拿不到环境变量的问题
+- 修复了bill页面刷新订阅号没记住的问题
+
 ### version：v-1.0.2.2
 #### Added:
 - 支持crmid为all.选择all后订阅号将是带all的所有订阅号,订阅号默认为all
