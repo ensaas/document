@@ -1,5 +1,5 @@
 
-## Portal 1.0.0-(2021-2-8)
+## Portal 1.0.0.10-(2021-2-8)
 ### New Features
 * 提供统一 Org 管理
 * 提供统一 Org admin 管理
