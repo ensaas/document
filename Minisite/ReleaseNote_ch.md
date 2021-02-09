@@ -1,3 +1,18 @@
+
+### Minisite API v4.0.1.8 (2020-02-08)
+
+**Added:**
+- 新增权限(admin,solution-privider,solution-user,viewer)
+- 新增获取登录用户信息接口
+- 新增修改用户权限接口
+
+**Fixed:**
+- 修改添加，删除，更新等用户相关的接口从而进行权限管理
+- 修改添加，删除，更新service及app等相关接口从而进行权限管理
+- 修改添加，删除，更新resource等相关接口从而进行权限管理
+- 修改根据id更新，删除resource为根据uuid
+
+
 ### Minisite Portal v4.0.0.14 (2020-02-09)
 
 **Added：**
