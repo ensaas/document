@@ -1,3 +1,21 @@
+### Minisite Portal v4.0.0.14 (2020-02-09)
+
+**Added：**
+- 新增用户权限管理功能
+
+**Fixed：**
+- Console > Service Portal 連結連至<MP_URL>/instance-list
+-  Contact us 頁面最底下郵件 icon 更改为清晰度较高的 icon
+- 點進Technical White Paper，英文版左側選項會超出邊界文字处理
+- WISE-PaaS/IoTSuite 裡的WISE-PaaS/DB Services (InfluxDB)、WISE-PaaS/DB Services (MongoDB)、
+WISE-PaaS/DB Services (PostgreSQL)、WISE-PaaS/Secure Tunnel 链接 TD頁面地址修正
+- 头部“”联系我们“”繁体展示修正
+- Top Navbar 展示高度调整
+
+**Helm Update:**
+- 维持 0.1.5 版本
+
+
 ### Minisite Portal v4.0.0.10 (2020-01-19)
 
 **Fixed：**
