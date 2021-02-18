@@ -1,3 +1,13 @@
+### EnSaaS-K8s-Service 4.0.16- (2021-02-05)
+
+#### [Managment Portal UI]- 4.0.16
+
+Added:
+- 提供了为批量用户添加资源权限的功能
+- 提供了为批量用户删除资源权限的功能；
+
+
+
 ### EnSaaS-K8s-Service 4.0.15- (2021-01-19)
 
 #### [Managment Portal API]- 4.0.15
