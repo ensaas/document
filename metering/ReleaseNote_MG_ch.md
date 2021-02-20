@@ -1,3 +1,17 @@
+# 1.3.0.3 Prerelease 1.4.0(2021-02-20)
+# New Features
+- 加入新的usage查詢api billing/usage
+
+# Bug Fixes
+- 18453	Bug	若token沒有權限呼叫MG的API，建議以JSON格式回覆
+- 18367	Bug	[GET] /v2/services/{pn}這支API的返回格式不正確
+- 18280	Bug	[Chart] 需移除chart中的LICENSE_CRON_EXPRESSION參數
+- 18266	Bug	設置一個過期的license，但MG認為該license是有效的
+- 18247	Bug	查詢license時，inactiveDays一變成14，licenseStatus卻顯示為Invalid，應為Inactive
+- 18246	Bug	inactiveDays計算結果有誤
+- 18242	Bug	呼叫健檢API後channels需要關閉
+- 16948	Bug	[Chart] 移除values.yaml不需要的api.containerPort參數
+
 # 1.3.0.1 Prerelease 1.4.0(2021-01-22)
 
 # New Features
