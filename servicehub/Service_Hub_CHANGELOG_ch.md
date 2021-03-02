@@ -1,3 +1,6 @@
+# 0.3.22.1 (2021-03-02)
+ * bug: #18348 需要為GET /v2/license/info和POST /v2/license/check的前面添加/v2
+
 # 0.3.21.18 (2021-01-25) (0.3.22)
  * bug: #18166 在ESM上配置了OPS_RMQ_URL，但Service Hub沒有套用ESM上的設定
  * bug: #18103 健檢時，即使RabbitMQ連線錯誤，API也返回200
