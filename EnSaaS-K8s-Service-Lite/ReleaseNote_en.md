@@ -1,3 +1,34 @@
+### EnSaaS-K8s-Service Lite v-4.1.5- (2020-03-04)
+
+#### Fixed
+ - Fixed the invalid day counting problem When the license is invalid
+ - Fixed the problem of GPU usage calculation error in namespace and workspace
+ - Fixed incorrect injection of request resource
+
+#### Updated
+- Modify the style of the page, and move the subscription number drop-down box down to each page
+- When a pod is in error status and its restart policy is never, the usage of the pod is not included in the quota statistics
+
+#### Component
+- kubeensaas-lite：v-4.1.4
+- clusteragent-lite：v-4.1.4
+- mp-ui-lite：v-4.1.5
+
+#### Dependent Service
+| Serivce                    | Chart version | image version                            |
+| -------------------------- | ------------- | ---------------------------------------- |
+| Appbuy api                 | 1.4.9         | appbuy-api:1.4.1.5                       |
+| Listingsystem              | 1.8.19        | listingsystem:1.8.0.19                  |
+| Serivce Hub                | 0.3.33	       | wise-paas-service-broker:0.3.22          |
+| DCCS                       | 1.0.11         | dccs:1.1.6.2                             |
+| MongoDB Service Manager    | 0.6.0         | mongodb-sm:1.1.6                         |
+| PostgreSQL Service Manager | 0.2.9         | wise-paas-service-manager-postgresql:1.0.0 |
+| InfluxDB Service Manager   | 0.1.6         | wise-paas-service-manager-influxdb:1.0.2 |
+| RabbitMQ Service Manager   | 1.0.21         | rabbitmq-sm:1.0.21                       |
+| Redis Service Manager      | 0.0.5         | redis-service-manager:0.0.0.7            |
+| Blobstore Service Manager  | 1.0.4         | metering/servicebroker:1.0.5             |
+
+
 ### EnSaaS-K8s-Service Lite v-4.1.4- (2020-02-04)
 
 #### Fixed
