@@ -1,3 +1,12 @@
+# 1.4.0 (2021-03-05)
+# New Features
+- 支持License
+- 支持ESM/ECM
+- 支持Health check
+- 支持SSO API Premission
+- services api加入Get和Delete方便查看
+- 加入新的usage查詢api billing/usage
+
 # 1.3.0.3 Prerelease 1.4.0(2021-02-20)
 # New Features
 - 加入新的usage查詢api billing/usage
