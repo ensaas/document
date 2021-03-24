@@ -9,7 +9,7 @@ server 端和agent 端提供相同的校验方式和 RESTful API，兼容服务�
 
 ### 1.1 云服务
 
-![云服务流程](images/云服务流程.png)
+![云服务流程](images/边缘服务流程.png)
 
 - Step1: 用户订购或更新服务后，Catalog生成订阅信息，通知各个buy生成服务实例，同时将订阅信息同步给License Server。
 - Step2: License Server获得订阅信息后，生成license信息。
@@ -18,7 +18,7 @@ server 端和agent 端提供相同的校验方式和 RESTful API，兼容服务�
 
 ### 1.2 边缘服务
 
-![边缘服务流程](images/边缘服务流程.png)
+![边缘服务流程](images/云服务流程.png)
 
 ## 2. License 验证
 
