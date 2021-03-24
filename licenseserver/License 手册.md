@@ -26,6 +26,7 @@ License 为 WISE-PaaS 云服务提供有效的license以及期限，分为两部
 ### 2.2. 边缘服务
 
 ![边缘服务流程](images/云服务流程.png)
+![出货流程](images/出货流程.png)
 
 - Step1: 在公有云catalog下单硬件对应的 Infrastructure （需要提前上架）
 - Step2: 在公有云license service portal 激活Infrastructure，激活后生成 InfraLicenseKey
