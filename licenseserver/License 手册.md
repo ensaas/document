@@ -1,6 +1,6 @@
 # License 手册
 
-## License 概述
+## 1.1. License 概述
 
 license 为 WISE-PaaS 云服务提供有效的 license 以及期限，分为两部分，server 端和 agent 端，server运行在云端，为云上服务生成和维护服务的 license，agent端运行在边缘端，为边缘端服务提供license，agent 端 license 是通过 server 端激活生成后通过 License File 添加至 agent 端。  
 server 端和 agent 端提供相同的校验方式和 RESTful API，兼容服务在云端和边缘端 license 的校验，服务不需要进行任何适配修改。  
@@ -13,9 +13,9 @@ server 端和 agent 端提供相同的校验方式和 RESTful API，兼容服务
 - 云边校验一致，应用自动适配
 - 流程简单，安全可控  
 
-## 1. 流程
+## 2. 流程
 
-### 1.1 云服务
+### 2.1. 云服务
 
 ![云服务流程](images/边缘服务流程.png)
 
@@ -24,7 +24,7 @@ server 端和 agent 端提供相同的校验方式和 RESTful API，兼容服务
 - Step3: 服务实例启动后通过API向License Server获取license。
 - Step4: 服务实例获取到license后，拿自身信息根据规则与license中的信息对比，验证通过成功激活，反之，激活失败。
 
-### 1.2 边缘服务
+### 2.2. 边缘服务
 
 ![边缘服务流程](images/云服务流程.png)
 
@@ -35,7 +35,7 @@ server 端和 agent 端提供相同的校验方式和 RESTful API，兼容服务
 - Step5: 在公有云license service portal 激活service & package，激活后生成 License File
 - Step6: 在license agent portal中添加 License File 进行service & package 的离线激活
 
-## 2. License 验证
+## 3. License 验证
 
 > licese server 端和 agent 端提供相同的校验方式和RESTful API
 
