@@ -20,6 +20,13 @@ server 端和agent 端提供相同的校验方式和 RESTful API，兼容服务�
 
 ![边缘服务流程](images/云服务流程.png)
 
+- Step1: 在公有云catalog下单硬件对应的 Infrastructure （需要提前上架）
+- Step2: 在公有云license service portal 激活Infrastructure，激活后生成 InfraLicenseKey
+- Step3: 在AutoIotSuite 中将InfraLicenseKey 输入验证，通过后进行自动部署
+- Step4: 在公有云catalog下单 service & package
+- Step5: 在公有云license service portal 激活service & package，激活后生成 License File
+- Step6: 在license agent portal中添加 License File 进行service & package 的离线激活
+
 ## 2. License 验证
 
 > licese server 端和 agent 端提供相同的校验方式和RESTful API
