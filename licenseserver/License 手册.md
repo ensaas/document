@@ -1,9 +1,8 @@
 # License 手册
 
-## 1.1. License 概述
+## 1. License 概述
 
-license 为 WISE-PaaS 云服务提供有效的 license 以及期限，分为两部分，server 端和 agent 端，server运行在云端，为云上服务生成和维护服务的 license，agent端运行在边缘端，为边缘端服务提供license，agent 端 license 是通过 server 端激活生成后通过 License File 添加至 agent 端。  
-server 端和 agent 端提供相同的校验方式和 RESTful API，兼容服务在云端和边缘端 license 的校验，服务不需要进行任何适配修改。  
+License 为 WISE-PaaS 云服务提供有效的license以及期限，分为两部分，server端和agent端，server运行在云端，为云上服务生成和维护服务的license，agent端运行在边缘端，为边缘端服务提供license，agent端license是通过 server端激活生成后通过License File添加至agent端。server端和agent端提供相同的校验方式和RESTful API，兼容服务在云端和边缘端license的校验，服务不需要进行任何适配修改。  
 主要功能特性：  
 
 - 云端统一维护生成 license
