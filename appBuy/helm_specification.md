@@ -70,10 +70,10 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
      apiService:
        internalUrl: http://api.service.ensaas.en.internal/v2
        externalUrl: http://api-service-ensaas.sa.wise-paas.com/v2	  
-   ensaas:
-     datacenterCode: sa
-     internalUrl: en.internal
-     externalUrl: sa.wise-paas.com
+     ensaas:
+       datacenterCode: sa
+       internalUrl: en.internal
+       externalUrl: sa.wise-paas.com
 ```	    
 	    
 * 平台必要参数
