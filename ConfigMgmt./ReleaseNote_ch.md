@@ -1,3 +1,29 @@
+### Config Mgmt. v-1.0.5- (2021-03-11)
+
+#### Summary Update
+
+#### Updated:
+
+- 调整获取license active info的方法
+- 限制后端服务实例监听同一个私有配置的次数
+
+#### Fixed:
+
+  - 修复ecm agent注入空的datacenter, cluster, workspace, namespace等环境变量
+  - 修复配置发布偶尔不生效的问题
+  - 修复cpu使用率偶尔会达到100%的问题
+  - 修复无效的公有配置监听信息没有及时删除的问题
+  - 灰度发布时后端服务实例名称不能为空字符串
+  - 配置大小超过应用组上限的时候API返回403
+
+#### Component
+
+- API v-1.1.0.5
+- Portal v-1.1.0.3
+- ECM agent v-1.1.0.5
+- iptable v-1.1.0.1
+- ensaasdp v-1.1.0.1
+
 ### Config Mgmt. v-1.0.3- (2021-01-29)
 
 #### Summary Update

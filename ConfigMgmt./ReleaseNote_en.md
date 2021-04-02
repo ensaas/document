@@ -1,3 +1,29 @@
+### Config Mgmt. v-1.0.5- (2021-03-11)
+
+#### Summary Update
+
+#### Updated:
+
+- Adjust how to get license active information
+- Limit the number of times the backend can listen on the same private onfig
+
+#### Fixed:
+
+  - Fix the bug ECM agent injecting empty datacenter, cluster, workspace, namespace and other environment variables
+  - Fix the bug that configuration releases occasionally do not take effect
+  - Fix the bug that CPU usage would occasionally reach 100 percent
+  - Fix the bug that invalid public configuration listening information was not deleted in time
+  - The backend name cannot be an empty string when grayscale is published
+  - API returns 403 if the size of config exceeds the app group limit
+
+#### Component
+
+- API v-1.1.0.5
+- Portal v-1.1.0.3
+- ECM agent v-1.1.0.5
+- iptable v-1.1.0.1
+- ensaasdp v-1.1.0.1
+
 ### Config Mgmt. v-1.0.3- (2021-01-29)
 
 #### Summary Update
@@ -7,8 +33,8 @@
 - Add global auditor permission
 - Check tag name exist before publishing public config and private config
 - Add Public-Basic plan
-- Add the number of configurations in the application group page. Click on the number of configurations to navigate to the configuration management page
-- Add the number of services in the application group page, click the number of services to jump to the service management page
+- Add the number of configurations in the application group page. Click on the number of configurations to link to the configuration management page
+- Add the number of services in the application group page, click the number of services to link to the service management page
 
 #### Updated:
 
