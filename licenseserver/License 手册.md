@@ -1,22 +1,14 @@
 # License 手册
 
-- [1. License 概述](#1-license---)
-- [2. 流程](#2---)
-  * [2.1. 云服务流程](#21------)
-    + [Step1: 用户订购或更新服务后，Catalog生成订阅信息，通知各个buy生成服务实例，同时将订阅信息同步给License Server。](#step1-------------catalog-----------buy-----------------license-server-)
-    + [Step2: License Server获得订阅信息后，生成license信息](#step2--license-server----------license--)
-    + [Step3: 服务实例启动后通过API向License Server获取license](#step3-----------api-license-server--license)
-    + [Step4: 服务实例获取到license后，拿自身信息根据规则与license中的信息对比，验证通过成功激活，反之，激活失败](#step4---------license------------license-----------------------)
-  * [2.2. 边缘服务流程](#22-------)
-    + [Step1: 在公有云catalog下单硬件对应的 Infrastructure （需要提前上架）](#step1------catalog--------infrastructure---------)
-    + [Step2: 在公有云license service portal 激活 Infrastructure，激活后生成 InfraLicenseKey](#step2------license-service-portal----infrastructure-------infralicensekey)
-    + [Step3: 在 AutoIotSuite 中将 InfraLicenseKey 输入验证，通过后进行自动部署](#step3----autoiotsuite----infralicensekey---------------)
-    + [Step4: 在公有云 catalog 下单 service & package](#step4-------catalog----service---package)
-    + [Step5: 在公有云license service portal 激活 service & package，激活后生成 LicenseFile](#step5------license-service-portal----service---package-------licensefile)
-    + [Step6: 在license agent portal中添加 License File 进行service & package 的离线激活](#step6---license-agent-portal----license-file---service---package------)
-- [3. License 验证](#3-license---)
-  * [3.1. 通过服务料号获取](#31---------)
-  * [3.2. 通过服务名称获取](#32---------)
+## 目录
+
+- [1. License 概述](#1.-License-概述)
+- [2. 流程](#2.-流程)
+  - [2.1. 云服务流程](#2.1.-云服务流程)
+  - [2.2. 边缘服务流程](#2.2.-边缘服务流程)
+- [3. License 验证](#3.-License-验证)
+  - [3.1. 通过服务料号获取](#3.1.-通过服务料号获取)
+  - [3.1. 通过服务料号获取](#3.1.-通过服务料号获取)
 
 
 
