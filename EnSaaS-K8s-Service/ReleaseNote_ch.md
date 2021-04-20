@@ -1,3 +1,18 @@
+### EnSaaS-K8s-Service 4.0.17- (2021-04-14)
+
+#### [Managment Portal API]- 4.0.16
+
+Added:
+- 修正license的bug;
+- 添加internal.domain环境变量,支持更灵活的internal域名；
+
+#### [Cluster Agent]- 4.0.14
+
+Added:
+- 为clusteragent提供livenessprobe探针；
+
+
+
 ### EnSaaS-K8s-Service 4.0.16- (2021-02-05)
 
 #### [Managment Portal UI]- 4.0.16
