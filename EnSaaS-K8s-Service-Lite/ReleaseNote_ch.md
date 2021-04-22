@@ -1,18 +1,18 @@
 ### EnSaaS-K8s-Service Lite v-4.1.6- (2020-03-25)
 #### Fixed
  - 修正多订阅号时，有时切换订阅号service页面显示不正确的问题
-	- 修正切换订阅号时，集群显示不正确的问题
-	- 修正同一个订阅号下，切换不同集群，package列表显示不正确
-	- 修正在cluster，ws或ns页面选择的集群信息会传给Application页面的问题
-	- 修正切换shared和dedicate集群时，集群列表不正确的问题
+ - 修正切换订阅号时，集群显示不正确的问题
+ - 修正同一个订阅号下，切换不同集群，package列表显示不正确
+ - 修正在cluster，ws或ns页面选择的集群信息会传给Application页面的问题
+ - 修正切换shared和dedicate集群时，集群列表不正确的问题
 
 #### Updated
-	- 若cluster或ws或ns不存在，点击时，给出提示
+ - 若cluster或ws或ns不存在，点击时，给出提示
 
 #### Component
-	- kubeensaas-lite：v-4.1.4
-	- clusteragent-lite：v-4.1.5
-	- mp-ui-lite：v-4.1.6
+ - kubeensaas-lite：v-4.1.4
+ - clusteragent-lite：v-4.1.5
+ - mp-ui-lite：v-4.1.6
 
 #### Dependent Service
 | Serivce                    | Chart version | image version                            |
