@@ -1,3 +1,34 @@
+### EnSaaS-K8s-Service Lite v-4.1.6- (2020-03-25)
+#### Fixed
+ - 修正多订阅号时，有时切换订阅号service页面显示不正确的问题
+	- 修正切换订阅号时，集群显示不正确的问题
+	- 修正同一个订阅号下，切换不同集群，package列表显示不正确
+	- 修正在cluster，ws或ns页面选择的集群信息会传给Application页面的问题
+	- 修正切换shared和dedicate集群时，集群列表不正确的问题
+#### Updated
+	- 若cluster或ws或ns不存在，点击时，给出提示
+#### Component
+	- kubeensaas-lite：v-4.1.4
+	- clusteragent-lite：v-4.1.5
+	- mp-ui-lite：v-4.1.6
+#### Dependent Service
+| Serivce                    | Chart version | image version                            |
+| -------------------------- | ------------- | ---------------------------------------- |
+| Appbuy api                 | 1.4.9         | appbuy-api:1.4.1.6                       |
+| Listingsystem              | 1.8.19        | listingsystem:1.8.0.24                   |
+| Serivce Hub                | 0.3.33	       | wise-paas-service-broker:0.3.22          |
+| DCCS                       | 1.0.11        | dccs:1.1.6.2                             |
+| MongoDB Service Manager    | 0.6.0         | mongodb-sm:1.1.6                         |
+| PostgreSQL Service Manager | 0.2.9         | wise-paas-service-manager-postgresql:1.0.0 |
+| InfluxDB Service Manager   | 0.1.6         | wise-paas-service-manager-influxdb:1.0.2 |
+| RabbitMQ Service Manager   | 1.0.21        | rabbitmq-sm:1.0.21                       |
+| Redis Service Manager      | 0.0.5         | redis-service-manager:0.0.0.7            |
+| Blobstore Service Manager  | 1.0.4         | metering/servicebroker:1.0.5             |
+| SSO                        | 4.0.21        |/ssov3/ssov3:v-4.0.22                     |
+
+
+
+
 ### EnSaaS-K8s-Service Lite v-4.1.5- (2020-03-04)
 
 #### Fixed
