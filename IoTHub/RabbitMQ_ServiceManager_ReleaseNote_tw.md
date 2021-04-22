@@ -2,6 +2,15 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.24
+### Fix
+   - Bug #19503: 當 ops credentials 表格中有2個以上 shared_use 為 true 時，執行 share provision 會拿到不 mapping 的 host 與帳密資訊
+     同為舊版問題，1.0.22 只同步了帳密資訊, 其連線使用的 internal host 也必須同步不然也會機率出錯(視pg環境而有所不同)，於該版修正此問題。
+​
+## 1.0.22
+### Fix
+   - 修正舊有淺在問題 (from v1.0.4)，當 ops pg credentials table 內若同時包含 shared 以及 dedicated 連線信息時, 在做 shared provision 的時候拿取 rabbitmq 連線信息時 sql query 語句不嚴謹, 會因 pg 內部排序規則而不同, 導致有可能會拿到錯誤的帳密信息。
+
 ## 1.0.21
 ### Add
    - Requirement #18016: addition API 增加檢查輸入的帳號是否具有足夠權限
