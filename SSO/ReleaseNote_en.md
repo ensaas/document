@@ -1,21 +1,22 @@
-
 ## Portal 4.0.25-(2021-4-29)
 ### New Features
-* Add subscription users in bulk
+* Delete subscription account users in batches
+* Add LDAP login and LDAP configuration page
+* Add the login configuration page
 ## API 4.0.23 (2021-4-29)
-*New integration standard LDAP
-*Add the total LDAP API in the new integration platform
-*Add LDAP system configuration
-*Add update system configuration API
-*The disabled SSO account cannot log in using LDAP
-*Add API /users/me/marketplace /sync. Synchronize the subscription number and permission data of a user from the marketplace.
-*Add a new configuration httprequest.usefasthttp to enable fasthttp to send HTTP requests.
+* New integration standard LDAP
+* Add the total LDAP API in the new integration platform
+* Add LDAP system configuration
+* Add update system configuration API
+* The disabled SSO account cannot log in using LDAP
+* Add API /users/me/marketplace /sync. Synchronize the subscription number and permission data of a user from the marketplace.
+* Add a new configuration httprequest.usefasthttp to enable fasthttp to send HTTP requests.
 
 ### Fix bugs 
-*Modify some bugs
-*Due to the nginx characteristic, the IP check in the password locking judgment is cancelled
-*Modify mail template
-*Failed to modify password old password verification from return 401 to 403
+* Modify some bugs
+* Due to the nginx characteristic, the IP check in the password locking judgment is cancelled
+* Modify mail template
+* Failed to modify password old password verification from return 401 to 403
 ## API 4.0.22 (2021-1-28)
 * The new system configuration items are as follows:
 	SystemLoginErrorCountConfig ---- Set the total number of login errors of the system, and the default value for the first update is 500
