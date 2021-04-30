@@ -10,6 +10,7 @@
 * 新增更新系统配置api
 * 禁用的sso账号不可以使用ldap登录
 * 新增api /users/me/marketplace/sync. 从marketplace同步某个用户的订阅号权限数据。
+* 新增api /subscriptions/{subscriptionId}/smtp-setting配置与获取订阅号的smtp服务器
 * 新增配置HttpRequest.UseFastHttp 启用fasthttp发送http 请求。
 
 ### Fix bugs 
