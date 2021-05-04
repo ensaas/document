@@ -1,3 +1,28 @@
+# 0.3.23.1 (2021-04-27)
+ * bug: 修正binding 後無法解析 response body
+
+# 0.3.23 (2021-04-26)
+ * bug: 修正fasthttp 回傳 status code 判斷
+ * feat: 修正 get instance 回傳值
+
+# 0.3.22.7 (2021-04-21)
+ * feat: 修正連線成為 fasthttp 的方式 
+
+# 0.3.22.6 (2021-04-16) 
+ * bug: 修正一個 更換IP 會讓 secret 消失的bug 
+ * bug: 修正 license unauthorized invalid 拼錯字
+ * feat: 現在 purge 的選項可以刪除 inprogress 和 error 狀態的 instances 
+
+# 0.3.22.5 (2021-04-07)
+ * feat: 允許 subscription user 使用回傳加密的帳號密碼的API
+
+# 0.3.22.4 (2021-04-01)
+ * feat: 取消檢查 mp users me 在 CheckSsoNormalUser
+
+# 0.3.22.3 (2021-03-05)
+ * feat: 新增API 回傳加密的帳號密碼
+ * bug: 把密碼替換成 * 
+
 # 0.3.22.1 (2021-03-02)
  * bug: #18348 需要為GET /v2/license/info和POST /v2/license/check的前面添加/v2
 
