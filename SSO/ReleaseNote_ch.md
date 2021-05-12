@@ -1,3 +1,12 @@
+## API 4.0.24-(2021-5-12)
+### Fix bugs
+* env增加ldapPartners参数
+## Portal 4.0.27-(2021-5-12)
+### Fix bugs 
+* 根据后台接口判断是否显示ldap中的中荣医院选项
+## Portal 4.0.26-(2021-5-11)
+### Fix bugs 
+* 修复语言切换时bug
 ## Portal 4.0.25-(2021-4-29)
 ### New Features
 * 批量删除订阅号用户。
