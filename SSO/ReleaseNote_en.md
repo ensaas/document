@@ -1,3 +1,12 @@
+## API 4.0.24-(2021-5-12)
+### Fix bugs
+* env adds ldapPartners parameter
+## Portal 4.0.27-(2021-5-12)
+### Fix bugs
+* Determine whether to display the Zhongrong Hospital option in ldap according to the background interface
+## Portal 4.0.26-(2021-5-11)
+### Fix bugs
+* Fix the bug when switching languages
 ## Portal 4.0.25-(2021-4-29)
 ### New Features
 * Delete subscription account users in batches
