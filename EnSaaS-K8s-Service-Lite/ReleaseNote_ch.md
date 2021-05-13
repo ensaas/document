@@ -21,7 +21,7 @@
 | RabbitMQ Service Manager   | 1.0.21        | rabbitmq-sm:1.0.21                       |
 | Redis Service Manager      | 0.0.5         | redis-service-manager:0.0.0.7            |
 | Blobstore Service Manager  | 1.0.4         | metering/servicebroker:1.0.5             |
-| SSO                        | 4.0.21        |/ssov3/ssov3:v-4.0.22                     |
+| SSO                        | 4.0.24        |/ssov3/ssov3:v-4.0.24                     |
 
 
 ### EnSaaS-K8s-Service Lite v-4.1.6- (2020-03-25)
