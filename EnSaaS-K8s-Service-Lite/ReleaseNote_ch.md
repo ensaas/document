@@ -1,3 +1,29 @@
+### EnSaaS-K8s-Service Lite v-4.1.7- (2020-05-13)
+#### Fixed
+ - 修复语言切换时bug
+
+
+#### Component
+ - kubeensaas-lite：v-4.1.4
+ - clusteragent-lite：v-4.1.5
+ - mp-ui-lite：v-4.1.7
+
+#### Dependent Service
+| Serivce                    | Chart version | image version                            |
+| -------------------------- | ------------- | ---------------------------------------- |
+| Appbuy api                 | 1.4.9         | appbuy-api:1.4.1.7                       |
+| Listingsystem              | 1.8.25        | listingsystem:1.8.0.25                   |
+| Serivce Hub                | 0.3.33	       | wise-paas-service-broker:0.3.22          |
+| DCCS                       | 1.0.11        | dccs:1.1.6.2                             |
+| MongoDB Service Manager    | 0.6.0         | mongodb-sm:1.1.6                         |
+| PostgreSQL Service Manager | 0.2.9         | wise-paas-service-manager-postgresql:1.0.0 |
+| InfluxDB Service Manager   | 0.1.6         | wise-paas-service-manager-influxdb:1.0.2 |
+| RabbitMQ Service Manager   | 1.0.21        | rabbitmq-sm:1.0.21                       |
+| Redis Service Manager      | 0.0.5         | redis-service-manager:0.0.0.7            |
+| Blobstore Service Manager  | 1.0.4         | metering/servicebroker:1.0.5             |
+| SSO                        | 4.0.21        |/ssov3/ssov3:v-4.0.22                     |
+
+
 ### EnSaaS-K8s-Service Lite v-4.1.6- (2020-03-25)
 #### Fixed
  - 修正多订阅号时，有时切换订阅号service页面显示不正确的问题
