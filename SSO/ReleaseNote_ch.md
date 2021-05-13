@@ -1,3 +1,6 @@
+## Portal 4.0.28-(2021-5-13)
+### Requirement
+* 登入后加入论坛广告弹窗
 ## API 4.0.24-(2021-5-12)
 ### Fix bugs
 * env增加ldapPartners参数
