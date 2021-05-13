@@ -1,3 +1,6 @@
+## Portal 4.0.28-(2021-5-13)
+### Requirement
+* Add the advertisement pop-up window
 ## API 4.0.24-(2021-5-12)
 ### Fix bugs
 * env adds ldapPartners parameter
