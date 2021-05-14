@@ -1,3 +1,25 @@
+### EnSaaS-K8s-Service 4.0.18- (2021-05-14)
+
+#### [Managment Portal API]- 4.0.17
+
+Added:
+- 提供pod restart event相关的API
+
+#### [Cluster Agent]- 4.0.15
+
+Added:
+- 支持pod restart event的功能
+
+#### [Managment Portal UI]- 4.0.17
+
+Added:
+- 查看Pod重启事件和事件详情 
+Fixed:
+- 修正某些环境下多语言切换不生效的问题；
+- 修正某些环境下monitor不能正常显示的问题； 
+
+
+
 ### EnSaaS-K8s-Service 4.0.17- (2021-04-14)
 
 #### [Managment Portal API]- 4.0.16
