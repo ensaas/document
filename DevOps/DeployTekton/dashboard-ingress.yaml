@@ -1,0 +1,16 @@
+# htpasswd -bc auth <username> <password>
+# kubectl create secret generic tekton-basic-auth --from-file=auth
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tekton-dashboard
+spec:
+  rules:
+  - host: <your host>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: tekton-dashboard
+          servicePort: 9097
