@@ -1,5 +1,5 @@
 # 安装
-## 在 KubeEnSaaS 容器云中安装 Tekton
+## KubeEnSaaS 容器云中安装 Tekton
 - 首先需要创建名为"tektonpipelines" 的 namespace
 - 使用 cluster-admin 权限的 config 进行部署 
     - `kubectl apply -f DeployTekton/pipeline-ensaas.yaml` 
