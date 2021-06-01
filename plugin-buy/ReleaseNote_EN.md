@@ -5,3 +5,9 @@
 * 2. Select Dashboard in the dashboard list of the selected subscription account
 * 3. Confirm the information and purchase
 * Display at the bottom of the page when purchasing: balance, available amount, price, discount, discounted price
+
+## API 0.0.1 (2021-6-1)
+
+*Add plug-in subscription API
+*Add new plug-in and re subscribe API
+*New plug-in upload API
