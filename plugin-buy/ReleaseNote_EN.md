@@ -8,6 +8,6 @@
 
 ## API 0.0.1 (2021-6-1)
 
-*Add plug-in subscription API
-*Add new plug-in and re subscribe API
-*New plug-in upload API
+* Add plug-in subscription API
+* Add new plug-in and re subscribe API
+* New plug-in upload API
