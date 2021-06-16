@@ -1,3 +1,6 @@
+# 0.3.24 (2021-06-16)
+ * feat: 讓 hz 的 mongodb plan Dedicated-Single-Small-V2 暫時改用兩步驟佈署 
+
 # 0.3.23.1 (2021-04-27)
  * bug: 修正binding 後無法解析 response body
 
