@@ -1,5 +1,14 @@
 #  Blob-Ceph ReleaseNote
 
+## wise-paas-service-manager-blob-ceph 1.0.0 (2021-06-16)
+
+- Requirement #20573: 需要更換SM的service_id和plan_id
+
+## Helm Chart - wise-paas-service-manager-blob-ceph 1.0.0 (2021-06-16)
+
+- Requirement #20207: 請在chart裡加上resources.requests段落
+- Suggestion #20571: 建議修改chart裡的Memory資源改為32Mi
+
 ## wise-paas-service-manager-blob-ceph 0.0.1.1 (2021-06-04)
 
 - Bug #20155: 建立instance時，若沒有帶datacenterCode，返回的status code不應該回500
