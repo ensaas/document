@@ -1,3 +1,13 @@
+# 1.2.0 (2020-06-21)
+# **New Features**
+- 新增查看payg日账单详情api
+
+# **Bug Fixes**
+- 优化license部分代码
+
+# **Chart Version**
+
+1.2.0
 
 # 1.1.2.1 （Pre-release 1.2.0）(2020-01-20)
 # **New Features**
