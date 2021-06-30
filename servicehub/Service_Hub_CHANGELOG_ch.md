@@ -1,3 +1,10 @@
+# 0.3.26 (2021-06-30)
+ * feat: 提供透過catalog購買 BlobStore 變成 inprogress 的 API 
+ * feat: user-provider 的功能實做
+
+# 0.3.25 (2021-06-16)
+ * feat: bind unbind 需要有個參數，有參數得時後不執行 bind unbind
+
 # 0.3.24 (2021-06-16)
  * feat: 讓 hz 的 mongodb plan Dedicated-Single-Small-V2 暫時改用兩步驟佈署 
 
