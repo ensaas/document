@@ -1,3 +1,14 @@
+### EnSaaS-K8s-Service 4.0.19- (2021-07-20)
+
+#### [Managment Portal UI]- 4.0.17
+
+Added:
+- 打开Portal时添加加载动画
+Fixed:
+- 登录的时候输错密码，登录按钮被disable，无法再次登录
+- 从podevent界面跳回到workspace界面创建workspace的时候会跳出日志窗口
+
+
 ### EnSaaS-K8s-Service 4.0.18- (2021-05-14)
 
 #### [Managment Portal API]- 4.0.17
