@@ -1,6 +1,6 @@
 ### EnSaaS-K8s-Service 4.0.19- (2021-07-20)
 
-#### [Managment Portal UI]- 4.0.17
+#### [Managment Portal UI]- 4.0.18
 
 Added:
 - 打开Portal时添加加载动画
