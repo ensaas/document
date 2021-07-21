@@ -1,3 +1,13 @@
+# DCCS v-1.1.7.2 (2021-07-21)
+
+## Summary Update
+
+Added:
+
+- sso, ecm, service hub url地址中支持包括非80的端口
+- 调用API不再调用rabbitmq get version API
+- 对于不存在的DCCS key，不再重复去service hub判断dccs key是否存在
+
 # DCCS v-1.1.6.2 (2021-01-13)
 
 ## Summary Update

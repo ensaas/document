@@ -1,3 +1,13 @@
+# DCCS v-1.1.7.2 (2021-07-21)
+
+## Summary Update
+
+Added:
+
+- SSO, ECM, and Service Hub URLs support include port other than 80  
+- DCCS API no longer calls the RabbitMQ Get Version API
+- For non-existent DCCS keys, it is no longer necessary to call the service hub to determine whether the DCCS key exists  
+
 # DCCS v-1.1.6.2 (2021-01-13)
 
 ## Summary Update
