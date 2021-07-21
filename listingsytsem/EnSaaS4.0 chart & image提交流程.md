@@ -50,14 +50,12 @@
 
 2、上架到生产环境的 chart&image 添加标签为 “未验证” 标签  -- 此步骤可自动化
 
-![图片](https://uploader.shimo.im/f/zC6NfnQLTXcZ5o6r.png!thumbnail)
+![图片](https://uploader.shimo.im/f/zC6NfnQLTXcZ5o6r.png?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2MjY4MzU5NDMsImciOiI5ajh4Slg4OVg5VmNQS2hxIiwiaWF0IjoxNjI2ODM1NjQzLCJ1c2VySWQiOjIzNDE0NjQyfQ.Rt0wK5no9oMqyiddZSMnLlrDQUBrB9L0tk-yiqNcG6A)
 
 3、上架验证人员验证chart & image 的可用性后，更改标签为 “已验证” 或者 “未通过”
 
-![图片](https://uploader.shimo.im/f/9khR76R6GlUOPZms.png!thumbnail)
-
+![图片](https://uploader.shimo.im/f/9khR76R6GlUOPZms.png?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2MjY4MzU5NDMsImciOiI5ajh4Slg4OVg5VmNQS2hxIiwiaWF0IjoxNjI2ODM1NjQzLCJ1c2VySWQiOjIzNDE0NjQyfQ.Rt0wK5no9oMqyiddZSMnLlrDQUBrB9L0tk-yiqNcG6A)
 
 * 备注：readmine project 选择 DeploymentRequest
 
-![图片](https://uploader.shimo.im/f/RdQoq9QUj1Qzxwdo.png!thumbnail)
-
+![图片](https://uploader.shimo.im/f/RdQoq9QUj1Qzxwdo.png?accessToken=eyJhbGciOiJIUzI1NiIsImtpZCI6ImRlZmF1bHQiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiJhY2Nlc3NfcmVzb3VyY2UiLCJleHAiOjE2MjY4MzU5NDMsImciOiI5ajh4Slg4OVg5VmNQS2hxIiwiaWF0IjoxNjI2ODM1NjQzLCJ1c2VySWQiOjIzNDE0NjQyfQ.Rt0wK5no9oMqyiddZSMnLlrDQUBrB9L0tk-yiqNcG6A)
