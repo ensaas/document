@@ -25,6 +25,10 @@
 | Redis Service Manager      | 0.0.5         | redis-service-manager:0.0.0.7            |
 | Blobstore Service Manager  | 1.0.4         | metering/servicebroker:1.0.5             |
 | SSO                        | 4.0.24        |/ssov3/ssov3:v-4.0.24                     |
+#### note：
+     4.1.5版本后，mp-ui-lite的配置中dashboard的链接不用再加/api
+                 clusteragent-lite的配置中mp的链接需要添加/v1
+
 ### EnSaaS-K8s-Service Lite v-4.1.7- (2020-05-13)
 #### Fixed
  - 修复语言切换时bug
