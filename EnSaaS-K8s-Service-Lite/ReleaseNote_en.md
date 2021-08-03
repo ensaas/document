@@ -1,7 +1,7 @@
 ### EnSaaS-K8s-Service Lite v-4.1.8- (2020-08-02)
 #### Fixed
  - Support 4-segment license
- - The version of license chart change to 1.2.7
+ - The chart version of license change to 1.2.10
  - Support '--set mp-ui-lite.install=false' when install chart
 #### update
  - Add animation when loading portal
