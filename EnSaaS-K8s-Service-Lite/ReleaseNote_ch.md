@@ -1,7 +1,7 @@
 ### EnSaaS-K8s-Service Lite v-4.1.8- (2020-08-02)
 #### Fixed
  - 支持4段license
- - 包入1.2.7版本的license chart
+ - license chart版本更新至1.2.10
  - chart包支持--set mp-ui-lite.install=false
 #### update
  - 加载Portal时添加加载动画
