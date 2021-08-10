@@ -1,5 +1,23 @@
+# 1.0.1.1 (2021-08-10)
+ * bug: 修正刪除log的時間
+
+# 1.0.1 (2021-08-09)
+ * feat: 測試+修正 log 功能。
+ * bug: fix user-provider 沒擋的錯誤
+ * bug: fix dccs disable enable disable 後回出現 enable 的錯誤
+
+# 1.0.0 (2021-08-05)
+ * feat: 新增log功能，記錄每筆用戶操作的資訊。
+ * feat: 進一個穩定的版本號
+
+# 0.3.27 (2021-08-03)
+ * feat: 新增兩隻API，記錄用戶同意備份還原服務協議 
+
+# 0.3.26.1 (2021-06-30)
+ * feat: 開放 service-hub 的 client token 通過 super user 驗證
+
 # 0.3.26 (2021-06-30)
- * feat: 提供透過catalog購買 BlobStore 變成 inprogress 的 API 
+ * feat:  提供透過catalog購買 BlobStore 變成 inprogress 的 API 
  * feat: user-provider 的功能實做
 
 # 0.3.25 (2021-06-16)
@@ -110,7 +128,7 @@
  * feat: 多一個欄位判斷 user 自訂義的 broker 
  * bug: redis 綁定時的錯誤修正
  * bug: 修正綁定 parameter 為空時，dccs 出現的錯誤
- 
+
 # 0.3.19.10 (2020-11-03) (0.3.20)
  * bug: auth code 檢查
 
@@ -128,10 +146,10 @@
  * feat: 修正信件內容 (修改標題)
  * feat: 整理所有設定訊息
  * bug: 修正重新發貨API時間問題
- 
+
 # 0.3.19.2 (2020-10-12) 
  * bug: 修正計時器未啟動的錯誤
- 
+
 # 0.3.19.1 (2020-10-8) 
  * bug: 修正 swager 版號和API回傳 statusCode 
  * bug: 修正HZ站點參數錯誤
@@ -153,7 +171,7 @@
  * feat: 新增自行購買API
  * feat: catalog 開關關閉時 不連線 rabbitmq 
  * bugfix: 修正寄信內容會有資訊缺少的問題，改使用servicehub client token 詢問
- 
+
 # 0.3.18.3 (2020-08-14)
  * bugfix: 7天後到期不應該去呼叫 service Manager
  * 每日檢查會印出下一次檢查時間和日期
@@ -171,7 +189,8 @@
  * bugfix: #15594: 透過cascade=true的方式刪除instance，通知信標題所寫的天數錯誤
  * bugfix: #15544: [Chart] 移除chart裡用不到的檔案
  * bugfix: 修改寄信內容和判斷式
- 
+
+
 # 0.3.17.8 (0.3.18) (2020-08-04)
  * bugfix: #15562: 不應該有將料號寫死的情況
  * bugfix: #15545: [Chart] Chart預設資源過小
@@ -184,7 +203,7 @@
  * bugfix: #15210: 無法成功寄送通知信
  * bugfix: #15234: 刪除instance時(deleteData=true)，Service Hub沒有真正呼叫SM去將instance完整刪除
  * bugfix: #15248: 若建立dedicated instance失敗，資料庫紀錄的狀態不正確
- 
+  
 # 0.3.17.6 (2020-07-23)
  * feat: 取消駝峰與底線兼容的API
  * bugfix: broker 帳密隱藏，當缺少: 和 @ 時不噴錯
