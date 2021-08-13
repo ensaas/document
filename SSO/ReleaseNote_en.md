@@ -1,3 +1,14 @@
+## Portal 4.0.29 (2021-8-12)
+* Add self-activation function. Automatically disabled users can receive the verification code through email and mobile phone to activate their account.
+
+## API 4.0.25 (2021-8-12)
+* Automatically disable the user and change the user status to inactive
+* Inactive users are not allowed to log in
+* Inactive users support users to accept verification code activation through email and SMS
+
+## API 4.0.24-hotfix2 (2021-7-27)
+* Catalog uri append /login
+
 ## Portal 4.0.28-(2021-5-13)
 ### Requirement
 * Add the advertisement pop-up window
