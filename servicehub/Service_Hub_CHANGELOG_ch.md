@@ -1,3 +1,6 @@
+# 1.0.3 (2021-08-24)
+ * bug: 修正 purge 的選項無法刪除 inprogress 和 error 狀態的 bug
+
 # 1.0.1.2 (2021-08-10) (1.0.2)
  * feat: 修正 /v2/user/{userId}/info 回覆值 (因應UI需求)
 
