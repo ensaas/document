@@ -1,5 +1,27 @@
 # DBBackup-apiserver
 
+### 1.1.0/1.0.0.3 (2021-08-18)
+- 寄信規則改為寄給訂閱號下所有人員
+- 刪除多餘log
+- 
+### 1.0.0.2 (2021-08-18)
+- Bug #21451: 告警通知的郵件沒有顯示所有詳細信息內容，資訊顯示空值
+- Bug #21453: dbBackup / dbRestore執行期間手動刪除，告警通知信息沒有instanceId資訊
+- Bug #21477: 備份/還原失敗，通知郵件中的備份/還原狀態，失敗原因，instanceId等信息顯示空值
+- Bug #21478: 告警通知郵件標題，沒有顯示執行結果
+- Bug #21488: 從dbschedule建立的dbbackukp失敗後，沒有收到通知郵件
+- Bug #21490: 備份完整數據庫數據庫，通知郵件中備份數據庫顯示空值
+- Bug #21504: dbschedule建立的dbBackup約3分鐘後加入dbBackupQueue
+- Bug #21513: 刪除enable狀態的dbschedule後，約3分鐘沒有從list移除dbscheduleId，仍顯示下次執行backup時間
+- Bug #21520: Enable dbschedule一分鐘內自動建立的dbbackup，完成後不會寄送通知郵件
+- Bug #21566: App pod重啟，日誌顯示panic: runtime error: invalid memory address or nil pointer dereference（無法複製此問題）
+- Bug #21652: GET /dbBackups這支API沒有列出所有的備份
+
+### 1.0.0.1 (2021-08-04)
+- #20537 增加告警通知功能，當備份或還原失敗時，會發郵件通知
+- 整合notification
+- 添加整合notification部署說明的readme文件
+
 ### 1.0.0/1.0.0-rc17 (22/07/2021)
 - Bug #21055: 執行restore後重啟api-server pod，restore成功後沒有restart secret
 - Bug #21213: 當influxdb instance internal hosts為host時，無法透過api建立dbbackup/dbrestore/dbschedule (Requirement #20133)
