@@ -1,5 +1,18 @@
 # DBBackup Tool
 
+### 1.0.0.2 (2021-08-20)
+- Bug #20430: 當influxdb備份檔案不存在時，不要報錯
+- Bug #21355: 備份postgres包含特殊字元的數據庫名稱失敗
+- Bug #21674: 還原postgres整個數據庫中的其中一個數據庫時，日誌顯示備份數據庫詳細內容
+
+### 1.0.0.1 (2021-08-06)
+- Bug #20947: 還原PostgreSQL失敗後，無法使用原本的root帳密登入數據庫
+- Bug #21117: 透過command line建立influxdb備份(填寫rpc port)，influxdb用tcp port執行備份失敗
+- Bug #21336: 備份vm postgres整個數據庫，因連線數過多失敗，狀態顯示成功
+- Bug #21341: 備份influxdb database v1,7.x失敗
+- Bug #21354: 備份mongodb包含特殊字元的數據庫名稱失敗
+- Bug #21355: 備份postgres包含特殊字元的數據庫名稱失敗
+
 ### 1.0.0/0.0.9.3 (2021/07/29)
 
 - Bug #19081: Backup mongodb整個數據庫，指定已設定使用者權限的數據庫還原至新的數據庫名稱後，使用者無法登入
