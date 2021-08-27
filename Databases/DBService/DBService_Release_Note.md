@@ -1,5 +1,9 @@
 # DBService Release Notes
 
+# 1.0.1 (2021-08-27)
+- Update dbbackup-tool version to 1.0.1
+- Remove sample parameter podResource
+
 ## 1.0.0 (29072021)
 - Update dbbackup-tool version to 1.0.0
 - Update controller version to 1.0.0
@@ -9,7 +13,7 @@
 ## 1.0.0-rc12 (12072021)
 - Update dbbackup-tool version to 0.0.9.3
 - Update controller version to 1.0.0-rc9
-- Add crd parameter posResource
+- Add crd parameter podResource
 
 ## 1.0.0-rc11 (23062021)
 Change image from gcr.io/kubebuilder/kube-rbac-proxy:v0.5.0 to harbor.arfa.wise-paas.com/frbimo/kube-rbac-proxy:v0.5.0
