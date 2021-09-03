@@ -1,5 +1,8 @@
 # DBService Release Notes
 
+# 1.0.2 (2021-09-03)
+- add api-server in package
+
 # 1.0.1 (2021-08-27)
 - Update dbbackup-tool version to 1.0.1
 - Remove sample parameter podResource
