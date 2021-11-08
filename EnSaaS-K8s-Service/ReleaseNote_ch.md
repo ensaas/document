@@ -1,3 +1,16 @@
+### EnSaaS-K8s-Service 4.0.20- (2021-11-08)
+
+#### [Managment Portal API]- 4.0.18
+
+Fixed:
+- 修正License验证失败的问题
+
+#### [Cluster Agent]- 4.0.16
+
+Fixed:
+- 优化webhook中的pod validation
+
+
 ### EnSaaS-K8s-Service 4.0.19- (2021-07-20)
 
 #### [Managment Portal UI]- 4.0.18
