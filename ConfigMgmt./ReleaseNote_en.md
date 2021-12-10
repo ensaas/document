@@ -1,3 +1,21 @@
+### Config Mgmt. v-1.0.6- (2021-12-09)
+
+#### Summary Update
+
+#### Added:
+
+- The overview page supports process guidance, resource usage,  the recent updates of config and service
+- One-click update of service images and sidecar images
+- Support configuration import and export through API
+
+#### Component
+
+- API v-1.1.0.7
+- Portal v-1.1.0.7
+- ECM agent v-1.1.0.7
+- iptable v-1.1.0.7
+- ensaasdp v-1.1.0.7
+
 ### Config Mgmt. v-1.0.5- (2021-03-11)
 
 #### Summary Update
@@ -5,7 +23,7 @@
 #### Updated:
 
 - Adjust how to get license active information
-- Limit the number of times the backend can listen on the same private onfig
+- Limit the number of times the backend can listen on the same private config
 
 #### Fixed:
 

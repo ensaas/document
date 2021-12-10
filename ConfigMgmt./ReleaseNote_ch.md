@@ -1,3 +1,21 @@
+### Config Mgmt. v-1.0.6- (2021-12-09)
+
+#### Summary Update
+
+#### Added:
+
+- 总览页面支持流程引导，资源使用情况，配置和服务的近期更新记录
+- 一键更新服务镜像和sidecar镜像
+- 支持API方式的配置导入导出功能
+
+#### Component
+
+- API v-1.1.0.7
+- Portal v-1.1.0.7
+- ECM agent v-1.1.0.7
+- iptable v-1.1.0.7
+- ensaasdp v-1.1.0.7
+
 ### Config Mgmt. v-1.0.5- (2021-03-11)
 
 #### Summary Update
