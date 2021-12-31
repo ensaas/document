@@ -1,3 +1,26 @@
+## API 4.0.28 (2021-12-31)
+* Add enterprise account and user data to partner sinnet cloud.
+* Add user real name authentication
+* Increase enterprise real name certification
+* Add API for the current login person to obtain personal real name authentication and enterprise real name authentication information initiated
+* Add a proxy API to forward the API related to the invoice to the sinnet
+* Change the pricetype to read from the configuration, and the priority env > config > JSON
+* Add API to synchronize enterprise real name authentication results
+* API for adding and modifying enterprise member type
+* New API supporting proxy work order management 
+* Add API for obtaining enterprise number balance
+* New API / mail / SRE / contact send mail to SRE
+* New configuration email SREs set the SRE array to accept SMS in the environment variable
+* New enterprise account management mechanism
+* When the system starts, count the enterprise number admin list that needs to send a letter, and inform the enterprise number management mechanism of the change in turn
+* Add API / users / {username} / real name auth to query whether others have completed real name authentication
+* Add verification code check to API sending notification email to SRE
+* Add API / mail / verify / image to obtain verification code
+
+### Fix bugs 
+* Modify the operation record. If the operator is the root account, the operator role is empty
+
+
 ## Portal 4.0.29 (2021-8-12)
 * Add self-activation function. Automatically disabled users can receive the verification code through email and mobile phone to activate their account.
 
