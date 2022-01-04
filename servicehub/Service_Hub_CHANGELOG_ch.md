@@ -1,3 +1,6 @@
+# 1.0.4 (2021-12-28)
+ * feat: 立刻退訂的API帶上 cascade 參數，預設值為true
+
 # 1.0.3 (2021-08-24)
  * bug: 修正 purge 的選項無法刪除 inprogress 和 error 狀態的 bug
 
