@@ -78,38 +78,38 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
    4. **Ingress兼容旧版k8s和新版k8s**
    	**_helpers.tpl**文件中请添加如下内容：
 	
-      ```
+```
       {{/*
-Return the appropriate apiVersion for ingress.
-*/}}
-{{- define "bi.ingress.apiVersion" -}}
-  {{- if and (.Capabilities.APIVersions.Has "networking.k8s.io/v1") (semverCompare ">= 1.19-0" .Capabilities.KubeVersion.Version) -}}
-      {{- print "networking.k8s.io/v1" -}}
-  {{- else if .Capabilities.APIVersions.Has "networking.k8s.io/v1beta1" -}}
-    {{- print "networking.k8s.io/v1beta1" -}}
-  {{- else -}}
-    {{- print "extensions/v1beta1" -}}
-  {{- end -}}
-{{- end -}}
+       Return the appropriate apiVersion for ingress.
+      */}}
+      {{- define "bi.ingress.apiVersion" -}}
+        {{- if and (.Capabilities.APIVersions.Has "networking.k8s.io/v1") (semverCompare ">= 1.19-0" .Capabilities.KubeVersion.Version) -}}
+        {{- print "networking.k8s.io/v1" -}}
+       {{- else if .Capabilities.APIVersions.Has "networking.k8s.io/v1beta1" -}}
+       {{- print "networking.k8s.io/v1beta1" -}}
+      {{- else -}}
+       {{- print "extensions/v1beta1" -}}
+      {{- end -}}
+     {{- end -}}
 
-{{/*
-Return if ingress is stable.
-*/}}
-{{- define "bi.ingress.isStable" -}}
-  {{- eq (include "bi.ingress.apiVersion" .) "networking.k8s.io/v1" -}}
-{{- end -}}
+     {{/*
+       Return if ingress is stable.
+     */}}
+     {{- define "bi.ingress.isStable" -}}
+        {{- eq (include "bi.ingress.apiVersion" .) "networking.k8s.io/v1" -}}
+     {{- end -}}
 
-{{/*
-Return if ingress supports pathType.
-*/}}
-{{- define "bi.ingress.supportsPathType" -}}
-  {{- or (eq (include "bi.ingress.isStable" .) "true") (and (eq (include "bi.ingress.apiVersion" .) "networking.k8s.io/v1beta1") (semverCompare ">= 1.18-0" .Capabilities.KubeVersion.Version)) -}}
-{{- end -}}
+     {{/*
+        Return if ingress supports pathType.
+     */}}
+      {{- define "bi.ingress.supportsPathType" -}}
+         {{- or (eq (include "bi.ingress.isStable" .) "true") (and (eq (include "bi.ingress.apiVersion" .) "networking.k8s.io/v1beta1") (semverCompare ">= 1.18-0"   .Capabilities.KubeVersion.Version)) -}}
+     {{- end -}}
       
-      ```
+ ```
      **ingress.yaml**中添加如下内容：
      
-     ```
+ ```
      {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "dashboard.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
@@ -166,7 +166,7 @@ spec:
 {{- end }}
 
      
-     ```
+```
  5、**Deployment.yaml请去掉imagepullsecret读取**
      
 	
