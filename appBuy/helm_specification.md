@@ -173,7 +173,7 @@ spec:
 ```
  5、**Deployment.yaml请去掉imagepullsecret读取**   
      
-  ![图片](images/deployimagesecret.png)
+  ![图片](images/deployimagesecretpng.png)
 	
 * 平台必要参数
 
