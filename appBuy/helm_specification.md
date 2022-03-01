@@ -75,7 +75,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
        internalUrl: en.internal
        externalUrl: sa.wise-paas.com
 ```	    
-   4. **Ingress兼容旧版k8s和新版k8s**
+   4. **Ingress兼容旧版k8s和新版k8s**  
    	**_helpers.tpl**文件中请添加如下内容：
 	
 ```
@@ -107,7 +107,9 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
      {{- end -}}
       
  ```
-     **ingress.yaml**中添加如下内容：
+     
+     **ingress.yaml** 中请按红框中格式：
+     ![图片](images/ingress.png)
      
  ```
      {{- if .Values.ingress.enabled -}}
@@ -168,7 +170,7 @@ spec:
      
 ```
  5、**Deployment.yaml请去掉imagepullsecret读取**
-     
+     ![图片](images/deployimagesecret.png)
 	
 * 平台必要参数
 
