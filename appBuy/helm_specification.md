@@ -119,9 +119,9 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 {{- $ingressPath := .Values.ingress.path -}}
 {{- $domain := .Values.global.url.host -}}
 {{- $port := .Values.service.port -}}
-{{- $ingressApiIsStable := eq (include "dashboard.ingress.isStable" .) "true" -}}
-{{- $ingressSupportsPathType := eq (include "dashboard.ingress.supportsPathType" .) "true" -}}
-apiVersion: {{ include "dashboard.ingress.apiVersion" . }}
+{{- $ingressApiIsStable := eq (include "bi.ingress.isStable" .) "true" -}}
+{{- $ingressSupportsPathType := eq (include "bi.ingress.supportsPathType" .) "true" -}}
+apiVersion: {{ include "bi.ingress.apiVersion" . }}
 kind: Ingress
 metadata:
   name: {{ $fullName }}
