@@ -77,7 +77,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 ```	    
    4. **Ingress兼容旧版k8s和新版k8s**  
    	
-	**_helpers.tpl**文件中请添加如下内容：
+ **_helpers.tpl**文件中请添加如下内容：
 	
 ```
       {{/*
@@ -114,7 +114,7 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
    ![图片](images/ingress.png)
      
  ```
-     {{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.enabled -}}
 {{- $fullName := include "dashboard.fullname" . -}}
 {{- $ingressPath := .Values.ingress.path -}}
 {{- $domain := .Values.global.url.host -}}
@@ -173,7 +173,7 @@ spec:
 ```
  5、**Deployment.yaml请去掉imagepullsecret读取**   
      
-     ![图片](images/deployimagesecret.png)
+  ![图片](images/deployimagesecret.png)
 	
 * 平台必要参数
 
