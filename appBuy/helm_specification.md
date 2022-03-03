@@ -75,7 +75,106 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
        internalUrl: en.internal
        externalUrl: sa.wise-paas.com
 ```	    
-	    
+   4. **Ingress兼容旧版k8s和新版k8s**  
+   	
+ **_helpers.tpl**文件中请添加如下内容：
+	
+```
+      {{/*
+       Return the appropriate apiVersion for ingress.
+      */}}
+      {{- define "bi.ingress.apiVersion" -}}
+        {{- if and (.Capabilities.APIVersions.Has "networking.k8s.io/v1") (semverCompare ">= 1.19-0" .Capabilities.KubeVersion.Version) -}}
+        {{- print "networking.k8s.io/v1" -}}
+       {{- else if .Capabilities.APIVersions.Has "networking.k8s.io/v1beta1" -}}
+       {{- print "networking.k8s.io/v1beta1" -}}
+      {{- else -}}
+       {{- print "extensions/v1beta1" -}}
+      {{- end -}}
+     {{- end -}}
+
+     {{/*
+       Return if ingress is stable.
+     */}}
+     {{- define "bi.ingress.isStable" -}}
+        {{- eq (include "bi.ingress.apiVersion" .) "networking.k8s.io/v1" -}}
+     {{- end -}}
+
+     {{/*
+        Return if ingress supports pathType.
+     */}}
+      {{- define "bi.ingress.supportsPathType" -}}
+         {{- or (eq (include "bi.ingress.isStable" .) "true") (and (eq (include "bi.ingress.apiVersion" .) "networking.k8s.io/v1beta1") (semverCompare ">= 1.18-0"   .Capabilities.KubeVersion.Version)) -}}
+     {{- end -}}
+      
+ ```
+     
+  **ingress.yaml** 中请按红框中格式：
+  
+   ![图片](images/ingress.png)
+     
+ ```
+{{- if .Values.ingress.enabled -}}
+{{- $fullName := include "dashboard.fullname" . -}}
+{{- $ingressPath := .Values.ingress.path -}}
+{{- $domain := .Values.global.url.host -}}
+{{- $port := .Values.service.port -}}
+{{- $ingressApiIsStable := eq (include "bi.ingress.isStable" .) "true" -}}
+{{- $ingressSupportsPathType := eq (include "bi.ingress.supportsPathType" .) "true" -}}
+apiVersion: {{ include "bi.ingress.apiVersion" . }}
+kind: Ingress
+metadata:
+  name: {{ $fullName }}
+  labels:
+    app.kubernetes.io/name: {{ include "dashboard.name" . }}
+    helm.sh/chart: {{ include "dashboard.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- with .Values.ingress.annotations }}
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "10M"
+{{ toYaml . | indent 4 }}
+{{- end }}
+spec:
+{{- if .Values.ingress.tls }}
+  tls:
+  {{- range .Values.ingress.tls }}
+    - hosts:
+      {{- range .hosts }}
+        - {{ . | quote }}
+      {{- end }}
+      secretName: {{ .secretName }}
+  {{- end }}
+{{- end }}
+  rules:
+  {{- range .Values.ingress.hosts }}
+    - host: "{{ . }}{{ $domain }}"
+      http:
+        paths:
+          - path: {{ $ingressPath }}
+            {{- if $ingressSupportsPathType }}
+            pathType: {{ $.Values.ingress.pathType }}
+            {{- end }}
+            backend:
+             {{- if $ingressApiIsStable }}
+              service:
+                name: {{ $fullName }}
+                port:
+                  number: {{ $port }}
+              {{- else }}
+              serviceName: {{ $fullName }}
+              servicePort: {{ $port }}
+              {{- end }}
+
+  {{- end }}
+{{- end }}
+
+     
+```
+ 5、**Deployment.yaml请去掉imagepullsecret读取**   
+     
+  ![图片](images/deployimagesecretpng.png)
+	
 * 平台必要参数
 
 	平台必须要在helm chart里定义sources，内容如下：
