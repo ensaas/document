@@ -135,7 +135,7 @@ POST /v1/service
 | subscriptionId   | 拆账给该订阅号id                                             | ""                   | string | 非必填 |
 | crmid            | 拆账的订阅号名称对应的crmid                                  | ""                   | string | 非必填 |
 | company          | 拆账的crmid对应的company名称                                 | ""                   | string | 非必填 |
-| serviceProvider  | 服务提供商                                                   | ensaas               | string | 非必填 |
+| serviceProvider  | 服务提供商，目前没有用到                                                   | ensaas               | string | 非必填 |
 | releaseNote      | 无效字段                                                     | ""                   | string | 不填   |
 | iconUrl          | 无效字段                                                     | ""                   | string | 不填   |
 | description      | 服务描述，需完整填写                                         | xxx                  | string | 必填   |
