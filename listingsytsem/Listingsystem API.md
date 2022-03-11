@@ -1247,7 +1247,7 @@ POST  /v1/serviceSaleStrategy
 | ----------- | ------------------------------------------------- | --------- | ------ | ------ |
 | serviceName | 服务名称                                          | Dashboard | string | 必填   |
 | planName    | 服务方案名称                                      | Standard  | string | 必填   |
-| discount    | 折扣，0-1之间                                     | 1         | float    | 必填   |
+| discount    | 折扣，0-1之间                                     | 1         | number    | 必填   |
 | datacenter  | 站点                                              | bj        | string | 必填   |
 | isVisible   | 下架标识，true表示上架，false表示下架             | true      | bool   | 必填   |
 | isPackage   | 集成服务标识，true表示集成服务，false表示单一服务 | true      | bool   | 必填   |
@@ -1282,11 +1282,11 @@ POST  /v1/serviceSaleStrategy
   | pn         | 料号                                  | Monthly | string | 必填   |
   | pnProperty | 料号属性，支持Basic、Additional、PAYG | Basic   | string | 必填   |
   | pnQuantity | 料号数量                              | 1       | int    | 必填   |
-  | level1     | 注册会员价格，支持两位小数，向上圆整  | 22      | float  | 必填   |
-  | level2     | 银牌会员价格，支持两位小数，向上圆整  | 22      | float  | 必填   |
-  | level3     | 金牌会员价格，支持两位小数，向上圆整  | 22      | float  | 必填   |
-  | level4     | 贵宾会员价格，支持两位小数，向上圆整  | 22      | float  | 必填   |
-  | level0     | 内部用户价格，支持两位小数，向上圆整  | 22      | float  | 必填   |
+  | level1     | 注册会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
+  | level2     | 银牌会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
+  | level3     | 金牌会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
+  | level4     | 贵宾会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
+  | level0     | 内部用户价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
 
 #### 单一服务或整合服务请求参数示例
 
@@ -1776,7 +1776,8 @@ POST  /v1/deployment
 | appName                | app名称                           | api-m2i | string | 必填   |
 | appVersion             | app版本                           | 2.0.1   | string | 必填   |
 | cpu                    | 该app需要的cpu资源，单位是Core    | 0.33    | string | 必填   |
-| memory                 | 该app需要的memory资源，但是是MB   | 1054    | string | 必填   |
+| memory                 | 该app需要的memory资源，单位是MB   | 1054    | string | 必填   |
+| ephemeralStorage                 | 该app需要的ephemeralStorage资源，单位是MB   | 1054    | string | 必填   |
 | extraDbDependencyParam | 该app需要的数据库信息，没有则为{} | {}      | object | 必填   |
 
 **extraDbDependencyParam**
