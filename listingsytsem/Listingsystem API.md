@@ -1235,7 +1235,7 @@ GET  /v1/servicePlan
 
 **[ :point_up_2: API概览 ](#API概览)**
 
-### <span id="CreateserviceSaleStrategy ">CreateserviceSaleStrategy </span> 
+### <span id="CreateServiceSaleStrategy">CreateServiceSaleStrategy </span> 
 
 #### 请求方式
 
@@ -1531,7 +1531,7 @@ POST  /v1/serviceSaleStrategy
 
 **[ :point_up_2: API概览 ](#API概览)**
 
-### <span id="GetserviceSaleStrategy ">GetserviceSaleStrategy </span> 
+### <span id="GetServiceSaleStrategy">GetServiceSaleStrategy </span> 
 
 #### 请求方式
 
