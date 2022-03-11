@@ -301,7 +301,7 @@ POST  /v1/pricing
 | --------------------- | ------------------------------------ | ----------------- | ------ | ------ |
 | pn                    | 料号                                 | 9806WPDASG        | string | 必填   |
 | pdl                   | 产品线                               | CSSI              | string | 必填   |
-| datacenterCode        | 站点代码                             | ["bj"]            | array  | 必填   |
+| datacenterCode        | 站点                             | ["bj"]            | array  | 必填   |
 | pnUnit                | 料号单位                             | {"Instance": "1"} | object | 必填   |
 | ProductionDescription | 产品描述                             | pp for nn         | string | 必填   |
 | chargeType            | 付费类型，支持Monthly、PAYG          | Monthly           | string | 必填   |
@@ -415,12 +415,12 @@ POST  /v1/servicePlan
 | uiId               | 页面标识，支持0,1.2,3。默认是0                                            | 0        | int    | 必填   |
 | deliveryType       | 订阅方式，支持appbuy、servicebuy、mpbuy、pluginbuy、pipeline、manual | pipeline | string | 必填   |
 | isInfrastructure   | 该服务方案是否是硬件基础设施，默认是false。选择true的前提是planType必须为License。 | false    | bool   | 必填   |
-| namespace          | 无效字段                                                     |          | string | 非必填 |
-| cluster            | 无效字段                                                     |          | string | 非必填 |
+| namespace          | 无效字段                                                     |  ""        | string | 非必填 |
+| cluster            | 无效字段                                                     |   ""       | string | 非必填 |
 | datacenterCode     | 站点                                                         | bj       | string | 必填   |
 | planForTrial       | 是否是试用方案，默认是false                                  | false    | bool   | 必填   |
 | isVisible          | true表示在页面显示该服务方案；false表示下架该服务方案        | true     | bool   | 必填   |
-| hasActiveInfo      | 生成license authcode中是否要加激活信息，默认是false（目前只有EnSaaS MicroService类型服务需要） | false    | bool   | 必填   |
+| hasActiveInfo      | 生成license authcode中是否要加激活信息，默认是false（目前只有EnSaaS MicroService类型服务需要设成true） | false    | bool   | 必填   |
 | licenseType        | license类型，当planType为service时，licenseType支持Default、None；当planType为License时，licenseType支持BindingInfra、BindingMac | Default  | string | 必填   |
 | description        | 服务方案描述                                                 | xxx      | string | 必填   |
 | serviceName        | 服务名称                                                     | APM.M2I  | string | 必填   |
@@ -435,9 +435,9 @@ POST  /v1/servicePlan
 | --------------- | ------------------------------------------------------------ | ----------------- | ------ | ------ |
 | pn              | 料号                                                         | 980GEDPS001       | string | 必填   |
 | pnProperty      | 料号属性，支持Basic、Additional、PYAG。其中Basic属性的料号必须存在 | Basic             | string | 必填   |
-| chargeType      | 付费类型，支持Monthly、PAYG                                  | Monthly           | string | 必填   |
+| chargeType      | 付费类型，支持Monthly、PAYG。这里添加的PAYG料号价格为0，实际价格在Metric接口添加                                  | Monthly           | string | 必填   |
 | pnQuantity      | 料号数量                                                     | 1或者1-9          | string | 必填   |
-| pnUnit          | 料号单位                                                     | {"Instance": "1"} | object | 必填   |
+| pnUnit          | 料号单位规格                                                     | {"Instance": "1"} | object | 必填   |
 | planDescription | 服务方案描述                                                 | xxx               | string | 必填   |
 
 **dependency 参数**
