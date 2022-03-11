@@ -11,9 +11,9 @@
 1. 上架服务，调用 [上架服务接口](#上架服务接口) 进行上架
 2. 上架服务方案料号，调用 [上架服务料号接口](#上架服务料号接口) 进行上架
 3. 上架服务对应的方案，调用 [上架服务方案接口](#上架服务方案接口) 进行上架
-4. 上架服务方案付费方式，调用[上架服务方案付费方式接口](上架服务方案付费方式接口)进行上架
-5. 上架按量计费料号和定价，调用[上架按量计费料号接口](上架按量计费料号接口)进行上架（可选）
-6. 上架服务方案部署配置，调用[上架服务方案配置接口](上架服务方案配置接口)进行上架（可选）
+4. 上架服务方案付费方式，调用[上架服务方案付费方式接口](#上架服务方案付费方式接口)进行上架
+5. 上架按量计费料号和定价，调用[上架按量计费料号接口](#上架按量计费料号接口)进行上架（可选）
+6. 上架服务方案部署配置，调用[上架服务方案配置接口](#上架服务方案配置接口)进行上架（可选）
 
 ### 上架服务包流程
 
@@ -26,17 +26,17 @@
 1. 上架服务包，调用 [上架服务包接口](#上架服务包接口) 进行上架
 2. 上架服务方案料号，调用 [上架服务料号接口](#上架服务料号接口) 进行上架 
 3. 上架服务包方案，调用[上架服务方案接口](上架服务方案接口)进行上架
-4. 上架服务包方案付费方式，调用[上架服务方案付费方式接口](上架服务方案付费方式接口)进行上架
-5. 上架按量计费料号和定价，调用[上架按量计费料号接口](上架按量计费料号接口)进行上架（可选）
-6. 上架服务包方案部署配置，调用[上架服务方案配置接口](上架服务方案配置接口)进行上架（可选）
+4. 上架服务包方案付费方式，调用[上架服务方案付费方式接口](#上架服务方案付费方式接口)进行上架
+5. 上架按量计费料号和定价，调用[上架按量计费料号接口](#上架按量计费料号接口)进行上架（可选）
+6. 上架服务包方案部署配置，调用[上架服务方案配置接口](#上架服务方案配置接口)进行上架（可选）
 
 ---
 
-## Listing 介绍
+## Listingsystem 介绍
 
-Listing 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上架的方案和 api.
+Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上架的方案和 API.
 
-## Listing 结构关系图
+## Listingsystem 结构关系图
 
 - [x] service
 - [x] servicePackage
@@ -80,30 +80,30 @@ Listing 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上架的
 
 ### <span id="上架服务方案付费方式接口">上架服务方案付费方式接口</span> 
 
-| API                                                    | 描述                                         |
-| ------------------------------------------------------ | -------------------------------------------- |
-| [GetServiceSaleStrategy](GetServiceSaleStrategy)       | 获取上架的单一服务方案或服务包方案的付费方式 |
-| [CreateServiceSaleStrategy](CreateServiceSaleStrategy) | 上架的单一服务方案或服务包方案的付费方式     |
+| API                                                     | 描述                                         |
+| ------------------------------------------------------- | -------------------------------------------- |
+| [GetServiceSaleStrategy](#GetServiceSaleStrategy)       | 获取上架的单一服务方案或服务包方案的付费方式 |
+| [CreateServiceSaleStrategy](#CreateServiceSaleStrategy) | 上架的单一服务方案或服务包方案的付费方式     |
 
 ### <span id="上架按量付费料号接口">上架按量付费料号接口</span> 
 
-| API                                        | 描述                   |
-| ------------------------------------------ | ---------------------- |
-| [GetMetricPricing](GetMetricPricing)       | 获取上架的按量付费料号 |
-| [CreateMetricPricing](CreateMetricPricing) | 上架按量付费料号       |
+| API                                         | 描述                   |
+| ------------------------------------------- | ---------------------- |
+| [GetMetricPricing](#GetMetricPricing)       | 获取上架的按量付费料号 |
+| [CreateMetricPricing](#CreateMetricPricing) | 上架按量付费料号       |
 
 ### <span id="上架服务方案部署配置接口">上架服务方案部署配置接口</span> 
 
-| API                                  | 描述                                       |
-| ------------------------------------ | ------------------------------------------ |
-| [GetDeployment](GetDeployment)       | 获取上架的单一服务方案或服务包方案部署配置 |
-| [CreateDeployment](CreateDeployment) | 上架的单一服务方案或服务包方案部署配置     |
+| API                                   | 描述                                       |
+| ------------------------------------- | ------------------------------------------ |
+| [GetDeployment](#GetDeployment)       | 获取上架的单一服务方案或服务包方案部署配置 |
+| [CreateDeployment](#CreateDeployment) | 上架的单一服务方案或服务包方案部署配置     |
 
 ---
 
 ## API 详情
 
-:point_right: [apidoc swagger](https://api-listingsystem-ensaas.bj.wise-paas.cn/apidoc/)  
+:point_right: [Apidoc swagger](https://api-listingsystem-ensaas.bj.wise-paas.cn/apidoc/)  
 
 ### <span id="CreateService">CreateService</span> 
 
@@ -118,16 +118,16 @@ POST /v1/service
 | 名称             | 描述                                                         | 示例值               | 类型   | 必要性 |
 | ---------------- | ------------------------------------------------------------ | -------------------- | ------ | ------ |
 | serviceName      | service的唯一名                                              | Dashboard            | string | 必填   |
-| serviceCategory  | service的分类，目前支持EnSaaS、Common Apps、Industrial Apps、EnSaaS MicroService、Consulting Service | Common Apps          | string | 必填   |
-| activeInfo       | 只有serviceCategory为EnSaaS Microservice的服务需要。若不填，则默认为serviceName:serviceCategory的加密信息 | xxxxx                | string | 非必填 |
+| serviceCategory  | service的分类，目前支持EnSaaS、Common Apps、Industrial Apps、EnSaaS MicroService、Consulting Service、WISE-STACK | Common Apps          | string | 必填   |
+| activeInfo       | 只有serviceCategory为EnSaaS Microservice的服务需要。若不填，则默认为serviceName:serviceCategory的加密信息 | ""                   | string | 非必填 |
 | buyType          | 部署类型，支持app、service、plugin、manual、ensaas           | app                  | string | 必填   |
 | uiId             | 页面标识，支持1,2                                            | 1                    | int    | 必填   |
 | IsVisible        | true表示在页面显示该服务；false表示下架该服务                | true                 | bool   | 必填   |
 | displayName      | UI上显示的服务名称，若为空，UI上默认显示serviceName          | ""                   | string | 非必填 |
 | subscriptionName | 拆账给该订阅号名称                                           | ""                   | string | 非必填 |
 | subscriptionId   | 拆账给该订阅号id                                             | ""                   | string | 非必填 |
-| crmid            | 订阅号名称对应的crmid                                        | ""                   | string | 非必填 |
-| company          | crmid对应的company名称                                       | ""                   | string | 非必填 |
+| crmid            | 拆账的订阅号名称对应的crmid                                  | ""                   | string | 非必填 |
+| company          | 拆账的crmid对应的company名称                                 | ""                   | string | 非必填 |
 | serviceProvider  | 服务提供商                                                   | ensaas               | string | 非必填 |
 | releaseNote      | 无效字段                                                     | ""                   | string | 不填   |
 | iconUrl          | 无效字段                                                     | ""                   | string | 不填   |
@@ -413,7 +413,7 @@ POST  /v1/servicePlan
 | datacenterCode     | 站点                                                         | bj       | string | 必填   |
 | planForTrial       | 是否是试用方案，默认是false                                  | false    | bool   | 必填   |
 | isVisible          | true表示在页面显示该服务方案；false表示下架该服务方案        | true     | bool   | 必填   |
-| hasActiveInfo      | 生成license authcode中是否要加激活信息                       | false    | bool   | 必填   |
+| hasActiveInfo      | 生成license authcode中是否要加激活信息，默认是false（目前只有EnSaaS MicroService类型服务需要） | false    | bool   | 必填   |
 | licenseType        | license类型，当planType为service时，licenseType支持Default、None；当planType为License时，licenseType支持BindingInfra、BindingMac | Default  | string | 必填   |
 | description        | 服务方案描述                                                 | xxx      | string | 必填   |
 | serviceName        | 服务名称                                                     | APM.M2I  | string | 必填   |
@@ -458,10 +458,10 @@ POST  /v1/servicePlan
 | serviceName        | 服务名称                                                     | Dashboard   | string | 必填   |
 | deliveryType       | 订阅方式，支持支持appbuy（单一服务）、servicebuy（托管服务）、mpbuy（EnSaaS-K8s-Service服务）、pluginbuy（插件服务）、pipeline（集成服务或整合服务）、manual（人工服务） | appbuy      | string | 必填   |
 | Dept               | 部门，用于Package拆分订单。如订阅APM.M2I，需要拆分IoTSuite订单，那么Package中EnSaaS服务的dept需填写为ENSS，非EnSaaS服务的dept为空 | ENSS        | string | 非必填 |
-| serviceDescription | 服务描述                                                     | xxx         | string | 必填   |
-| serviceCategory    | 服务类别                                                     | Common Apps | string | 必填   |
+| serviceDescription | 服务描述                                                     | xxx         | string | 非必填 |
+| serviceCategory    | 服务类别                                                     | Common Apps | string | 非必填 |
 | planName           | 服务方案名称                                                 | Lite        | string | 必填   |
-| planDescription    | 服务方案描述                                                 | xxx         | string | 必填   |
+| planDescription    | 服务方案描述                                                 | xxx         | string | 非必填 |
 | RequirementType    | 必须性，仅支持Essential                                      | Essential   | string | 必填   |
 | pnInfo             | 服务方案的料号信息                                           | []          | array  | 必填   |
 
@@ -477,11 +477,11 @@ POST  /v1/servicePlan
 | serviceName        | 服务名称                                                     | Dashboard   | string | 必填   |
 | deliveryType       | 订阅方式，支持支持appbuy、servicebuy、mpbuy、pluginbuy、pipeline、manual | appbuy      | string | 必填   |
 | Dept               | 部门，用于Package拆分订单。如订阅APM.M2I，需要拆分IoTSuite订单，那么Package中EnSaaS服务的dept需填写为ENSS，非EnSaaS服务的dept为空 | ENSS        | string | 非必填 |
-| serviceDescription | 服务描述                                                     | xxx         | string | 必填   |
-| serviceCategory    | 服务类别                                                     | Common Apps | string | 必填   |
+| serviceDescription | 服务描述                                                     | xxx         | string | 非必填 |
+| serviceCategory    | 服务类别                                                     | Common Apps | string | 非必填 |
 | planName           | 服务方案名称                                                 | Lite        | string | 必填   |
-| planDescription    | 服务方案描述                                                 | xxx         | string | 必填   |
-| planNumber         | 服务方案排序                                                 | xxx         | int    | 必填   |
+| planDescription    | 服务方案描述                                                 | xxx         | string | 非必填 |
+| planNumber         | 服务方案排序                                                 | xxx         | int    | 非必填 |
 | cpu                | 服务需要的CPU资源，单位为Core                                | 0.5         | string | 必填   |
 | memory             | 服务需要的Memory资源，单位为MB                               | 1024        | string | 必填   |
 | ephemeralStorage   | 服务需要的Ephemeral Storage资源，单位为MB                    | 1024        | string | 必填   |
@@ -1022,7 +1022,88 @@ GET  /v1/servicePlan
 | serviceName    | 服务名称     | Dashboard        | string | 必填   |
 | datacenterCode | 站点         | sa               | string | 必填   |
 
-#### 返回数据示例
+#### 单一服务返回数据示例
+
+```json
+{
+  "data": [
+    {
+      "id": "c2cffad9-3477-4abe-8715-7b74fd6cea8f",
+      "planName": "Standard",
+      "planNumber": 4,
+      "datacenterCode": "bj",
+      "planForTrial": false,
+      "isInfrastructure": false,
+      "deploymentSolution": "Cloud",
+      "namespace": "",
+      "cluster": "",
+      "isVisible": false,
+      "planType": "Service",
+      "hasActiveInfo": false,
+      "licenseType": "Default",
+      "planCategory": "standard",
+      "description": "每分钟最多上传100,00测点数据",
+      "uiId": 0,
+      "deliveryType": "appbuy",
+      "serviceName": "DataHub",
+      "pnInfo": [
+        {
+          "pn": "980GDTHBS00",
+          "pnProperty": "Basic",
+          "pnUnit": {
+            "Instance": "1"
+          },
+          "pnQuantity": "1",
+          "planDescription": "每分钟最多上传100,00测点数据"
+        }
+      ],
+      "dependency": {
+        "apps": [],
+        "databases": [
+          {
+            "serviceName": "PostgreSQL",
+            "requirementType": "Essential"
+          },
+          {
+            "serviceName": "Redis",
+            "requirementType": "Essential"
+          },
+          {
+            "serviceName": "RabbitMQ",
+            "requirementType": "Essential"
+          },
+          {
+            "serviceName": "MongoDB",
+            "requirementType": "Alternative"
+          },
+          {
+            "serviceName": "InfluxDB",
+            "plans": [
+              "Dedicated-Single-Small"
+            ],
+            "requirementType": "Alternative"
+          }
+        ],
+        "spaces": [
+          {
+            "serviceName": "EnSaaS-K8s-Service",
+            "requirementType": "Essential"
+          }
+        ]
+      },
+      "createdAt": "2020-09-26T23:28:47.237801+08:00",
+      "updatedAt": "2022-01-20T09:31:49.315436+08:00"
+    }
+  ],
+  "error": null,
+  "path": "/v1/servicePlan?planName=Standard&datacenterCode=bj&serviceName=DataHub",
+  "status": 200,
+  "timestamp": "2022-03-11T03:47:27+0000",
+  "totalCount": 1
+}
+```
+
+#### 集成服务返回数据示例
 
 ```json
 {
