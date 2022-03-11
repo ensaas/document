@@ -1713,7 +1713,7 @@ GET  /v1/metricPricing
 | -------------- | -------------------- | ----------- | ------ | ------ |
 | serviceName    | 服务名称             | AIFS        | string | 非必填 |
 | metric         | 计量指标名称         | 1C2M        | string | 非必填 |
-| metricCategory | 计量指标类型，自定义 | container   | string | 非必填 |
+| metricCategory | 计量指标类型 | container   | string | 非必填 |
 | pn             | 料号                 | 980GEDPS001 | string | 非必填 |
 | datacenterCode | 站点                 | bj          | string | 必填   |
 
