@@ -71,7 +71,7 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 | API                       | 描述                                               |
 | ------------------------- | -------------------------------------------------- |
 | [GetService](#GetService) | 获取上架的服务或服务包 &nbsp; &nbsp; &nbsp; &nbsp; |
-| [CreateService](#service) | 上架服务或服务包                                   |
+| [CreateService](#Createservice) | 上架服务或服务包                                   |
 
 ### <span id="上架服务料号接口">上架服务料号接口</span> 
 
@@ -84,7 +84,7 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 
 | API                                                          | 描述                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [GetServicePlan](#DescribeServicePlan) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 获取上架的单一服务方案或服务包方案 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
+| [GetServicePlan](#GetServicePlan) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | 获取上架的单一服务方案或服务包方案 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |
 | [CreateServicePlan](#CreateServicePlan)                      | 上架单一服务方案或服务包方案                                 |
 
 ### <span id="上架服务方案付费方式接口">上架服务方案付费方式接口</span> 
