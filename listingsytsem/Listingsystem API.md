@@ -1247,7 +1247,7 @@ POST  /v1/serviceSaleStrategy
 | ----------- | ------------------------------------------------- | --------- | ------ | ------ |
 | serviceName | 服务名称                                          | Dashboard | string | 必填   |
 | planName    | 服务方案名称                                      | Standard  | string | 必填   |
-| discount    | 折扣，0-1之间                                     | 1         | int    | 必填   |
+| discount    | 折扣，0-1之间                                     | 1         | float    | 必填   |
 | datacenter  | 站点                                              | bj        | string | 必填   |
 | isVisible   | 下架标识，true表示上架，false表示下架             | true      | bool   | 必填   |
 | isPackage   | 集成服务标识，true表示集成服务，false表示单一服务 | true      | bool   | 必填   |
@@ -1258,7 +1258,7 @@ POST  /v1/serviceSaleStrategy
 
 | 名称       | 描述                                                         | 示例值  | 类型   | 必要性 |
 | ---------- | ------------------------------------------------------------ | ------- | ------ | ------ |
-| chargeType | 付费类型，支持Monthly、Quarterly、HalfYear、Yearly、Eternal  | Monthly | string | 必填   |
+| chargeType | 付费类型，支持Monthly(包月)、Quarterly（三月）、HalfYear（半年）、Yearly（包年）、Eternal（买断）  | Monthly | string | 必填   |
 | spuNumber  | 份数。Monthly（spuNumber=1）、Quarterly（spuNumber=3）、HalfYear（spuNumber=6）、Yearly（spuNumber=12）、Eternal（spuNumber=1） | 1       | string | 必填   |
 
 **package参数**
@@ -1761,13 +1761,13 @@ POST  /v1/deployment
 | chartName             | Helm chart名称                                               | m2i                                                          | string | 必填   |
 | isBaseline            | 是否是基线版本                                               | true                                                         | bool   | 必填   |
 | cpu                   | 该版本需要的cpu资源，单位是Core                              | 0.43                                                         | string | 必填   |
-| memory                | 该版本需要的memory资源，但是是MB                             | 1310                                                         | string | 必填   |
-| ephemeralStorage      | 该版本需要ephemeralStorage的资源，但是是MB                   | 1290                                                         | string | 必填   |
+| memory                | 该版本需要的memory资源，单位是MB                             | 1310                                                         | string | 必填   |
+| ephemeralStorage      | 该版本需要ephemeralStorage的资源，单位是MB                   | 1290                                                         | string | 必填   |
 | deploymentType        | 部署类型，默认appbuy                                         | appbuy                                                       | string | 必填   |
 | appServicesDependency | 该方案依赖的其他服务信息，该字段暂时没用                     | []                                                           | array  | 必填   |
 | extraParam            | 额外参数，目前这里加的是服务外部访问地址的前缀（如没有外部访问地址，urlPrefix为[]） | {     "urlPrefix": [          "portal-m2i",          "api-m2i"        ]      } | object | 必填   |
 | values                | Helm chart中values.yaml内容                                  | xxx                                                          | string | 必填   |
-| apps                  | 该版本中包含的各个app                                        | {}                                                           | object | 必填   |
+| apps                  | 该版本中包含的各个app                                        | []                                                           | array | 必填   |
 
 **apps**
 
