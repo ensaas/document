@@ -413,7 +413,7 @@ POST  /v1/servicePlan
 | planType           | 服务方案类型，支持Service、License                           | Service  | string | 必填   |
 | deploymentSolution | 方案属性，支持Cloud（公有云）、Private（私有云）及Custom（定制） | Cloud    | string | 必填   |
 | uiId               | 页面标识，支持0,1.2,3。默认是0                                            | 0        | int    | 必填   |
-| deliveryType       | 订阅方式，支持appbuy、servicebuy、mpbuy、pluginbuy、pipeline、manual | pipeline | string | 必填   |
+| deliveryType       | 订阅方式，支持支持appbuy（单一服务）、servicebuy（托管服务）、mpbuy（EnSaaS-K8s-Service服务）、pluginbuy（插件服务）、pipeline（集成服务或整合服务）、manual（人工服务） | string | 必填   |
 | isInfrastructure   | 该服务方案是否是硬件基础设施，默认是false。选择true的前提是planType必须为License。 | false    | bool   | 必填   |
 | namespace          | 无效字段                                                     |  ""        | string | 非必填 |
 | cluster            | 无效字段                                                     |   ""       | string | 非必填 |
