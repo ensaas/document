@@ -1,3 +1,17 @@
+### EnSaaS-K8s-Service 4.0.23- (2022-03-29)
+
+#### [Managment Portal API]- 4.0.21
+#### [Cluster Agent]- 4.0.18
+#### [Managment Portal UI]- 4.0.20
+
+Added:
+- 支持对持久化存储PVC的管理
+- 支持对GPU资源的管理
+- 添加了对Kubernetes 1.22版本的支持
+- 添加了对AIFS场景的功能支持
+
+
+
 ### EnSaaS-K8s-Service 4.0.22- (2022-03-10)
 
 #### [Managment Portal API]- 4.0.20
