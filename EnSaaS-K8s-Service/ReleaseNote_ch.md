@@ -1,3 +1,31 @@
+### EnSaaS-K8s-Service 4.0.22- (2022-03-10)
+
+#### [Managment Portal API]- 4.0.20
+
+Fixed:
+- 解决SA站点添加/删除权限时速度很慢，甚至出现504 error的问题
+
+
+
+### EnSaaS-K8s-Service 4.0.21- (2022-01-04)
+
+#### [Managment Portal API]- 4.0.19
+
+Added:
+- 为用户添加资源权限时，可根据sso的需要，启用实名认证
+
+#### [Cluster Agent]- 4.0.17
+
+Fixed:
+- 解决创建Pod时Timeout的bug
+
+#### [Managment Portal UI]- 4.0.19
+
+Added:
+- 为用户添加资源权限时，可根据sso实名认证的需要，给出相关的提示
+
+
+
 ### EnSaaS-K8s-Service 4.0.20- (2021-11-08)
 
 #### [Managment Portal API]- 4.0.18
@@ -11,6 +39,7 @@ Fixed:
 - 优化webhook中的pod validation
 
 
+
 ### EnSaaS-K8s-Service 4.0.19- (2021-07-20)
 
 #### [Managment Portal UI]- 4.0.18
@@ -20,6 +49,7 @@ Added:
 Fixed:
 - 登录的时候输错密码，登录按钮被disable，无法再次登录
 - 从podevent界面跳回到workspace界面创建workspace的时候会跳出日志窗口
+
 
 
 ### EnSaaS-K8s-Service 4.0.18- (2021-05-14)
