@@ -1,3 +1,15 @@
+# 1.0.6 (2022-03-30)
+ * feat: 取消了 hz mongodb 非自動佈署。
+ * feat: 更換了 redis 的服務名稱，修改了判斷式。
+
+# 1.0.5 (2022-01-18)
+ * feat: bind unbind API 加上500毫秒的等待時間
+ * feat: bind unbind API 加上 retry 3次的機制
+ * feat: 更新API，順便會把 rabbitmq 的 dashboard URL 一起更新。
+ * feat: 修改chart value，加上 ingress proxy-read-timeout 和 proxy-send-timeout 
+ * feat: 修改chart value，將service-hub cpu 開到 500m 
+ * feat: 新增查詢 dccs key 的API。
+ * 
 # 1.0.4 (2021-12-28)
  * feat: 立刻退訂的API帶上 cascade 參數，預設值為true
 
