@@ -1,3 +1,14 @@
+# 1.1.8 (20220330)
+- update dedicated_resources table add column
+- update dedicated_resources relation API
+- fix connect db use external host first, if null use internal host
+- fix deprovision not get external_host from db
+
+# 1.1.7 (20210812) (for Cosmos) 
+- change user and password length to 150
+- add db-cloud-driver into .internal folder
+- update dockerfile
+
 # Release Notes 1.1.6
 
 ![Version](http://img.shields.io/badge/latest-1.1.6-green) ![Chart](https://img.shields.io/badge/chart-0.6.0-blue)
