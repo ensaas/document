@@ -1,3 +1,6 @@
+# 1.1.9 (20220406)
+- 修正改為無法連線，則連內網
+- 
 # 1.1.8 (20220330)
 - update dedicated_resources table add column
 - update dedicated_resources relation API
