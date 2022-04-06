@@ -1,3 +1,7 @@
+# 1.0.7 (2022-04-01)
+ * feat: RabbitMQ parameter IP 需要更換。
+ * feat: 更換 public IP API 優化，取消過濾未填寫字段。
+
 # 1.0.6 (2022-03-30)
  * feat: 取消了 hz mongodb 非自動佈署。
  * feat: 更換了 redis 的服務名稱，修改了判斷式。
