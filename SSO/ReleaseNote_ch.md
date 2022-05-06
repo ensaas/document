@@ -1,10 +1,10 @@
 ## API 4.0.29 (2022-5-6)
-*用户新增数据login，支持通过login+password登录。
-*新增参数SystemDisablePasswordPolicy，控制在非公有云场景下，不进行密码规则的检查
-*为了兼容SRP应用，在通过login字段创建用户时，username默认和login保持一致（保证username不为空）
-*用户名和login不允许重复，互相之间也不允许重复（新的login不等于任何已存在的login或者用户名。 新的用户名规则一致）
-*定时删除操作记录（7d）不再删除企业账号的memberType变更记录
-*在docker版本上（没有MP并且license不是公有云），订阅号用户拥有查看所有client的权限
+* 用户新增数据login，支持通过login+password登录。
+* 新增参数SystemDisablePasswordPolicy，控制在非公有云场景下，不进行密码规则的检查
+* 为了兼容SRP应用，在通过login字段创建用户时，username默认和login保持一致（保证username不为空）
+* 用户名和login不允许重复，互相之间也不允许重复（新的login不等于任何已存在的login或者用户名。 新的用户名规则一致）
+* 定时删除操作记录（7d）不再删除企业账号的memberType变更记录
+* 在docker版本上（没有MP并且license不是公有云），订阅号用户拥有查看所有client的权限
 
 ## API 4.0.28 (2021-12-31)
 * 新增企业账号，用户数据对伙伴光环云。
