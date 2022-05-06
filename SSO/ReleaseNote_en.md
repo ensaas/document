@@ -1,3 +1,12 @@
+## API 4.0.29 (2022-5-6)
+* The user can add data login and log in through login + password.
+* A new parameter systemdisablepasswordpolicy is added to control that password rules are not checked in non-public cloud scenarios
+* In order to be compatible with SRP applications, when creating users through the login field, username is consistent with login by default (ensure that username is not empty)
+* The user name and login are not allowed to be repeated, nor are they allowed to be repeated with each other (the new login is not equal to any existing login or user name. The 	new user name rules are consistent)
+* Regularly delete the operation record (7D) no longer delete the membertype change record of the enterprise account
+* On the docker Version (there is no MP and the license is not a public cloud), the subscription number user has the permission to view all clients
+
+
 ## API 4.0.28 (2021-12-31)
 * Add enterprise account and user data to partner sinnet cloud.
 * Add user real name authentication
