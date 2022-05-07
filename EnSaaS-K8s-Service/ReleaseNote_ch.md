@@ -6,6 +6,14 @@ Added:
 - 同步公共组件top-navbar
 - 修改工单跳转地址
 
+#### [Managment Portal API]- 4.0.22
+#### [Cluster Agent]- 4.0.19
+
+Fixed:
+- 修正mp-api在kubernetes v1.22集群创建crd失败的问题
+- 修正dcgm一直打印错误信息的问题
+- 用绝对值、而非比例的方式定义default-wq
+
 
 
 ### EnSaaS-K8s-Service 4.0.24- (2022-04-21)
