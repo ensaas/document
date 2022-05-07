@@ -1,3 +1,23 @@
+### EnSaaS-K8s-Service 4.0.25- (2022-05-07)
+
+#### [Managment Portal UI]- 4.0.22
+
+Added:
+- 同步公共组件top-navbar
+- 修改工单跳转地址
+
+
+
+### EnSaaS-K8s-Service 4.0.24- (2022-04-21)
+
+#### [Managment Portal UI]- 4.0.21
+
+Added:
+- 支持数据库的备份还原功能
+- 为服务实例下的实例列表添加编辑功能
+
+
+
 ### EnSaaS-K8s-Service 4.0.23- (2022-03-29)
 
 #### [Managment Portal API]- 4.0.21
