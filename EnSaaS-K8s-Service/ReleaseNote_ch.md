@@ -1,3 +1,12 @@
+### EnSaaS-K8s-Service 4.0.26- (2022-05-16)
+
+#### [Managment Portal UI]- 4.0.23
+
+Fixed:
+- 公有云环境，非平台管理员，隐藏备份还原功能
+
+
+
 ### EnSaaS-K8s-Service 4.0.25- (2022-05-07)
 
 #### [Managment Portal UI]- 4.0.22
