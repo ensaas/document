@@ -1,3 +1,21 @@
+### Config Mgmt. v-1.0.9- (2022-05-18)
+
+#### Summary Update
+
+#### Added:
+
+- Support K8S 1.19 and later versions
+- ECM Agent fixed an issue that the deployment of the service injected into sidecar could not be modified 
+- Support for updating injected address of service
+
+#### Component
+
+- API v-1.1.0.8
+- Portal v-1.1.0.9
+- ECM agent v-1.1.0.9
+- iptable v-1.1.0.8
+- ensaasdp v-1.1.0.8
+  
 ### Config Mgmt. v-1.0.6- (2021-12-09)
 
 #### Summary Update
