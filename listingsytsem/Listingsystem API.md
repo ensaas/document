@@ -31,7 +31,7 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
   |      Service         |       ServicePlan         |       PN         |  Datacenter  |    Price   |
   |                      |                           |                  |              |            |
   |                      |                           |                  |              |            |
-  |                      |                           |               /~~~~~>   SA   ~~~~~>  price   |
+  |                      |                           |               /~~~~~>  SA   ~~~~~>  price   |
   |                      |                           |    --------  /   |              |            |
   |                      |   _________________   /~~~~~~>| PN A | /  ~~~~~>   HZ   ~~~~~>  price   |
   |                      |   |               |  /   |    -------- \    |              |            | 
