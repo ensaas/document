@@ -107,8 +107,8 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 | ------------------------------------- | ------------------------------------------ |
 | [GetDeployment](#GetDeployment)       | 获取上架的单一服务方案或服务包方案部署配置 |
 | [CreateDeployment](#CreateDeployment) | 上架单一服务方案或服务包方案部署配置       |
-| [PutDeployment](#GetDeployment)       | 更新单一服务方案或服务包方案部署配置       |
-| [DeleteDeployment](#CreateDeployment) | 回滚单一服务方案或服务包方案部署配置       |
+| [PutDeployment](#PutDeployment)       | 更新单一服务方案或服务包方案部署配置       |
+| [DeleteDeployment](#DeleteDeployment) | 回滚单一服务方案或服务包方案部署配置       |
 
 ---
 
