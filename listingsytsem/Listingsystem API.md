@@ -68,9 +68,9 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 
 ### <span id="上架服务接口">上架服务接口</span> 
 
-| API                       | 描述                                               |
-| ------------------------- | -------------------------------------------------- |
-| [GetService](#GetService) | 获取上架的服务或服务包 &nbsp; &nbsp; &nbsp; &nbsp; |
+| API                             | 描述                                               |
+| ------------------------------- | -------------------------------------------------- |
+| [GetService](#GetService)       | 获取上架的服务或服务包 &nbsp; &nbsp; &nbsp; &nbsp; |
 | [CreateService](#Createservice) | 上架服务或服务包                                   |
 
 ### <span id="上架服务料号接口">上架服务料号接口</span> 
@@ -106,7 +106,9 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 | API                                   | 描述                                       |
 | ------------------------------------- | ------------------------------------------ |
 | [GetDeployment](#GetDeployment)       | 获取上架的单一服务方案或服务包方案部署配置 |
-| [CreateDeployment](#CreateDeployment) | 上架的单一服务方案或服务包方案部署配置     |
+| [CreateDeployment](#CreateDeployment) | 上架单一服务方案或服务包方案部署配置       |
+| [PutDeployment](#GetDeployment)       | 更新单一服务方案或服务包方案部署配置       |
+| [DeleteDeployment](#CreateDeployment) | 回滚单一服务方案或服务包方案部署配置       |
 
 ---
 
@@ -137,7 +139,7 @@ POST /v1/service
 | subscriptionId   | 拆账给该订阅号id                                             | ""                   | string | 非必填 |
 | crmid            | 拆账的订阅号名称对应的crmid                                  | ""                   | string | 非必填 |
 | company          | 拆账的crmid对应的company名称                                 | ""                   | string | 非必填 |
-| serviceProvider  | 服务提供商，目前没有用到                                                   | ensaas               | string | 非必填 |
+| serviceProvider  | 服务提供商，目前没有用到                                     | ensaas               | string | 非必填 |
 | releaseNote      | 无效字段                                                     | ""                   | string | 不填   |
 | iconUrl          | 无效字段                                                     | ""                   | string | 不填   |
 | description      | 服务描述，需完整填写                                         | xxx                  | string | 必填   |
@@ -303,7 +305,7 @@ POST  /v1/pricing
 | --------------------- | ------------------------------------ | ----------------- | ------ | ------ |
 | pn                    | 料号                                 | 9806WPDASG        | string | 必填   |
 | pdl                   | 产品线                               | CSSI              | string | 必填   |
-| datacenterCode        | 站点                             | ["bj"]            | array  | 必填   |
+| datacenterCode        | 站点                                 | ["bj"]            | array  | 必填   |
 | pnUnit                | 料号单位                             | {"Instance": "1"} | object | 必填   |
 | ProductionDescription | 产品描述                             | pp for nn         | string | 必填   |
 | chargeType            | 付费类型，支持Monthly、PAYG          | Monthly           | string | 必填   |
@@ -407,29 +409,29 @@ POST  /v1/servicePlan
 
 #### 请求参数
 
-| 名称               | 描述                                                         | 示例值   | 类型   | 必要性 |
-| ------------------ | ------------------------------------------------------------ | -------- | ------ | ------ |
-| planName           | 服务方案名称                                                 | Lite     | string | 必填   |
-| planNumber         | 方案排序                                                     | 1        | int    | 必填   |
-| planCategory       | 服务方案类别，支持standard（单一服务）、package（集成服务）、intergration（整合类型服务） | package  | object | 必填   |
-| planType           | 服务方案类型，支持Service、License                           | Service  | string | 必填   |
-| deploymentSolution | 方案属性，支持Cloud（公有云）、Private（私有云）及Custom（定制） | Cloud    | string | 必填   |
-| uiId               | 页面标识，支持0,1.2,3。默认是0                                            | 0        | int    | 必填   |
-| deliveryType       | 订阅方式，支持支持appbuy（单一服务）、servicebuy（托管服务）、mpbuy（EnSaaS-K8s-Service服务）、pluginbuy（插件服务）、pipeline（集成服务或整合服务）、manual（人工服务）|   appbuy    | string | 必填   |
-| isInfrastructure   | 该服务方案是否是硬件基础设施，默认是false。选择true的前提是planType必须为License | false    | bool   | 必填   |
-| namespace          | 无效字段                                                     |  ""        | string | 非必填 |
-| cluster            | 无效字段                                                     |   ""       | string | 非必填 |
-| datacenterCode     | 站点                                                         | bj       | string | 必填   |
-| planForTrial       | 是否是试用方案，默认是false                                  | false    | bool   | 必填   |
-| isVisible          | true表示在页面显示该服务方案；false表示下架该服务方案        | true     | bool   | 必填   |
-| hasActiveInfo      | 生成license authcode中是否要加激活信息，默认是false（目前只有EnSaaS MicroService类型服务需要设成true） | false    | bool   | 必填   |
-| licenseType        | license类型，当planType为service时，licenseType支持Default、None；当planType为License时，licenseType支持BindingInfra、BindingMac | Default  | string | 必填   |
-| description        | 服务方案描述                                                 | xxx      | string | 必填   |
-| serviceName        | 服务名称                                                     | APM.M2I  | string | 必填   |
-| pnInfo             | 服务方案的料号信息                                           | []       | array  | 必填   |
-| dependency         | 单一服务方案依赖的其他服务，planCategory为standard需填写该项 | {}       | object | 非必填 |
-| package            | 集成服务方案包含的其他服务，planCategory为package需填写该项  | {}       | object | 非必填 |
-| integration        | 整合服务方案包含的其他服务，planCategory为integration需填写该项 | {}       | object | 非必填 |
+| 名称               | 描述                                                         | 示例值  | 类型   | 必要性 |
+| ------------------ | ------------------------------------------------------------ | ------- | ------ | ------ |
+| planName           | 服务方案名称                                                 | Lite    | string | 必填   |
+| planNumber         | 方案排序                                                     | 1       | int    | 必填   |
+| planCategory       | 服务方案类别，支持standard（单一服务）、package（集成服务）、intergration（整合类型服务） | package | object | 必填   |
+| planType           | 服务方案类型，支持Service、License                           | Service | string | 必填   |
+| deploymentSolution | 方案属性，支持Cloud（公有云）、Private（私有云）及Custom（定制） | Cloud   | string | 必填   |
+| uiId               | 页面标识，支持0,1.2,3。默认是0                               | 0       | int    | 必填   |
+| deliveryType       | 订阅方式，支持支持appbuy（单一服务）、servicebuy（托管服务）、mpbuy（EnSaaS-K8s-Service服务）、pluginbuy（插件服务）、pipeline（集成服务或整合服务）、manual（人工服务） | appbuy  | string | 必填   |
+| isInfrastructure   | 该服务方案是否是硬件基础设施，默认是false。选择true的前提是planType必须为License | false   | bool   | 必填   |
+| namespace          | 无效字段                                                     | ""      | string | 非必填 |
+| cluster            | 无效字段                                                     | ""      | string | 非必填 |
+| datacenterCode     | 站点                                                         | bj      | string | 必填   |
+| planForTrial       | 是否是试用方案，默认是false                                  | false   | bool   | 必填   |
+| isVisible          | true表示在页面显示该服务方案；false表示下架该服务方案        | true    | bool   | 必填   |
+| hasActiveInfo      | 生成license authcode中是否要加激活信息，默认是false（目前只有EnSaaS MicroService类型服务需要设成true） | false   | bool   | 必填   |
+| licenseType        | license类型，当planType为service时，licenseType支持Default、None；当planType为License时，licenseType支持BindingInfra、BindingMac | Default | string | 必填   |
+| description        | 服务方案描述                                                 | xxx     | string | 必填   |
+| serviceName        | 服务名称                                                     | APM.M2I | string | 必填   |
+| pnInfo             | 服务方案的料号信息                                           | []      | array  | 必填   |
+| dependency         | 单一服务方案依赖的其他服务，planCategory为standard需填写该项 | {}      | object | 非必填 |
+| package            | 集成服务方案包含的其他服务，planCategory为package需填写该项  | {}      | object | 非必填 |
+| integration        | 整合服务方案包含的其他服务，planCategory为integration需填写该项 | {}      | object | 非必填 |
 
 **pnInfo 参数**
 
@@ -437,9 +439,9 @@ POST  /v1/servicePlan
 | --------------- | ------------------------------------------------------------ | ----------------- | ------ | ------ |
 | pn              | 料号                                                         | 980GEDPS001       | string | 必填   |
 | pnProperty      | 料号属性，支持Basic、Additional、PYAG。其中Basic属性的料号必须存在 | Basic             | string | 必填   |
-| chargeType      | 付费类型，支持Monthly、PAYG。这里添加的PAYG料号价格为0，实际价格在Metric接口添加                                  | Monthly           | string | 必填   |
+| chargeType      | 付费类型，支持Monthly、PAYG。这里添加的PAYG料号价格为0，实际价格在Metric接口添加 | Monthly           | string | 必填   |
 | pnQuantity      | 料号数量                                                     | 1或者1-9          | string | 必填   |
-| pnUnit          | 料号单位规格                                                     | {"Instance": "1"} | object | 必填   |
+| pnUnit          | 料号单位规格                                                 | {"Instance": "1"} | object | 必填   |
 | planDescription | 服务方案描述                                                 | xxx               | string | 必填   |
 
 **dependency 参数**
@@ -1249,7 +1251,7 @@ POST  /v1/serviceSaleStrategy
 | ----------- | ------------------------------------------------- | --------- | ------ | ------ |
 | serviceName | 服务名称                                          | Dashboard | string | 必填   |
 | planName    | 服务方案名称                                      | Standard  | string | 必填   |
-| discount    | 折扣，0-1之间                                     | 1         | number    | 必填   |
+| discount    | 折扣，0-1之间                                     | 1         | number | 必填   |
 | datacenter  | 站点                                              | bj        | string | 必填   |
 | isVisible   | 下架标识，true表示上架，false表示下架             | true      | bool   | 必填   |
 | isPackage   | 集成服务标识，true表示集成服务，false表示单一服务 | true      | bool   | 必填   |
@@ -1260,7 +1262,7 @@ POST  /v1/serviceSaleStrategy
 
 | 名称       | 描述                                                         | 示例值  | 类型   | 必要性 |
 | ---------- | ------------------------------------------------------------ | ------- | ------ | ------ |
-| chargeType | 付费类型，支持Monthly(包月)、Quarterly（三月）、HalfYear（半年）、Yearly（包年）、Eternal（买断）  | Monthly | string | 必填   |
+| chargeType | 付费类型，支持Monthly(包月)、Quarterly（三月）、HalfYear（半年）、Yearly（包年）、Eternal（买断） | Monthly | string | 必填   |
 | spuNumber  | 份数。Monthly（spuNumber=1）、Quarterly（spuNumber=3）、HalfYear（spuNumber=6）、Yearly（spuNumber=12）、Eternal（spuNumber=1） | 1       | string | 必填   |
 
 **package参数**
@@ -1284,11 +1286,11 @@ POST  /v1/serviceSaleStrategy
   | pn         | 料号                                  | Monthly | string | 必填   |
   | pnProperty | 料号属性，支持Basic、Additional、PAYG | Basic   | string | 必填   |
   | pnQuantity | 料号数量                              | 1       | int    | 必填   |
-  | level1     | 注册会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
-  | level2     | 银牌会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
-  | level3     | 金牌会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
-  | level4     | 贵宾会员价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
-  | level0     | 内部用户价格，支持两位小数，向上圆整  | 22      | number  | 必填   |
+  | level1     | 注册会员价格，支持两位小数，向上圆整  | 22      | number | 必填   |
+  | level2     | 银牌会员价格，支持两位小数，向上圆整  | 22      | number | 必填   |
+  | level3     | 金牌会员价格，支持两位小数，向上圆整  | 22      | number | 必填   |
+  | level4     | 贵宾会员价格，支持两位小数，向上圆整  | 22      | number | 必填   |
+  | level0     | 内部用户价格，支持两位小数，向上圆整  | 22      | number | 必填   |
 
 #### 单一服务或整合服务请求参数示例
 
@@ -1711,13 +1713,13 @@ GET  /v1/metricPricing
 
 #### 请求参数
 
-| 名称           | 描述                 | 示例值      | 类型   | 必要性 |
-| -------------- | -------------------- | ----------- | ------ | ------ |
-| serviceName    | 服务名称             | AIFS        | string | 非必填 |
-| metric         | 计量指标名称         | 1C2M        | string | 非必填 |
+| 名称           | 描述         | 示例值      | 类型   | 必要性 |
+| -------------- | ------------ | ----------- | ------ | ------ |
+| serviceName    | 服务名称     | AIFS        | string | 非必填 |
+| metric         | 计量指标名称 | 1C2M        | string | 非必填 |
 | metricCategory | 计量指标类型 | container   | string | 非必填 |
-| pn             | 料号                 | 980GEDPS001 | string | 非必填 |
-| datacenterCode | 站点                 | bj          | string | 必填   |
+| pn             | 料号         | 980GEDPS001 | string | 非必填 |
+| datacenterCode | 站点         | bj          | string | 必填   |
 
 #### 返回数据示例
 
@@ -1769,18 +1771,18 @@ POST  /v1/deployment
 | appServicesDependency | 该方案依赖的其他服务信息，该字段暂时没用                     | []                                                           | array  | 必填   |
 | extraParam            | 额外参数，目前这里加的是服务外部访问地址的前缀（如没有外部访问地址，urlPrefix为[]） | {     "urlPrefix": [          "portal-m2i",          "api-m2i"        ]      } | object | 必填   |
 | values                | Helm chart中values.yaml内容                                  | xxx                                                          | string | 必填   |
-| apps                  | 该版本中包含的各个app                                        | []                                                           | array | 必填   |
+| apps                  | 该版本中包含的各个app                                        | []                                                           | array  | 必填   |
 
 **apps**
 
-| 名称                   | 描述                              | 示例值  | 类型   | 必要性 |
-| ---------------------- | --------------------------------- | ------- | ------ | ------ |
-| appName                | app名称                           | api-m2i | string | 必填   |
-| appVersion             | app版本                           | 2.0.1   | string | 必填   |
-| cpu                    | 该app需要的cpu资源，单位是Core    | 0.33    | string | 必填   |
-| memory                 | 该app需要的memory资源，单位是MB   | 1054    | string | 必填   |
-| ephemeralStorage                 | 该app需要的ephemeralStorage资源，单位是MB   | 1054    | string | 必填   |
-| extraDbDependencyParam | 该app需要的数据库信息，没有则为{} | {}      | object | 必填   |
+| 名称                   | 描述                                      | 示例值  | 类型   | 必要性 |
+| ---------------------- | ----------------------------------------- | ------- | ------ | ------ |
+| appName                | app名称                                   | api-m2i | string | 必填   |
+| appVersion             | app版本                                   | 2.0.1   | string | 必填   |
+| cpu                    | 该app需要的cpu资源，单位是Core            | 0.33    | string | 必填   |
+| memory                 | 该app需要的memory资源，单位是MB           | 1054    | string | 必填   |
+| ephemeralStorage       | 该app需要的ephemeralStorage资源，单位是MB | 1054    | string | 必填   |
+| extraDbDependencyParam | 该app需要的数据库信息，没有则为{}         | {}      | object | 必填   |
 
 **extraDbDependencyParam**
 
@@ -1959,5 +1961,95 @@ GET  /v1/deployment
 ```
 
 **[ :point_up_2: API概览 ](#API概览)**
+
+### <span id="PutDeployment">PutDeployment</span> 
+
+#### 请求方式
+
+```bash
+PUT  /v1/deployment/{id}
+```
+
+#### 请求参数
+
+| 名称       | 描述                                                         | 示例值 | 类型   | 必要性 |
+| ---------- | ------------------------------------------------------------ | ------ | ------ | ------ |
+| id         | 获取到的服务方案配置信息id                                   | 175    | int    | 必填   |
+| deployment | 要修改的服务方案信息，一般都是在获取的配置信息里修改，所以基本与POST接口参数一致 | {}     | object | 必填   |
+
+#### 请求参数示例
+
+```json
+{
+      "apps": [
+        {
+          "appName": "api-m2i",
+          "appVersion": "2.0.1",
+          "memory": "1054",
+          "cpu": "0.33",
+          "ephemeralStorage": "778",
+          "extraDbDependencyParam": {
+            "mongodb": "",
+            "rabbitmq": "",
+            "postgresql": {
+              "postgresql_service_group": "g_m2i"
+            }
+          }
+        },
+        {
+          "appName": "portal-m2i",
+          "appVersion": "2.12.0",
+          "memory": "256",
+          "cpu": "0.1",
+          "ephemeralStorage": "512",
+          "extraDbDependencyParam": {
+            "mongodb": "",
+            "rabbitmq": "",
+            "postgresql": {
+              "postgresql_service_group": "g_m2i"
+            }
+          }
+        }
+      ],
+      "appServicesDependency": [],
+      "releaseNote": "",
+      "serviceName": "APM.M2I",
+      "planName": "M2I-31A-with-Datahub",
+      "chartVersion": "2.12.0",
+      "isBaseline":true,
+      "memory": "1310",
+      "deploymentType": "appbuy",
+      "cpu": "0.43",
+      "ephemeralStorage": "1290",
+      "chartName": "m2i",
+      "extraParam": {
+        "urlPrefix": [
+          "portal-m2i",
+          "api-m2i"
+        ]
+      },
+      "values": "# Default values for apm-chart.\n# This is a YAML-formatted file.\n# Declare variables to be passed into your templates.\nsecretCreate: true\n\nimageCredentials:\n  registry: harbor.hz.wise-paas.com.cn\n  username: \"\"\n  password: \"\"\n\napps:\n  apiM2iEnable: true\n  portalM2iEnable: true\n\nmicro_service_env: &micro_service_env\n  consulToken: \"msftoken\"\n\ncommonEnvs:\n  # common envs\n  - &postgresql_service_name \"postgresql\"\n  - &kafka_service_name \"kafka\"\n\n\n\nglobal:\n  ensaas:\n    namespace: m2idemo\n    workspace: msf\n    cluster: cluster01\n    datacenter: msf\n    appID: msf\n  k8sType: ensaas\n  # auto gen pod env option\n  # ensaas import values\n  ensaasApps:\n    apiSso:\n      internalUrl: https://sso.axa-dev.wise-paas.top/v4.0\n      externalUrl: https://sso.axa-dev.wise-paas.top/v4.0\n    apiMg:\n      internalUrl:\n      externalUrl:\n    apiDccs:\n      internalUrl:\n      externalUrl:\n    apiLicense:\n      internalUrl:\n      externalUrl:\n    ensaas:\n      datacenterCode: axa-dev\n      internalUrl: en.internal\n      externalUrl: axa-dev.wise-paas.top\n  url:\n    host: \".m2idemo.cluster01.en.internal\"\n  database:\n    secretName: \"m2idemo-secret\"\n  kafkaSecret:\n    secretName: \"kafka-connector\"\n\n  createServiceAccount: false\n\n  msfResource:\n    requests:\n      cpu: \"2m\"\n      memory: \"10Mi\"\n      ephemeral-storage: \"10M\"\n    limits:\n      cpu: \"60m\"\n      memory: \"60Mi\"\n      ephemeral-storage: \"30M\"\n\n  # docker信息\n  api:\n    <<: *micro_service_env\n    registry: harbor.hz.wise-paas.com.cn/app-production\n    repository: m2i/api-m2i\n    tag: 2.0.1\n    name: \"api-m2i\"\n    serviceId: \"msf\"\n    tagType: \"common\"\n    tagVer: \"v1\"\n    servicePort: 8080\n  portal:\n    registry: harbor.hz.wise-paas.com.cn/app-production\n    repository: m2i/portal-m2i\n    tag: 2.12.0\n    servicePort: 80\n    name: portal-m2i\n    serviceId: \"03f11da5-4dda-47fa-8d29-788ccd35c4a3\"\n    tagType: \"common\"\n    tagVer: \"v1\"\n  register:\n    frameNamespace: system\n    registry: harbor.hz.wise-paas.com.cn/app-production\n    repository: microservice/register-client\n    tag: v2.3.0\n  vpnClient:\n    registry: harbor.hz.wise-paas.com.cn/app-production\n    repository: microservice/vpn-connect-agent\n    tag: v1.0.0\n  pn: \"9803M2IA013\"\n  serviceName: \"APM.M2I\"\n\napi-m2i:\n  envs:\n    postgresql_service_name: *postgresql_service_name\n    kafka_service_name: *kafka_service_name\n"
+}
+```
+
+**[ :point_up_2: API概览 ](#API概览)**  
+
+### <span id="DeleteDeployment">DeleteDeployment</span> 
+
+#### 请求方式
+
+```bash
+Delete  /v1/deployment/{id}/rollback
+```
+
+#### 请求参数
+
+| 名称 | 描述                       | 示例值 | 类型 | 必要性 |
+| ---- | -------------------------- | ------ | ---- | ------ |
+| id   | 获取到的服务方案配置信息id | 175    | int  | 必填   |
+
+**[ :point_up_2: API概览 ](#API概览)**  
+
+
 
 **[⬆ top](#上架整合文档)**
