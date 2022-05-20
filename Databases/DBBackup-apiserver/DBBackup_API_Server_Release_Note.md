@@ -1,9 +1,26 @@
 # DBBackup-apiserver
 
+### 1.1.1/1.1.0.3 (2022-05-17)
+- 修正只允許global admin時的寄信清單
+
+### 1.1.0.2 (2022-05-11)
+- 增加只允許global admin備份還原的開關
+
+### 1.1.0.1 (2021-11-10)
+- Bug #20197: 呼叫GET /dbSchedules/all 或 Get /dbSchedules/{dbScheduleId} API (已被刪除的dbBackupConfigId的dbScheduleId 或不輸入任何查詢條件)，返回500 internal server error
+- Bug #20587: 呼叫POST dbBackupConfigs API (輸入不存在的dbStorageId)，返回500
+- Bug #20842: Get ​/dbSchedules​/all 輸入指定搜尋時間超過42天上限值，返回從當下時間點+42天的next資訊
+- Bug #20925: 呼叫任一api (未輸入header)，返回200
+- Bug #21283: swagger 版本資訊與app實際版號不相符
+- Requirement #20595: 移除dbSchedule api中返回資訊的minute字樣
+- Requirement #20610: 阻擋還在被dbScheduleId使用的dbBackupConfigId刪除(Extend Bug #20197)
+- Requirement #20889: 提供一支API，刪除與instance相依的dbschedule和dbBackupConfig
+- Requirement #20920: 增加Get /dbSchedules/all API，增加status搜尋條件
+
 ### 1.1.0/1.0.0.3 (2021-08-18)
 - 寄信規則改為寄給訂閱號下所有人員
 - 刪除多餘log
-- 
+ 
 ### 1.0.0.2 (2021-08-18)
 - Bug #21451: 告警通知的郵件沒有顯示所有詳細信息內容，資訊顯示空值
 - Bug #21453: dbBackup / dbRestore執行期間手動刪除，告警通知信息沒有instanceId資訊
