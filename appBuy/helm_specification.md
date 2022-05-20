@@ -153,7 +153,7 @@ spec:
         paths:
           - path: {{ $ingressPath }}
             {{- if $ingressSupportsPathType }}
-            pathType: {{ $.Values.ingress.pathType }}
+            pathType: ImplementationSpecific
             {{- end }}
             backend:
              {{- if $ingressApiIsStable }}
