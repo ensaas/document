@@ -1,5 +1,19 @@
 # DBService Controller Release Notes
 
+### 1.0.0.2 (2022-05-19)
+
+- 配合1.22版k8s升級package: 
+    - sigs.k8s.io/controller-runtime => v0.11.0
+    - k8s.io/* => v0.23.2
+    - github.com/go-logr/logr => v1.2.0
+    - github.com/open-policy-agent/cert-controller => v0.3.0
+- 修正升級package後產生的問題
+
+### 1.0.0.1 (2021-09-23)
+
+- Requirement #20888: 增加dbRestore自動刪除功能
+- Requirement #22758: 添加type為pvc的dbStorageConfiguration
+
 ### 1.0.0/1.0.0-rc10 (16072021)
 
 - Bug #21119: dbschedule 相同時間執行了2次備份
