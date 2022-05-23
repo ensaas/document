@@ -81,7 +81,7 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 | [PutDatacenterCode](#PutDatacenterCode)       | 修改站点信息                               |                                          |
 | [DeleteDatacenterCode](#DeleteDatacenterCode) | 删除站点信息                               | 不建议使用，删除后无法获取服务的各种信息 |
 
-### <span id="添加ServiceCatagory">添加ServiceCatagory</span> 
+### <span id="添加ServiceCategory">添加ServiceCategory</span> 
 
 | API                                             | 描述             |                                                            |
 | ----------------------------------------------- | ---------------- | ---------------------------------------------------------- |
