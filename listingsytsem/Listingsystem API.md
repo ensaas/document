@@ -1130,7 +1130,7 @@ POST  /v1/pricing
 | datacenterCode        | 站点                                               | ["bj"]            | array  | 必填   |
 | pnUnit                | 料号规格                                           | {"Instance": "1"} | object | 必填   |
 | ProductionDescription | 产品描述                                           | pp for nn         | string | 必填   |
-| chargeType            | 付费类型，支持Monthly、PAYG；若是PAYG，价格均写为0 | Monthly           | string | 必填   |
+| chargeType            | 付费类型，支持Monthly(若是包月、包年或买断，均写Monthly)、PAYG；若是PAYG，价格均写为0 | Monthly           | string | 必填   |
 | level1                | 注册用户价格，支持两位小数，向上圆整               | 22                | number | 必填   |
 | level2                | 银牌会员价格，支持两位小数，向上圆整               | 22                | number | 必填   |
 | level3                | 金牌会员价格，支持两位小数，向上圆整               | 22                | number | 必填   |
@@ -1239,7 +1239,7 @@ PUT  /v1/pricing/{id}
 | datacenterCode        | 站点，不支持修改                               | ["bj"]            | array  | 必填   |
 | pnUnit                | 料号规格，支持修改                             | {"Instance": "1"} | object | 必填   |
 | ProductionDescription | 产品描述，支持修改                             | pp for nn         | string | 必填   |
-| chargeType            | 付费类型，支持Monthly、PAYG，支持修改          | Monthly           | string | 必填   |
+| chargeType            | 付费类型，支持Monthly(若是包月、包年或买断，均写Monthly)、PAYG，支持修改          | Monthly           | string | 必填   |
 | level1                | 注册用户价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
 | level2                | 银牌会员价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
 | level3                | 金牌会员价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
@@ -2169,7 +2169,7 @@ PUT  /v1/servicePlan/{id}
 | 名称            | 描述                                                         | 示例值            | 类型   | 必要性 |
 | --------------- | ------------------------------------------------------------ | ----------------- | ------ | ------ |
 | pn              | 料号，支持修改，必须是已经上架的料号                         | 980GEDPS001       | string | 必填   |
-| pnProperty      | 料号属性，支持Basic、Additional、PYAG。其中Basic属性的料号必须存在。支持修改 | Basic             | string | 必填   |
+| pnProperty      | 料号属性，支持Basic、Additional、PAYG。其中Basic属性的料号必须存在。支持修改 | Basic             | string | 必填   |
 | chargeType      | 付费类型，支持Monthly、PAYG。这里添加的PAYG料号价格为0，实际价格在Metric接口添加。支持修改 | Monthly           | string | 必填   |
 | pnQuantity      | 料号数量，支持修改                                           | 1或者1-9          | string | 必填   |
 | pnUnit          | 料号单位规格，支持修改                                       | {"Instance": "1"} | object | 必填   |
