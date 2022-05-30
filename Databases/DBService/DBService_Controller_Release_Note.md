@@ -1,6 +1,9 @@
 # DBService Controller Release Notes
 
-### 1.0.0.2 (2022-05-19)
+### 1.1.1 (2022-05-30)
+- fix zombie issue. (Dockerfile)
+
+### 1.0.0.2/1.1.0 (2022-05-19)
 
 - 配合1.22版k8s升級package: 
     - sigs.k8s.io/controller-runtime => v0.11.0
@@ -8,6 +11,7 @@
     - github.com/go-logr/logr => v1.2.0
     - github.com/open-policy-agent/cert-controller => v0.3.0
 - 修正升級package後產生的問題
+- 僅相容>=1.16版k8s
 
 ### 1.0.0.1 (2021-09-23)
 
