@@ -1,5 +1,8 @@
 # DBService Release Notes
 
+# 1.1.2 (2022-05-30)
+- fix zombie issue
+
 # 1.1.1 (2022-05-19)
 - 修正兼容1.22版k8s內容(controller version must >= 1.1.0)
 
