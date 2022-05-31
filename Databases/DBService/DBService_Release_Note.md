@@ -1,5 +1,19 @@
 # DBService Release Notes
 
+# 1.1.2 (2022-05-30)
+- fix zombie issue
+
+# 1.1.1 (2022-05-19)
+- 修正兼容1.22版k8s內容(controller version must >= 1.1.0)
+
+# 1.1.0 (2022-05-11)
+- 兼容1.22版k8s
+- apiserver添加ONLY_GLOBAL_ADMIN環境變數
+
+# 1.0.3 (2021-09-07)
+- 修正未能完全移除資源的問題
+- 固定namespace改為dbservice
+
 # 1.0.2 (2021-09-03)
 - add api-server in package
 
