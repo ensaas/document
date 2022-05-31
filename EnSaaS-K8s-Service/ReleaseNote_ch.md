@@ -1,3 +1,21 @@
+### EnSaaS-K8s-Service 4.0.28- (2022-05-31)
+
+#### [Managment Portal API]- 4.0.24
+
+Fixed:
+- 解决某些版本的集群下无法获取ingress的问题
+
+
+
+### EnSaaS-K8s-Service 4.0.27- (2022-05-23)
+
+#### [Managment Portal API]- 4.0.23
+
+Fixed:
+- 解决和完善权限绑定的问题
+
+
+
 ### EnSaaS-K8s-Service 4.0.26- (2022-05-16)
 
 #### [Managment Portal UI]- 4.0.23
