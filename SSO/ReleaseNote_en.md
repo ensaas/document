@@ -28,7 +28,14 @@
 
 ### Fix bugs 
 * Modify the operation record. If the operator is the root account, the operator role is empty
-
+## API 4.0.30(2022-6-27)
+*Add a subscription number and create a sub subscription number, that is, the upper and lower relationship of the subscription number is a tree, which is currently only under the item number of the public cloud
+*Compatible with the tree structure and parallel structure of the subscription number, whether the partner is set through the enterprise partner_type
+*Initial setting of partner for enterprise No_ Type will automatically put the non primary subscription numbers under the enterprise number under the primary subscription number
+*When modifying a disabled user, if it is a scene of docking with the halo cloud, the user can only go back to the halo cloud to synchronize the user status after the user has bound a mobile phone number
+*/When querying desk/subscriptions/{subid}, a quota tree of assigned and used subscription numbers is returned
+*Subscription desk setting removes the field nextchildsubscriptionquota. The subscription number can use the remaining quota assigned by itself
+*It supports setting the samesite attribute of cookies (the version of golang and the version of the underlying image have been upgraded)
 
 ## Portal 4.0.29 (2021-8-12)
 * Add self-activation function. Automatically disabled users can receive the verification code through email and mobile phone to activate their account.
