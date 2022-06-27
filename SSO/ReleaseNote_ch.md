@@ -1,3 +1,12 @@
+## API 4.0.30(2022-6-27)
+*新增支持订阅号创建子订阅号，即订阅号上下关系为树形，目前仅在公有云的料号下
+*兼容订阅号的树形结构以及平行结构，通过企业号是否有设置partner_type来决定
+*企业号初次设置partner_type时会自动将企业号下的非主订阅号都放在主订阅号下
+*修改禁用用户时，如果为对接光环云的场景，只有用户绑定过手机号才回去光环云同步用户状态
+*/desk/subscriptions/{subId}查询时返回已分配已经已用的订阅号quota树
+*subscription desk setting 移除字段NextChildSubscriptionQuota，订阅号可以使用自己分配过的剩余的quota
+*支持设置cookie的samesite属性（升级了golang版本以及基础镜像的版本）
+
 ## API 4.0.29 (2022-5-6)
 * 用户新增数据login，支持通过login+password登录。
 * 新增参数SystemDisablePasswordPolicy，控制在非公有云场景下，不进行密码规则的检查
