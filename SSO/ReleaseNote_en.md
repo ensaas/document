@@ -5,6 +5,7 @@
 * The user name and login are not allowed to be repeated, nor are they allowed to be repeated with each other (the new login is not equal to any existing login or user name. The 	new user name rules are consistent)
 * Regularly delete the operation record (7D) no longer delete the membertype change record of the enterprise account
 * On the docker Version (there is no MP and the license is not a public cloud), the subscription number user has the permission to view all clients
+* LDAP mode add Advantech employee zone 
 
 
 ## API 4.0.28 (2021-12-31)
