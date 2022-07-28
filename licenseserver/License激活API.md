@@ -233,3 +233,8 @@ GET http://api.license.ensaas.en.internal/v1/api/licenses/serviceName/Dashboard/
 | Http Code | 描述                                                  |
 | ------------- | ------------------------------------------------------------ |
 | 200           | *successful operation*，返回的json数据格式如上Response Example中所述。 |
+
+## SDK 整合
+### Go
+[文档](https://github.com/ensaas/license-sdk/blob/main/README.md)
+[sdk](https://github.com/ensaas/license-sdk)
