@@ -1,3 +1,12 @@
+### EnSaaS-K8s-Service 4.0.30- (2022-08-04)
+
+#### [Managment Portal API]- 4.0.25
+
+Added:
+- 新增RabbitMQ渠道发送操作日志到审计中心
+
+
+
 ### EnSaaS-K8s-Service 4.0.29- (2022-07-15)
 
 #### [Managment Portal UI]- 4.0.24
