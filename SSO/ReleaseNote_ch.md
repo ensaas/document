@@ -1,3 +1,22 @@
+## API 4.0.31(2022-8-30)
+*login增加双因素认证登录的api(图片验证码)
+*整合审计中心，将日志发送到审计中心
+*jwt-go 升级到v4版本
+*login日志增加ip地址
+*支持通过系统配置设置token的有效期（不包括永久token）
+*多因素认证登录支持短信/邮件验证码
+*client type新增一种类型 saas,saas类型得client既可以创建srpuser，又可以分配平台上api的权限。且saas client与operation client或者其他saas client的名称不能重复
+*新增client key管理api,目前可以在sso生成一个时效性或者永久性的key,这个key可以用来注册saas client，一经注册key会失效。
+*修改api post /clients/{clientid}/users,不在检查workspace owner权限
+*新增api get /clients/{clientid}/saas/users 提供给saas类型的client获取sso详细的用户信息
+*policy数据表增加记录最后一次修改人字段
+*如果企业号下的订阅号为树形，那么在这个企业号下的订阅号之间，父级订阅号admin可以添加子订阅号admin
+*修改禁用订阅号时，订阅号下是否有资源的判断标准，由catalog获取订阅号资源 api返回空改为 api返回的数据列表总，为空或者全部都为License
+
+### Fix bugs
+*修改账号第一次被锁是提示的锁定秒数不对的问题
+*修改订阅号用户添加功能，企业号管理员以及父级订阅号只能添加和移除订阅号admin,不可以添加和移除订阅号user
+
 ## API 4.0.30(2022-6-27)
 * 新增支持订阅号创建子订阅号，即订阅号上下关系为树形，目前仅在公有云的料号下
 * 兼容订阅号的树形结构以及平行结构，通过企业号是否有设置partner_type来决定
