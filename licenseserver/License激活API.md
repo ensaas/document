@@ -14,16 +14,18 @@ Step4:  服务实例获取到license后，拿自身信息根据规则与license�
 
 ### 授权码获取接口
 
-| API                                                          | 描述                   |
-| ------------------------------------------------------------ | ---------------------- |
-| /v1/api/partNum/licenseQty                                   | 通过服务料号获取授权码 |
-| /v1/api/serviceName/ [serviceName]/serviceInstanceId/ [serviceInstanceId] | 通过服务名称获取授权码 |
-| /v1/api/licenses/serviceName/[serviceName]/username/[username] |通过用户名和服务名称获取授权码 |
+| API                                                          | 描述                           |
+| ------------------------------------------------------------ | ------------------------------ |
+| /v1/api/partNum/licenseQty                                   | 通过服务料号获取授权码         |
+| /v1/api/serviceName/ [serviceName]/serviceInstanceId/ [serviceInstanceId] | 通过服务名称获取授权码         |
+| /v1/api/licenses/serviceName/[serviceName]/username/[username] | 通过用户名和服务名称获取授权码 |
 
 
 
 ## API 接口
+
 ### 授权码获取接口
+
 #### 通过服务料号获取授权码
 
 调用/v1/api/partNum/licenseQty可以通过服务料号（pn）和服务实例id（id）获取激活码
@@ -109,8 +111,8 @@ GET http://api.license.ensaas.en.internal/v1/api/partNum/licenseQty?pn=9806WPDAS
 | authcode           | String  | a7d7-7d48-0001                                | 激活码                                                    |
 | datacenterCode     | String  | sa                                            | 数据中心编号，如sa，hz，je                                |
 | activeInfo         | String  | “ ”                                           | 服务上架时自定义的激活信息，保留项                        |
-| company            | String  | Advantech                                           | 订阅号所属公司信息                                        |
-| subscriptionType   | String  | paid                                                | 订阅类型（付费/试用），值为：paid/on trial                |
+| company            | String  | Advantech                                     | 订阅号所属公司信息                                        |
+| subscriptionType   | String  | paid                                          | 订阅类型（付费/试用），值为：paid/on trial                |
 
 ##### 示例
 
@@ -153,10 +155,12 @@ GET http://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstance
     ]
 }
 ```
+
 ##### 返回码
-| Http Code | 描述                                                  |
-| ------------- | ------------------------------------------------------------ |
-| 200           | *successful operation*，返回的json数据格式如上Response Example中所述。 |
+
+| Http Code | 描述                                                         |
+| --------- | ------------------------------------------------------------ |
+| 200       | *successful operation*，返回的json数据格式如上Response Example中所述。 |
 
 
 #### 通过用户名和服务名称获取授权码
@@ -165,12 +169,12 @@ GET http://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstance
 
 ##### 请求参数
 
-| 名称              | 类型   | 是否必选 | 示例值                                            | 描述                               |
-| ----------------- | ------ | -------- | ------------------------------------------------- | ---------------------------------- |
-| serviceName       | String | 是       | Dashboard                                         | 服务上架时提供的服务名称           |
-| username          | String | 是       | test@advantech.com.cn                             | 用户 E-mail                      |
-| page              | Int    | 否       | 1                                                 | 查询结果的第几页，默认是1          |
-| pageSize          | Int    | 否       | 10                                                | 查询结果每页显示的结果数，默认是10  |
+| 名称        | 类型   | 是否必选 | 示例值                | 描述                               |
+| ----------- | ------ | -------- | --------------------- | ---------------------------------- |
+| serviceName | String | 是       | Dashboard             | 服务上架时提供的服务名称           |
+| username    | String | 是       | test@advantech.com.cn | 用户 E-mail                        |
+| page        | Int    | 否       | 1                     | 查询结果的第几页，默认是1          |
+| pageSize    | Int    | 否       | 10                    | 查询结果每页显示的结果数，默认是10 |
 
 ##### 返回数据
 
@@ -185,8 +189,8 @@ GET http://api.license.ensaas.en.internal/v1/api/serviceName/APM/serviceInstance
 | authcode           | String  | a7d7-7d48-0001                                | 激活码                                                    |
 | datacenterCode     | String  | sa                                            | 数据中心编号，如sa，hz，je                                |
 | activeInfo         | String  | “ ”                                           | 服务上架时自定义的激活信息，保留项                        |
-| company            | String  | Advantech                                           | 订阅号所属公司信息                                        |
-| subscriptionType   | String  | paid                                                | 订阅类型（付费/试用），值为：paid/on trial                |
+| company            | String  | Advantech                                     | 订阅号所属公司信息                                        |
+| subscriptionType   | String  | paid                                          | 订阅类型（付费/试用），值为：paid/on trial                |
 
 ##### 示例
 
@@ -229,12 +233,45 @@ GET http://api.license.ensaas.en.internal/v1/api/licenses/serviceName/Dashboard/
     ]
 }
 ```
+
 ##### 返回码
-| Http Code | 描述                                                  |
-| ------------- | ------------------------------------------------------------ |
-| 200           | *successful operation*，返回的json数据格式如上Response Example中所述。 |
+
+| Http Code | 描述                                                         |
+| --------- | ------------------------------------------------------------ |
+| 200       | *successful operation*，返回的json数据格式如上Response Example中所述。 |
+
+### 生成激活文件接口
+
+#### 请求参数
+
+| 名称        | 类型   | 是否必选 | 示例                                 | 说明                                                         |
+| ----------- | ------ | -------- | ------------------------------------ | ------------------------------------------------------------ |
+| serviceName | string | 是       | PHM                                  | 服务上架的名称，License Agent生成license用的服务名称，服务上架之后不要修改这个名称 |
+| cluster     | string | 否       | ensaas                               | cluster、workspaceId、namespace必须输入一个，cluster+workspaceId+namespace组合作为获取License的id |
+| workspaceId | string | 否       | edff852f-1bfd-4efa-afc5-ea2b0ad9b64e |                                                              |
+| namespace   | string | 否       | ensaas-service                       |                                                              |
+
+#### 返回数据
+
+返回结果是二进制数据，服务整合这个接口时，需要将二进制数据转存成文件。
+
+#### 示例
+
+```
+POST http://api.license.ensaas.en.internal/v1/api/activation/file
+accept: multipart/form-data
+content-type: application/json
+{
+  "cluster": "ss",
+  "workspaceId": "ss",
+  "namespace": "ss",
+  "serviceName":"Dashboard"
+}
+```
 
 ## SDK 整合
+
 - Go  
-	[文档](https://github.com/ensaas/license-sdk/blob/main/README.md)  
-	[sdk](https://github.com/ensaas/license-sdk)
+  [文档](https://github.com/ensaas/license-sdk/blob/main/README.md)  
+  [sdk](https://github.com/ensaas/license-sdk)
+
