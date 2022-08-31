@@ -19,6 +19,7 @@ Step4:  服务实例获取到license后，拿自身信息根据规则与license�
 | /v1/api/partNum/licenseQty                                   | 通过服务料号获取授权码         |
 | /v1/api/serviceName/ [serviceName]/serviceInstanceId/ [serviceInstanceId] | 通过服务名称获取授权码         |
 | /v1/api/licenses/serviceName/[serviceName]/username/[username] | 通过用户名和服务名称获取授权码 |
+| /v1/api/activation/file                                      | 生成激活文件接口               |
 
 
 
@@ -246,7 +247,7 @@ GET http://api.license.ensaas.en.internal/v1/api/licenses/serviceName/Dashboard/
 
 | 名称        | 类型   | 是否必选 | 示例                                 | 说明                                                         |
 | ----------- | ------ | -------- | ------------------------------------ | ------------------------------------------------------------ |
-| serviceName | string | 是       | PHM                                  | 服务上架的名称，License Agent生成license用的服务名称，服务上架之后不要修改这个名称 |
+| serviceName | string | 是       | Dashboard                            | 服务上架的名称，License Agent生成license用的服务名称，服务上架之后不要修改这个名称 |
 | cluster     | string | 否       | ensaas                               | cluster、workspaceId、namespace必须输入一个，cluster+workspaceId+namespace组合作为获取License的id |
 | workspaceId | string | 否       | edff852f-1bfd-4efa-afc5-ea2b0ad9b64e |                                                              |
 | namespace   | string | 否       | ensaas-service                       |                                                              |
@@ -274,4 +275,3 @@ content-type: application/json
 - Go  
   [文档](https://github.com/ensaas/license-sdk/blob/main/README.md)  
   [sdk](https://github.com/ensaas/license-sdk)
-
