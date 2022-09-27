@@ -1,3 +1,12 @@
+### EnSaaS-K8s-Service 4.0.31- (2022-09-27)
+
+#### [Managment Portal UI]- 4.0.25
+
+Fixed:
+- 修正前端map文件泄露的问题
+
+
+
 ### EnSaaS-K8s-Service 4.0.30- (2022-08-04)
 
 #### [Managment Portal API]- 4.0.25
@@ -14,7 +23,7 @@ Added:
 Added:
 - 登陆页面底部添加备案号的显示
 
-Fixed
+Fixed:
 - 解决top_navbar偶发的跳转异常问题
 
 
