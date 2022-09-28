@@ -1,3 +1,11 @@
+## API 4.0.32(2022-9-28)
+*SSO read env supports underline format
+*Modify the client secret of the cart
+*Multi factor authentication login api, password needs to be encrypted
+*Optimize the error prompt that the user cannot find the situation when logging in
+*New support pn=980GSSOOS00, unlimited number of users and subscription quotas
+*The same user can only send one email for login authentication per minute
+
 ## API 4.0.31(2022-8-30)
 *Login adds API for two factor authentication login (picture verification code)
 *Integrate the audit center and send the log to the Audit Center
