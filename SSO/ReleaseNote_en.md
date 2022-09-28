@@ -1,39 +1,39 @@
 ## API 4.0.32(2022-9-28)
-*SSO read env supports underline format
-*Modify the client secret of the cart
-*Multi factor authentication login api, password needs to be encrypted
-*Optimize the error prompt that the user cannot find the situation when logging in
-*New support pn=980GSSOOS00, unlimited number of users and subscription quotas
-*The same user can only send one email for login authentication per minute
+* SSO read env supports underline format
+* Modify the client secret of the cart
+* Multi factor authentication login api, password needs to be encrypted
+* Optimize the error prompt that the user cannot find the situation when logging in
+* New support pn=980GSSOOS00, unlimited number of users and subscription quotas
+* The same user can only send one email for login authentication per minute
 
 ## API 4.0.31(2022-8-30)
-*Login adds API for two factor authentication login (picture verification code)
-*Integrate the audit center and send the log to the Audit Center
-*Upgrade JWT go to V4
-*Add IP address to login log
-*Supports setting the validity period of tokens through system configuration (excluding permanent tokens)
-*Multi factor authentication login support SMS / email verification code
-*Client type adds a new type SaaS. The client of SaaS type can create srpuser and assign API permissions on the platform. And the names of SaaS client and operation client or other SaaS clients cannot be duplicate
-*The client key management API is newly added. At present, an timeliness or permanent key can be generated in SSO. This key can be used to register SaaS clients. Once the key is registered, it will become invalid.
-*Modify API post / clients / {ClientID} / users, and do not check workspace owner permissions
-*The new API get / clients / {ClientID} / SaaS / users is provided to SaaS type clients to obtain the detailed user information of SSO
-*The last modifier field of the record is added to the policy data table
-*If the subscription number under the enterprise number is a tree, the parent subscription number admin can add the child subscription number admin between the subscription numbers under the enterprise number
-*When modifying the disabled subscription number, the criterion for judging whether there are resources under the subscription number is changed from the null returned by the catalog to the total data list returned by the API, which is empty or all are licenses
+* Login adds API for two factor authentication login (picture verification code)
+* Integrate the audit center and send the log to the Audit Center
+* Upgrade JWT go to V4
+* Add IP address to login log
+* Supports setting the validity period of tokens through system configuration (excluding permanent tokens)
+* Multi factor authentication login support SMS / email verification code
+* Client type adds a new type SaaS. The client of SaaS type can create srpuser and assign API permissions on the platform. And the names of SaaS client and operation client or other SaaS clients cannot be duplicate
+* The client key management API is newly added. At present, an timeliness or permanent key can be generated in SSO. This key can be used to register SaaS clients. Once the key is registered, it will become invalid.
+* Modify API post / clients / {ClientID} / users, and do not check workspace owner permissions
+* The new API get / clients / {ClientID} / SaaS / users is provided to SaaS type clients to obtain the detailed user information of SSO
+* The last modifier field of the record is added to the policy data table
+* If the subscription number under the enterprise number is a tree, the parent subscription number admin can add the child subscription number admin between the subscription numbers under the enterprise number
+* When modifying the disabled subscription number, the criterion for judging whether there are resources under the subscription number is changed from the null returned by the catalog to the total data list returned by the API, which is empty or all are licenses
 
 ### Fix bugs 
-*The first time the account is locked, the problem of incorrect locking seconds is prompted
-*Modify the subscription number user adding function. The enterprise number administrator and the parent subscription number can only add and remove the subscription number admin, not the subscription number user
+* The first time the account is locked, the problem of incorrect locking seconds is prompted
+* Modify the subscription number user adding function. The enterprise number administrator and the parent subscription number can only add and remove the subscription number admin, not the subscription number user
 
 
 ## API 4.0.30(2022-6-27)
-*Add a subscription number and create a sub subscription number, that is, the upper and lower relationship of the subscription number is a tree, which is currently only under the item number of the public cloud
-*Compatible with the tree structure and parallel structure of the subscription number, whether the partner is set through the enterprise partner_type
-*Initial setting of partner for enterprise No_ Type will automatically put the non primary subscription numbers under the enterprise number under the primary subscription number
-*When modifying a disabled user, if it is a scene of docking with the halo cloud, the user can only go back to the halo cloud to synchronize the user status after the user has bound a mobile phone number
-*/When querying desk/subscriptions/{subid}, a quota tree of assigned and used subscription numbers is returned
-*Subscription desk setting removes the field nextchildsubscriptionquota. The subscription number can use the remaining quota assigned by itself
-*It supports setting the samesite attribute of cookies (the version of golang and the version of the underlying image have been upgraded)
+* Add a subscription number and create a sub subscription number, that is, the upper and lower relationship of the subscription number is a tree, which is currently only under the item number of the public cloud
+* Compatible with the tree structure and parallel structure of the subscription number, whether the partner is set through the enterprise partner_type
+* Initial setting of partner for enterprise No_ Type will automatically put the non primary subscription numbers under the enterprise number under the primary subscription number
+* When modifying a disabled user, if it is a scene of docking with the halo cloud, the user can only go back to the halo cloud to synchronize the user status after the user has bound a mobile phone number
+* When querying desk/subscriptions/{subid}, a quota tree of assigned and used subscription numbers is returned
+* Subscription desk setting removes the field nextchildsubscriptionquota. The subscription number can use the remaining quota assigned by itself
+* It supports setting the samesite attribute of cookies (the version of golang and the version of the underlying image have been upgraded)
 
 
 ## API 4.0.29 (2022-5-6)
