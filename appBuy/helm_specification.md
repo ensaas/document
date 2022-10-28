@@ -48,6 +48,8 @@ appBuy是基于helm3的app生命周期管理应用。主要模块有app仓库管
 	  
 ```
  global:
+   clusterName: xxx
+   namespace: xxx
    ensaasApps:
      apiSso:
        internalUrl: http://api.sso.ensaas.en.internal/v4.0
