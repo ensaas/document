@@ -1,3 +1,12 @@
+### EnSaaS-K8s-Service 4.0.32 - (2022-11-03)
+
+#### [Managment Portal UI]- 4.0.26
+
+Fixed:
+- 解决某些集群的Ingress界面下SVC和Port栏位为空的问题
+
+
+
 ### EnSaaS-K8s-Service 4.0.31- (2022-09-27)
 
 #### [Managment Portal UI]- 4.0.25
