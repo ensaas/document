@@ -1,3 +1,12 @@
+### EnSaaS-K8s-Service 4.0.33 - (2023-01-17)
+
+#### [Cluster Agent]- 4.0.20
+
+Fixed:
+- 解决1.24及以上k8s版本，新建ServiceAccounth后没有生成secrets的问题
+
+
+
 ### EnSaaS-K8s-Service 4.0.32 - (2022-11-03)
 
 #### [Managment Portal UI]- 4.0.26
