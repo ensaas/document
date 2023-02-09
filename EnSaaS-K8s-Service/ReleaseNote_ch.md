@@ -1,3 +1,13 @@
+### EnSaaS-K8s-Service 4.0.34 - (2023-02-09)
+
+#### [Managment Portal UI]- 4.0.27
+
+Fixed:
+- 解决https访问UI，kubectl无法输入的问题
+- 解决偶发的集群状态提示'Not Available'，导致workspace、namespace、ingress页面无法正常显示
+
+
+
 ### EnSaaS-K8s-Service 4.0.33 - (2023-01-17)
 
 #### [Cluster Agent]- 4.0.20
