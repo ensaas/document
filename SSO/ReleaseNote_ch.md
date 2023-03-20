@@ -1,3 +1,14 @@
+## API 4.0.33(2023-3-20)
+* 支持totp协议的多因素认证
+* 取消saas client只能注册一个的限制
+* 支持si portal 的myadvantech登录
+* 修改desk的tree-relation/setting api,增加企业账号名称返回
+* 修改desk的tree-relation api,增加企业账号名称返回
+
+### Fix bugs
+* 修改marketplace创建用户时提示login字段重复的bug
+* 其余已知问题
+
 ## API 4.0.32(2022-9-28)
 * sso读取env支持下划线格式
 * 修改cart的client secret
