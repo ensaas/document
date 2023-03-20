@@ -1,3 +1,15 @@
+## API 4.0.33(2023-3-20)
+* Multifactor authentication supporting totp protocol
+* Remove the restriction that only one saas client can be registered
+* Supports myadvantech login for si portal
+* Modify the tree relationship/setting API of desk and add the enterprise account name to return
+* Modify the tree relationship API of desk and add the enterprise account name to return
+
+### Fix bugs
+* Modify a bug that prompts for duplicate login fields when creating a user in a marketplace
+* Other known issues
+
+
 ## API 4.0.32(2022-9-28)
 * SSO read env supports underline format
 * Modify the client secret of the cart
