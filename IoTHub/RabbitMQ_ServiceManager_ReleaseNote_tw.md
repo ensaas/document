@@ -2,6 +2,12 @@
 
 [Highlight release note for rabbitmq service manager (rabbitmq-sm)](http://aclredmine.advantech.com.tw/redmines/EI-PaaS/projects/rabbitmq-service-broker/roadmap)
 
+## 1.0.27
+### Add
+   - 支援X509驗證功能，建立的使用者為禁止使用密碼登入
+### Fix
+   - 修正高併發時 bind 建立錯誤問題
+
 ## 1.0.24
 ### Fix
    - Bug #19503: 當 ops credentials 表格中有2個以上 shared_use 為 true 時，執行 share provision 會拿到不 mapping 的 host 與帳密資訊
