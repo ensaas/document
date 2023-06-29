@@ -1,3 +1,12 @@
+### EnSaaS-K8s-Service 4.0.36 - (2023-06-29)
+
+#### [Managment Portal UI]- 4.0.29
+
+Added:
+- 登录页支持通过SSO的API获取个性化配置参数，来进行logo适配
+
+
+
 ### EnSaaS-K8s-Service 4.0.35 - (2023-03-28)
 
 #### [Managment Portal UI]- 4.0.28
