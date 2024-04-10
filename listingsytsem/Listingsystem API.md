@@ -1,3 +1,5 @@
+ 
+
 # 上架整合文档
 
 ## 上架整合流程
@@ -5,7 +7,7 @@
 ### 服务上架流程（包含单一服务和集成服务）
 
 ```bash
- 上架服务 ---> 上架服务方案料号 ---> 上架服务对应的方案 ---> 上架服务方案付费模式 ---> 上架按量付费料号（可选） ---> 上架服务方案部署配置（可选）
+ 上架服务 ---> 上架服务方案料号 ---> 上架服务对应的方案 ---> 上架服务方案付费模式 ---> 上架按量付费料号（可选） ---> 上架服务方案部署配置（可选）---> 上架服务方案对应的套餐（可选）
 ```
 
 ### 服务上架步骤（包含单一服务和集成服务）
@@ -16,6 +18,7 @@
 4. 上架服务方案付费方式，调用[上架服务方案付费方式接口](#上架服务方案付费方式接口)进行上架
 5. 上架按量计费料号和定价，调用[上架按量付费料号接口](#上架按量付费料号接口)进行上架（可选）
 6. 上架服务方案部署配置，调用[上架服务方案部署配置接口](#上架服务方案部署配置接口)进行上架（可选）
+7. 上架服务方案对应的套餐，调用[上架服务方案对应套餐接口](#上架服务方案对应套餐接口)进行上架（可选）
 
 ## Listingsystem 介绍
 
@@ -69,6 +72,8 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 :point_right: [上架按量付费料号接口](#上架按量付费料号接口)  
 
 :point_right: [上架服务方案部署配置接口](#上架服务方案部署配置接口)  
+
+:point_right: [上架服务方案对应套餐接口](#上架服务方案对应套餐接口)  
 
 ### <span id="添加DatacenterCode">添加DataceneterCode</span> 
 
@@ -142,7 +147,16 @@ Listingsystem 是为服务上架到 EnSaaS 4.0 Catalog 和 Marketplace 提供上
 | [PutDeployment](#PutDeployment)       | 更新单一服务方案或服务包方案部署配置       |
 | [DeleteDeployment](#DeleteDeployment) | 回滚单一服务方案或服务包方案部署配置       |
 
----
+### <span id="上架服务方案对应套餐接口">上架服务方案对应套餐接口</span> 
+
+| API                                       | 描述         |
+| ----------------------------------------- | ------------ |
+| [GetServiceQuota](#GetServiceQuota)       | 获取套餐信息 |
+| [CreateServiceQuota](#CreateServiceQuota) | 上架套餐信息 |
+| [PutServiceQuota](#PutServiceQuota)       | 更新套餐信息 |
+| [DeleteServiceQuota](#DeleteServiceQuota) | 删除套餐信息 |
+
+------
 
 ## API 详情
 
@@ -337,10 +351,10 @@ GET v1/datacenter
 
 #### 请求参数
 
-| 名称           | 描述            | 示例值   | 类型   | 必要性 |
-| -------------- | --------------- | -------- | ------ | ------ |
-| datacenterCode | service的唯一名 | bj       | string | 非必填 |
-| datacenterName | service的分类   | Bei Jing | string | 非必填 |
+| 名称           | 描述     | 示例值   | 类型   | 必要性 |
+| -------------- | -------- | -------- | ------ | ------ |
+| datacenterCode | 站点     | bj       | string | 非必填 |
+| datacenterName | 站点名称 | Bei Jing | string | 非必填 |
 
 #### 返回数据示例
 
@@ -864,9 +878,9 @@ POST /v1/service
 | subscriptionId   | 拆账给该订阅号id                                             | ""                   | string | 非必填 |
 | crmid            | 拆账的订阅号名称对应的crmid                                  | ""                   | string | 非必填 |
 | company          | 拆账的crmid对应的company名称                                 | ""                   | string | 非必填 |
-| serviceProvider  | 服务提供商CRMID                                              | ensaas               | string | 非必填 |
+| serviceProvider  | 服务提供商                                                   | ensaas               | string | 非必填 |
 | releaseNote      | 无效字段                                                     | ""                   | string | 不填   |
-| iconUrl          | 无效字段                                                     | ""                   | string | 不填   |
+| iconUrl          | 服务的iconurl地址                                            | xxx                  | string | 必填   |
 | description      | 服务描述，需完整填写                                         | xxx                  | string | 必填   |
 | manager          | 服务管理人员                                                 | {“manager":"lu.jin"} | object | 必填   |
 | onlineTime       | 上线时间                                                     | 2021-12-31 00:00:00  | string | 非必填 |
@@ -1042,7 +1056,7 @@ PUT /v1/service/{id}
 | company          | 拆账的crmid对应的company名称，支持修改                       | ""                                   | string | 非必填 |
 | serviceProvider  | 服务提供商CRMID，支持修改                                    | ensaas                               | string | 非必填 |
 | releaseNote      | 无效字段                                                     | ""                                   | string | 不填   |
-| iconUrl          | 无效字段                                                     | ""                                   | string | 不填   |
+| iconUrl          | 服务的iconurl地址，支持修改                                  | ""                                   | xxx    | 必填   |
 | description      | 服务描述，支持修改                                           | xxx                                  | string | 必填   |
 | manager          | 服务管理人员，支持修改                                       | {“manager":"lu.jin"}                 | object | 必填   |
 | onlineTime       | 上线时间，支持修改                                           | 2021-12-31 00:00:00                  | string | 非必填 |
@@ -1062,6 +1076,7 @@ PUT /v1/service/{id}
           "company": "",
           "buyType": "app",
           "uiId": 2,
+          "iconUrl":"",
           "manager": {
             "AE": [
               {
@@ -1121,19 +1136,19 @@ POST  /v1/pricing
 
 #### 请求参数
 
-| 名称                  | 描述                                               | 示例值            | 类型   | 必要性 |
-| --------------------- | -------------------------------------------------- | ----------------- | ------ | ------ |
-| pn                    | 料号                                               | 980GEDPSM00       | string | 必填   |
-| pdl                   | 产品线                                             | CSSI              | string | 必填   |
-| datacenterCode        | 站点                                               | ["bj"]            | array  | 必填   |
-| pnUnit                | 料号规格                                           | {"Instance": "1"} | object | 必填   |
-| ProductionDescription | 产品描述                                           | pp for nn         | string | 必填   |
+| 名称                  | 描述                                                         | 示例值            | 类型   | 必要性 |
+| --------------------- | ------------------------------------------------------------ | ----------------- | ------ | ------ |
+| pn                    | 料号                                                         | 980GEDPSM00       | string | 必填   |
+| pdl                   | 产品线                                                       | CSSI              | string | 必填   |
+| datacenterCode        | 站点                                                         | ["bj"]            | array  | 必填   |
+| pnUnit                | 料号规格                                                     | {"Instance": "1"} | object | 必填   |
+| ProductionDescription | 产品描述                                                     | pp for nn         | string | 必填   |
 | chargeType            | 付费类型，支持Monthly(若是包月、包年或买断，均写Monthly)、PAYG；若是PAYG，价格均写为0 | Monthly           | string | 必填   |
-| level1                | 注册用户价格，支持两位小数，向上圆整               | 22                | number | 必填   |
-| level2                | 银牌会员价格，支持两位小数，向上圆整               | 22                | number | 必填   |
-| level3                | 金牌会员价格，支持两位小数，向上圆整               | 22                | number | 必填   |
-| level4                | 贵宾会员价格，支持两位小数，向上圆整               | 22                | number | 必填   |
-| level0                | 内部用户价格，支持两位小数，向上圆整               | 22                | number | 必填   |
+| level1                | 注册用户价格，支持两位小数，向上圆整                         | 22                | number | 必填   |
+| level2                | 银牌会员价格，支持两位小数，向上圆整                         | 22                | number | 必填   |
+| level3                | 金牌会员价格，支持两位小数，向上圆整                         | 22                | number | 必填   |
+| level4                | 贵宾会员价格，支持两位小数，向上圆整                         | 22                | number | 必填   |
+| level0                | 内部用户价格，支持两位小数，向上圆整                         | 22                | number | 必填   |
 
 #### 请求参数示例
 
@@ -1229,20 +1244,20 @@ PUT  /v1/pricing/{id}
 
 #### 请求参数
 
-| 名称                  | 描述                                           | 示例值            | 类型   | 必要性 |
-| --------------------- | ---------------------------------------------- | ----------------- | ------ | ------ |
-| id                    | 获取到料号的id                                 | 418               | int    | 必填   |
-| pn                    | 料号，不支持修改                               | 980GEDPSM00       | string | 必填   |
-| pdl                   | 产品线，支持修改                               | CSSI              | string | 必填   |
-| datacenterCode        | 站点，不支持修改                               | ["bj"]            | array  | 必填   |
-| pnUnit                | 料号规格，支持修改                             | {"Instance": "1"} | object | 必填   |
-| ProductionDescription | 产品描述，支持修改                             | pp for nn         | string | 必填   |
-| chargeType            | 付费类型，支持Monthly(若是包月、包年或买断，均写Monthly)、PAYG，支持修改          | Monthly           | string | 必填   |
-| level1                | 注册用户价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
-| level2                | 银牌会员价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
-| level3                | 金牌会员价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
-| level4                | 贵宾会员价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
-| level0                | 内部用户价格，支持两位小数，向上圆整，支持修改 | 22                | number | 必填   |
+| 名称                  | 描述                                                         | 示例值            | 类型   | 必要性 |
+| --------------------- | ------------------------------------------------------------ | ----------------- | ------ | ------ |
+| id                    | 获取到料号的id                                               | 418               | int    | 必填   |
+| pn                    | 料号，不支持修改                                             | 980GEDPSM00       | string | 必填   |
+| pdl                   | 产品线，支持修改                                             | CSSI              | string | 必填   |
+| datacenterCode        | 站点，不支持修改                                             | ["bj"]            | array  | 必填   |
+| pnUnit                | 料号规格，支持修改                                           | {"Instance": "1"} | object | 必填   |
+| ProductionDescription | 产品描述，支持修改                                           | pp for nn         | string | 必填   |
+| chargeType            | 付费类型，支持Monthly(若是包月、包年或买断，均写Monthly)、PAYG，支持修改 | Monthly           | string | 必填   |
+| level1                | 注册用户价格，支持两位小数，向上圆整，支持修改               | 22                | number | 必填   |
+| level2                | 银牌会员价格，支持两位小数，向上圆整，支持修改               | 22                | number | 必填   |
+| level3                | 金牌会员价格，支持两位小数，向上圆整，支持修改               | 22                | number | 必填   |
+| level4                | 贵宾会员价格，支持两位小数，向上圆整，支持修改               | 22                | number | 必填   |
+| level0                | 内部用户价格，支持两位小数，向上圆整，支持修改               | 22                | number | 必填   |
 
 #### 请求参数示例
 
@@ -1299,29 +1314,30 @@ POST  /v1/servicePlan
 
 #### 请求参数
 
-| 名称               | 描述                                                         | 示例值  | 类型   | 必要性 |
-| ------------------ | ------------------------------------------------------------ | ------- | ------ | ------ |
-| planName           | 服务方案名称，同一服务下，方案名称不允许重复                 | Lite    | string | 必填   |
-| planNumber         | 方案排序                                                     | 1       | int    | 必填   |
-| planCategory       | 服务方案类别，支持standard（单一服务）、package（集成服务）、intergration（整合类型服务） | package | object | 必填   |
-| planType           | 服务方案类型，支持Service、License                           | Service | string | 必填   |
-| deploymentSolution | 方案属性，支持Cloud（公有云）、Private（私有云）及Custom（定制） | Cloud   | string | 必填   |
-| uiId               | 页面标识，支持0,1.2,3。默认是0                               | 0       | int    | 必填   |
-| deliveryType       | 订阅方式，支持支持appbuy（单一服务）、servicebuy（托管服务）、mpbuy（EnSaaS-K8s-Service服务）、pluginbuy（插件服务）、pipeline（集成服务或整合服务）、manual（人工服务） | appbuy  | string | 必填   |
-| isInfrastructure   | 该服务方案是否是硬件基础设施，默认是false。选择true的前提是planType必须为License | false   | bool   | 必填   |
-| namespace          | 无效字段                                                     | ""      | string | 非必填 |
-| cluster            | 无效字段                                                     | ""      | string | 非必填 |
-| datacenterCode     | 站点                                                         | bj      | string | 必填   |
-| planForTrial       | 是否是试用方案，默认是false                                  | false   | bool   | 必填   |
-| isVisible          | true表示在页面显示该服务方案；false表示下架该服务方案        | true    | bool   | 必填   |
-| hasActiveInfo      | 生成license authcode中是否要加激活信息，默认是false（目前只有EnSaaS MicroService类型服务需要设成true） | false   | bool   | 必填   |
-| licenseType        | license类型，当planType为service时，licenseType支持Default、None；当planType为License时，licenseType支持BindingInfra、BindingMac | Default | string | 必填   |
-| description        | 服务方案描述                                                 | xxx     | string | 必填   |
-| serviceName        | 服务名称，必须是已经上架的服务                               | APM.M2I | string | 必填   |
-| pnInfo             | 服务方案的料号信息                                           | []      | array  | 必填   |
-| dependency         | 单一服务方案依赖的其他服务，planCategory为standard需填写该项 | {}      | object | 非必填 |
-| package            | 集成服务方案包含的其他服务，planCategory为package需填写该项  | {}      | object | 非必填 |
-| integration        | 整合服务方案包含的其他服务，planCategory为integration需填写该项 | {}      | object | 非必填 |
+| 名称               | 描述                                                         | 示例值        | 类型   | 必要性 |
+| ------------------ | ------------------------------------------------------------ | ------------- | ------ | ------ |
+| planName           | 服务方案名称，同一服务下，方案名称不允许重复                 | Lite          | string | 必填   |
+| planNumber         | 方案排序                                                     | 1             | int    | 必填   |
+| planCategory       | 服务方案类别，支持standard（单一服务）、package（集成服务）、intergration（整合类型服务） | package       | object | 必填   |
+| planType           | 服务方案类型，支持Service、License                           | Service       | string | 必填   |
+| deploymentSolution | 方案属性，支持Cloud（公有云）、Private（私有云）及Custom（定制） | Cloud         | string | 必填   |
+| uiId               | 页面标识，支持0,1.2,3。默认是0                               | 0             | int    | 必填   |
+| deliveryType       | 订阅方式，支持支持appbuy（单一服务）、servicebuy（托管服务）、mpbuy（EnSaaS-K8s-Service服务）、pluginbuy（插件服务）、pipeline（集成服务或整合服务）、manual（人工服务） | appbuy        | string | 必填   |
+| isInfrastructure   | 该服务方案是否是硬件基础设施，默认是false。选择true的前提是planType必须为License | false         | bool   | 必填   |
+| namespace          | 无效字段                                                     | ""            | string | 非必填 |
+| cluster            | 无效字段                                                     | ""            | string | 非必填 |
+| datacenterCode     | 站点                                                         | bj            | string | 必填   |
+| planForTrial       | 是否是试用方案，默认是false                                  | false         | bool   | 必填   |
+| isVisible          | true表示在页面显示该服务方案；false表示下架该服务方案        | true          | bool   | 必填   |
+| hasActiveInfo      | 生成license authcode中是否要加激活信息，默认是false（目前只有EnSaaS MicroService类型服务需要设成true） | false         | bool   | 必填   |
+| licenseType        | license类型，当planType为service时，licenseType支持Default、None；当planType为License时，licenseType支持BindingInfra、BindingMac | Default       | string | 必填   |
+| description        | 服务方案描述                                                 | xxx           | string | 必填   |
+| serviceName        | 服务名称，必须是已经上架的服务                               | APM.M2I       | string | 必填   |
+| associatedQuota    | 方案关联的套餐名称，若为空，表示不关联套餐                   | WISE-IoTSuite | string | 非必填 |
+| pnInfo             | 服务方案的料号信息                                           | []            | array  | 必填   |
+| dependency         | 单一服务方案依赖的其他服务，planCategory为standard需填写该项 | {}            | object | 非必填 |
+| package            | 集成服务方案包含的其他服务，planCategory为package需填写该项  | {}            | object | 非必填 |
+| integration        | 整合服务方案包含的其他服务，planCategory为integration需填写该项 | {}            | object | 非必填 |
 
 **pnInfo 参数**
 
@@ -1406,6 +1422,7 @@ POST  /v1/servicePlan
       "hasActiveInfo": false,
       "licenseType": "Default",
       "planCategory": "standard",
+      "associatedQuota":"",
       "description": "standard AIFS Medical Imaging Service",
       "uiId": 3,
       "deliveryType": "appbuy",
@@ -1465,6 +1482,7 @@ POST  /v1/servicePlan
       "uiId": 0,
       "deliveryType": "pipeline",
       "serviceName": "APM.M2I",
+      "associatedQuota":"",
       "pnInfo": [
         {
           "pn": "9803M2IA103",
@@ -1947,6 +1965,7 @@ GET  /v1/servicePlan
       "uiId": 0,
       "deliveryType": "appbuy",
       "serviceName": "DataHub",
+      "associatedQuota":"",
       "pnInfo": [
         {
           "pn": "980GDTHBS00",
@@ -2028,6 +2047,7 @@ GET  /v1/servicePlan
       "uiId": 0,
       "deliveryType": "pipeline",
       "serviceName": "Dashboard",
+      "associatedQuota":"",
       "pnInfo": [
         {
           "pn": "980GDAHSP01",
@@ -2157,6 +2177,7 @@ PUT  /v1/servicePlan/{id}
 | licenseType        | license类型，当planType为service时，licenseType支持Default、None；当planType为License时，licenseType支持BindingInfra、BindingMac，支持修改 | Default                              | string | 必填   |
 | description        | 服务方案描述，支持修改                                       | xxx                                  | string | 必填   |
 | serviceName        | 服务名称，不支持修改                                         | APM.M2I                              | string | 必填   |
+| associatedQuota    | 方案关联的套餐名称，支持修改                                 | WISE-IoTSuite                        | string | 非必填 |
 | pnInfo             | 服务方案的料号信息，支持修改                                 | []                                   | array  | 必填   |
 | dependency         | 单一服务方案依赖的其他服务，planCategory为standard需填写该项，支持修改 | {}                                   | object | 非必填 |
 | package            | 集成服务方案包含的其他服务，planCategory为package需填写该项，支持修改，修改后同时需要修改ServiceSaleStrategy接口 | {}                                   | object | 非必填 |
@@ -2249,6 +2270,7 @@ PUT  /v1/servicePlan/{id}
       "uiId": 3,
       "deliveryType": "appbuy",
       "serviceName": "AIFS-Medical-Imaging",
+      "associatedQuota":"",
       "pnInfo": [
         {
           "pn": "9806WPEMI01",
@@ -2304,6 +2326,7 @@ PUT  /v1/servicePlan/{id}
       "uiId": 0,
       "deliveryType": "pipeline",
       "serviceName": "APM.M2I",
+      "associatedQuota":"",
       "pnInfo": [
         {
           "pn": "9803M2IA103",
@@ -2604,6 +2627,7 @@ PUT  /v1/servicePlan/{id}
 	"uiId": 3,
 	"deliveryType": "pipeline",
 	"serviceName": "EnSaaS-Service",
+    "associatedQuota":"",
 	"pnInfo": [{
 		"pn": "980GESE100",
 		"pnProperty": "Basic",
@@ -3251,7 +3275,7 @@ PUT  /v1/serviceSaleStrategy/{id}
 {
   "serviceName": "APM.M2I",
   "planName": "M2I-31A-with-Datahub",
-  "datacenter": "${hz}",
+  "datacenter": "hz",
   "discount": 1,
   "isVisible": true,
   "isPackage": true,
@@ -3679,7 +3703,7 @@ POST  /v1/deployment
 | deploymentType        | 部署类型，默认appbuy                                         | appbuy                                                       | string | 必填   |
 | appServicesDependency | 该方案依赖的其他服务信息，该字段暂时没用                     | []                                                           | array  | 必填   |
 | extraParam            | 额外参数，目前这里加的是服务外部访问地址的前缀（如没有外部访问地址，urlPrefix为[]） | {     "urlPrefix": [          "portal-m2i",          "api-m2i"        ]      } | object | 必填   |
-| values                | Helm chart中values.yaml内容                                  | xxx                                                          | string | 必填   |
+| values                | Helm chart中values.yaml内容，需要转义，并将image地址修改为线上的地址 | xxx                                                          | string | 必填   |
 | apps                  | 该版本中包含的各个app                                        | []                                                           | array  | 必填   |
 
 **apps**
@@ -3989,6 +4013,523 @@ Delete  /v1/deployment/{id}/rollback
 | 名称 | 描述                       | 示例值 | 类型 | 必要性 |
 | ---- | -------------------------- | ------ | ---- | ------ |
 | id   | 获取到的服务方案配置信息id | 175    | int  | 必填   |
+
+**[ :point_up_2: API概览 ](#API概览)**  
+
+### CreateQuota
+
+#### 请求方式
+
+```
+POST  /v1/service-quota
+```
+
+#### 请求参数
+
+| 名称            | 描述                                                         | 示例值                | 类型   | 必要性 |
+| --------------- | ------------------------------------------------------------ | --------------------- | ------ | ------ |
+| name            | 套餐名称                                                     | WISE-IoTSuite         | string | 必填   |
+| displayName     | UI上显示的套餐名称，若为空，则UI上显示name                   | WISE IoTSuite         | string | 非必填 |
+| serviceCategory | 套餐的分类，目前支持EnSaaS、Common Apps、Industrial Apps、EnSaaS MicroService、Consulting Service、WISE-STACK | Common Apps           | string | 必填   |
+| labels          | 标签，若是SaaS套餐，标签要包含Service，Edge套餐，标签包含Edge；若SaaS套餐不想显示Instance指标，标签要包含NoInstance，否则不写 | ["SaaS","NoInstance"] | array  | 必填   |
+| datacenter      | 站点                                                         | hz                    | string | 必填   |
+| description     | 套餐的描述                                                   | xxxx                  | string | 必填   |
+| manager         | 管理人员                                                     | {}                    | object | 必填   |
+| payType         | 套餐支持的付费类型                                           | {}                    | object | 必填   |
+| pnInfo          | 套餐的料号，目前可以是假料号，不牵扯付费                     | {}                    | object | 必填   |
+| pns             | 套餐中包含的指标                                             | {}                    | object | 必填   |
+| services        | 指标对应的服务及方案信息。注意方案上的pn必须包含在pns中      | {}                    | object | 必填   |
+
+**payType参数**
+
+| 名称       | 描述                                                         | 示例值  | 类型   | 必要性 |
+| ---------- | ------------------------------------------------------------ | ------- | ------ | ------ |
+| chargeType | 付费类型，支持Trial（试用，整月）、Monthly(包月，自然月)、Quarterly（三月）、HalfYear（半年）、Yearly（包年，整年）、CY（自然年）、Eternal（买断）；Edge套餐不支持CY | Monthly | string | 必填   |
+| spuNumber  | 份数。Trial（spuNumber=1）、Monthly（spuNumber=1）、Quarterly（spuNumber=3）、HalfYear（spuNumber=6）、Yearly（spuNumber=12）、CY（spuNumber=1）、Eternal（spuNumber=1） | 1       | string | 必填   |
+
+**pnInfo参数**
+
+| 名称            | 描述                                               | 示例值            | 类型   | 必要性 |
+| --------------- | -------------------------------------------------- | ----------------- | ------ | ------ |
+| pn              | 料号，必须是已经上架的料号                         | 980GEDPS001       | string | 必填   |
+| pnProperty      | 料号属性，支持Basic、Additional。仅能只有一个Basic | Basic             | string | 必填   |
+| chargeType      | 付费类型，默认是Monthly                            | Instance          | string | 必填   |
+| pnQuantity      | 料号数量                                           | 1或者1-9          | string | 必填   |
+| pnUnit          | 料号单位规格                                       | {"Instance": "1"} | object | 必填   |
+| planDescription | 服务方案描述                                       | xxx               | string | 必填   |
+
+**pns参数**
+
+| 名称            | 描述                                                       | 示例值            | 类型   | 必要性 |
+| --------------- | ---------------------------------------------------------- | ----------------- | ------ | ------ |
+| pn              | 料号，必须是已经上架的料号，即指标                         | Instance          | string | 必填   |
+| pnProperty      | 料号属性，支持Basic、Additional。支持多个Basic和Additional | Basic             | string | 必填   |
+| displayName     | UI上显示的指标名称（与pn一一对应）                         | Instance          | string | 必填   |
+| pnQuantity      | 料号数量                                                   | 1或者1-9          | string | 必填   |
+| pnUnit          | 料号单位规格                                               | {"Instance": "1"} | object | 必填   |
+| planDescription | 服务方案描述                                               | xxx               | string | 必填   |
+
+**services参数**
+
+| 名称        | 描述                                                         | 示例值               | 类型   | 必要性 |
+| ----------- | ------------------------------------------------------------ | -------------------- | ------ | ------ |
+| service     | 已经上架的服务名称                                           | FMS                  | string | 必填   |
+| plan        | 已经上架的服务名称下的方案名称                               | FMS-basic            | string | 必填   |
+| property    | 是否支持仅订阅一次，Only表示只能订阅一次，否则为空           | Only                 | string | 非必填 |
+| hasMetering | 是否需要Metering计量，true表示计量，f否则为false             | true                 | string | 必填   |
+| requirement | 是否需要优先于其他服务订阅，Essential表示需要先订阅，否则不需要 | Essential            | string | 非必填 |
+| labels      | 标签，一般为服务的应用类别，labels[0]为分类类型，labels[1]为分类类别的iconurl | ["EHS","http://xxx"] | array  | 非必填 |
+
+#### 请求参数示例
+
+```
+{
+  "name": "WISE-IoTSuite",
+  "displayName":"WISE IoTSuite"
+  "serviceCategory": "Common Apps",
+  "labels": [
+    "Service",
+    "NoInstance"
+  ],
+  "datacenter": "axa",
+  "description": "WISE-IoTSuite set",
+  "manager": {
+    "AE": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ],
+    "PM": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ],
+    "RD": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ],
+    "SRE": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ]
+},
+  "payType": [
+    {
+      "chargeType": "Trial",
+      "spuNumber": 1
+    },
+    {
+      "chargeType": "Monthly",
+      "spuNumber": 1
+    },
+    {
+      "chargeType": "Yearly",
+      "spuNumber": 12
+    }
+  ],
+  "pnInfo": [
+    {
+      "pn": "980GEDPS001",
+      "pnProperty": "Basic",
+      "chargeType": "Monthly",
+      "pnQuantity": "1",
+      "pnUnit": {"Instance":"1"},
+      "planDescription": "WISE IoTSuite set"
+    }
+  ],
+  "pns": [
+    {
+      "pn": "Instance",
+      "pnProperty": "Basic",
+      "displayName": "Instance",
+      "pnQuantity": "0-10000",
+      "pnUnit": {"Instance":"1"},
+      "planDescription": "Instance License"
+    }
+  ],
+  "services": [
+    {
+      "service": "FMS",
+      "plan": "FMS-basic",
+      "property": "Only",
+	  "hasMetering":true,
+	  "requirement:"",
+	  "labels":["EHS","http://xxx"]
+    }
+  ]
+}
+```
+
+**[ :point_up_2: API概览 ](#API概览)**  
+
+### GetServiceQuota
+
+#### 请求方式
+
+```
+GET /v1/service-quota
+```
+
+#### 请求参数
+
+| 名称            | 描述     | 示例值        | 类型   | 必要性 |
+| --------------- | -------- | ------------- | ------ | ------ |
+| name            | 套餐名称 | WISE-IoTSuite | string | 非必填 |
+| datacenter      | 站点     | axa           | string | 必填   |
+| label           | 标签     | Service       | string | 非必填 |
+| chargeType      | 付费类型 | Monthly       | string | 非必填 |
+| serviceCategory | 套餐类别 | Common Apps   | string | 非必填 |
+
+#### 返回数据示例
+
+```
+{
+  "data": [
+    {
+      "id": 12,
+      "name": "TPM",
+      "displayName": "TPM",
+      "serviceCategory": "Common Apps",
+      "labels": [
+        "iFactory",
+        "Service"
+      ],
+      "payType": [
+        {
+          "chargeType": "Monthly",
+          "spuNumber": 1
+        },
+        {
+          "chargeType": "CY",
+          "spuNumber": 1
+        },
+        {
+          "chargeType": "Eternal",
+          "spuNumber": 1
+        },
+        {
+          "chargeType": "Yearly",
+          "spuNumber": 12
+        }
+      ],
+      "datacenter": "local",
+      "pnInfo": [
+        {
+          "pn": "Instance",
+          "pnProperty": "Basic",
+          "pnUnit": {
+            "Instance": "1"
+          },
+          "pnQuantity": "1",
+          "planDescription": "SI Portal TPM license",
+          "chargeType": "Monthly"
+        }
+      ],
+      "pns": [
+        {
+          "pn": "Instance",
+          "pnProperty": "Basic",
+          "pnUnit": {
+            "Instance": "1"
+          },
+          "pnQuantity": "0-1000000",
+          "planDescription": "Instance license",
+          "displayName": "Instance"
+        }
+      ],
+      "services": [
+        {
+          "service": "TPM",
+          "labels": [],
+          "isInfrastructure": false,
+          "hasMetering": true,
+          "plan": "TPM-Free",
+          "planForTrial": false,
+          "property": "Only",
+          "requirement": "",
+          "quotaDependency": null,
+          "deploymentSolution": "",
+          "planType": "Service",
+          "licenseType": "Default",
+          "deliveryType": "servicebuy",
+          "planCategory": "standard",
+          "pnInfo": [
+            {
+              "pn": "Instance",
+              "pnProperty": "Basic",
+              "pnUnit": {
+                "Instance": "1"
+              },
+              "pnQuantity": "1",
+              "planDescription": "TPM Free Plan"
+            }
+          ],
+          "dependency": {
+            "apps": [],
+            "databases": [],
+            "spaces": []
+          },
+          "package": null,
+          "displayName": "TPM",
+          "iconUrl": ""
+        },
+        {
+          "service": "FMCS",
+          "labels": [],
+          "isInfrastructure": false,
+          "hasMetering": true,
+          "plan": "FMCS-Free",
+          "planForTrial": true,
+          "property": "Only",
+          "requirement": "",
+          "quotaDependency": null,
+          "deploymentSolution": "",
+          "planType": "Service",
+          "licenseType": "Default",
+          "deliveryType": "servicebuy",
+          "planCategory": "standard",
+          "pnInfo": [
+            {
+              "pn": "Instance",
+              "pnProperty": "Basic",
+              "pnUnit": {
+                "Instance": "1"
+              },
+              "pnQuantity": "1",
+              "planDescription": "FMCS Free License"
+            }
+          ],
+          "dependency": {
+            "apps": [],
+            "databases": [],
+            "spaces": []
+          },
+          "package": null,
+          "displayName": "",
+          "iconUrl": "http://minisite-dev.ali.wise-paas.com.cn/zh-cn/image/EHS_1654509756899097.png"
+        }
+      ],
+      "manager": {
+        "AE": [
+          {
+            "name": "yang.lan",
+            "Email": "yang.lan@advantech.com.cn"
+          }
+        ],
+        "PM": [
+          {
+            "name": "ren.xi",
+            "Email": "ren.xi@advantech.com.cn"
+          }
+        ],
+        "RD": [
+          {
+            "name": "wang.hui",
+            "Email": "wang.hui@advantech.com.cn"
+          }
+        ],
+        "SRE": [
+          {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+          }
+        ]
+      },
+      "iconUrl": "",
+      "description": "SI Portal IoTSuite  license",
+      "createdAt": "2022-06-27T16:53:25.753401+08:00",
+      "updatedAt": "2024-02-27T18:33:14.769443+08:00"
+    }
+  ],
+  "error": null,
+  "path": "/v1/service-quota?datacenter=local",
+  "status": 200,
+  "timestamp": "2024-04-10T06:48:36+0000",
+  "totalCount": 7
+}
+```
+
+**[ :point_up_2: API概览 ](#API概览)** 
+
+### PutServiceQuota
+
+#### 请求方式
+
+```
+PUT /v1/service-quota/{id}
+```
+
+#### 请求参数
+
+#### 请求参数
+
+| 名称            | 描述                                                         | 示例值                | 类型   | 必要性 |
+| --------------- | ------------------------------------------------------------ | --------------------- | ------ | ------ |
+| name            | 套餐名称，不支持修改                                         | WISE-IoTSuite         | string | 必填   |
+| displayName     | UI上显示的套餐名称，支持修改                                 | WISE IoTSuite         | string | 非必填 |
+| serviceCategory | 套餐的分类，支持修改                                         | Common Apps           | string | 必填   |
+| labels          | 标签，支持修改                                               | ["SaaS","NoInstance"] | array  | 必填   |
+| datacenter      | 站点，不支持修改                                             | hz                    | string | 必填   |
+| description     | 套餐的描述，不支持修改                                       | xxxx                  | string | 必填   |
+| manager         | 管理人员，支持修改                                           | {}                    | object | 必填   |
+| payType         | 套餐支持的付费类型，支持修改                                 | {}                    | object | 必填   |
+| pnInfo          | 套餐的料号，目前可以是假料号，不牵扯付费，支持修改           | {}                    | object | 必填   |
+| pns             | 套餐中包含的指标，仅支持新增指标，不支持删除指标             | {}                    | object | 必填   |
+| services        | 指标对应的服务及方案信息。注意方案上的pn必须包含在pns中；仅支持新增指标，不支持删除指标 | {}                    | object | 必填   |
+
+**payType参数**
+
+| 名称       | 描述                                                         | 示例值  | 类型   | 必要性 |
+| ---------- | ------------------------------------------------------------ | ------- | ------ | ------ |
+| chargeType | 付费类型，支持Trial（试用，整月）、Monthly(包月，自然月)、Quarterly（三月）、HalfYear（半年）、Yearly（包年，整年）、CY（自然年）、Eternal（买断）；Edge套餐不支持CY | Monthly | string | 必填   |
+| spuNumber  | 份数。Trial（spuNumber=1）、Monthly（spuNumber=1）、Quarterly（spuNumber=3）、HalfYear（spuNumber=6）、Yearly（spuNumber=12）、CY（spuNumber=1）、Eternal（spuNumber=1） | 1       | string | 必填   |
+
+**pnInfo参数**
+
+| 名称            | 描述                                               | 示例值            | 类型   | 必要性 |
+| --------------- | -------------------------------------------------- | ----------------- | ------ | ------ |
+| pn              | 料号，必须是已经上架的料号                         | 980GEDPS001       | string | 必填   |
+| pnProperty      | 料号属性，支持Basic、Additional。仅能只有一个Basic | Basic             | string | 必填   |
+| chargeType      | 付费类型，默认是Monthly                            | Instance          | string | 必填   |
+| pnQuantity      | 料号数量                                           | 1或者1-9          | string | 必填   |
+| pnUnit          | 料号单位规格                                       | {"Instance": "1"} | object | 必填   |
+| planDescription | 服务方案描述                                       | xxx               | string | 必填   |
+
+**pns参数**
+
+| 名称            | 描述                                                       | 示例值            | 类型   | 必要性 |
+| --------------- | ---------------------------------------------------------- | ----------------- | ------ | ------ |
+| pn              | 料号，必须是已经上架的料号，即指标                         | Instance          | string | 必填   |
+| pnProperty      | 料号属性，支持Basic、Additional。支持多个Basic和Additional | Basic             | string | 必填   |
+| displayName     | UI上显示的指标名称（与pn一一对应）                         | Instance          | string | 必填   |
+| pnQuantity      | 料号数量                                                   | 1或者1-9          | string | 必填   |
+| pnUnit          | 料号单位规格                                               | {"Instance": "1"} | object | 必填   |
+| planDescription | 服务方案描述                                               | xxx               | string | 必填   |
+
+**services参数**
+
+| 名称        | 描述                                                         | 示例值               | 类型   | 必要性 |
+| ----------- | ------------------------------------------------------------ | -------------------- | ------ | ------ |
+| service     | 已经上架的服务名称                                           | FMS                  | string | 必填   |
+| plan        | 已经上架的服务名称下的方案名称                               | FMS-basic            | string | 必填   |
+| property    | 是否支持仅订阅一次，Only表示只能订阅一次，否则为空           | Only                 | string | 非必填 |
+| hasMetering | 是否需要Metering计量，true表示计量，f否则为false             | true                 | string | 必填   |
+| requirement | 是否需要优先于其他服务订阅，Essential表示需要先订阅，否则不需要 | Essential            | string | 非必填 |
+| labels      | 标签，一般为服务的应用类别，labels[0]为分类类型，labels[1]为分类类别的iconurl | ["EHS","http://xxx"] | array  | 非必填 |
+
+#### 请求参数实例
+
+```
+{
+  "name": "WISE-IoTSuite",
+  "displayName":"WISE IoTSuite",
+  "serviceCategory": "Common Apps",
+  "labels": [
+    "Service",
+    "NoInstance"
+  ],
+  "datacenter": "axa",
+  "description": "WISE-IoTSuite set",
+  "manager": {
+    "AE": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ],
+    "PM": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ],
+    "RD": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ],
+    "SRE": [
+        {
+            "name": "sun.di",
+            "Email": "sun.di@advantech.com.cn"
+        }
+    ]
+},
+  "payType": [
+    {
+      "chargeType": "Trial",
+      "spuNumber": 1
+    },
+    {
+      "chargeType": "Monthly",
+      "spuNumber": 1
+    },
+    {
+      "chargeType": "Yearly",
+      "spuNumber": 12
+    }
+  ],
+  "pnInfo": [
+    {
+      "pn": "980GEDPS001",
+      "pnProperty": "Basic",
+      "chargeType": "Monthly",
+      "pnQuantity": "1",
+      "pnUnit": {"Instance":"1"},
+      "planDescription": "WISE IoTSuite set"
+    }
+  ],
+  "pns": [
+    {
+      "pn": "Instance",
+      "pnProperty": "Basic",
+      "displayName": "Instance",
+      "pnQuantity": "0-10000",
+      "pnUnit": {"Instance":"1"},
+      "planDescription": "Instance License"
+    },
+    {
+      "pn": "User",
+      "pnProperty": "Basic",
+      "displayName": "User",
+      "pnQuantity": "0-10000",
+      "pnUnit": {"User":"1"},
+      "planDescription": "User License"
+    }
+  ],
+  "services": [
+    {
+      "service": "FMS",
+      "plan": "FMS-basic",
+      "property": "Only",
+	  "hasMetering":true,
+	  "requirement:"",
+	  "labels":["EHS","http://xxx"]
+    }
+  ]
+}
+```
+
+### DeleteServiceQuota
+
+#### 请求方式
+
+```
+DELETE /v1/service-quota/{id}
+```
+
+#### 请求参数
+
+| 名称 | 描述           | 示例值 | 类型 | 必要性 |
+| ---- | -------------- | ------ | ---- | ------ |
+| id   | 获取到的套餐id | 175    | int  | 必填   |
 
 **[ :point_up_2: API概览 ](#API概览)**  
 
