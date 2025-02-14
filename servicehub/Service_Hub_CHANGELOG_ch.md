@@ -1,5 +1,27 @@
+# 1.0.11 (2025-02-14)
+ * DCCS 做了一個減速機制，避免操作太快
+
+# 1.0.10 (2024-01-31)
+ * 新增一個開關，開關關閉時不打MP
+ * user-provider API 調整
+
+# 1.0.9.2 (2023-03-29)
+ * Bug #32112: Service Hub v-1.0.9 修改 RabbitMQ IP 報錯，但低於這個版本又不支持 etcd broker
+
+# 1.0.9 (2023-01-16)
+ * Requirement: 31216 Service hub 從catalog 定閱 ETCD
+ * Requirement: 31215 Service Hub 更新選單列表
+ * Bug: 取消顯示權限錯誤提示
+
+# 1.0.8.2 (2022-07-19)
+ * feat: 訂閱/更新帶上serviceName 
+
+# 1.0.8 (2022-06-28)
+ * feat: 修正 update API bug
+ * feat: 檢查交易號改用 client Token
+
 # 1.0.7 (2022-04-01)
- * feat: RabbitMQ parameter IP 需要更換。
+ * feat: RabbitMQ parameter IP 也需要更換。
  * feat: 更換 public IP API 優化，取消過濾未填寫字段。
 
 # 1.0.6 (2022-03-30)
@@ -13,9 +35,10 @@
  * feat: 修改chart value，加上 ingress proxy-read-timeout 和 proxy-send-timeout 
  * feat: 修改chart value，將service-hub cpu 開到 500m 
  * feat: 新增查詢 dccs key 的API。
- * 
+
+
 # 1.0.4 (2021-12-28)
- * feat: 立刻退訂的API帶上 cascade 參數，預設值為true
+ * feat: 立刻退訂的API帶上 cascade 參數
 
 # 1.0.3 (2021-08-24)
  * bug: 修正 purge 的選項無法刪除 inprogress 和 error 狀態的 bug
